@@ -1,0 +1,116 @@
+plane board
+
+plane sheet
+
+plane glass
+
+plane porch
+
+if supports true color
+if supports 65,536 color
+if supports 256 color
+if supports 16
+if supports 8
+
+if stack paint prime
+  rouge = 123
+  steel = 123
+  cream = 123
+  green = 123
+  black = 123
+  white = 123
+  shade = 123 (gray)
+if stack paint 256
+  rouge = 123
+  steel = 123
+  cream = 123
+  green = 123
+  black = 123
+  white = 123
+  shade = 123 (gray)
+if stack paint 16
+  rouge = 123
+  steel = 123
+  cream = 123
+  green = 123
+  black = 123
+  white = 123
+  shade = 123 (gray)
+if stack paint 8
+  rouge = 123
+  steel = 123
+  cream = 123
+  green = 123
+  black = 123
+  white = 123
+  shade = 123 (gray)
+
+---
+
+    syntax highlighting
+
+    original quirk code
+      cause yield
+    standard quirk code (normalized to mount level and system calls)
+      cause chain
+    native code call
+    machine code if assembly
+
+    plane wheel (debugger)
+      plane shift (tab navigator)
+        plane prose stack
+        plane prose drive
+        plane prose count
+        plane prose state
+          print The state, query with the command line.
+      plane prose prime
+        print Original code.
+        scale climb, 7 (7 lines)
+      plane paste
+        print CLI enter.
+
+Hover on top of it to see the values of the thing.
+
+---
+
+    plane prose (editor)
+
+    plane crate (directory of crate)
+      plane block store group
+      plane class prose
+      plane paste
+
+---
+
+    plane check
+      print The specs.
+
+---
+
+    plane quirk
+      print The specs listed out and whether or not they are implemented/passing.
+
+      print guide
+
+plane cause yield
+  print Debugger
+
+plane cause trail
+  print Logger
+
+plane cause guide
+  print Builder
+
+plane prime guide
+
+plane plane split
+  print Plane builder
+
+plane style sheet
+  print Plane style editor.
+
+plane prose sheet
+  print Plane prose sheet.
+
+plane state sheet
+  print Plane state sheet.

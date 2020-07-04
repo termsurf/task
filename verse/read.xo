@@ -1,0 +1,205 @@
+
+A browser/editor view and a cli tool.
+
+task hint
+task make
+task mail
+
+
+plane cause yield
+  print Debugger
+
+plane cause trail
+  print Logger
+
+plane cause guide
+  print Builder
+
+plane prime guide
+
+plane plane split
+  print Plane builder
+
+plane style sheet
+  print Plane style editor.
+
+plane prose sheet
+  print Plane prose sheet.
+
+plane state sheet
+  print Plane state sheet.
+
+sound 1
+  clock 5, 4
+  wheel
+    thump
+      pitch a, 4
+    thump
+      pitch a, 4
+    thump
+      pitch a, 4
+    thump
+      pitch a, 4
+    thump
+      pitch a, 4
+
+tween 1
+  point 0
+    cause print p
+  point 3
+    cause print q
+  point 4
+    cause print p
+  point 6
+    cause print p
+  point 100
+    cause print p
+
+
+%
+% Set latex version.
+%
+
+\NeedsTeXFormat{LaTeX2e}[2015/01/01]
+\ProvidesPackage{piece}[2018/03/25 Piece]
+
+\RequirePackage{draft}
+
+% \ExplSyntaxOn
+
+\morph{piece}{}{ % found
+  \begin{fount}
+    \force{hn12}
+      {Hoffstein, Pipher, and Silverman}
+      {2013}
+      {An Introduction to Mathematical Cryptography}
+      {http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.182.9999\&rep=rep1\&type=pdf}
+
+    \force{hn13}
+      {Dirks}
+      {2011}
+      {The Stone representation theorem for Boolean algebras}
+      {http://www.math.uchicago.edu/~may/VIGRE/VIGRE2011/REUPapers/Dirks.pdf}
+
+    \force{hn15}
+      {Mendler}
+      {}
+      {Polygon Spirals}
+      {http://archive.bridgesmathart.org/2016/bridges2016-507.pdf}
+
+    \force{hn16}
+      {Dolbilin, Dress, Huson}
+      {1996}
+      {Two Finiteness Theorems for Periodic Tilings of d-Dimensional Euclidean Space}
+      {http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.31.873&rep=rep1&type=pdf}
+
+    \force{hn17}
+      {Diller}
+      {}
+      {Green's Functions, Electric Networks, and the Geometry of Hyperbolic Reimann Surfaces}
+      {https://www3.nd.edu/~jdiller/research/papers/green.pdf}
+
+    \force{hn18}
+      {Komatsu{,} N\'emeth{,} Szalay}
+      {2017}
+      {Tilings of hyperbolic $2 \times n$-board with colored squares and dominoes}
+      {https://arxiv.org/pdf/1712.07823.pdf}
+
+    \force{hn19}
+      {Moln\'ar{,} Stettner}
+      {2005}
+      {Symmetry Groups and Fundamental Tilings for the Compact Surface of Genus 3}
+      {https://www.emis.de/journals/BAG/vol.46/no.1/b46h1mst.pdf}
+
+    \force{hn20}
+      {Erlandsson}
+      {2018}
+      {A remark on the word length in surface groups}
+      {https://arxiv.org/pdf/1608.07436.pdf}
+
+    \force{hn21}
+      {Prok}
+      {2017}
+      {On Maximal Homogeneous 3-Geometries: A Polyhedron Algorithm for Space Tilings}
+      {http://www.mdpi.com/2218-1997/4/3/49}
+
+    \force{hn22}
+      {Lazaroiu, Shahbazi}
+      {2017}
+      {Generalized $\alpha$-attractor models from geometrically finite hyperbolic surfaces}
+      {https://arxiv.org/pdf/1702.06484.pdf}
+
+    \force{hn23}
+      {Kavi, Buckles, and Bhat}
+      {1986}
+      {A Formal Definition of Data Flow Graph Models}
+      {http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.589.9759&rep=rep1&type=pdf}
+
+    \force{hn24}
+      {Buck{,} and Lee}
+      {1992}
+      {The Token Flow Model}
+      {https://www.researchgate.net/profile/Edward_Lee13/publication/2266394_The_Token_Flow_Model/links/5571cb7008ae7536374c5e73/The-Token-Flow-Model.pdf}
+
+    \force{hn25}
+      {Mendler}
+      {2011}
+      {An Algebra of Synchronous Scheduling Interfaces}
+      {https://arxiv.org/pdf/1101.4733.pdf}
+
+    \force{hn26}
+      {\k{S}tef\u{a}nescu}
+      {}
+      {The Algebra of Flownomials}
+      {http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.9.6592&rep=rep1&type=pdf}
+
+    \force{hn27}
+      {Broy{,}\k{S}tef\u{a}nescu}
+      {1996}
+      {The Algebra of Stream Processing Functions}
+      {https://pdfs.semanticscholar.org/3d45/f44bbe6b6c144731858b0744caa52446be41.pdf}
+
+    \force{hn28}
+      {Brazas, and Fabel}
+      {2013}
+      {On fundamental groups with the quotient topology}
+      {https://arxiv.org/pdf/1304.6453.pdf}
+
+    \force{hn29}
+      {Groisser, and Tagare}
+      {2009}
+      {On the Topology and Geometry of Spaces of Affine Shapes}
+      {http://noodle.med.yale.edu/hdtag/papers/affine_jmiv2009.pdf}
+
+    \force{hn30}
+      {Pilitowska, Romanowska, and Smith}
+      {1995}
+      {Affine spaces and algebras of subalgebras}
+      {http://www.mini.pw.edu.pl/~apili/Affine_AU_1995.pdf}
+
+    \force{hn31}
+      {Priestley}
+      {2011}
+      {Introduction to Groups, Rings and Fields}
+      {https://people.maths.ox.ac.uk/flynn/genus2/sheets0405/grfnotes1011.pdf}
+
+    \force{hn32}
+      {Grigoriev, Kojevnikov, and Nikolenko}
+      {2009}
+      {Algebraic cryptography: new constructions and their security against provable break}
+      {https://pdfs.semanticscholar.org/513c/6fcb86e879cce71c1183f280979e3ec8e2e1.pdf}
+
+    \force{hn33}
+      {Yu, Jiang, Chen, and Yao}
+      {2007}
+      {Real-time cartoon water animation}
+      {http://www.cad.zju.edu.cn/home/jhyu/Papers/CartoonWater_07.pdf}
+
+    \force{hn34}
+      {Semmo, Kyprianidis, Trapp, D\"ollner}
+      {2013}
+      {Real-Time Rendering of Water Surfaces with Cartography-Oriented Design}
+      {http://www.cad.zju.edu.cn/home/jhyu/Papers/CartoonWater_07.pdf}
+
+  \end{fount}
+}

@@ -1,0 +1,49 @@
+
+use @mount/ansi
+use @mount/cli
+
+match check
+  cause check
+
+match bloom
+  cause bloom
+
+match build
+  cause build
+
+match house
+
+match share
+
+slate check
+  hitch hash remote
+    fetch https://stone.mount.build/hash
+  hitch hash local
+    fetch ~/.stone/hash
+  cause check match
+    reach hash remote
+    reach hash local
+    catch match
+      hatch same
+    catch
+      hatch different
+
+slate fetch
+  | Upgrade to a specific stone. |
+
+  field version, type string
+
+  hitch file
+    fetch https://stone.mount.build/:version.oxo
+
+  cause save file
+    ~/.stone/start.oxo
+    reach file
+
+slate build
+
+slate bloom
+
+slate share
+
+slate mount
