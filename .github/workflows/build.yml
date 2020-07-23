@@ -11,16 +11,48 @@ on:
       - '**.md'
 
 jobs:
-  build:
-    runs-on: ${{ matrix.operating-system }}
-    strategy:
-      matrix:
-        operating-system: [macos-latest, ubuntu-latest]
+  # linux:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 14.x
+  #     - run: sudo apt-get install build-essential
+  #     - run: sudo apt-get install graphicsmagick
+  #     - run: sudo apt-get install imagemagick
+  #     - run: sudo apt-get install fontforge
+  #     - run: sudo apt-get install ffmpeg
+  #     - run: sudo apt-get install texlive-xetex
+  #     - run: ninja --version
+
+  # windows:
+  #   runs-on: windows-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 14.x
+  #     - run: choco install graphicsmagick
+  #     - run: choco install imagemagick
+  #     - run: choco install fontforge
+  #     - run: choco install ffmpeg
+  #     - run: choco install fontforge
+  #     - run: choco install miktex.portable
+  #     - run: ninja --version
+
+  macos:
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Setup node 14
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: 14.x
-      - run: npm install
+      - run: brew cask install java
+      - run: brew install graphicsmagick
+      - run: brew install imagemagick
+      - run: brew install fontforge
+      - run: brew install ffmpeg
+      - run: brew install xetex
+      - run: npm ci
       - run: npm test
