@@ -57,7 +57,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: |
-            C:\ProgramData\chocolatey
+            C:\ProgramData
             **\node_modules
           key: ${{ runner.os }}-cache
       - run: choco install graphicsmagick
@@ -79,7 +79,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: |
-            /usr/local/Cellar
+            /usr
             **/node_modules
           key: ${{ runner.os }}-cache
       - run: brew cask install java
