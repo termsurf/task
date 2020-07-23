@@ -11,35 +11,48 @@ on:
       - '**.md'
 
 jobs:
-  # linux:
-  #   runs-on: ubuntu-16.04
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 14.x
-  #     - run: sudo apt-get install build-essential
-  #     - run: sudo apt-get install graphicsmagick
-  #     - run: sudo apt-get install imagemagick
-  #     - run: sudo apt-get install fontforge
-  #     - run: sudo apt-get install ffmpeg
-  #     - run: sudo apt-get install texlive-xetex
-  #     - run: ninja --version
+  linux:
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - uses: actions/cache@v2
+        with:
+          path: |
+            /usr
+            **\node_modules
+      - run: sudo apt-get install build-essential
+      - run: sudo apt-get install graphicsmagick
+      - run: sudo apt-get install imagemagick
+      - run: sudo apt-get install fontforge
+      - run: sudo apt-get install ffmpeg
+      - run: sudo apt-get install texlive-xetex
+      - run: npm install
+      - run: npm test
 
-  # windows:
-  #   runs-on: windows-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 14.x
-  #     - run: choco install graphicsmagick
-  #     - run: choco install imagemagick
-  #     - run: choco install fontforge
-  #     - run: choco install ffmpeg
-  #     - run: choco install fontforge
-  #     - run: choco install miktex.portable
-  #     - run: ninja --version
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - uses: actions/cache@v2
+        with:
+          path: |
+            C:\ProgramData\chocolatey
+            **\node_modules
+          key: ${{ runner.os }}-cache
+      - run: choco install graphicsmagick
+      - run: choco install imagemagick
+      - run: choco install fontforge
+      - run: choco install ffmpeg
+      - run: choco install fontforge
+      - run: choco install miktex.portable
+      - run: npm install
+      - run: npm test
 
   macos:
     runs-on: macos-latest
