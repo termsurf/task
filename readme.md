@@ -39,9 +39,7 @@
 
 ### Summary
 
-The Stone is a **specification** for a browser, terminal, editor, and operating system built into one, not a working product (yet). It is meant to be a simplified interface to the digital world. The stone is a replacement for Chrome, Firefox, and IE, for Mac, Windows and Linux, for VSCode, Intellij Idea, and Sublime, and for the Terminal. It should be like the iPhone home screen, a place to start your digital day.
-
-This is only an emerging specification. It is not yet ready to be built. It is waiting on some key infrastructure in the [bloom](https://github.com/mountbuild/bloom) project, which will allow for building APIs and UIs. This readme introduces it as if it were working, so as to immerse you in the initial experience. The stone will be 3 things: a CLI tool, a GUI, and a daemon. The CLI tool will be there so that one can use this on legacy systems. The GUI will be the preferred way of interacting with the stone. And the daemon will allow the CLI and GUI tools to interact with push and pull based syncrhonization to the cloud.
+Stone is a collection of all the things to make life easier on the web. In part, the Stone is a **specification** for a browser, terminal, editor, and operating system built into one. The other part is it is currently starting out as a CLI. It is meant to be a simplified interface to the digital world.
 
 ### History
 
@@ -70,69 +68,27 @@ Also, [track our release progress](https://github.com/mountbuild/stone/blob/buil
 
 ### Getting Started
 
-_(Remember, this is just a specification at this point, this isn't real yet)._
-
 To install, run this command in the terminal:
 
 ```bash
-curl -sf stone.mount.build | sh
+npm install @mountbuild/stone -g
 ```
-
-_If you're new to programming, you can also [install the app](https://mount.build/stone) instead._
-
-There are four main interfaces to the stone. The browser, the CLI, the API, and the native app. Use whichever you are most comfortable with. The benefit of the CLI is you don't have to use any new tools, and can continue using your favorite tools. The benefit of using the stone interface is (eventually) a more streamlined approach to work and life on the web.
 
 #### CLI
 
-Once installed, create an account.
+Here are some helpful commands to get you started:
 
-```bash
-$ stone mount
+##### Split a PDF into individual files.
 
-    o <your email>
-    o <a password>
-
-$
+```
+$ stone split some.pdf outputDirectory
 ```
 
-This will then prompt to enter a credit card:
+##### Take a subset of a PDF.
 
-```bash
-$ stone trade
-
-    o <number>
-    o <expiration>
-    o <ccv>
-
-$
 ```
-
-Create a space in which to create a project.
-
-```bash
-$ stone cloud
+$ stone slice some.pdf -s 15 -e 25 -o output.pdf
 ```
-
-Create a project.
-
-```bash
-$ stone bloom my-project
-$ cd my-project
-```
-
-To watch a project for changes and rebuild:
-
-```bash
-$ stone watch
-```
-
-To sync to the cloud:
-
-```bash
-$ stone build
-```
-
-Now with this flow, you can create `.xo` files and build software applications in the cloud.
 
 #### GUI
 
@@ -154,24 +110,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-<p align='center'>
-  <a href='https://mount.build'>
-    <img src='http://mount.build/slate/house.png' width='16'/>
-  </a>　　
-  <a href='https://mount.build'>
-    <img src='http://mount.build/slate/house.png' width='32'/>
-  </a>　　
-  <a href='https://mount.build'>
-    <img src='http://mount.build/slate/house.png' width='64'/>
-  </a>　　
-  <a href='https://mount.build'>
-    <img src='http://mount.build/slate/house.png' width='32'/>
-  </a>　　
-  <a href='https://mount.build'>
-    <img src='http://mount.build/slate/house.png' width='16'/>
-  </a>
-</p>
-
 ### Mount
 
 Stone is being developed by the folks at [Mount](https://mount.build), a California-based project for helping humanity master information and computation. Mount started off in the winter of 2008 as a spark of an idea, to forming a company 10 years later in the winter of 2018, to a seed of a project just beginning its development phases. Mount funds stone's development. It is entirely bootstrapped by working full time and running [Etsy](https://etsy.com/shop/mountbuild) and [Amazon](https://www.amazon.com/s?rh=p_27%3AMount+Build) shops. Also find us on [Facebook](https://www.facebook.com/mountbuild), [Twitter](https://twitter.com/mountbuild), and [LinkedIn](https://www.linkedin.com/company/mountbuild). Check out our other GitHub projects as well!
@@ -184,7 +122,7 @@ Stone is being developed by the folks at [Mount](https://mount.build), a Califor
     <img src='https://github.com/mountbuild/flame/blob/build/slate/house.gif?raw=true' width='128'/>
   </a>　　
   <a href='https://github.com/mountbuild/mouse'>
-    <img src='https://github.com/mountbuild/mouse/blob/build/slate/house.png?raw=true' width='128'/>
+    <img src='https://github.com/mountbuild/mouse/blob/build/slate/house.gif?raw=true' width='128'/>
   </a>
 </p>
 

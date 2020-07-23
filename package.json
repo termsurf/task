@@ -1,0 +1,36 @@
+{
+  "name": "@mountbuild/stone",
+  "version": "0.0.3",
+  "description": "Gathering up all the power into one tool.",
+  "main": "index.js",
+  "dependencies": {
+    "ansi-escapes": "^4.3.1",
+    "asciify-image": "^0.1.6",
+    "bcrypt": "^5.0.0",
+    "blessed": "^0.1.81",
+    "chalk": "^4.1.0",
+    "git-user-email": "^0.2.2",
+    "node-latex": "^3.0.0",
+    "pdf-lib": "^1.9.0"
+  },
+  "bin": {
+    "stone": "./index.js"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mountbuild/stone.git"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "Lance Pollard <lp@elk.fm>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/mountbuild/stone/issues"
+  },
+  "homepage": "https://github.com/mountbuild/stone#readme"
+}
