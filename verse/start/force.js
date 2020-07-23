@@ -123,17 +123,17 @@ async function convertTTFToWoff2({ inputPath, outputPath }) {
 
 async function convertTTFToOTF({ inputPath, outputPath }) {
   await assertCommand('fontforge')
-  child_process.execSync(`fontforge -lang=ff -c 'Open($1); Generate($2)' "${inputPath}" "${outputPath}"`, { stdio: 'ignore' })
+  child_process.execSync(`fontforge -lang=ff -c 'Open($1); Generate($2)' "${path.resolve(inputPath)}" "${path.resolve(outputPath)}"`, { stdio: 'ignore' })
 }
 
 async function convertTTFToEOT({ inputPath, outputPath }) {
   await assertCommand('fontforge')
-  child_process.execSync(`fontforge -lang=ff -c 'Open($1); Generate($2)' "${inputPath}" "${outputPath}"`, { stdio: 'ignore' })
+  child_process.execSync(`fontforge -lang=ff -c 'Open($1); Generate($2)' "${path.resolve(inputPath)}" "${path.resolve(outputPath)}"`, { stdio: 'ignore' })
 }
 
 async function convertTTFToSDF({ inputPath, outputPath }) {
   await assertCommand('fontforge')
-  child_process.execSync(`fontforge -lang=ff -c 'Open($1); Generate($2)' "${inputPath}" "${outputPath}"`, { stdio: 'ignore' })
+  child_process.execSync(`fontforge -lang=ff -c 'Open($1); Generate($2)' "${path.resolve(inputPath)}" "${path.resolve(outputPath)}"`, { stdio: 'ignore' })
 }
 
 async function convertHTMLToPDF({ inputPath, outputPath, viewportWidth, viewportHeight }) {
@@ -232,7 +232,7 @@ async function splitPDF({ inputPath, outputDirectory }) {
     const [page] = await writePdf.copyPages(readPdf, [index])
     writePdf.addPage(page)
     const bytes = await writePdf.save()
-    fs.writeFileSync(`${outputDirectory}/${i + 1}.pdf`, bytes)
+    fs.writeFileSync(path.resolve(`${outputDirectory}/${i + 1}.pdf`), bytes)
   }
 }
 
@@ -303,11 +303,11 @@ async function updatePDFMetadata({
 }
 
 async function convertPNGToJPG({ inputPath, outputPath }) {
-  child_process.execSync(`convert "${inputPath}" "${outputPath}"`)
+  child_process.execSync(`convert "${path.resolve(inputPath)}" "${path.resolve(outputPath)}"`)
 }
 
 async function convertJPGToPNG({ inputPath, outputPath }) {
-  child_process.execSync(`convert "${inputPath}" "${outputPath}"`)
+  child_process.execSync(`convert "${path.resolve(inputPath)}" "${path.resolve(outputPath)}"`)
 }
 
 async function moveFile(oldPath, newPath) {
