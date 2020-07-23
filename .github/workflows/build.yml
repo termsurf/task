@@ -57,7 +57,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: |
-            C:\ProgramData
+            C:\
             **\node_modules
           key: ${{ runner.os }}-cache
       - run: choco install graphicsmagick
