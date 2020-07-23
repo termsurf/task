@@ -13,10 +13,18 @@ const chart = {
   build,
   slice,
   split,
-  read
+  read,
+  add
 }
 
 module.exports = chart
+
+async function add(input) {
+  const type = fetchInput(input, 't', 'type')[0] || input.object[0]
+  if (type === 'audio') {
+    await addAudioToVideo(input)
+  }
+}
 
 async function read(input) {
   const inputPath = fetchInput(input, 'i', 'input')[0] || input.object[0]
@@ -108,18 +116,22 @@ async function split(input) {
 
 async function convert(input) {
   const inputPath = fetchInput(input, 'i', 'input')[0] || input.object[0]
-  if (inputPath.match(/\.svg$/)) {
+  if (inputPath.match(/\.svg$/i)) {
     await convertSVG(inputPath, input)
-  } else if (inputPath.match(/\.html$/)) {
+  } else if (inputPath.match(/\.html$/i)) {
     await convertHTML(inputPath, input)
-  } else if (inputPath.match(/\.ttf$/)) {
+  } else if (inputPath.match(/\.ttf$/i)) {
     await convertTTF(inputPath, input)
-  } else if (inputPath.match(/\.mp4$/)) {
+  } else if (inputPath.match(/\.mp4$/i)) {
     await convertMP4(inputPath, input)
-  } else if (inputPath.match(/\.png$/)) {
+  } else if (inputPath.match(/\.png$/i)) {
     await convertPNG(inputPath, input)
-  } else if (inputPath.match(/\.jpe?g$/)) {
+  } else if (inputPath.match(/\.jpe?g$/i)) {
     await convertJPG(inputPath, input)
+  } else if (inputPath.match(/\.flac$/i)) {
+    await convertFLAC(inputPath, input)
+  } else if (inputPath.match(/\.docx$/i)) {
+    await convertDOCX(inputPath, input)
   }
 }
 
@@ -171,6 +183,35 @@ async function resizeImage(inputPath, input) {
     width,
     height,
     force: f
+  })
+}
+
+async function addAudioToVideo(input) {
+  const inputVideoPath = fetchInput(input, 'iv', 'input-video')[0]
+  const inputAudioPath = fetchInput(input, 'ia', 'input-audio')[0]
+  const outputPath = fetchInput(input, 'o', 'output')[0]
+  const fit = fetchInput(input, 'f', 'fit')[0]
+  await force.addAudioToVideo({
+    inputVideoPath,
+    inputAudioPath,
+    outputPath,
+    fit
+  })
+}
+
+async function convertDOCX(inputPath, input) {
+  const outputPath = fetchInput(input, 'o', 'output')[0]
+  if (outputPath.match(/\.pdf$/i)) {
+    await convertDOCXToPDF(inputPath, outputPath)
+  } else if (outputPath.match(/\.txt$/i)) {
+    await force.convertDOCXToTXT({ inputPath, outputPath })
+  }
+}
+
+async function convertDOCXToPDF(inputPath, outputPath) {
+  await force.convertDOCXToPDF({
+    inputPath,
+    outputPath
   })
 }
 
@@ -271,6 +312,16 @@ async function removeAudio(inputPath, input) {
     inputPath,
     outputPath
   })
+}
+
+async function convertFLAC(inputPath, input) {
+  const outputPath = fetchInput(input, 'o', 'output')[0]
+  if (outputPath.match(/\.mp3$/i)) {
+    await force.convertFLACToMp3({
+      inputPath,
+      outputPath
+    })
+  }
 }
 
 async function convertMP4(inputPath, input) {

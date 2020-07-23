@@ -77,6 +77,7 @@ Requirements on Mac
 ```bash
 brew cask install java
 brew cask install mactex
+brew cask install libreoffice
 brew install graphicsmagick
 brew install imagemagick
 brew install fontforge

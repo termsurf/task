@@ -32,7 +32,11 @@ const force = {
   convertJPGToPNG,
   convertPNGToJPG,
   resizeImage,
-  replaceImageColor
+  replaceImageColor,
+  convertFLACToMp3,
+  addAudioToVideo,
+  convertDOCXToPDF,
+  convertDOCXToTXT
 }
 
 module.exports = force
@@ -54,6 +58,10 @@ async function replaceImageColor({
   cmd.push(`"${path.resolve(outputPath)}"`)
 
   child_process.execSync(cmd.join(' '))
+}
+
+async function addAudioToVideo({ inputVideoPath, inputAudioPath, outputPath, fit }) {
+  child_process.execSync(`ffmpeg -i "${path.resolve(inputVideoPath)}" -i "${path.resolve(inputAudioPath)}" ${fit ? '-shortest ' : ''}-c copy -map 0:v:0 -map 1:a:0 "${path.resolve(outputPath)}"`)
 }
 
 async function resizeImage({
@@ -121,6 +129,38 @@ async function convertTTFToWoff2({ inputPath, outputPath }) {
   const input = fs.readFileSync(inputPath)
   const ttf2woff2 = require('ttf2woff2')
   fs.writeFileSync(outputPath, ttf2woff2(input))
+}
+
+async function convertDOCXToPDF({ inputPath, outputPath }) {
+  const libre = require('libreoffice-convert')
+  const file = fs.readFileSync(inputPath)
+  const ext = path.extname(outputPath)
+  return new Promise((res, rej) => {
+    libre.convert(file, ext, undefined, (err, output) => {
+      if (err) {
+        return rej(err)
+      }
+
+      fs.writeFileSync(outputPath, output)
+      res()
+    })
+  })
+}
+
+async function convertDOCXToTXT({ inputPath, outputPath }) {
+  const libre = require('libreoffice-convert')
+  const file = fs.readFileSync(inputPath)
+  const ext = path.extname(outputPath)
+  return new Promise((res, rej) => {
+    libre.convert(file, ext, undefined, (err, output) => {
+      if (err) {
+        return rej(err)
+      }
+
+      fs.writeFileSync(outputPath, output)
+      res()
+    })
+  })
 }
 
 async function convertTTFToOTF({ inputPath, outputPath }) {
@@ -297,6 +337,10 @@ async function updatePDFMetadata({
   const bytes = await pdfDoc.save()
 
   fs.writeFileSync(inputPath, bytes)
+}
+
+async function convertFLACToMp3({ inputPath, outputPath }) {
+  child_process.execSync(`ffmpeg -i "${path.resolve(inputPath)}" -ab 320k -map_metadata 0 -id3v2_version 3 "${path.resolve(outputPath)}"`)
 }
 
 async function convertPNGToJPG({ inputPath, outputPath }) {

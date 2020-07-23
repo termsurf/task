@@ -27,6 +27,7 @@ async function start(argv) {
     case 'slice': return await chart.slice(input)
     case 'split': return await chart.split(input)
     case 'read': return await chart.read(input)
+    case 'add': return await chart.add(input)
     default: throw new Error(`${input.action} without handler`)
   }
 }

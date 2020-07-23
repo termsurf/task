@@ -14,6 +14,7 @@
     "git-user-email": "^0.2.2",
     "gm": "^1.23.1",
     "image-size": "^0.8.3",
+    "libreoffice-convert": "^1.1.1",
     "localtunnel": "^2.0.0",
     "mkdirp": "^1.0.4",
     "ngrok": "^3.2.7",
