@@ -115,48 +115,48 @@ npm install -g @mountbuild/stone
 ```
 
 
-#### CLI
+### CLI
 
 Here are some helpful commands to get you started:
 
-##### Split a PDF into individual files.
+#### Split a PDF into individual files.
 
 ```
 $ stone split some.pdf -o outputDirectory
 ```
 
-##### Take a subset of a PDF.
+#### Take a subset of a PDF.
 
 ```
 $ stone slice some.pdf -s 15 -e 25 -o output.pdf
 ```
 
-##### Rename recursively a bunch of files:
+#### Rename recursively a bunch of files:
 
 ```
 $ stone rename -t f -p "tmp/**/*.jpg" -s "\.jpg" -e ".png"
 ```
 
-##### Convert HTML to PDF
+#### Convert HTML to PDF
 
 ```
 $ stone convert tmp/index.html -o tmp/index.pdf -w 2000px -h 3000px
 ```
 
-##### Remove All EXIF Data from a JPEG
+#### Remove All EXIF Data from a JPEG
 
 ```
 $ stone remove exif input.jpg
 ```
 
-##### Resize Image
+#### Resize Image
 
 
 ```
 $ stone resize input.jpg -w 300 -o output.jpg
 ```
 
-#### GUI
+### GUI
 
 Coming eventually.
 

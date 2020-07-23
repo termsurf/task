@@ -23,7 +23,8 @@
     "public-ip": "^4.0.2",
     "svgexport": "^0.4.0",
     "ttf2woff2": "^3.0.0",
-    "unrar": "^0.2.0"
+    "unrar": "^0.2.0",
+    "which": "^2.0.2"
   },
   "bin": {
     "stone": "./verse/start/mount.js"

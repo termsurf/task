@@ -34,7 +34,6 @@ const force = {
 module.exports = force
 
 async function removeAudio({ inputPath, outputPath }) {
-  await assertCommand('ffmpeg')
   child_process.execSync(`ffmpeg -y -loglevel warning -hide_banner -nostats -i "${inputPath}" -c copy -an "${outputPath}"`)
 }
 
@@ -100,7 +99,6 @@ async function renameFileList({ inputPatternList, startMatch, endMatch }) {
 }
 
 async function convertMP4ToGif({ inputPath, outputPath, fps, width, startTime, endTime }) {
-  await assertCommand('ffmpeg')
   fps = fps || 10
   width = width ? String(width).replace(/px/, '') : 512
   let cmd = [`ffmpeg -y -loglevel warning -hide_banner -nostats -i "${path.resolve(inputPath)}"`]
@@ -122,17 +120,14 @@ async function convertTTFToWoff2({ inputPath, outputPath }) {
 }
 
 async function convertTTFToOTF({ inputPath, outputPath }) {
-  await assertCommand('fontforge')
   child_process.execSync(`fontforge -lang=ff -c 'Open($1); Generate($2)' "${path.resolve(inputPath)}" "${path.resolve(outputPath)}"`, { stdio: 'ignore' })
 }
 
 async function convertTTFToEOT({ inputPath, outputPath }) {
-  await assertCommand('fontforge')
   child_process.execSync(`fontforge -lang=ff -c 'Open($1); Generate($2)' "${path.resolve(inputPath)}" "${path.resolve(outputPath)}"`, { stdio: 'ignore' })
 }
 
 async function convertTTFToSDF({ inputPath, outputPath }) {
-  await assertCommand('fontforge')
   child_process.execSync(`fontforge -lang=ff -c 'Open($1); Generate($2)' "${path.resolve(inputPath)}" "${path.resolve(outputPath)}"`, { stdio: 'ignore' })
 }
 
@@ -170,8 +165,6 @@ async function convertSVGToPNG({ inputPath, outputPath }) {
 }
 
 async function buildLatex(input) {
-  await assertCommand('xetex')
-
   const latex = require('node-latex')
 
   return new Promise((res, rej) => {
@@ -338,17 +331,4 @@ async function moveFile(oldPath, newPath) {
       readStream.pipe(writeStream)
     }
   })
-}
-
-async function assertCommand(name) {
-  if (!child_process.execSync(`which ${name}`)) {
-    switch (process.platform) {
-      case 'darwin':
-        console.log(`brew install ${name}`)
-        break
-      default:
-        console.log(`install ${name}`)
-        break
-    }
-  }
 }
