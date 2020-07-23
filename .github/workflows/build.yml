@@ -33,7 +33,7 @@ jobs:
           node-version: 14.x
       - uses: actions/cache@v2
         with:
-          path: /usr
+          path: /usr/share
           key: x-${{ runner.os }}-cache
       - run: sudo apt-get update
       - run: sudo apt-get install build-essential
@@ -75,7 +75,7 @@ jobs:
           node-version: 14.x
       - uses: actions/cache@v2
         with:
-          path: /usr/share
+          path: /usr/local
           key: x-${{ runner.os }}-cache
       - run: brew cask install java
       - run: brew cask install mactex
