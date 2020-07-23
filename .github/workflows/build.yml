@@ -62,6 +62,7 @@ jobs:
       - run: choco install fontforge
       - run: choco install ffmpeg
       - run: choco install miktex
+      - run: choco install pandoc
       - run: npm install
       - run: npm test
 
@@ -79,6 +80,7 @@ jobs:
       - run: brew cask install rar
       - run: brew cask install java
       - run: brew cask install mactex
+      - run: brew cask install inkscape
       - run: brew cask install libreoffice
       - run: brew install imagemagick
       - run: brew install fontforge

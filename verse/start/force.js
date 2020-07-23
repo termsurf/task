@@ -86,6 +86,16 @@ async function create7z({ inputDirectory, outputPath }) {
   child_process.execSync(`7z a ${outputPath} ${inputDirectory}`)
 }
 
+async function convertAIToSVG({ inputPath, outputPath }) {
+  child_process.execSync(`inkscape -f "${inputPath}" -l "${outputPath}"`)
+}
+
+async function convertPSDToPNG({ inputPath, outputPath }) {
+  const PSD = require('psd')
+  const psd = PSD.fromFile(inputPath)
+  await psd.image.saveAsPng(outputPath)
+}
+
 async function createZip({ inputDirectory, outputPath }) {
   // https://github.com/ksoichiro/node-archiver-zip-encryptable
   const archiver = require('archiver')
@@ -211,7 +221,10 @@ async function unpackRAR({ inputPath, outputDirectory }) {
 }
 
 async function convertTTFToOTF({ inputPath, outputPath }) {
-  child_process.execSync(`fontforge -lang=ff -c 'Open($1); Generate($2)' "${path.resolve(inputPath)}" "${path.resolve(outputPath)}"`, { stdio: 'ignore' })
+  child_process.exec(`fontforge -lang=ff -c 'Open($1); Generate($2)' "${path.resolve(inputPath)}" "${path.resolve(outputPath)}"`, (err, stderr, stdout) => {
+    console.log('RESULT')
+    console.log(arguments)
+  })
 }
 
 async function convertTTFToEOT({ inputPath, outputPath }) {
