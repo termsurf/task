@@ -22,7 +22,7 @@ jobs:
         with:
           path: |
             /usr
-            **\node_modules
+            **/node_modules
       - run: sudo apt-get install build-essential
       - run: sudo apt-get install graphicsmagick
       - run: sudo apt-get install imagemagick
