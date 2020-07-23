@@ -33,6 +33,10 @@
   <a href='#license'>License</a>
 </p>
 
+<p align='center'>
+  <img src='https://github.com/mountbuild/stone/workflows/build/badge.svg?branch=build' />
+</p>
+
 <br/>
 <br/>
 <br/>
