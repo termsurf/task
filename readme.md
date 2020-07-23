@@ -106,6 +106,12 @@ $ stone rename -t f -p "tmp/**/*.jpg" -s "\.jpg" -e ".png"
 $ stone convert tmp/index.html -o tmp/index.pdf -w 2000px -h 3000px
 ```
 
+##### Remove All EXIF Data from a JPEG
+
+```
+$ stone remove exif input.jpg
+```
+
 #### GUI
 
 Coming eventually.

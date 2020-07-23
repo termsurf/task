@@ -23,7 +23,8 @@ const force = {
   readPDFMetadata,
   updatePDFMetadata,
   createTunnel,
-  readImageMetadata
+  readImageMetadata,
+  removeEXIFData
 }
 
 module.exports = force
@@ -202,6 +203,13 @@ async function splitPDF({ inputPath, outputDirectory }) {
     const bytes = await writePdf.save()
     fs.writeFileSync(`${outputDirectory}/${i + 1}.pdf`, bytes)
   }
+}
+
+async function removeEXIFData({ inputPath }) {
+  const data = fs.readFileSync(inputPath).toString('binary')
+  const piexif = require('piexifjs')
+  const newData = piexif.remove(data)
+  fs.writeFileSync(inputPath, newData, 'binary')
 }
 
 async function readPDFMetadata({ inputPath }) {

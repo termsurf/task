@@ -58,9 +58,14 @@ async function create(input) {
 }
 
 async function remove(input) {
-  const type = fetchInput(input, 't', 'type')[0]
+  const type = fetchInput(input, 't', 'type')[0] || input.object[0]
+  const inputPath = fetchInput(input, 'i', 'input')[0] || input.object[1]
   if (type === 'audio') {
     await removeAudio(input)
+  } else if (type === 'exif') {
+    await force.removeEXIFData({
+      inputPath
+    })
   }
 }
 
