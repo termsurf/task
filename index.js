@@ -8,6 +8,8 @@ const mkdirp = require('mkdirp')
 const fg = require('fast-glob')
 const Puppeteer = require('puppeteer')
 const path = require('path')
+const ttf2woff2 = require('ttf2woff2')
+const child_process = require('child_process')
 
 start()
 
@@ -28,12 +30,15 @@ async function start() {
       if (input.object[0]) {
         if (input.object[0].match(/\.svg$/)) {
           await convertSVG(input.object[0], (input.detail.o && input.detail.o[0]) || (input.detail.output && input.detail.output[0]))
-        } else if (input.object[0].match(/\.html/)) {
+        } else if (input.object[0].match(/\.html$/)) {
           await convertHTML(input.object[0],
             (input.detail.o && input.detail.o[0]) || (input.detail.output && input.detail.output[0]),
             (input.detail.w && input.detail.w[0]) || (input.detail.width && input.detail.width[0]),
             (input.detail.h && input.detail.h[0]) || (input.detail.height && input.detail.height[0])
           )
+        } else if (input.object[0].match(/\.ttf$/)) {
+          await convertTTF(input.object[0],
+            (input.detail.o && input.detail.o[0]) || (input.detail.output && input.detail.output[0]))
         }
       }
       break
@@ -75,6 +80,35 @@ async function renameFiles(inputPatterns, inputMatch, outputMatch) {
     mkdirp.sync(outputDir)
     await moveFile(inputEntry, outputEntry)
   }
+}
+
+async function convertTTF(inputPath, outputPath) {
+  if (outputPath.match(/\.woff2$/)) {
+    await convertTTFToWoff2(inputPath, outputPath)
+  } else if (outputPath.match(/\.otf$/)) {
+    await convertTTFToOTF(inputPath, outputPath)
+  } else if (outputPath.match(/\.eot$/)) {
+    await convertTTFToEOT(inputPath, outputPath)
+  } else if (outputPath.match(/\.sdf$/)) {
+    await convertTTFToSDF(inputPath, outputPath)
+  }
+}
+
+async function convertTTFToWoff2(inputPath, outputPath) {
+  const input = fs.readFileSync(inputPath)
+  fs.writeFileSync(outputPath, ttf2woff2(input))
+}
+
+async function convertTTFToOTF(inputPath, outputPath) {
+  child_process.execSync(`fontforge -lang=ff -c 'Open($1); Generate($2)' "${inputPath}" "${outputPath}"`, { stdio: 'ignore' })
+}
+
+async function convertTTFToEOT(inputPath, outputPath) {
+  child_process.execSync(`fontforge -lang=ff -c 'Open($1); Generate($2)' "${inputPath}" "${outputPath}"`, { stdio: 'ignore' })
+}
+
+async function convertTTFToSDF(inputPath, outputPath) {
+  child_process.execSync(`fontforge -lang=ff -c 'Open($1); Generate($2)' "${inputPath}" "${outputPath}"`, { stdio: 'ignore' })
 }
 
 async function convertHTML(inputPath, outputPath, width, height) {
