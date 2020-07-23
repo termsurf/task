@@ -33,12 +33,6 @@
   <a href='#license'>License</a>
 </p>
 
-<p align='center'>
-  <a href='https://circleci.com/gh/mountbuild/stone'>
-    <img src='https://circleci.com/gh/mountbuild/stone.svg?style=svg' />
-  </a>
-</p>
-
 <br/>
 <br/>
 <br/>
