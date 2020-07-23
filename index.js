@@ -2,6 +2,9 @@
 const latex = require('node-latex')
 const { PDFDocument, StandardFonts, rgb } = require('pdf-lib')
 const fs = require('fs')
+const svgexport = require('svgexport')
+const dirname = require('path').dirname
+const mkdirp = require('mkdirp')
 
 start()
 
@@ -9,10 +12,17 @@ async function start() {
   const input = parse()
 
   switch (input.action) {
+    case 'convert':
+      if (input.object[0]) {
+        if (input.object[0].match(/\.svg$/)) {
+          await convertSVG(input.object[0], (input.detail.o && input.detail.o[0]) || (input.detail.output && input.detail.output[0]))
+        }
+      }
+      break
     case 'build':
       if (input.object[0]) {
         if (input.object[0].match(/\.tex$/)) {
-          await buildLatex(input.object[0], input.detail.o || input.detail.output)
+          await buildLatex(input.object[0], (input.detail.o && input.detail.o[0]) || (input.detail.output && input.detail.output[0]))
         }
       }
       break
@@ -35,6 +45,22 @@ async function start() {
       }
       break
   }
+}
+
+async function convertSVG(inputPath, outputPath) {
+  if (outputPath.match(/\.png$/)) {
+    await convertSVGToPNG(inputPath, outputPath)
+  }
+}
+
+async function convertSVGToPNG(inputPath, outputPath) {
+  const dir = dirname(outputPath)
+  mkdirp.sync(dir)
+  const opts = {
+    input: inputPath,
+    output: outputPath
+  }
+  svgexport.render(opts)
 }
 
 async function buildLatex(inputPath, outputPath) {
@@ -66,6 +92,8 @@ async function slicePDF(inputPath, outputPath, startPage, endPage) {
 
   let bytes = await writePdf.save()
 
+  const dir = dirname(outputPath)
+  mkdirp.sync(dir)
   fs.writeFileSync(outputPath, bytes)
 }
 
@@ -77,6 +105,8 @@ async function splitPDF(inputPath, outputPath) {
   while (startPage <= endPage) {
     indices.push(startPage++)
   }
+
+  mkdirp.sync(outputPath)
 
   for (let i = 0, n = indices.length; i < n; i++) {
     const index = indices[i]

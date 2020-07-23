@@ -1,6 +1,6 @@
 {
   "name": "@mountbuild/stone",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Gathering up all the power into one tool.",
   "main": "index.js",
   "dependencies": {
@@ -10,8 +10,10 @@
     "blessed": "^0.1.81",
     "chalk": "^4.1.0",
     "git-user-email": "^0.2.2",
+    "mkdirp": "^1.0.4",
     "node-latex": "^3.0.0",
-    "pdf-lib": "^1.9.0"
+    "pdf-lib": "^1.9.0",
+    "svgexport": "^0.4.0"
   },
   "bin": {
     "stone": "./index.js"
