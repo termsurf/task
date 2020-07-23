@@ -1,10 +1,11 @@
 {
   "name": "@mountbuild/stone",
-  "version": "0.0.10",
+  "version": "0.1.3",
   "description": "Gathering up all the power into one tool.",
   "main": "index.js",
   "dependencies": {
     "ansi-escapes": "^4.3.1",
+    "archiver": "^5.0.0",
     "asciify-image": "^0.1.6",
     "bcrypt": "^5.0.0",
     "blessed": "^0.1.81",
@@ -16,14 +17,17 @@
     "pdf-lib": "^1.9.0",
     "public-ip": "^4.0.2",
     "svgexport": "^0.4.0",
-    "ttf2woff2": "^3.0.0"
+    "ttf2woff2": "^3.0.0",
+    "unrar": "^0.2.0"
   },
   "bin": {
-    "stone": "./index.js"
+    "stone": "./verse/start/mount.js"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^26.1.0"
+  },
   "scripts": {
-    "test": "node test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -39,7 +43,10 @@
   },
   "homepage": "https://github.com/mountbuild/stone#readme",
   "files": [
-    "index.js",
+    "verse/start/mount.js",
+    "verse/start/chart.js",
+    "verse/start/force.js",
+    "verse/start/front.js",
     "package-lock.json"
   ],
   "funding": [
@@ -47,5 +54,8 @@
       "type": "github",
       "url": "https://github.com/sponsors/mountbuild"
     }
-  ]
+  ],
+  "jest": {
+    "verbose": true
+  }
 }

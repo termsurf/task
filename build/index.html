@@ -1,0 +1,145 @@
+
+<body>
+  <style>
+    html, body {
+      padding: 0;
+      margin: 0;
+    }
+    section {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <section>
+    <div><img src='14900/png/100.png' width='2000'/></div>
+    <div id='text'></div>
+  </section>
+<script>
+  var boxes = []
+  var cursor = { x: 0, y: 0, w: 100, h: 100 }
+
+  var html = []
+  boxes.forEach(box => {
+    html.push(`<div style='width: ${box.w};height: ${box.h}; padding: 0; margin: 0; absolute: absolute; background: blue; opacity: 0.5; left: ${box.x}; top: ${box.y}'></div>`)
+    cursor = { x: box.x, y: box.y, w: box.w, h: box.h }
+  })
+
+  document.body.querySelector('#text').innerHTML = html.join('')
+
+  var isHoldingShift = false
+  window.addEventListener('keydown', e => {
+    var found
+    if (e.which == 37) {
+      found = true
+      moveLeft(e.metaKey)
+    } else if (e.which == 38) {
+      found = true
+      moveUp(e.metaKey)
+    } else if (e.which == 39) {
+      found = true
+      moveRight(e.metaKey)
+    } else if (e.which == 40) {
+      found = true
+      moveDown(e.metaKey)
+    } else if (e.which == 13) {
+      found = true
+      addBox()
+    } else if (e.which == 8) {
+      found = true
+      removeBox()
+    } else if (e.which == 16) {
+      isHoldingShift = true
+    }
+
+    if (found) {
+      e.stopImmediatePropagation()
+      e.preventDefault()
+    }
+  })
+
+  window.addEventListener('keyup', e => {
+    if (e.which == 16) {
+      isHoldingShift = false
+    }
+  })
+
+  function moveLeft(cmd) {
+    var inc = isHoldingShift ? 10 : 1
+    if (cmd) {
+      cursor.w -= inc
+    } else {
+      cursor.x -= inc
+    }
+
+    update()
+  }
+
+  function moveUp(cmd) {
+    var inc = isHoldingShift ? 10 : 1
+    if (cmd) {
+      cursor.h -= inc
+    } else {
+      cursor.y -= inc
+    }
+    update()
+  }
+
+  function moveRight(cmd) {
+    var inc = isHoldingShift ? 10 : 1
+    if (cmd) {
+      cursor.w += inc
+    } else {
+      cursor.x += inc
+    }
+    update()
+  }
+
+  function moveDown(cmd) {
+    var inc = isHoldingShift ? 10 : 1
+    if (cmd) {
+      cursor.h += inc
+    } else {
+      cursor.y += inc
+    }
+    update()
+  }
+
+  function update() {
+    lastDiv.style.left = cursor.x
+    lastDiv.style.top = cursor.y
+    lastDiv.style.width = cursor.w
+    lastDiv.style.height = cursor.h
+    lastBox.w = cursor.w;
+    lastBox.h = cursor.h;
+    lastBox.x = cursor.x;
+    lastBox.y = cursor.y;
+    console.log(JSON.stringify(boxes, null, 2))
+  }
+
+  function addBox() {
+    var div = lastDiv = document.createElement('div')
+    lastBox = {
+      w: cursor.w,
+      h: cursor.h,
+      x: cursor.x,
+      y: cursor.y
+    }
+    boxes.push(lastBox)
+    div.style.margin = '0'
+    div.style.padding = '0'
+    div.style.width = cursor.w
+    div.style.height = cursor.h
+    div.style.left = cursor.x + 100
+    div.style.top = cursor.y + 100
+    div.style.background = 'blue'
+    div.style.opacity = 0.5
+    div.style.position = 'absolute'
+    document.body.querySelector('#text').appendChild(div)
+  }
+
+  function removeBox() {
+    lastDiv.parentNode.removeChild(lastDiv)
+    lastDiv = null
+  }
+</script>
+</body>
