@@ -24,7 +24,11 @@ const force = {
   updatePDFMetadata,
   createTunnel,
   readImageMetadata,
-  removeEXIFData
+  removeEXIFData,
+  convertJPGToPNG,
+  convertPNGToJPG,
+  resizeImage,
+  replaceImageColor
 }
 
 module.exports = force
@@ -32,6 +36,33 @@ module.exports = force
 async function removeAudio({ inputPath, outputPath }) {
   await assertCommand('ffmpeg')
   child_process.execSync(`ffmpeg -y -loglevel warning -hide_banner -nostats -i "${inputPath}" -c copy -an "${outputPath}"`)
+}
+
+async function replaceImageColor({
+  inputPath,
+  outputPath,
+  startColor,
+  endColor,
+  fuzz
+}) {
+  let cmd = [`convert "${inputPath}"`]
+  if (fuzz) cmd.push(`-fuzz ${fuzz}%`)
+  cmd.push(`-fill "${endColor}" -opaque "${startColor}"`)
+  cmd.push(`"${outputPath}"`)
+
+  child_process.execSync(cmd.join(' '))
+}
+
+async function resizeImage({
+  inputPath,
+  outputPath,
+  width,
+  height,
+  force
+}) {
+  let scale = [width ? width : '', height ? height : ''].join('x')
+  let resize = `${scale}${force ? '!' : ''}`
+  child_process.execSync(`convert "${inputPath}" -resize ${resize} "${outputPath}"`)
 }
 
 async function createZip({ inputDirectory, outputPath }) {
@@ -269,6 +300,14 @@ async function updatePDFMetadata({
   const bytes = await pdfDoc.save()
 
   fs.writeFileSync(inputPath, bytes)
+}
+
+async function convertPNGToJPG({ inputPath, outputPath }) {
+  child_process.execSync(`convert "${inputPath}" "${outputPath}"`)
+}
+
+async function convertJPGToPNG({ inputPath, outputPath }) {
+  child_process.execSync(`convert "${inputPath}" "${outputPath}"`)
 }
 
 async function moveFile(oldPath, newPath) {

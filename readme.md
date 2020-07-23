@@ -71,10 +71,14 @@ Also, [track our release progress](https://github.com/mountbuild/stone/blob/buil
 To install, run this command in the terminal:
 
 ```bash
+brew cask install java
 brew install graphicsmagick
 brew install imagemagick
 brew install fontforge
+brew install ffmpeg
 brew install xetex
+brew install nasm
+brew install qemu
 npm install @mountbuild/stone -g
 ```
 
@@ -110,6 +114,13 @@ $ stone convert tmp/index.html -o tmp/index.pdf -w 2000px -h 3000px
 
 ```
 $ stone remove exif input.jpg
+```
+
+##### Resize Image
+
+
+```
+$ stone resize input.jpg -w 300 -o output.jpg
 ```
 
 #### GUI

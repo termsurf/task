@@ -4,9 +4,11 @@ const force = require('./force')
 const chart = {
   compress,
   convert,
+  replace,
   create,
   remove,
   rename,
+  resize,
   update,
   build,
   slice,
@@ -61,11 +63,18 @@ async function remove(input) {
   const type = fetchInput(input, 't', 'type')[0] || input.object[0]
   const inputPath = fetchInput(input, 'i', 'input')[0] || input.object[1]
   if (type === 'audio') {
-    await removeAudio(input)
+    await removeAudio(inputPath, input)
   } else if (type === 'exif') {
     await force.removeEXIFData({
       inputPath
     })
+  }
+}
+
+async function resize(input) {
+  const inputPath = fetchInput(input, 'i', 'input')[0] || input.object[0]
+  if (inputPath.match(/\.(?:jpe?g|png|tiff?)$/)) {
+    await resizeImage(inputPath, input)
   }
 }
 
@@ -107,6 +116,18 @@ async function convert(input) {
     await convertTTF(inputPath, input)
   } else if (inputPath.match(/\.mp4$/)) {
     await convertMP4(inputPath, input)
+  } else if (inputPath.match(/\.png$/)) {
+    await convertPNG(inputPath, input)
+  } else if (inputPath.match(/\.jpe?g$/)) {
+    await convertJPG(inputPath, input)
+  }
+}
+
+async function replace(input) {
+  const type = fetchInput(input, 't', 'type')[0] || input.object[0]
+  const inputPath = fetchInput(input, 'i', 'input')[0] || input.object[1]
+  if (type === 'color' && inputPath.match(/\.(?:jpe?g|png|tiff?)$/)) {
+    await replaceImageColor(inputPath, input)
   }
 }
 
@@ -117,11 +138,39 @@ async function compress(input) {
   }
 }
 
+async function replaceImageColor(inputPath, input) {
+  const outputPath = fetchInput(input, 'o', 'output')[0]
+  const startColor = fetchInput(input, 's', 'start')[0]
+  const endColor = fetchInput(input, 'e', 'end')[0]
+  const fuzz = fetchInput(input, 'z', 'fuzz')[0]
+  await force.replaceImageColor({
+    inputPath,
+    outputPath,
+    startColor,
+    endColor,
+    fuzz
+  })
+}
+
 async function compressMP4(inputPath, input) {
   const outputPath = fetchInput(input, 'o', 'output')[0]
   await force.compressMP4({
     inputPath,
     outputPath
+  })
+}
+
+async function resizeImage(inputPath, input) {
+  const outputPath = fetchInput(input, 'o', 'output')[0]
+  let width = fetchInput(input, 'w', 'width')[0]
+  let height = fetchInput(input, 'h', 'height')[0]
+  let f = fetchInput(input, 'f', 'force')[0]
+  await force.resizeImage({
+    inputPath,
+    outputPath,
+    width,
+    height,
+    force: f
   })
 }
 
@@ -216,8 +265,7 @@ async function renameFileList(input) {
   })
 }
 
-async function removeAudio(input) {
-  const inputPath = fetchInput(input, 'i', 'input')[0] || input.object[0]
+async function removeAudio(inputPath, input) {
   const outputPath = fetchInput(input, 'o', 'output')[0]
   await force.removeAudio({
     inputPath,
@@ -249,6 +297,26 @@ async function convertSVG(inputPath, input) {
   const outputPath = fetchInput(input, 'o', 'output')[0]
   if (outputPath.match(/\.png$/)) {
     await force.convertSVGToPNG({
+      inputPath,
+      outputPath
+    })
+  }
+}
+
+async function convertPNG(inputPath, input) {
+  const outputPath = fetchInput(input, 'o', 'output')[0]
+  if (outputPath.match(/\.jpe?g$/)) {
+    await force.convertPNGToJPG({
+      inputPath,
+      outputPath
+    })
+  }
+}
+
+async function convertJPG(inputPath, input) {
+  const outputPath = fetchInput(input, 'o', 'output')[0]
+  if (outputPath.match(/\.png$/)) {
+    await force.convertJPGToPNG({
       inputPath,
       outputPath
     })

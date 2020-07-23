@@ -17,14 +17,17 @@ async function start(argv) {
   switch (input.action) {
     case 'compress': return await chart.compress(input)
     case 'convert': return await chart.convert(input)
+    case 'replace': return await chart.replace(input)
     case 'create': return await chart.create(input)
     case 'remove': return await chart.remove(input)
     case 'rename': return await chart.rename(input)
+    case 'resize': return await chart.resize(input)
     case 'update': return await chart.update(input)
     case 'build': return await chart.build(input)
     case 'slice': return await chart.slice(input)
     case 'split': return await chart.split(input)
     case 'read': return await chart.read(input)
+    default: throw new Error(`${input.action} without handler`)
   }
 }
 
