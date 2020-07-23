@@ -34,7 +34,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: /usr/share
-          key: x-${{ runner.os }}-cache
+          key: z-${{ runner.os }}-cache
       - run: sudo apt-get update
       - run: sudo apt-get install build-essential
       - run: sudo apt-get install graphicsmagick
