@@ -72,19 +72,48 @@ Also, [track our release progress](https://github.com/mountbuild/stone/blob/buil
 
 ### Getting Started
 
-To install, run this command in the terminal:
+Requirements on Mac
 
 ```bash
 brew cask install java
+brew cask install mactex
 brew install graphicsmagick
 brew install imagemagick
 brew install fontforge
 brew install ffmpeg
-brew install xetex
-brew install nasm
-brew install qemu
-npm install @mountbuild/stone -g
+brew install node
 ```
+
+Requirements for Windows:
+
+```
+choco install graphicsmagick
+choco install imagemagick
+choco install fontforge
+choco install ffmpeg
+choco install miktex
+choco install nodejs
+```
+
+Requirements for Linux:
+
+```
+sudo apt-get update
+sudo apt-get install build-essential
+sudo apt-get install graphicsmagick
+sudo apt-get install texlive-xetex
+sudo apt-get install imagemagick
+sudo apt-get install fontforge
+sudo apt-get install ffmpeg
+sudo apt-get install nodejs
+```
+
+Finally, with these dependencies installed, you can install the stone:
+
+```
+npm install -g @mountbuild/stone
+```
+
 
 #### CLI
 

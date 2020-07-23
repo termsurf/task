@@ -40,10 +40,10 @@ jobs:
       - run: sudo apt-get update
       - run: sudo apt-get install build-essential
       - run: sudo apt-get install graphicsmagick
+      - run: sudo apt-get install texlive-xetex
       - run: sudo apt-get install imagemagick
       - run: sudo apt-get install fontforge
       - run: sudo apt-get install ffmpeg
-      - run: sudo apt-get install texlive-xetex
       - run: npm install
       - run: npm test
 
@@ -64,7 +64,6 @@ jobs:
       - run: choco install imagemagick
       - run: choco install fontforge
       - run: choco install ffmpeg
-      - run: choco install fontforge
       - run: choco install miktex
       - run: npm install
       - run: npm test
@@ -83,10 +82,10 @@ jobs:
             **/node_modules
           key: ${{ runner.os }}-cache
       - run: brew cask install java
+      - run: brew cask install mactex
       - run: brew install graphicsmagick
       - run: brew install imagemagick
       - run: brew install fontforge
       - run: brew install ffmpeg
-      - run: brew cask install mactex
       - run: npm install
       - run: npm test
