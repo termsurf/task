@@ -45,10 +45,10 @@ async function replaceImageColor({
   endColor,
   fuzz
 }) {
-  let cmd = [`convert "${inputPath}"`]
+  let cmd = [`convert "${path.resolve(inputPath)}"`]
   if (fuzz) cmd.push(`-fuzz ${fuzz}%`)
   cmd.push(`-fill "${endColor}" -opaque "${startColor}"`)
-  cmd.push(`"${outputPath}"`)
+  cmd.push(`"${path.resolve(outputPath)}"`)
 
   child_process.execSync(cmd.join(' '))
 }
@@ -62,7 +62,7 @@ async function resizeImage({
 }) {
   let scale = [width ? width : '', height ? height : ''].join('x')
   let resize = `${scale}${force ? '!' : ''}`
-  child_process.execSync(`convert "${inputPath}" -resize ${resize} "${outputPath}"`)
+  child_process.execSync(`convert "${path.resolve(inputPath)}" -resize ${resize} "${path.resolve(outputPath)}"`)
 }
 
 async function createZip({ inputDirectory, outputPath }) {
@@ -83,7 +83,7 @@ async function createZip({ inputDirectory, outputPath }) {
 }
 
 async function compressMP4({ inputPath, outputPath }) {
-  child_process.execSync(`ffmpeg -y -i ${inputPath} -vcodec h264 -acodec aac ${outputPath}`)
+  child_process.execSync(`ffmpeg -y -i "${path.resolve(inputPath)}" -vcodec h264 -acodec aac "${path.resolve(outputPath)}"`)
 }
 
 async function renameFileList({ inputPatternList, startMatch, endMatch }) {
@@ -103,14 +103,14 @@ async function convertMP4ToGif({ inputPath, outputPath, fps, width, startTime, e
   await assertCommand('ffmpeg')
   fps = fps || 10
   width = width ? String(width).replace(/px/, '') : 512
-  let cmd = [`ffmpeg -y -loglevel warning -hide_banner -nostats -i ${inputPath}`]
+  let cmd = [`ffmpeg -y -loglevel warning -hide_banner -nostats -i "${path.resolve(inputPath)}"`]
   if (startTime) {
     cmd.push(`-ss ${startTime}`)
   }
   if (endTime) {
     cmd.push(`-to ${endTime}`)
   }
-  cmd.push(`-vf "fps=${fps},scale=${width}:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 ${outputPath}`)
+  cmd.push(`-vf "fps=${fps},scale=${width}:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 "${path.resolve(outputPath)}"`)
 
   child_process.execSync(cmd.join(' '))
 }
