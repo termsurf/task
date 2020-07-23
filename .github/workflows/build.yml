@@ -1,4 +1,13 @@
+
+#
+# Name.
+#
+
 name: build
+
+#
+# Triggers.
+#
 
 on:
   pull_request:
@@ -9,6 +18,10 @@ on:
       - build
     paths-ignore:
       - '**.md'
+
+#
+# Jobs.
+#
 
 jobs:
   linux:
