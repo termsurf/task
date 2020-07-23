@@ -36,6 +36,7 @@ jobs:
           path: |
             /usr
             **/node_modules
+          key: ${{ runner.os }}-cache
       - run: sudo apt-get install build-essential
       - run: sudo apt-get install graphicsmagick
       - run: sudo apt-get install imagemagick
