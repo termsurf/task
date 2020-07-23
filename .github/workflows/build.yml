@@ -48,11 +48,17 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14.x
+      - uses: actions/cache@v2
+        with:
+          path: |
+            /usr/local/Cellar
+            **/node_modules
+          key: ${{ runner.os }}-cache
       - run: brew cask install java
       - run: brew install graphicsmagick
       - run: brew install imagemagick
       - run: brew install fontforge
       - run: brew install ffmpeg
       - run: brew cask install mactex
-      - run: npm ci
+      - run: npm install
       - run: npm test
