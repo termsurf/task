@@ -19,9 +19,24 @@ module.exports = chart
 async function read(input) {
   const inputPath = fetchInput(input, 'i', 'input')[0] || input.object[0]
   if (inputPath.match(/\.pdf/)) {
-    await force.readPDFMetadata({
+    const data = await force.readPDFMetadata({
       inputPath
     })
+    const chalk = require('chalk')
+
+    console.log(`
+  ${chalk.gray('title:')} ${data.title}
+  ${chalk.gray('author:')} ${data.author}
+  ${chalk.gray('subject:')} ${data.subject}
+  ${chalk.gray('creator:')} ${data.creator}
+  ${chalk.gray('keywords:')} ${data.keywords}
+  ${chalk.gray('producer:')} ${data.producer}
+  ${chalk.gray('creation date:')} ${data.createdDate}
+  ${chalk.gray('modification date:')} ${data.updatedDate}
+  ${chalk.gray('page count:')} ${data.pageCount}
+`)
+  } else if (inputPath.match(/\.(?:gif|jpg|jpeg|png)/i)) {
+    await readImageMetadata(inputPath, input)
   }
 }
 
@@ -37,6 +52,8 @@ async function create(input) {
   const outputPath = fetchInput(input, 'o', 'output')[0] || input.object[0]
   if (outputPath.match(/\.zip$/)) {
     await createZip(outputPath, input)
+  } else if (outputPath === 'tunnel') {
+    await createTunnel(input)
   }
 }
 
@@ -103,6 +120,17 @@ async function compressMP4(inputPath, input) {
   })
 }
 
+async function readImageMetadata(inputPath, input) {
+  const size = fetchInput(input, 's', 'size')[0]
+  const data = await force.readImageMetadata({
+    inputPath
+  })
+
+  console.log(`
+  ${data.size.width}x${data.size.height}
+`)
+}
+
 async function updatePDFMetadata(inputPath, input) {
   const outputDirectory = fetchInput(input, 'o', 'output')[0]
   const title = fetchInput(input, 't', 'title')[0]
@@ -124,6 +152,16 @@ async function updatePDFMetadata(inputPath, input) {
     createdDate: createdDate && new Date(createdDate),
     updatedDate: updatedDate && new Date(updatedDate)
   })
+}
+
+async function createTunnel(input) {
+  const port = input.object[1]
+  const url = await force.createTunnel({
+    port
+  })
+  console.log(`
+  ${url}
+`)
 }
 
 async function createZip(outputPath, input) {

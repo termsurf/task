@@ -44,7 +44,13 @@ function parse(argv) {
     const item = argv[i++]
     if (item.match(/^-+/)) {
       const name = item.replace(/^-+/, '')
-      const value = argv[i++]
+      let value = argv[i++]
+      if (!value) {
+        value = true
+      } else if (value.match(/^-+/)) {
+        i--
+        value = true
+      }
       input.detail[name] = input.detail[name] || []
       input.detail[name].push(value)
     } else {

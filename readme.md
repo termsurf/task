@@ -71,6 +71,10 @@ Also, [track our release progress](https://github.com/mountbuild/stone/blob/buil
 To install, run this command in the terminal:
 
 ```bash
+brew install graphicsmagick
+brew install imagemagick
+brew install fontforge
+brew install xetex
 npm install @mountbuild/stone -g
 ```
 

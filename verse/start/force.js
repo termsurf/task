@@ -21,7 +21,9 @@ const force = {
   createZip,
   compressMP4,
   readPDFMetadata,
-  updatePDFMetadata
+  updatePDFMetadata,
+  createTunnel,
+  readImageMetadata
 }
 
 module.exports = force
@@ -151,6 +153,12 @@ async function buildLatex(input) {
   })
 }
 
+async function createTunnel({ port }) {
+  const ngrok = require('ngrok')
+  const url = await ngrok.connect(port)
+  return url
+}
+
 async function slicePDF({ inputPath, outputPath, startPage, endPage }) {
   const { PDFDocument } = require('pdf-lib')
   const readPdf = await PDFDocument.load(fs.readFileSync(inputPath).buffer)
@@ -198,23 +206,33 @@ async function splitPDF({ inputPath, outputDirectory }) {
 
 async function readPDFMetadata({ inputPath }) {
   const { PDFDocument } = require('pdf-lib')
-  const chalk = require('chalk')
   const data = fs.readFileSync(inputPath).buffer
   const pdfDoc = await PDFDocument.load(data, {
     updateMetadata: false
   })
 
-  console.log(`
-  ${chalk.gray('title:')} ${pdfDoc.getTitle()}
-  ${chalk.gray('author:')} ${pdfDoc.getAuthor()}
-  ${chalk.gray('subject:')} ${pdfDoc.getSubject()}
-  ${chalk.gray('creator:')} ${pdfDoc.getCreator()}
-  ${chalk.gray('keywords:')} ${pdfDoc.getKeywords()}
-  ${chalk.gray('producer:')} ${pdfDoc.getProducer()}
-  ${chalk.gray('creation date:')} ${pdfDoc.getCreationDate()}
-  ${chalk.gray('modification date:')} ${pdfDoc.getModificationDate()}
-  ${chalk.gray('pages:')} ${pdfDoc.getPages().length}
-`)
+  return {
+    title: pdfDoc.getTitle(),
+    author: pdfDoc.getAuthor(),
+    subject: pdfDoc.getSubject(),
+    creator: pdfDoc.getCreator(),
+    keywords: pdfDoc.getKeywords(),
+    producer: pdfDoc.getProducer(),
+    createdDate: pdfDoc.getCreationDate(),
+    updatedDate: pdfDoc.getModificationDate(),
+    pageCount: pdfDoc.getPages().length
+  }
+}
+
+async function readImageMetadata({ inputPath }) {
+  const gm = require('gm')
+
+  return new Promise((res, rej) => {
+    gm(inputPath).size(function(err, size) {
+      if (err) return rej(err)
+      res({ size })
+    })
+  })
 }
 
 async function updatePDFMetadata({
