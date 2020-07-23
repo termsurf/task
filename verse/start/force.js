@@ -5,6 +5,10 @@ const mkdirp = require('mkdirp')
 const path = require('path')
 const fs = require('fs')
 
+const CONVERT = process.platform === 'win32'
+  ? 'convert.exe'
+  : 'convert'
+
 const force = {
   removeAudio,
   renameFileList,
@@ -44,7 +48,7 @@ async function replaceImageColor({
   endColor,
   fuzz
 }) {
-  let cmd = [`convert "${path.resolve(inputPath)}"`]
+  let cmd = [`${CONVERT} "${path.resolve(inputPath)}"`]
   if (fuzz) cmd.push(`-fuzz ${fuzz}%`)
   cmd.push(`-fill "${endColor}" -opaque "${startColor}"`)
   cmd.push(`"${path.resolve(outputPath)}"`)
@@ -61,7 +65,7 @@ async function resizeImage({
 }) {
   let scale = [width ? width : '', height ? height : ''].join('x')
   let resize = `${scale}${force ? '!' : ''}`
-  child_process.execSync(`convert "${path.resolve(inputPath)}" -resize ${resize} "${path.resolve(outputPath)}"`)
+  child_process.execSync(`${CONVERT} "${path.resolve(inputPath)}" -resize ${resize} "${path.resolve(outputPath)}"`)
 }
 
 async function createZip({ inputDirectory, outputPath }) {
@@ -296,11 +300,11 @@ async function updatePDFMetadata({
 }
 
 async function convertPNGToJPG({ inputPath, outputPath }) {
-  child_process.execSync(`convert "${path.resolve(inputPath)}" "${path.resolve(outputPath)}"`)
+  child_process.execSync(`${CONVERT} "${path.resolve(inputPath)}" "${path.resolve(outputPath)}"`)
 }
 
 async function convertJPGToPNG({ inputPath, outputPath }) {
-  child_process.execSync(`convert "${path.resolve(inputPath)}" "${path.resolve(outputPath)}"`)
+  child_process.execSync(`${CONVERT} "${path.resolve(inputPath)}" "${path.resolve(outputPath)}"`)
 }
 
 async function moveFile(oldPath, newPath) {
