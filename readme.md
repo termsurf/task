@@ -15,7 +15,7 @@
 
 <h3 align='center'>stone</h3>
 <p align='center'>
-  The Stone of Information and Computation
+  Common Actions in a Simplified Interface
 </p>
 
 <p align='center'>
@@ -88,6 +88,12 @@ $ stone split some.pdf outputDirectory
 
 ```
 $ stone slice some.pdf -s 15 -e 25 -o output.pdf
+```
+
+##### Rename recursively a bunch of files:
+
+```
+$ stone rename file -p "tmp/**/*.jpg" -i "\.jpg" -o ".png"
 ```
 
 #### GUI

@@ -1,6 +1,6 @@
 {
   "name": "@mountbuild/stone",
-  "version": "0.0.4",
+  "version": "0.0.8",
   "description": "Gathering up all the power into one tool.",
   "main": "index.js",
   "dependencies": {
@@ -9,6 +9,7 @@
     "bcrypt": "^5.0.0",
     "blessed": "^0.1.81",
     "chalk": "^4.1.0",
+    "fast-glob": "^3.2.4",
     "git-user-email": "^0.2.2",
     "mkdirp": "^1.0.4",
     "node-latex": "^3.0.0",
@@ -34,5 +35,9 @@
   "bugs": {
     "url": "https://github.com/mountbuild/stone/issues"
   },
-  "homepage": "https://github.com/mountbuild/stone#readme"
+  "homepage": "https://github.com/mountbuild/stone#readme",
+  "files": [
+    "index.js",
+    "package-lock.json"
+  ]
 }

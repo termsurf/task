@@ -5,6 +5,7 @@ const fs = require('fs')
 const svgexport = require('svgexport')
 const dirname = require('path').dirname
 const mkdirp = require('mkdirp')
+const fg = require('fast-glob')
 
 start()
 
@@ -12,6 +13,15 @@ async function start() {
   const input = parse()
 
   switch (input.action) {
+    case 'rename':
+      if (input.object[0] === 'file') {
+        await renameFiles(
+          (input.detail.p || []).concat(input.detail.pattern || []),
+          (input.detail.i && input.detail.i[0]) || (input.detail.input && input.detail.input[0]),
+          (input.detail.o && input.detail.o[0]) || (input.detail.output && input.detail.output[0])
+        )
+      }
+      break
     case 'convert':
       if (input.object[0]) {
         if (input.object[0].match(/\.svg$/)) {
@@ -44,6 +54,18 @@ async function start() {
         }
       }
       break
+  }
+}
+
+async function renameFiles(inputPatterns, inputMatch, outputMatch) {
+  const inputRegExp = new RegExp(inputMatch, 'i')
+  const entries = fg.sync(inputPatterns, { dot: true, globstar: true })
+  for (let i = 0, n = entries.length; i < n; i++) {
+    const inputEntry = entries[i]
+    const outputEntry = inputEntry.replace(inputRegExp, outputMatch)
+    const outputDir = dirname(outputEntry)
+    mkdirp.sync(outputDir)
+    await moveFile(inputEntry, outputEntry)
   }
 }
 
@@ -139,4 +161,34 @@ function parse() {
   }
 
   return input
+}
+
+async function moveFile(oldPath, newPath) {
+  return new Promise((res, rej) => {
+    fs.rename(oldPath, newPath, function (err) {
+      if (err) {
+        if (err.code === 'EXDEV') {
+          copy()
+        } else {
+          rej(err)
+        }
+        return
+      }
+      res()
+    })
+
+    function copy() {
+      var readStream = fs.createReadStream(oldPath)
+      var writeStream = fs.createWriteStream(newPath)
+
+      readStream.on('error', (err) => rej(err))
+      writeStream.on('error', (err) => rej(err))
+
+      readStream.on('close', function () {
+          fs.unlink(oldPath, () => res())
+      })
+
+      readStream.pipe(writeStream)
+    }
+  })
 }
