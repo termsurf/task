@@ -31,10 +31,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14.x
-      # - uses: actions/cache@v2
-      #   with:
-      #     path: /usr
-      #     key: ${{ runner.os }}-cache
+      - uses: actions/cache@v2
+        with:
+          path: /usr
+          key: x-${{ runner.os }}-cache
       - run: sudo apt-get update
       - run: sudo apt-get install build-essential
       - run: sudo apt-get install graphicsmagick
@@ -55,7 +55,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: C:\
-          key: ${{ runner.os }}-cache
+          key: x-${{ runner.os }}-cache
       - run: choco install graphicsmagick
       - run: choco install imagemagick
       - run: choco install fontforge
@@ -74,7 +74,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: /usr
-          key: ${{ runner.os }}-cache
+          key: x-${{ runner.os }}-cache
       - run: brew cask install java
       - run: brew cask install mactex
       - run: brew install graphicsmagick
