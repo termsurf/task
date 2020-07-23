@@ -96,6 +96,12 @@ $ stone slice some.pdf -s 15 -e 25 -o output.pdf
 $ stone rename file -p "tmp/**/*.jpg" -i "\.jpg" -o ".png"
 ```
 
+##### Convert HTML to PDF
+
+```
+$ stone convert tmp/index.html -o tmp/index.pdf -w 2000px -h 3000px
+```
+
 #### GUI
 
 Coming eventually.

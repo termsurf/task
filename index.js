@@ -6,6 +6,8 @@ const svgexport = require('svgexport')
 const dirname = require('path').dirname
 const mkdirp = require('mkdirp')
 const fg = require('fast-glob')
+const Puppeteer = require('puppeteer')
+const path = require('path')
 
 start()
 
@@ -26,6 +28,12 @@ async function start() {
       if (input.object[0]) {
         if (input.object[0].match(/\.svg$/)) {
           await convertSVG(input.object[0], (input.detail.o && input.detail.o[0]) || (input.detail.output && input.detail.output[0]))
+        } else if (input.object[0].match(/\.html/)) {
+          await convertHTML(input.object[0],
+            (input.detail.o && input.detail.o[0]) || (input.detail.output && input.detail.output[0]),
+            (input.detail.w && input.detail.w[0]) || (input.detail.width && input.detail.width[0]),
+            (input.detail.h && input.detail.h[0]) || (input.detail.height && input.detail.height[0])
+          )
         }
       }
       break
@@ -67,6 +75,33 @@ async function renameFiles(inputPatterns, inputMatch, outputMatch) {
     mkdirp.sync(outputDir)
     await moveFile(inputEntry, outputEntry)
   }
+}
+
+async function convertHTML(inputPath, outputPath, width, height) {
+  if (outputPath.match(/\.pdf$/)) {
+    await convertHTMLToPDF(inputPath, outputPath, width, height)
+  }
+}
+
+async function convertHTMLToPDF(inputPath, outputPath, width, height) {
+  const b = await Puppeteer.launch()
+  const p = await b.newPage()
+  const absolutePath = path.resolve(inputPath)
+  await p.goto(`file://${absolutePath}`)
+  const opts = {
+    scale: 1,
+    path: outputPath,
+    printBackground: true,
+    preferCSSPageSize: true
+  }
+  if (width) {
+    opts.width = width
+  }
+  if (height) {
+    opts.height = height
+  }
+  await p.pdf(opts)
+  await b.close()
 }
 
 async function convertSVG(inputPath, outputPath) {

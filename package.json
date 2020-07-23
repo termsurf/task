@@ -1,6 +1,6 @@
 {
   "name": "@mountbuild/stone",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Gathering up all the power into one tool.",
   "main": "index.js",
   "dependencies": {
