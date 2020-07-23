@@ -37,12 +37,12 @@ jobs:
           key: z-${{ runner.os }}-cache
       - run: sudo apt-get update
       - run: sudo apt-get install build-essential
-      - run: sudo apt-get install graphicsmagick
       - run: sudo apt-get install texlive-xetex
       - run: sudo apt-get install imagemagick
       - run: sudo apt-get install libreoffice
       - run: sudo apt-get install fontforge
       - run: sudo apt-get install ffmpeg
+      - run: sudo apt-get install rar
       - run: npm install
       - run: npm test
 
@@ -58,7 +58,6 @@ jobs:
       #     path: C:\ProgramData
       #     key: x-${{ runner.os }}-cache
       - run: choco install libreoffice-fresh
-      - run: choco install graphicsmagick
       - run: choco install imagemagick
       - run: choco install fontforge
       - run: choco install ffmpeg
@@ -77,12 +76,14 @@ jobs:
         with:
           path: /usr/local
           key: x-${{ runner.os }}-cache
+      - run: brew cask install rar
       - run: brew cask install java
       - run: brew cask install mactex
       - run: brew cask install libreoffice
-      - run: brew install graphicsmagick
       - run: brew install imagemagick
       - run: brew install fontforge
       - run: brew install ffmpeg
+      - run: brew install p7zip
+      - run: brew install unrar
       - run: npm install
       - run: npm test

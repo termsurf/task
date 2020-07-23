@@ -36,7 +36,9 @@ const force = {
   convertFLACToMp3,
   addAudioToVideo,
   convertDOCXToPDF,
-  convertDOCXToTXT
+  convertDOCXToTXT,
+  unpackRAR,
+  createRAR
 }
 
 module.exports = force
@@ -74,6 +76,14 @@ async function resizeImage({
   let scale = [width ? width : '', height ? height : ''].join('x')
   let resize = `${scale}${force ? '!' : ''}`
   child_process.execSync(`${CONVERT} "${path.resolve(inputPath)}" -resize ${resize} "${path.resolve(outputPath)}"`)
+}
+
+async function unpack7z({ inputPath, outputDirectory }) {
+  child_process.execSync(`7z x ${inputPath} -o ${outputDirectory}`)
+}
+
+async function create7z({ inputDirectory, outputPath }) {
+  child_process.execSync(`7z a ${outputPath} ${inputDirectory}`)
 }
 
 async function createZip({ inputDirectory, outputPath }) {
@@ -158,6 +168,43 @@ async function convertDOCXToTXT({ inputPath, outputPath }) {
       }
 
       fs.writeFileSync(outputPath, output)
+      res()
+    })
+  })
+}
+
+async function createRAR({ inputDirectory, outputPath }) {
+  child_process.execSync(`rar a "${path.resolve(outputPath)}" "${path.resolve(inputDirectory)}"`)
+}
+
+async function unpackRAR({ inputPath, outputDirectory }) {
+  const Unrar = require('unrar')
+  archive = new Unrar(inputPath)
+  return new Promise((res, rej) => {
+    archive.list(function(err, entries) {
+      for (var i = 0; i < entries.length; i++) {
+        var name = entries[i].name
+        var type = entries[i].type
+        if (type !== 'File') {
+          fs.mkdirSync(name)
+        }
+      }
+
+      for (var i = 0; i < entries.length; i++) {
+        var name = entries[i].name
+        var type = entries[i].type
+        if (type !== 'File') {
+          continue
+        }
+
+        var stream = archive.stream(name)
+        try {
+          fs.writeFileSync(name, stream)
+        } catch (e) {
+          return rej(e)
+        }
+      }
+
       res()
     })
   })
