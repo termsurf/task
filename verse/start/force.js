@@ -6,7 +6,7 @@ const path = require('path')
 const fs = require('fs')
 
 const CONVERT = process.platform === 'win32'
-  ? 'convert.exe'
+  ? 'C:\\Program Files\\ImageMagick-7.0.10-Q16\\bin\\convert.exe'
   : 'convert'
 
 const force = {
@@ -38,7 +38,8 @@ const force = {
   convertDOCXToPDF,
   convertDOCXToTXT,
   unpackRAR,
-  createRAR
+  createRAR,
+  convertTIFFToPNG
 }
 
 module.exports = force
@@ -94,6 +95,14 @@ async function convertPSDToPNG({ inputPath, outputPath }) {
   const PSD = require('psd')
   const psd = PSD.fromFile(inputPath)
   await psd.image.saveAsPng(outputPath)
+}
+
+async function convertTIFFToPNG({ inputPath, outputPath }) {
+  child_process.execSync(`${CONVERT} ${inputPath} ${outputPath}`)
+}
+
+async function convertPNGToICO({ inputPath, outputPath }) {
+  child_process.execSync(`${CONVERT} ${inputPath} ${outputPath}`)
 }
 
 async function createZip({ inputDirectory, outputPath }) {
@@ -221,10 +230,7 @@ async function unpackRAR({ inputPath, outputDirectory }) {
 }
 
 async function convertTTFToOTF({ inputPath, outputPath }) {
-  child_process.exec(`fontforge -lang=ff -c 'Open($1); Generate($2)' "${path.resolve(inputPath)}" "${path.resolve(outputPath)}"`, (err, stderr, stdout) => {
-    console.log('RESULT')
-    console.log(arguments)
-  })
+  child_process.execSync(`fontforge -lang=ff -c 'Open($1); Generate($2)' "${path.resolve(inputPath)}" "${path.resolve(outputPath)}"`, { stdio: 'ignore' })
 }
 
 async function convertTTFToEOT({ inputPath, outputPath }) {
