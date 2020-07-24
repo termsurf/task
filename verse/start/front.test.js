@@ -15,6 +15,8 @@ check(`stone update build/out/1.pdf -t foo -a bar -s baz -k one -k two`)
 check(`stone read build/image.png -s`)
 check(`stone replace color build/image.jpg -s "#cc9aff" -e "#111111" -z 20 -o build/image.new.jpg`)
 check(`stone add audio -iv build/mount.quiet.mp4 -ia build/crow.wav -o build/mount.crow.mp4 -f`)
+check(`stone convert build/wolf.psd -o build/wolf.png`)
+check(`stone convert build/bear.ai -o build/bear.svg`)
 
 function check(argv) {
   test(argv, async () => {

@@ -132,6 +132,10 @@ async function convert(input) {
     await convertFLAC(inputPath, input)
   } else if (inputPath.match(/\.docx$/i)) {
     await convertDOCX(inputPath, input)
+  } else if (inputPath.match(/\.psd$/i)) {
+    await convertPSD(inputPath, input)
+  } else if (inputPath.match(/\.ai$/i)) {
+    await convertAI(inputPath, input)
   }
 }
 
@@ -197,6 +201,26 @@ async function addAudioToVideo(input) {
     outputPath,
     fit
   })
+}
+
+async function convertPSD(inputPath, input) {
+  const outputPath = fetchInput(input, 'o', 'output')[0]
+  if (outputPath.match(/\.png$/i)) {
+    await force.convertPSDToPNG({
+      inputPath,
+      outputPath
+    })
+  }
+}
+
+async function convertAI(inputPath, input) {
+  const outputPath = fetchInput(input, 'o', 'output')[0]
+  if (outputPath.match(/\.svg$/i)) {
+    await force.convertAIToSVG({
+      inputPath,
+      outputPath
+    })
+  }
 }
 
 async function convertDOCX(inputPath, input) {

@@ -6,7 +6,7 @@ const path = require('path')
 const fs = require('fs')
 
 const CONVERT = process.platform === 'win32'
-  ? 'C:\\Program Files\\ImageMagick-7.0.10-Q16\\convert.exe'
+  ? 'C:\\Program\ Files\\ImageMagick-7.0.10-Q16\\convert.exe'
   : 'convert'
 
 const force = {
@@ -39,7 +39,9 @@ const force = {
   convertDOCXToTXT,
   unpackRAR,
   createRAR,
-  convertTIFFToPNG
+  convertTIFFToPNG,
+  convertPSDToPNG,
+  convertAIToSVG
 }
 
 module.exports = force
@@ -64,7 +66,7 @@ async function replaceImageColor({
 }
 
 async function addAudioToVideo({ inputVideoPath, inputAudioPath, outputPath, fit }) {
-  child_process.execSync(`ffmpeg -y -loglevel warning -hide_banner -nostats -strict -2 -i "${path.resolve(inputVideoPath)}" -i "${path.resolve(inputAudioPath)}" ${fit ? '-shortest ' : ''}-c:v copy -c:a libx264 "${path.resolve(outputPath)}"`)
+  child_process.execSync(`ffmpeg -y -loglevel warning -hide_banner -nostats -i "${path.resolve(inputVideoPath)}" -i "${path.resolve(inputAudioPath)}" ${fit ? '-shortest ' : ''}-c:v copy -c:a aac "${path.resolve(outputPath)}"`)
 }
 
 async function resizeImage({
@@ -88,12 +90,12 @@ async function create7z({ inputDirectory, outputPath }) {
 }
 
 async function convertAIToSVG({ inputPath, outputPath }) {
-  child_process.execSync(`inkscape -f "${inputPath}" -l "${outputPath}"`)
+  child_process.execSync(`inkscape "${path.resolve(inputPath)}" -o "${path.resolve(outputPath)}"`)
 }
 
 async function convertPSDToPNG({ inputPath, outputPath }) {
   const PSD = require('psd')
-  const psd = PSD.fromFile(inputPath)
+  const psd = await PSD.open(inputPath)
   await psd.image.saveAsPng(outputPath)
 }
 
