@@ -8,7 +8,7 @@
 <br/>
 
 <p align='center'>
-  <img src='https://github.com/mountbuild/mouse/blob/build/slate/house.png?raw=true' width='192'/>
+  <img src='https://github.com/mountbuild/mouse/blob/build/slate/house.gif?raw=true' width='192'/>
 </p>
 
 <br/>
