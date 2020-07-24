@@ -1,4 +1,0 @@
-
-import Store
-
-o()
