@@ -34,7 +34,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: /usr/share
-          key: z-${{ runner.os }}-cache
+          key: a-${{ runner.os }}-cache
       - run: sudo apt-get update
       - run: sudo apt-get install build-essential
       - run: sudo apt-get install texlive-xetex
@@ -53,10 +53,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14.x
-      # - uses: actions/cache@v2
-      #   with:
-      #     path: C:\ProgramData
-      #     key: x-${{ runner.os }}-cache
+      - uses: actions/cache@v2
+        with:
+          path: C:\ProgramData
+          key: a-${{ runner.os }}-cache
       - run: choco install libreoffice-fresh
       - run: choco install imagemagick --version 7.0.10.19
       - run: choco install fontforge
@@ -76,7 +76,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: /usr/local
-          key: x-${{ runner.os }}-cache
+          key: a-${{ runner.os }}-cache
       - run: brew cask install rar
       - run: brew cask install java
       - run: brew cask install mactex

@@ -64,7 +64,7 @@ async function replaceImageColor({
 }
 
 async function addAudioToVideo({ inputVideoPath, inputAudioPath, outputPath, fit }) {
-  child_process.execSync(`ffmpeg -y -loglevel warning -hide_banner -nostats -strict -2 -i "${path.resolve(inputVideoPath)}" -i "${path.resolve(inputAudioPath)}" ${fit ? '-shortest ' : ''}-c:v copy -c:a aac "${path.resolve(outputPath)}"`)
+  child_process.execSync(`ffmpeg -y -loglevel warning -hide_banner -nostats -strict -2 -i "${path.resolve(inputVideoPath)}" -i "${path.resolve(inputAudioPath)}" ${fit ? '-shortest ' : ''}-c:v copy -c:a libx264 "${path.resolve(outputPath)}"`)
 }
 
 async function resizeImage({
