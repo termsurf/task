@@ -44,7 +44,6 @@ jobs:
       - run: sudo apt-get install fontforge
       - run: sudo apt-get install inkscape
       - run: sudo apt-get install ffmpeg
-      - run: sudo apt-get install ufraw
       - run: sudo apt-get install rar
       - run: npm install
       - run: npm test
