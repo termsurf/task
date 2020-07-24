@@ -23,6 +23,7 @@
     "piexifjs": "^1.0.6",
     "probe-image-size": "^5.0.0",
     "public-ip": "^4.0.2",
+    "sharp": "^0.25.4",
     "svgexport": "^0.4.0",
     "ttf2woff2": "^3.0.0",
     "unrar": "^0.2.0",
