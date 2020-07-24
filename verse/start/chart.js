@@ -222,7 +222,7 @@ async function readImageMetadata(inputPath, input) {
   })
 
   console.log(`
-  ${data.size.width}x${data.size.height}
+  ${data.width}x${data.height}
 `)
 }
 

@@ -12,8 +12,9 @@ check(`stone create build/out.zip -i build/out`)
 // check(`stone compress build/mount.mp4 -o build/mount.compressed.mp4`)
 check(`stone read build/paper.pdf`)
 check(`stone update build/out/1.pdf -t foo -a bar -s baz -k one -k two`)
-// check(`stone read build/image.png -s`)
+check(`stone read build/image.png -s`)
 check(`stone replace color build/image.jpg -s "#cc9aff" -e "#111111" -z 20 -o build/image.new.jpg`)
+check(`stone add audio -iv build/mount.quiet.mp4 -ia build/crow.wav -o build/mount.crow.mp4 -f`)
 
 function check(argv) {
   test(argv, async () => {

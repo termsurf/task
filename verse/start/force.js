@@ -6,7 +6,7 @@ const path = require('path')
 const fs = require('fs')
 
 const CONVERT = process.platform === 'win32'
-  ? 'magick.exe'
+  ? 'C:\\Program Files\\ImageMagick-7.0.10.19-Q16\\convert.exe'
   : 'convert'
 
 const force = {
@@ -64,7 +64,7 @@ async function replaceImageColor({
 }
 
 async function addAudioToVideo({ inputVideoPath, inputAudioPath, outputPath, fit }) {
-  child_process.execSync(`ffmpeg -i "${path.resolve(inputVideoPath)}" -i "${path.resolve(inputAudioPath)}" ${fit ? '-shortest ' : ''}-c copy -map 0:v:0 -map 1:a:0 "${path.resolve(outputPath)}"`)
+  child_process.execSync(`ffmpeg -y -loglevel warning -hide_banner -nostats -i "${path.resolve(inputVideoPath)}" -i "${path.resolve(inputAudioPath)}" ${fit ? '-shortest ' : ''}-c:v copy -c:a aac "${path.resolve(outputPath)}"`)
 }
 
 async function resizeImage({
@@ -123,7 +123,7 @@ async function createZip({ inputDirectory, outputPath }) {
 }
 
 async function compressMP4({ inputPath, outputPath }) {
-  child_process.execSync(`ffmpeg -y -i "${path.resolve(inputPath)}" -vcodec h264 -acodec aac "${path.resolve(outputPath)}"`)
+  child_process.execSync(`ffmpeg -y -loglevel warning -hide_banner -nostats -i "${path.resolve(inputPath)}" -vcodec h264 -acodec aac "${path.resolve(outputPath)}"`)
 }
 
 async function renameFileList({ inputPatternList, startMatch, endMatch }) {
@@ -405,7 +405,7 @@ async function updatePDFMetadata({
 }
 
 async function convertFLACToMp3({ inputPath, outputPath }) {
-  child_process.execSync(`ffmpeg -i "${path.resolve(inputPath)}" -ab 320k -map_metadata 0 -id3v2_version 3 "${path.resolve(outputPath)}"`)
+  child_process.execSync(`ffmpeg -y -loglevel warning -hide_banner -nostats -i "${path.resolve(inputPath)}" -ab 320k -map_metadata 0 -id3v2_version 3 "${path.resolve(outputPath)}"`)
 }
 
 async function convertPNGToJPG({ inputPath, outputPath }) {
