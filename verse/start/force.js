@@ -6,7 +6,7 @@ const path = require('path')
 const fs = require('fs')
 
 const CONVERT = process.platform === 'win32'
-  ? 'D:\\a\\stone\\stone\\convert.exe'
+  ? 'magick.exe'
   : 'convert'
 
 const force = {
