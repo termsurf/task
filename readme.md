@@ -8,12 +8,12 @@
 <br/>
 
 <p align='center'>
-  <img src='https://github.com/mountbuild/stone/blob/build/slate/house.gif?raw=true' width='312'/>
+  <img src='https://github.com/mountbuild/wheel/blob/build/slate/house.gif?raw=true' width='312'/>
 </p>
 
 <br/>
 
-<h3 align='center'>stone</h3>
+<h3 align='center'>wheel</h3>
 <p align='center'>
   Common Actions in a Simplified Interface
 </p>
@@ -27,14 +27,13 @@
 
 <p align='center'>
   <a href='#summary'>Summary</a> •
-  <a href='#history'>History</a> •
   <a href='#contribute'>Contribute</a> •
   <a href='#getting-started'>Getting Started</a> •
   <a href='#license'>License</a>
 </p>
 
 <p align='center'>
-  <img src='https://github.com/mountbuild/stone/workflows/build/badge.svg?branch=build' />
+  <img src='https://github.com/mountbuild/wheel/workflows/build/badge.svg?branch=build' />
 </p>
 
 <br/>
@@ -43,15 +42,11 @@
 
 ### Summary
 
-Stone is a collection of all the things to make life easier on the web. In part, the Stone is a **specification** for a browser, terminal, editor, and operating system built into one. The other part is it is currently starting out as a CLI. It is meant to be a simplified interface to the digital world.
-
-### History
-
-The Stone Project was developed out of the thought of why we need so many applications when really a command prompt and some basic tools are all you really need? It is here to optimize the browsing experience significantly, starting from scratch rather than layering upon the legacy codebases. It was conceived in the winter of 2018 when trying to figure out what the CLI tool would look like for [XO](https://mount.build/xo.pdf). This required the need for a rich debugger, as well as rendering your app to the screen. If you would like an even richer debugger, it should have full text-editor support. So in the end, it became a terminal, debugger, editor, and eventually OS in one.
+The Wheel is a collections of common actions to perform in code. It provides an API and CLI for performing these actions.
 
 ### Contribute
 
-Contributions are greatly welcomed. Help us define what the ideal interface would be for a browser-terminal-editor-os app. Identify the key painpoints in the customer onboarding flow, and help us map out the best solutions. See the [contributor's guide](https://github.com/mountbuild/stone/blob/build/slate/contributing.md) for more info if you are just starting out coding. And here is a list of the contributors, just one atm.
+Contributions are greatly welcomed. Help us define what the ideal interface would be for a browser-terminal-editor-os app. Identify the key painpoints in the customer onboarding flow, and help us map out the best solutions. See the [contributor's guide](https://github.com/mountbuild/wheel/blob/build/slate/contributing.md) for more info if you are just starting out coding. And here is a list of the contributors, just one atm.
 
 <br/>
 <br/>
@@ -68,7 +63,7 @@ Contributions are greatly welcomed. Help us define what the ideal interface woul
 <br/>
 <br/>
 
-Also, [track our release progress](https://github.com/mountbuild/stone/blob/build/slate/changelog.md) if you're interested!
+Also, [track our release progress](https://github.com/mountbuild/wheel/blob/build/slate/changelog.md) if you're interested!
 
 ### Getting Started
 
@@ -110,12 +105,11 @@ sudo apt-get install ufraw
 sudo apt-get install rar
 ```
 
-Finally, with these dependencies installed, you can install the stone:
+Finally, with these dependencies installed, you can install the wheel:
 
 ```
-npm install -g @mountbuild/stone
+npm install -g @mountbuild/wheel
 ```
-
 
 ### CLI
 
@@ -124,43 +118,39 @@ Here are some helpful commands to get you started:
 #### Split a PDF into individual files.
 
 ```
-$ stone split some.pdf -o outputDirectory
+$ wheel split some.pdf -o outputDirectory
 ```
 
 #### Take a subset of a PDF.
 
 ```
-$ stone slice some.pdf -s 15 -e 25 -o output.pdf
+$ wheel slice some.pdf -s 15 -e 25 -o output.pdf
 ```
 
 #### Rename recursively a bunch of files:
 
 ```
-$ stone rename -t f -p "tmp/**/*.jpg" -s "\.jpg" -e ".png"
+$ wheel rename -t f -p "tmp/**/*.jpg" -s "\.jpg" -e ".png"
 ```
 
 #### Convert HTML to PDF
 
 ```
-$ stone convert tmp/index.html -o tmp/index.pdf -w 2000px -h 3000px
+$ wheel convert tmp/index.html -o tmp/index.pdf -w 2000px -h 3000px
 ```
 
 #### Remove All EXIF Data from a JPEG
 
 ```
-$ stone remove exif input.jpg
+$ wheel remove exif input.jpg
 ```
 
 #### Resize Image
 
 
 ```
-$ stone resize input.jpg -w 300 -o output.jpg
+$ wheel resize input.jpg -w 300 -o output.jpg
 ```
-
-### GUI
-
-Coming eventually.
 
 ### License
 
@@ -180,7 +170,7 @@ limitations under the License.
 
 ### Mount
 
-Stone is being developed by the folks at [Mount](https://mount.build), a California-based project for helping humanity master information and computation. Mount started off in the winter of 2008 as a spark of an idea, to forming a company 10 years later in the winter of 2018, to a seed of a project just beginning its development phases. Mount funds stone's development. It is entirely bootstrapped by working full time and running [Etsy](https://etsy.com/shop/mountbuild) and [Amazon](https://www.amazon.com/s?rh=p_27%3AMount+Build) shops. Also find us on [Facebook](https://www.facebook.com/mountbuild), [Twitter](https://twitter.com/mountbuild), and [LinkedIn](https://www.linkedin.com/company/mountbuild). Check out our other GitHub projects as well!
+Wheel is being developed by the folks at [Mount](https://mount.build), a California-based project for helping humanity master information and computation. Mount started off in the winter of 2008 as a spark of an idea, to forming a company 10 years later in the winter of 2018, to a seed of a project just beginning its development phases. Mount funds wheel's development. It is entirely bootstrapped by working full time and running [Etsy](https://etsy.com/shop/mountbuild) and [Amazon](https://www.amazon.com/s?rh=p_27%3AMount+Build) shops. Also find us on [Facebook](https://www.facebook.com/mountbuild), [Twitter](https://twitter.com/mountbuild), and [LinkedIn](https://www.linkedin.com/company/mountbuild). Check out our other GitHub projects as well!
 
 <p align='center'>
   <a href='https://github.com/mountbuild/bloom'>
@@ -195,9 +185,23 @@ Stone is being developed by the folks at [Mount](https://mount.build), a Califor
 </p>
 
 <p align='center'>
-  <em>From Mount you find the Stone, reaching to the Cloud.<br/>
-  No where on Earth do you feel the power of Nature all around.<br/>
-  With the Cloud so close, you can see, touch, and taste.<br/>
-  Feeding your energy to the Stone with haste.<br/>
-  Mount holds it shape, like the secret ball.</em>
+  <em></em>
+</p>
+
+<p align='center'>
+  <a href='https://twitter.com/mountbuild'>
+    <img src='https://mount.build/slate/twitter.png' height='64' />
+  </a>　　　　
+  <a href='https://etsy.com/shop/mountbuild'>
+    <img src='https://mount.build/slate/etsy.png' height='64' />
+  </a>　　　　
+  <a href='https://github.com/mountbuild'>
+    <img src='https://mount.build/slate/github.png' height='64' />
+  </a>　　　
+  <a href='https://www.amazon.com/s?rh=p_27%3AMount+Build'>
+    <img src='https://mount.build/slate/amazon.png' height='64' />
+  </a>　　　　　
+  <a href='https://www.facebook.com/mountbuild'>
+    <img src='https://mount.build/slate/facebook.png' height='64' />
+  </a>
 </p>

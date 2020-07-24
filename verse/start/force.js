@@ -42,7 +42,8 @@ const force = {
   convertTIFFToPNG,
   convertPSDToPNG,
   convertAIToSVG,
-  convertCR2ToJPG
+  convertCR2ToJPG,
+  uploadGoogleCloudStorageItem
 }
 
 module.exports = force
@@ -453,4 +454,25 @@ async function moveFile(oldPath, newPath) {
       readStream.pipe(writeStream)
     }
   })
+}
+
+async function uploadGoogleCloudStorageItem({ id, inputPath, isPublic }) {
+  const { Storage } = require('@google-cloud/storage')
+  const storage = new Storage()
+  const file = await storage.bucket('cloud.mount.build').file(id)
+
+  const data = fs.readFileSync(inputPath)
+
+  await file.save(data)
+
+  if (isPublic) {
+    await file.makePublic()
+  }
+
+  // upload(id, {
+  //   gzip: true,
+  //   metadata: {
+  //     cacheControl: 'no-cache'
+  //   }
+  // })
 }

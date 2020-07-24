@@ -10,6 +10,7 @@ const chart = {
   rename,
   resize,
   update,
+  upload,
   build,
   slice,
   split,
@@ -100,6 +101,28 @@ async function update(input) {
   if (inputPath.match(/\.pdf/)) {
     await updatePDFMetadata(inputPath, input)
   }
+}
+
+async function upload(input) {
+  const inputPath = fetchInput(input, 'i', 'input')[0] || input.object[0]
+  const isPublic = fetchInput(input, 'p', 'public')[0]
+  const array = new Array(100)
+  array[0] = randomIntFromInterval(1, 9)
+  let i = 1
+  while (i < array.length) {
+    array[i] = randomIntFromInterval(0, 9)
+    i++
+  }
+  const id = array.join('')
+  await force.uploadGoogleCloudStorageItem({
+    id,
+    inputPath,
+    isPublic
+  })
+}
+
+function randomIntFromInterval(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 async function slice(input) {

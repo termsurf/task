@@ -23,6 +23,7 @@ async function start(argv) {
     case 'rename': return await chart.rename(input)
     case 'resize': return await chart.resize(input)
     case 'update': return await chart.update(input)
+    case 'upload': return await chart.upload(input)
     case 'build': return await chart.build(input)
     case 'slice': return await chart.slice(input)
     case 'split': return await chart.split(input)
