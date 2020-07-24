@@ -136,6 +136,8 @@ async function convert(input) {
     await convertPSD(inputPath, input)
   } else if (inputPath.match(/\.ai$/i)) {
     await convertAI(inputPath, input)
+  } else if (inputPath.match(/\.cr2$/i)) {
+    await convertCR2(inputPath, input)
   }
 }
 
@@ -207,6 +209,16 @@ async function convertPSD(inputPath, input) {
   const outputPath = fetchInput(input, 'o', 'output')[0]
   if (outputPath.match(/\.png$/i)) {
     await force.convertPSDToPNG({
+      inputPath,
+      outputPath
+    })
+  }
+}
+
+async function convertCR2(inputPath, input) {
+  const outputPath = fetchInput(input, 'o', 'output')[0]
+  if (outputPath.match(/\.jpe?g$/i)) {
+    await force.convertCR2ToJPG({
       inputPath,
       outputPath
     })

@@ -22,7 +22,6 @@
     "pdf-lib": "^1.9.0",
     "piexifjs": "^1.0.6",
     "probe-image-size": "^5.0.0",
-    "psd": "^3.2.0",
     "public-ip": "^4.0.2",
     "sharp": "^0.25.4",
     "svgexport": "^0.4.0",

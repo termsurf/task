@@ -41,7 +41,8 @@ const force = {
   createRAR,
   convertTIFFToPNG,
   convertPSDToPNG,
-  convertAIToSVG
+  convertAIToSVG,
+  convertCR2ToJPG
 }
 
 module.exports = force
@@ -94,9 +95,7 @@ async function convertAIToSVG({ inputPath, outputPath }) {
 }
 
 async function convertPSDToPNG({ inputPath, outputPath }) {
-  const PSD = require('psd')
-  const psd = await PSD.open(inputPath)
-  await psd.image.saveAsPng(outputPath)
+  child_process.execSync(`${CONVERT} ${inputPath} ${outputPath}`)
 }
 
 async function convertTIFFToPNG({ inputPath, outputPath }) {
@@ -125,7 +124,11 @@ async function createZip({ inputDirectory, outputPath }) {
 }
 
 async function compressMP4({ inputPath, outputPath }) {
-  child_process.execSync(`ffmpeg -y -loglevel warning -hide_banner -nostats -i "${path.resolve(inputPath)}" -vcodec h264 -acodec aac "${path.resolve(outputPath)}"`)
+  child_process.execSync(`ffmpeg -y -loglevel warning -hide_banner -nostats -i "${path.resolve(inputPath)}" -strict -2 -vcodec h264 -acodec aac "${path.resolve(outputPath)}"`)
+}
+
+async function convertCR2ToJPG({ inputPath, outputPath }) {
+  child_process.execSync(`${CONVERT} "cr2:${path.resolve(inputPath)}" "${path.resolve(outputPath)}"`)
 }
 
 async function renameFileList({ inputPatternList, startMatch, endMatch }) {
@@ -200,7 +203,7 @@ async function createRAR({ inputDirectory, outputPath }) {
 
 async function unpackRAR({ inputPath, outputDirectory }) {
   const Unrar = require('unrar')
-  archive = new Unrar(inputPath)
+  const archive = new Unrar(inputPath)
   return new Promise((res, rej) => {
     archive.list(function(err, entries) {
       for (var i = 0; i < entries.length; i++) {

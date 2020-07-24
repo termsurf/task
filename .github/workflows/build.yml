@@ -42,6 +42,7 @@ jobs:
       - run: sudo apt-get install libreoffice
       - run: sudo apt-get install fontforge
       - run: sudo apt-get install ffmpeg
+      - run: sudo apt-get install ufraw
       - run: sudo apt-get install rar
       - run: npm install
       - run: npm test
@@ -86,5 +87,6 @@ jobs:
       - run: brew install fontforge
       - run: brew install ffmpeg
       - run: brew install p7zip
+      - run: brew install ufraw
       - run: npm install
       - run: npm test
