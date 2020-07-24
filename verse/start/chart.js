@@ -53,15 +53,17 @@ async function read(input) {
 async function build(input) {
   const inputPath = fetchInput(input, 'i', 'input')[0] || input.object[0]
 
-  if (inputPath.match(/\.tex$/)) {
+  if (inputPath.match(/\.tex$/i)) {
     await buildLatex(inputPath, input)
   }
 }
 
 async function create(input) {
   const outputPath = fetchInput(input, 'o', 'output')[0] || input.object[0]
-  if (outputPath.match(/\.zip$/)) {
+  if (outputPath.match(/\.zip$/i)) {
     await createZip(outputPath, input)
+  } else if (outputPath.match(/\.rar$/i)) {
+    await createRAR(outputPath, input)
   } else if (outputPath === 'tunnel') {
     await createTunnel(input)
   }
@@ -154,6 +156,14 @@ async function compress(input) {
   if (inputPath.match(/\.mp4$/)) {
     await compressMP4(inputPath, input)
   }
+}
+
+async function createRAR(outputPath, input) {
+  const inputDirectory = fetchInput(input, 'i', 'input')[0]
+  await force.createRAR({
+    outputPath,
+    inputDirectory
+  })
 }
 
 async function replaceImageColor(inputPath, input) {

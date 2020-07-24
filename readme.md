@@ -78,7 +78,6 @@ Requirements on Mac
 brew cask install java
 brew cask install mactex
 brew cask install libreoffice
-brew install graphicsmagick
 brew install imagemagick
 brew install fontforge
 brew install ffmpeg
@@ -88,8 +87,8 @@ brew install node
 Requirements for Windows:
 
 ```
-choco install graphicsmagick
-choco install imagemagick
+choco install libreoffice-fresh
+choco install imagemagick --version 7.0.10.19
 choco install fontforge
 choco install ffmpeg
 choco install miktex
@@ -101,12 +100,14 @@ Requirements for Linux:
 ```
 sudo apt-get update
 sudo apt-get install build-essential
-sudo apt-get install graphicsmagick
 sudo apt-get install texlive-xetex
 sudo apt-get install imagemagick
+sudo apt-get install libreoffice
 sudo apt-get install fontforge
+sudo apt-get install inkscape
 sudo apt-get install ffmpeg
-sudo apt-get install nodejs
+sudo apt-get install ufraw
+sudo apt-get install rar
 ```
 
 Finally, with these dependencies installed, you can install the stone:

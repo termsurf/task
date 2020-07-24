@@ -40,7 +40,9 @@ jobs:
       - run: sudo apt-get install texlive-xetex
       - run: sudo apt-get install imagemagick
       - run: sudo apt-get install libreoffice
+      - run: sudo apt-get install ufraw-batch
       - run: sudo apt-get install fontforge
+      - run: sudo apt-get install inkscape
       - run: sudo apt-get install ffmpeg
       - run: sudo apt-get install ufraw
       - run: sudo apt-get install rar
