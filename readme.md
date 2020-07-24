@@ -176,20 +176,20 @@ Mouse is being developed by the folks at [Mount](https://mount.build), a Califor
 <br/>
 
 <p align='center'>
-  <a href='https://github.com/mountbuild/mouse'>
-    <img src='https://github.com/mountbuild/mouse/blob/build/slate/house.png?raw=true' width='192'/>
-  </a>　　
+  <a href='https://github.com/mountbuild/wheel'>
+    <img src='https://github.com/mountbuild/wheel/blob/build/slate/world.png?raw=true' width='64'/>
+  </a>
   <a href='https://github.com/mountbuild/bloom'>
-    <img src='https://github.com/mountbuild/bloom/blob/build/slate/house.gif?raw=true' width='192'/>
+    <img src='https://github.com/mountbuild/bloom/blob/build/slate/house.gif?raw=true' width='224'/>
+  </a>
+  <a href='https://github.com/mountbuild/stone'>
+    <img src='https://github.com/mountbuild/stone/blob/build/slate/world.gif?raw=true' width='128'/>
+  </a>　　
+  <a href='https://github.com/mountbuild/mouse'>
+    <img src='https://github.com/mountbuild/mouse/blob/build/slate/world.gif?raw=true' width='128'/>
   </a>　　
   <a href='https://github.com/mountbuild/flame'>
-    <img src='https://github.com/mountbuild/flame/blob/build/slate/house.gif?raw=true' width='192'/>
-  </a>　　
-  <a href='https://github.com/mountbuild/stone'>
-    <img src='https://github.com/mountbuild/stone/blob/build/slate/house.gif?raw=true' width='192'/>
-  </a>　　
-  <a href='https://github.com/mountbuild/mouse'>
-    <img src='https://github.com/mountbuild/mouse/blob/build/slate/house.gif?raw=true' width='192'/>
+    <img src='https://github.com/mountbuild/flame/blob/build/slate/world.gif?raw=true' width='128'/>
   </a>
 </p>
 
