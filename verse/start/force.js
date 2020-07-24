@@ -86,12 +86,16 @@ async function unpack7z({ inputPath, outputDirectory }) {
   child_process.execSync(`7z x ${inputPath} -o ${outputDirectory}`)
 }
 
+async function convertVideoToAudio({ inputPath, outputPath }) {
+  `ffmpeg -i input.mp4 -vn output.mp3`
+}
+
 async function create7z({ inputDirectory, outputPath }) {
   child_process.execSync(`7z a ${outputPath} ${inputDirectory}`)
 }
 
 async function convertAIToSVG({ inputPath, outputPath }) {
-  child_process.execSync(`inkscape "${path.resolve(inputPath)}" -o "${path.resolve(outputPath)}"`)
+  child_process.execSync(`inkscape "${path.resolve(inputPath)}" -${process.platform === 'darwin' ? 'o' : 'l'} "${path.resolve(outputPath)}"`)
 }
 
 async function convertPSDToPNG({ inputPath, outputPath }) {
