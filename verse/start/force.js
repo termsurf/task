@@ -367,14 +367,13 @@ async function readPDFMetadata({ inputPath }) {
 }
 
 async function readImageMetadata({ inputPath }) {
-  const gm = require('gm')
-
-  return new Promise((res, rej) => {
-    gm(inputPath).size(function(err, size) {
-      if (err) return rej(err)
-      res({ size })
-    })
-  })
+  const probe = require('probe-image-size')
+  const data = fs.readFileSync(inputPath)
+  const meta = probe.sync(data)
+  return {
+    width: meta.width,
+    height: meta.height
+  }
 }
 
 async function updatePDFMetadata({
