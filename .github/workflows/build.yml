@@ -58,7 +58,7 @@ jobs:
       #     path: C:\ProgramData
       #     key: x-${{ runner.os }}-cache
       - run: choco install libreoffice-fresh
-      - run: choco install imagemagick --version 7.0.10-Q16
+      - run: choco install imagemagick --install-directory=D:\a\stone\stone
       - run: choco install fontforge
       - run: choco install ffmpeg
       - run: choco install miktex

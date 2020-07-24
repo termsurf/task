@@ -6,7 +6,7 @@ const path = require('path')
 const fs = require('fs')
 
 const CONVERT = process.platform === 'win32'
-  ? 'C:\\Program Files\\ImageMagick-7.0.10-Q16\\bin\\convert.exe'
+  ? 'D:\\a\\stone\\stone\\convert.exe'
   : 'convert'
 
 const force = {
