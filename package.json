@@ -1,8 +1,8 @@
 {
-  "name": "@mountbuild/wheel",
-  "version": "0.1.5",
+  "name": "@mountbuild/mouse",
+  "version": "0.2.0",
   "description": "Gathering up all the power into one tool.",
-  "main": "index.js",
+  "main": "verse/mount.js",
   "dependencies": {
     "@google-cloud/storage": "^5.1.2",
     "ansi-escapes": "^4.3.1",
@@ -31,7 +31,7 @@
     "which": "^2.0.2"
   },
   "bin": {
-    "wheel": "./verse/start/mount.js"
+    "mouse": "./verse/front.js"
   },
   "devDependencies": {
     "jest": "^26.1.0"
@@ -41,7 +41,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mountbuild/wheel.git"
+    "url": "git+https://github.com/mountbuild/mouse.git"
   },
   "keywords": [
     "cli"
@@ -49,14 +49,14 @@
   "author": "Lance Pollard <lp@elk.fm>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/mountbuild/wheel/issues"
+    "url": "https://github.com/mountbuild/mouse/issues"
   },
-  "homepage": "https://github.com/mountbuild/wheel#readme",
+  "homepage": "https://github.com/mountbuild/mouse#readme",
   "files": [
-    "verse/start/mount.js",
-    "verse/start/chart.js",
-    "verse/start/force.js",
-    "verse/start/front.js",
+    "verse/build.js",
+    "verse/force.js",
+    "verse/front.js",
+    "verse/mount.js",
     "package-lock.json"
   ],
   "funding": [
