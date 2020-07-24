@@ -1,5 +1,5 @@
 {
-  "name": "@mountbuild/stone",
+  "name": "@mountbuild/wheel",
   "version": "0.1.5",
   "description": "Gathering up all the power into one tool.",
   "main": "index.js",
@@ -31,7 +31,7 @@
     "which": "^2.0.2"
   },
   "bin": {
-    "stone": "./verse/start/mount.js"
+    "wheel": "./verse/start/mount.js"
   },
   "devDependencies": {
     "jest": "^26.1.0"
@@ -41,7 +41,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mountbuild/stone.git"
+    "url": "git+https://github.com/mountbuild/wheel.git"
   },
   "keywords": [
     "cli"
@@ -49,9 +49,9 @@
   "author": "Lance Pollard <lp@elk.fm>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/mountbuild/stone/issues"
+    "url": "https://github.com/mountbuild/wheel/issues"
   },
-  "homepage": "https://github.com/mountbuild/stone#readme",
+  "homepage": "https://github.com/mountbuild/wheel#readme",
   "files": [
     "verse/start/mount.js",
     "verse/start/chart.js",
