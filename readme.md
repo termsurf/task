@@ -218,7 +218,7 @@ Mouse is being developed by the folks at [Mount](https://mount.build), a Califor
   </a>　　　
   <a href='https://www.amazon.com/s?rh=p_27%3AMount+Build'>
     <img src='https://mount.build/slate/amazon.png' height='64' />
-  </a>　　　　　
+  </a>　　　
   <a href='https://www.facebook.com/mountbuild'>
     <img src='https://mount.build/slate/facebook.png' height='64' />
   </a>
