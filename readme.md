@@ -177,7 +177,7 @@ Mouse is being developed by the folks at [Mount](https://mount.build), a Califor
 
 <p align='center'>
   <a href='https://github.com/mountbuild/wheel'>
-    <img src='https://github.com/mountbuild/wheel/blob/build/slate/world.png?raw=true' width='64'/>
+    <img src='https://github.com/mountbuild/wheel/blob/build/slate/world.gif?raw=true' width='64'/>
   </a>
   <a href='https://github.com/mountbuild/bloom'>
     <img src='https://github.com/mountbuild/bloom/blob/build/slate/house.gif?raw=true' width='224'/>
