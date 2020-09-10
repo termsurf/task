@@ -1,6 +1,6 @@
 {
   "name": "@mountbuild/mouse",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Gathering up all the power into one tool.",
   "main": "verse/mount.js",
   "dependencies": {
@@ -10,6 +10,7 @@
     "asciify-image": "^0.1.6",
     "bcrypt": "^5.0.0",
     "blessed": "^0.1.81",
+    "jpeg-js": ">=0.4.0",
     "chalk": "^4.1.0",
     "fast-glob": "^3.2.4",
     "git-user-email": "^0.2.2",
