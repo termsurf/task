@@ -20,6 +20,7 @@
     "localtunnel": "^2.0.0",
     "mkdirp": "^1.0.4",
     "ngrok": "^3.2.7",
+    "node-forge": ">=0.10.0",
     "node-latex": "^3.0.0",
     "pdf-lib": "^1.9.0",
     "piexifjs": "^1.0.6",
