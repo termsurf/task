@@ -1,8 +1,8 @@
 {
-  "name": "@mountbuild/mouse",
-  "version": "0.2.2",
+  "name": "@lancejpollard/act",
+  "version": "0.1.0",
   "description": "Gathering up all the power into one tool.",
-  "main": "verse/mount.js",
+  "main": "src/mount.js",
   "dependencies": {
     "@google-cloud/storage": "^5.1.2",
     "ansi-escapes": "^4.3.1",
@@ -33,7 +33,7 @@
     "which": "^2.0.2"
   },
   "bin": {
-    "mouse": "./verse/front.js"
+    "act": "./src/front.js"
   },
   "devDependencies": {
     "jest": "^26.1.0"
@@ -43,7 +43,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mountbuild/mouse.git"
+    "url": "git+https://github.com/lancejpollard/act.git"
   },
   "keywords": [
     "cli"
@@ -51,20 +51,20 @@
   "author": "Lance Pollard <lp@elk.fm>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/mountbuild/mouse/issues"
+    "url": "https://github.com/lancejpollard/act/issues"
   },
-  "homepage": "https://github.com/mountbuild/mouse#readme",
+  "homepage": "https://github.com/lancejpollard/act#readme",
   "files": [
-    "verse/build.js",
-    "verse/force.js",
-    "verse/front.js",
-    "verse/mount.js",
+    "src/build.js",
+    "src/force.js",
+    "src/front.js",
+    "src/mount.js",
     "package-lock.json"
   ],
   "funding": [
     {
       "type": "github",
-      "url": "https://github.com/sponsors/mountbuild"
+      "url": "https://github.com/sponsors/lancejpollard"
     }
   ],
   "jest": {
