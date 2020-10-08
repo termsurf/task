@@ -23,10 +23,6 @@
   <a href='#license'>License</a>
 </p>
 
-<p align='center'>
-  <img src='https://github.com/lancejpollard/act/workflows/build/badge.svg?branch=build' />
-</p>
-
 <br/>
 <br/>
 <br/>
@@ -121,27 +117,6 @@ $ act remove exif input.jpg
 ```
 $ act resize input.jpg -w 300 -o output.jpg
 ```
-
-### Contribute
-
-Contributions are greatly welcomed. Help us define what the ideal interface would be for a browser-terminal-editor-os app. Identify the key painpoints in the customer onboarding flow, and help us map out the best solutions. See the [contributor's guide](https://github.com/lancejpollard/act/blob/build/slate/contributing.md) for more info if you are just starting out coding. And here is a list of the contributors, just one atm.
-
-<br/>
-<br/>
-<br/>
-
-<p align='center'>
-  <!-- https://api.github.com/users/lancejpollard -->
-  <a href='https://github.com/lancejpollard'>
-    <img alt='lancejpollard' src='https://avatars0.githubusercontent.com/u/28718?v=4&s=117' width='117' />
-  </a>
-</p>
-
-<br/>
-<br/>
-<br/>
-
-Also, [track our release progress](https://github.com/lancejpollard/act/blob/build/slate/changelog.md) if you're interested!
 
 ### License
 
