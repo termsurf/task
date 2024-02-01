@@ -1,0 +1,2966 @@
+{
+  "abench": {
+    "label": "Benchmark part of a filtergraph.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "acompressor": {
+    "label": "Audio compressor.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "acontrast": {
+    "label": "Simple audio dynamic range compression/expansion filter.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "acopy": {
+    "label": "Copy the input audio unchanged to the output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "acue": {
+    "label": "Delay filtering to match a cue.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "acrossfade": {
+    "label": "Cross fade two input audio streams.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "acrossover": {
+    "label": "Split audio into per-bands streams.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "acrusher": {
+    "label": "Reduce audio bit resolution.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "adeclick": {
+    "label": "Remove impulsive noise from input audio.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "adeclip": {
+    "label": "Remove clipping from input audio.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "adecorrelate": {
+    "label": "Apply decorrelation to input audio.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "adelay": {
+    "label": "Delay one or more audio channels.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "adenorm": {
+    "label": "Remedy denormals by adding extremely low-level noise.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "aderivative": {
+    "label": "Compute derivative of input audio.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "adrc": {
+    "label": "Audio Spectral Dynamic Range Controller.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "adynamicequalizer": {
+    "label": "Apply Dynamic Equalization of input audio.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "adynamicsmooth": {
+    "label": "Apply Dynamic Smoothing of input audio.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "aecho": {
+    "label": "Add echoing to the audio.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "aemphasis": {
+    "label": "Audio emphasis.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "aeval": {
+    "label": "Filter audio signal according to a specified expression.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "aexciter": {
+    "label": "Enhance high frequency part of audio.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "afade": {
+    "label": "Fade in/out input audio.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "afftdn": {
+    "label": "Denoise audio samples using FFT.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "afftfilt": {
+    "label": "Apply arbitrary expressions to samples in frequency domain.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "afir": {
+    "label": "Apply Finite Impulse Response filter with supplied coefficients in additional stream(s).",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "aformat": {
+    "label": "Convert the input audio to one of the specified formats.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "afreqshift": {
+    "label": "Apply frequency shifting to input audio.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "afwtdn": {
+    "label": "Denoise audio stream using Wavelets.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "agate": {
+    "label": "Audio gate.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "aiir": {
+    "label": "Apply Infinite Impulse Response filter with supplied coefficients.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "aintegral": {
+    "label": "Compute integral of input audio.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "ainterleave": {
+    "label": "Temporally interleave audio inputs.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "alatency": {
+    "label": "Report audio filtering latency.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "alimiter": {
+    "label": "Audio lookahead limiter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "allpass": {
+    "label": "Apply a two-pole all-pass filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "aloop": {
+    "label": "Loop audio samples.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "amerge": {
+    "label": "Merge two or more audio streams into a single multi-channel stream.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "ametadata": {
+    "label": "Manipulate audio frame metadata.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "amix": {
+    "label": "Audio mixing.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "amultiply": {
+    "label": "Multiply two audio streams.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "anequalizer": {
+    "label": "Apply high-order audio parametric multi band equalizer.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "anlmdn": {
+    "label": "Reduce broadband noise from stream using Non-Local Means.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "anlmf": {
+    "label": "Apply Normalized Least-Mean-Fourth algorithm to first audio stream.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "anlms": {
+    "label": "Apply Normalized Least-Mean-Squares algorithm to first audio stream.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "anull": {
+    "label": "Pass the source unchanged to the output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "apad": {
+    "label": "Pad audio with silence.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "aperms": {
+    "label": "Set permissions for the output audio frame.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "aphaser": {
+    "label": "Add a phasing effect to the audio.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "aphaseshift": {
+    "label": "Apply phase shifting to input audio.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "apsnr": {
+    "label": "Measure Audio Peak Signal-to-Noise Ratio.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "apsyclip": {
+    "label": "Audio Psychoacoustic Clipper.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "apulsator": {
+    "label": "Audio pulsator.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "arealtime": {
+    "label": "Slow down filtering to match realtime.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "aresample": {
+    "label": "Resample audio data.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "areverse": {
+    "label": "Reverse an audio clip.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "arls": {
+    "label": "Apply Recursive Least Squares algorithm to first audio stream.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "arnndn": {
+    "label": "Reduce noise from speech using Recurrent Neural Networks.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "asdr": {
+    "label": "Measure Audio Signal-to-Distortion Ratio.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "asegment": {
+    "label": "Segment audio stream.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "aselect": {
+    "label": "Select audio frames to pass in output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "asendcmd": {
+    "label": "Send commands to filters.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "asetnsamples": {
+    "label": "Set the number of samples for each output audio frames.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "asetpts": {
+    "label": "Set PTS for the output audio frame.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "asetrate": {
+    "label": "Change the sample rate without altering the data.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "asettb": {
+    "label": "Set timebase for the audio output link.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "ashowinfo": {
+    "label": "Show textual information for each audio frame.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "asidedata": {
+    "label": "Manipulate audio frame side data.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "asisdr": {
+    "label": "Measure Audio Scale-Invariant Signal-to-Distortion Ratio.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "asoftclip": {
+    "label": "Audio Soft Clipper.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "aspectralstats": {
+    "label": "Show frequency domain statistics about audio frames.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "asplit": {
+    "label": "Pass on the audio input to N audio outputs.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "astats": {
+    "label": "Show time domain statistics about audio frames.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "astreamselect": {
+    "label": "Select audio streams",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "asubboost": {
+    "label": "Boost subwoofer frequencies.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "asubcut": {
+    "label": "Cut subwoofer frequencies.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "asupercut": {
+    "label": "Cut super frequencies.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "asuperpass": {
+    "label": "Apply high order Butterworth band-pass filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "asuperstop": {
+    "label": "Apply high order Butterworth band-stop filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "atempo": {
+    "label": "Adjust audio tempo.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "atilt": {
+    "label": "Apply spectral tilt to audio.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "atrim": {
+    "label": "Pick one continuous section from the input, drop the rest.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "axcorrelate": {
+    "label": "Cross-correlate two audio streams.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "azmq": {
+    "label": "Receive commands through ZMQ and broker them to filters.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "bandpass": {
+    "label": "Apply a two-pole Butterworth band-pass filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "bandreject": {
+    "label": "Apply a two-pole Butterworth band-reject filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "bass": {
+    "label": "Boost or cut lower frequencies.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "biquad": {
+    "label": "Apply a biquad IIR filter with the given coefficients.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "channelmap": {
+    "label": "Remap audio channels.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "channelsplit": {
+    "label": "Split audio into per-channel streams.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "chorus": {
+    "label": "Add a chorus effect to the audio.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "compand": {
+    "label": "Compress or expand audio dynamic range.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "compensationdelay": {
+    "label": "Audio Compensation Delay Line.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "crossfeed": {
+    "label": "Apply headphone crossfeed filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "crystalizer": {
+    "label": "Simple audio noise sharpening filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "dcshift": {
+    "label": "Apply a DC shift to the audio.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "deesser": {
+    "label": "Apply de-essing to the audio.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "dialoguenhance": {
+    "label": "Audio Dialogue Enhancement.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "drmeter": {
+    "label": "Measure audio dynamic range.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "dynaudnorm": {
+    "label": "Dynamic Audio Normalizer.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "earwax": {
+    "label": "Widen the stereo image.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "ebur128": {
+    "label": "EBU R128 scanner.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "equalizer": {
+    "label": "Apply two-pole peaking equalization (EQ) filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "extrastereo": {
+    "label": "Increase difference between stereo audio channels.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "firequalizer": {
+    "label": "Finite Impulse Response Equalizer.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "flanger": {
+    "label": "Apply a flanging effect to the audio.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "haas": {
+    "label": "Apply Haas Stereo Enhancer.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "hdcd": {
+    "label": "Apply High Definition Compatible Digital (HDCD) decoding.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "headphone": {
+    "label": "Apply headphone binaural spatialization with HRTFs in additional streams.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "highpass": {
+    "label": "Apply a high-pass filter with 3dB point frequency.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "highshelf": {
+    "label": "Apply a high shelf filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "join": {
+    "label": "Join multiple audio streams into multi-channel output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "loudnorm": {
+    "label": "EBU R128 loudness normalization",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "lowpass": {
+    "label": "Apply a low-pass filter with 3dB point frequency.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "lowshelf": {
+    "label": "Apply a low shelf filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "mcompand": {
+    "label": "Multiband Compress or expand audio dynamic range.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "pan": {
+    "label": "Remix channels with coefficients (panning).",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "replaygain": {
+    "label": "ReplayGain scanner.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "rubberband": {
+    "label": "Apply time-stretching and pitch-shifting.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "sidechaincompress": {
+    "label": "Sidechain compressor.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "sidechaingate": {
+    "label": "Audio sidechain gate.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "silencedetect": {
+    "label": "Detect silence.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "silenceremove": {
+    "label": "Remove silence.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "speechnorm": {
+    "label": "Speech Normalizer.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "stereotools": {
+    "label": "Apply various stereo tools.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "stereowiden": {
+    "label": "Apply stereo widening effect.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "superequalizer": {
+    "label": "Apply 18 band equalization filter.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "surround": {
+    "label": "Apply audio surround upmix filter.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "tiltshelf": {
+    "label": "Apply a tilt shelf filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "treble": {
+    "label": "Boost or cut upper frequencies.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "tremolo": {
+    "label": "Apply tremolo effect.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "vibrato": {
+    "label": "Apply vibrato effect.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "virtualbass": {
+    "label": "Audio Virtual Bass.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "volume": {
+    "label": "Change input volume.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "volumedetect": {
+    "label": "Detect audio volume.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "aevalsrc": {
+    "label": "Generate an audio signal generated by an expression.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "afdelaysrc": {
+    "label": "Generate a Fractional delay FIR coefficients.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "afireqsrc": {
+    "label": "Generate a FIR equalizer coefficients audio stream.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "afirsrc": {
+    "label": "Generate a FIR coefficients audio stream.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "anoisesrc": {
+    "label": "Generate a noise audio signal.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "anullsrc": {
+    "label": "Null audio source, return empty audio frames.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "hilbert": {
+    "label": "Generate a Hilbert transform FIR coefficients.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "sinc": {
+    "label": "Generate a sinc kaiser-windowed low-pass, high-pass, band-pass, or band-reject FIR coefficients.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "sine": {
+    "label": "Generate sine wave audio signal.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "anullsink": {
+    "label": "Do absolutely nothing with the input audio.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "addroi": {
+    "label": "Add region of interest to frame.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "alphaextract": {
+    "label": "Extract an alpha channel as a grayscale image component.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "alphamerge": {
+    "label": "Copy the luma value of the second input into the alpha channel of the first input.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "amplify": {
+    "label": "Amplify changes between successive video frames.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "ass": {
+    "label": "Render ASS subtitles onto input video using the libass library.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "atadenoise": {
+    "label": "Apply an Adaptive Temporal Averaging Denoiser.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "avgblur": {
+    "label": "Apply Average Blur filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "backgroundkey": {
+    "label": "Turns a static background into transparency.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "bbox": {
+    "label": "Compute bounding box for each frame.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "bench": {
+    "label": "Benchmark part of a filtergraph.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "bilateral": {
+    "label": "Apply Bilateral filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "bitplanenoise": {
+    "label": "Measure bit plane noise.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "blackdetect": {
+    "label": "Detect video intervals that are (almost) black.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "blackframe": {
+    "label": "Detect frames that are (almost) black.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "blend": {
+    "label": "Blend two video frames into each other.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "blockdetect": {
+    "label": "Blockdetect filter.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "blurdetect": {
+    "label": "Blurdetect filter.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "bm3d": {
+    "label": "Block-Matching 3D denoiser.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "boxblur": {
+    "label": "Blur the input.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "bwdif": {
+    "label": "Deinterlace the input image.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "cas": {
+    "label": "Contrast Adaptive Sharpen.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "ccrepack": {
+    "label": "Repack CEA-708 closed caption metadata",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "chromahold": {
+    "label": "Turns a certain color range into gray.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "chromakey": {
+    "label": "Turns a certain color into transparency. Operates on YUV colors.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "chromanr": {
+    "label": "Reduce chrominance noise.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "chromashift": {
+    "label": "Shift chroma.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "ciescope": {
+    "label": "Video CIE scope.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "codecview": {
+    "label": "Visualize information about some codecs.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "colorbalance": {
+    "label": "Adjust the color balance.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "colorchannelmixer": {
+    "label": "Adjust colors by mixing color channels.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "colorcontrast": {
+    "label": "Adjust color contrast between RGB components.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "colorcorrect": {
+    "label": "Adjust color white balance selectively for blacks and whites.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "colorize": {
+    "label": "Overlay a solid color on the video stream.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "colorkey": {
+    "label": "Turns a certain color into transparency. Operates on RGB colors.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "colorhold": {
+    "label": "Turns a certain color range into gray. Operates on RGB colors.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "colorlevels": {
+    "label": "Adjust the color levels.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "colormap": {
+    "label": "Apply custom Color Maps to video stream.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "colormatrix": {
+    "label": "Convert color matrix.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "colorspace": {
+    "label": "Convert between colorspaces.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "colortemperature": {
+    "label": "Adjust color temperature of video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "convolution": {
+    "label": "Apply convolution filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "convolve": {
+    "label": "Convolve first video stream with second video stream.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "copy": {
+    "label": "Copy the input video unchanged to the output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "coreimage": {
+    "label": "Video filtering using CoreImage API.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "corr": {
+    "label": "Calculate the correlation between two video streams.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "cover_rect": {
+    "label": "Find and cover a user specified object.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "crop": {
+    "label": "Crop the input video.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "cropdetect": {
+    "label": "Auto-detect crop size.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "cue": {
+    "label": "Delay filtering to match a cue.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "curves": {
+    "label": "Adjust components curves.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "datascope": {
+    "label": "Video data analysis.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "dblur": {
+    "label": "Apply Directional Blur filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "dctdnoiz": {
+    "label": "Denoise frames using 2D DCT.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "deband": {
+    "label": "Debands video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "deblock": {
+    "label": "Deblock video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "decimate": {
+    "label": "Decimate frames (post field matching filter).",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "deconvolve": {
+    "label": "Deconvolve first video stream with second video stream.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "dedot": {
+    "label": "Reduce cross-luminance and cross-color.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "deflate": {
+    "label": "Apply deflate effect.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "deflicker": {
+    "label": "Remove temporal frame luminance variations.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "dejudder": {
+    "label": "Remove judder produced by pullup.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "delogo": {
+    "label": "Remove logo from input video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "derain": {
+    "label": "Apply derain filter to the input.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "deshake": {
+    "label": "Stabilize shaky video.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "despill": {
+    "label": "Despill video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "detelecine": {
+    "label": "Apply an inverse telecine pattern.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "dilation": {
+    "label": "Apply dilation effect.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "displace": {
+    "label": "Displace pixels.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "dnn_classify": {
+    "label": "Apply DNN classify filter to the input.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "dnn_detect": {
+    "label": "Apply DNN detect filter to the input.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "dnn_processing": {
+    "label": "Apply DNN processing filter to the input.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "doubleweave": {
+    "label": "Weave input video fields into double number of frames.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "drawbox": {
+    "label": "Draw a colored box on the input video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "drawgraph": {
+    "label": "Draw a graph using input video metadata.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "drawgrid": {
+    "label": "Draw a colored grid on the input video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "drawtext": {
+    "label": "Draw text on top of video frames using libfreetype library.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "edgedetect": {
+    "label": "Detect and draw edge.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "elbg": {
+    "label": "Apply posterize effect, using the ELBG algorithm.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "entropy": {
+    "label": "Measure video frames entropy.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "epx": {
+    "label": "Scale the input using EPX algorithm.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "eq": {
+    "label": "Adjust brightness, contrast, gamma, and saturation.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "erosion": {
+    "label": "Apply erosion effect.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "estdif": {
+    "label": "Apply Edge Slope Tracing deinterlace.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "exposure": {
+    "label": "Adjust exposure of the video stream.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "extractplanes": {
+    "label": "Extract planes as grayscale frames.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "fade": {
+    "label": "Fade in/out input video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "feedback": {
+    "label": "Apply feedback video filter.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "fftdnoiz": {
+    "label": "Denoise frames using 3D FFT.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "fftfilt": {
+    "label": "Apply arbitrary expressions to pixels in frequency domain.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "field": {
+    "label": "Extract a field from the input video.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "fieldhint": {
+    "label": "Field matching using hints.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "fieldmatch": {
+    "label": "Field matching for inverse telecine.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "fieldorder": {
+    "label": "Set the field order.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "fillborders": {
+    "label": "Fill borders of the input video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "find_rect": {
+    "label": "Find a user specified object.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "floodfill": {
+    "label": "Fill area with same color with another color.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "format": {
+    "label": "Convert the input video to one of the specified pixel formats.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "fps": {
+    "label": "Force constant framerate.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "framepack": {
+    "label": "Generate a frame packed stereoscopic video.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "framerate": {
+    "label": "Upsamples or downsamples progressive source between specified frame rates.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "framestep": {
+    "label": "Select one frame every N frames.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "freezedetect": {
+    "label": "Detects frozen video input.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "freezeframes": {
+    "label": "Freeze video frames.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "frei0r": {
+    "label": "Apply a frei0r effect.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "fspp": {
+    "label": "Apply Fast Simple Post-processing filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "gblur": {
+    "label": "Apply Gaussian Blur filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "geq": {
+    "label": "Apply generic equation to each pixel.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "gradfun": {
+    "label": "Debands video quickly using gradients.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "graphmonitor": {
+    "label": "Show various filtergraph stats.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "grayworld": {
+    "label": "Adjust white balance using LAB gray world algorithm",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "greyedge": {
+    "label": "Estimates scene illumination by grey edge assumption.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "guided": {
+    "label": "Apply Guided filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "haldclut": {
+    "label": "Adjust colors using a Hald CLUT.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "hflip": {
+    "label": "Horizontally flip the input video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "histeq": {
+    "label": "Apply global color histogram equalization.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "histogram": {
+    "label": "Compute and draw a histogram.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "hqdn3d": {
+    "label": "Apply a High Quality 3D Denoiser.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "hqx": {
+    "label": "Scale the input by 2, 3 or 4 using the hq*x magnification algorithm.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "hstack": {
+    "label": "Stack video inputs horizontally.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "hsvhold": {
+    "label": "Turns a certain HSV range into gray.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "hsvkey": {
+    "label": "Turns a certain HSV range into transparency. Operates on YUV colors.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "hue": {
+    "label": "Adjust the hue and saturation of the input video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "huesaturation": {
+    "label": "Apply hue-saturation-intensity adjustments.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "hwdownload": {
+    "label": "Download a hardware frame to a normal frame",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "hwmap": {
+    "label": "Map hardware frames",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "hwupload": {
+    "label": "Upload a normal frame to a hardware frame",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "hysteresis": {
+    "label": "Grow first stream into second stream by connecting components.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "identity": {
+    "label": "Calculate the Identity between two video streams.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "idet": {
+    "label": "Interlace detect Filter.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "il": {
+    "label": "Deinterleave or interleave fields.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "inflate": {
+    "label": "Apply inflate effect.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "interlace": {
+    "label": "Convert progressive video into interlaced.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "interleave": {
+    "label": "Temporally interleave video inputs.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "kerndeint": {
+    "label": "Apply kernel deinterlacing to the input.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "kirsch": {
+    "label": "Apply kirsch operator.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "lagfun": {
+    "label": "Slowly update darker pixels.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "latency": {
+    "label": "Report video filtering latency.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "lenscorrection": {
+    "label": "Rectify the image by correcting for lens distortion.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "libvmaf": {
+    "label": "Calculate the VMAF between two video streams.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "limitdiff": {
+    "label": "Apply filtering with limiting difference.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "limiter": {
+    "label": "Limit pixels components to the specified range.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "loop": {
+    "label": "Loop video frames.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "lumakey": {
+    "label": "Turns a certain luma into transparency.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "lut": {
+    "label": "Compute and apply a lookup table to the RGB/YUV input video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "lut1d": {
+    "label": "Adjust colors using a 1D LUT.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "lut2": {
+    "label": "Compute and apply a lookup table from two video inputs.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "lut3d": {
+    "label": "Adjust colors using a 3D LUT.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "lutrgb": {
+    "label": "Compute and apply a lookup table to the RGB input video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "lutyuv": {
+    "label": "Compute and apply a lookup table to the YUV input video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "maskedclamp": {
+    "label": "Clamp first stream with second stream and third stream.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "maskedmax": {
+    "label": "Apply filtering with maximum difference of two streams.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "maskedmerge": {
+    "label": "Merge first stream with second stream using third stream as mask.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "maskedmin": {
+    "label": "Apply filtering with minimum difference of two streams.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "maskedthreshold": {
+    "label": "Pick pixels comparing absolute difference of two streams with threshold.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "maskfun": {
+    "label": "Create Mask.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "mcdeint": {
+    "label": "Apply motion compensating deinterlacing.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "median": {
+    "label": "Apply Median filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "mergeplanes": {
+    "label": "Merge planes.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "mestimate": {
+    "label": "Generate motion vectors.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "metadata": {
+    "label": "Manipulate video frame metadata.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "midequalizer": {
+    "label": "Apply Midway Equalization.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "minterpolate": {
+    "label": "Frame rate conversion using Motion Interpolation.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "mix": {
+    "label": "Mix video inputs.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "monochrome": {
+    "label": "Convert video to gray using custom color filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "morpho": {
+    "label": "Apply Morphological filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "mpdecimate": {
+    "label": "Remove near-duplicate frames.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "msad": {
+    "label": "Calculate the MSAD between two video streams.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "multiply": {
+    "label": "Multiply first video stream with second video stream.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "negate": {
+    "label": "Negate input video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "nlmeans": {
+    "label": "Non-local means denoiser.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "nnedi": {
+    "label": "Apply neural network edge directed interpolation intra-only deinterlacer.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "noformat": {
+    "label": "Force libavfilter not to use any of the specified pixel formats for the input to the next filter.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "noise": {
+    "label": "Add noise.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "normalize": {
+    "label": "Normalize RGB video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "null": {
+    "label": "Pass the source unchanged to the output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "ocr": {
+    "label": "Optical Character Recognition.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "oscilloscope": {
+    "label": "2D Video Oscilloscope.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "overlay": {
+    "label": "Overlay a video source on top of the input.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "owdenoise": {
+    "label": "Denoise using wavelets.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "pad": {
+    "label": "Pad the input video.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "palettegen": {
+    "label": "Find the optimal palette for a given stream.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "paletteuse": {
+    "label": "Use a palette to downsample an input video stream.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "perms": {
+    "label": "Set permissions for the output video frame.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "perspective": {
+    "label": "Correct the perspective of video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "phase": {
+    "label": "Phase shift fields.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "photosensitivity": {
+    "label": "Filter out photosensitive epilepsy seizure-inducing flashes.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "pixdesctest": {
+    "label": "Test pixel format definitions.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "pixelize": {
+    "label": "Pixelize video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "pixscope": {
+    "label": "Pixel data analysis.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "pp": {
+    "label": "Filter video using libpostproc.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "pp7": {
+    "label": "Apply Postprocessing 7 filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "premultiply": {
+    "label": "PreMultiply first stream with first plane of second stream.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "prewitt": {
+    "label": "Apply prewitt operator.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "pseudocolor": {
+    "label": "Make pseudocolored video frames.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "psnr": {
+    "label": "Calculate the PSNR between two video streams.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "pullup": {
+    "label": "Pullup from field sequence to frames.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "qp": {
+    "label": "Change video quantization parameters.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "random": {
+    "label": "Return random frames.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "readeia608": {
+    "label": "Read EIA-608 Closed Caption codes from input video and write them to frame metadata.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "readvitc": {
+    "label": "Read vertical interval timecode and write it to frame metadata.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "realtime": {
+    "label": "Slow down filtering to match realtime.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "remap": {
+    "label": "Remap pixels.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "removegrain": {
+    "label": "Remove grain.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "removelogo": {
+    "label": "Remove a TV logo based on a mask image.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "repeatfields": {
+    "label": "Hard repeat fields based on MPEG repeat field flag.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "reverse": {
+    "label": "Reverse a clip.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "rgbashift": {
+    "label": "Shift RGBA.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "roberts": {
+    "label": "Apply roberts cross operator.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "rotate": {
+    "label": "Rotate the input image.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "sab": {
+    "label": "Apply shape adaptive blur.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "scale": {
+    "label": "Scale the input video size and/or convert the image format.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "scale_vt": {
+    "label": "Scale Videotoolbox frames",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "scale2ref": {
+    "label": "Scale the input video size and/or convert the image format to the given reference.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "scdet": {
+    "label": "Detect video scene change",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "scharr": {
+    "label": "Apply scharr operator.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "scroll": {
+    "label": "Scroll input video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "segment": {
+    "label": "Segment video stream.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "select": {
+    "label": "Select video frames to pass in output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "selectivecolor": {
+    "label": "Apply CMYK adjustments to specific color ranges.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "sendcmd": {
+    "label": "Send commands to filters.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "separatefields": {
+    "label": "Split input video frames into fields.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "setdar": {
+    "label": "Set the frame display aspect ratio.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "setfield": {
+    "label": "Force field for the output video frame.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "setparams": {
+    "label": "Force field, or color property for the output video frame.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "setpts": {
+    "label": "Set PTS for the output video frame.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "setrange": {
+    "label": "Force color range for the output video frame.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "setsar": {
+    "label": "Set the pixel sample aspect ratio.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "settb": {
+    "label": "Set timebase for the video output link.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "shear": {
+    "label": "Shear transform the input image.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "showinfo": {
+    "label": "Show textual information for each video frame.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "showpalette": {
+    "label": "Display frame palette.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "shuffleframes": {
+    "label": "Shuffle video frames.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "shufflepixels": {
+    "label": "Shuffle video pixels.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "shuffleplanes": {
+    "label": "Shuffle video planes.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "sidedata": {
+    "label": "Manipulate video frame side data.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "signalstats": {
+    "label": "Generate statistics from video analysis.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "signature": {
+    "label": "Calculate the MPEG-7 video signature",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "siti": {
+    "label": "Calculate spatial information (SI) and temporal information (TI).",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "smartblur": {
+    "label": "Blur the input video without impacting the outlines.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "sobel": {
+    "label": "Apply sobel operator.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "split": {
+    "label": "Pass on the input to N video outputs.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "spp": {
+    "label": "Apply a simple post processing filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "sr": {
+    "label": "Apply DNN-based image super resolution to the input.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "ssim": {
+    "label": "Calculate the SSIM between two video streams.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "ssim360": {
+    "label": "Calculate the SSIM between two 360 video streams.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "stereo3d": {
+    "label": "Convert video stereoscopic 3D view.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "streamselect": {
+    "label": "Select video streams",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "subtitles": {
+    "label": "Render text subtitles onto input video using the libass library.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "super2xsai": {
+    "label": "Scale the input by 2x using the Super2xSaI pixel art algorithm.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "swaprect": {
+    "label": "Swap 2 rectangular objects in video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "swapuv": {
+    "label": "Swap U and V components.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "tblend": {
+    "label": "Blend successive frames.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "telecine": {
+    "label": "Apply a telecine pattern.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "thistogram": {
+    "label": "Compute and draw a temporal histogram.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "threshold": {
+    "label": "Threshold first video stream using other video streams.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "thumbnail": {
+    "label": "Select the most representative frame in a given sequence of consecutive frames.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "tile": {
+    "label": "Tile several successive frames together.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "tinterlace": {
+    "label": "Perform temporal field interlacing.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "tlut2": {
+    "label": "Compute and apply a lookup table from two successive frames.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "tmedian": {
+    "label": "Pick median pixels from successive frames.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "tmidequalizer": {
+    "label": "Apply Temporal Midway Equalization.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "tmix": {
+    "label": "Mix successive video frames.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "tonemap": {
+    "label": "Conversion to/from different dynamic ranges.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "tpad": {
+    "label": "Temporarily pad video frames.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "transpose": {
+    "label": "Transpose input video.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "transpose_vt": {
+    "label": "Transpose Videotoolbox frames",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "trim": {
+    "label": "Pick one continuous section from the input, drop the rest.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "unpremultiply": {
+    "label": "UnPreMultiply first stream with first plane of second stream.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "unsharp": {
+    "label": "Sharpen or blur the input video.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "untile": {
+    "label": "Untile a frame into a sequence of frames.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "uspp": {
+    "label": "Apply Ultra Simple / Slow Post-processing filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "v360": {
+    "label": "Convert 360 projection of video.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "vaguedenoiser": {
+    "label": "Apply a Wavelet based Denoiser.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "varblur": {
+    "label": "Apply Variable Blur filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "vectorscope": {
+    "label": "Video vectorscope.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "vflip": {
+    "label": "Flip the input video vertically.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "vfrdet": {
+    "label": "Variable frame rate detect filter.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "vibrance": {
+    "label": "Boost or alter saturation.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "vidstabdetect": {
+    "label": "Extract relative transformations, pass 1 of 2 for stabilization (see vidstabtransform for pass 2).",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "vidstabtransform": {
+    "label": "Transform the frames, pass 2 of 2 for stabilization (see vidstabdetect for pass 1).",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "vif": {
+    "label": "Calculate the VIF between two video streams.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "vignette": {
+    "label": "Make or reverse a vignette effect.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "vmafmotion": {
+    "label": "Calculate the VMAF Motion score.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "vstack": {
+    "label": "Stack video inputs vertically.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "w3fdif": {
+    "label": "Apply Martin Weston three field deinterlace.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "waveform": {
+    "label": "Video waveform monitor.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "weave": {
+    "label": "Weave input video fields into frames.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "xbr": {
+    "label": "Scale the input using xBR algorithm.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "xcorrelate": {
+    "label": "Cross-correlate first video stream with second video stream.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "xfade": {
+    "label": "Cross fade one video with another video.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "xmedian": {
+    "label": "Pick median pixels from several video inputs.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "xstack": {
+    "label": "Stack video inputs into custom layout.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "yadif": {
+    "label": "Deinterlace the input image.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "yadif_videotoolbox": {
+    "label": "YADIF for VideoToolbox frames using Metal compute",
+    "supportsTimeline": true,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "yaepblur": {
+    "label": "Yet another edge preserving blur filter.",
+    "supportsTimeline": true,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "zmq": {
+    "label": "Receive commands through ZMQ and broker them to filters.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "zoompan": {
+    "label": "Apply Zoom & Pan effect.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "zscale": {
+    "label": "Apply resizing, colorspace and bit depth conversion.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "allrgb": {
+    "label": "Generate all RGB colors.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "allyuv": {
+    "label": "Generate all yuv colors.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "cellauto": {
+    "label": "Create pattern generated by an elementary cellular automaton.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "color": {
+    "label": "Provide an uniformly colored input.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "colorchart": {
+    "label": "Generate color checker chart.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "colorspectrum": {
+    "label": "Generate colors spectrum.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "coreimagesrc": {
+    "label": "Video source using image generators of CoreImage API.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "frei0r_src": {
+    "label": "Generate a frei0r source.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "gradients": {
+    "label": "Draw a gradients.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "haldclutsrc": {
+    "label": "Provide an identity Hald CLUT.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "life": {
+    "label": "Create life.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "mandelbrot": {
+    "label": "Render a Mandelbrot fractal.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "mptestsrc": {
+    "label": "Generate various test pattern.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "nullsrc": {
+    "label": "Null video source, return unprocessed video frames.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "pal75bars": {
+    "label": "Generate PAL 75% color bars.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "pal100bars": {
+    "label": "Generate PAL 100% color bars.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "rgbtestsrc": {
+    "label": "Generate RGB test pattern.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "sierpinski": {
+    "label": "Render a Sierpinski fractal.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "smptebars": {
+    "label": "Generate SMPTE color bars.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "smptehdbars": {
+    "label": "Generate SMPTE HD color bars.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "testsrc": {
+    "label": "Generate test pattern.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "testsrc2": {
+    "label": "Generate another test pattern.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "yuvtestsrc": {
+    "label": "Generate YUV test pattern.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "zoneplate": {
+    "label": "Generate zone-plate.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "nullsink": {
+    "label": "Do absolutely nothing with the input video.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "a3dscope": {
+    "label": "Convert input audio to 3d scope video output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "abitscope": {
+    "label": "Convert input audio to audio bit scope video output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "adrawgraph": {
+    "label": "Draw a graph using input audio metadata.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "agraphmonitor": {
+    "label": "Show various filtergraph stats.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "ahistogram": {
+    "label": "Convert input audio to histogram video output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "aphasemeter": {
+    "label": "Convert input audio to phase meter video output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "avectorscope": {
+    "label": "Convert input audio to vectorscope video output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": true
+  },
+  "concat": {
+    "label": "Concatenate audio and video streams.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "showcqt": {
+    "label": "Convert input audio to a CQT (Constant/Clamped Q Transform) spectrum video output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "showcwt": {
+    "label": "Convert input audio to a CWT (Continuous Wavelet Transform) spectrum video output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "showfreqs": {
+    "label": "Convert input audio to a frequencies video output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "showspatial": {
+    "label": "Convert input audio to a spatial video output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "showspectrum": {
+    "label": "Convert input audio to a spectrum video output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "showspectrumpic": {
+    "label": "Convert input audio to a spectrum video output single picture.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": true,
+    "supportsCommand": false
+  },
+  "showvolume": {
+    "label": "Convert input audio volume to video output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "showwaves": {
+    "label": "Convert input audio to a video output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "showwavespic": {
+    "label": "Convert input audio to a video output single picture.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "spectrumsynth": {
+    "label": "Convert input spectrum videos to audio output.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "avsynctest": {
+    "label": "Generate an Audio Video Sync Test.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "amovie": {
+    "label": "Read audio from a movie source.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "movie": {
+    "label": "Read from a movie source.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": true
+  },
+  "afifo": {
+    "label": "Buffer input frames and send them when they are requested.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "fifo": {
+    "label": "Buffer input images and send them when they are requested.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "abuffer": {
+    "label": "Buffer audio frames, and make them accessible to the filterchain.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "buffer": {
+    "label": "Buffer video frames, and make them accessible to the filterchain.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "abuffersink": {
+    "label": "Buffer audio frames, and make them available to the end of the filter graph.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  },
+  "buffersink": {
+    "label": "Buffer video frames, and make them available to the end of the filter graph.",
+    "supportsTimeline": false,
+    "supportsSliceThreading": false,
+    "supportsCommand": false
+  }
+}

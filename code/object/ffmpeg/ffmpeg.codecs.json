@@ -1,0 +1,4645 @@
+{
+  "012v": {
+    "label": "Uncompressed 4:2:2 10-bit",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "4xm": {
+    "label": "4X Movie",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "8bps": {
+    "label": "QuickTime 8BPS video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "a64_multi": {
+    "label": "Multicolor charset for Commodore 64 (encoders: a64multi)",
+    "type": "video",
+    "supportsDecoding": false,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "a64_multi5": {
+    "label": "Multicolor charset for Commodore 64, extended with 5th color (colram) (encoders: a64multi5)",
+    "type": "video",
+    "supportsDecoding": false,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "aasc": {
+    "label": "Autodesk RLE",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "agm": {
+    "label": "Amuse Graphics Movie",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "aic": {
+    "label": "Apple Intermediate Codec",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "alias_pix": {
+    "label": "Alias/Wavefront PIX image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "amv": {
+    "label": "AMV Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "anm": {
+    "label": "Deluxe Paint Animation",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "ansi": {
+    "label": "ASCII/ANSI art",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "apng": {
+    "label": "APNG (Animated Portable Network Graphics) image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "arbc": {
+    "label": "Gryphon's Anim Compressor",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "argo": {
+    "label": "Argonaut Games Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "asv1": {
+    "label": "ASUS V1",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "asv2": {
+    "label": "ASUS V2",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "aura": {
+    "label": "Auravision AURA",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "aura2": {
+    "label": "Auravision Aura 2",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "av1": {
+    "label": "Alliance for Open Media AV1 (decoders: libdav1d libaom-av1 av1) (encoders: libaom-av1 librav1e libsvtav1)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "avrn": {
+    "label": "Avid AVI Codec",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "avrp": {
+    "label": "Avid 1:1 10-bit RGB Packer",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "avs": {
+    "label": "AVS (Audio Video Standard) video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "avs2": {
+    "label": "AVS2-P2/IEEE1857.4",
+    "type": "video",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "avs3": {
+    "label": "AVS3-P2/IEEE1857.10",
+    "type": "video",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "avui": {
+    "label": "Avid Meridien Uncompressed",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "ayuv": {
+    "label": "Uncompressed packed MS 4:4:4:4",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "bethsoftvid": {
+    "label": "Bethesda VID video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "bfi": {
+    "label": "Brute Force & Ignorance",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "binkvideo": {
+    "label": "Bink video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "bintext": {
+    "label": "Binary text",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": false
+  },
+  "bitpacked": {
+    "label": "Bitpacked",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "bmp": {
+    "label": "BMP (Windows and OS/2 bitmap)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "bmv_video": {
+    "label": "Discworld II BMV video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "brender_pix": {
+    "label": "BRender PIX image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "c93": {
+    "label": "Interplay C93",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "cavs": {
+    "label": "Chinese AVS (Audio Video Standard) (AVS1-P2, JiZhun profile)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "cdgraphics": {
+    "label": "CD Graphics video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "cdtoons": {
+    "label": "CDToons video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "cdxl": {
+    "label": "Commodore CDXL video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "cfhd": {
+    "label": "GoPro CineForm HD",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "cinepak": {
+    "label": "Cinepak",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "clearvideo": {
+    "label": "Iterated Systems ClearVideo",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "cljr": {
+    "label": "Cirrus Logic AccuPak",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "cllc": {
+    "label": "Canopus Lossless Codec",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "cmv": {
+    "label": "Electronic Arts CMV video (decoders: eacmv)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "cpia": {
+    "label": "CPiA video format",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "cri": {
+    "label": "Cintel RAW",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": true
+  },
+  "cscd": {
+    "label": "CamStudio (decoders: camstudio)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "cyuv": {
+    "label": "Creative YUV (CYUV)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "daala": {
+    "label": "Daala",
+    "type": "video",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": true
+  },
+  "dds": {
+    "label": "DirectDraw Surface image decoder",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": true
+  },
+  "dfa": {
+    "label": "Chronomaster DFA",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "dirac": {
+    "label": "Dirac (encoders: vc2)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": true
+  },
+  "dnxhd": {
+    "label": "VC3/DNxHD",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "dpx": {
+    "label": "DPX (Digital Picture Exchange) image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "dsicinvideo": {
+    "label": "Delphine Software International CIN video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "dvvideo": {
+    "label": "DV (Digital Video)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "dxa": {
+    "label": "Feeble Files/ScummVM DXA",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "dxtory": {
+    "label": "Dxtory",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "dxv": {
+    "label": "Resolume DXV",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "escape124": {
+    "label": "Escape 124",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "escape130": {
+    "label": "Escape 130",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "evc": {
+    "label": "MPEG-5 EVC (Essential Video Coding)",
+    "type": "video",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "exr": {
+    "label": "OpenEXR image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": true
+  },
+  "ffv1": {
+    "label": "FFmpeg video codec #1",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "ffvhuff": {
+    "label": "Huffyuv FFmpeg variant",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "fic": {
+    "label": "Mirillis FIC",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "fits": {
+    "label": "FITS (Flexible Image Transport System)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "flashsv": {
+    "label": "Flash Screen Video v1",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "flashsv2": {
+    "label": "Flash Screen Video v2",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "flic": {
+    "label": "Autodesk Animator Flic video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "flv1": {
+    "label": "FLV / Sorenson Spark / Sorenson H.263 (Flash Video) (decoders: flv) (encoders: flv)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "fmvc": {
+    "label": "FM Screen Capture Codec",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "fraps": {
+    "label": "Fraps",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "frwu": {
+    "label": "Forward Uncompressed",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "g2m": {
+    "label": "Go2Meeting",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "gdv": {
+    "label": "Gremlin Digital Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "gem": {
+    "label": "GEM Raster image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "gif": {
+    "label": "CompuServe GIF (Graphics Interchange Format)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "h261": {
+    "label": "H.261",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "h263": {
+    "label": "H.263 / H.263-1996, H.263+ / H.263-1998 / H.263 version 2",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "h263i": {
+    "label": "Intel H.263",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "h263p": {
+    "label": "H.263+ / H.263-1998 / H.263 version 2",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "h264": {
+    "label": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10 (encoders: libx264 libx264rgb h264_videotoolbox)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": true
+  },
+  "hap": {
+    "label": "Vidvox Hap",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "hdr": {
+    "label": "HDR (Radiance RGBE format) image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "hevc": {
+    "label": "H.265 / HEVC (High Efficiency Video Coding) (encoders: libx265 hevc_videotoolbox)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "hnm4video": {
+    "label": "HNM 4 video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "hq_hqa": {
+    "label": "Canopus HQ/HQA",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "hqx": {
+    "label": "Canopus HQX",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "huffyuv": {
+    "label": "HuffYUV",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "hymt": {
+    "label": "HuffYUV MT",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "idcin": {
+    "label": "id Quake II CIN video (decoders: idcinvideo)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "idf": {
+    "label": "iCEDraw text",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": false
+  },
+  "iff_ilbm": {
+    "label": "IFF ACBM/ANIM/DEEP/ILBM/PBM/RGB8/RGBN (decoders: iff)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "imm4": {
+    "label": "Infinity IMM4",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "imm5": {
+    "label": "Infinity IMM5",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "indeo2": {
+    "label": "Intel Indeo 2",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "indeo3": {
+    "label": "Intel Indeo 3",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "indeo4": {
+    "label": "Intel Indeo Video Interactive 4",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "indeo5": {
+    "label": "Intel Indeo Video Interactive 5",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "interplayvideo": {
+    "label": "Interplay MVE video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "ipu": {
+    "label": "IPU Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "jpeg2000": {
+    "label": "JPEG 2000 (encoders: jpeg2000 libopenjpeg)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": true
+  },
+  "jpegls": {
+    "label": "JPEG-LS",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": true
+  },
+  "jpegxl": {
+    "label": "JPEG XL (decoders: libjxl) (encoders: libjxl)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": true
+  },
+  "jv": {
+    "label": "Bitmap Brothers JV video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "kgv1": {
+    "label": "Kega Game Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "kmvc": {
+    "label": "Karl Morton's video codec",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "lagarith": {
+    "label": "Lagarith lossless",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "ljpeg": {
+    "label": "Lossless JPEG",
+    "type": "video",
+    "supportsDecoding": false,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "loco": {
+    "label": "LOCO",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "lscr": {
+    "label": "LEAD Screen Capture",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "m101": {
+    "label": "Matrox Uncompressed SD",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "mad": {
+    "label": "Electronic Arts Madcow Video (decoders: eamad)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "magicyuv": {
+    "label": "MagicYUV video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "mdec": {
+    "label": "Sony PlayStation MDEC (Motion DECoder)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "media100": {
+    "label": "Media 100i",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "mimic": {
+    "label": "Mimic",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "mjpeg": {
+    "label": "Motion JPEG",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "mjpegb": {
+    "label": "Apple MJPEG-B",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "mmvideo": {
+    "label": "American Laser Games MM Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "mobiclip": {
+    "label": "MobiClip Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "motionpixels": {
+    "label": "Motion Pixels video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "mpeg1video": {
+    "label": "MPEG-1 video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "mpeg2video": {
+    "label": "MPEG-2 video (decoders: mpeg2video mpegvideo)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "mpeg4": {
+    "label": "MPEG-4 part 2 (encoders: mpeg4 libxvid)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "msa1": {
+    "label": "MS ATC Screen",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "mscc": {
+    "label": "Mandsoft Screen Capture Codec",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "msmpeg4v1": {
+    "label": "MPEG-4 part 2 Microsoft variant version 1",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "msmpeg4v2": {
+    "label": "MPEG-4 part 2 Microsoft variant version 2",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "msmpeg4v3": {
+    "label": "MPEG-4 part 2 Microsoft variant version 3 (decoders: msmpeg4) (encoders: msmpeg4)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "msp2": {
+    "label": "Microsoft Paint (MSP) version 2",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "msrle": {
+    "label": "Microsoft RLE",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "mss1": {
+    "label": "MS Screen 1",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "mss2": {
+    "label": "MS Windows Media Video V9 Screen",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "msvideo1": {
+    "label": "Microsoft Video 1",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "mszh": {
+    "label": "LCL (LossLess Codec Library) MSZH",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "mts2": {
+    "label": "MS Expression Encoder Screen",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "mv30": {
+    "label": "MidiVid 3.0",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "mvc1": {
+    "label": "Silicon Graphics Motion Video Compressor 1",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "mvc2": {
+    "label": "Silicon Graphics Motion Video Compressor 2",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "mvdv": {
+    "label": "MidiVid VQ",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "mvha": {
+    "label": "MidiVid Archive Codec",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "mwsc": {
+    "label": "MatchWare Screen Capture Codec",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "mxpeg": {
+    "label": "Mobotix MxPEG video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "notchlc": {
+    "label": "NotchLC",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "nuv": {
+    "label": "NuppelVideo/RTJPEG",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "paf_video": {
+    "label": "Amazing Studio Packed Animation File Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "pam": {
+    "label": "PAM (Portable AnyMap) image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pbm": {
+    "label": "PBM (Portable BitMap) image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcx": {
+    "label": "PC Paintbrush PCX image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pdv": {
+    "label": "PDV (PlayDate Video)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "pfm": {
+    "label": "PFM (Portable FloatMap) image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pgm": {
+    "label": "PGM (Portable GrayMap) image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pgmyuv": {
+    "label": "PGMYUV (Portable GrayMap YUV) image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pgx": {
+    "label": "PGX (JPEG2000 Test Format)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "phm": {
+    "label": "PHM (Portable HalfFloatMap) image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "photocd": {
+    "label": "Kodak Photo CD",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "pictor": {
+    "label": "Pictor/PC Paint",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "pixlet": {
+    "label": "Apple Pixlet",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "png": {
+    "label": "PNG (Portable Network Graphics) image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "ppm": {
+    "label": "PPM (Portable PixelMap) image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "prores": {
+    "label": "Apple ProRes (iCodec Pro) (encoders: prores prores_aw prores_ks prores_videotoolbox)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "prosumer": {
+    "label": "Brooktree ProSumer Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "psd": {
+    "label": "Photoshop PSD file",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "ptx": {
+    "label": "V.Flash PTX image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "qdraw": {
+    "label": "Apple QuickDraw",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "qoi": {
+    "label": "QOI (Quite OK Image)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "qpeg": {
+    "label": "Q-team QPEG",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "qtrle": {
+    "label": "QuickTime Animation (RLE) video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "r10k": {
+    "label": "AJA Kona 10-bit RGB Codec",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "r210": {
+    "label": "Uncompressed RGB 10-bit",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "rasc": {
+    "label": "RemotelyAnywhere Screen Capture",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "rawvideo": {
+    "label": "raw video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "rl2": {
+    "label": "RL2 video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "roq": {
+    "label": "id RoQ video (decoders: roqvideo) (encoders: roqvideo)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "rpza": {
+    "label": "QuickTime video (RPZA)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "rscc": {
+    "label": "innoHeim/Rsupport Screen Capture Codec",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "rtv1": {
+    "label": "RTV1 (RivaTuner Video)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "rv10": {
+    "label": "RealVideo 1.0",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "rv20": {
+    "label": "RealVideo 2.0",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "rv30": {
+    "label": "RealVideo 3.0",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "rv40": {
+    "label": "RealVideo 4.0",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "sanm": {
+    "label": "LucasArts SANM/SMUSH video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "scpr": {
+    "label": "ScreenPressor",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": true
+  },
+  "screenpresso": {
+    "label": "Screenpresso",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "sga": {
+    "label": "Digital Pictures SGA Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "sgi": {
+    "label": "SGI image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "sgirle": {
+    "label": "SGI RLE 8-bit",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "sheervideo": {
+    "label": "BitJazz SheerVideo",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "simbiosis_imx": {
+    "label": "Simbiosis Interactive IMX Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "smackvideo": {
+    "label": "Smacker video (decoders: smackvid)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "smc": {
+    "label": "QuickTime Graphics (SMC)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "smvjpeg": {
+    "label": "Sigmatel Motion Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "snow": {
+    "label": "Snow",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": true
+  },
+  "sp5x": {
+    "label": "Sunplus JPEG (SP5X)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "speedhq": {
+    "label": "NewTek SpeedHQ",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "srgc": {
+    "label": "Screen Recorder Gold Codec",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "sunrast": {
+    "label": "Sun Rasterfile image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "svg": {
+    "label": "Scalable Vector Graphics",
+    "type": "video",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "svq1": {
+    "label": "Sorenson Vector Quantizer 1 / Sorenson Video 1 / SVQ1",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "svq3": {
+    "label": "Sorenson Vector Quantizer 3 / Sorenson Video 3 / SVQ3",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "targa": {
+    "label": "Truevision Targa image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "targa_y216": {
+    "label": "Pinnacle TARGA CineWave YUV16",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "tdsc": {
+    "label": "TDSC",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "tgq": {
+    "label": "Electronic Arts TGQ video (decoders: eatgq)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "tgv": {
+    "label": "Electronic Arts TGV video (decoders: eatgv)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "theora": {
+    "label": "Theora (encoders: libtheora)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "thp": {
+    "label": "Nintendo Gamecube THP video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "tiertexseqvideo": {
+    "label": "Tiertex Limited SEQ video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "tiff": {
+    "label": "TIFF image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "tmv": {
+    "label": "8088flex TMV",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "tqi": {
+    "label": "Electronic Arts TQI video (decoders: eatqi)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "truemotion1": {
+    "label": "Duck TrueMotion 1.0",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "truemotion2": {
+    "label": "Duck TrueMotion 2.0",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "truemotion2rt": {
+    "label": "Duck TrueMotion 2.0 Real Time",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "tscc": {
+    "label": "TechSmith Screen Capture Codec (decoders: camtasia)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "tscc2": {
+    "label": "TechSmith Screen Codec 2",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "txd": {
+    "label": "Renderware TXD (TeXture Dictionary) image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "ulti": {
+    "label": "IBM UltiMotion (decoders: ultimotion)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "utvideo": {
+    "label": "Ut Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "v210": {
+    "label": "Uncompressed 4:2:2 10-bit",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "v210x": {
+    "label": "Uncompressed 4:2:2 10-bit",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "v308": {
+    "label": "Uncompressed packed 4:4:4",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "v408": {
+    "label": "Uncompressed packed QT 4:4:4:4",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "v410": {
+    "label": "Uncompressed 4:4:4 10-bit",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "vb": {
+    "label": "Beam Software VB",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "vble": {
+    "label": "VBLE Lossless Codec",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "vbn": {
+    "label": "Vizrt Binary Image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "vc1": {
+    "label": "SMPTE VC-1",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "vc1image": {
+    "label": "Windows Media Video 9 Image v2",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "vcr1": {
+    "label": "ATI VCR1",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "vixl": {
+    "label": "Miro VideoXL (decoders: xl)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "vmdvideo": {
+    "label": "Sierra VMD video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "vmix": {
+    "label": "vMix Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "vmnc": {
+    "label": "VMware Screen Codec / VMware Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "vnull": {
+    "label": "Null video codec",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "vp3": {
+    "label": "On2 VP3",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "vp4": {
+    "label": "On2 VP4",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "vp5": {
+    "label": "On2 VP5",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "vp6": {
+    "label": "On2 VP6",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "vp6a": {
+    "label": "On2 VP6 (Flash version, with alpha channel)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "vp6f": {
+    "label": "On2 VP6 (Flash version)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "vp7": {
+    "label": "On2 VP7",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "vp8": {
+    "label": "On2 VP8 (decoders: vp8 libvpx) (encoders: libvpx)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "vp9": {
+    "label": "Google VP9 (decoders: vp9 libvpx-vp9) (encoders: libvpx-vp9)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "vqc": {
+    "label": "ViewQuest VQC",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "vvc": {
+    "label": "H.266 / VVC (Versatile Video Coding)",
+    "type": "video",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "wbmp": {
+    "label": "WBMP (Wireless Application Protocol Bitmap) image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "wcmv": {
+    "label": "WinCAM Motion Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "webp": {
+    "label": "WebP (encoders: libwebp_anim libwebp)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": true
+  },
+  "wmv1": {
+    "label": "Windows Media Video 7",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "wmv2": {
+    "label": "Windows Media Video 8",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "wmv3": {
+    "label": "Windows Media Video 9",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "wmv3image": {
+    "label": "Windows Media Video 9 Image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "wnv1": {
+    "label": "Winnov WNV1",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "wrapped_avframe": {
+    "label": "AVFrame to AVPacket passthrough",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "ws_vqa": {
+    "label": "Westwood Studios VQA (Vector Quantized Animation) video (decoders: vqavideo)",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "xan_wc3": {
+    "label": "Wing Commander III / Xan",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "xan_wc4": {
+    "label": "Wing Commander IV / Xxan",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "xbin": {
+    "label": "eXtended BINary text",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": false
+  },
+  "xbm": {
+    "label": "XBM (X BitMap) image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "xface": {
+    "label": "X-face image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "xpm": {
+    "label": "XPM (X PixMap) image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "xwd": {
+    "label": "XWD (X Window Dump) image",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "y41p": {
+    "label": "Uncompressed YUV 4:1:1 12-bit",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "ylc": {
+    "label": "YUY2 Lossless Codec",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "yop": {
+    "label": "Psygnosis YOP Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "yuv4": {
+    "label": "Uncompressed packed 4:2:0",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "zerocodec": {
+    "label": "ZeroCodec Lossless Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "zlib": {
+    "label": "LCL (LossLess Codec Library) ZLIB",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "zmbv": {
+    "label": "Zip Motion Blocks Video",
+    "type": "video",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "4gv": {
+    "label": "4GV (Fourth Generation Vocoder)",
+    "type": "audio",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "8svx_exp": {
+    "label": "8SVX exponential",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "8svx_fib": {
+    "label": "8SVX fibonacci",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "aac": {
+    "label": "AAC (Advanced Audio Coding) (decoders: aac aac_fixed aac_at) (encoders: aac aac_at)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "aac_latm": {
+    "label": "AAC LATM (Advanced Audio Coding LATM syntax)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "ac3": {
+    "label": "ATSC A/52A (AC-3) (decoders: ac3 ac3_fixed ac3_at) (encoders: ac3 ac3_fixed)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "ac4": {
+    "label": "AC-4",
+    "type": "audio",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "acelp.kelvin": {
+    "label": "Sipro ACELP.KELVIN",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_4xm": {
+    "label": "ADPCM 4X Movie",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_adx": {
+    "label": "SEGA CRI ADX ADPCM",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_afc": {
+    "label": "ADPCM Nintendo Gamecube AFC",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_agm": {
+    "label": "ADPCM AmuseGraphics Movie AGM",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_aica": {
+    "label": "ADPCM Yamaha AICA",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_argo": {
+    "label": "ADPCM Argonaut Games",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ct": {
+    "label": "ADPCM Creative Technology",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_dtk": {
+    "label": "ADPCM Nintendo Gamecube DTK",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ea": {
+    "label": "ADPCM Electronic Arts",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ea_maxis_xa": {
+    "label": "ADPCM Electronic Arts Maxis CDROM XA",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ea_r1": {
+    "label": "ADPCM Electronic Arts R1",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ea_r2": {
+    "label": "ADPCM Electronic Arts R2",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ea_r3": {
+    "label": "ADPCM Electronic Arts R3",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ea_xas": {
+    "label": "ADPCM Electronic Arts XAS",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_g722": {
+    "label": "G.722 ADPCM (decoders: g722) (encoders: g722)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_g726": {
+    "label": "G.726 ADPCM (decoders: g726) (encoders: g726)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_g726le": {
+    "label": "G.726 ADPCM little-endian (decoders: g726le) (encoders: g726le)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_acorn": {
+    "label": "ADPCM IMA Acorn Replay",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_alp": {
+    "label": "ADPCM IMA High Voltage Software ALP",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_amv": {
+    "label": "ADPCM IMA AMV",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_apc": {
+    "label": "ADPCM IMA CRYO APC",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_apm": {
+    "label": "ADPCM IMA Ubisoft APM",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_cunning": {
+    "label": "ADPCM IMA Cunning Developments",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_dat4": {
+    "label": "ADPCM IMA Eurocom DAT4",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_dk3": {
+    "label": "ADPCM IMA Duck DK3",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_dk4": {
+    "label": "ADPCM IMA Duck DK4",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_ea_eacs": {
+    "label": "ADPCM IMA Electronic Arts EACS",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_ea_sead": {
+    "label": "ADPCM IMA Electronic Arts SEAD",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_iss": {
+    "label": "ADPCM IMA Funcom ISS",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_moflex": {
+    "label": "ADPCM IMA MobiClip MOFLEX",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_mtf": {
+    "label": "ADPCM IMA Capcom's MT Framework",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_oki": {
+    "label": "ADPCM IMA Dialogic OKI",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_qt": {
+    "label": "ADPCM IMA QuickTime (decoders: adpcm_ima_qt adpcm_ima_qt_at)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_rad": {
+    "label": "ADPCM IMA Radical",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_smjpeg": {
+    "label": "ADPCM IMA Loki SDL MJPEG",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_ssi": {
+    "label": "ADPCM IMA Simon & Schuster Interactive",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_wav": {
+    "label": "ADPCM IMA WAV",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ima_ws": {
+    "label": "ADPCM IMA Westwood",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_ms": {
+    "label": "ADPCM Microsoft",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_mtaf": {
+    "label": "ADPCM MTAF",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_psx": {
+    "label": "ADPCM Playstation",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_sbpro_2": {
+    "label": "ADPCM Sound Blaster Pro 2-bit",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_sbpro_3": {
+    "label": "ADPCM Sound Blaster Pro 2.6-bit",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_sbpro_4": {
+    "label": "ADPCM Sound Blaster Pro 4-bit",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_swf": {
+    "label": "ADPCM Shockwave Flash",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_thp": {
+    "label": "ADPCM Nintendo THP",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_thp_le": {
+    "label": "ADPCM Nintendo THP (Little-Endian)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_vima": {
+    "label": "LucasArts VIMA audio",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_xa": {
+    "label": "ADPCM CDROM XA",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_xmd": {
+    "label": "ADPCM Konami XMD",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_yamaha": {
+    "label": "ADPCM Yamaha",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "adpcm_zork": {
+    "label": "ADPCM Zork",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "alac": {
+    "label": "ALAC (Apple Lossless Audio Codec) (decoders: alac alac_at) (encoders: alac alac_at)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "amr_nb": {
+    "label": "AMR-NB (Adaptive Multi-Rate NarrowBand) (decoders: amrnb amr_nb_at libopencore_amrnb) (encoders: libopencore_amrnb)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "amr_wb": {
+    "label": "AMR-WB (Adaptive Multi-Rate WideBand) (decoders: amrwb libopencore_amrwb)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "anull": {
+    "label": "Null audio codec",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "apac": {
+    "label": "Marian's A-pac audio",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "ape": {
+    "label": "Monkey's Audio",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "aptx": {
+    "label": "aptX (Audio Processing Technology for Bluetooth)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "aptx_hd": {
+    "label": "aptX HD (Audio Processing Technology for Bluetooth)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "atrac1": {
+    "label": "ATRAC1 (Adaptive TRansform Acoustic Coding)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "atrac3": {
+    "label": "ATRAC3 (Adaptive TRansform Acoustic Coding 3)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "atrac3al": {
+    "label": "ATRAC3 AL (Adaptive TRansform Acoustic Coding 3 Advanced Lossless)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "atrac3p": {
+    "label": "ATRAC3+ (Adaptive TRansform Acoustic Coding 3+) (decoders: atrac3plus)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "atrac3pal": {
+    "label": "ATRAC3+ AL (Adaptive TRansform Acoustic Coding 3+ Advanced Lossless) (decoders: atrac3plusal)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "atrac9": {
+    "label": "ATRAC9 (Adaptive TRansform Acoustic Coding 9)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "avc": {
+    "label": "On2 Audio for Video Codec (decoders: on2avc)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "binkaudio_dct": {
+    "label": "Bink Audio (DCT)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "binkaudio_rdft": {
+    "label": "Bink Audio (RDFT)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "bmv_audio": {
+    "label": "Discworld II BMV audio",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "bonk": {
+    "label": "Bonk audio",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": true
+  },
+  "cbd2_dpcm": {
+    "label": "DPCM Cuberoot-Delta-Exact",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "celt": {
+    "label": "Constrained Energy Lapped Transform (CELT)",
+    "type": "audio",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "codec2": {
+    "label": "codec2 (very low bitrate speech codec)",
+    "type": "audio",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "comfortnoise": {
+    "label": "RFC 3389 Comfort Noise",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "cook": {
+    "label": "Cook / Cooker / Gecko (RealAudio G2)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "derf_dpcm": {
+    "label": "DPCM Xilam DERF",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "dfpwm": {
+    "label": "DFPWM (Dynamic Filter Pulse Width Modulation)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "dolby_e": {
+    "label": "Dolby E",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "dsd_lsbf": {
+    "label": "DSD (Direct Stream Digital), least significant bit first",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "dsd_lsbf_planar": {
+    "label": "DSD (Direct Stream Digital), least significant bit first, planar",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "dsd_msbf": {
+    "label": "DSD (Direct Stream Digital), most significant bit first",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "dsd_msbf_planar": {
+    "label": "DSD (Direct Stream Digital), most significant bit first, planar",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "dsicinaudio": {
+    "label": "Delphine Software International CIN audio",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "dss_sp": {
+    "label": "Digital Speech Standard - Standard Play mode (DSS SP)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "dst": {
+    "label": "DST (Direct Stream Transfer)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "dts": {
+    "label": "DCA (DTS Coherent Acoustics) (decoders: dca) (encoders: dca)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": true
+  },
+  "dvaudio": {
+    "label": "DV audio",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "eac3": {
+    "label": "ATSC A/52B (AC-3, E-AC-3) (decoders: eac3 eac3_at)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "evrc": {
+    "label": "EVRC (Enhanced Variable Rate Codec)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "fastaudio": {
+    "label": "MobiClip FastAudio",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "flac": {
+    "label": "FLAC (Free Lossless Audio Codec)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "ftr": {
+    "label": "FTR Voice",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "g723_1": {
+    "label": "G.723.1",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "g729": {
+    "label": "G.729",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "gremlin_dpcm": {
+    "label": "DPCM Gremlin",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "gsm": {
+    "label": "GSM",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "gsm_ms": {
+    "label": "GSM Microsoft variant (decoders: gsm_ms gsm_ms_at)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "hca": {
+    "label": "CRI HCA",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "hcom": {
+    "label": "HCOM Audio",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "iac": {
+    "label": "IAC (Indeo Audio Coder)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "ilbc": {
+    "label": "iLBC (Internet Low Bitrate Codec) (decoders: ilbc ilbc_at) (encoders: ilbc_at)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "imc": {
+    "label": "IMC (Intel Music Coder)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "interplay_dpcm": {
+    "label": "DPCM Interplay",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "interplayacm": {
+    "label": "Interplay ACM",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "mace3": {
+    "label": "MACE (Macintosh Audio Compression/Expansion) 3:1",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "mace6": {
+    "label": "MACE (Macintosh Audio Compression/Expansion) 6:1",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "metasound": {
+    "label": "Voxware MetaSound",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "misc4": {
+    "label": "Micronas SC-4 Audio",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "mlp": {
+    "label": "MLP (Meridian Lossless Packing)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "mp1": {
+    "label": "MP1 (MPEG audio layer 1) (decoders: mp1 mp1float mp1_at)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "mp2": {
+    "label": "MP2 (MPEG audio layer 2) (decoders: mp2 mp2float mp2_at) (encoders: mp2 mp2fixed)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "mp3": {
+    "label": "MP3 (MPEG audio layer 3) (decoders: mp3float mp3 mp3_at) (encoders: libmp3lame)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "mp3adu": {
+    "label": "ADU (Application Data Unit) MP3 (MPEG audio layer 3) (decoders: mp3adufloat mp3adu)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "mp3on4": {
+    "label": "MP3onMP4 (decoders: mp3on4float mp3on4)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "mp4als": {
+    "label": "MPEG-4 Audio Lossless Coding (ALS) (decoders: als)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "mpegh_3d_audio": {
+    "label": "MPEG-H 3D Audio",
+    "type": "audio",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": true,
+    "lossless": false
+  },
+  "msnsiren": {
+    "label": "MSN Siren",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "musepack7": {
+    "label": "Musepack SV7 (decoders: mpc7)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "musepack8": {
+    "label": "Musepack SV8 (decoders: mpc8)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "nellymoser": {
+    "label": "Nellymoser Asao",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "opus": {
+    "label": "Opus (Opus Interactive Audio Codec) (decoders: opus libopus) (encoders: opus libopus)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "osq": {
+    "label": "OSQ (Original Sound Quality)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "paf_audio": {
+    "label": "Amazing Studio Packed Animation File Audio",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "pcm_alaw": {
+    "label": "PCM A-law / G.711 A-law (decoders: pcm_alaw pcm_alaw_at) (encoders: pcm_alaw pcm_alaw_at)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "pcm_bluray": {
+    "label": "PCM signed 16|20|24-bit big-endian for Blu-ray media",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_dvd": {
+    "label": "PCM signed 20|24-bit big-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_f16le": {
+    "label": "PCM 16.8 floating point little-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_f24le": {
+    "label": "PCM 24.0 floating point little-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_f32be": {
+    "label": "PCM 32-bit floating point big-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_f32le": {
+    "label": "PCM 32-bit floating point little-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_f64be": {
+    "label": "PCM 64-bit floating point big-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_f64le": {
+    "label": "PCM 64-bit floating point little-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_lxf": {
+    "label": "PCM signed 20-bit little-endian planar",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_mulaw": {
+    "label": "PCM mu-law / G.711 mu-law (decoders: pcm_mulaw pcm_mulaw_at) (encoders: pcm_mulaw pcm_mulaw_at)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "pcm_s16be": {
+    "label": "PCM signed 16-bit big-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_s16be_planar": {
+    "label": "PCM signed 16-bit big-endian planar",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_s16le": {
+    "label": "PCM signed 16-bit little-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_s16le_planar": {
+    "label": "PCM signed 16-bit little-endian planar",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_s24be": {
+    "label": "PCM signed 24-bit big-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_s24daud": {
+    "label": "PCM D-Cinema audio signed 24-bit",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_s24le": {
+    "label": "PCM signed 24-bit little-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_s24le_planar": {
+    "label": "PCM signed 24-bit little-endian planar",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_s32be": {
+    "label": "PCM signed 32-bit big-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_s32le": {
+    "label": "PCM signed 32-bit little-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_s32le_planar": {
+    "label": "PCM signed 32-bit little-endian planar",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_s64be": {
+    "label": "PCM signed 64-bit big-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_s64le": {
+    "label": "PCM signed 64-bit little-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_s8": {
+    "label": "PCM signed 8-bit",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_s8_planar": {
+    "label": "PCM signed 8-bit planar",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_sga": {
+    "label": "PCM SGA",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_u16be": {
+    "label": "PCM unsigned 16-bit big-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_u16le": {
+    "label": "PCM unsigned 16-bit little-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_u24be": {
+    "label": "PCM unsigned 24-bit big-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_u24le": {
+    "label": "PCM unsigned 24-bit little-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_u32be": {
+    "label": "PCM unsigned 32-bit big-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_u32le": {
+    "label": "PCM unsigned 32-bit little-endian",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_u8": {
+    "label": "PCM unsigned 8-bit",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "pcm_vidc": {
+    "label": "PCM Archimedes VIDC",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "qcelp": {
+    "label": "QCELP / PureVoice",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "qdm2": {
+    "label": "QDesign Music Codec 2 (decoders: qdm2 qdm2_at)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "qdmc": {
+    "label": "QDesign Music (decoders: qdmc qdmc_at)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "ra_144": {
+    "label": "RealAudio 1.0 (14.4K) (decoders: real_144) (encoders: real_144)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "ra_288": {
+    "label": "RealAudio 2.0 (28.8K) (decoders: real_288)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "ralf": {
+    "label": "RealAudio Lossless",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "rka": {
+    "label": "RKA (RK Audio)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": true
+  },
+  "roq_dpcm": {
+    "label": "DPCM id RoQ",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "s302m": {
+    "label": "SMPTE 302M",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "sbc": {
+    "label": "SBC (low-complexity subband codec)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "sdx2_dpcm": {
+    "label": "DPCM Squareroot-Delta-Exact",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "shorten": {
+    "label": "Shorten",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "sipr": {
+    "label": "RealAudio SIPR / ACELP.NET",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "siren": {
+    "label": "Siren",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "smackaudio": {
+    "label": "Smacker audio (decoders: smackaud)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "smv": {
+    "label": "SMV (Selectable Mode Vocoder)",
+    "type": "audio",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "sol_dpcm": {
+    "label": "DPCM Sol",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "sonic": {
+    "label": "Sonic",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": false
+  },
+  "sonicls": {
+    "label": "Sonic lossless",
+    "type": "audio",
+    "supportsDecoding": false,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": false
+  },
+  "speex": {
+    "label": "Speex (decoders: speex libspeex) (encoders: libspeex)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "tak": {
+    "label": "TAK (Tom's lossless Audio Kompressor)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "truehd": {
+    "label": "TrueHD",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": true
+  },
+  "truespeech": {
+    "label": "DSP Group TrueSpeech",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "tta": {
+    "label": "TTA (True Audio)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "twinvq": {
+    "label": "VQF TwinVQ",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "vmdaudio": {
+    "label": "Sierra VMD audio",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "vorbis": {
+    "label": "Vorbis (decoders: vorbis libvorbis) (encoders: vorbis libvorbis)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "wady_dpcm": {
+    "label": "DPCM Marble WADY",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "wavarc": {
+    "label": "Waveform Archiver",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "wavesynth": {
+    "label": "Wave synthesis pseudo-codec",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": false
+  },
+  "wavpack": {
+    "label": "WavPack",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": true
+  },
+  "westwood_snd1": {
+    "label": "Westwood Audio (SND1) (decoders: ws_snd1)",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "wmalossless": {
+    "label": "Windows Media Audio Lossless",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": false,
+    "lossless": true
+  },
+  "wmapro": {
+    "label": "Windows Media Audio 9 Professional",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "wmav1": {
+    "label": "Windows Media Audio 1",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "wmav2": {
+    "label": "Windows Media Audio 2",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "wmavoice": {
+    "label": "Windows Media Audio Voice",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "xan_dpcm": {
+    "label": "DPCM Xan",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "xma1": {
+    "label": "Xbox Media Audio 1",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "xma2": {
+    "label": "Xbox Media Audio 2",
+    "type": "audio",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": true,
+    "lossy": true,
+    "lossless": false
+  },
+  "bin_data": {
+    "label": "binary data",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "dvd_nav_packet": {
+    "label": "DVD Nav packet",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "epg": {
+    "label": "Electronic Program Guide",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "klv": {
+    "label": "SMPTE 336M Key-Length-Value (KLV) metadata",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "mpegts": {
+    "label": "raw MPEG-TS stream",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "otf": {
+    "label": "OpenType font",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "scte_35": {
+    "label": "SCTE 35 Message Queue",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "smpte_2038": {
+    "label": "SMPTE ST 2038 VANC in MPEG-2 TS",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "timed_id3": {
+    "label": "timed ID3 metadata",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "ttf": {
+    "label": "TrueType font",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "arib_caption": {
+    "label": "ARIB STD-B24 caption (decoders: libaribb24)",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "ass": {
+    "label": "ASS (Advanced SSA) subtitle (decoders: ssa ass) (encoders: ssa ass)",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "dvb_subtitle": {
+    "label": "DVB subtitles (decoders: dvbsub) (encoders: dvbsub)",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "dvb_teletext": {
+    "label": "DVB teletext",
+    "type": "subtitle",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "dvd_subtitle": {
+    "label": "DVD subtitles (decoders: dvdsub) (encoders: dvdsub)",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "eia_608": {
+    "label": "EIA-608 closed captions (decoders: cc_dec)",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "hdmv_pgs_subtitle": {
+    "label": "HDMV Presentation Graphic Stream subtitles (decoders: pgssub)",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "hdmv_text_subtitle": {
+    "label": "HDMV Text subtitle",
+    "type": "subtitle",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "jacosub": {
+    "label": "JACOsub subtitle",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "microdvd": {
+    "label": "MicroDVD subtitle",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "mov_text": {
+    "label": "MOV text",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "mpl2": {
+    "label": "MPL2 subtitle",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "pjs": {
+    "label": "PJS (Phoenix Japanimation Society) subtitle",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "realtext": {
+    "label": "RealText subtitle",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "sami": {
+    "label": "SAMI subtitle",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "srt": {
+    "label": "SubRip subtitle with embedded timing",
+    "type": "subtitle",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "ssa": {
+    "label": "SSA (SubStation Alpha) subtitle",
+    "type": "subtitle",
+    "supportsDecoding": false,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "stl": {
+    "label": "Spruce subtitle format",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "subrip": {
+    "label": "SubRip subtitle (decoders: srt subrip) (encoders: srt subrip)",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "subviewer": {
+    "label": "SubViewer subtitle",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "subviewer1": {
+    "label": "SubViewer v1 subtitle",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "text": {
+    "label": "raw UTF-8 text",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "ttml": {
+    "label": "Timed Text Markup Language",
+    "type": "subtitle",
+    "supportsDecoding": false,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "vplayer": {
+    "label": "VPlayer subtitle",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": false,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "webvtt": {
+    "label": "WebVTT subtitle",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  },
+  "xsub": {
+    "label": "XSUB",
+    "type": "subtitle",
+    "supportsDecoding": true,
+    "supportsEncoding": true,
+    "intraFrameOnly": false,
+    "lossy": false,
+    "lossless": false
+  }
+}

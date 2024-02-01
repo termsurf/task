@@ -1,0 +1,7 @@
+host
+node_modules
+tmp
+*.csv
+*.md
+*.mdx
+*.yaml

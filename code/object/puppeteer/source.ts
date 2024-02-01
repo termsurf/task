@@ -1,0 +1,26 @@
+import { Hash, List } from '@termsurf/form'
+
+export const puppeteer_life_cycle_event: List = {
+  form: 'list',
+  list: ['load', 'domcontentloaded', 'networkidle0', 'networkidle2'],
+}
+
+export const puppeteer_life_cycle_event_content: Hash = {
+  form: 'hash',
+  link: 'puppeteer_life_cycle_event',
+  bond: {
+    note: { like: 'string' },
+  },
+  hash: {
+    load: { note: `Waits for the 'load' event.` },
+    domcontentloaded: {
+      note: `Waits for the 'DOMContentLoaded' event.`,
+    },
+    networkidle0: {
+      note: `Waits till there are no more than 0 network connections for at least 500 ms.`,
+    },
+    networkidle2: {
+      note: `Waits till there are no more than 2 network connections for at least 500 ms.`,
+    },
+  },
+}

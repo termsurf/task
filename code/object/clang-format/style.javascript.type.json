@@ -1,0 +1,32 @@
+{
+  "javaScriptQuotes": {
+    "host": "JavaScriptQuotes",
+    "head": "Quotes",
+    "note": "The JavaScriptQuoteStyle to use for JavaScript strings.",
+    "need": false,
+    "case": {
+      "leave": {
+        "head": "Leave",
+        "host": "Leave",
+        "note": "Leave string quotes as they are."
+      },
+      "single": {
+        "head": "Single",
+        "host": "Single",
+        "note": "Always use single quotes."
+      },
+      "double": {
+        "head": "Double",
+        "host": "Double",
+        "note": "Always use double quotes."
+      }
+    }
+  },
+  "javaScriptWrapImports": {
+    "host": "JavaScriptWrapImports",
+    "head": "Wrap imports",
+    "like": "boolean",
+    "note": "Whether to wrap JavaScript import/export statements.",
+    "need": false
+  }
+}

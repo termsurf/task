@@ -1,0 +1,35 @@
+{
+  "breakAfterJavaFieldAnnotations": {
+    "host": "BreakAfterJavaFieldAnnotations",
+    "head": "Break after field annotations",
+    "like": "boolean",
+    "note": "Break after each annotation on a field in Java files.",
+    "need": false
+  },
+  "javaImportGroups": {
+    "host": "JavaImportGroups",
+    "head": "Import groups",
+    "like": "string",
+    "list": true,
+    "note": "A vector of prefixes ordered by the desired groups for Java imports.",
+    "need": false
+  },
+  "sortJavaStaticImport": {
+    "host": "SortJavaStaticImport",
+    "head": "Sort static import",
+    "note": "When sorting Java imports, by default static imports are placed before non-static imports. If `JavaStaticImportAfterImport` is `After`, static imports are placed after non-static imports.",
+    "need": false,
+    "case": {
+      "before": {
+        "head": "Before",
+        "host": "Before",
+        "note": "Static imports are placed before non-static imports."
+      },
+      "after": {
+        "head": "After",
+        "host": "After",
+        "note": "Static imports are placed after non-static imports."
+      }
+    }
+  }
+}

@@ -1,0 +1,3506 @@
+{
+  "a_35": {
+    "host": "a35",
+    "note": "Cortex-A35 ARM processors."
+  },
+  "a_53": {
+    "host": "a53",
+    "note": "Cortex-A53 ARM processors."
+  },
+  "a_55": {
+    "host": "a55",
+    "note": "Cortex-A55 ARM processors."
+  },
+  "a_57": {
+    "host": "a57",
+    "note": "Cortex-A57 ARM processors."
+  },
+  "a_64_fx": {
+    "host": "a64fx",
+    "note": "Fujitsu A64FX processors."
+  },
+  "a_65": {
+    "host": "a65",
+    "note": "Cortex-A65 ARM processors."
+  },
+  "a_72": {
+    "host": "a72",
+    "note": "Cortex-A72 ARM processors."
+  },
+  "a_73": {
+    "host": "a73",
+    "note": "Cortex-A73 ARM processors."
+  },
+  "a_75": {
+    "host": "a75",
+    "note": "Cortex-A75 ARM processors."
+  },
+  "a_76": {
+    "host": "a76",
+    "note": "Cortex-A76 ARM processors."
+  },
+  "a_77": {
+    "host": "a77",
+    "note": "Cortex-A77 ARM processors."
+  },
+  "aes": {
+    "host": "aes",
+    "note": "Enable AES instructions."
+  },
+  "aggressive_fma": {
+    "host": "aggressive-fma",
+    "note": "Enable Aggressive FMA for floating-point.."
+  },
+  "alternate_sextload_cvt_f_32_pattern": {
+    "host": "alternate-sextload-cvt-f32-pattern",
+    "note": "Use alternative pattern for sextload convert to f32."
+  },
+  "altnzcv": {
+    "host": "altnzcv",
+    "note": "Enable alternative NZCV format for floating point comparisons."
+  },
+  "am": {
+    "host": "am",
+    "note": "Enable v8.4-A Activity Monitors extension."
+  },
+  "amvs": {
+    "host": "amvs",
+    "note": "Enable v8.6-A Activity Monitors Virtualization support."
+  },
+  "apple_a_10": {
+    "host": "apple-a10",
+    "note": "Apple A10."
+  },
+  "apple_a_11": {
+    "host": "apple-a11",
+    "note": "Apple A11."
+  },
+  "apple_a_12": {
+    "host": "apple-a12",
+    "note": "Apple A12."
+  },
+  "apple_a_13": {
+    "host": "apple-a13",
+    "note": "Apple A13."
+  },
+  "apple_a_7": {
+    "host": "apple-a7",
+    "note": "Apple A7 (the CPU formerly known as Cyclone)."
+  },
+  "arith_bcc_fusion": {
+    "host": "arith-bcc-fusion",
+    "note": "CPU fuses arithmetic+bcc operations."
+  },
+  "arith_cbz_fusion": {
+    "host": "arith-cbz-fusion",
+    "note": "CPU fuses arithmetic + cbz/cbnz operations."
+  },
+  "balance_fp_ops": {
+    "host": "balance-fp-ops",
+    "note": "balance mix of odd and even D-registers for fp multiply(-accumulate) ops."
+  },
+  "bf_16": {
+    "host": "bf16",
+    "note": "Enable support for BFloat16 instructions."
+  },
+  "bti": {
+    "host": "bti",
+    "note": "Enable Branch Target Identification."
+  },
+  "call_saved_x_10": {
+    "host": "call-saved-x10",
+    "note": "Make X10 callee saved.."
+  },
+  "call_saved_x_11": {
+    "host": "call-saved-x11",
+    "note": "Make X11 callee saved.."
+  },
+  "call_saved_x_12": {
+    "host": "call-saved-x12",
+    "note": "Make X12 callee saved.."
+  },
+  "call_saved_x_13": {
+    "host": "call-saved-x13",
+    "note": "Make X13 callee saved.."
+  },
+  "call_saved_x_14": {
+    "host": "call-saved-x14",
+    "note": "Make X14 callee saved.."
+  },
+  "call_saved_x_15": {
+    "host": "call-saved-x15",
+    "note": "Make X15 callee saved.."
+  },
+  "call_saved_x_18": {
+    "host": "call-saved-x18",
+    "note": "Make X18 callee saved.."
+  },
+  "call_saved_x_8": {
+    "host": "call-saved-x8",
+    "note": "Make X8 callee saved.."
+  },
+  "call_saved_x_9": {
+    "host": "call-saved-x9",
+    "note": "Make X9 callee saved.."
+  },
+  "carmel": {
+    "host": "carmel",
+    "note": "Nvidia Carmel processors."
+  },
+  "ccdp": {
+    "host": "ccdp",
+    "note": "Enable v8.5 Cache Clean to Point of Deep Persistence."
+  },
+  "ccidx": {
+    "host": "ccidx",
+    "note": "Enable v8.3-A Extend of the CCSIDR number of sets."
+  },
+  "ccpp": {
+    "host": "ccpp",
+    "note": "Enable v8.2 data Cache Clean to Point of Persistence."
+  },
+  "complxnum": {
+    "host": "complxnum",
+    "note": "Enable v8.3-A Floating-point complex number support."
+  },
+  "cortex_a_78": {
+    "host": "cortex-a78",
+    "note": "Cortex-A78 ARM processors."
+  },
+  "cortex_x_1": {
+    "host": "cortex-x1",
+    "note": "Cortex-X1 ARM processors."
+  },
+  "crc": {
+    "host": "crc",
+    "note": "Enable support for CRC instructions."
+  },
+  "crypto": {
+    "host": "crypto",
+    "note": "Enable support for Cryptography extensions."
+  },
+  "custom_cheap_as_move": {
+    "host": "custom-cheap-as-move",
+    "note": "Use custom handling of cheap instructions."
+  },
+  "disable_latency_sched_heuristic": {
+    "host": "disable-latency-sched-heuristic",
+    "note": "Disable latency scheduling heuristic."
+  },
+  "dit": {
+    "host": "dit",
+    "note": "Enable v8.4-A Data Independent Timing instructions."
+  },
+  "dotprod": {
+    "host": "dotprod",
+    "note": "Enable support for dot product instructions."
+  },
+  "ecv": {
+    "host": "ecv",
+    "note": "Enable enhanced counter virtualization extension."
+  },
+  "ete": {
+    "host": "ete",
+    "note": "Enable Embedded Trace Extension."
+  },
+  "exynos_cheap_as_move": {
+    "host": "exynos-cheap-as-move",
+    "note": "Use Exynos specific handling of cheap instructions."
+  },
+  "exynosm_3": {
+    "host": "exynosm3",
+    "note": "Samsung Exynos-M3 processors."
+  },
+  "exynosm_4": {
+    "host": "exynosm4",
+    "note": "Samsung Exynos-M4 processors."
+  },
+  "f_32_mm": {
+    "host": "f32mm",
+    "note": "Enable Matrix Multiply FP32 Extension."
+  },
+  "f_64_mm": {
+    "host": "f64mm",
+    "note": "Enable Matrix Multiply FP64 Extension."
+  },
+  "falkor": {
+    "host": "falkor",
+    "note": "Qualcomm Falkor processors."
+  },
+  "fgt": {
+    "host": "fgt",
+    "note": "Enable fine grained virtualization traps extension."
+  },
+  "fmi": {
+    "host": "fmi",
+    "note": "Enable v8.4-A Flag Manipulation Instructions."
+  },
+  "force_32_bit_jump_tables": {
+    "host": "force-32bit-jump-tables",
+    "note": "Force jump table entries to be 32-bits wide except at MinSize."
+  },
+  "fp_armv_8": {
+    "host": "fp-armv8",
+    "note": "Enable ARMv8 FP."
+  },
+  "fp_16_fml": {
+    "host": "fp16fml",
+    "note": "Enable full half-precision floating point fml instructions."
+  },
+  "fptoint": {
+    "host": "fptoint",
+    "note": "Enable FRInt[32|64][Z|X] instructions that round a floating-point number to an integer (in FP format) forcing it to fit into a 32- or 64-bit int."
+  },
+  "fullfp_16": {
+    "host": "fullfp16",
+    "note": "Enable full half-precision floating point."
+  },
+  "fuse_address": {
+    "host": "fuse-address",
+    "note": "CPU fuses address generation and memory operations."
+  },
+  "fuse_aes": {
+    "host": "fuse-aes",
+    "note": "CPU fuses AES crypto operations."
+  },
+  "fuse_arith_logic": {
+    "host": "fuse-arith-logic",
+    "note": "CPU fuses arithmetic and logic operations."
+  },
+  "fuse_crypto_eor": {
+    "host": "fuse-crypto-eor",
+    "note": "CPU fuses AES/PMULL and EOR operations."
+  },
+  "fuse_csel": {
+    "host": "fuse-csel",
+    "note": "CPU fuses conditional select operations."
+  },
+  "fuse_literals": {
+    "host": "fuse-literals",
+    "note": "CPU fuses literal generation operations."
+  },
+  "harden_sls_blr": {
+    "host": "harden-sls-blr",
+    "note": "Harden against straight line speculation across BLR instructions."
+  },
+  "harden_sls_retbr": {
+    "host": "harden-sls-retbr",
+    "note": "Harden against straight line speculation across RET and BR instructions."
+  },
+  "i_8_mm": {
+    "host": "i8mm",
+    "note": "Enable Matrix Multiply Int8 Extension."
+  },
+  "jsconv": {
+    "host": "jsconv",
+    "note": "Enable v8.3-A JavaScript FP conversion instructions."
+  },
+  "kryo": {
+    "host": "kryo",
+    "note": "Qualcomm Kryo processors."
+  },
+  "lor": {
+    "host": "lor",
+    "note": "Enables ARM v8.1 Limited Ordering Regions extension."
+  },
+  "lse": {
+    "host": "lse",
+    "note": "Enable ARMv8.1 Large System Extension (LSE) atomic instructions."
+  },
+  "lsl_fast": {
+    "host": "lsl-fast",
+    "note": "CPU has a fastpath logical shift of up to 3 places."
+  },
+  "mpam": {
+    "host": "mpam",
+    "note": "Enable v8.4-A Memory system Partitioning and Monitoring extension."
+  },
+  "mte": {
+    "host": "mte",
+    "note": "Enable Memory Tagging Extension."
+  },
+  "neon": {
+    "host": "neon",
+    "note": "Enable NEON instructions."
+  },
+  "neoversee_1": {
+    "host": "neoversee1",
+    "note": "Neoverse E1 ARM processors."
+  },
+  "neoversen_1": {
+    "host": "neoversen1",
+    "note": "Neoverse N1 ARM processors."
+  },
+  "no_neg_immediates": {
+    "host": "no-neg-immediates",
+    "note": "Convert immediates and instructions to their negated or complemented equivalent when the immediate does not fit in the encoding.."
+  },
+  "nv": {
+    "host": "nv",
+    "note": "Enable v8.4-A Nested Virtualization Enchancement."
+  },
+  "pa": {
+    "host": "pa",
+    "note": "Enable v8.3-A Pointer Authentication extension."
+  },
+  "pan": {
+    "host": "pan",
+    "note": "Enables ARM v8.1 Privileged Access-Never extension."
+  },
+  "pan_rwv": {
+    "host": "pan-rwv",
+    "note": "Enable v8.2 PAN s1e1R and s1e1W Variants."
+  },
+  "perfmon": {
+    "host": "perfmon",
+    "note": "Enable support for Performance Monitor extensions."
+  },
+  "pmu": {
+    "host": "pmu",
+    "note": "Enable v8.4-A PMU extension."
+  },
+  "predictable_select_expensive": {
+    "host": "predictable-select-expensive",
+    "note": "Prefer likely predicted branches over selects."
+  },
+  "predres": {
+    "host": "predres",
+    "note": "Enable v8.5a execution and data prediction invalidation instructions."
+  },
+  "rand": {
+    "host": "rand",
+    "note": "Enable Random Number generation instructions."
+  },
+  "ras": {
+    "host": "ras",
+    "note": "Enable Reliability, Availability and Serviceability extensions."
+  },
+  "rasv_8_4": {
+    "host": "rasv8_4",
+    "note": "Enable v8.4-A Reliability, Availability and Serviceability extension."
+  },
+  "rcpc": {
+    "host": "rcpc",
+    "note": "Enable support for RCPC extension."
+  },
+  "rcpc_immo": {
+    "host": "rcpc-immo",
+    "note": "Enable v8.4-A RCPC instructions with Immediate Offsets."
+  },
+  "rdm": {
+    "host": "rdm",
+    "note": "Enable ARMv8.1 Rounding Double Multiply Add/Subtract instructions."
+  },
+  "reserve_x_1": {
+    "host": "reserve-x1",
+    "note": "Reserve X1."
+  },
+  "reserve_x_10": {
+    "host": "reserve-x10",
+    "note": "Reserve X10."
+  },
+  "reserve_x_11": {
+    "host": "reserve-x11",
+    "note": "Reserve X11."
+  },
+  "reserve_x_12": {
+    "host": "reserve-x12",
+    "note": "Reserve X12."
+  },
+  "reserve_x_13": {
+    "host": "reserve-x13",
+    "note": "Reserve X13."
+  },
+  "reserve_x_14": {
+    "host": "reserve-x14",
+    "note": "Reserve X14."
+  },
+  "reserve_x_15": {
+    "host": "reserve-x15",
+    "note": "Reserve X15."
+  },
+  "reserve_x_18": {
+    "host": "reserve-x18",
+    "note": "Reserve X18."
+  },
+  "reserve_x_2": {
+    "host": "reserve-x2",
+    "note": "Reserve X2."
+  },
+  "reserve_x_20": {
+    "host": "reserve-x20",
+    "note": "Reserve X20."
+  },
+  "reserve_x_21": {
+    "host": "reserve-x21",
+    "note": "Reserve X21."
+  },
+  "reserve_x_22": {
+    "host": "reserve-x22",
+    "note": "Reserve X22."
+  },
+  "reserve_x_23": {
+    "host": "reserve-x23",
+    "note": "Reserve X23."
+  },
+  "reserve_x_24": {
+    "host": "reserve-x24",
+    "note": "Reserve X24."
+  },
+  "reserve_x_25": {
+    "host": "reserve-x25",
+    "note": "Reserve X25."
+  },
+  "reserve_x_26": {
+    "host": "reserve-x26",
+    "note": "Reserve X26."
+  },
+  "reserve_x_27": {
+    "host": "reserve-x27",
+    "note": "Reserve X27."
+  },
+  "reserve_x_28": {
+    "host": "reserve-x28",
+    "note": "Reserve X28."
+  },
+  "reserve_x_3": {
+    "host": "reserve-x3",
+    "note": "Reserve X3."
+  },
+  "reserve_x_30": {
+    "host": "reserve-x30",
+    "note": "Reserve X30."
+  },
+  "reserve_x_4": {
+    "host": "reserve-x4",
+    "note": "Reserve X4."
+  },
+  "reserve_x_5": {
+    "host": "reserve-x5",
+    "note": "Reserve X5."
+  },
+  "reserve_x_6": {
+    "host": "reserve-x6",
+    "note": "Reserve X6."
+  },
+  "reserve_x_7": {
+    "host": "reserve-x7",
+    "note": "Reserve X7."
+  },
+  "reserve_x_9": {
+    "host": "reserve-x9",
+    "note": "Reserve X9."
+  },
+  "saphira": {
+    "host": "saphira",
+    "note": "Qualcomm Saphira processors."
+  },
+  "sb": {
+    "host": "sb",
+    "note": "Enable v8.5a Speculation Barrier."
+  },
+  "sel_2": {
+    "host": "sel2",
+    "note": "Enable v8.4-A Secure Exception Level 2 extension."
+  },
+  "sha_2": {
+    "host": "sha2",
+    "note": "Enable SHA1 and SHA256 support."
+  },
+  "sha_3": {
+    "host": "sha3",
+    "note": "Enable SHA512 and SHA3 support."
+  },
+  "slow_misaligned_128_store": {
+    "host": "slow-misaligned-128store",
+    "note": "Misaligned 128 bit stores are slow."
+  },
+  "slow_paired_128": {
+    "host": "slow-paired-128",
+    "note": "Paired 128 bit loads and stores are slow."
+  },
+  "slow_strqro_store": {
+    "host": "slow-strqro-store",
+    "note": "STR of Q register with register offset is slow."
+  },
+  "sm_4": {
+    "host": "sm4",
+    "note": "Enable SM3 and SM4 support."
+  },
+  "spe": {
+    "host": "spe",
+    "note": "Enable SPE instructions."
+  },
+  "specrestrict": {
+    "host": "specrestrict",
+    "note": "Enable architectural speculation restriction."
+  },
+  "ssbs": {
+    "host": "ssbs",
+    "note": "Enable Speculative Store Bypass Safe bit."
+  },
+  "strict_align": {
+    "host": "strict-align",
+    "note": "Disallow all unaligned memory access."
+  },
+  "sve": {
+    "host": "sve",
+    "note": "Enable Scalable Vector Extension (SVE) instructions."
+  },
+  "sve_2": {
+    "host": "sve2",
+    "note": "Enable Scalable Vector Extension 2 (SVE2) instructions."
+  },
+  "sve_2_aes": {
+    "host": "sve2-aes",
+    "note": "Enable AES SVE2 instructions."
+  },
+  "sve_2_bitperm": {
+    "host": "sve2-bitperm",
+    "note": "Enable bit permutation SVE2 instructions."
+  },
+  "sve_2_sha_3": {
+    "host": "sve2-sha3",
+    "note": "Enable SHA3 SVE2 instructions."
+  },
+  "sve_2_sm_4": {
+    "host": "sve2-sm4",
+    "note": "Enable SM4 SVE2 instructions."
+  },
+  "tagged_globals": {
+    "host": "tagged-globals",
+    "note": "Use an instruction sequence for taking the address of a global that allows a memory tag in the upper address bits."
+  },
+  "thunderx": {
+    "host": "thunderx",
+    "note": "Cavium ThunderX processors."
+  },
+  "thunderx_2_t_99": {
+    "host": "thunderx2t99",
+    "note": "Cavium ThunderX2 processors."
+  },
+  "thunderx_3_t_110": {
+    "host": "thunderx3t110",
+    "note": "Marvell ThunderX3 processors."
+  },
+  "thunderxt_81": {
+    "host": "thunderxt81",
+    "note": "Cavium ThunderX processors."
+  },
+  "thunderxt_83": {
+    "host": "thunderxt83",
+    "note": "Cavium ThunderX processors."
+  },
+  "thunderxt_88": {
+    "host": "thunderxt88",
+    "note": "Cavium ThunderX processors."
+  },
+  "tlb_rmi": {
+    "host": "tlb-rmi",
+    "note": "Enable v8.4-A TLB Range and Maintenance Instructions."
+  },
+  "tme": {
+    "host": "tme",
+    "note": "Enable Transactional Memory Extension."
+  },
+  "tpidr_el_1": {
+    "host": "tpidr-el1",
+    "note": "Permit use of TPIDR_EL1 for the TLS base."
+  },
+  "tpidr_el_2": {
+    "host": "tpidr-el2",
+    "note": "Permit use of TPIDR_EL2 for the TLS base."
+  },
+  "tpidr_el_3": {
+    "host": "tpidr-el3",
+    "note": "Permit use of TPIDR_EL3 for the TLS base."
+  },
+  "tracev_8_4": {
+    "host": "tracev8.4",
+    "note": "Enable v8.4-A Trace extension."
+  },
+  "trbe": {
+    "host": "trbe",
+    "note": "Enable Trace Buffer Extension."
+  },
+  "tsv_110": {
+    "host": "tsv110",
+    "note": "HiSilicon TS-V110 processors."
+  },
+  "uaops": {
+    "host": "uaops",
+    "note": "Enable v8.2 UAO PState."
+  },
+  "use_aa": {
+    "host": "use-aa",
+    "note": "Use alias analysis during codegen."
+  },
+  "use_experimental_zeroing_pseudos": {
+    "host": "use-experimental-zeroing-pseudos",
+    "note": "Hint to the compiler that the MOVPRFX instruction is merged with destructive operations."
+  },
+  "use_postra_scheduler": {
+    "host": "use-postra-scheduler",
+    "note": "Schedule again after register allocation."
+  },
+  "use_reciprocal_square_root": {
+    "host": "use-reciprocal-square-root",
+    "note": "Use the reciprocal square root approximation."
+  },
+  "v_8_1_a": {
+    "host": "v8.1a",
+    "note": "Support ARM v8.1a instructions."
+  },
+  "v_8_2_a": {
+    "host": "v8.2a",
+    "note": "Support ARM v8.2a instructions."
+  },
+  "v_8_3_a": {
+    "host": "v8.3a",
+    "note": "Support ARM v8.3a instructions."
+  },
+  "v_8_4_a": {
+    "host": "v8.4a",
+    "note": "Support ARM v8.4a instructions."
+  },
+  "v_8_5_a": {
+    "host": "v8.5a",
+    "note": "Support ARM v8.5a instructions."
+  },
+  "v_8_6_a": {
+    "host": "v8.6a",
+    "note": "Support ARM v8.6a instructions."
+  },
+  "vh": {
+    "host": "vh",
+    "note": "Enables ARM v8.1 Virtual Host extension."
+  },
+  "zcm": {
+    "host": "zcm",
+    "note": "Has zero-cycle register moves."
+  },
+  "zcz": {
+    "host": "zcz",
+    "note": "Has zero-cycle zeroing instructions."
+  },
+  "zcz_fp": {
+    "host": "zcz-fp",
+    "note": "Has zero-cycle zeroing instructions for FP registers."
+  },
+  "zcz_fp_workaround": {
+    "host": "zcz-fp-workaround",
+    "note": "The zero-cycle floating-point zeroing instruction has a bug."
+  },
+  "zcz_gp": {
+    "host": "zcz-gp",
+    "note": "Has zero-cycle zeroing instructions for generic registers."
+  },
+  "16_bit_insts": {
+    "host": "16-bit-insts",
+    "note": "Has i16/f16 instructions."
+  },
+  "dump_code": {
+    "host": "DumpCode",
+    "note": "Dump MachineInstrs in the CodeEmitter."
+  },
+  "a_16": {
+    "host": "a16",
+    "note": "Support gfx10-style A16 for 16-bit coordinates/gradients/lod/clamp/mip image operands."
+  },
+  "add_no_carry_insts": {
+    "host": "add-no-carry-insts",
+    "note": "Have VALU add/sub instructions without carry out."
+  },
+  "aperture_regs": {
+    "host": "aperture-regs",
+    "note": "Has Memory Aperture Base and Size Registers."
+  },
+  "atomic_fadd_insts": {
+    "host": "atomic-fadd-insts",
+    "note": "Has buffer_atomic_add_f32, buffer_atomic_pk_add_f16, global_atomic_add_f32, global_atomic_pk_add_f16 instructions."
+  },
+  "auto_waitcnt_before_barrier": {
+    "host": "auto-waitcnt-before-barrier",
+    "note": "Hardware automatically inserts waitcnt before barrier."
+  },
+  "ci_insts": {
+    "host": "ci-insts",
+    "note": "Additional instructions for CI+."
+  },
+  "code_object_v_3": {
+    "host": "code-object-v3",
+    "note": "Generate code object version 3."
+  },
+  "cumode": {
+    "host": "cumode",
+    "note": "Enable CU wavefront execution mode."
+  },
+  "dl_insts": {
+    "host": "dl-insts",
+    "note": "Has v_fmac_f32 and v_xnor_b32 instructions."
+  },
+  "dot_1_insts": {
+    "host": "dot1-insts",
+    "note": "Has v_dot4_i32_i8 and v_dot8_i32_i4 instructions."
+  },
+  "dot_2_insts": {
+    "host": "dot2-insts",
+    "note": "Has v_dot2_f32_f16, v_dot2_i32_i16, v_dot2_u32_u16, v_dot4_u32_u8, v_dot8_u32_u4 instructions."
+  },
+  "dot_3_insts": {
+    "host": "dot3-insts",
+    "note": "Has v_dot8c_i32_i4 instruction."
+  },
+  "dot_4_insts": {
+    "host": "dot4-insts",
+    "note": "Has v_dot2c_i32_i16 instruction."
+  },
+  "dot_5_insts": {
+    "host": "dot5-insts",
+    "note": "Has v_dot2c_f32_f16 instruction."
+  },
+  "dot_6_insts": {
+    "host": "dot6-insts",
+    "note": "Has v_dot4c_i32_i8 instruction."
+  },
+  "dpp": {
+    "host": "dpp",
+    "note": "Support DPP (Data Parallel Primitives) extension."
+  },
+  "dpp_8": {
+    "host": "dpp8",
+    "note": "Support DPP8 (Data Parallel Primitives) extension."
+  },
+  "ds_src_2_insts": {
+    "host": "ds-src2-insts",
+    "note": "Has ds_*_src2 instructions."
+  },
+  "dumpcode": {
+    "host": "dumpcode",
+    "note": "Dump MachineInstrs in the CodeEmitter."
+  },
+  "enable_ds_128": {
+    "host": "enable-ds128",
+    "note": "Use ds_{read|write}_b128."
+  },
+  "enable_prt_strict_null": {
+    "host": "enable-prt-strict-null",
+    "note": "Enable zeroing of result registers for sparse texture fetches."
+  },
+  "fast_denormal_f_32": {
+    "host": "fast-denormal-f32",
+    "note": "Enabling denormals does not cause f32 instructions to run at f64 rates."
+  },
+  "fast_fmaf": {
+    "host": "fast-fmaf",
+    "note": "Assuming f32 fma is at least as fast as mul + add."
+  },
+  "flat_address_space": {
+    "host": "flat-address-space",
+    "note": "Support flat address space."
+  },
+  "flat_for_global": {
+    "host": "flat-for-global",
+    "note": "Force to generate flat instruction for global."
+  },
+  "flat_global_insts": {
+    "host": "flat-global-insts",
+    "note": "Have global_* flat memory instructions."
+  },
+  "flat_inst_offsets": {
+    "host": "flat-inst-offsets",
+    "note": "Flat instructions have immediate offset addressing mode."
+  },
+  "flat_scratch_insts": {
+    "host": "flat-scratch-insts",
+    "note": "Have scratch_* flat memory instructions."
+  },
+  "flat_segment_offset_bug": {
+    "host": "flat-segment-offset-bug",
+    "note": "GFX10 bug, inst_offset ignored in flat segment."
+  },
+  "fma_mix_insts": {
+    "host": "fma-mix-insts",
+    "note": "Has v_fma_mix_f32, v_fma_mixlo_f16, v_fma_mixhi_f16 instructions."
+  },
+  "fmaf": {
+    "host": "fmaf",
+    "note": "Enable single precision FMA (not as fast as mul+add, but fused)."
+  },
+  "fp_64": {
+    "host": "fp64",
+    "note": "Floating point unit supports double precision."
+  },
+  "g_16": {
+    "host": "g16",
+    "note": "Support G16 for 16-bit gradient image operands."
+  },
+  "gcn_3_encoding": {
+    "host": "gcn3-encoding",
+    "note": "Encoding format for VI."
+  },
+  "get_wave_id_inst": {
+    "host": "get-wave-id-inst",
+    "note": "Has s_get_waveid_in_workgroup instruction."
+  },
+  "gfx_10": {
+    "host": "gfx10",
+    "note": "GFX10 GPU generation."
+  },
+  "gfx_10_3_insts": {
+    "host": "gfx10-3-insts",
+    "note": "Additional instructions for GFX10.3."
+  },
+  "gfx_10_insts": {
+    "host": "gfx10-insts",
+    "note": "Additional instructions for GFX10+."
+  },
+  "gfx_10_b_encoding": {
+    "host": "gfx10_b-encoding",
+    "note": "Encoding format GFX10_B."
+  },
+  "gfx_7_gfx_8_gfx_9_insts": {
+    "host": "gfx7-gfx8-gfx9-insts",
+    "note": "Instructions shared in GFX7, GFX8, GFX9."
+  },
+  "gfx_8_insts": {
+    "host": "gfx8-insts",
+    "note": "Additional instructions for GFX8+."
+  },
+  "gfx_9": {
+    "host": "gfx9",
+    "note": "GFX9 GPU generation."
+  },
+  "gfx_9_insts": {
+    "host": "gfx9-insts",
+    "note": "Additional instructions for GFX9+."
+  },
+  "half_rate_64_ops": {
+    "host": "half-rate-64-ops",
+    "note": "Most fp64 instructions are half rate instead of quarter."
+  },
+  "inst_fwd_prefetch_bug": {
+    "host": "inst-fwd-prefetch-bug",
+    "note": "S_INST_PREFETCH instruction causes shader to hang."
+  },
+  "int_clamp_insts": {
+    "host": "int-clamp-insts",
+    "note": "Support clamp for integer destination."
+  },
+  "inv_2_pi_inline_imm": {
+    "host": "inv-2pi-inline-imm",
+    "note": "Has 1 / (2 * pi) as inline immediate."
+  },
+  "lds_branch_vmem_war_hazard": {
+    "host": "lds-branch-vmem-war-hazard",
+    "note": "Switching between LDS and VMEM-tex not waiting VM_VSRC=0."
+  },
+  "lds_misaligned_bug": {
+    "host": "lds-misaligned-bug",
+    "note": "Some GFX10 bug with misaligned multi-dword LDS access in WGP mode."
+  },
+  "ldsbankcount_16": {
+    "host": "ldsbankcount16",
+    "note": "The number of LDS banks per compute unit.."
+  },
+  "ldsbankcount_32": {
+    "host": "ldsbankcount32",
+    "note": "The number of LDS banks per compute unit.."
+  },
+  "load_store_opt": {
+    "host": "load-store-opt",
+    "note": "Enable SI load/store optimizer pass."
+  },
+  "localmemorysize_0": {
+    "host": "localmemorysize0",
+    "note": "The size of local memory in bytes."
+  },
+  "localmemorysize_32768": {
+    "host": "localmemorysize32768",
+    "note": "The size of local memory in bytes."
+  },
+  "localmemorysize_65536": {
+    "host": "localmemorysize65536",
+    "note": "The size of local memory in bytes."
+  },
+  "mad_mac_f_32_insts": {
+    "host": "mad-mac-f32-insts",
+    "note": "Has v_mad_f32/v_mac_f32/v_madak_f32/v_madmk_f32 instructions."
+  },
+  "mad_mix_insts": {
+    "host": "mad-mix-insts",
+    "note": "Has v_mad_mix_f32, v_mad_mixlo_f16, v_mad_mixhi_f16 instructions."
+  },
+  "mai_insts": {
+    "host": "mai-insts",
+    "note": "Has mAI instructions."
+  },
+  "max_private_element_size_16": {
+    "host": "max-private-element-size-16",
+    "note": "Maximum private access size may be 16."
+  },
+  "max_private_element_size_4": {
+    "host": "max-private-element-size-4",
+    "note": "Maximum private access size may be 4."
+  },
+  "max_private_element_size_8": {
+    "host": "max-private-element-size-8",
+    "note": "Maximum private access size may be 8."
+  },
+  "mfma_inline_literal_bug": {
+    "host": "mfma-inline-literal-bug",
+    "note": "MFMA cannot use inline literal as SrcC."
+  },
+  "mimg_r_128": {
+    "host": "mimg-r128",
+    "note": "Support 128-bit texture resources."
+  },
+  "movrel": {
+    "host": "movrel",
+    "note": "Has v_movrel*_b32 instructions."
+  },
+  "no_data_dep_hazard": {
+    "host": "no-data-dep-hazard",
+    "note": "Does not need SW waitstates."
+  },
+  "no_sdst_cmpx": {
+    "host": "no-sdst-cmpx",
+    "note": "V_CMPX does not write VCC/SGPR in addition to EXEC."
+  },
+  "no_sram_ecc_support": {
+    "host": "no-sram-ecc-support",
+    "note": "Hardware does not support SRAM ECC."
+  },
+  "no_xnack_support": {
+    "host": "no-xnack-support",
+    "note": "Hardware does not support XNACK."
+  },
+  "nsa_encoding": {
+    "host": "nsa-encoding",
+    "note": "Support NSA encoding for image instructions."
+  },
+  "nsa_to_vmem_bug": {
+    "host": "nsa-to-vmem-bug",
+    "note": "MIMG-NSA followed by VMEM fail if EXEC_LO or EXEC_HI equals zero."
+  },
+  "offset_3_f_bug": {
+    "host": "offset-3f-bug",
+    "note": "Branch offset of 3f hardware bug."
+  },
+  "pk_fmac_f_16_inst": {
+    "host": "pk-fmac-f16-inst",
+    "note": "Has v_pk_fmac_f16 instruction."
+  },
+  "promote_alloca": {
+    "host": "promote-alloca",
+    "note": "Enable promote alloca pass."
+  },
+  "r_128_a_16": {
+    "host": "r128-a16",
+    "note": "Support gfx9-style A16 for 16-bit coordinates/gradients/lod/clamp/mip image operands, where a16 is aliased with r128."
+  },
+  "register_banking": {
+    "host": "register-banking",
+    "note": "Has register banking."
+  },
+  "s_memrealtime": {
+    "host": "s-memrealtime",
+    "note": "Has s_memrealtime instruction."
+  },
+  "s_memtime_inst": {
+    "host": "s-memtime-inst",
+    "note": "Has s_memtime instruction."
+  },
+  "scalar_atomics": {
+    "host": "scalar-atomics",
+    "note": "Has atomic scalar memory instructions."
+  },
+  "scalar_flat_scratch_insts": {
+    "host": "scalar-flat-scratch-insts",
+    "note": "Have s_scratch_* flat memory instructions."
+  },
+  "scalar_stores": {
+    "host": "scalar-stores",
+    "note": "Has store scalar memory instructions."
+  },
+  "sdwa": {
+    "host": "sdwa",
+    "note": "Support SDWA (Sub-DWORD Addressing) extension."
+  },
+  "sdwa_mav": {
+    "host": "sdwa-mav",
+    "note": "Support v_mac_f32/f16 with SDWA (Sub-DWORD Addressing) extension."
+  },
+  "sdwa_omod": {
+    "host": "sdwa-omod",
+    "note": "Support OMod with SDWA (Sub-DWORD Addressing) extension."
+  },
+  "sdwa_out_mods_vopc": {
+    "host": "sdwa-out-mods-vopc",
+    "note": "Support clamp for VOPC with SDWA (Sub-DWORD Addressing) extension."
+  },
+  "sdwa_scalar": {
+    "host": "sdwa-scalar",
+    "note": "Support scalar register with SDWA (Sub-DWORD Addressing) extension."
+  },
+  "sdwa_sdst": {
+    "host": "sdwa-sdst",
+    "note": "Support scalar dst for VOPC with SDWA (Sub-DWORD Addressing) extension."
+  },
+  "sea_islands": {
+    "host": "sea-islands",
+    "note": "SEA_ISLANDS GPU generation."
+  },
+  "sgpr_init_bug": {
+    "host": "sgpr-init-bug",
+    "note": "VI SGPR initialization bug requiring a fixed SGPR allocation size."
+  },
+  "si_scheduler": {
+    "host": "si-scheduler",
+    "note": "Enable SI Machine Scheduler."
+  },
+  "smem_to_vector_write_hazard": {
+    "host": "smem-to-vector-write-hazard",
+    "note": "s_load_dword followed by v_cmp page faults."
+  },
+  "southern_islands": {
+    "host": "southern-islands",
+    "note": "SOUTHERN_ISLANDS GPU generation."
+  },
+  "sram_ecc": {
+    "host": "sram-ecc",
+    "note": "Enable SRAM ECC."
+  },
+  "trap_handler": {
+    "host": "trap-handler",
+    "note": "Trap handler support."
+  },
+  "trig_reduced_range": {
+    "host": "trig-reduced-range",
+    "note": "Requires use of fract on arguments to trig instructions."
+  },
+  "unaligned_buffer_access": {
+    "host": "unaligned-buffer-access",
+    "note": "Support unaligned global loads and stores."
+  },
+  "unaligned_scratch_access": {
+    "host": "unaligned-scratch-access",
+    "note": "Support unaligned scratch loads and stores."
+  },
+  "unpacked_d_16_vmem": {
+    "host": "unpacked-d16-vmem",
+    "note": "Has unpacked d16 vmem instructions."
+  },
+  "unsafe_ds_offset_folding": {
+    "host": "unsafe-ds-offset-folding",
+    "note": "Force using DS instruction immediate offsets on SI."
+  },
+  "vcmpx_exec_war_hazard": {
+    "host": "vcmpx-exec-war-hazard",
+    "note": "V_CMPX WAR hazard on EXEC (V_CMPX issue ONLY)."
+  },
+  "vcmpx_permlane_hazard": {
+    "host": "vcmpx-permlane-hazard",
+    "note": "TODO: describe me."
+  },
+  "vgpr_index_mode": {
+    "host": "vgpr-index-mode",
+    "note": "Has VGPR mode register indexing."
+  },
+  "vmem_to_scalar_write_hazard": {
+    "host": "vmem-to-scalar-write-hazard",
+    "note": "VMEM instruction followed by scalar writing to EXEC mask, M0 or SGPR leads to incorrect execution.."
+  },
+  "volcanic_islands": {
+    "host": "volcanic-islands",
+    "note": "VOLCANIC_ISLANDS GPU generation."
+  },
+  "vop_3_literal": {
+    "host": "vop3-literal",
+    "note": "Can use one literal in VOP3."
+  },
+  "vop_3_p": {
+    "host": "vop3p",
+    "note": "Has VOP3P packed instructions."
+  },
+  "vscnt": {
+    "host": "vscnt",
+    "note": "Has separate store vscnt counter."
+  },
+  "wavefrontsize_16": {
+    "host": "wavefrontsize16",
+    "note": "The number of threads per wavefront."
+  },
+  "wavefrontsize_32": {
+    "host": "wavefrontsize32",
+    "note": "The number of threads per wavefront."
+  },
+  "wavefrontsize_64": {
+    "host": "wavefrontsize64",
+    "note": "The number of threads per wavefront."
+  },
+  "xnack": {
+    "host": "xnack",
+    "note": "Enable XNACK support."
+  },
+  "32_bit": {
+    "host": "32bit",
+    "note": "Prefer 32-bit Thumb instrs."
+  },
+  "8_msecext": {
+    "host": "8msecext",
+    "note": "Enable support for ARMv8-M Security Extensions."
+  },
+  "a_12": {
+    "host": "a12",
+    "note": "Cortex-A12 ARM processors."
+  },
+  "a_15": {
+    "host": "a15",
+    "note": "Cortex-A15 ARM processors."
+  },
+  "a_17": {
+    "host": "a17",
+    "note": "Cortex-A17 ARM processors."
+  },
+  "a_32": {
+    "host": "a32",
+    "note": "Cortex-A32 ARM processors."
+  },
+  "a_5": {
+    "host": "a5",
+    "note": "Cortex-A5 ARM processors."
+  },
+  "a_7": {
+    "host": "a7",
+    "note": "Cortex-A7 ARM processors."
+  },
+  "a_8": {
+    "host": "a8",
+    "note": "Cortex-A8 ARM processors."
+  },
+  "a_9": {
+    "host": "a9",
+    "note": "Cortex-A9 ARM processors."
+  },
+  "aclass": {
+    "host": "aclass",
+    "note": "Is application profile ('A' series)."
+  },
+  "acquire_release": {
+    "host": "acquire-release",
+    "note": "Has v8 acquire/release (lda/ldaex  etc) instructions."
+  },
+  "armv_2": {
+    "host": "armv2",
+    "note": "ARMv2 architecture."
+  },
+  "armv_2_a": {
+    "host": "armv2a",
+    "note": "ARMv2a architecture."
+  },
+  "armv_3": {
+    "host": "armv3",
+    "note": "ARMv3 architecture."
+  },
+  "armv_3_m": {
+    "host": "armv3m",
+    "note": "ARMv3m architecture."
+  },
+  "armv_4": {
+    "host": "armv4",
+    "note": "ARMv4 architecture."
+  },
+  "armv_4_t": {
+    "host": "armv4t",
+    "note": "ARMv4t architecture."
+  },
+  "armv_5_t": {
+    "host": "armv5t",
+    "note": "ARMv5t architecture."
+  },
+  "armv_5_te": {
+    "host": "armv5te",
+    "note": "ARMv5te architecture."
+  },
+  "armv_5_tej": {
+    "host": "armv5tej",
+    "note": "ARMv5tej architecture."
+  },
+  "armv_6": {
+    "host": "armv6",
+    "note": "ARMv6 architecture."
+  },
+  "armv_6_m": {
+    "host": "armv6-m",
+    "note": "ARMv6m architecture."
+  },
+  "armv_6_j": {
+    "host": "armv6j",
+    "note": "ARMv7a architecture."
+  },
+  "armv_6_k": {
+    "host": "armv6k",
+    "note": "ARMv6k architecture."
+  },
+  "armv_6_kz": {
+    "host": "armv6kz",
+    "note": "ARMv6kz architecture."
+  },
+  "armv_6_s_m": {
+    "host": "armv6s-m",
+    "note": "ARMv6sm architecture."
+  },
+  "armv_6_t_2": {
+    "host": "armv6t2",
+    "note": "ARMv6t2 architecture."
+  },
+  "armv_7_a": {
+    "host": "armv7-a",
+    "note": "ARMv7a architecture."
+  },
+  "armv_7_m": {
+    "host": "armv7-m",
+    "note": "ARMv7m architecture."
+  },
+  "armv_7_r": {
+    "host": "armv7-r",
+    "note": "ARMv7r architecture."
+  },
+  "armv_7_e_m": {
+    "host": "armv7e-m",
+    "note": "ARMv7em architecture."
+  },
+  "armv_7_k": {
+    "host": "armv7k",
+    "note": "ARMv7a architecture."
+  },
+  "armv_7_s": {
+    "host": "armv7s",
+    "note": "ARMv7a architecture."
+  },
+  "armv_7_ve": {
+    "host": "armv7ve",
+    "note": "ARMv7ve architecture."
+  },
+  "armv_8_a": {
+    "host": "armv8-a",
+    "note": "ARMv8a architecture."
+  },
+  "armv_8_m_base": {
+    "host": "armv8-m.base",
+    "note": "ARMv8mBaseline architecture."
+  },
+  "armv_8_m_main": {
+    "host": "armv8-m.main",
+    "note": "ARMv8mMainline architecture."
+  },
+  "armv_8_r": {
+    "host": "armv8-r",
+    "note": "ARMv8r architecture."
+  },
+  "armv_8_1_a": {
+    "host": "armv8.1-a",
+    "note": "ARMv81a architecture."
+  },
+  "armv_8_1_m_main": {
+    "host": "armv8.1-m.main",
+    "note": "ARMv81mMainline architecture."
+  },
+  "armv_8_2_a": {
+    "host": "armv8.2-a",
+    "note": "ARMv82a architecture."
+  },
+  "armv_8_3_a": {
+    "host": "armv8.3-a",
+    "note": "ARMv83a architecture."
+  },
+  "armv_8_4_a": {
+    "host": "armv8.4-a",
+    "note": "ARMv84a architecture."
+  },
+  "armv_8_5_a": {
+    "host": "armv8.5-a",
+    "note": "ARMv85a architecture."
+  },
+  "armv_8_6_a": {
+    "host": "armv8.6-a",
+    "note": "ARMv86a architecture."
+  },
+  "avoid_movs_shop": {
+    "host": "avoid-movs-shop",
+    "note": "Avoid movs instructions with shifter operand."
+  },
+  "avoid_partial_cpsr": {
+    "host": "avoid-partial-cpsr",
+    "note": "Avoid CPSR partial update for OOO execution."
+  },
+  "cde": {
+    "host": "cde",
+    "note": "Support CDE instructions."
+  },
+  "cdecp_0": {
+    "host": "cdecp0",
+    "note": "Coprocessor 0 ISA is CDEv1."
+  },
+  "cdecp_1": {
+    "host": "cdecp1",
+    "note": "Coprocessor 1 ISA is CDEv1."
+  },
+  "cdecp_2": {
+    "host": "cdecp2",
+    "note": "Coprocessor 2 ISA is CDEv1."
+  },
+  "cdecp_3": {
+    "host": "cdecp3",
+    "note": "Coprocessor 3 ISA is CDEv1."
+  },
+  "cdecp_4": {
+    "host": "cdecp4",
+    "note": "Coprocessor 4 ISA is CDEv1."
+  },
+  "cdecp_5": {
+    "host": "cdecp5",
+    "note": "Coprocessor 5 ISA is CDEv1."
+  },
+  "cdecp_6": {
+    "host": "cdecp6",
+    "note": "Coprocessor 6 ISA is CDEv1."
+  },
+  "cdecp_7": {
+    "host": "cdecp7",
+    "note": "Coprocessor 7 ISA is CDEv1."
+  },
+  "cheap_predicable_cpsr": {
+    "host": "cheap-predicable-cpsr",
+    "note": "Disable +1 predication cost for instructions updating CPSR."
+  },
+  "d_32": {
+    "host": "d32",
+    "note": "Extend FP to 32 double registers."
+  },
+  "db": {
+    "host": "db",
+    "note": "Has data barrier (dmb/dsb) instructions."
+  },
+  "dfb": {
+    "host": "dfb",
+    "note": "Has full data barrier (dfb) instruction."
+  },
+  "disable_postra_scheduler": {
+    "host": "disable-postra-scheduler",
+    "note": "Don't schedule again after register allocation."
+  },
+  "dont_widen_vmovs": {
+    "host": "dont-widen-vmovs",
+    "note": "Don't widen VMOVS to VMOVD."
+  },
+  "dsp": {
+    "host": "dsp",
+    "note": "Supports DSP instructions in ARM and/or Thumb2."
+  },
+  "execute_only": {
+    "host": "execute-only",
+    "note": "Enable the generation of execute only code.."
+  },
+  "expand_fp_mlx": {
+    "host": "expand-fp-mlx",
+    "note": "Expand VFP/NEON MLA/MLS instructions."
+  },
+  "exynos": {
+    "host": "exynos",
+    "note": "Samsung Exynos processors."
+  },
+  "fp_armv_8_d_16": {
+    "host": "fp-armv8d16",
+    "note": "Enable ARMv8 FP with only 16 d-registers."
+  },
+  "fp_armv_8_d_16_sp": {
+    "host": "fp-armv8d16sp",
+    "note": "Enable ARMv8 FP with only 16 d-registers and no double precision."
+  },
+  "fp_armv_8_sp": {
+    "host": "fp-armv8sp",
+    "note": "Enable ARMv8 FP with no double precision."
+  },
+  "fp_16": {
+    "host": "fp16",
+    "note": "Enable half-precision floating point."
+  },
+  "fpao": {
+    "host": "fpao",
+    "note": "Enable fast computation of positive address offsets."
+  },
+  "fpregs": {
+    "host": "fpregs",
+    "note": "Enable FP registers."
+  },
+  "fpregs_16": {
+    "host": "fpregs16",
+    "note": "Enable 16-bit FP registers."
+  },
+  "fpregs_64": {
+    "host": "fpregs64",
+    "note": "Enable 64-bit FP registers."
+  },
+  "hwdiv": {
+    "host": "hwdiv",
+    "note": "Enable divide instructions in Thumb."
+  },
+  "hwdiv_arm": {
+    "host": "hwdiv-arm",
+    "note": "Enable divide instructions in ARM mode."
+  },
+  "iwmmxt": {
+    "host": "iwmmxt",
+    "note": "ARMv5te architecture."
+  },
+  "iwmmxt_2": {
+    "host": "iwmmxt2",
+    "note": "ARMv5te architecture."
+  },
+  "krait": {
+    "host": "krait",
+    "note": "Qualcomm Krait processors."
+  },
+  "lob": {
+    "host": "lob",
+    "note": "Enable Low Overhead Branch extensions."
+  },
+  "long_calls": {
+    "host": "long-calls",
+    "note": "Generate calls via indirect call instructions."
+  },
+  "loop_align": {
+    "host": "loop-align",
+    "note": "Prefer 32-bit alignment for loops."
+  },
+  "m_3": {
+    "host": "m3",
+    "note": "Cortex-M3 ARM processors."
+  },
+  "mclass": {
+    "host": "mclass",
+    "note": "Is microcontroller profile ('M' series)."
+  },
+  "mp": {
+    "host": "mp",
+    "note": "Supports Multiprocessing extension."
+  },
+  "muxed_units": {
+    "host": "muxed-units",
+    "note": "Has muxed AGU and NEON/FPU."
+  },
+  "mve": {
+    "host": "mve",
+    "note": "Support M-Class Vector Extension with integer ops."
+  },
+  "mve_fp": {
+    "host": "mve.fp",
+    "note": "Support M-Class Vector Extension with integer and floating ops."
+  },
+  "mve_1_beat": {
+    "host": "mve1beat",
+    "note": "Model MVE instructions as a 1 beat per tick architecture."
+  },
+  "mve_2_beat": {
+    "host": "mve2beat",
+    "note": "Model MVE instructions as a 2 beats per tick architecture."
+  },
+  "mve_4_beat": {
+    "host": "mve4beat",
+    "note": "Model MVE instructions as a 4 beats per tick architecture."
+  },
+  "nacl_trap": {
+    "host": "nacl-trap",
+    "note": "NaCl trap."
+  },
+  "neon_fpmovs": {
+    "host": "neon-fpmovs",
+    "note": "Convert VMOVSR, VMOVRS, VMOVS to NEON."
+  },
+  "neonfp": {
+    "host": "neonfp",
+    "note": "Use NEON for single precision FP."
+  },
+  "no_branch_predictor": {
+    "host": "no-branch-predictor",
+    "note": "Has no branch predictor."
+  },
+  "no_movt": {
+    "host": "no-movt",
+    "note": "Don't use movt/movw pairs for 32-bit imms."
+  },
+  "noarm": {
+    "host": "noarm",
+    "note": "Does not support ARM mode execution."
+  },
+  "nonpipelined_vfp": {
+    "host": "nonpipelined-vfp",
+    "note": "VFP instructions are not pipelined."
+  },
+  "prefer_ishst": {
+    "host": "prefer-ishst",
+    "note": "Prefer ISHST barriers."
+  },
+  "prefer_vmovsr": {
+    "host": "prefer-vmovsr",
+    "note": "Prefer VMOVSR."
+  },
+  "prof_unpr": {
+    "host": "prof-unpr",
+    "note": "Is profitable to unpredicate."
+  },
+  "r_4": {
+    "host": "r4",
+    "note": "Cortex-R4 ARM processors."
+  },
+  "r_5": {
+    "host": "r5",
+    "note": "Cortex-R5 ARM processors."
+  },
+  "r_52": {
+    "host": "r52",
+    "note": "Cortex-R52 ARM processors."
+  },
+  "r_7": {
+    "host": "r7",
+    "note": "Cortex-R7 ARM processors."
+  },
+  "rclass": {
+    "host": "rclass",
+    "note": "Is realtime profile ('R' series)."
+  },
+  "read_tp_hard": {
+    "host": "read-tp-hard",
+    "note": "Reading thread pointer from register."
+  },
+  "reserve_r_9": {
+    "host": "reserve-r9",
+    "note": "Reserve R9, making it unavailable as GPR."
+  },
+  "ret_addr_stack": {
+    "host": "ret-addr-stack",
+    "note": "Has return address stack."
+  },
+  "slow_fp_brcc": {
+    "host": "slow-fp-brcc",
+    "note": "FP compare + branch is slow."
+  },
+  "slow_load_d_subreg": {
+    "host": "slow-load-D-subreg",
+    "note": "Loading into D subregs is slow."
+  },
+  "slow_odd_reg": {
+    "host": "slow-odd-reg",
+    "note": "VLDM/VSTM starting with an odd register is slow."
+  },
+  "slow_vdup_32": {
+    "host": "slow-vdup32",
+    "note": "Has slow VDUP32 - prefer VMOV."
+  },
+  "slow_vgetlni_32": {
+    "host": "slow-vgetlni32",
+    "note": "Has slow VGETLNi32 - prefer VMOV."
+  },
+  "slowfpvfmx": {
+    "host": "slowfpvfmx",
+    "note": "Disable VFP / NEON FMA instructions."
+  },
+  "slowfpvmlx": {
+    "host": "slowfpvmlx",
+    "note": "Disable VFP / NEON MAC instructions."
+  },
+  "soft_float": {
+    "host": "soft-float",
+    "note": "Use software floating point features."
+  },
+  "splat_vfp_neon": {
+    "host": "splat-vfp-neon",
+    "note": "Splat register from VFP to NEON."
+  },
+  "swift": {
+    "host": "swift",
+    "note": "Swift ARM processors."
+  },
+  "thumb_mode": {
+    "host": "thumb-mode",
+    "note": "Thumb mode."
+  },
+  "thumb_2": {
+    "host": "thumb2",
+    "note": "Enable Thumb2 instructions."
+  },
+  "trustzone": {
+    "host": "trustzone",
+    "note": "Enable support for TrustZone security extensions."
+  },
+  "use_misched": {
+    "host": "use-misched",
+    "note": "Use the MachineScheduler."
+  },
+  "v_4_t": {
+    "host": "v4t",
+    "note": "Support ARM v4T instructions."
+  },
+  "v_5_t": {
+    "host": "v5t",
+    "note": "Support ARM v5T instructions."
+  },
+  "v_5_te": {
+    "host": "v5te",
+    "note": "Support ARM v5TE, v5TEj, and v5TExp instructions."
+  },
+  "v_6": {
+    "host": "v6",
+    "note": "Support ARM v6 instructions."
+  },
+  "v_6_k": {
+    "host": "v6k",
+    "note": "Support ARM v6k instructions."
+  },
+  "v_6_m": {
+    "host": "v6m",
+    "note": "Support ARM v6M instructions."
+  },
+  "v_6_t_2": {
+    "host": "v6t2",
+    "note": "Support ARM v6t2 instructions."
+  },
+  "v_7": {
+    "host": "v7",
+    "note": "Support ARM v7 instructions."
+  },
+  "v_7_clrex": {
+    "host": "v7clrex",
+    "note": "Has v7 clrex instruction."
+  },
+  "v_8": {
+    "host": "v8",
+    "note": "Support ARM v8 instructions."
+  },
+  "v_8_1_m_main": {
+    "host": "v8.1m.main",
+    "note": "Support ARM v8-1M Mainline instructions."
+  },
+  "v_8_m": {
+    "host": "v8m",
+    "note": "Support ARM v8M Baseline instructions."
+  },
+  "v_8_m_main": {
+    "host": "v8m.main",
+    "note": "Support ARM v8M Mainline instructions."
+  },
+  "vfp_2": {
+    "host": "vfp2",
+    "note": "Enable VFP2 instructions."
+  },
+  "vfp_2_sp": {
+    "host": "vfp2sp",
+    "note": "Enable VFP2 instructions with no double precision."
+  },
+  "vfp_3": {
+    "host": "vfp3",
+    "note": "Enable VFP3 instructions."
+  },
+  "vfp_3_d_16": {
+    "host": "vfp3d16",
+    "note": "Enable VFP3 instructions with only 16 d-registers."
+  },
+  "vfp_3_d_16_sp": {
+    "host": "vfp3d16sp",
+    "note": "Enable VFP3 instructions with only 16 d-registers and no double precision."
+  },
+  "vfp_3_sp": {
+    "host": "vfp3sp",
+    "note": "Enable VFP3 instructions with no double precision."
+  },
+  "vfp_4": {
+    "host": "vfp4",
+    "note": "Enable VFP4 instructions."
+  },
+  "vfp_4_d_16": {
+    "host": "vfp4d16",
+    "note": "Enable VFP4 instructions with only 16 d-registers."
+  },
+  "vfp_4_d_16_sp": {
+    "host": "vfp4d16sp",
+    "note": "Enable VFP4 instructions with only 16 d-registers and no double precision."
+  },
+  "vfp_4_sp": {
+    "host": "vfp4sp",
+    "note": "Enable VFP4 instructions with no double precision."
+  },
+  "virtualization": {
+    "host": "virtualization",
+    "note": "Supports Virtualization extension."
+  },
+  "vldn_align": {
+    "host": "vldn-align",
+    "note": "Check for VLDn unaligned access."
+  },
+  "vmlx_forwarding": {
+    "host": "vmlx-forwarding",
+    "note": "Has multiplier accumulator forwarding."
+  },
+  "vmlx_hazards": {
+    "host": "vmlx-hazards",
+    "note": "Has VMLx hazards."
+  },
+  "wide_stride_vfp": {
+    "host": "wide-stride-vfp",
+    "note": "Use a wide stride when allocating VFP registers."
+  },
+  "xscale": {
+    "host": "xscale",
+    "note": "ARMv5te architecture."
+  },
+  "addsubiw": {
+    "host": "addsubiw",
+    "note": "Enable 16-bit register-immediate addition and subtraction instructions."
+  },
+  "avr_0": {
+    "host": "avr0",
+    "note": "The device is a part of the avr0 family."
+  },
+  "avr_1": {
+    "host": "avr1",
+    "note": "The device is a part of the avr1 family."
+  },
+  "avr_2": {
+    "host": "avr2",
+    "note": "The device is a part of the avr2 family."
+  },
+  "avr_25": {
+    "host": "avr25",
+    "note": "The device is a part of the avr25 family."
+  },
+  "avr_3": {
+    "host": "avr3",
+    "note": "The device is a part of the avr3 family."
+  },
+  "avr_31": {
+    "host": "avr31",
+    "note": "The device is a part of the avr31 family."
+  },
+  "avr_35": {
+    "host": "avr35",
+    "note": "The device is a part of the avr35 family."
+  },
+  "avr_4": {
+    "host": "avr4",
+    "note": "The device is a part of the avr4 family."
+  },
+  "avr_5": {
+    "host": "avr5",
+    "note": "The device is a part of the avr5 family."
+  },
+  "avr_51": {
+    "host": "avr51",
+    "note": "The device is a part of the avr51 family."
+  },
+  "avr_6": {
+    "host": "avr6",
+    "note": "The device is a part of the avr6 family."
+  },
+  "avrtiny": {
+    "host": "avrtiny",
+    "note": "The device is a part of the avrtiny family."
+  },
+  "break": {
+    "host": "break",
+    "note": "The device supports the `BREAK` debugging instruction."
+  },
+  "des": {
+    "host": "des",
+    "note": "The device supports the `DES k` encryption instruction."
+  },
+  "eijmpcall": {
+    "host": "eijmpcall",
+    "note": "The device supports the `EIJMP`/`EICALL` instructions."
+  },
+  "elpm": {
+    "host": "elpm",
+    "note": "The device supports the ELPM instruction."
+  },
+  "elpmx": {
+    "host": "elpmx",
+    "note": "The device supports the `ELPM Rd, Z[+]` instructions."
+  },
+  "ijmpcall": {
+    "host": "ijmpcall",
+    "note": "The device supports `IJMP`/`ICALL`instructions."
+  },
+  "jmpcall": {
+    "host": "jmpcall",
+    "note": "The device supports the `JMP` and `CALL` instructions."
+  },
+  "lpm": {
+    "host": "lpm",
+    "note": "The device supports the `LPM` instruction."
+  },
+  "lpmx": {
+    "host": "lpmx",
+    "note": "The device supports the `LPM Rd, Z[+]` instruction."
+  },
+  "memmappedregs": {
+    "host": "memmappedregs",
+    "note": "The device has CPU registers mapped in data address space."
+  },
+  "movw": {
+    "host": "movw",
+    "note": "The device supports the 16-bit MOVW instruction."
+  },
+  "mul": {
+    "host": "mul",
+    "note": "The device supports the multiplication instructions."
+  },
+  "rmw": {
+    "host": "rmw",
+    "note": "The device supports the read-write-modify instructions: XCH, LAS, LAC, LAT."
+  },
+  "smallstack": {
+    "host": "smallstack",
+    "note": "The device has an 8-bit stack pointer."
+  },
+  "special": {
+    "host": "special",
+    "note": "Enable use of the entire instruction set - used for debugging."
+  },
+  "spm": {
+    "host": "spm",
+    "note": "The device supports the `SPM` instruction."
+  },
+  "spmx": {
+    "host": "spmx",
+    "note": "The device supports the `SPM Z+` instruction."
+  },
+  "sram": {
+    "host": "sram",
+    "note": "The device has random access memory."
+  },
+  "tinyencoding": {
+    "host": "tinyencoding",
+    "note": "The device has Tiny core specific instruction encodings."
+  },
+  "xmega": {
+    "host": "xmega",
+    "note": "The device is a part of the xmega family."
+  },
+  "xmegau": {
+    "host": "xmegau",
+    "note": "The device is a part of the xmegau family."
+  },
+  "alu_32": {
+    "host": "alu32",
+    "note": "Enable ALU32 instructions."
+  },
+  "dummy": {
+    "host": "dummy",
+    "note": "unused feature."
+  },
+  "dwarfris": {
+    "host": "dwarfris",
+    "note": "Disable MCAsmInfo DwarfUsesRelocationsAcrossSections."
+  },
+  "audio": {
+    "host": "audio",
+    "note": "Hexagon Audio extension instructions."
+  },
+  "compound": {
+    "host": "compound",
+    "note": "Use compound instructions."
+  },
+  "duplex": {
+    "host": "duplex",
+    "note": "Enable generation of duplex instruction."
+  },
+  "hvx": {
+    "host": "hvx",
+    "note": "Hexagon HVX instructions."
+  },
+  "hvx_length_128_b": {
+    "host": "hvx-length128b",
+    "note": "Hexagon HVX 128B instructions."
+  },
+  "hvx_length_64_b": {
+    "host": "hvx-length64b",
+    "note": "Hexagon HVX 64B instructions."
+  },
+  "hvxv_60": {
+    "host": "hvxv60",
+    "note": "Hexagon HVX instructions."
+  },
+  "hvxv_62": {
+    "host": "hvxv62",
+    "note": "Hexagon HVX instructions."
+  },
+  "hvxv_65": {
+    "host": "hvxv65",
+    "note": "Hexagon HVX instructions."
+  },
+  "hvxv_66": {
+    "host": "hvxv66",
+    "note": "Hexagon HVX instructions."
+  },
+  "hvxv_67": {
+    "host": "hvxv67",
+    "note": "Hexagon HVX instructions."
+  },
+  "mem_noshuf": {
+    "host": "mem_noshuf",
+    "note": "Supports mem_noshuf feature."
+  },
+  "memops": {
+    "host": "memops",
+    "note": "Use memop instructions."
+  },
+  "noreturn_stack_elim": {
+    "host": "noreturn-stack-elim",
+    "note": "Eliminate stack allocation in a noreturn function when possible."
+  },
+  "nvj": {
+    "host": "nvj",
+    "note": "Support for new-value jumps."
+  },
+  "nvs": {
+    "host": "nvs",
+    "note": "Support for new-value stores."
+  },
+  "packets": {
+    "host": "packets",
+    "note": "Support for instruction packets."
+  },
+  "prev_65": {
+    "host": "prev65",
+    "note": "Support features deprecated in v65."
+  },
+  "reserved_r_19": {
+    "host": "reserved-r19",
+    "note": "Reserve register R19."
+  },
+  "small_data": {
+    "host": "small-data",
+    "note": "Allow GP-relative addressing of global variables."
+  },
+  "tinycore": {
+    "host": "tinycore",
+    "note": "Hexagon Tiny Core."
+  },
+  "unsafe_fp": {
+    "host": "unsafe-fp",
+    "note": "Use unsafe FP math."
+  },
+  "v_5": {
+    "host": "v5",
+    "note": "Enable Hexagon V5 architecture."
+  },
+  "v_55": {
+    "host": "v55",
+    "note": "Enable Hexagon V55 architecture."
+  },
+  "v_60": {
+    "host": "v60",
+    "note": "Enable Hexagon V60 architecture."
+  },
+  "v_62": {
+    "host": "v62",
+    "note": "Enable Hexagon V62 architecture."
+  },
+  "v_65": {
+    "host": "v65",
+    "note": "Enable Hexagon V65 architecture."
+  },
+  "v_66": {
+    "host": "v66",
+    "note": "Enable Hexagon V66 architecture."
+  },
+  "v_67": {
+    "host": "v67",
+    "note": "Enable Hexagon V67 architecture."
+  },
+  "zreg": {
+    "host": "zreg",
+    "note": "Hexagon ZReg extension instructions."
+  },
+  "abs_2008": {
+    "host": "abs2008",
+    "note": "Disable IEEE 754-2008 abs.fmt mode."
+  },
+  "cnmips": {
+    "host": "cnmips",
+    "note": "Octeon cnMIPS Support."
+  },
+  "cnmipsp": {
+    "host": "cnmipsp",
+    "note": "Octeon+ cnMIPS Support."
+  },
+  "dspr_2": {
+    "host": "dspr2",
+    "note": "Mips DSP-R2 ASE."
+  },
+  "dspr_3": {
+    "host": "dspr3",
+    "note": "Mips DSP-R3 ASE."
+  },
+  "eva": {
+    "host": "eva",
+    "note": "Mips EVA ASE."
+  },
+  "fpxx": {
+    "host": "fpxx",
+    "note": "Support for FPXX."
+  },
+  "ginv": {
+    "host": "ginv",
+    "note": "Mips Global Invalidate ASE."
+  },
+  "gp_64": {
+    "host": "gp64",
+    "note": "General Purpose Registers are 64-bit wide."
+  },
+  "micromips": {
+    "host": "micromips",
+    "note": "microMips mode."
+  },
+  "mips_1": {
+    "host": "mips1",
+    "note": "Mips I ISA Support [highly experimental]."
+  },
+  "mips_16": {
+    "host": "mips16",
+    "note": "Mips16 mode."
+  },
+  "mips_2": {
+    "host": "mips2",
+    "note": "Mips II ISA Support [highly experimental]."
+  },
+  "mips_3": {
+    "host": "mips3",
+    "note": "MIPS III ISA Support [highly experimental]."
+  },
+  "mips_32": {
+    "host": "mips32",
+    "note": "Mips32 ISA Support."
+  },
+  "mips_32_r_2": {
+    "host": "mips32r2",
+    "note": "Mips32r2 ISA Support."
+  },
+  "mips_32_r_3": {
+    "host": "mips32r3",
+    "note": "Mips32r3 ISA Support."
+  },
+  "mips_32_r_5": {
+    "host": "mips32r5",
+    "note": "Mips32r5 ISA Support."
+  },
+  "mips_32_r_6": {
+    "host": "mips32r6",
+    "note": "Mips32r6 ISA Support [experimental]."
+  },
+  "mips_3_32": {
+    "host": "mips3_32",
+    "note": "Subset of MIPS-III that is also in MIPS32 [highly experimental]."
+  },
+  "mips_3_32_r_2": {
+    "host": "mips3_32r2",
+    "note": "Subset of MIPS-III that is also in MIPS32r2 [highly experimental]."
+  },
+  "mips_3_d": {
+    "host": "mips3d",
+    "note": "Mips 3D ASE."
+  },
+  "mips_4": {
+    "host": "mips4",
+    "note": "MIPS IV ISA Support."
+  },
+  "mips_4_32": {
+    "host": "mips4_32",
+    "note": "Subset of MIPS-IV that is also in MIPS32 [highly experimental]."
+  },
+  "mips_4_32_r_2": {
+    "host": "mips4_32r2",
+    "note": "Subset of MIPS-IV that is also in MIPS32r2 [highly experimental]."
+  },
+  "mips_5": {
+    "host": "mips5",
+    "note": "MIPS V ISA Support [highly experimental]."
+  },
+  "mips_5_32_r_2": {
+    "host": "mips5_32r2",
+    "note": "Subset of MIPS-V that is also in MIPS32r2 [highly experimental]."
+  },
+  "mips_64": {
+    "host": "mips64",
+    "note": "Mips64 ISA Support."
+  },
+  "mips_64_r_2": {
+    "host": "mips64r2",
+    "note": "Mips64r2 ISA Support."
+  },
+  "mips_64_r_3": {
+    "host": "mips64r3",
+    "note": "Mips64r3 ISA Support."
+  },
+  "mips_64_r_5": {
+    "host": "mips64r5",
+    "note": "Mips64r5 ISA Support."
+  },
+  "mips_64_r_6": {
+    "host": "mips64r6",
+    "note": "Mips64r6 ISA Support [experimental]."
+  },
+  "msa": {
+    "host": "msa",
+    "note": "Mips MSA ASE."
+  },
+  "mt": {
+    "host": "mt",
+    "note": "Mips MT ASE."
+  },
+  "nan_2008": {
+    "host": "nan2008",
+    "note": "IEEE 754-2008 NaN encoding."
+  },
+  "noabicalls": {
+    "host": "noabicalls",
+    "note": "Disable SVR4-style position-independent code."
+  },
+  "nomadd_4": {
+    "host": "nomadd4",
+    "note": "Disable 4-operand madd.fmt and related instructions."
+  },
+  "nooddspreg": {
+    "host": "nooddspreg",
+    "note": "Disable odd numbered single-precision registers."
+  },
+  "p_5600": {
+    "host": "p5600",
+    "note": "The P5600 Processor."
+  },
+  "ptr_64": {
+    "host": "ptr64",
+    "note": "Pointers are 64-bit wide."
+  },
+  "single_float": {
+    "host": "single-float",
+    "note": "Only supports single precision float."
+  },
+  "sym_32": {
+    "host": "sym32",
+    "note": "Symbols are 32 bit on Mips64."
+  },
+  "use_indirect_jump_hazard": {
+    "host": "use-indirect-jump-hazard",
+    "note": "Use indirect jump guards to prevent certain speculation based attacks."
+  },
+  "use_tcc_in_div": {
+    "host": "use-tcc-in-div",
+    "note": "Force the assembler to use trapping."
+  },
+  "vfpu": {
+    "host": "vfpu",
+    "note": "Enable vector FPU instructions."
+  },
+  "virt": {
+    "host": "virt",
+    "note": "Mips Virtualization ASE."
+  },
+  "xgot": {
+    "host": "xgot",
+    "note": "Assume 32-bit GOT."
+  },
+  "ext": {
+    "host": "ext",
+    "note": "Enable MSP430-X extensions."
+  },
+  "hwmult_16": {
+    "host": "hwmult16",
+    "note": "Enable 16-bit hardware multiplier."
+  },
+  "hwmult_32": {
+    "host": "hwmult32",
+    "note": "Enable 32-bit hardware multiplier."
+  },
+  "hwmultf_5": {
+    "host": "hwmultf5",
+    "note": "Enable F5 series hardware multiplier."
+  },
+  "ptx_32": {
+    "host": "ptx32",
+    "note": "Use PTX version 3.2."
+  },
+  "ptx_40": {
+    "host": "ptx40",
+    "note": "Use PTX version 4.0."
+  },
+  "ptx_41": {
+    "host": "ptx41",
+    "note": "Use PTX version 4.1."
+  },
+  "ptx_42": {
+    "host": "ptx42",
+    "note": "Use PTX version 4.2."
+  },
+  "ptx_43": {
+    "host": "ptx43",
+    "note": "Use PTX version 4.3."
+  },
+  "ptx_50": {
+    "host": "ptx50",
+    "note": "Use PTX version 5.0."
+  },
+  "ptx_60": {
+    "host": "ptx60",
+    "note": "Use PTX version 6.0."
+  },
+  "ptx_61": {
+    "host": "ptx61",
+    "note": "Use PTX version 6.1."
+  },
+  "ptx_63": {
+    "host": "ptx63",
+    "note": "Use PTX version 6.3."
+  },
+  "ptx_64": {
+    "host": "ptx64",
+    "note": "Use PTX version 6.4."
+  },
+  "ptx_65": {
+    "host": "ptx65",
+    "note": "Use PTX version 6.5."
+  },
+  "ptx_70": {
+    "host": "ptx70",
+    "note": "Use PTX version 7.0."
+  },
+  "sm_20": {
+    "host": "sm_20",
+    "note": "Target SM 2.0."
+  },
+  "sm_21": {
+    "host": "sm_21",
+    "note": "Target SM 2.1."
+  },
+  "sm_30": {
+    "host": "sm_30",
+    "note": "Target SM 3.0."
+  },
+  "sm_32": {
+    "host": "sm_32",
+    "note": "Target SM 3.2."
+  },
+  "sm_35": {
+    "host": "sm_35",
+    "note": "Target SM 3.5."
+  },
+  "sm_37": {
+    "host": "sm_37",
+    "note": "Target SM 3.7."
+  },
+  "sm_50": {
+    "host": "sm_50",
+    "note": "Target SM 5.0."
+  },
+  "sm_52": {
+    "host": "sm_52",
+    "note": "Target SM 5.2."
+  },
+  "sm_53": {
+    "host": "sm_53",
+    "note": "Target SM 5.3."
+  },
+  "sm_60": {
+    "host": "sm_60",
+    "note": "Target SM 6.0."
+  },
+  "sm_61": {
+    "host": "sm_61",
+    "note": "Target SM 6.1."
+  },
+  "sm_62": {
+    "host": "sm_62",
+    "note": "Target SM 6.2."
+  },
+  "sm_70": {
+    "host": "sm_70",
+    "note": "Target SM 7.0."
+  },
+  "sm_72": {
+    "host": "sm_72",
+    "note": "Target SM 7.2."
+  },
+  "sm_75": {
+    "host": "sm_75",
+    "note": "Target SM 7.5."
+  },
+  "sm_80": {
+    "host": "sm_80",
+    "note": "Target SM 8.0."
+  },
+  "64_bit": {
+    "host": "64bit",
+    "note": "Support 64-bit instructions."
+  },
+  "64_bitregs": {
+    "host": "64bitregs",
+    "note": "Enable 64-bit registers usage for ppc32 [beta]."
+  },
+  "allow_unaligned_fp_access": {
+    "host": "allow-unaligned-fp-access",
+    "note": "CPU does not trap on unaligned FP access."
+  },
+  "altivec": {
+    "host": "altivec",
+    "note": "Enable Altivec instructions."
+  },
+  "booke": {
+    "host": "booke",
+    "note": "Enable Book E instructions."
+  },
+  "bpermd": {
+    "host": "bpermd",
+    "note": "Enable the bpermd instruction."
+  },
+  "cmpb": {
+    "host": "cmpb",
+    "note": "Enable the cmpb instruction."
+  },
+  "crbits": {
+    "host": "crbits",
+    "note": "Use condition-register bits individually."
+  },
+  "direct_move": {
+    "host": "direct-move",
+    "note": "Enable Power8 direct move instructions."
+  },
+  "e_500": {
+    "host": "e500",
+    "note": "Enable E500/E500mc instructions."
+  },
+  "extdiv": {
+    "host": "extdiv",
+    "note": "Enable extended divide instructions."
+  },
+  "fcpsgn": {
+    "host": "fcpsgn",
+    "note": "Enable the fcpsgn instruction."
+  },
+  "float_128": {
+    "host": "float128",
+    "note": "Enable the __float128 data type for IEEE-754R Binary128.."
+  },
+  "fpcvt": {
+    "host": "fpcvt",
+    "note": "Enable fc[ft]* (unsigned and single-precision) and lfiwzx instructions."
+  },
+  "fprnd": {
+    "host": "fprnd",
+    "note": "Enable the fri[mnpz] instructions."
+  },
+  "fpu": {
+    "host": "fpu",
+    "note": "Enable classic FPU instructions."
+  },
+  "fre": {
+    "host": "fre",
+    "note": "Enable the fre instruction."
+  },
+  "fres": {
+    "host": "fres",
+    "note": "Enable the fres instruction."
+  },
+  "frsqrte": {
+    "host": "frsqrte",
+    "note": "Enable the frsqrte instruction."
+  },
+  "frsqrtes": {
+    "host": "frsqrtes",
+    "note": "Enable the frsqrtes instruction."
+  },
+  "fsqrt": {
+    "host": "fsqrt",
+    "note": "Enable the fsqrt instruction."
+  },
+  "fuse_addi_load": {
+    "host": "fuse-addi-load",
+    "note": "Power8 Addi-Load fusion."
+  },
+  "fuse_addis_load": {
+    "host": "fuse-addis-load",
+    "note": "Power8 Addis-Load fusion."
+  },
+  "fusion": {
+    "host": "fusion",
+    "note": "Target supports instruction fusion."
+  },
+  "hard_float": {
+    "host": "hard-float",
+    "note": "Enable floating-point instructions."
+  },
+  "htm": {
+    "host": "htm",
+    "note": "Enable Hardware Transactional Memory instructions."
+  },
+  "icbt": {
+    "host": "icbt",
+    "note": "Enable icbt instruction."
+  },
+  "invariant_function_descriptors": {
+    "host": "invariant-function-descriptors",
+    "note": "Assume function descriptors are invariant."
+  },
+  "isa_v_30_instructions": {
+    "host": "isa-v30-instructions",
+    "note": "Enable instructions in ISA 3.0.."
+  },
+  "isa_v_31_instructions": {
+    "host": "isa-v31-instructions",
+    "note": "Enable instructions in ISA 3.1.."
+  },
+  "isel": {
+    "host": "isel",
+    "note": "Enable the isel instruction."
+  },
+  "ldbrx": {
+    "host": "ldbrx",
+    "note": "Enable the ldbrx instruction."
+  },
+  "lfiwax": {
+    "host": "lfiwax",
+    "note": "Enable the lfiwax instruction."
+  },
+  "longcall": {
+    "host": "longcall",
+    "note": "Always use indirect calls."
+  },
+  "mfocrf": {
+    "host": "mfocrf",
+    "note": "Enable the MFOCRF instruction."
+  },
+  "msync": {
+    "host": "msync",
+    "note": "Has only the msync instruction instead of sync."
+  },
+  "partword_atomics": {
+    "host": "partword-atomics",
+    "note": "Enable l[bh]arx and st[bh]cx.."
+  },
+  "pcrelative_memops": {
+    "host": "pcrelative-memops",
+    "note": "Enable PC relative Memory Ops."
+  },
+  "popcntd": {
+    "host": "popcntd",
+    "note": "Enable the popcnt[dw] instructions."
+  },
+  "power_10_vector": {
+    "host": "power10-vector",
+    "note": "Enable POWER10 vector instructions."
+  },
+  "power_8_altivec": {
+    "host": "power8-altivec",
+    "note": "Enable POWER8 Altivec instructions."
+  },
+  "power_8_vector": {
+    "host": "power8-vector",
+    "note": "Enable POWER8 vector instructions."
+  },
+  "power_9_altivec": {
+    "host": "power9-altivec",
+    "note": "Enable POWER9 Altivec instructions."
+  },
+  "power_9_vector": {
+    "host": "power9-vector",
+    "note": "Enable POWER9 vector instructions."
+  },
+  "ppc_postra_sched": {
+    "host": "ppc-postra-sched",
+    "note": "Use PowerPC post-RA scheduling strategy."
+  },
+  "ppc_prera_sched": {
+    "host": "ppc-prera-sched",
+    "note": "Use PowerPC pre-RA scheduling strategy."
+  },
+  "ppc_4_xx": {
+    "host": "ppc4xx",
+    "note": "Enable PPC 4xx instructions."
+  },
+  "ppc_6_xx": {
+    "host": "ppc6xx",
+    "note": "Enable PPC 6xx instructions."
+  },
+  "prefix_instrs": {
+    "host": "prefix-instrs",
+    "note": "Enable prefixed instructions."
+  },
+  "qpx": {
+    "host": "qpx",
+    "note": "Enable QPX instructions."
+  },
+  "recipprec": {
+    "host": "recipprec",
+    "note": "Assume higher precision reciprocal estimates."
+  },
+  "secure_plt": {
+    "host": "secure-plt",
+    "note": "Enable secure plt mode."
+  },
+  "slow_popcntd": {
+    "host": "slow-popcntd",
+    "note": "Has slow popcnt[dw] instructions."
+  },
+  "stfiwx": {
+    "host": "stfiwx",
+    "note": "Enable the stfiwx instruction."
+  },
+  "two_const_nr": {
+    "host": "two-const-nr",
+    "note": "Requires two constant Newton-Raphson computation."
+  },
+  "vectors_use_two_units": {
+    "host": "vectors-use-two-units",
+    "note": "Vectors use two units."
+  },
+  "vsx": {
+    "host": "vsx",
+    "note": "Enable VSX instructions."
+  },
+  "has_vertex_cache": {
+    "host": "HasVertexCache",
+    "note": "Specify use of dedicated vertex cache."
+  },
+  "r_600_alu_inst": {
+    "host": "R600ALUInst",
+    "note": "Older version of ALU instructions encoding."
+  },
+  "cayman_isa": {
+    "host": "caymanISA",
+    "note": "Use Cayman ISA."
+  },
+  "cfalubug": {
+    "host": "cfalubug",
+    "note": "GPU has CF_ALU bug."
+  },
+  "evergreen": {
+    "host": "evergreen",
+    "note": "EVERGREEN GPU generation."
+  },
+  "fetch_16": {
+    "host": "fetch16",
+    "note": "Limit the maximum number of fetches in a clause to 16."
+  },
+  "fetch_8": {
+    "host": "fetch8",
+    "note": "Limit the maximum number of fetches in a clause to 8."
+  },
+  "northern_islands": {
+    "host": "northern-islands",
+    "note": "NORTHERN_ISLANDS GPU generation."
+  },
+  "r_600": {
+    "host": "r600",
+    "note": "R600 GPU generation."
+  },
+  "r_700": {
+    "host": "r700",
+    "note": "R700 GPU generation."
+  },
+  "a": {
+    "host": "a",
+    "note": "'A' (Atomic Instructions)."
+  },
+  "c": {
+    "host": "c",
+    "note": "'C' (Compressed Instructions)."
+  },
+  "d": {
+    "host": "d",
+    "note": "'D' (Double-Precision Floating-Point)."
+  },
+  "e": {
+    "host": "e",
+    "note": "Implements RV32E (provides 16 rather than 32 GPRs)."
+  },
+  "experimental_b": {
+    "host": "experimental-b",
+    "note": "'B' (Bit Manipulation Instructions)."
+  },
+  "experimental_v": {
+    "host": "experimental-v",
+    "note": "'V' (Vector Instructions)."
+  },
+  "experimental_zbb": {
+    "host": "experimental-zbb",
+    "note": "'Zbb' (Base 'B' Instructions)."
+  },
+  "experimental_zbc": {
+    "host": "experimental-zbc",
+    "note": "'Zbc' (Carry-Less 'B' Instructions)."
+  },
+  "experimental_zbe": {
+    "host": "experimental-zbe",
+    "note": "'Zbe' (Extract-Deposit 'B' Instructions)."
+  },
+  "experimental_zbf": {
+    "host": "experimental-zbf",
+    "note": "'Zbf' (Bit-Field 'B' Instructions)."
+  },
+  "experimental_zbm": {
+    "host": "experimental-zbm",
+    "note": "'Zbm' (Matrix 'B' Instructions)."
+  },
+  "experimental_zbp": {
+    "host": "experimental-zbp",
+    "note": "'Zbp' (Permutation 'B' Instructions)."
+  },
+  "experimental_zbproposedc": {
+    "host": "experimental-zbproposedc",
+    "note": "'Zbproposedc' (Proposed Compressed 'B' Instructions)."
+  },
+  "experimental_zbr": {
+    "host": "experimental-zbr",
+    "note": "'Zbr' (Polynomial Reduction 'B' Instructions)."
+  },
+  "experimental_zbs": {
+    "host": "experimental-zbs",
+    "note": "'Zbs' (Single-Bit 'B' Instructions)."
+  },
+  "experimental_zbt": {
+    "host": "experimental-zbt",
+    "note": "'Zbt' (Ternary 'B' Instructions)."
+  },
+  "f": {
+    "host": "f",
+    "note": "'F' (Single-Precision Floating-Point)."
+  },
+  "m": {
+    "host": "m",
+    "note": "'M' (Integer Multiplication and Division)."
+  },
+  "no_rvc_hints": {
+    "host": "no-rvc-hints",
+    "note": "Disable RVC Hint Instructions.."
+  },
+  "relax": {
+    "host": "relax",
+    "note": "Enable Linker relaxation.."
+  },
+  "reserve_x_16": {
+    "host": "reserve-x16",
+    "note": "Reserve X16."
+  },
+  "reserve_x_17": {
+    "host": "reserve-x17",
+    "note": "Reserve X17."
+  },
+  "reserve_x_19": {
+    "host": "reserve-x19",
+    "note": "Reserve X19."
+  },
+  "reserve_x_29": {
+    "host": "reserve-x29",
+    "note": "Reserve X29."
+  },
+  "reserve_x_31": {
+    "host": "reserve-x31",
+    "note": "Reserve X31."
+  },
+  "reserve_x_8": {
+    "host": "reserve-x8",
+    "note": "Reserve X8."
+  },
+  "save_restore": {
+    "host": "save-restore",
+    "note": "Enable save/restore.."
+  },
+  "deprecated_v_8": {
+    "host": "deprecated-v8",
+    "note": "Enable deprecated V8 instructions in V9 mode."
+  },
+  "detectroundchange": {
+    "host": "detectroundchange",
+    "note": "LEON3 erratum detection: Detects any rounding mode change request: use only the round-to-nearest rounding mode."
+  },
+  "fixallfdivsqrt": {
+    "host": "fixallfdivsqrt",
+    "note": "LEON erratum fix: Fix FDIVS/FDIVD/FSQRTS/FSQRTD instructions with NOPs and floating-point store."
+  },
+  "hard_quad_float": {
+    "host": "hard-quad-float",
+    "note": "Enable quad-word floating point instructions."
+  },
+  "hasleoncasa": {
+    "host": "hasleoncasa",
+    "note": "Enable CASA instruction for LEON3 and LEON4 processors."
+  },
+  "hasumacsmac": {
+    "host": "hasumacsmac",
+    "note": "Enable UMAC and SMAC for LEON3 and LEON4 processors."
+  },
+  "insertnopload": {
+    "host": "insertnopload",
+    "note": "LEON3 erratum fix: Insert a NOP instruction after every single-cycle load instruction when the next instruction is another load/store instruction."
+  },
+  "leon": {
+    "host": "leon",
+    "note": "Enable LEON extensions."
+  },
+  "leoncyclecounter": {
+    "host": "leoncyclecounter",
+    "note": "Use the Leon cycle counter register."
+  },
+  "leonpwrpsr": {
+    "host": "leonpwrpsr",
+    "note": "Enable the PWRPSR instruction."
+  },
+  "no_fmuls": {
+    "host": "no-fmuls",
+    "note": "Disable the fmuls instruction.."
+  },
+  "no_fsmuld": {
+    "host": "no-fsmuld",
+    "note": "Disable the fsmuld instruction.."
+  },
+  "popc": {
+    "host": "popc",
+    "note": "Use the popc (population count) instruction."
+  },
+  "soft_mul_div": {
+    "host": "soft-mul-div",
+    "note": "Use software emulation for integer multiply and divide."
+  },
+  "v_9": {
+    "host": "v9",
+    "note": "Enable SPARC-V9 instructions."
+  },
+  "vis": {
+    "host": "vis",
+    "note": "Enable UltraSPARC Visual Instruction Set extensions."
+  },
+  "vis_2": {
+    "host": "vis2",
+    "note": "Enable Visual Instruction Set extensions II."
+  },
+  "vis_3": {
+    "host": "vis3",
+    "note": "Enable Visual Instruction Set extensions III."
+  },
+  "deflate_conversion": {
+    "host": "deflate-conversion",
+    "note": "Assume that the deflate-conversion facility is installed."
+  },
+  "dfp_packed_conversion": {
+    "host": "dfp-packed-conversion",
+    "note": "Assume that the DFP packed-conversion facility is installed."
+  },
+  "dfp_zoned_conversion": {
+    "host": "dfp-zoned-conversion",
+    "note": "Assume that the DFP zoned-conversion facility is installed."
+  },
+  "distinct_ops": {
+    "host": "distinct-ops",
+    "note": "Assume that the distinct-operands facility is installed."
+  },
+  "enhanced_dat_2": {
+    "host": "enhanced-dat-2",
+    "note": "Assume that the enhanced-DAT facility 2 is installed."
+  },
+  "enhanced_sort": {
+    "host": "enhanced-sort",
+    "note": "Assume that the enhanced-sort facility is installed."
+  },
+  "execution_hint": {
+    "host": "execution-hint",
+    "note": "Assume that the execution-hint facility is installed."
+  },
+  "fast_serialization": {
+    "host": "fast-serialization",
+    "note": "Assume that the fast-serialization facility is installed."
+  },
+  "fp_extension": {
+    "host": "fp-extension",
+    "note": "Assume that the floating-point extension facility is installed."
+  },
+  "guarded_storage": {
+    "host": "guarded-storage",
+    "note": "Assume that the guarded-storage facility is installed."
+  },
+  "high_word": {
+    "host": "high-word",
+    "note": "Assume that the high-word facility is installed."
+  },
+  "insert_reference_bits_multiple": {
+    "host": "insert-reference-bits-multiple",
+    "note": "Assume that the insert-reference-bits-multiple facility is installed."
+  },
+  "interlocked_access_1": {
+    "host": "interlocked-access1",
+    "note": "Assume that interlocked-access facility 1 is installed."
+  },
+  "load_and_trap": {
+    "host": "load-and-trap",
+    "note": "Assume that the load-and-trap facility is installed."
+  },
+  "load_and_zero_rightmost_byte": {
+    "host": "load-and-zero-rightmost-byte",
+    "note": "Assume that the load-and-zero-rightmost-byte facility is installed."
+  },
+  "load_store_on_cond": {
+    "host": "load-store-on-cond",
+    "note": "Assume that the load/store-on-condition facility is installed."
+  },
+  "load_store_on_cond_2": {
+    "host": "load-store-on-cond-2",
+    "note": "Assume that the load/store-on-condition facility 2 is installed."
+  },
+  "message_security_assist_extension_3": {
+    "host": "message-security-assist-extension3",
+    "note": "Assume that the message-security-assist extension facility 3 is installed."
+  },
+  "message_security_assist_extension_4": {
+    "host": "message-security-assist-extension4",
+    "note": "Assume that the message-security-assist extension facility 4 is installed."
+  },
+  "message_security_assist_extension_5": {
+    "host": "message-security-assist-extension5",
+    "note": "Assume that the message-security-assist extension facility 5 is installed."
+  },
+  "message_security_assist_extension_7": {
+    "host": "message-security-assist-extension7",
+    "note": "Assume that the message-security-assist extension facility 7 is installed."
+  },
+  "message_security_assist_extension_8": {
+    "host": "message-security-assist-extension8",
+    "note": "Assume that the message-security-assist extension facility 8 is installed."
+  },
+  "message_security_assist_extension_9": {
+    "host": "message-security-assist-extension9",
+    "note": "Assume that the message-security-assist extension facility 9 is installed."
+  },
+  "miscellaneous_extensions": {
+    "host": "miscellaneous-extensions",
+    "note": "Assume that the miscellaneous-extensions facility is installed."
+  },
+  "miscellaneous_extensions_2": {
+    "host": "miscellaneous-extensions-2",
+    "note": "Assume that the miscellaneous-extensions facility 2 is installed."
+  },
+  "miscellaneous_extensions_3": {
+    "host": "miscellaneous-extensions-3",
+    "note": "Assume that the miscellaneous-extensions facility 3 is installed."
+  },
+  "population_count": {
+    "host": "population-count",
+    "note": "Assume that the population-count facility is installed."
+  },
+  "processor_assist": {
+    "host": "processor-assist",
+    "note": "Assume that the processor-assist facility is installed."
+  },
+  "reset_reference_bits_multiple": {
+    "host": "reset-reference-bits-multiple",
+    "note": "Assume that the reset-reference-bits-multiple facility is installed."
+  },
+  "transactional_execution": {
+    "host": "transactional-execution",
+    "note": "Assume that the transactional-execution facility is installed."
+  },
+  "vector": {
+    "host": "vector",
+    "note": "Assume that the vectory facility is installed."
+  },
+  "vector_enhancements_1": {
+    "host": "vector-enhancements-1",
+    "note": "Assume that the vector enhancements facility 1 is installed."
+  },
+  "vector_enhancements_2": {
+    "host": "vector-enhancements-2",
+    "note": "Assume that the vector enhancements facility 2 is installed."
+  },
+  "vector_packed_decimal": {
+    "host": "vector-packed-decimal",
+    "note": "Assume that the vector packed decimal facility is installed."
+  },
+  "vector_packed_decimal_enhancement": {
+    "host": "vector-packed-decimal-enhancement",
+    "note": "Assume that the vector packed decimal enhancement facility is installed."
+  },
+  "atomics": {
+    "host": "atomics",
+    "note": "Enable Atomics."
+  },
+  "bulk_memory": {
+    "host": "bulk-memory",
+    "note": "Enable bulk memory operations."
+  },
+  "exception_handling": {
+    "host": "exception-handling",
+    "note": "Enable Wasm exception handling."
+  },
+  "multivalue": {
+    "host": "multivalue",
+    "note": "Enable multivalue blocks, instructions, and functions."
+  },
+  "mutable_globals": {
+    "host": "mutable-globals",
+    "note": "Enable mutable globals."
+  },
+  "nontrapping_fptoint": {
+    "host": "nontrapping-fptoint",
+    "note": "Enable non-trapping float-to-int conversion operators."
+  },
+  "reference_types": {
+    "host": "reference-types",
+    "note": "Enable reference types."
+  },
+  "sign_ext": {
+    "host": "sign-ext",
+    "note": "Enable sign extension operators."
+  },
+  "simd_128": {
+    "host": "simd128",
+    "note": "Enable 128-bit SIMD."
+  },
+  "tail_call": {
+    "host": "tail-call",
+    "note": "Enable tail call instructions."
+  },
+  "unimplemented_simd_128": {
+    "host": "unimplemented-simd128",
+    "note": "Enable 128-bit SIMD not yet implemented in engines."
+  },
+  "16_bit_mode": {
+    "host": "16bit-mode",
+    "note": "16-bit mode (i8086)."
+  },
+  "32_bit_mode": {
+    "host": "32bit-mode",
+    "note": "32-bit mode (80386)."
+  },
+  "3_dnow": {
+    "host": "3dnow",
+    "note": "Enable 3DNow! instructions."
+  },
+  "3_dnowa": {
+    "host": "3dnowa",
+    "note": "Enable 3DNow! Athlon instructions."
+  },
+  "64_bit_mode": {
+    "host": "64bit-mode",
+    "note": "64-bit mode (x86_64)."
+  },
+  "adx": {
+    "host": "adx",
+    "note": "Support ADX instructions."
+  },
+  "amx_bf_16": {
+    "host": "amx-bf16",
+    "note": "Support AMX-BF16 instructions."
+  },
+  "amx_int_8": {
+    "host": "amx-int8",
+    "note": "Support AMX-INT8 instructions."
+  },
+  "amx_tile": {
+    "host": "amx-tile",
+    "note": "Support AMX-TILE instructions."
+  },
+  "avx": {
+    "host": "avx",
+    "note": "Enable AVX instructions."
+  },
+  "avx_2": {
+    "host": "avx2",
+    "note": "Enable AVX2 instructions."
+  },
+  "avx_512_bf_16": {
+    "host": "avx512bf16",
+    "note": "Support bfloat16 floating point."
+  },
+  "avx_512_bitalg": {
+    "host": "avx512bitalg",
+    "note": "Enable AVX-512 Bit Algorithms."
+  },
+  "avx_512_bw": {
+    "host": "avx512bw",
+    "note": "Enable AVX-512 Byte and Word Instructions."
+  },
+  "avx_512_cd": {
+    "host": "avx512cd",
+    "note": "Enable AVX-512 Conflict Detection Instructions."
+  },
+  "avx_512_dq": {
+    "host": "avx512dq",
+    "note": "Enable AVX-512 Doubleword and Quadword Instructions."
+  },
+  "avx_512_er": {
+    "host": "avx512er",
+    "note": "Enable AVX-512 Exponential and Reciprocal Instructions."
+  },
+  "avx_512_f": {
+    "host": "avx512f",
+    "note": "Enable AVX-512 instructions."
+  },
+  "avx_512_ifma": {
+    "host": "avx512ifma",
+    "note": "Enable AVX-512 Integer Fused Multiple-Add."
+  },
+  "avx_512_pf": {
+    "host": "avx512pf",
+    "note": "Enable AVX-512 PreFetch Instructions."
+  },
+  "avx_512_vbmi": {
+    "host": "avx512vbmi",
+    "note": "Enable AVX-512 Vector Byte Manipulation Instructions."
+  },
+  "avx_512_vbmi_2": {
+    "host": "avx512vbmi2",
+    "note": "Enable AVX-512 further Vector Byte Manipulation Instructions."
+  },
+  "avx_512_vl": {
+    "host": "avx512vl",
+    "note": "Enable AVX-512 Vector Length eXtensions."
+  },
+  "avx_512_vnni": {
+    "host": "avx512vnni",
+    "note": "Enable AVX-512 Vector Neural Network Instructions."
+  },
+  "avx_512_vp_2_intersect": {
+    "host": "avx512vp2intersect",
+    "note": "Enable AVX-512 vp2intersect."
+  },
+  "avx_512_vpopcntdq": {
+    "host": "avx512vpopcntdq",
+    "note": "Enable AVX-512 Population Count Instructions."
+  },
+  "bmi": {
+    "host": "bmi",
+    "note": "Support BMI instructions."
+  },
+  "bmi_2": {
+    "host": "bmi2",
+    "note": "Support BMI2 instructions."
+  },
+  "branchfusion": {
+    "host": "branchfusion",
+    "note": "CMP/TEST can be fused with conditional branches."
+  },
+  "cldemote": {
+    "host": "cldemote",
+    "note": "Enable Cache Demote."
+  },
+  "clflushopt": {
+    "host": "clflushopt",
+    "note": "Flush A Cache Line Optimized."
+  },
+  "clwb": {
+    "host": "clwb",
+    "note": "Cache Line Write Back."
+  },
+  "clzero": {
+    "host": "clzero",
+    "note": "Enable Cache Line Zero."
+  },
+  "cmov": {
+    "host": "cmov",
+    "note": "Enable conditional move instructions."
+  },
+  "cx_16": {
+    "host": "cx16",
+    "note": "64-bit with cmpxchg16b."
+  },
+  "cx_8": {
+    "host": "cx8",
+    "note": "Support CMPXCHG8B instructions."
+  },
+  "enqcmd": {
+    "host": "enqcmd",
+    "note": "Has ENQCMD instructions."
+  },
+  "ermsb": {
+    "host": "ermsb",
+    "note": "REP MOVS/STOS are fast."
+  },
+  "f_16_c": {
+    "host": "f16c",
+    "note": "Support 16-bit floating point conversion instructions."
+  },
+  "false_deps_lzcnt_tzcnt": {
+    "host": "false-deps-lzcnt-tzcnt",
+    "note": "LZCNT/TZCNT have a false dependency on dest register."
+  },
+  "false_deps_popcnt": {
+    "host": "false-deps-popcnt",
+    "note": "POPCNT has a false dependency on dest register."
+  },
+  "fast_11_bytenop": {
+    "host": "fast-11bytenop",
+    "note": "Target can quickly decode up to 11 byte NOPs."
+  },
+  "fast_15_bytenop": {
+    "host": "fast-15bytenop",
+    "note": "Target can quickly decode up to 15 byte NOPs."
+  },
+  "fast_7_bytenop": {
+    "host": "fast-7bytenop",
+    "note": "Target can quickly decode up to 7 byte NOPs."
+  },
+  "fast_bextr": {
+    "host": "fast-bextr",
+    "note": "Indicates that the BEXTR instruction is implemented as a single uop with good throughput."
+  },
+  "fast_gather": {
+    "host": "fast-gather",
+    "note": "Indicates if gather is reasonably fast."
+  },
+  "fast_hops": {
+    "host": "fast-hops",
+    "note": "Prefer horizontal vector math instructions (haddp, phsub, etc.) over normal vector instructions with shuffles."
+  },
+  "fast_lzcnt": {
+    "host": "fast-lzcnt",
+    "note": "LZCNT instructions are as fast as most simple integer ops."
+  },
+  "fast_scalar_fsqrt": {
+    "host": "fast-scalar-fsqrt",
+    "note": "Scalar SQRT is fast (disable Newton-Raphson)."
+  },
+  "fast_scalar_shift_masks": {
+    "host": "fast-scalar-shift-masks",
+    "note": "Prefer a left/right scalar logical shift pair over a shift+and pair."
+  },
+  "fast_shld_rotate": {
+    "host": "fast-shld-rotate",
+    "note": "SHLD can be used as a faster rotate."
+  },
+  "fast_variable_shuffle": {
+    "host": "fast-variable-shuffle",
+    "note": "Shuffles with variable masks are fast."
+  },
+  "fast_vector_fsqrt": {
+    "host": "fast-vector-fsqrt",
+    "note": "Vector SQRT is fast (disable Newton-Raphson)."
+  },
+  "fast_vector_shift_masks": {
+    "host": "fast-vector-shift-masks",
+    "note": "Prefer a left/right vector logical shift pair over a shift+and pair."
+  },
+  "fma": {
+    "host": "fma",
+    "note": "Enable three-operand fused multiple-add."
+  },
+  "fma_4": {
+    "host": "fma4",
+    "note": "Enable four-operand fused multiple-add."
+  },
+  "fsgsbase": {
+    "host": "fsgsbase",
+    "note": "Support FS/GS Base instructions."
+  },
+  "fxsr": {
+    "host": "fxsr",
+    "note": "Support fxsave/fxrestore instructions."
+  },
+  "gfni": {
+    "host": "gfni",
+    "note": "Enable Galois Field Arithmetic Instructions."
+  },
+  "idivl_to_divb": {
+    "host": "idivl-to-divb",
+    "note": "Use 8-bit divide for positive values less than 256."
+  },
+  "idivq_to_divl": {
+    "host": "idivq-to-divl",
+    "note": "Use 32-bit divide for positive values less than 2^32."
+  },
+  "invpcid": {
+    "host": "invpcid",
+    "note": "Invalidate Process-Context Identifier."
+  },
+  "lea_sp": {
+    "host": "lea-sp",
+    "note": "Use LEA for adjusting the stack pointer."
+  },
+  "lea_uses_ag": {
+    "host": "lea-uses-ag",
+    "note": "LEA instruction needs inputs at AG stage."
+  },
+  "lvi_cfi": {
+    "host": "lvi-cfi",
+    "note": "Prevent indirect calls/branches from using a memory operand, and precede all indirect calls/branches from a register with an LFENCE instruction to serialize control flow. Also decompose RET instructions into a POP+LFENCE+JMP sequence.."
+  },
+  "lvi_load_hardening": {
+    "host": "lvi-load-hardening",
+    "note": "Insert LFENCE instructions to prevent data speculatively injected into loads from being used maliciously.."
+  },
+  "lwp": {
+    "host": "lwp",
+    "note": "Enable LWP instructions."
+  },
+  "lzcnt": {
+    "host": "lzcnt",
+    "note": "Support LZCNT instruction."
+  },
+  "macrofusion": {
+    "host": "macrofusion",
+    "note": "Various instructions can be fused with conditional branches."
+  },
+  "merge_to_threeway_branch": {
+    "host": "merge-to-threeway-branch",
+    "note": "Merge branches to a three-way conditional branch."
+  },
+  "mmx": {
+    "host": "mmx",
+    "note": "Enable MMX instructions."
+  },
+  "movbe": {
+    "host": "movbe",
+    "note": "Support MOVBE instruction."
+  },
+  "movdir_64_b": {
+    "host": "movdir64b",
+    "note": "Support movdir64b instruction."
+  },
+  "movdiri": {
+    "host": "movdiri",
+    "note": "Support movdiri instruction."
+  },
+  "mpx": {
+    "host": "mpx",
+    "note": "Deprecated. Support MPX instructions."
+  },
+  "mwaitx": {
+    "host": "mwaitx",
+    "note": "Enable MONITORX/MWAITX timer functionality."
+  },
+  "nopl": {
+    "host": "nopl",
+    "note": "Enable NOPL instruction."
+  },
+  "pad_short_functions": {
+    "host": "pad-short-functions",
+    "note": "Pad short functions."
+  },
+  "pclmul": {
+    "host": "pclmul",
+    "note": "Enable packed carry-less multiplication instructions."
+  },
+  "pconfig": {
+    "host": "pconfig",
+    "note": "platform configuration instruction."
+  },
+  "pku": {
+    "host": "pku",
+    "note": "Enable protection keys."
+  },
+  "popcnt": {
+    "host": "popcnt",
+    "note": "Support POPCNT instruction."
+  },
+  "prefer_128_bit": {
+    "host": "prefer-128-bit",
+    "note": "Prefer 128-bit AVX instructions."
+  },
+  "prefer_256_bit": {
+    "host": "prefer-256-bit",
+    "note": "Prefer 256-bit AVX instructions."
+  },
+  "prefer_mask_registers": {
+    "host": "prefer-mask-registers",
+    "note": "Prefer AVX512 mask registers over PTEST/MOVMSK."
+  },
+  "prefetchwt_1": {
+    "host": "prefetchwt1",
+    "note": "Prefetch with Intent to Write and T1 Hint."
+  },
+  "prfchw": {
+    "host": "prfchw",
+    "note": "Support PRFCHW instructions."
+  },
+  "ptwrite": {
+    "host": "ptwrite",
+    "note": "Support ptwrite instruction."
+  },
+  "rdpid": {
+    "host": "rdpid",
+    "note": "Support RDPID instructions."
+  },
+  "rdrnd": {
+    "host": "rdrnd",
+    "note": "Support RDRAND instruction."
+  },
+  "rdseed": {
+    "host": "rdseed",
+    "note": "Support RDSEED instruction."
+  },
+  "retpoline": {
+    "host": "retpoline",
+    "note": "Remove speculation of indirect branches from the generated code, either by avoiding them entirely or lowering them with a speculation blocking construct."
+  },
+  "retpoline_external_thunk": {
+    "host": "retpoline-external-thunk",
+    "note": "When lowering an indirect call or branch using a `retpoline`, rely on the specified user provided thunk rather than emitting one ourselves. Only has effect when combined with some other retpoline feature."
+  },
+  "retpoline_indirect_branches": {
+    "host": "retpoline-indirect-branches",
+    "note": "Remove speculation of indirect branches from the generated code."
+  },
+  "retpoline_indirect_calls": {
+    "host": "retpoline-indirect-calls",
+    "note": "Remove speculation of indirect calls from the generated code."
+  },
+  "rtm": {
+    "host": "rtm",
+    "note": "Support RTM instructions."
+  },
+  "sahf": {
+    "host": "sahf",
+    "note": "Support LAHF and SAHF instructions."
+  },
+  "serialize": {
+    "host": "serialize",
+    "note": "Has serialize instruction."
+  },
+  "seses": {
+    "host": "seses",
+    "note": "Prevent speculative execution side channel timing attacks by inserting a speculation barrier before memory reads, memory writes, and conditional branches. Implies LVI Control Flow integrity.."
+  },
+  "sgx": {
+    "host": "sgx",
+    "note": "Enable Software Guard Extensions."
+  },
+  "sha": {
+    "host": "sha",
+    "note": "Enable SHA instructions."
+  },
+  "shstk": {
+    "host": "shstk",
+    "note": "Support CET Shadow-Stack instructions."
+  },
+  "slow_3_ops_lea": {
+    "host": "slow-3ops-lea",
+    "note": "LEA instruction with 3 ops or certain registers is slow."
+  },
+  "slow_incdec": {
+    "host": "slow-incdec",
+    "note": "INC and DEC instructions are slower than ADD and SUB."
+  },
+  "slow_lea": {
+    "host": "slow-lea",
+    "note": "LEA instruction with certain arguments is slow."
+  },
+  "slow_pmaddwd": {
+    "host": "slow-pmaddwd",
+    "note": "PMADDWD is slower than PMULLD."
+  },
+  "slow_pmulld": {
+    "host": "slow-pmulld",
+    "note": "PMULLD instruction is slow."
+  },
+  "slow_shld": {
+    "host": "slow-shld",
+    "note": "SHLD instruction is slow."
+  },
+  "slow_two_mem_ops": {
+    "host": "slow-two-mem-ops",
+    "note": "Two memory operand instructions are slow."
+  },
+  "slow_unaligned_mem_16": {
+    "host": "slow-unaligned-mem-16",
+    "note": "Slow unaligned 16-byte memory access."
+  },
+  "slow_unaligned_mem_32": {
+    "host": "slow-unaligned-mem-32",
+    "note": "Slow unaligned 32-byte memory access."
+  },
+  "sse": {
+    "host": "sse",
+    "note": "Enable SSE instructions."
+  },
+  "sse_unaligned_mem": {
+    "host": "sse-unaligned-mem",
+    "note": "Allow unaligned memory operands with SSE instructions."
+  },
+  "sse_2": {
+    "host": "sse2",
+    "note": "Enable SSE2 instructions."
+  },
+  "sse_3": {
+    "host": "sse3",
+    "note": "Enable SSE3 instructions."
+  },
+  "sse_4_1": {
+    "host": "sse4.1",
+    "note": "Enable SSE 4.1 instructions."
+  },
+  "sse_4_2": {
+    "host": "sse4.2",
+    "note": "Enable SSE 4.2 instructions."
+  },
+  "sse_4_a": {
+    "host": "sse4a",
+    "note": "Support SSE 4a instructions."
+  },
+  "ssse_3": {
+    "host": "ssse3",
+    "note": "Enable SSSE3 instructions."
+  },
+  "tbm": {
+    "host": "tbm",
+    "note": "Enable TBM instructions."
+  },
+  "tsxldtrk": {
+    "host": "tsxldtrk",
+    "note": "Support TSXLDTRK instructions."
+  },
+  "use_glm_div_sqrt_costs": {
+    "host": "use-glm-div-sqrt-costs",
+    "note": "Use Goldmont specific floating point div/sqrt costs."
+  },
+  "vaes": {
+    "host": "vaes",
+    "note": "Promote selected AES instructions to AVX512/AVX registers."
+  },
+  "vpclmulqdq": {
+    "host": "vpclmulqdq",
+    "note": "Enable vpclmulqdq instructions."
+  },
+  "vzeroupper": {
+    "host": "vzeroupper",
+    "note": "Should insert vzeroupper instructions."
+  },
+  "waitpkg": {
+    "host": "waitpkg",
+    "note": "Wait and pause enhancements."
+  },
+  "wbnoinvd": {
+    "host": "wbnoinvd",
+    "note": "Write Back No Invalidate."
+  },
+  "x_87": {
+    "host": "x87",
+    "note": "Enable X87 float instructions."
+  },
+  "xop": {
+    "host": "xop",
+    "note": "Enable XOP instructions."
+  },
+  "xsave": {
+    "host": "xsave",
+    "note": "Support xsave instructions."
+  },
+  "xsavec": {
+    "host": "xsavec",
+    "note": "Support xsavec instructions."
+  },
+  "xsaveopt": {
+    "host": "xsaveopt",
+    "note": "Support xsaveopt instructions."
+  },
+  "xsaves": {
+    "host": "xsaves",
+    "note": "Support xsaves instructions."
+  }
+}
