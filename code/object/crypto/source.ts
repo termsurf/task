@@ -31,7 +31,12 @@ export const generate_murmur_hash: Form = {
   link: {
     input: { like: 'string' },
     seed: { like: 'integer' },
-    version: { like: 'string', take: ['2', '3'], fall: '3' },
+    version: {
+      like: 'string',
+      take: ['2', '3'],
+      fall: '3',
+      need: false,
+    },
   },
 }
 

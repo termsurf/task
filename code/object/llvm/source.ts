@@ -300,7 +300,8 @@ export const backend_compilation_output_content: Hash = {
   },
   hash: {
     assembly: { extension: 'asm' },
-    llvm: { extension: 'll' },
+    'llvm-ir': { extension: 'll' },
+    'llvm-bitcode': { extension: 'bc' },
     binary: {},
   },
 }

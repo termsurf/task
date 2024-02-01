@@ -49,6 +49,7 @@
     "@types/flat": "^5.0.5",
     "@types/ftp": "^0.3.36",
     "@types/memorystream": "^0.3.4",
+    "@types/node": "^20.11.14",
     "@types/node-forge": "^1.3.11",
     "@types/replace-ext": "^2.0.2",
     "@types/sanitize-html": "^2.9.5",
@@ -115,7 +116,6 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.191",
-    "@types/node": "^18.11.18",
     "@types/prettier": "^2.7.2",
     "@types/xlsx": "^0.0.35",
     "@typescript-eslint/eslint-plugin": "^5.48.1",

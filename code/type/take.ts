@@ -695,10 +695,12 @@ export const CompileLlvmIrToAssemblyModel: z.ZodType<Cast.CompileLlvmIrToAssembl
       }),
     }),
     output: z.object({
-      syntax: z.lazy(() => AssemblySyntaxModel).default('intel'),
-      architecture: z
-        .lazy(() => LlvmArchitectureModel)
-        .default('x86_64'),
+      syntax: z.optional(
+        z.lazy(() => AssemblySyntaxModel).default('intel'),
+      ),
+      architecture: z.optional(
+        z.lazy(() => LlvmArchitectureModel).default('x86_64'),
+      ),
       file: z.object({
         path: z.string(),
       }),
@@ -944,6 +946,9 @@ export const ConvertHtmlToPngWithPuppeteerModel: z.ZodType<Cast.ConvertHtmlToPng
 
 export const ConvertImageWithImageMagickModel: z.ZodType<Cast.ConvertImageWithImageMagick> =
   z.object({
+    surf: z.boolean(),
+    work: z.boolean(),
+    note: z.boolean(),
     input: z.object({
       format: z.string(),
       file: z.object({
@@ -1415,7 +1420,7 @@ export const GenerateMurmurHashModel: z.ZodType<Cast.GenerateMurmurHash> =
   z.object({
     input: z.string(),
     seed: z.number().int(),
-    version: z.string().default('3'),
+    version: z.optional(z.string()).default('3'),
   })
 
 export const GifsicleOptimizeOptionModel: z.ZodType<Cast.GifsicleOptimizeOption> =

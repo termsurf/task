@@ -109,8 +109,12 @@ export const compile_llvm_ir_to_assembly: Form = {
     },
     output: {
       link: {
-        syntax: { like: 'assembly_syntax', fall: 'intel' },
-        architecture: { like: 'llvm_architecture', fall: 'x86_64' },
+        syntax: { like: 'assembly_syntax', fall: 'intel', need: false },
+        architecture: {
+          like: 'llvm_architecture',
+          fall: 'x86_64',
+          need: false,
+        },
         file: {
           link: {
             path: { like: 'string' },

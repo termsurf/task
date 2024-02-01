@@ -56,6 +56,9 @@ dependencies:
   '@types/memorystream':
     specifier: ^0.3.4
     version: 0.3.4
+  '@types/node':
+    specifier: ^20.11.14
+    version: 20.11.14
   '@types/node-forge':
     specifier: ^1.3.11
     version: 1.3.11
@@ -250,9 +253,6 @@ devDependencies:
   '@types/lodash':
     specifier: ^4.14.191
     version: 4.14.202
-  '@types/node':
-    specifier: ^18.11.18
-    version: 18.19.5
   '@types/prettier':
     specifier: ^2.7.2
     version: 2.7.3
@@ -1424,7 +1424,7 @@ packages:
   /@types/ftp@0.3.36:
     resolution: {integrity: sha512-3U144rWCyiaf6xK6E+L9LGZYJ4sX+bFdjBHyna9qI38ecIdZd3alHt5vnQ1hODW6b6XVW8rZHk2BOVwUqPDw2Q==}
     dependencies:
-      '@types/node': 18.19.5
+      '@types/node': 20.11.14
     dev: false
 
   /@types/json-schema@7.0.15:
@@ -1441,7 +1441,7 @@ packages:
   /@types/memorystream@0.3.4:
     resolution: {integrity: sha512-AVVe8unTnhTecg9GmRVddQFvi5K7+QcvLTfUstT+5dhQ633+JX4bK/sKaHTj8Z5RUOoVNS6u1gfby29ArDj4Gw==}
     dependencies:
-      '@types/node': 18.19.5
+      '@types/node': 20.11.14
     dev: false
 
   /@types/ms@0.7.34:
@@ -1451,11 +1451,11 @@ packages:
   /@types/node-forge@1.3.11:
     resolution: {integrity: sha512-FQx220y22OKNTqaByeBGqHWYz4cl94tpcxeFdvBo3wjG6XPBuZ0BNgNZRV5J5TFmmcsJ4IzsLkmGRiQbnYsBEQ==}
     dependencies:
-      '@types/node': 18.19.5
+      '@types/node': 20.11.14
     dev: false
 
-  /@types/node@18.19.5:
-    resolution: {integrity: sha512-22MG6T02Hos2JWfa1o5jsIByn+bc5iOt1IS4xyg6OG68Bu+wMonVZzdrgCw693++rpLE9RUT/Bx15BeDzO0j+g==}
+  /@types/node@20.11.14:
+    resolution: {integrity: sha512-w3yWCcwULefjP9DmDDsgUskrMoOy5Z8MiwKHr1FvqGPtx7CvJzQvxD7eKpxNtklQxLruxSXWddyeRtyud0RcXQ==}
     dependencies:
       undici-types: 5.26.5
 
@@ -1466,7 +1466,7 @@ packages:
   /@types/readdir-glob@1.1.5:
     resolution: {integrity: sha512-raiuEPUYqXu+nvtY2Pe8s8FEmZ3x5yAH4VkLdihcPdalvsHltomrRC9BzuStrJ9yk06470hS0Crw0f1pXqD+Hg==}
     dependencies:
-      '@types/node': 18.19.5
+      '@types/node': 20.11.14
     dev: false
 
   /@types/replace-ext@2.0.2:
@@ -1498,7 +1498,7 @@ packages:
     resolution: {integrity: sha512-oJoftv0LSuaDZE3Le4DbKX+KS9G36NzOeSap90UIK0yMA/NhKJhqlSGtNDORNRaIbQfzjXDrQa0ytJ6mNRGz/Q==}
     requiresBuild: true
     dependencies:
-      '@types/node': 18.19.5
+      '@types/node': 20.11.14
     dev: false
     optional: true
 
@@ -4035,7 +4035,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 18.19.5
+      '@types/node': 20.11.14
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true

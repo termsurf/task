@@ -7,7 +7,7 @@ import {
 
 // https://www.npmjs.com/package/ftp
 export async function bindConvertLocal(input) {
-  const through = _.cloneDeep({}, input)
+  const through = _.cloneDeep(input)
   const files: Array<FileLink> = []
 
   if (input.input.file.path) {

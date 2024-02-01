@@ -65,8 +65,11 @@ export const BACKEND_COMPILATION_OUTPUT_CONTENT: BackendCompilationOutputContent
     assembly: {
       extension: 'asm',
     },
-    llvm: {
+    'llvm-ir': {
       extension: 'll',
+    },
+    'llvm-bitcode': {
+      extension: 'bc',
     },
     binary: {},
   }
@@ -3531,8 +3534,8 @@ export type CompileLlvmIrToAssembly = {
     }
   }
   output: {
-    syntax: AssemblySyntax
-    architecture: LlvmArchitecture
+    syntax?: AssemblySyntax
+    architecture?: LlvmArchitecture
     file: {
       path: string
     }
@@ -3759,6 +3762,9 @@ export type ConvertHtmlToPngWithPuppeteer = {
 }
 
 export type ConvertImageWithImageMagick = {
+  surf: boolean
+  work: boolean
+  note: boolean
   input: {
     format: string
     file: {
@@ -92374,7 +92380,7 @@ export type FormatSwift = {
 export type GenerateMurmurHash = {
   input: string
   seed: number
-  version: string
+  version?: string
 }
 
 export const GIFSICLE_OPTIMIZE_OPTION = ['1', '2', '3'] as const

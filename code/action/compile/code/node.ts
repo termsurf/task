@@ -335,7 +335,7 @@ export async function loadAllFilesForRemoteUpload(
 }
 
 async function bindCompileRemote(input) {
-  const through = _.cloneDeep({}, input)
+  const through = _.cloneDeep(input)
   const files: Array<FileLink> = []
 
   if (input.input.file.path) {
@@ -387,7 +387,7 @@ async function saveRemoteFileAndCleanupOnError(
 
 // https://www.npmjs.com/package/ftp
 async function bindCompileLocal(input) {
-  const through = _.cloneDeep({}, input)
+  const through = _.cloneDeep(input)
   const files: Array<FileLink> = []
 
   if (input.input.file.path) {
