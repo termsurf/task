@@ -1,6 +1,6 @@
 import * as ftp from 'ftp'
 import { Readable } from 'stream'
-import fs from 'node:fs'
+import fs from 'fs'
 import { ReadableStream as ReadableStreamWeb } from 'stream/web'
 
 import fsp, { open } from 'fs/promises'
@@ -42,7 +42,11 @@ import {
 } from '~/code/tool/index.js'
 import _ from 'lodash'
 import { basename } from 'path'
-import { handleLlcCommand } from '../../convert/video/local/node'
+import {
+  handleLlcCommand,
+  handleSwiftcCommand,
+} from '../../convert/video/local/node'
+import { handleRustcCommand } from '../../format/code/local/node'
 // import Parser from 'tree-sitter'
 // import JavaScript from 'tree-sitter-javascript'
 // import Swift from 'tree-sitter-swift'
@@ -458,14 +462,14 @@ export async function compileCpp(input: CompileCpp) {
 
 export async function compileSwift(input: CompileSwift) {
   const [cmd] = buildCommandToCompileSwift(input)
-  handleCommand(cmd!)
+  handleSwiftcCommand(cmd!)
   // return await runFormatSwiftCommand(cmd)
 }
 
 export async function compileRust(input: CompileRust) {
   const [cmd] = buildCommandToCompileRust(input)
   try {
-    await handleCommand(cmd!)
+    await handleRustcCommand(cmd!)
   } catch (e) {
     if (e instanceof ChildProcessError) {
       if (e.data.stderr) {

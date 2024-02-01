@@ -92373,7 +92373,7 @@ export type FormatSwift = {
 
 export type GenerateMurmurHash = {
   input: string
-  seed: Number
+  seed: number
   version: string
 }
 
@@ -109182,8 +109182,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Alofi'],
     rawOffsetInMinutes: -660,
     abbreviation: 'NUT',
-    currentTimeOffsetInMinutes: -660,
-    currentTimeFormat: '-11:00 Niue Time - Alofi',
   },
   'Pacific/Midway': {
     name: 'Pacific/Midway',
@@ -109196,8 +109194,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Midway'],
     rawOffsetInMinutes: -660,
     abbreviation: 'SST',
-    currentTimeOffsetInMinutes: -660,
-    currentTimeFormat: '-11:00 Samoa Time - Midway',
   },
   'Pacific/Pago_Pago': {
     name: 'Pacific/Pago_Pago',
@@ -109215,8 +109211,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Pago Pago'],
     rawOffsetInMinutes: -660,
     abbreviation: 'SST',
-    currentTimeOffsetInMinutes: -660,
-    currentTimeFormat: '-11:00 Samoa Time - Pago Pago',
   },
   'Pacific/Rarotonga': {
     name: 'Pacific/Rarotonga',
@@ -109229,8 +109223,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Avarua'],
     rawOffsetInMinutes: -600,
     abbreviation: 'CKT',
-    currentTimeOffsetInMinutes: -600,
-    currentTimeFormat: '-10:00 Cook Islands Time - Avarua',
   },
   'America/Adak': {
     name: 'America/Adak',
@@ -109243,8 +109235,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Adak'],
     rawOffsetInMinutes: -600,
     abbreviation: 'HAST',
-    currentTimeOffsetInMinutes: -600,
-    currentTimeFormat: '-10:00 Hawaii-Aleutian Time - Adak',
   },
   'Pacific/Honolulu': {
     name: 'Pacific/Honolulu',
@@ -109257,9 +109247,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Honolulu', 'East Honolulu', 'Pearl City', 'Hilo'],
     rawOffsetInMinutes: -600,
     abbreviation: 'HAST',
-    currentTimeOffsetInMinutes: -600,
-    currentTimeFormat:
-      '-10:00 Hawaii-Aleutian Time - Honolulu, East Honolulu, Pearl City, Hilo',
   },
   'Pacific/Tahiti': {
     name: 'Pacific/Tahiti',
@@ -109272,8 +109259,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Faaa', 'Papeete', 'Punaauia'],
     rawOffsetInMinutes: -600,
     abbreviation: 'TAHT',
-    currentTimeOffsetInMinutes: -600,
-    currentTimeFormat: '-10:00 Tahiti Time - Faaa, Papeete, Punaauia',
   },
   'Pacific/Marquesas': {
     name: 'Pacific/Marquesas',
@@ -109286,8 +109271,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Marquesas'],
     rawOffsetInMinutes: -570,
     abbreviation: 'MART',
-    currentTimeOffsetInMinutes: -570,
-    currentTimeFormat: '-09:30 Marquesas Time - Marquesas',
   },
   'America/Anchorage': {
     name: 'America/Anchorage',
@@ -109308,9 +109291,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Anchorage', 'Juneau', 'Fairbanks', 'Eagle River'],
     rawOffsetInMinutes: -540,
     abbreviation: 'AKST',
-    currentTimeOffsetInMinutes: -540,
-    currentTimeFormat:
-      '-09:00 Alaska Time - Anchorage, Juneau, Fairbanks, Eagle River',
   },
   'Pacific/Gambier': {
     name: 'Pacific/Gambier',
@@ -109323,8 +109303,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Gambier'],
     rawOffsetInMinutes: -540,
     abbreviation: 'GAMT',
-    currentTimeOffsetInMinutes: -540,
-    currentTimeFormat: '-09:00 Gambier Time - Gambier',
   },
   'America/Los_Angeles': {
     name: 'America/Los_Angeles',
@@ -109342,9 +109320,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -480,
     abbreviation: 'PST',
-    currentTimeOffsetInMinutes: -480,
-    currentTimeFormat:
-      '-08:00 Pacific Time - Los Angeles, San Diego, San Jose, San Francisco',
   },
   'America/Tijuana': {
     name: 'America/Tijuana',
@@ -109362,9 +109337,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Tijuana', 'Mexicali', 'Ensenada', 'Rosarito'],
     rawOffsetInMinutes: -480,
     abbreviation: 'PST',
-    currentTimeOffsetInMinutes: -480,
-    currentTimeFormat:
-      '-08:00 Pacific Time - Tijuana, Mexicali, Ensenada, Rosarito',
   },
   'America/Vancouver': {
     name: 'America/Vancouver',
@@ -109377,9 +109349,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Vancouver', 'Surrey', 'Okanagan', 'Victoria'],
     rawOffsetInMinutes: -480,
     abbreviation: 'PST',
-    currentTimeOffsetInMinutes: -480,
-    currentTimeFormat:
-      '-08:00 Pacific Time - Vancouver, Surrey, Okanagan, Victoria',
   },
   'Pacific/Pitcairn': {
     name: 'Pacific/Pitcairn',
@@ -109392,8 +109361,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Adamstown'],
     rawOffsetInMinutes: -480,
     abbreviation: 'PST',
-    currentTimeOffsetInMinutes: -480,
-    currentTimeFormat: '-08:00 Pitcairn Time - Adamstown',
   },
   'America/Hermosillo': {
     name: 'America/Hermosillo',
@@ -109411,9 +109378,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -420,
     abbreviation: 'GMT-7',
-    currentTimeOffsetInMinutes: -420,
-    currentTimeFormat:
-      '-07:00 Mexican Pacific Time - Hermosillo, Culiacán, Ciudad Obregón, Mazatlán',
   },
   'America/Edmonton': {
     name: 'America/Edmonton',
@@ -109432,9 +109396,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Calgary', 'Edmonton', 'Red Deer', 'Sherwood Park'],
     rawOffsetInMinutes: -420,
     abbreviation: 'MST',
-    currentTimeOffsetInMinutes: -420,
-    currentTimeFormat:
-      '-07:00 Mountain Time - Calgary, Edmonton, Red Deer, Sherwood Park',
   },
   'America/Ciudad_Juarez': {
     name: 'America/Ciudad_Juarez',
@@ -109447,8 +109408,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Ciudad Juárez'],
     rawOffsetInMinutes: -420,
     abbreviation: 'MST',
-    currentTimeOffsetInMinutes: -420,
-    currentTimeFormat: '-07:00 Mountain Time - Ciudad Juárez',
   },
   'America/Denver': {
     name: 'America/Denver',
@@ -109472,9 +109431,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -420,
     abbreviation: 'MST',
-    currentTimeOffsetInMinutes: -420,
-    currentTimeFormat:
-      '-07:00 Mountain Time - Denver, El Paso, Albuquerque, Colorado Springs',
   },
   'America/Phoenix': {
     name: 'America/Phoenix',
@@ -109487,9 +109443,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Phoenix', 'Tucson', 'Mesa', 'Chandler'],
     rawOffsetInMinutes: -420,
     abbreviation: 'MST',
-    currentTimeOffsetInMinutes: -420,
-    currentTimeFormat:
-      '-07:00 Mountain Time - Phoenix, Tucson, Mesa, Chandler',
   },
   'America/Whitehorse': {
     name: 'America/Whitehorse',
@@ -109509,9 +109462,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Whitehorse', 'Fort St. John', 'Creston', 'Dawson'],
     rawOffsetInMinutes: -420,
     abbreviation: 'YT',
-    currentTimeOffsetInMinutes: -420,
-    currentTimeFormat:
-      '-07:00 Yukon Time - Whitehorse, Fort St. John, Creston, Dawson',
   },
   'America/Belize': {
     name: 'America/Belize',
@@ -109529,9 +109479,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -360,
     abbreviation: 'CST',
-    currentTimeOffsetInMinutes: -360,
-    currentTimeFormat:
-      '-06:00 Central Time - Belize City, San Ignacio, San Pedro, Orange Walk',
   },
   'America/Chicago': {
     name: 'America/Chicago',
@@ -109555,9 +109502,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Chicago', 'Houston', 'San Antonio', 'Dallas'],
     rawOffsetInMinutes: -360,
     abbreviation: 'CST',
-    currentTimeOffsetInMinutes: -360,
-    currentTimeFormat:
-      '-06:00 Central Time - Chicago, Houston, San Antonio, Dallas',
   },
   'America/Guatemala': {
     name: 'America/Guatemala',
@@ -109570,9 +109514,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Guatemala City', 'Villa Nueva', 'Mixco', 'Cobán'],
     rawOffsetInMinutes: -360,
     abbreviation: 'CST',
-    currentTimeOffsetInMinutes: -360,
-    currentTimeFormat:
-      '-06:00 Central Time - Guatemala City, Villa Nueva, Mixco, Cobán',
   },
   'America/Managua': {
     name: 'America/Managua',
@@ -109585,9 +109526,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Managua', 'León', 'Masaya', 'Chinandega'],
     rawOffsetInMinutes: -360,
     abbreviation: 'CST',
-    currentTimeOffsetInMinutes: -360,
-    currentTimeFormat:
-      '-06:00 Central Time - Managua, León, Masaya, Chinandega',
   },
   'America/Mexico_City': {
     name: 'America/Mexico_City',
@@ -109612,9 +109550,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -360,
     abbreviation: 'CST',
-    currentTimeOffsetInMinutes: -360,
-    currentTimeFormat:
-      '-06:00 Central Time - Mexico City, Iztapalapa, León de los Aldama, Puebla',
   },
   'America/Matamoros': {
     name: 'America/Matamoros',
@@ -109632,9 +109567,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -360,
     abbreviation: 'CST',
-    currentTimeOffsetInMinutes: -360,
-    currentTimeFormat:
-      '-06:00 Central Time - Reynosa, Heroica Matamoros, Nuevo Laredo, Piedras Negras',
   },
   'America/Costa_Rica': {
     name: 'America/Costa_Rica',
@@ -109647,9 +109579,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['San José', 'Limón', 'San Francisco', 'Alajuela'],
     rawOffsetInMinutes: -360,
     abbreviation: 'CST',
-    currentTimeOffsetInMinutes: -360,
-    currentTimeFormat:
-      '-06:00 Central Time - San José, Limón, San Francisco, Alajuela',
   },
   'America/El_Salvador': {
     name: 'America/El_Salvador',
@@ -109667,9 +109596,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -360,
     abbreviation: 'CST',
-    currentTimeOffsetInMinutes: -360,
-    currentTimeFormat:
-      '-06:00 Central Time - San Salvador, Soyapango, San Miguel, Santa Ana',
   },
   'America/Regina': {
     name: 'America/Regina',
@@ -109686,9 +109612,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Saskatoon', 'Regina', 'Prince Albert', 'Moose Jaw'],
     rawOffsetInMinutes: -360,
     abbreviation: 'CST',
-    currentTimeOffsetInMinutes: -360,
-    currentTimeFormat:
-      '-06:00 Central Time - Saskatoon, Regina, Prince Albert, Moose Jaw',
   },
   'America/Tegucigalpa': {
     name: 'America/Tegucigalpa',
@@ -109706,9 +109629,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -360,
     abbreviation: 'CST',
-    currentTimeOffsetInMinutes: -360,
-    currentTimeFormat:
-      '-06:00 Central Time - Tegucigalpa, San Pedro Sula, La Ceiba, Choloma',
   },
   'America/Winnipeg': {
     name: 'America/Winnipeg',
@@ -109727,9 +109647,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Winnipeg', 'Brandon', 'Steinbach', 'Kenora'],
     rawOffsetInMinutes: -360,
     abbreviation: 'CST',
-    currentTimeOffsetInMinutes: -360,
-    currentTimeFormat:
-      '-06:00 Central Time - Winnipeg, Brandon, Steinbach, Kenora',
   },
   'Pacific/Galapagos': {
     name: 'Pacific/Galapagos',
@@ -109742,8 +109659,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Galapagos'],
     rawOffsetInMinutes: -360,
     abbreviation: 'GALT',
-    currentTimeOffsetInMinutes: -360,
-    currentTimeFormat: '-06:00 Galapagos Time - Galapagos',
   },
   'America/Rio_Branco': {
     name: 'America/Rio_Branco',
@@ -109766,9 +109681,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -300,
     abbreviation: 'ACT',
-    currentTimeOffsetInMinutes: -300,
-    currentTimeFormat:
-      '-05:00 Acre Time - Rio Branco, Cruzeiro do Sul, Senador Guiomard, Sena Madureira',
   },
   'America/Bogota': {
     name: 'America/Bogota',
@@ -109781,9 +109693,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Bogotá', 'Cali', 'Medellín', 'Barranquilla'],
     rawOffsetInMinutes: -300,
     abbreviation: 'COT',
-    currentTimeOffsetInMinutes: -300,
-    currentTimeFormat:
-      '-05:00 Colombia Time - Bogotá, Cali, Medellín, Barranquilla',
   },
   'America/Havana': {
     name: 'America/Havana',
@@ -109796,9 +109705,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Havana', 'Santiago de Cuba', 'Camagüey', 'Holguín'],
     rawOffsetInMinutes: -300,
     abbreviation: 'CST',
-    currentTimeOffsetInMinutes: -300,
-    currentTimeFormat:
-      '-05:00 Cuba Time - Havana, Santiago de Cuba, Camagüey, Holguín',
   },
   'Pacific/Easter': {
     name: 'Pacific/Easter',
@@ -109811,8 +109717,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Easter'],
     rawOffsetInMinutes: -360,
     abbreviation: 'EAST',
-    currentTimeOffsetInMinutes: -300,
-    currentTimeFormat: '-05:00 Easter Island Time - Easter',
   },
   'America/Atikokan': {
     name: 'America/Atikokan',
@@ -109825,8 +109729,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Atikokan'],
     rawOffsetInMinutes: -300,
     abbreviation: 'EST',
-    currentTimeOffsetInMinutes: -300,
-    currentTimeFormat: '-05:00 Eastern Time - Atikokan',
   },
   'America/Cancun': {
     name: 'America/Cancun',
@@ -109839,9 +109741,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Cancún', 'Chetumal', 'Playa del Carmen', 'Cozumel'],
     rawOffsetInMinutes: -300,
     abbreviation: 'EST',
-    currentTimeOffsetInMinutes: -300,
-    currentTimeFormat:
-      '-05:00 Eastern Time - Cancún, Chetumal, Playa del Carmen, Cozumel',
   },
   'America/Grand_Turk': {
     name: 'America/Grand_Turk',
@@ -109854,8 +109753,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Cockburn Town'],
     rawOffsetInMinutes: -300,
     abbreviation: 'EST',
-    currentTimeOffsetInMinutes: -300,
-    currentTimeFormat: '-05:00 Eastern Time - Cockburn Town',
   },
   'America/Cayman': {
     name: 'America/Cayman',
@@ -109868,8 +109765,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['George Town', 'West Bay'],
     rawOffsetInMinutes: -300,
     abbreviation: 'EST',
-    currentTimeOffsetInMinutes: -300,
-    currentTimeFormat: '-05:00 Eastern Time - George Town, West Bay',
   },
   'America/Jamaica': {
     name: 'America/Jamaica',
@@ -109887,9 +109782,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -300,
     abbreviation: 'EST',
-    currentTimeOffsetInMinutes: -300,
-    currentTimeFormat:
-      '-05:00 Eastern Time - Kingston, New Kingston, Spanish Town, Portmore',
   },
   'America/Nassau': {
     name: 'America/Nassau',
@@ -109902,8 +109794,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Nassau', 'Lucaya', 'Freeport'],
     rawOffsetInMinutes: -300,
     abbreviation: 'EST',
-    currentTimeOffsetInMinutes: -300,
-    currentTimeFormat: '-05:00 Eastern Time - Nassau, Lucaya, Freeport',
   },
   'America/New_York': {
     name: 'America/New_York',
@@ -109933,9 +109823,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['New York City', 'Brooklyn', 'Queens', 'Philadelphia'],
     rawOffsetInMinutes: -300,
     abbreviation: 'EST',
-    currentTimeOffsetInMinutes: -300,
-    currentTimeFormat:
-      '-05:00 Eastern Time - New York City, Brooklyn, Queens, Philadelphia',
   },
   'America/Panama': {
     name: 'America/Panama',
@@ -109953,9 +109840,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Panamá', 'San Miguelito', 'Juan Díaz', 'David'],
     rawOffsetInMinutes: -300,
     abbreviation: 'EST',
-    currentTimeOffsetInMinutes: -300,
-    currentTimeFormat:
-      '-05:00 Eastern Time - Panamá, San Miguelito, Juan Díaz, David',
   },
   'America/Port-au-Prince': {
     name: 'America/Port-au-Prince',
@@ -109973,9 +109857,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -300,
     abbreviation: 'EST',
-    currentTimeOffsetInMinutes: -300,
-    currentTimeFormat:
-      '-05:00 Eastern Time - Port-au-Prince, Carrefour, Delmas 73, Port-de-Paix',
   },
   'America/Toronto': {
     name: 'America/Toronto',
@@ -109997,9 +109878,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Toronto', 'Montréal', 'Ottawa', 'Mississauga'],
     rawOffsetInMinutes: -300,
     abbreviation: 'EST',
-    currentTimeOffsetInMinutes: -300,
-    currentTimeFormat:
-      '-05:00 Eastern Time - Toronto, Montréal, Ottawa, Mississauga',
   },
   'America/Guayaquil': {
     name: 'America/Guayaquil',
@@ -110017,9 +109895,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -300,
     abbreviation: 'ECT',
-    currentTimeOffsetInMinutes: -300,
-    currentTimeFormat:
-      '-05:00 Ecuador Time - Quito, Guayaquil, Cuenca, Santo Domingo de los Colorados',
   },
   'America/Lima': {
     name: 'America/Lima',
@@ -110032,9 +109907,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Lima', 'Callao', 'Arequipa', 'Trujillo'],
     rawOffsetInMinutes: -300,
     abbreviation: 'PET',
-    currentTimeOffsetInMinutes: -300,
-    currentTimeFormat:
-      '-05:00 Peru Time - Lima, Callao, Arequipa, Trujillo',
   },
   'America/Manaus': {
     name: 'America/Manaus',
@@ -110054,9 +109926,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Manaus', 'Campo Grande', 'Cuiabá', 'Porto Velho'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AMT',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat:
-      '-04:00 Amazon Time - Manaus, Campo Grande, Cuiabá, Porto Velho',
   },
   'America/St_Kitts': {
     name: 'America/St_Kitts',
@@ -110069,8 +109938,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Basseterre'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: '-04:00 Atlantic Time - Basseterre',
   },
   'America/Blanc-Sablon': {
     name: 'America/Blanc-Sablon',
@@ -110083,8 +109950,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Blanc-Sablon'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: '-04:00 Atlantic Time - Blanc-Sablon',
   },
   'America/Montserrat': {
     name: 'America/Montserrat',
@@ -110097,8 +109962,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Brades', 'Plymouth'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: '-04:00 Atlantic Time - Brades, Plymouth',
   },
   'America/Barbados': {
     name: 'America/Barbados',
@@ -110111,8 +109974,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Bridgetown'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: '-04:00 Atlantic Time - Bridgetown',
   },
   'America/St_Lucia': {
     name: 'America/St_Lucia',
@@ -110125,8 +109986,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Castries'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: '-04:00 Atlantic Time - Castries',
   },
   'America/Port_of_Spain': {
     name: 'America/Port_of_Spain',
@@ -110144,9 +110003,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat:
-      '-04:00 Atlantic Time - Chaguanas, Mon Repos, San Fernando, Port of Spain',
   },
   'America/Martinique': {
     name: 'America/Martinique',
@@ -110164,9 +110020,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat:
-      '-04:00 Atlantic Time - Fort-de-France, Le Lamentin, Le Robert, Sainte-Marie',
   },
   'America/St_Barthelemy': {
     name: 'America/St_Barthelemy',
@@ -110179,8 +110032,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Gustavia'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: '-04:00 Atlantic Time - Gustavia',
   },
   'America/Halifax': {
     name: 'America/Halifax',
@@ -110199,9 +110050,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Halifax', 'Moncton', 'Sydney', 'Dartmouth'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat:
-      '-04:00 Atlantic Time - Halifax, Moncton, Sydney, Dartmouth',
   },
   'Atlantic/Bermuda': {
     name: 'Atlantic/Bermuda',
@@ -110214,8 +110062,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Hamilton'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: '-04:00 Atlantic Time - Hamilton',
   },
   'America/St_Vincent': {
     name: 'America/St_Vincent',
@@ -110228,8 +110074,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Kingstown'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: '-04:00 Atlantic Time - Kingstown',
   },
   'America/Kralendijk': {
     name: 'America/Kralendijk',
@@ -110242,8 +110086,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Kralendijk'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: '-04:00 Atlantic Time - Kralendijk',
   },
   'America/Guadeloupe': {
     name: 'America/Guadeloupe',
@@ -110261,9 +110103,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat:
-      '-04:00 Atlantic Time - Les Abymes, Baie-Mahault, Le Gosier, Petit-Bourg',
   },
   'America/Marigot': {
     name: 'America/Marigot',
@@ -110276,8 +110115,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Marigot'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: '-04:00 Atlantic Time - Marigot',
   },
   'America/Aruba': {
     name: 'America/Aruba',
@@ -110290,9 +110127,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Oranjestad', 'Tanki Leendert', 'San Nicolas'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat:
-      '-04:00 Atlantic Time - Oranjestad, Tanki Leendert, San Nicolas',
   },
   'America/Lower_Princes': {
     name: 'America/Lower_Princes',
@@ -110305,8 +110139,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Philipsburg'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: '-04:00 Atlantic Time - Philipsburg',
   },
   'America/Tortola': {
     name: 'America/Tortola',
@@ -110319,8 +110151,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Road Town'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: '-04:00 Atlantic Time - Road Town',
   },
   'America/Dominica': {
     name: 'America/Dominica',
@@ -110333,8 +110163,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Roseau'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: '-04:00 Atlantic Time - Roseau',
   },
   'America/St_Thomas': {
     name: 'America/St_Thomas',
@@ -110347,9 +110175,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Saint Croix', 'Charlotte Amalie'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat:
-      '-04:00 Atlantic Time - Saint Croix, Charlotte Amalie',
   },
   'America/Grenada': {
     name: 'America/Grenada',
@@ -110362,8 +110187,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ["Saint George's"],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: "-04:00 Atlantic Time - Saint George's",
   },
   'America/Antigua': {
     name: 'America/Antigua',
@@ -110376,8 +110199,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Saint John’s'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: '-04:00 Atlantic Time - Saint John’s',
   },
   'America/Puerto_Rico': {
     name: 'America/Puerto_Rico',
@@ -110412,9 +110233,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['San Juan', 'Bayamón', 'Carolina', 'Ponce'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat:
-      '-04:00 Atlantic Time - San Juan, Bayamón, Carolina, Ponce',
   },
   'America/Santo_Domingo': {
     name: 'America/Santo_Domingo',
@@ -110432,9 +110250,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat:
-      '-04:00 Atlantic Time - Santo Domingo, Santiago de los Caballeros, Santo Domingo Oeste, Santo Domingo Este',
   },
   'America/Anguilla': {
     name: 'America/Anguilla',
@@ -110447,8 +110262,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['The Valley'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: '-04:00 Atlantic Time - The Valley',
   },
   'America/Thule': {
     name: 'America/Thule',
@@ -110461,8 +110274,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Thule'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: '-04:00 Atlantic Time - Thule',
   },
   'America/Curacao': {
     name: 'America/Curacao',
@@ -110475,8 +110286,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Willemstad'],
     rawOffsetInMinutes: -240,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat: '-04:00 Atlantic Time - Willemstad',
   },
   'America/La_Paz': {
     name: 'America/La_Paz',
@@ -110494,9 +110303,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -240,
     abbreviation: 'BOT',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat:
-      '-04:00 Bolivia Time - La Paz, Santa Cruz de la Sierra, Cochabamba, Sucre',
   },
   'America/Guyana': {
     name: 'America/Guyana',
@@ -110509,9 +110315,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Georgetown', 'Linden', 'New Amsterdam'],
     rawOffsetInMinutes: -240,
     abbreviation: 'GYT',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat:
-      '-04:00 Guyana Time - Georgetown, Linden, New Amsterdam',
   },
   'America/Caracas': {
     name: 'America/Caracas',
@@ -110524,9 +110327,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Caracas', 'Maracaibo', 'Maracay', 'Valencia'],
     rawOffsetInMinutes: -240,
     abbreviation: 'VET',
-    currentTimeOffsetInMinutes: -240,
-    currentTimeFormat:
-      '-04:00 Venezuela Time - Caracas, Maracaibo, Maracay, Valencia',
   },
   'America/St_Johns': {
     name: 'America/St_Johns',
@@ -110544,9 +110344,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -210,
     abbreviation: 'NST',
-    currentTimeOffsetInMinutes: -210,
-    currentTimeFormat:
-      "-03:30 Newfoundland Time - St. John's, Mount Pearl, Corner Brook, Conception Bay South",
   },
   'America/Argentina/Buenos_Aires': {
     name: 'America/Argentina/Buenos_Aires',
@@ -110579,9 +110376,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Buenos Aires', 'Córdoba', 'Rosario', 'Mar del Plata'],
     rawOffsetInMinutes: -180,
     abbreviation: 'ART',
-    currentTimeOffsetInMinutes: -180,
-    currentTimeFormat:
-      '-03:00 Argentina Time - Buenos Aires, Córdoba, Rosario, Mar del Plata',
   },
   'America/Sao_Paulo': {
     name: 'America/Sao_Paulo',
@@ -110609,9 +110403,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -180,
     abbreviation: 'BRT',
-    currentTimeOffsetInMinutes: -180,
-    currentTimeFormat:
-      '-03:00 Brasilia Time - São Paulo, Rio de Janeiro, Belo Horizonte, Salvador',
   },
   'Antarctica/Palmer': {
     name: 'Antarctica/Palmer',
@@ -110624,8 +110415,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Palmer', 'Rothera'],
     rawOffsetInMinutes: -180,
     abbreviation: 'CLT',
-    currentTimeOffsetInMinutes: -180,
-    currentTimeFormat: '-03:00 Chile Time - Palmer, Rothera',
   },
   'America/Punta_Arenas': {
     name: 'America/Punta_Arenas',
@@ -110638,9 +110427,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Punta Arenas', 'Puerto Natales'],
     rawOffsetInMinutes: -180,
     abbreviation: 'CLT',
-    currentTimeOffsetInMinutes: -180,
-    currentTimeFormat:
-      '-03:00 Chile Time - Punta Arenas, Puerto Natales',
   },
   'America/Santiago': {
     name: 'America/Santiago',
@@ -110658,9 +110444,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -240,
     abbreviation: 'CLT',
-    currentTimeOffsetInMinutes: -180,
-    currentTimeFormat:
-      '-03:00 Chile Time - Santiago, Puente Alto, Antofagasta, Viña del Mar',
   },
   'Atlantic/Stanley': {
     name: 'Atlantic/Stanley',
@@ -110673,8 +110456,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Stanley'],
     rawOffsetInMinutes: -180,
     abbreviation: 'FKST',
-    currentTimeOffsetInMinutes: -180,
-    currentTimeFormat: '-03:00 Falkland Islands Time - Stanley',
   },
   'America/Cayenne': {
     name: 'America/Cayenne',
@@ -110692,9 +110473,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -180,
     abbreviation: 'GFT',
-    currentTimeOffsetInMinutes: -180,
-    currentTimeFormat:
-      '-03:00 French Guiana Time - Cayenne, Matoury, Saint-Laurent-du-Maroni, Kourou',
   },
   'America/Asuncion': {
     name: 'America/Asuncion',
@@ -110712,9 +110490,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: -240,
     abbreviation: 'PYT',
-    currentTimeOffsetInMinutes: -180,
-    currentTimeFormat:
-      '-03:00 Paraguay Time - Asunción, Ciudad del Este, San Lorenzo, Capiatá',
   },
   'America/Miquelon': {
     name: 'America/Miquelon',
@@ -110727,9 +110502,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Saint-Pierre'],
     rawOffsetInMinutes: -180,
     abbreviation: 'PM',
-    currentTimeOffsetInMinutes: -180,
-    currentTimeFormat:
-      '-03:00 St. Pierre & Miquelon Time - Saint-Pierre',
   },
   'America/Paramaribo': {
     name: 'America/Paramaribo',
@@ -110742,8 +110514,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Paramaribo', 'Lelydorp'],
     rawOffsetInMinutes: -180,
     abbreviation: 'SRT',
-    currentTimeOffsetInMinutes: -180,
-    currentTimeFormat: '-03:00 Suriname Time - Paramaribo, Lelydorp',
   },
   'America/Montevideo': {
     name: 'America/Montevideo',
@@ -110756,9 +110526,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Montevideo', 'Salto', 'Paysandú', 'Las Piedras'],
     rawOffsetInMinutes: -180,
     abbreviation: 'UYT',
-    currentTimeOffsetInMinutes: -180,
-    currentTimeFormat:
-      '-03:00 Uruguay Time - Montevideo, Salto, Paysandú, Las Piedras',
   },
   'America/Noronha': {
     name: 'America/Noronha',
@@ -110771,8 +110538,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Noronha'],
     rawOffsetInMinutes: -120,
     abbreviation: 'FNT',
-    currentTimeOffsetInMinutes: -120,
-    currentTimeFormat: '-02:00 Fernando de Noronha Time - Noronha',
   },
   'Atlantic/South_Georgia': {
     name: 'Atlantic/South_Georgia',
@@ -110785,8 +110550,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Grytviken'],
     rawOffsetInMinutes: -120,
     abbreviation: 'GST',
-    currentTimeOffsetInMinutes: -120,
-    currentTimeFormat: '-02:00 South Georgia Time - Grytviken',
   },
   'America/Nuuk': {
     name: 'America/Nuuk',
@@ -110799,8 +110562,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Nuuk'],
     rawOffsetInMinutes: -120,
     abbreviation: 'WGT',
-    currentTimeOffsetInMinutes: -120,
-    currentTimeFormat: '-02:00 West Greenland Time - Nuuk',
   },
   'Atlantic/Azores': {
     name: 'Atlantic/Azores',
@@ -110813,8 +110574,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Ponta Delgada'],
     rawOffsetInMinutes: -60,
     abbreviation: 'AZOT',
-    currentTimeOffsetInMinutes: -60,
-    currentTimeFormat: '-01:00 Azores Time - Ponta Delgada',
   },
   'Atlantic/Cape_Verde': {
     name: 'Atlantic/Cape_Verde',
@@ -110827,9 +110586,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Praia', 'Mindelo', 'Espargos', 'Assomada'],
     rawOffsetInMinutes: -60,
     abbreviation: 'CVT',
-    currentTimeOffsetInMinutes: -60,
-    currentTimeFormat:
-      '-01:00 Cape Verde Time - Praia, Mindelo, Espargos, Assomada',
   },
   'America/Scoresbysund': {
     name: 'America/Scoresbysund',
@@ -110842,8 +110598,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Scoresbysund'],
     rawOffsetInMinutes: -60,
     abbreviation: 'EGT',
-    currentTimeOffsetInMinutes: -60,
-    currentTimeFormat: '-01:00 East Greenland Time - Scoresbysund',
   },
   'Africa/Abidjan': {
     name: 'Africa/Abidjan',
@@ -110871,9 +110625,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Abidjan', 'Abobo', 'Bouaké', 'Korhogo'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat:
-      '+00:00 Greenwich Mean Time - Abidjan, Abobo, Bouaké, Korhogo',
   },
   'Africa/Bamako': {
     name: 'Africa/Bamako',
@@ -110886,9 +110637,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Bamako', 'Sikasso', 'Koutiala', 'Ségou'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat:
-      '+00:00 Greenwich Mean Time - Bamako, Sikasso, Koutiala, Ségou',
   },
   'Africa/Bissau': {
     name: 'Africa/Bissau',
@@ -110901,9 +110649,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Bissau', 'Gabú', 'Bafatá'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat:
-      '+00:00 Greenwich Mean Time - Bissau, Gabú, Bafatá',
   },
   'Africa/Conakry': {
     name: 'Africa/Conakry',
@@ -110916,9 +110661,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Conakry', 'Camayenne', 'Nzérékoré', 'Kankan'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat:
-      '+00:00 Greenwich Mean Time - Conakry, Camayenne, Nzérékoré, Kankan',
   },
   'Africa/Dakar': {
     name: 'Africa/Dakar',
@@ -110931,9 +110673,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Dakar', 'Pikine', 'Touba', 'Thiès'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat:
-      '+00:00 Greenwich Mean Time - Dakar, Pikine, Touba, Thiès',
   },
   'America/Danmarkshavn': {
     name: 'America/Danmarkshavn',
@@ -110946,8 +110685,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Danmarkshavn'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat: '+00:00 Greenwich Mean Time - Danmarkshavn',
   },
   'Europe/Isle_of_Man': {
     name: 'Europe/Isle_of_Man',
@@ -110960,8 +110697,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Douglas'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat: '+00:00 Greenwich Mean Time - Douglas',
   },
   'Europe/Dublin': {
     name: 'Europe/Dublin',
@@ -110974,9 +110709,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Dublin', 'South Dublin', 'Cork', 'Limerick'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat:
-      '+00:00 Greenwich Mean Time - Dublin, South Dublin, Cork, Limerick',
   },
   'Africa/Freetown': {
     name: 'Africa/Freetown',
@@ -110989,9 +110721,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Freetown', 'Bo', 'Kenema', 'Koidu'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat:
-      '+00:00 Greenwich Mean Time - Freetown, Bo, Kenema, Koidu',
   },
   'Atlantic/St_Helena': {
     name: 'Atlantic/St_Helena',
@@ -111004,8 +110733,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Jamestown'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat: '+00:00 Greenwich Mean Time - Jamestown',
   },
   'Africa/Accra': {
     name: 'Africa/Accra',
@@ -111018,9 +110745,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Kumasi', 'Accra', 'Tamale', 'Takoradi'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat:
-      '+00:00 Greenwich Mean Time - Kumasi, Accra, Tamale, Takoradi',
   },
   'Africa/Lome': {
     name: 'Africa/Lome',
@@ -111033,9 +110757,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Lomé', 'Sokodé', 'Kara', 'Atakpamé'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat:
-      '+00:00 Greenwich Mean Time - Lomé, Sokodé, Kara, Atakpamé',
   },
   'Europe/London': {
     name: 'Europe/London',
@@ -111056,9 +110777,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['London', 'Birmingham', 'Liverpool', 'Glasgow'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat:
-      '+00:00 Greenwich Mean Time - London, Birmingham, Liverpool, Glasgow',
   },
   'Africa/Monrovia': {
     name: 'Africa/Monrovia',
@@ -111071,9 +110789,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Monrovia', 'Gbarnga', 'Buchanan', 'Ganta'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat:
-      '+00:00 Greenwich Mean Time - Monrovia, Gbarnga, Buchanan, Ganta',
   },
   'Africa/Nouakchott': {
     name: 'Africa/Nouakchott',
@@ -111086,9 +110801,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Nouakchott', 'Nouadhibou', 'Kiffa', 'Dar Naim'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat:
-      '+00:00 Greenwich Mean Time - Nouakchott, Nouadhibou, Kiffa, Dar Naim',
   },
   'Africa/Ouagadougou': {
     name: 'Africa/Ouagadougou',
@@ -111101,9 +110813,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Ouagadougou', 'Bobo-Dioulasso', 'Koudougou', 'Saaba'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat:
-      '+00:00 Greenwich Mean Time - Ouagadougou, Bobo-Dioulasso, Koudougou, Saaba',
   },
   'Atlantic/Reykjavik': {
     name: 'Atlantic/Reykjavik',
@@ -111121,9 +110830,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat:
-      '+00:00 Greenwich Mean Time - Reykjavík, Kópavogur, Hafnarfjörður, Reykjanesbær',
   },
   'Europe/Jersey': {
     name: 'Europe/Jersey',
@@ -111136,8 +110842,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Saint Helier'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat: '+00:00 Greenwich Mean Time - Saint Helier',
   },
   'Europe/Guernsey': {
     name: 'Europe/Guernsey',
@@ -111150,8 +110854,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Saint Peter Port'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat: '+00:00 Greenwich Mean Time - Saint Peter Port',
   },
   'Africa/Sao_Tome': {
     name: 'Africa/Sao_Tome',
@@ -111164,8 +110866,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['São Tomé'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat: '+00:00 Greenwich Mean Time - São Tomé',
   },
   'Africa/Banjul': {
     name: 'Africa/Banjul',
@@ -111178,9 +110878,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Serekunda', 'Brikama', 'Bununka Kunda', 'Sukuta'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat:
-      '+00:00 Greenwich Mean Time - Serekunda, Brikama, Bununka Kunda, Sukuta',
   },
   'Antarctica/Troll': {
     name: 'Antarctica/Troll',
@@ -111193,8 +110890,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Troll'],
     rawOffsetInMinutes: 0,
     abbreviation: 'GMT',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat: '+00:00 Greenwich Mean Time - Troll',
   },
   'Atlantic/Canary': {
     name: 'Atlantic/Canary',
@@ -111212,9 +110907,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: 0,
     abbreviation: 'WET',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat:
-      '+00:00 Western European Time - Las Palmas de Gran Canaria, Santa Cruz de Tenerife, La Laguna, Telde',
   },
   'Europe/Lisbon': {
     name: 'Europe/Lisbon',
@@ -111227,9 +110919,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Lisbon', 'Porto', 'Amadora', 'Braga'],
     rawOffsetInMinutes: 0,
     abbreviation: 'WET',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat:
-      '+00:00 Western European Time - Lisbon, Porto, Amadora, Braga',
   },
   'Atlantic/Faroe': {
     name: 'Atlantic/Faroe',
@@ -111242,8 +110931,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Tórshavn'],
     rawOffsetInMinutes: 0,
     abbreviation: 'WET',
-    currentTimeOffsetInMinutes: 0,
-    currentTimeFormat: '+00:00 Western European Time - Tórshavn',
   },
   'Africa/Algiers': {
     name: 'Africa/Algiers',
@@ -111256,9 +110943,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Algiers', 'Oran', 'Constantine', 'Annaba'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Algiers, Oran, Constantine, Annaba',
   },
   'Europe/Amsterdam': {
     name: 'Europe/Amsterdam',
@@ -111271,9 +110955,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Amsterdam', 'Rotterdam', 'The Hague', 'Utrecht'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Amsterdam, Rotterdam, The Hague, Utrecht',
   },
   'Europe/Andorra': {
     name: 'Europe/Andorra',
@@ -111286,9 +110967,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Andorra la Vella', 'les Escaldes'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Andorra la Vella, les Escaldes',
   },
   'Europe/Belgrade': {
     name: 'Europe/Belgrade',
@@ -111308,9 +110986,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Belgrade', 'Niš', 'Novi Sad', 'Zemun'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Belgrade, Niš, Novi Sad, Zemun',
   },
   'Europe/Berlin': {
     name: 'Europe/Berlin',
@@ -111331,9 +111006,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Berlin', 'Hamburg', 'Munich', 'Köln'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Berlin, Hamburg, Munich, Köln',
   },
   'Europe/Bratislava': {
     name: 'Europe/Bratislava',
@@ -111346,9 +111018,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Bratislava', 'Košice', 'Nitra', 'Prešov'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Bratislava, Košice, Nitra, Prešov',
   },
   'Europe/Brussels': {
     name: 'Europe/Brussels',
@@ -111361,9 +111030,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Brussels', 'Antwerpen', 'Gent', 'Charleroi'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Brussels, Antwerpen, Gent, Charleroi',
   },
   'Europe/Budapest': {
     name: 'Europe/Budapest',
@@ -111376,9 +111042,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Budapest', 'Debrecen', 'Szeged', 'Miskolc'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Budapest, Debrecen, Szeged, Miskolc',
   },
   'Europe/Copenhagen': {
     name: 'Europe/Copenhagen',
@@ -111391,9 +111054,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Copenhagen', 'Århus', 'Odense', 'Aalborg'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Copenhagen, Århus, Odense, Aalborg',
   },
   'Europe/Gibraltar': {
     name: 'Europe/Gibraltar',
@@ -111406,8 +111066,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Gibraltar'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat: '+01:00 Central European Time - Gibraltar',
   },
   'Europe/Ljubljana': {
     name: 'Europe/Ljubljana',
@@ -111420,9 +111078,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Ljubljana', 'Maribor', 'Kranj', 'Celje'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Ljubljana, Maribor, Kranj, Celje',
   },
   'Arctic/Longyearbyen': {
     name: 'Arctic/Longyearbyen',
@@ -111435,8 +111090,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Longyearbyen'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat: '+01:00 Central European Time - Longyearbyen',
   },
   'Europe/Luxembourg': {
     name: 'Europe/Luxembourg',
@@ -111449,9 +111102,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Luxembourg', 'Esch-sur-Alzette', 'Dudelange'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Luxembourg, Esch-sur-Alzette, Dudelange',
   },
   'Europe/Madrid': {
     name: 'Europe/Madrid',
@@ -111464,9 +111114,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Madrid', 'Barcelona', 'Valencia', 'Sevilla'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Madrid, Barcelona, Valencia, Sevilla',
   },
   'Europe/Monaco': {
     name: 'Europe/Monaco',
@@ -111479,9 +111126,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Monaco', 'Monte-Carlo'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Monaco, Monte-Carlo',
   },
   'Europe/Oslo': {
     name: 'Europe/Oslo',
@@ -111494,9 +111138,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Oslo', 'Bergen', 'Trondheim', 'Stavanger'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Oslo, Bergen, Trondheim, Stavanger',
   },
   'Europe/Paris': {
     name: 'Europe/Paris',
@@ -111509,9 +111150,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Paris', 'Marseille', 'Lyon', 'Toulouse'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Paris, Marseille, Lyon, Toulouse',
   },
   'Europe/Podgorica': {
     name: 'Europe/Podgorica',
@@ -111524,9 +111162,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Podgorica', 'Nikšić', 'Herceg Novi', 'Pljevlja'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Podgorica, Nikšić, Herceg Novi, Pljevlja',
   },
   'Europe/Prague': {
     name: 'Europe/Prague',
@@ -111539,9 +111174,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Prague', 'Brno', 'Ostrava', 'Pilsen'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Prague, Brno, Ostrava, Pilsen',
   },
   'Europe/Rome': {
     name: 'Europe/Rome',
@@ -111554,9 +111186,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Rome', 'Milan', 'Naples', 'Turin'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Rome, Milan, Naples, Turin',
   },
   'Europe/San_Marino': {
     name: 'Europe/San_Marino',
@@ -111569,8 +111198,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['San Marino'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat: '+01:00 Central European Time - San Marino',
   },
   'Europe/Malta': {
     name: 'Europe/Malta',
@@ -111583,9 +111210,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['San Pawl il-Baħar', 'Birkirkara', 'Mosta', 'Sliema'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - San Pawl il-Baħar, Birkirkara, Mosta, Sliema',
   },
   'Europe/Sarajevo': {
     name: 'Europe/Sarajevo',
@@ -111598,9 +111222,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Sarajevo', 'Banja Luka', 'Zenica', 'Tuzla'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Sarajevo, Banja Luka, Zenica, Tuzla',
   },
   'Europe/Skopje': {
     name: 'Europe/Skopje',
@@ -111613,9 +111234,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Skopje', 'Kumanovo', 'Prilep', 'Bitola'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Skopje, Kumanovo, Prilep, Bitola',
   },
   'Europe/Stockholm': {
     name: 'Europe/Stockholm',
@@ -111628,9 +111246,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Stockholm', 'Göteborg', 'Malmö', 'Uppsala'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Stockholm, Göteborg, Malmö, Uppsala',
   },
   'Europe/Tirane': {
     name: 'Europe/Tirane',
@@ -111643,9 +111258,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Tirana', 'Durrës', 'Elbasan', 'Vlorë'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Tirana, Durrës, Elbasan, Vlorë',
   },
   'Africa/Tunis': {
     name: 'Africa/Tunis',
@@ -111658,9 +111270,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Tunis', 'Sfax', 'Sousse', 'Kairouan'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Tunis, Sfax, Sousse, Kairouan',
   },
   'Europe/Vaduz': {
     name: 'Europe/Vaduz',
@@ -111673,8 +111282,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Vaduz'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat: '+01:00 Central European Time - Vaduz',
   },
   'Europe/Vatican': {
     name: 'Europe/Vatican',
@@ -111687,8 +111294,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Vatican City'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat: '+01:00 Central European Time - Vatican City',
   },
   'Europe/Vienna': {
     name: 'Europe/Vienna',
@@ -111701,9 +111306,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Vienna', 'Graz', 'Linz', 'Favoriten'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Vienna, Graz, Linz, Favoriten',
   },
   'Europe/Warsaw': {
     name: 'Europe/Warsaw',
@@ -111716,9 +111318,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Warsaw', 'Łódź', 'Kraków', 'Wrocław'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Warsaw, Łódź, Kraków, Wrocław',
   },
   'Europe/Zagreb': {
     name: 'Europe/Zagreb',
@@ -111731,9 +111330,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Zagreb', 'Split', 'Rijeka', 'Osijek'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Zagreb, Split, Rijeka, Osijek',
   },
   'Europe/Zurich': {
     name: 'Europe/Zurich',
@@ -111746,9 +111342,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Zürich', 'Genève', 'Basel', 'Lausanne'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Central European Time - Zürich, Genève, Basel, Lausanne',
   },
   'Africa/Bangui': {
     name: 'Africa/Bangui',
@@ -111761,9 +111354,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Bangui', 'Bimbo', 'Bégoua', 'Carnot'],
     rawOffsetInMinutes: 60,
     abbreviation: 'WAT',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 West Africa Time - Bangui, Bimbo, Bégoua, Carnot',
   },
   'Africa/Malabo': {
     name: 'Africa/Malabo',
@@ -111776,9 +111366,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Bata', 'Malabo', 'Ebebiyin'],
     rawOffsetInMinutes: 60,
     abbreviation: 'WAT',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 West Africa Time - Bata, Malabo, Ebebiyin',
   },
   'Africa/Brazzaville': {
     name: 'Africa/Brazzaville',
@@ -111791,9 +111378,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Brazzaville', 'Pointe-Noire', 'Dolisie', 'Nkayi'],
     rawOffsetInMinutes: 60,
     abbreviation: 'WAT',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 West Africa Time - Brazzaville, Pointe-Noire, Dolisie, Nkayi',
   },
   'Africa/Porto-Novo': {
     name: 'Africa/Porto-Novo',
@@ -111806,9 +111390,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Cotonou', 'Abomey-Calavi', 'Porto-Novo', 'Parakou'],
     rawOffsetInMinutes: 60,
     abbreviation: 'WAT',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 West Africa Time - Cotonou, Abomey-Calavi, Porto-Novo, Parakou',
   },
   'Africa/Douala': {
     name: 'Africa/Douala',
@@ -111821,9 +111402,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Douala', 'Yaoundé', 'Bamenda', 'Bafoussam'],
     rawOffsetInMinutes: 60,
     abbreviation: 'WAT',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 West Africa Time - Douala, Yaoundé, Bamenda, Bafoussam',
   },
   'Africa/Kinshasa': {
     name: 'Africa/Kinshasa',
@@ -111836,9 +111414,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Kinshasa', 'Kikwit', 'Masina', 'Mbandaka'],
     rawOffsetInMinutes: 60,
     abbreviation: 'WAT',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 West Africa Time - Kinshasa, Kikwit, Masina, Mbandaka',
   },
   'Africa/Lagos': {
     name: 'Africa/Lagos',
@@ -111862,9 +111437,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Lagos', 'Kano', 'Ibadan', 'Abuja'],
     rawOffsetInMinutes: 60,
     abbreviation: 'WAT',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 West Africa Time - Lagos, Kano, Ibadan, Abuja',
   },
   'Africa/Libreville': {
     name: 'Africa/Libreville',
@@ -111877,9 +111449,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Libreville', 'Port-Gentil', 'Franceville', 'Owendo'],
     rawOffsetInMinutes: 60,
     abbreviation: 'WAT',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 West Africa Time - Libreville, Port-Gentil, Franceville, Owendo',
   },
   'Africa/Luanda': {
     name: 'Africa/Luanda',
@@ -111892,9 +111461,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Luanda', 'Lubango', 'Huambo', 'Benguela'],
     rawOffsetInMinutes: 60,
     abbreviation: 'WAT',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 West Africa Time - Luanda, Lubango, Huambo, Benguela',
   },
   'Africa/Ndjamena': {
     name: 'Africa/Ndjamena',
@@ -111907,9 +111473,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ["N'Djamena", 'Moundou', 'Abéché', 'Sarh'],
     rawOffsetInMinutes: 60,
     abbreviation: 'WAT',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      "+01:00 West Africa Time - N'Djamena, Moundou, Abéché, Sarh",
   },
   'Africa/Niamey': {
     name: 'Africa/Niamey',
@@ -111922,9 +111485,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Niamey', 'Maradi', 'Zinder', 'Tahoua'],
     rawOffsetInMinutes: 60,
     abbreviation: 'WAT',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 West Africa Time - Niamey, Maradi, Zinder, Tahoua',
   },
   'Africa/Casablanca': {
     name: 'Africa/Casablanca',
@@ -111937,9 +111497,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Casablanca', 'Rabat', 'Fes', 'Tangier'],
     rawOffsetInMinutes: 0,
     abbreviation: 'WET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Western European Time - Casablanca, Rabat, Fes, Tangier',
   },
   'Africa/El_Aaiun': {
     name: 'Africa/El_Aaiun',
@@ -111952,9 +111509,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Laayoune', 'Dakhla', 'Boujdour'],
     rawOffsetInMinutes: 0,
     abbreviation: 'WET',
-    currentTimeOffsetInMinutes: 60,
-    currentTimeFormat:
-      '+01:00 Western European Time - Laayoune, Dakhla, Boujdour',
   },
   'Africa/Bujumbura': {
     name: 'Africa/Bujumbura',
@@ -111967,9 +111521,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Bujumbura', 'Gitega', 'Ngozi', 'Rumonge'],
     rawOffsetInMinutes: 120,
     abbreviation: 'CAT',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Central Africa Time - Bujumbura, Gitega, Ngozi, Rumonge',
   },
   'Africa/Gaborone': {
     name: 'Africa/Gaborone',
@@ -111982,9 +111533,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Gaborone', 'Francistown', 'Mogoditshane', 'Maun'],
     rawOffsetInMinutes: 120,
     abbreviation: 'CAT',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Central Africa Time - Gaborone, Francistown, Mogoditshane, Maun',
   },
   'Africa/Harare': {
     name: 'Africa/Harare',
@@ -111997,9 +111545,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Harare', 'Bulawayo', 'Chitungwiza', 'Mutare'],
     rawOffsetInMinutes: 120,
     abbreviation: 'CAT',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Central Africa Time - Harare, Bulawayo, Chitungwiza, Mutare',
   },
   'Africa/Juba': {
     name: 'Africa/Juba',
@@ -112012,9 +111557,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Juba', 'Winejok', 'Yei', 'Malakal'],
     rawOffsetInMinutes: 120,
     abbreviation: 'CAT',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Central Africa Time - Juba, Winejok, Yei, Malakal',
   },
   'Africa/Khartoum': {
     name: 'Africa/Khartoum',
@@ -112027,9 +111569,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Khartoum', 'Omdurman', 'Nyala', 'Port Sudan'],
     rawOffsetInMinutes: 120,
     abbreviation: 'CAT',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Central Africa Time - Khartoum, Omdurman, Nyala, Port Sudan',
   },
   'Africa/Kigali': {
     name: 'Africa/Kigali',
@@ -112042,9 +111581,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Kigali', 'Gisenyi', 'Butare', 'Gitarama'],
     rawOffsetInMinutes: 120,
     abbreviation: 'CAT',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Central Africa Time - Kigali, Gisenyi, Butare, Gitarama',
   },
   'Africa/Blantyre': {
     name: 'Africa/Blantyre',
@@ -112057,9 +111593,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Lilongwe', 'Blantyre', 'Mzuzu', 'Zomba'],
     rawOffsetInMinutes: 120,
     abbreviation: 'CAT',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Central Africa Time - Lilongwe, Blantyre, Mzuzu, Zomba',
   },
   'Africa/Lubumbashi': {
     name: 'Africa/Lubumbashi',
@@ -112072,9 +111605,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Lubumbashi', 'Mbuji-Mayi', 'Kananga', 'Kisangani'],
     rawOffsetInMinutes: 120,
     abbreviation: 'CAT',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Central Africa Time - Lubumbashi, Mbuji-Mayi, Kananga, Kisangani',
   },
   'Africa/Lusaka': {
     name: 'Africa/Lusaka',
@@ -112087,9 +111617,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Lusaka', 'Ndola', 'Kitwe', 'Chipata'],
     rawOffsetInMinutes: 120,
     abbreviation: 'CAT',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Central Africa Time - Lusaka, Ndola, Kitwe, Chipata',
   },
   'Africa/Maputo': {
     name: 'Africa/Maputo',
@@ -112111,9 +111638,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Maputo', 'Matola', 'Nampula', 'Beira'],
     rawOffsetInMinutes: 120,
     abbreviation: 'CAT',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Central Africa Time - Maputo, Matola, Nampula, Beira',
   },
   'Africa/Windhoek': {
     name: 'Africa/Windhoek',
@@ -112126,9 +111650,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Windhoek', 'Rundu', 'Walvis Bay', 'Swakopmund'],
     rawOffsetInMinutes: 60,
     abbreviation: 'CAT',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Central Africa Time - Windhoek, Rundu, Walvis Bay, Swakopmund',
   },
   'Europe/Athens': {
     name: 'Europe/Athens',
@@ -112141,9 +111662,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Athens', 'Thessaloníki', 'Pátra', 'Piraeus'],
     rawOffsetInMinutes: 120,
     abbreviation: 'EET',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Eastern European Time - Athens, Thessaloníki, Pátra, Piraeus',
   },
   'Asia/Beirut': {
     name: 'Asia/Beirut',
@@ -112156,9 +111674,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Beirut', 'Ra’s Bayrūt', 'Tripoli', 'Sidon'],
     rawOffsetInMinutes: 120,
     abbreviation: 'EET',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Eastern European Time - Beirut, Ra’s Bayrūt, Tripoli, Sidon',
   },
   'Europe/Bucharest': {
     name: 'Europe/Bucharest',
@@ -112171,9 +111686,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Bucharest', 'Sector 3', 'Iaşi', 'Sector 6'],
     rawOffsetInMinutes: 120,
     abbreviation: 'EET',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Eastern European Time - Bucharest, Sector 3, Iaşi, Sector 6',
   },
   'Africa/Cairo': {
     name: 'Africa/Cairo',
@@ -112186,9 +111698,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Cairo', 'Alexandria', 'Giza', 'Shubrā al Khaymah'],
     rawOffsetInMinutes: 120,
     abbreviation: 'EET',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Eastern European Time - Cairo, Alexandria, Giza, Shubrā al Khaymah',
   },
   'Europe/Chisinau': {
     name: 'Europe/Chisinau',
@@ -112201,9 +111710,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Chisinau', 'Tiraspol', 'Bălţi', 'Bender'],
     rawOffsetInMinutes: 120,
     abbreviation: 'EET',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Eastern European Time - Chisinau, Tiraspol, Bălţi, Bender',
   },
   'Asia/Hebron': {
     name: 'Asia/Hebron',
@@ -112216,9 +111722,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['East Jerusalem', 'Gaza', 'Khān Yūnis', 'Jabālyā'],
     rawOffsetInMinutes: 120,
     abbreviation: 'EET',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Eastern European Time - East Jerusalem, Gaza, Khān Yūnis, Jabālyā',
   },
   'Europe/Helsinki': {
     name: 'Europe/Helsinki',
@@ -112231,9 +111734,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Helsinki', 'Espoo', 'Tampere', 'Oulu'],
     rawOffsetInMinutes: 120,
     abbreviation: 'EET',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Eastern European Time - Helsinki, Espoo, Tampere, Oulu',
   },
   'Europe/Kaliningrad': {
     name: 'Europe/Kaliningrad',
@@ -112246,9 +111746,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Kaliningrad', 'Chernyakhovsk', 'Sovetsk', 'Baltiysk'],
     rawOffsetInMinutes: 120,
     abbreviation: 'EET',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Eastern European Time - Kaliningrad, Chernyakhovsk, Sovetsk, Baltiysk',
   },
   'Europe/Kyiv': {
     name: 'Europe/Kyiv',
@@ -112266,9 +111763,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Kyiv', 'Kharkiv', 'Odesa', 'Dnipro'],
     rawOffsetInMinutes: 120,
     abbreviation: 'EET',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Eastern European Time - Kyiv, Kharkiv, Odesa, Dnipro',
   },
   'Europe/Mariehamn': {
     name: 'Europe/Mariehamn',
@@ -112281,8 +111775,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Mariehamn'],
     rawOffsetInMinutes: 120,
     abbreviation: 'EET',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat: '+02:00 Eastern European Time - Mariehamn',
   },
   'Asia/Nicosia': {
     name: 'Asia/Nicosia',
@@ -112295,9 +111787,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Nicosia', 'Limassol', 'Larnaca', 'Stróvolos'],
     rawOffsetInMinutes: 120,
     abbreviation: 'EET',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Eastern European Time - Nicosia, Limassol, Larnaca, Stróvolos',
   },
   'Europe/Riga': {
     name: 'Europe/Riga',
@@ -112310,9 +111799,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Riga', 'Daugavpils', 'Liepāja', 'Jelgava'],
     rawOffsetInMinutes: 120,
     abbreviation: 'EET',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Eastern European Time - Riga, Daugavpils, Liepāja, Jelgava',
   },
   'Europe/Sofia': {
     name: 'Europe/Sofia',
@@ -112325,9 +111811,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Sofia', 'Plovdiv', 'Varna', 'Burgas'],
     rawOffsetInMinutes: 120,
     abbreviation: 'EET',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Eastern European Time - Sofia, Plovdiv, Varna, Burgas',
   },
   'Europe/Tallinn': {
     name: 'Europe/Tallinn',
@@ -112340,9 +111823,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Tallinn', 'Tartu', 'Narva', 'Pärnu'],
     rawOffsetInMinutes: 120,
     abbreviation: 'EET',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Eastern European Time - Tallinn, Tartu, Narva, Pärnu',
   },
   'Africa/Tripoli': {
     name: 'Africa/Tripoli',
@@ -112355,9 +111835,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Tripoli', 'Benghazi', 'Misratah', 'Zliten'],
     rawOffsetInMinutes: 120,
     abbreviation: 'EET',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Eastern European Time - Tripoli, Benghazi, Misratah, Zliten',
   },
   'Europe/Vilnius': {
     name: 'Europe/Vilnius',
@@ -112370,9 +111847,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Vilnius', 'Kaunas', 'Klaipėda', 'Šiauliai'],
     rawOffsetInMinutes: 120,
     abbreviation: 'EET',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Eastern European Time - Vilnius, Kaunas, Klaipėda, Šiauliai',
   },
   'Asia/Jerusalem': {
     name: 'Asia/Jerusalem',
@@ -112385,9 +111859,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Jerusalem', 'Tel Aviv', 'West Jerusalem', 'Haifa'],
     rawOffsetInMinutes: 120,
     abbreviation: 'IST',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 Israel Time - Jerusalem, Tel Aviv, West Jerusalem, Haifa',
   },
   'Africa/Johannesburg': {
     name: 'Africa/Johannesburg',
@@ -112400,9 +111871,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Johannesburg', 'Cape Town', 'Durban', 'Soweto'],
     rawOffsetInMinutes: 120,
     abbreviation: 'SAST',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 South Africa Time - Johannesburg, Cape Town, Durban, Soweto',
   },
   'Africa/Mbabane': {
     name: 'Africa/Mbabane',
@@ -112415,9 +111883,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Manzini', 'Mbabane', 'Lobamba'],
     rawOffsetInMinutes: 120,
     abbreviation: 'SAST',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      '+02:00 South Africa Time - Manzini, Mbabane, Lobamba',
   },
   'Africa/Maseru': {
     name: 'Africa/Maseru',
@@ -112430,9 +111895,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Maseru', 'Maputsoe', "Mohale's Hoek", 'Mafeteng'],
     rawOffsetInMinutes: 120,
     abbreviation: 'SAST',
-    currentTimeOffsetInMinutes: 120,
-    currentTimeFormat:
-      "+02:00 South Africa Time - Maseru, Maputsoe, Mohale's Hoek, Mafeteng",
   },
   'Asia/Kuwait': {
     name: 'Asia/Kuwait',
@@ -112450,9 +111912,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: 180,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 Arabian Time - Al Aḩmadī, Ḩawallī, As Sālimīyah, Şabāḩ as Sālim',
   },
   'Asia/Bahrain': {
     name: 'Asia/Bahrain',
@@ -112465,9 +111924,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Ar Rifā‘', 'Manama', 'Al Muharraq', 'Dār Kulayb'],
     rawOffsetInMinutes: 180,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 Arabian Time - Ar Rifā‘, Manama, Al Muharraq, Dār Kulayb',
   },
   'Asia/Baghdad': {
     name: 'Asia/Baghdad',
@@ -112485,9 +111941,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: 180,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 Arabian Time - Baghdad, Al Mawşil al Jadīdah, Al Başrah al Qadīmah, Mosul',
   },
   'Asia/Qatar': {
     name: 'Asia/Qatar',
@@ -112505,9 +111958,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: 180,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 Arabian Time - Doha, Ar Rayyān, Umm Şalāl Muḩammad, Al Wakrah',
   },
   'Asia/Riyadh': {
     name: 'Asia/Riyadh',
@@ -112525,9 +111975,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Jeddah', 'Riyadh', 'Mecca', 'Medina'],
     rawOffsetInMinutes: 180,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 Arabian Time - Jeddah, Riyadh, Mecca, Medina',
   },
   'Asia/Aden': {
     name: 'Asia/Aden',
@@ -112540,9 +111987,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Sanaa', 'Aden', 'Al Ḩudaydah', 'Taiz'],
     rawOffsetInMinutes: 180,
     abbreviation: 'AST',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 Arabian Time - Sanaa, Aden, Al Ḩudaydah, Taiz',
   },
   'Asia/Amman': {
     name: 'Asia/Amman',
@@ -112555,9 +111999,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Amman', 'Zarqa', 'Irbid', 'Russeifa'],
     rawOffsetInMinutes: 180,
     abbreviation: 'GMT+3',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 Asia/Amman - Amman, Zarqa, Irbid, Russeifa',
   },
   'Asia/Damascus': {
     name: 'Asia/Damascus',
@@ -112570,9 +112011,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Aleppo', 'Damascus', 'Homs', 'Latakia'],
     rawOffsetInMinutes: 180,
     abbreviation: 'GMT+3',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 Asia/Damascus - Aleppo, Damascus, Homs, Latakia',
   },
   'Africa/Addis_Ababa': {
     name: 'Africa/Addis_Ababa',
@@ -112585,9 +112023,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Addis Ababa', 'Jijiga', 'Gonder', "Mek'ele"],
     rawOffsetInMinutes: 180,
     abbreviation: 'EAT',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      "+03:00 East Africa Time - Addis Ababa, Jijiga, Gonder, Mek'ele",
   },
   'Indian/Antananarivo': {
     name: 'Indian/Antananarivo',
@@ -112600,9 +112035,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Antananarivo', 'Toamasina', 'Antsirabe', 'Mahajanga'],
     rawOffsetInMinutes: 180,
     abbreviation: 'EAT',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 East Africa Time - Antananarivo, Toamasina, Antsirabe, Mahajanga',
   },
   'Africa/Asmara': {
     name: 'Africa/Asmara',
@@ -112615,9 +112047,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Asmara', 'Keren', 'Himora', 'Massawa'],
     rawOffsetInMinutes: 180,
     abbreviation: 'EAT',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 East Africa Time - Asmara, Keren, Himora, Massawa',
   },
   'Africa/Dar_es_Salaam': {
     name: 'Africa/Dar_es_Salaam',
@@ -112630,9 +112059,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Dar es Salaam', 'Mwanza', 'Arusha', 'Mbeya'],
     rawOffsetInMinutes: 180,
     abbreviation: 'EAT',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 East Africa Time - Dar es Salaam, Mwanza, Arusha, Mbeya',
   },
   'Africa/Djibouti': {
     name: 'Africa/Djibouti',
@@ -112645,9 +112071,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Djibouti', 'Ali Sabih', 'Dikhil', 'Tadjoura'],
     rawOffsetInMinutes: 180,
     abbreviation: 'EAT',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 East Africa Time - Djibouti, Ali Sabih, Dikhil, Tadjoura',
   },
   'Africa/Kampala': {
     name: 'Africa/Kampala',
@@ -112660,9 +112083,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Kampala', 'Gulu', 'Lira', 'Mbarara'],
     rawOffsetInMinutes: 180,
     abbreviation: 'EAT',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 East Africa Time - Kampala, Gulu, Lira, Mbarara',
   },
   'Indian/Mayotte': {
     name: 'Indian/Mayotte',
@@ -112675,9 +112095,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Mamoudzou', 'Koungou', 'Labattoir', 'Kaouéni'],
     rawOffsetInMinutes: 180,
     abbreviation: 'EAT',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 East Africa Time - Mamoudzou, Koungou, Labattoir, Kaouéni',
   },
   'Africa/Mogadishu': {
     name: 'Africa/Mogadishu',
@@ -112690,9 +112107,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Mogadishu', 'Borama', 'Hargeysa', 'Berbera'],
     rawOffsetInMinutes: 180,
     abbreviation: 'EAT',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 East Africa Time - Mogadishu, Borama, Hargeysa, Berbera',
   },
   'Indian/Comoro': {
     name: 'Indian/Comoro',
@@ -112705,9 +112119,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Moroni', 'Moutsamoudou', 'Fomboni'],
     rawOffsetInMinutes: 180,
     abbreviation: 'EAT',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 East Africa Time - Moroni, Moutsamoudou, Fomboni',
   },
   'Africa/Nairobi': {
     name: 'Africa/Nairobi',
@@ -112732,9 +112143,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Nairobi', 'Kakamega', 'Mombasa', 'Nakuru'],
     rawOffsetInMinutes: 180,
     abbreviation: 'EAT',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 East Africa Time - Nairobi, Kakamega, Mombasa, Nakuru',
   },
   'Europe/Minsk': {
     name: 'Europe/Minsk',
@@ -112747,9 +112155,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Minsk', "Homyel'", 'Hrodna', 'Mahilyow'],
     rawOffsetInMinutes: 180,
     abbreviation: 'MSK',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      "+03:00 Moscow Time - Minsk, Homyel', Hrodna, Mahilyow",
   },
   'Europe/Moscow': {
     name: 'Europe/Moscow',
@@ -112772,9 +112177,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: 180,
     abbreviation: 'MSK',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 Moscow Time - Moscow, Saint Petersburg, Nizhniy Novgorod, Kazan',
   },
   'Europe/Simferopol': {
     name: 'Europe/Simferopol',
@@ -112787,9 +112189,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Sevastopol', 'Simferopol', 'Kerch', 'Yevpatoriya'],
     rawOffsetInMinutes: 180,
     abbreviation: 'MSK',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 Moscow Time - Sevastopol, Simferopol, Kerch, Yevpatoriya',
   },
   'Antarctica/Syowa': {
     name: 'Antarctica/Syowa',
@@ -112802,8 +112201,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Syowa'],
     rawOffsetInMinutes: 180,
     abbreviation: 'SYOT',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat: '+03:00 Syowa Time - Syowa',
   },
   'Europe/Istanbul': {
     name: 'Europe/Istanbul',
@@ -112816,9 +112213,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Istanbul', 'Ankara', 'Bursa', 'İzmir'],
     rawOffsetInMinutes: 180,
     abbreviation: 'TRT',
-    currentTimeOffsetInMinutes: 180,
-    currentTimeFormat:
-      '+03:00 Turkey Time - Istanbul, Ankara, Bursa, İzmir',
   },
   'Asia/Tehran': {
     name: 'Asia/Tehran',
@@ -112831,9 +112225,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Tehran', 'Mashhad', 'Isfahan', 'Karaj'],
     rawOffsetInMinutes: 210,
     abbreviation: 'IRST',
-    currentTimeOffsetInMinutes: 210,
-    currentTimeFormat:
-      '+03:30 Iran Time - Tehran, Mashhad, Isfahan, Karaj',
   },
   'Asia/Yerevan': {
     name: 'Asia/Yerevan',
@@ -112846,9 +112237,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Yerevan', 'Gyumri', 'Vanadzor', 'Vagharshapat'],
     rawOffsetInMinutes: 240,
     abbreviation: 'AMT',
-    currentTimeOffsetInMinutes: 240,
-    currentTimeFormat:
-      '+04:00 Armenia Time - Yerevan, Gyumri, Vanadzor, Vagharshapat',
   },
   'Asia/Baku': {
     name: 'Asia/Baku',
@@ -112861,9 +112249,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Baku', 'Sumqayıt', 'Ganja', 'Lankaran'],
     rawOffsetInMinutes: 240,
     abbreviation: 'AZT',
-    currentTimeOffsetInMinutes: 240,
-    currentTimeFormat:
-      '+04:00 Azerbaijan Time - Baku, Sumqayıt, Ganja, Lankaran',
   },
   'Asia/Tbilisi': {
     name: 'Asia/Tbilisi',
@@ -112876,9 +112261,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Tbilisi', 'Batumi', 'Kutaisi', 'Rustavi'],
     rawOffsetInMinutes: 240,
     abbreviation: 'GET',
-    currentTimeOffsetInMinutes: 240,
-    currentTimeFormat:
-      '+04:00 Georgia Time - Tbilisi, Batumi, Kutaisi, Rustavi',
   },
   'Asia/Dubai': {
     name: 'Asia/Dubai',
@@ -112896,9 +112278,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Dubai', 'Abu Dhabi', 'Sharjah', 'Al Ain City'],
     rawOffsetInMinutes: 240,
     abbreviation: 'GST',
-    currentTimeOffsetInMinutes: 240,
-    currentTimeFormat:
-      '+04:00 Gulf Time - Dubai, Abu Dhabi, Sharjah, Al Ain City',
   },
   'Asia/Muscat': {
     name: 'Asia/Muscat',
@@ -112911,9 +112290,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Muscat', 'Seeb', 'Bawshar', '‘Ibrī'],
     rawOffsetInMinutes: 240,
     abbreviation: 'GST',
-    currentTimeOffsetInMinutes: 240,
-    currentTimeFormat:
-      '+04:00 Gulf Time - Muscat, Seeb, Bawshar, ‘Ibrī',
   },
   'Indian/Mauritius': {
     name: 'Indian/Mauritius',
@@ -112931,9 +112307,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: 240,
     abbreviation: 'MUT',
-    currentTimeOffsetInMinutes: 240,
-    currentTimeFormat:
-      '+04:00 Mauritius Time - Port Louis, Vacoas, Beau Bassin-Rose Hill, Curepipe',
   },
   'Indian/Reunion': {
     name: 'Indian/Reunion',
@@ -112951,9 +112324,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: 240,
     abbreviation: 'RET',
-    currentTimeOffsetInMinutes: 240,
-    currentTimeFormat:
-      '+04:00 Réunion Time - Saint-Denis, Saint-Paul, Saint-Pierre, Le Tampon',
   },
   'Europe/Samara': {
     name: 'Europe/Samara',
@@ -112971,9 +112341,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Samara', 'Saratov', 'Tolyatti', 'Izhevsk'],
     rawOffsetInMinutes: 240,
     abbreviation: 'SAMT',
-    currentTimeOffsetInMinutes: 240,
-    currentTimeFormat:
-      '+04:00 Samara Time - Samara, Saratov, Tolyatti, Izhevsk',
   },
   'Indian/Mahe': {
     name: 'Indian/Mahe',
@@ -112986,8 +112353,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Victoria'],
     rawOffsetInMinutes: 240,
     abbreviation: 'SCT',
-    currentTimeOffsetInMinutes: 240,
-    currentTimeFormat: '+04:00 Seychelles Time - Victoria',
   },
   'Asia/Kabul': {
     name: 'Asia/Kabul',
@@ -113000,9 +112365,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Kabul', 'Herāt', 'Mazār-e Sharīf', 'Kandahār'],
     rawOffsetInMinutes: 270,
     abbreviation: 'AFT',
-    currentTimeOffsetInMinutes: 270,
-    currentTimeFormat:
-      '+04:30 Afghanistan Time - Kabul, Herāt, Mazār-e Sharīf, Kandahār',
   },
   'Indian/Kerguelen': {
     name: 'Indian/Kerguelen',
@@ -113015,9 +112377,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Port-aux-Français'],
     rawOffsetInMinutes: 300,
     abbreviation: 'FSAT',
-    currentTimeOffsetInMinutes: 300,
-    currentTimeFormat:
-      '+05:00 French Southern & Antarctic Time - Port-aux-Français',
   },
   'Indian/Maldives': {
     name: 'Indian/Maldives',
@@ -113030,8 +112389,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Male'],
     rawOffsetInMinutes: 300,
     abbreviation: 'MVT',
-    currentTimeOffsetInMinutes: 300,
-    currentTimeFormat: '+05:00 Maldives Time - Male',
   },
   'Antarctica/Mawson': {
     name: 'Antarctica/Mawson',
@@ -113044,8 +112401,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Mawson'],
     rawOffsetInMinutes: 300,
     abbreviation: 'MAWT',
-    currentTimeOffsetInMinutes: 300,
-    currentTimeFormat: '+05:00 Mawson Time - Mawson',
   },
   'Asia/Karachi': {
     name: 'Asia/Karachi',
@@ -113058,9 +112413,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Karachi', 'Lahore', 'Faisalabad', 'Rawalpindi'],
     rawOffsetInMinutes: 300,
     abbreviation: 'PKT',
-    currentTimeOffsetInMinutes: 300,
-    currentTimeFormat:
-      '+05:00 Pakistan Time - Karachi, Lahore, Faisalabad, Rawalpindi',
   },
   'Asia/Dushanbe': {
     name: 'Asia/Dushanbe',
@@ -113073,9 +112425,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Dushanbe', 'Isfara', 'Istaravshan', 'Kŭlob'],
     rawOffsetInMinutes: 300,
     abbreviation: 'TJT',
-    currentTimeOffsetInMinutes: 300,
-    currentTimeFormat:
-      '+05:00 Tajikistan Time - Dushanbe, Isfara, Istaravshan, Kŭlob',
   },
   'Asia/Ashgabat': {
     name: 'Asia/Ashgabat',
@@ -113088,9 +112437,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Ashgabat', 'Türkmenabat', 'Daşoguz', 'Mary'],
     rawOffsetInMinutes: 300,
     abbreviation: 'TMT',
-    currentTimeOffsetInMinutes: 300,
-    currentTimeFormat:
-      '+05:00 Turkmenistan Time - Ashgabat, Türkmenabat, Daşoguz, Mary',
   },
   'Asia/Tashkent': {
     name: 'Asia/Tashkent',
@@ -113103,9 +112449,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Tashkent', 'Namangan', 'Samarkand', 'Andijon'],
     rawOffsetInMinutes: 300,
     abbreviation: 'UZT',
-    currentTimeOffsetInMinutes: 300,
-    currentTimeFormat:
-      '+05:00 Uzbekistan Time - Tashkent, Namangan, Samarkand, Andijon',
   },
   'Asia/Aqtobe': {
     name: 'Asia/Aqtobe',
@@ -113124,9 +112467,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Aktobe', 'Kyzylorda', 'Oral', 'Atyrau'],
     rawOffsetInMinutes: 300,
     abbreviation: 'AQTT',
-    currentTimeOffsetInMinutes: 300,
-    currentTimeFormat:
-      '+05:00 West Kazakhstan Time - Aktobe, Kyzylorda, Oral, Atyrau',
   },
   'Asia/Yekaterinburg': {
     name: 'Asia/Yekaterinburg',
@@ -113139,9 +112479,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Yekaterinburg', 'Chelyabinsk', 'Ufa', 'Perm'],
     rawOffsetInMinutes: 300,
     abbreviation: 'YEKT',
-    currentTimeOffsetInMinutes: 300,
-    currentTimeFormat:
-      '+05:00 Yekaterinburg Time - Yekaterinburg, Chelyabinsk, Ufa, Perm',
   },
   'Asia/Colombo': {
     name: 'Asia/Colombo',
@@ -113159,9 +112496,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: 330,
     abbreviation: 'IST',
-    currentTimeOffsetInMinutes: 330,
-    currentTimeFormat:
-      '+05:30 India Time - Colombo, Dehiwala-Mount Lavinia, Maharagama, Jaffna',
   },
   'Asia/Kolkata': {
     name: 'Asia/Kolkata',
@@ -113174,9 +112508,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Mumbai', 'Delhi', 'Bengaluru', 'Hyderābād'],
     rawOffsetInMinutes: 330,
     abbreviation: 'IST',
-    currentTimeOffsetInMinutes: 330,
-    currentTimeFormat:
-      '+05:30 India Time - Mumbai, Delhi, Bengaluru, Hyderābād',
   },
   'Asia/Kathmandu': {
     name: 'Asia/Kathmandu',
@@ -113189,9 +112520,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Kathmandu', 'Bharatpur', 'Pātan', 'Birgañj'],
     rawOffsetInMinutes: 345,
     abbreviation: 'NPT',
-    currentTimeOffsetInMinutes: 345,
-    currentTimeFormat:
-      '+05:45 Nepal Time - Kathmandu, Bharatpur, Pātan, Birgañj',
   },
   'Asia/Dhaka': {
     name: 'Asia/Dhaka',
@@ -113204,9 +112532,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Dhaka', 'Chattogram', 'Khulna', 'Rangpur'],
     rawOffsetInMinutes: 360,
     abbreviation: 'BST',
-    currentTimeOffsetInMinutes: 360,
-    currentTimeFormat:
-      '+06:00 Bangladesh Time - Dhaka, Chattogram, Khulna, Rangpur',
   },
   'Asia/Thimphu': {
     name: 'Asia/Thimphu',
@@ -113219,9 +112544,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Thimphu', 'Phuntsholing', 'Tsirang', 'Punākha'],
     rawOffsetInMinutes: 360,
     abbreviation: 'BTT',
-    currentTimeOffsetInMinutes: 360,
-    currentTimeFormat:
-      '+06:00 Bhutan Time - Thimphu, Phuntsholing, Tsirang, Punākha',
   },
   'Asia/Urumqi': {
     name: 'Asia/Urumqi',
@@ -113234,9 +112556,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Ürümqi', 'Shihezi', 'Korla', 'Aksu'],
     rawOffsetInMinutes: 360,
     abbreviation: 'CST',
-    currentTimeOffsetInMinutes: 360,
-    currentTimeFormat:
-      '+06:00 China Time - Ürümqi, Shihezi, Korla, Aksu',
   },
   'Asia/Almaty': {
     name: 'Asia/Almaty',
@@ -113249,9 +112568,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Almaty', 'Shymkent', 'Karagandy', 'Taraz'],
     rawOffsetInMinutes: 360,
     abbreviation: 'ALMT',
-    currentTimeOffsetInMinutes: 360,
-    currentTimeFormat:
-      '+06:00 East Kazakhstan Time - Almaty, Shymkent, Karagandy, Taraz',
   },
   'Indian/Chagos': {
     name: 'Indian/Chagos',
@@ -113264,8 +112580,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Chagos'],
     rawOffsetInMinutes: 360,
     abbreviation: 'IOT',
-    currentTimeOffsetInMinutes: 360,
-    currentTimeFormat: '+06:00 Indian Ocean Time - Chagos',
   },
   'Asia/Bishkek': {
     name: 'Asia/Bishkek',
@@ -113278,9 +112592,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Bishkek', 'Osh', 'Jalal-Abad', 'Karakol'],
     rawOffsetInMinutes: 360,
     abbreviation: 'KGT',
-    currentTimeOffsetInMinutes: 360,
-    currentTimeFormat:
-      '+06:00 Kyrgyzstan Time - Bishkek, Osh, Jalal-Abad, Karakol',
   },
   'Asia/Omsk': {
     name: 'Asia/Omsk',
@@ -113293,8 +112604,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Omsk', 'Tara', 'Kalachinsk'],
     rawOffsetInMinutes: 360,
     abbreviation: 'OMST',
-    currentTimeOffsetInMinutes: 360,
-    currentTimeFormat: '+06:00 Omsk Time - Omsk, Tara, Kalachinsk',
   },
   'Antarctica/Vostok': {
     name: 'Antarctica/Vostok',
@@ -113307,8 +112616,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Vostok'],
     rawOffsetInMinutes: 360,
     abbreviation: 'VOST',
-    currentTimeOffsetInMinutes: 360,
-    currentTimeFormat: '+06:00 Vostok Time - Vostok',
   },
   'Indian/Cocos': {
     name: 'Indian/Cocos',
@@ -113321,8 +112628,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['West Island'],
     rawOffsetInMinutes: 390,
     abbreviation: 'CCT',
-    currentTimeOffsetInMinutes: 390,
-    currentTimeFormat: '+06:30 Cocos Islands Time - West Island',
   },
   'Asia/Yangon': {
     name: 'Asia/Yangon',
@@ -113335,9 +112640,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Yangon', 'Mandalay', 'Nay Pyi Taw', 'Mawlamyine'],
     rawOffsetInMinutes: 390,
     abbreviation: 'MMT',
-    currentTimeOffsetInMinutes: 390,
-    currentTimeFormat:
-      '+06:30 Myanmar Time - Yangon, Mandalay, Nay Pyi Taw, Mawlamyine',
   },
   'Indian/Christmas': {
     name: 'Indian/Christmas',
@@ -113350,9 +112652,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Flying Fish Cove'],
     rawOffsetInMinutes: 420,
     abbreviation: 'CXT',
-    currentTimeOffsetInMinutes: 420,
-    currentTimeFormat:
-      '+07:00 Christmas Island Time - Flying Fish Cove',
   },
   'Antarctica/Davis': {
     name: 'Antarctica/Davis',
@@ -113365,8 +112664,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Davis'],
     rawOffsetInMinutes: 420,
     abbreviation: 'DAVT',
-    currentTimeOffsetInMinutes: 420,
-    currentTimeFormat: '+07:00 Davis Time - Davis',
   },
   'Asia/Hovd': {
     name: 'Asia/Hovd',
@@ -113379,9 +112676,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Ulaangom', 'Khovd', 'Ölgii', 'Altai'],
     rawOffsetInMinutes: 420,
     abbreviation: 'HOVT',
-    currentTimeOffsetInMinutes: 420,
-    currentTimeFormat:
-      '+07:00 Hovd Time - Ulaangom, Khovd, Ölgii, Altai',
   },
   'Asia/Bangkok': {
     name: 'Asia/Bangkok',
@@ -113404,9 +112698,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: 420,
     abbreviation: 'ICT',
-    currentTimeOffsetInMinutes: 420,
-    currentTimeFormat:
-      '+07:00 Indochina Time - Bangkok, Samut Prakan, Mueang Nonthaburi, Chon Buri',
   },
   'Asia/Ho_Chi_Minh': {
     name: 'Asia/Ho_Chi_Minh',
@@ -113419,9 +112710,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Ho Chi Minh City', 'Da Nang', 'Biên Hòa', 'Cần Thơ'],
     rawOffsetInMinutes: 420,
     abbreviation: 'ICT',
-    currentTimeOffsetInMinutes: 420,
-    currentTimeFormat:
-      '+07:00 Indochina Time - Ho Chi Minh City, Da Nang, Biên Hòa, Cần Thơ',
   },
   'Asia/Phnom_Penh': {
     name: 'Asia/Phnom_Penh',
@@ -113434,9 +112722,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Phnom Penh', 'Takeo', 'Siem Reap', 'Battambang'],
     rawOffsetInMinutes: 420,
     abbreviation: 'ICT',
-    currentTimeOffsetInMinutes: 420,
-    currentTimeFormat:
-      '+07:00 Indochina Time - Phnom Penh, Takeo, Siem Reap, Battambang',
   },
   'Asia/Vientiane': {
     name: 'Asia/Vientiane',
@@ -113449,9 +112734,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Vientiane', 'Savannakhet', 'Pakse', 'Thakhèk'],
     rawOffsetInMinutes: 420,
     abbreviation: 'ICT',
-    currentTimeOffsetInMinutes: 420,
-    currentTimeFormat:
-      '+07:00 Indochina Time - Vientiane, Savannakhet, Pakse, Thakhèk',
   },
   'Asia/Novosibirsk': {
     name: 'Asia/Novosibirsk',
@@ -113470,9 +112752,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Novosibirsk', 'Krasnoyarsk', 'Barnaul', 'Tomsk'],
     rawOffsetInMinutes: 420,
     abbreviation: 'NOVT',
-    currentTimeOffsetInMinutes: 420,
-    currentTimeFormat:
-      '+07:00 Novosibirsk Time - Novosibirsk, Krasnoyarsk, Barnaul, Tomsk',
   },
   'Asia/Jakarta': {
     name: 'Asia/Jakarta',
@@ -113485,9 +112764,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Jakarta', 'Surabaya', 'Bekasi', 'Bandung'],
     rawOffsetInMinutes: 420,
     abbreviation: 'WIB',
-    currentTimeOffsetInMinutes: 420,
-    currentTimeFormat:
-      '+07:00 Western Indonesia Time - Jakarta, Surabaya, Bekasi, Bandung',
   },
   'Australia/Perth': {
     name: 'Australia/Perth',
@@ -113500,9 +112776,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Perth', 'Mandurah', 'Bunbury', 'Baldivis'],
     rawOffsetInMinutes: 480,
     abbreviation: 'AWST',
-    currentTimeOffsetInMinutes: 480,
-    currentTimeFormat:
-      '+08:00 Australian Western Time - Perth, Mandurah, Bunbury, Baldivis',
   },
   'Asia/Brunei': {
     name: 'Asia/Brunei',
@@ -113520,9 +112793,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: 480,
     abbreviation: 'BNT',
-    currentTimeOffsetInMinutes: 480,
-    currentTimeFormat:
-      '+08:00 Brunei Darussalam Time - Bandar Seri Begawan, Kuala Belait, Seria, Tutong',
   },
   'Asia/Makassar': {
     name: 'Asia/Makassar',
@@ -113535,9 +112805,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Makassar', 'Samarinda', 'Denpasar', 'Balikpapan'],
     rawOffsetInMinutes: 480,
     abbreviation: 'WITA',
-    currentTimeOffsetInMinutes: 480,
-    currentTimeFormat:
-      '+08:00 Central Indonesia Time - Makassar, Samarinda, Denpasar, Balikpapan',
   },
   'Asia/Macau': {
     name: 'Asia/Macau',
@@ -113550,8 +112817,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Macau', 'Taipa'],
     rawOffsetInMinutes: 480,
     abbreviation: 'CST',
-    currentTimeOffsetInMinutes: 480,
-    currentTimeFormat: '+08:00 China Time - Macau, Taipa',
   },
   'Asia/Shanghai': {
     name: 'Asia/Shanghai',
@@ -113570,9 +112835,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Shanghai', 'Beijing', 'Shenzhen', 'Guangzhou'],
     rawOffsetInMinutes: 480,
     abbreviation: 'CST',
-    currentTimeOffsetInMinutes: 480,
-    currentTimeFormat:
-      '+08:00 China Time - Shanghai, Beijing, Shenzhen, Guangzhou',
   },
   'Asia/Hong_Kong': {
     name: 'Asia/Hong_Kong',
@@ -113585,9 +112847,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Hong Kong', 'Kowloon', 'Victoria', 'Tuen Mun'],
     rawOffsetInMinutes: 480,
     abbreviation: 'HKT',
-    currentTimeOffsetInMinutes: 480,
-    currentTimeFormat:
-      '+08:00 Hong Kong Time - Hong Kong, Kowloon, Victoria, Tuen Mun',
   },
   'Asia/Irkutsk': {
     name: 'Asia/Irkutsk',
@@ -113600,9 +112859,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Irkutsk', 'Ulan-Ude', 'Bratsk', 'Angarsk'],
     rawOffsetInMinutes: 480,
     abbreviation: 'IRKT',
-    currentTimeOffsetInMinutes: 480,
-    currentTimeFormat:
-      '+08:00 Irkutsk Time - Irkutsk, Ulan-Ude, Bratsk, Angarsk',
   },
   'Asia/Kuala_Lumpur': {
     name: 'Asia/Kuala_Lumpur',
@@ -113620,9 +112876,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: 480,
     abbreviation: 'MYT',
-    currentTimeOffsetInMinutes: 480,
-    currentTimeFormat:
-      '+08:00 Malaysia Time - Kuala Lumpur, Petaling Jaya, Klang, Johor Bahru',
   },
   'Asia/Manila': {
     name: 'Asia/Manila',
@@ -113635,9 +112888,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Quezon City', 'Davao', 'Manila', 'Caloocan City'],
     rawOffsetInMinutes: 480,
     abbreviation: 'PHT',
-    currentTimeOffsetInMinutes: 480,
-    currentTimeFormat:
-      '+08:00 Philippine Time - Quezon City, Davao, Manila, Caloocan City',
   },
   'Asia/Singapore': {
     name: 'Asia/Singapore',
@@ -113650,9 +112900,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Singapore', 'Jurong Town', 'Woodlands', 'Punggol'],
     rawOffsetInMinutes: 480,
     abbreviation: 'SGT',
-    currentTimeOffsetInMinutes: 480,
-    currentTimeFormat:
-      '+08:00 Singapore Time - Singapore, Jurong Town, Woodlands, Punggol',
   },
   'Asia/Taipei': {
     name: 'Asia/Taipei',
@@ -113665,9 +112912,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Taipei', 'Kaohsiung', 'Taichung', 'Tainan'],
     rawOffsetInMinutes: 480,
     abbreviation: 'TWT',
-    currentTimeOffsetInMinutes: 480,
-    currentTimeFormat:
-      '+08:00 Taipei Time - Taipei, Kaohsiung, Taichung, Tainan',
   },
   'Asia/Ulaanbaatar': {
     name: 'Asia/Ulaanbaatar',
@@ -113680,9 +112924,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Ulan Bator', 'Erdenet', 'Darhan', 'Mörön'],
     rawOffsetInMinutes: 480,
     abbreviation: 'ULAT',
-    currentTimeOffsetInMinutes: 480,
-    currentTimeFormat:
-      '+08:00 Ulaanbaatar Time - Ulan Bator, Erdenet, Darhan, Mörön',
   },
   'Australia/Eucla': {
     name: 'Australia/Eucla',
@@ -113695,8 +112936,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Eucla'],
     rawOffsetInMinutes: 525,
     abbreviation: 'ACWST',
-    currentTimeOffsetInMinutes: 525,
-    currentTimeFormat: '+08:45 Australian Central Western Time - Eucla',
   },
   'Asia/Dili': {
     name: 'Asia/Dili',
@@ -113709,9 +112948,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Dili', 'Maliana', 'Suai', 'Likisá'],
     rawOffsetInMinutes: 540,
     abbreviation: 'TLT',
-    currentTimeOffsetInMinutes: 540,
-    currentTimeFormat:
-      '+09:00 East Timor Time - Dili, Maliana, Suai, Likisá',
   },
   'Asia/Jayapura': {
     name: 'Asia/Jayapura',
@@ -113724,9 +112960,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Jayapura', 'Ambon', 'Sorong', 'Ternate'],
     rawOffsetInMinutes: 540,
     abbreviation: 'WIT',
-    currentTimeOffsetInMinutes: 540,
-    currentTimeFormat:
-      '+09:00 Eastern Indonesia Time - Jayapura, Ambon, Sorong, Ternate',
   },
   'Asia/Tokyo': {
     name: 'Asia/Tokyo',
@@ -113739,9 +112972,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Tokyo', 'Yokohama', 'Osaka', 'Nagoya'],
     rawOffsetInMinutes: 540,
     abbreviation: 'JST',
-    currentTimeOffsetInMinutes: 540,
-    currentTimeFormat:
-      '+09:00 Japan Time - Tokyo, Yokohama, Osaka, Nagoya',
   },
   'Asia/Pyongyang': {
     name: 'Asia/Pyongyang',
@@ -113754,9 +112984,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Pyongyang', 'Hamhŭng', 'Namp’o', 'Sunch’ŏn'],
     rawOffsetInMinutes: 540,
     abbreviation: 'KST',
-    currentTimeOffsetInMinutes: 540,
-    currentTimeFormat:
-      '+09:00 Korean Time - Pyongyang, Hamhŭng, Namp’o, Sunch’ŏn',
   },
   'Asia/Seoul': {
     name: 'Asia/Seoul',
@@ -113769,9 +112996,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Seoul', 'Busan', 'Incheon', 'Daegu'],
     rawOffsetInMinutes: 540,
     abbreviation: 'KST',
-    currentTimeOffsetInMinutes: 540,
-    currentTimeFormat:
-      '+09:00 Korean Time - Seoul, Busan, Incheon, Daegu',
   },
   'Pacific/Palau': {
     name: 'Pacific/Palau',
@@ -113784,8 +113008,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Ngerulmud'],
     rawOffsetInMinutes: 540,
     abbreviation: 'PWT',
-    currentTimeOffsetInMinutes: 540,
-    currentTimeFormat: '+09:00 Palau Time - Ngerulmud',
   },
   'Asia/Chita': {
     name: 'Asia/Chita',
@@ -113798,9 +113020,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Chita', 'Yakutsk', 'Blagoveshchensk', 'Belogorsk'],
     rawOffsetInMinutes: 540,
     abbreviation: 'YAKT',
-    currentTimeOffsetInMinutes: 540,
-    currentTimeFormat:
-      '+09:00 Yakutsk Time - Chita, Yakutsk, Blagoveshchensk, Belogorsk',
   },
   'Australia/Darwin': {
     name: 'Australia/Darwin',
@@ -113813,9 +113032,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Darwin', 'Alice Springs', 'Palmerston'],
     rawOffsetInMinutes: 570,
     abbreviation: 'ACST',
-    currentTimeOffsetInMinutes: 570,
-    currentTimeFormat:
-      '+09:30 Australian Central Time - Darwin, Alice Springs, Palmerston',
   },
   'Australia/Brisbane': {
     name: 'Australia/Brisbane',
@@ -113832,9 +113048,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Brisbane', 'Gold Coast', 'Logan City', 'Townsville'],
     rawOffsetInMinutes: 600,
     abbreviation: 'AEST',
-    currentTimeOffsetInMinutes: 600,
-    currentTimeFormat:
-      '+10:00 Australian Eastern Time - Brisbane, Gold Coast, Logan City, Townsville',
   },
   'Pacific/Guam': {
     name: 'Pacific/Guam',
@@ -113852,9 +113065,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: 600,
     abbreviation: 'ChST',
-    currentTimeOffsetInMinutes: 600,
-    currentTimeFormat:
-      '+10:00 Chamorro Time - Dededo Village, Yigo Village, Tamuning-Tumon-Harmon Village, Tamuning',
   },
   'Pacific/Saipan': {
     name: 'Pacific/Saipan',
@@ -113867,8 +113077,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Saipan'],
     rawOffsetInMinutes: 600,
     abbreviation: 'ChST',
-    currentTimeOffsetInMinutes: 600,
-    currentTimeFormat: '+10:00 Chamorro Time - Saipan',
   },
   'Pacific/Chuuk': {
     name: 'Pacific/Chuuk',
@@ -113881,8 +113089,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Chuuk'],
     rawOffsetInMinutes: 600,
     abbreviation: 'CHUT',
-    currentTimeOffsetInMinutes: 600,
-    currentTimeFormat: '+10:00 Chuuk Time - Chuuk',
   },
   'Antarctica/DumontDUrville': {
     name: 'Antarctica/DumontDUrville',
@@ -113895,8 +113101,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['DumontDUrville'],
     rawOffsetInMinutes: 600,
     abbreviation: 'DDUT',
-    currentTimeOffsetInMinutes: 600,
-    currentTimeFormat: '+10:00 Dumont-d’Urville Time - DumontDUrville',
   },
   'Pacific/Port_Moresby': {
     name: 'Pacific/Port_Moresby',
@@ -113915,9 +113119,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Port Moresby', 'Lae', 'Mount Hagen', 'Popondetta'],
     rawOffsetInMinutes: 600,
     abbreviation: 'PGT',
-    currentTimeOffsetInMinutes: 600,
-    currentTimeFormat:
-      '+10:00 Papua New Guinea Time - Port Moresby, Lae, Mount Hagen, Popondetta',
   },
   'Asia/Vladivostok': {
     name: 'Asia/Vladivostok',
@@ -113935,9 +113136,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: 600,
     abbreviation: 'VLAT',
-    currentTimeOffsetInMinutes: 600,
-    currentTimeFormat:
-      '+10:00 Vladivostok Time - Khabarovsk, Vladivostok, Khabarovsk Vtoroy, Komsomolsk-on-Amur',
   },
   'Australia/Adelaide': {
     name: 'Australia/Adelaide',
@@ -113960,9 +113158,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: 570,
     abbreviation: 'ACST',
-    currentTimeOffsetInMinutes: 630,
-    currentTimeFormat:
-      '+10:30 Australian Central Time - Adelaide, Adelaide Hills, Mount Gambier, Morphett Vale',
   },
   'Australia/Sydney': {
     name: 'Australia/Sydney',
@@ -113986,9 +113181,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Sydney', 'Melbourne', 'Canberra', 'Newcastle'],
     rawOffsetInMinutes: 600,
     abbreviation: 'AEST',
-    currentTimeOffsetInMinutes: 660,
-    currentTimeFormat:
-      '+11:00 Australian Eastern Time - Sydney, Melbourne, Canberra, Newcastle',
   },
   'Pacific/Bougainville': {
     name: 'Pacific/Bougainville',
@@ -114001,8 +113193,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Arawa'],
     rawOffsetInMinutes: 660,
     abbreviation: 'BST',
-    currentTimeOffsetInMinutes: 660,
-    currentTimeFormat: '+11:00 Bougainville Time - Arawa',
   },
   'Antarctica/Casey': {
     name: 'Antarctica/Casey',
@@ -114015,8 +113205,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Casey'],
     rawOffsetInMinutes: 660,
     abbreviation: 'CAST',
-    currentTimeOffsetInMinutes: 660,
-    currentTimeFormat: '+11:00 Casey Time - Casey',
   },
   'Pacific/Kosrae': {
     name: 'Pacific/Kosrae',
@@ -114029,9 +113217,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Kosrae', 'Palikir - National Government Center'],
     rawOffsetInMinutes: 660,
     abbreviation: 'KOST',
-    currentTimeOffsetInMinutes: 660,
-    currentTimeFormat:
-      '+11:00 Kosrae Time - Kosrae, Palikir - National Government Center',
   },
   'Australia/Lord_Howe': {
     name: 'Australia/Lord_Howe',
@@ -114044,8 +113229,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Lord Howe'],
     rawOffsetInMinutes: 630,
     abbreviation: 'LHST',
-    currentTimeOffsetInMinutes: 660,
-    currentTimeFormat: '+11:00 Lord Howe Time - Lord Howe',
   },
   'Pacific/Noumea': {
     name: 'Pacific/Noumea',
@@ -114058,9 +113241,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Nouméa', 'Mont-Dore', 'Dumbéa'],
     rawOffsetInMinutes: 660,
     abbreviation: 'NCT',
-    currentTimeOffsetInMinutes: 660,
-    currentTimeFormat:
-      '+11:00 New Caledonia Time - Nouméa, Mont-Dore, Dumbéa',
   },
   'Asia/Sakhalin': {
     name: 'Asia/Sakhalin',
@@ -114073,9 +113253,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Yuzhno-Sakhalinsk', 'Magadan', 'Korsakov', 'Kholmsk'],
     rawOffsetInMinutes: 660,
     abbreviation: 'SAKT',
-    currentTimeOffsetInMinutes: 660,
-    currentTimeFormat:
-      '+11:00 Sakhalin Time - Yuzhno-Sakhalinsk, Magadan, Korsakov, Kholmsk',
   },
   'Pacific/Guadalcanal': {
     name: 'Pacific/Guadalcanal',
@@ -114088,8 +113265,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Honiara'],
     rawOffsetInMinutes: 660,
     abbreviation: 'SBT',
-    currentTimeOffsetInMinutes: 660,
-    currentTimeFormat: '+11:00 Solomon Islands Time - Honiara',
   },
   'Pacific/Efate': {
     name: 'Pacific/Efate',
@@ -114102,8 +113277,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Port-Vila'],
     rawOffsetInMinutes: 660,
     abbreviation: 'VUT',
-    currentTimeOffsetInMinutes: 660,
-    currentTimeFormat: '+11:00 Vanuatu Time - Port-Vila',
   },
   'Pacific/Fiji': {
     name: 'Pacific/Fiji',
@@ -114116,8 +113289,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Nasinu', 'Suva', 'Lautoka', 'Nadi'],
     rawOffsetInMinutes: 720,
     abbreviation: 'FJT',
-    currentTimeOffsetInMinutes: 720,
-    currentTimeFormat: '+12:00 Fiji Time - Nasinu, Suva, Lautoka, Nadi',
   },
   'Pacific/Tarawa': {
     name: 'Pacific/Tarawa',
@@ -114136,8 +113307,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Tarawa'],
     rawOffsetInMinutes: 720,
     abbreviation: 'GILT',
-    currentTimeOffsetInMinutes: 720,
-    currentTimeFormat: '+12:00 Gilbert Islands Time - Tarawa',
   },
   'Pacific/Majuro': {
     name: 'Pacific/Majuro',
@@ -114150,9 +113319,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Majuro', 'Kwajalein', 'RMI Capitol'],
     rawOffsetInMinutes: 720,
     abbreviation: 'MHT',
-    currentTimeOffsetInMinutes: 720,
-    currentTimeFormat:
-      '+12:00 Marshall Islands Time - Majuro, Kwajalein, RMI Capitol',
   },
   'Pacific/Nauru': {
     name: 'Pacific/Nauru',
@@ -114165,8 +113331,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Yaren'],
     rawOffsetInMinutes: 720,
     abbreviation: 'NRT',
-    currentTimeOffsetInMinutes: 720,
-    currentTimeFormat: '+12:00 Nauru Time - Yaren',
   },
   'Pacific/Norfolk': {
     name: 'Pacific/Norfolk',
@@ -114179,8 +113343,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Kingston'],
     rawOffsetInMinutes: 660,
     abbreviation: 'NFT',
-    currentTimeOffsetInMinutes: 720,
-    currentTimeFormat: '+12:00 Norfolk Island Time - Kingston',
   },
   'Asia/Kamchatka': {
     name: 'Asia/Kamchatka',
@@ -114198,9 +113360,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: 720,
     abbreviation: 'PETT',
-    currentTimeOffsetInMinutes: 720,
-    currentTimeFormat:
-      '+12:00 Petropavlovsk-Kamchatski Time - Petropavlovsk-Kamchatsky, Yelizovo, Vilyuchinsk, Anadyr',
   },
   'Pacific/Funafuti': {
     name: 'Pacific/Funafuti',
@@ -114213,8 +113372,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Funafuti'],
     rawOffsetInMinutes: 720,
     abbreviation: 'TVT',
-    currentTimeOffsetInMinutes: 720,
-    currentTimeFormat: '+12:00 Tuvalu Time - Funafuti',
   },
   'Pacific/Wake': {
     name: 'Pacific/Wake',
@@ -114227,8 +113384,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Wake'],
     rawOffsetInMinutes: 720,
     abbreviation: 'WAKT',
-    currentTimeOffsetInMinutes: 720,
-    currentTimeFormat: '+12:00 Wake Island Time - Wake',
   },
   'Pacific/Wallis': {
     name: 'Pacific/Wallis',
@@ -114241,8 +113396,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Mata-Utu'],
     rawOffsetInMinutes: 720,
     abbreviation: 'WFT',
-    currentTimeOffsetInMinutes: 720,
-    currentTimeFormat: '+12:00 Wallis & Futuna Time - Mata-Utu',
   },
   'Pacific/Apia': {
     name: 'Pacific/Apia',
@@ -114255,8 +113408,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Apia'],
     rawOffsetInMinutes: 780,
     abbreviation: 'WST',
-    currentTimeOffsetInMinutes: 780,
-    currentTimeFormat: '+13:00 Apia Time - Apia',
   },
   'Pacific/Auckland': {
     name: 'Pacific/Auckland',
@@ -114279,9 +113430,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     ],
     rawOffsetInMinutes: 720,
     abbreviation: 'NZST',
-    currentTimeOffsetInMinutes: 780,
-    currentTimeFormat:
-      '+13:00 New Zealand Time - Auckland, Wellington, Christchurch, Manukau City',
   },
   'Antarctica/McMurdo': {
     name: 'Antarctica/McMurdo',
@@ -114294,8 +113442,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['McMurdo'],
     rawOffsetInMinutes: 720,
     abbreviation: 'NZST',
-    currentTimeOffsetInMinutes: 780,
-    currentTimeFormat: '+13:00 New Zealand Time - McMurdo',
   },
   'Pacific/Kanton': {
     name: 'Pacific/Kanton',
@@ -114308,8 +113454,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Kanton'],
     rawOffsetInMinutes: 780,
     abbreviation: 'PHOT',
-    currentTimeOffsetInMinutes: 780,
-    currentTimeFormat: '+13:00 Phoenix Islands Time - Kanton',
   },
   'Pacific/Fakaofo': {
     name: 'Pacific/Fakaofo',
@@ -114322,8 +113466,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Fakaofo'],
     rawOffsetInMinutes: 780,
     abbreviation: 'TKT',
-    currentTimeOffsetInMinutes: 780,
-    currentTimeFormat: '+13:00 Tokelau Time - Fakaofo',
   },
   'Pacific/Tongatapu': {
     name: 'Pacific/Tongatapu',
@@ -114336,8 +113478,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Nuku‘alofa'],
     rawOffsetInMinutes: 780,
     abbreviation: 'TOT',
-    currentTimeOffsetInMinutes: 780,
-    currentTimeFormat: '+13:00 Tonga Time - Nuku‘alofa',
   },
   'Pacific/Chatham': {
     name: 'Pacific/Chatham',
@@ -114350,8 +113490,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Chatham'],
     rawOffsetInMinutes: 765,
     abbreviation: 'CHAST',
-    currentTimeOffsetInMinutes: 825,
-    currentTimeFormat: '+13:45 Chatham Time - Chatham',
   },
   'Pacific/Kiritimati': {
     name: 'Pacific/Kiritimati',
@@ -114364,8 +113502,6 @@ export const TIME_ZONE_CONTENT: TimeZoneContent = {
     mainCities: ['Kiritimati'],
     rawOffsetInMinutes: 840,
     abbreviation: 'LINT',
-    currentTimeOffsetInMinutes: 840,
-    currentTimeFormat: '+14:00 Line Islands Time - Kiritimati',
   },
 }
 

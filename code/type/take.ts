@@ -1414,7 +1414,7 @@ export const FormatSwiftModel: z.ZodType<Cast.FormatSwift> = z.object({
 export const GenerateMurmurHashModel: z.ZodType<Cast.GenerateMurmurHash> =
   z.object({
     input: z.string(),
-    seed: z.lazy(() => NumberModel),
+    seed: z.number().int(),
     version: z.string().default('3'),
   })
 

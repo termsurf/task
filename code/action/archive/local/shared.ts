@@ -2,7 +2,7 @@ import { getCommand } from '~/code/tool/command.js'
 import {
   ArchiveWithRar,
   ArchiveWithZip,
-  ConvertArchive,
+  ConvertArchiveWithUnarchiver,
 } from '~/code/type/index.js'
 
 // https://superuser.com/questions/190053/universal-command-line-unarchiving-tool-on-a-mac
@@ -27,7 +27,9 @@ export function buildCommandToArchiveWithRar(input: ArchiveWithRar) {
   return [cmd]
 }
 
-export function buildCommandToConvertArchive(input: ConvertArchive) {
+export function buildCommandToConvertArchive(
+  input: ConvertArchiveWithUnarchiver,
+) {
   const decompressInput = {
     input: {
       format: input.input.format,

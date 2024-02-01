@@ -18,6 +18,8 @@
 
 ## Summary
 
+_**Note**: This is pre-alpha software at this point, so many things might not work or be documented properly. Eventually things will work, but scope is large._
+
 Task is a collections of common actions to perform in code. Here are some immediately helpful resources:
 
 - [`ghcr.io/termsurf/task` Docker image](https://ghcr.io/termsurf/task)

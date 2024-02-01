@@ -1,11 +1,11 @@
-import { Form } from '@termsurf/form'
+import { Form, List } from '@termsurf/form'
 
-export const flip = {
+export const flip: List = {
   form: 'list',
   list: ['horizontal', 'vertical'],
 }
 
-export const gifsicle_optimize_option = {
+export const gifsicle_optimize_option: List = {
   form: 'list',
   list: ['1', '2', '3'],
 }

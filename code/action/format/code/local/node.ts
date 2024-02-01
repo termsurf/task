@@ -1,15 +1,18 @@
-export async function handleRustcCommand(cmd: CommandCall) {
-  return await exec(cmd.join(' '))
+import { Command } from '~/code/tool/command'
+import { exec } from '~/code/tool/process'
+
+export async function handleRustcCommand(cmd: Command) {
+  return await exec(cmd.link.join(' '))
 }
 
-export async function handleRustfmtCommand(cmd: CommandCall) {
-  return await exec(cmd.join(' '))
+export async function handleRustfmtCommand(cmd: Command) {
+  return await exec(cmd.link.join(' '))
 }
 
-export async function handleRubocopCommand(cmd: CommandCall) {
-  return await exec(cmd.join(' '))
+export async function handleRubocopCommand(cmd: Command) {
+  return await exec(cmd.link.join(' '))
 }
 
-export async function handleShfmtCommand(cmd: CommandCall) {
-  return await exec(cmd.join(' '))
+export async function handleShfmtCommand(cmd: Command) {
+  return await exec(cmd.link.join(' '))
 }

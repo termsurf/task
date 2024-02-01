@@ -5,7 +5,11 @@ import _ from 'lodash'
 export const TIME_ZONE_CONTENT = getTimeZones()
 
 export const TIME_ZONE_HASH = TIME_ZONE_CONTENT.reduce((m, x) => {
-  m[x.name] = _.omit(x, ['rawFormat'])
+  m[x.name] = _.omit(x, [
+    'rawFormat',
+    'currentTimeOffsetInMinutes',
+    'currentTimeFormat',
+  ])
   return m
 }, {})
 
