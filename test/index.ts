@@ -1,3 +1,8 @@
-import { z } from 'zod'
+import node from '~/code/node.js'
 
-z.ZodObject
+const format = JSON.parse('"jpg"')
+
+node.convert({
+  input: { format: 'png', file: { path: './foo.png' } },
+  output: { format: format, file: { path: './foo.jpg' } },
+})

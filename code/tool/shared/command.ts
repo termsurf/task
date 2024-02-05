@@ -1,4 +1,4 @@
-import { CommandSequenceOutputModel } from '~/code/type/take.js'
+import { CommandSequenceModel } from '~/code/type/take.js'
 import { Command, CommandName } from '../../type/cast.js'
 import kink from './kink.js'
 
@@ -63,7 +63,17 @@ export function setCommand(
 
 export function buildCommandSequence(call: Command | Array<Command>) {
   if (Array.isArray(call)) {
-    return CommandSequenceOutputModel.parse({ tree: { call } })
+    return CommandSequenceModel.parse({ call })
   }
-  return CommandSequenceOutputModel.parse({ tree: { call: [call] } })
+  return CommandSequenceModel.parse({ call: [call] })
+}
+
+export function escapeCommandInput(s: string) {
+  if (s === '') {
+    return `''`
+  }
+  if (!/[^%+,-.\/:=@_0-9A-Za-z]/.test(s)) {
+    return s
+  }
+  return `'` + s.replace(/'/g, `'"'`) + `'`
 }

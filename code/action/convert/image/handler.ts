@@ -1,27 +1,36 @@
-import { ChildProcessError, exec } from '~/code/tool/node/process.js'
-import { Command } from '~/code/type/index.js'
+import _ from 'lodash'
+import os from 'os'
+import { tmpName } from 'tmp-promise'
+import { convertImageWithImageMagickNodeLocal } from './node/local'
 
-export async function handleConvertCommand(cmd: Command) {
-  try {
-    return await exec(cmd.link.join(' '))
-  } catch (e) {
-    if (e instanceof ChildProcessError) {
-      if (e.data.stderr) {
-        if (e.data.stderr.match(/^convert: unable to open image/i)) {
-          // throw new Kink
-          throw new Error(`Cannot process image.`)
-        }
-      }
-    } else {
-      throw new Error(`System error`)
-    }
-  }
+async function buildConvertInput(
+  inputFormat: string,
+  outputFormat: string,
+  body: any,
+) {
+  const outputPath = await tmpName()
+  const input = _.merge({}, body, {
+    input: { format: inputFormat },
+    output: { format: outputFormat, file: { path: outputPath } },
+    pathScope: os.tmpdir(),
+  })
+  return input
 }
 
-export async function handleMogrifyCommand(cmd: Command) {
-  return await exec(cmd.link.join(' '))
+export async function handleConvertImageWithImageMagick(
+  inputFormat: string,
+  outputFormat: string,
+  body: any,
+) {
+  const input = await buildConvertInput(inputFormat, outputFormat, body)
+  return await convertImageWithImageMagickNodeLocal(input)
 }
 
-export async function handleInkscapeCommand(cmd: Command) {
-  return await exec(cmd.link.join(' '))
+export async function handleConvertAiToSvgWithInkscape(
+  inputFormat: string,
+  outputFormat: string,
+  body: any,
+) {
+  const input = await buildConvertInput(inputFormat, outputFormat, body)
+  return await convertImageWithImageMagickNodeLocal(input)
 }

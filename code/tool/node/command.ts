@@ -1,18 +1,19 @@
 import {
-  handleCalibreCommand,
-  handleDocx2pdfCommand,
-  handleExiftoolCommand,
-  handleJupyterCommand,
-  handleLibreOfficeCommand,
-  handlePandocCommand,
-  handlePdfLatexCommand,
-  handleUnoconvCommand,
-} from '~/code/action/convert/document/command
+  runCalibreCommand,
+  runDocx2pdfCommand,
+  runEbookConvertCommand,
+  runExiftoolCommand,
+  runJupyterCommand,
+  runLibreOfficeCommand,
+  runPandocCommand,
+  runPdfLatexCommand,
+  runUnoconvCommand,
+} from '~/code/action/convert/document/handler'
 import {
-  handleConvertCommand,
-  handleInkscapeCommand,
-  handleMogrifyCommand,
-} from '~/code/action/convert/image/command
+  runConvertCommand,
+  runInkscapeCommand,
+  runMogrifyCommand,
+} from '~/code/action/convert/image/runner'
 import {
   Command,
   CommandKey,
@@ -22,17 +23,17 @@ import {
 export type CommandHandlerName = CommandKey
 
 export const COMMAND_HANDLER: Record<string, (cmd: Command) => any> = {
-  convert: handleConvertCommand,
-  mogrify: handleMogrifyCommand,
-  inkscape: handleInkscapeCommand,
-  calibre: handleCalibreCommand, // handleEbookConvertCommand
-  soffice: handleLibreOfficeCommand,
-  pdflatex: handlePdfLatexCommand,
-  exiftool: handleExiftoolCommand,
-  jupyter: handleJupyterCommand,
-  docx2pdf: handleDocx2pdfCommand,
-  unoconv: handleUnoconvCommand,
-  pandoc: handlePandocCommand,
+  convert: runConvertCommand,
+  mogrify: runMogrifyCommand,
+  inkscape: runInkscapeCommand,
+  calibre: runCalibreCommand, // runEbookConvertCommand
+  soffice: runLibreOfficeCommand,
+  pdflatex: runPdfLatexCommand,
+  exiftool: runExiftoolCommand,
+  jupyter: runJupyterCommand,
+  docx2pdf: runDocx2pdfCommand,
+  unoconv: runUnoconvCommand,
+  pandoc: runPandocCommand,
 }
 
 export async function runCommandSequence(sequence: CommandSequence) {

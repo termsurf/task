@@ -1,26 +1,20 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import {
-  ConvertImageWithImageMagickNodeCall,
+  CalibreInputFormat,
+  CalibreOutputFormat,
+  ConvertDocumentWithCalibreNodeInput,
+  ConvertImageWithImageMagickNodeInput,
   ExtractBySubKey,
   ImageMagickInputFormat,
   ImageMagickOutputFormat,
   Values,
 } from '~/code/type/index.js'
-import {
-  convertDocumentWithCalibre,
-  convertDocumentWithLibreOffice,
-  convertDocumentWithPandoc,
-} from '~/code/action/convert/document/node.js'
-import { convertVideoWithFfmpeg } from '~/code/action/convert/video/local/node.js'
-import {
-  useConvertDocumentWithCalibre,
-  useConvertDocumentWithLibreOffice,
-  useConvertDocumentWithPandoc,
-  useConvertFontWithFontForge,
-  useConvertImageWithImageMagick,
-  useConvertVideoWithFfmpeg,
-} from './shared.js'
-import { convertImageWithImageMagickNode } from './image/node.js'
+import { convertInternal } from './node.internal.js'
+
+export async function convert<I extends ConvertInputFormat>(
+  source: Convert<I>,
+) {
+  return await convertInternal(source)
+}
 
 // // https://www.reddit.com/r/typescript/comments/199eutl/typescript_error_type_string_cannot_be_used_to/
 export type ConvertInput = {
@@ -32,13 +26,13 @@ export type ConvertInput = {
   image: {
     input: ImageMagickInputFormat
     output: ImageMagickOutputFormat
-    extend: ConvertImageWithImageMagickNodeCall
+    extend: ConvertImageWithImageMagickNodeInput
   }
-  // calibre: {
-  //   input: CalibreInputFormat
-  //   output: CalibreOutputFormat
-  //   extend: ConvertDocumentWithCalibre
-  // }
+  calibre: {
+    input: CalibreInputFormat
+    output: CalibreOutputFormat
+    extend: ConvertDocumentWithCalibreNodeInput
+  }
 }
 
 export type ConvertInputList = Values<ConvertInput>
@@ -53,65 +47,8 @@ export type Convert<I extends ConvertInputFormat> = {
     format: I
   }
   output: {
-    format: ConvertOutputFormat<I>['output']
+    format: Exclude<ConvertOutputFormat<I>['output'], I>
   }
-} & ConvertOutputFormat<I>['extend']
-
-export async function convert<I extends ConvertInputFormat>(
-  source: Convert<I>,
-) {
-  return await convertInternal(source)
-}
-
-export async function convertInternal(source) {
-  if (
-    useConvertImageWithImageMagick(
-      source.input.format,
-      source.output.format,
-    )
-  ) {
-    return await convertImageWithImageMagickNode(source)
-  }
-
-  if (
-    useConvertVideoWithFfmpeg(source.input.format, source.output.format)
-  ) {
-    return await convertVideoWithFfmpeg(source)
-  }
-
-  if (
-    useConvertFontWithFontForge(
-      source.input.format,
-      source.output.format,
-    )
-  ) {
-    return await convertFontWithFontForge(source)
-  }
-
-  if (
-    useConvertDocumentWithCalibre(
-      source.input.format,
-      source.output.format,
-    )
-  ) {
-    return await convertDocumentWithCalibre(source)
-  }
-
-  if (
-    useConvertDocumentWithPandoc(
-      source.input.format,
-      source.output.format,
-    )
-  ) {
-    return await convertDocumentWithPandoc(source)
-  }
-
-  if (
-    useConvertDocumentWithLibreOffice(
-      source.input.format,
-      source.output.format,
-    )
-  ) {
-    return await convertDocumentWithLibreOffice(source)
-  }
-}
+} & ('extend' extends keyof ConvertOutputFormat<I>
+  ? ConvertOutputFormat<I>['extend']
+  : {})

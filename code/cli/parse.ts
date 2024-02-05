@@ -1,4 +1,4 @@
-import { Form, FormLink } from '@termsurf/form'
+import { Form, FormLink, Mesh } from '@termsurf/form'
 import { Input, Link, Value } from './type'
 import _ from 'lodash'
 
@@ -35,6 +35,7 @@ export type CliOption = {
 }
 
 export function buildCliOptions(
+  mesh: Mesh,
   form: Form | FormLink,
   line: Array<string> = [],
 ) {
@@ -49,17 +50,33 @@ export function buildCliOptions(
 
       const lineName = line.concat([name])
 
-      if (link.link) {
-        opts.push(...buildCliOptions(link, lineName))
+      if (link.link || link.case) {
+        opts.push(...buildCliOptions(mesh, link, lineName))
       } else {
-        const mark = link.name?.mark && `-${link.name.mark}`
-        const name = `--${_.kebabCase(lineName.join('-'))}`
-        const list = [mark, name].filter(x => x)
-        opts.push({
-          link: list as Array<string>,
-          note: link.note,
-          line: lineName,
-        })
+        if (link.like && mesh[link.like]?.form === 'form') {
+          const form = mesh[link.like]
+          if (form?.form === 'form') {
+            opts.push(...buildCliOptions(mesh, form, lineName))
+          }
+        } else {
+          const mark = link.name?.mark && `-${link.name.mark}`
+          const name = `--${_.kebabCase(lineName.join('-'))}`
+          const list = [mark, name].filter(x => x)
+          opts.push({
+            link: list as Array<string>,
+            note: link.note,
+            line: lineName,
+          })
+        }
+      }
+    }
+  } else if ('case' in form && form.case && Array.isArray(form.case)) {
+    for (const _case of form.case) {
+      if (typeof _case === 'object' && 'like' in _case && _case.like) {
+        const form = mesh[_case.like]
+        if (form?.form === 'form') {
+          opts.push(...buildCliOptions(mesh, form, line))
+        }
       }
     }
   }
@@ -67,8 +84,8 @@ export function buildCliOptions(
   return opts
 }
 
-export function buildInputMapping(form: Form | FormLink) {
-  const list = buildCliOptions(form)
+export function buildInputMapping(mesh: Mesh, form: Form | FormLink) {
+  const list = buildCliOptions(mesh, form)
 
   const map = list.reduce<Record<string, { line: Array<string> }>>(
     (m, x) => {

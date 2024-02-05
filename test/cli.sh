@@ -12,7 +12,7 @@ function call() {
   eval "$line"
 }
 
-cp ../file/base/code/example.rs test/hold/example.rs
+# cp ../file/base/code/example.rs test/hold/example.rs
 # cp test/file/code/example.c test/hold/example.c
 # cp test/file/code/quicksort.jl test/hold/quicksort.jl
 # cp test/file/code/quicksort.py test/hold/quicksort.py
@@ -43,8 +43,8 @@ cp ../file/base/code/example.rs test/hold/example.rs
 alias task="pnpm tsx code/cli"
 
 # # convert and verify
-call "task convert -I png -O jpg -i test/file/image/fire.png -o test/hold/fire.jpg"
-call "task verify jpg -i test/hold/fire.jpg"
+call "task convert -I png -O jpg -i ../file/base/image/fire.png -o test/hold/fire.jpg"
+# call "task verify jpg -i test/hold/fire.jpg"
 
 # call "task convert -I cr2 -O jpg -i test/file/image/trees.cr2 -o test/hold/trees.jpg"
 # call "task verify jpg -i test/hold/trees.jpg"

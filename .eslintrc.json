@@ -32,7 +32,7 @@
       }
     }
   },
-  "extends": ["prettier", "next"],
+  "extends": ["prettier"],
   "rules": {
     "curly": 2,
     "@typescript-eslint/quotes": [

@@ -1,5 +1,56 @@
 import { Form, List } from '@termsurf/form'
 
+export const convert_file_base: Form = {
+  form: 'form',
+  leak: true,
+  link: {
+    tool: { like: 'string', need: false },
+    remote: { like: 'boolean', need: false },
+    async: { like: 'boolean', need: false, fall: false },
+    input: {
+      link: {
+        format: { like: 'string' },
+        file: {
+          case: [{ like: 'file_content' }, { like: 'file_path' }],
+        },
+      },
+    },
+    output: {
+      link: {
+        format: { like: 'string' },
+        file: {
+          link: {
+            path: { like: 'string' },
+          },
+        },
+      },
+    },
+  },
+}
+
+export const convert_file_base_remote: Form = {
+  form: 'form',
+  leak: true,
+  link: {
+    tool: { like: 'string', need: false },
+    remote: { like: 'boolean', need: false },
+    async: { like: 'boolean', need: false, fall: false },
+    input: {
+      link: {
+        format: { like: 'string' },
+        file: {
+          case: [{ like: 'file_content' }, { like: 'file_path' }],
+        },
+      },
+    },
+    output: {
+      link: {
+        format: { like: 'string' },
+      },
+    },
+  },
+}
+
 export const build_format_input_output: Form = {
   form: 'form',
   leak: true,

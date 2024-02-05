@@ -1,8 +1,8 @@
 {
   "name": "@termsurf/task",
   "version": "0.0.44",
-  "main": "./host/code/node/index.js",
-  "browser": "./host/code/browser/index.js",
+  "main": "./host/code/node.js",
+  "browser": "./host/code/browser.js",
   "type": "module",
   "chocoVersion": "0.0.2",
   "bin": {
@@ -40,7 +40,7 @@
     "@lancejpollard/gematria.js": "^0.3.2",
     "@ngrok/ngrok": "^0.9.1",
     "@ngrok/ngrok-linux-x64-gnu": "^0.9.1",
-    "@termsurf/form": "^0.4.84",
+    "@termsurf/form": "^0.4.86",
     "@termsurf/kink": "^0.1.2",
     "@termsurf/kink-text": "^0.0.1",
     "@termsurf/love-code": "^0.1.10",

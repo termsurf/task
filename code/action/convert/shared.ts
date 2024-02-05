@@ -20,8 +20,11 @@ import {
   PANDOC_OUTPUT_FORMAT,
   PandocInputFormat,
   PandocOutputFormat,
+  ConvertFileBase,
+  ConvertFileBaseRemote,
 } from '~/code/type/index.js'
 import { buildRemoteRequest } from '~/code/tool/shared/request.js'
+import { omitNested } from '~/code/tool/shared/object.js'
 
 export function explainConvert() {}
 
@@ -37,6 +40,19 @@ export function useConvertImageWithImageMagick(a: string, b: string) {
   if (
     !IMAGE_MAGICK_OUTPUT_FORMAT.includes(b as ImageMagickOutputFormat)
   ) {
+    return false
+  }
+  return true
+}
+
+export function useConvertImageWithInkscape(a: string, b: string) {
+  if (a === b) {
+    return false
+  }
+  if (a !== 'ai') {
+    return false
+  }
+  if (b !== 'svg') {
     return false
   }
   return true
@@ -122,6 +138,13 @@ export async function convertArchive(source) {
   // }
 }
 
-export function buildRequestToConvert(input) {
-  return buildRemoteRequest('/convert', input)
+export function buildRequestToConvert(input: ConvertFileBaseRemote) {
+  return buildRemoteRequest(
+    `/convert/${input.input.format}/${input.output.format}`,
+    omitNested(input, [
+      ['remote'],
+      ['input', 'format'],
+      ['output', 'format'],
+    ]),
+  )
 }

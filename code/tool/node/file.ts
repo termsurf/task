@@ -25,20 +25,21 @@ export async function createStreamableFile(
 }
 
 export async function saveRemoteFile(
-  input,
+  remotePath: string,
+  outputPath: string,
   controller?: AbortController,
 ) {
   return new Promise((res, rej) => {
-    fetchWithTimeout(input.input.path, { controller }).then(r => {
+    fetchWithTimeout(remotePath, { controller }).then(r => {
       if (r.body) {
         return Readable.fromWeb(r.body as ReadableStreamWeb<any>)
           .pipe(
-            fs.createWriteStream(input.output.file.path, {
+            fs.createWriteStream(outputPath, {
               signal: controller?.signal,
             }),
           )
           .on('error', rej)
-          .on('close', () => res(input.output.file.path))
+          .on('close', () => res(outputPath))
       }
     })
   })

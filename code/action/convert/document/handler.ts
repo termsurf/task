@@ -1,20 +1,20 @@
 import { ChildProcessError, exec } from '~/code/tool/node/process.js'
 import { Command } from '~/code/type/index.js'
 
-export async function handleCalibreCommand(cmd: Command) {
-  await exec(cmd.link.join(' '))
+export async function runCalibreCommand(cmd: Command) {
+  await exec(cmd.link)
 }
 
-export async function handleLibreOfficeCommand(cmd: Command) {
-  await exec(cmd.link.join(' '))
+export async function runLibreOfficeCommand(cmd: Command) {
+  await exec(cmd.link)
 }
 
 // https://html-validate.org/dev/running-in-browser.html
 // https://github.com/apostrophecms/sanitize-html
 
-export async function handlePdfLatexCommand(cmd: Command) {
+export async function runPdfLatexCommand(cmd: Command) {
   try {
-    await exec(cmd.link.join(' '))
+    await exec(cmd.link)
   } catch (e) {
     if (e instanceof ChildProcessError) {
       const message = e.data.stdout && parseLatexError(e.data.stdout)
@@ -75,33 +75,33 @@ function parseLatexError(text: string) {
   return message.join('\n').replace(/\n\n+/gm, '\n\n')
 }
 
-export async function handleExiftoolCommand(cmd: Command) {
-  return await exec(cmd.join(' '))
+export async function runExiftoolCommand(cmd: Command) {
+  return await exec(cmd.link)
 }
 
-export async function handleEbookConvertCommand(cmd: Command) {
-  return await exec(cmd.join(' '))
+export async function runEbookConvertCommand(cmd: Command) {
+  return await exec(cmd.link)
 }
 
-export async function handleSofficeCommand(cmd: Command) {
-  return await exec(cmd.join(' '))
+export async function runSofficeCommand(cmd: Command) {
+  return await exec(cmd.link)
 }
 
-export async function handleJupyterCommand(cmd: Command) {
-  return await exec(cmd.join(' '))
+export async function runJupyterCommand(cmd: Command) {
+  return await exec(cmd.link)
 }
 
-export async function handleDocx2pdfCommand(cmd: Command) {
-  return await exec(cmd.join(' '))
+export async function runDocx2pdfCommand(cmd: Command) {
+  return await exec(cmd.link)
 }
 
-export async function handleUnoconvCommand(cmd: Command) {
-  return await exec(cmd.join(' '))
+export async function runUnoconvCommand(cmd: Command) {
+  return await exec(cmd.link)
 }
 
-export async function handlePandocCommand(cmd: Command) {
+export async function runPandocCommand(cmd: Command) {
   try {
-    return await exec(cmd.join(' '))
+    return await exec(cmd.link)
   } catch (e) {
     if (e instanceof Error) {
       if (e instanceof ChildProcessError) {

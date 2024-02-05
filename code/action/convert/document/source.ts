@@ -15,20 +15,17 @@ export const convert_document_with_jupyter_node_output =
 export const convert_document_with_jupyter_node_output_response =
   convert_document_with_jupyter_forms.node_output_response
 
-export const convert_document_with_jupyter_node_call =
-  convert_document_with_jupyter_forms.node_call
+export const convert_document_with_jupyter_node_input =
+  convert_document_with_jupyter_forms.node_input
 
-export const convert_document_with_jupyter_node_local_call =
-  convert_document_with_jupyter_forms.node_local_call
+export const convert_document_with_jupyter_node_command_input =
+  convert_document_with_jupyter_forms.node_command_input
 
-export const convert_document_with_jupyter_node_command =
-  convert_document_with_jupyter_forms.node_command
+export const convert_document_with_jupyter_node_remote_input =
+  convert_document_with_jupyter_forms.node_remote_input
 
-export const convert_document_with_jupyter_node_remote_call =
-  convert_document_with_jupyter_forms.node_remote_call
-
-export const convert_document_with_jupyter_browser_call =
-  convert_document_with_jupyter_forms.browser_call
+export const convert_document_with_jupyter_browser_input =
+  convert_document_with_jupyter_forms.browser_input
 
 export const convert_document_with_jupyter_browser_output =
   convert_document_with_jupyter_forms.browser_output
@@ -46,20 +43,17 @@ export const convert_document_with_libre_office_node_output =
 export const convert_document_with_libre_office_node_output_response =
   convert_document_with_libre_office_forms.node_output_response
 
-export const convert_document_with_libre_office_node_call =
-  convert_document_with_libre_office_forms.node_call
+export const convert_document_with_libre_office_node_input =
+  convert_document_with_libre_office_forms.node_input
 
-export const convert_document_with_libre_office_node_local_call =
-  convert_document_with_libre_office_forms.node_local_call
+export const convert_document_with_libre_office_node_command_input =
+  convert_document_with_libre_office_forms.node_command_input
 
-export const convert_document_with_libre_office_node_command =
-  convert_document_with_libre_office_forms.node_command
+export const convert_document_with_libre_office_node_remote_input =
+  convert_document_with_libre_office_forms.node_remote_input
 
-export const convert_document_with_libre_office_node_remote_call =
-  convert_document_with_libre_office_forms.node_remote_call
-
-export const convert_document_with_libre_office_browser_call =
-  convert_document_with_libre_office_forms.browser_call
+export const convert_document_with_libre_office_browser_input =
+  convert_document_with_libre_office_forms.browser_input
 
 export const convert_document_with_libre_office_browser_output =
   convert_document_with_libre_office_forms.browser_output
@@ -77,20 +71,17 @@ export const convert_latex_to_pdf_with_pdf_latex_node_output =
 export const convert_latex_to_pdf_with_pdf_latex_node_output_response =
   convert_latex_to_pdf_with_pdf_latex_forms.node_output_response
 
-export const convert_latex_to_pdf_with_pdf_latex_node_call =
-  convert_latex_to_pdf_with_pdf_latex_forms.node_call
+export const convert_latex_to_pdf_with_pdf_latex_node_input =
+  convert_latex_to_pdf_with_pdf_latex_forms.node_input
 
-export const convert_latex_to_pdf_with_pdf_latex_node_local_call =
-  convert_latex_to_pdf_with_pdf_latex_forms.node_local_call
+export const convert_latex_to_pdf_with_pdf_latex_node_command_input =
+  convert_latex_to_pdf_with_pdf_latex_forms.node_command_input
 
-export const convert_latex_to_pdf_with_pdf_latex_node_command =
-  convert_latex_to_pdf_with_pdf_latex_forms.node_command
+export const convert_latex_to_pdf_with_pdf_latex_node_remote_input =
+  convert_latex_to_pdf_with_pdf_latex_forms.node_remote_input
 
-export const convert_latex_to_pdf_with_pdf_latex_node_remote_call =
-  convert_latex_to_pdf_with_pdf_latex_forms.node_remote_call
-
-export const convert_latex_to_pdf_with_pdf_latex_browser_call =
-  convert_latex_to_pdf_with_pdf_latex_forms.browser_call
+export const convert_latex_to_pdf_with_pdf_latex_browser_input =
+  convert_latex_to_pdf_with_pdf_latex_forms.browser_input
 
 export const convert_latex_to_pdf_with_pdf_latex_browser_output =
   convert_latex_to_pdf_with_pdf_latex_forms.browser_output
@@ -107,25 +98,22 @@ export const convert_document_with_calibre_node_output =
 export const convert_document_with_calibre_node_output_response =
   convert_document_with_calibre_forms.node_output_response
 
-export const convert_document_with_calibre_node_call =
-  convert_document_with_calibre_forms.node_call
+export const convert_document_with_calibre_node_input =
+  convert_document_with_calibre_forms.node_input
 
-export const convert_document_with_calibre_node_local_call =
-  convert_document_with_calibre_forms.node_local_call
+export const convert_document_with_calibre_node_command_input =
+  convert_document_with_calibre_forms.node_command_input
 
-export const convert_document_with_calibre_node_command =
-  convert_document_with_calibre_forms.node_command
+export const convert_document_with_calibre_node_remote_input =
+  convert_document_with_calibre_forms.node_remote_input
 
-export const convert_document_with_calibre_node_remote_call =
-  convert_document_with_calibre_forms.node_remote_call
-
-export const convert_document_with_calibre_browser_call =
-  convert_document_with_calibre_forms.browser_call
+export const convert_document_with_calibre_browser_input =
+  convert_document_with_calibre_forms.browser_input
 
 export const convert_document_with_calibre_browser_output =
   convert_document_with_calibre_forms.browser_output
 
-export const convert_document_with_puppeteer_forms = buildConvertForms(
+const convert_document_with_puppeteer_forms = buildConvertForms(
   'convert_document_with_puppeteer',
   'puppeteer_input_format',
   'puppeteer_output_format',
@@ -147,25 +135,22 @@ export const convert_document_with_puppeteer_node_output =
 export const convert_document_with_puppeteer_node_output_response =
   convert_document_with_puppeteer_forms.node_output_response
 
-export const convert_document_with_puppeteer_node_call =
-  convert_document_with_puppeteer_forms.node_call
+export const convert_document_with_puppeteer_node_input =
+  convert_document_with_puppeteer_forms.node_input
 
-export const convert_document_with_puppeteer_node_local_call =
-  convert_document_with_puppeteer_forms.node_local_call
+export const convert_document_with_puppeteer_node_command_input =
+  convert_document_with_puppeteer_forms.node_command_input
 
-export const convert_document_with_puppeteer_node_command =
-  convert_document_with_puppeteer_forms.node_command
+export const convert_document_with_puppeteer_node_remote_input =
+  convert_document_with_puppeteer_forms.node_remote_input
 
-export const convert_document_with_puppeteer_node_remote_call =
-  convert_document_with_puppeteer_forms.node_remote_call
-
-export const convert_document_with_puppeteer_browser_call =
-  convert_document_with_puppeteer_forms.browser_call
+export const convert_document_with_puppeteer_browser_input =
+  convert_document_with_puppeteer_forms.browser_input
 
 export const convert_document_with_puppeteer_browser_output =
   convert_document_with_puppeteer_forms.browser_output
 
-export const convert_document_with_pandoc_forms = buildConvertForms(
+const convert_document_with_pandoc_forms = buildConvertForms(
   'convert_document_with_pandoc',
   'pandoc_input_format',
   'pandoc_output_format',
@@ -177,20 +162,17 @@ export const convert_document_with_pandoc_node_output =
 export const convert_document_with_pandoc_node_output_response =
   convert_document_with_pandoc_forms.node_output_response
 
-export const convert_document_with_pandoc_node_call =
-  convert_document_with_pandoc_forms.node_call
+export const convert_document_with_pandoc_node_input =
+  convert_document_with_pandoc_forms.node_input
 
-export const convert_document_with_pandoc_node_local_call =
-  convert_document_with_pandoc_forms.node_local_call
+export const convert_document_with_pandoc_node_command_input =
+  convert_document_with_pandoc_forms.node_command_input
 
-export const convert_document_with_pandoc_node_command =
-  convert_document_with_pandoc_forms.node_command
+export const convert_document_with_pandoc_node_remote_input =
+  convert_document_with_pandoc_forms.node_remote_input
 
-export const convert_document_with_pandoc_node_remote_call =
-  convert_document_with_pandoc_forms.node_remote_call
-
-export const convert_document_with_pandoc_browser_call =
-  convert_document_with_pandoc_forms.browser_call
+export const convert_document_with_pandoc_browser_input =
+  convert_document_with_pandoc_forms.browser_input
 
 export const convert_document_with_pandoc_browser_output =
   convert_document_with_pandoc_forms.browser_output

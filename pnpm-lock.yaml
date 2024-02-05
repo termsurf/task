@@ -27,8 +27,8 @@ dependencies:
     specifier: ^0.9.1
     version: 0.9.1
   '@termsurf/form':
-    specifier: ^0.4.84
-    version: 0.4.84
+    specifier: ^0.4.86
+    version: 0.4.86
   '@termsurf/kink':
     specifier: ^0.1.2
     version: 0.1.2
@@ -1314,8 +1314,8 @@ packages:
     resolution: {integrity: sha512-UY+FGM/2jjMkzQLn8pxcHGMaVLh9aEitG3zY2CiY7XHdLiz3bZOwa6oDxNqEMv7zZkV+cj5DOdz0cQ1BP5Hjgw==}
     dev: true
 
-  /@termsurf/form@0.4.84:
-    resolution: {integrity: sha512-vse09m9vLitQsijHGxUbR3mYVduVbSKlIyV9yFVQEYLSP09+xH6D7emb/MlzuGwJ19NiAUXTk/eJ0qxRthWMFg==}
+  /@termsurf/form@0.4.86:
+    resolution: {integrity: sha512-581iufEJ+/Dc5kbH+LT7amGeYbf3EyLGOALl+vD9nQocOYRSH/WcPkOgKonKwBrx2mSn8v6RUnEhjBUUAJ4Kiw==}
     dependencies:
       '@termsurf/have': 0.2.0
       '@termsurf/kink': 0.1.2

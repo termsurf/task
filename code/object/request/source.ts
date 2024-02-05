@@ -1,7 +1,7 @@
 import { Form, List } from '@termsurf/form'
 import { defineResponse } from '~/code/tool/shared/type.js'
 
-export const command_name = {
+export const command_name: List = {
   form: 'list',
   list: [
     'ffmpeg',
@@ -44,7 +44,7 @@ export const command_name = {
   ],
 }
 
-export const command_key = {
+export const command_key: List = {
   form: 'list',
   list: command_name.list.slice(0),
 }

@@ -84,6 +84,11 @@ type Base = {
       path: string
     }
   }
+  function_todo: {
+    take: {
+      name: string
+    }
+  }
 }
 
 let CODE_INDEX = 1
@@ -104,6 +109,7 @@ const CODE = {
   invalid_gematria_script_rank: CODE_INDEX++,
   invalid_gematria_script: CODE_INDEX++,
   invalid_file_access: CODE_INDEX++,
+  function_todo: CODE_INDEX++,
 }
 
 type Name = keyof Base
@@ -136,6 +142,18 @@ Kink.base(
     note: `Path must be for a file or URL.`,
     link: {
       path: take.path,
+    },
+  }),
+)
+
+Kink.base(
+  host,
+  'function_todo',
+  (take: Base['function_todo']['take']) => ({
+    code: CODE.function_todo,
+    note: `Function not yet implemented.`,
+    link: {
+      name: take.name,
     },
   }),
 )

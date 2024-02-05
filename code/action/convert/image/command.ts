@@ -1,12 +1,10 @@
 import {
-  VerifyImageWithImageMagick,
   IMAGE_MAGICK_COLOR_SPACE_CONTENT,
   IMAGE_MAGICK_COMPRESSION_CONTENT,
-  InspectMetadataFromImage,
-  ConvertImageWithImageMagickNodeCommand,
-  ConvertImageWithImageMagickNodeCommandModel,
-  ConvertAiToSvgWithInkscapeNodeCommand,
-  ConvertAiToSvgWithInkscapeNodeCommandModel,
+  ConvertImageWithImageMagickNodeCommandInput,
+  ConvertImageWithImageMagickNodeCommandInputModel,
+  ConvertAiToSvgWithInkscapeNodeCommandInput,
+  ConvertAiToSvgWithInkscapeNodeCommandInputModel,
 } from '~/code/type/index.js'
 import {
   getCommand,
@@ -28,10 +26,10 @@ import { resolvePathRelativeToScope } from '~/code/tool/shared/file.js'
 // }
 
 export function buildCommandToConvertImageWithImageMagick(
-  source: ConvertImageWithImageMagickNodeCommand,
+  source: ConvertImageWithImageMagickNodeCommandInput,
 ) {
   const input =
-    ConvertImageWithImageMagickNodeCommandModel.parse(source)
+    ConvertImageWithImageMagickNodeCommandInputModel.parse(source)
 
   const ip = resolvePathRelativeToScope(
     input.input.file.path,
@@ -44,7 +42,7 @@ export function buildCommandToConvertImageWithImageMagick(
 
   const cmd = getCommand(`convert`)
 
-  let inputPath = ip.match(/\.cr2$/i) ? `cr2:${ip}` : ip
+  const inputPath = ip.match(/\.cr2$/i) ? `cr2:${ip}` : ip
 
   cmd.link.push(`"${inputPath}"`)
 
@@ -111,14 +109,6 @@ export function buildCommandToConvertImageWithImageMagick(
   return buildCommandSequence(cmd)
 }
 
-export function buildCommandToInspectMetadataFromImage(
-  input: InspectMetadataFromImage,
-) {
-  const cmd = getCommand('exiftool')
-  cmd.link.push(`"${input.input.file.path}"`)
-  return buildCommandSequence(cmd)
-}
-
 // export async function replaceImageColorWithImageMagick(
 //   input: ReplaceImageColorWithImageMagick,
 // ) {
@@ -157,65 +147,28 @@ export function buildCommandToInspectMetadataFromImage(
 //   return [cmd]
 // }
 
-export function buildCommandToGenerateGifWithGifsicle(input) {
-  const cmd = getCommand('gifsicle')
-
-  if (input.unoptimize) {
-    cmd.link.push(`-U`)
-  }
-
-  if (input.width) {
-    if (input.height) {
-      cmd.link.push(`--resize`, `${input.width}x${input.height}`)
-    } else {
-      cmd.link.push(`--resize`, `${input.width}x_`)
-    }
-  } else if (input.height) {
-    cmd.link.push(`--resize`, `_x${input.height}`)
-  }
-
-  return [cmd]
-}
-
 export async function buildCommandToConvertAIToSVGWithInkscape(
-  source: ConvertAiToSvgWithInkscapeNodeCommand,
+  source: ConvertAiToSvgWithInkscapeNodeCommandInput,
 ) {
-  const input = ConvertAiToSvgWithInkscapeNodeCommandModel.parse(source)
+  const input =
+    ConvertAiToSvgWithInkscapeNodeCommandInputModel.parse(source)
+
+  const inputPath = resolvePathRelativeToScope(
+    input.input.file.path,
+    input.pathScope,
+  )
+  const outputPath = resolvePathRelativeToScope(
+    input.output.file.path,
+    input.pathScope,
+  )
+
   const cmd = getCommand(`inkscape`)
 
   cmd.link.push(
-    `"${input.input.file.path}"`,
+    `"${inputPath}"`,
     `-${process.platform === 'darwin' ? 'o' : 'l'}`,
-    `"${input.output.file.path}"`,
+    `"${outputPath}"`,
   )
 
   return buildCommandSequence(cmd)
-}
-
-export async function buildCommandToVerifyImageWithImageMagick(
-  input: VerifyImageWithImageMagick,
-) {
-  const cmd = getCommand(`identify`)
-  cmd.link.push(`"${input.input.file.path}"`)
-  return [cmd]
-}
-
-export type ExifMetadata = { name: string; bond: string | number }
-
-export function parseImageMetadataFromExifTool(lines: Array<string>) {
-  const metadata: Array<ExifMetadata> = []
-  lines.forEach(line => {
-    const pieces = line.split(': ')
-    //Is this a line with a meta data pair on it?
-    if (pieces.length == 2) {
-      const name = _.camelCase((pieces[0] as string).trim())
-      let bond: string | number = (pieces[1] as string).trim()
-      const number = parseFloat(bond)
-      if (!Number.isNaN(number)) {
-        bond = number
-      }
-      metadata.push({ name, bond })
-    }
-  })
-  return metadata
 }

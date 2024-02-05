@@ -29,6 +29,8 @@ export async function bindConvertLocal(input) {
     _.merge(through, fileThrough)
   }
 
+  unsetAll(through, [['remote']])
+
   return through
 }
 
@@ -49,6 +51,8 @@ export async function bindConvertRemote(input) {
     _.merge(through, fileThrough)
     unsetAll(through, [['input', 'file', 'path']])
   }
+
+  unsetAll(through, [['remote']])
 
   return through
 }

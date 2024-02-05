@@ -22,3 +22,9 @@ export function unsetAll(obj, props: Array<Array<string>>) {
   })
   return obj
 }
+
+export function omitNested(obj, props: Array<Array<string>>) {
+  const out = _.cloneDeep(obj)
+  unsetAll(out, props)
+  return out
+}

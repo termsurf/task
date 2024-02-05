@@ -1,8 +1,46 @@
 import assert from 'assert'
-import { RequestOutputModel } from '../../type/index.js'
+import { RequestModel } from '../../type/index.js'
 import { getConfig } from '../shared/config.js'
+import { wait } from './timer.js'
+import { saveRemoteFile } from '../node/file.js'
+import kink from './kink.js'
 
-export const DEFAULT_REMOTE_TASK_PATH = `https://base.task.surf/v2`
+export async function resolveWorkFile(
+  request: any,
+  outputPath: string,
+) {
+  const workResponse = await postRemote(request)
+  const work = await workResponse.json()
+  while (true) {
+    await wait(1000)
+    const stepResponse = await getRemote(`/work/${work.id}`)
+    const step = await stepResponse.json()
+    if (step.status === 'ready') {
+      const remote = getConfig('remote')
+      await saveRemoteFile(`${remote}/file/${step.fileId}`, outputPath)
+      return
+    } else if (step.status === 'error') {
+      throw kink(step.key, step.link)
+    }
+  }
+}
+
+export async function resolveWorkFileAsArrayBuffer(request: any) {
+  const workResponse = await postRemote(request)
+  const work = await workResponse.json()
+  while (true) {
+    await wait(1000)
+    const stepResponse = await getRemote(`/work/${work.id}`)
+    const step = await stepResponse.json()
+    if (step.status === 'ready') {
+      const fileResponse = await getRemote(`/file/${step.fileId}`)
+      const arrayBuffer = await fileResponse.arrayBuffer()
+      return arrayBuffer
+    } else if (step.status === 'error') {
+      throw kink(step.key, step.link)
+    }
+  }
+}
 
 export async function postRemote(input) {
   const remote = getConfig('remote')
@@ -14,12 +52,19 @@ export async function postRemote(input) {
   })
 }
 
+export async function getRemote(input) {
+  const remote = getConfig('remote')
+  assert(typeof remote === 'string')
+
+  return fetchWithTimeout(`${remote}${input.path}`, {
+    method: 'GET',
+  })
+}
+
 export function buildRemoteRequest(path: string, body: any) {
-  return RequestOutputModel.parse({
-    tree: {
-      path,
-      body,
-    },
+  return RequestModel.parse({
+    path,
+    body,
   })
 }
 

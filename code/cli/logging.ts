@@ -16,8 +16,14 @@ export function stripAnsiFromText(source) {
   return stripAnsi(source.input.text)
 }
 
-export function logStart(text: string, color = true) {
-  if (color) {
+let STYLE = 'color'
+
+export function setLoggingStyle(style: string) {
+  STYLE = style
+}
+
+export function logStart(text: string) {
+  if (STYLE === 'color') {
     const spinner = logSpinnerWithSpace(
       `${tint('note <', B)}${tint(text, C)}${tint('>', B)}`,
     )
@@ -36,12 +42,12 @@ export function logSpinner(text: string) {
   return ora().start(text)
 }
 
-export function logOutput(text: string, color = true, type = 'link') {
+export function logOutput(text: string, type = 'link') {
   if (!text) {
     return
   }
 
-  if (color) {
+  if (STYLE === 'color') {
     logWithSpace(
       `  ${tint(`${type} <`, B)}${tint(text, G)}${tint('>', B)}`,
     )
@@ -50,12 +56,12 @@ export function logOutput(text: string, color = true, type = 'link') {
   }
 }
 
-export function logOutputError(text: string, color = true) {
+export function logOutputError(text: string) {
   if (!text) {
     return
   }
 
-  if (color) {
+  if (STYLE === 'color') {
     logWithSpace(
       `  ${tint('link <', B)}${tint(text, R)}${tint('>', B)}`,
     )
@@ -64,8 +70,8 @@ export function logOutputError(text: string, color = true) {
   }
 }
 
-export function renderProgress(text: string, color = true) {
-  if (color) {
+export function renderProgress(text: string) {
+  if (STYLE === 'color') {
     return `${tint('note <', B)}${tint(text, C)}${tint('>', B)}`
   } else {
     return text

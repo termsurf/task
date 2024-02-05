@@ -1,17 +1,11 @@
 import {
-  ConvertDocumentWithPandocBrowserCall,
-  ConvertDocumentWithPandocBrowserCallModel,
+  ConvertDocumentWithPandocBrowserInput,
+  ConvertDocumentWithPandocBrowserInputModel,
 } from '~/code/type/index.js'
-import { explainConvertDocumentWithPandoc } from './shared.js'
-import { convertBrowserRemote } from '../browser.js'
 
 export async function convertDocumentWithPandocBrowser(
-  source: ConvertDocumentWithPandocBrowserCall,
+  source: ConvertDocumentWithPandocBrowserInput,
 ) {
-  const input = ConvertDocumentWithPandocBrowserCallModel.parse(source)
-  if (input.explain) {
-    return await explainConvertDocumentWithPandoc(input)
-  } else {
-    return await convertBrowserRemote(input)
-  }
+  const input = ConvertDocumentWithPandocBrowserInputModel.parse(source)
+  return await convertBrowserRemote(input)
 }

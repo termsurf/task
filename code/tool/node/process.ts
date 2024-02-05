@@ -1,5 +1,6 @@
 import child_process from 'child_process'
 import { CustomError } from 'ts-custom-error'
+import { escapeCommandInput } from '../shared/command'
 
 export type ChildProcessErrorData = {
   error: Error
@@ -16,21 +17,37 @@ export class ChildProcessError extends CustomError {
   }
 }
 
-export function exec(command: string): Promise<string> {
-  return new Promise(function (resolve, reject) {
-    child_process.exec(command, (error, stdout, stderr) => {
-      if (error) {
-        reject(
-          new ChildProcessError({
-            error,
-            stdout,
-            stderr,
-          }),
-        )
-        return
-      }
+export function exec(list: Array<string>): Promise<string> {
+  const command = list[0] as string
+  const args = list.slice(1)
 
-      resolve(stdout.trim() || stderr)
+  return new Promise(function (resolve, reject) {
+    const child = child_process.spawn(command, args)
+
+    const stdout: Array<string> = []
+    child.stdout.setEncoding('utf-8')
+    child.stdout.on('data', data => {
+      stdout.push(data)
+    })
+
+    const stderr: Array<string> = []
+    child.stderr.setEncoding('utf-8')
+    child.stderr.on('data', data => {
+      stderr.push(data)
+    })
+
+    child.on('error', error => {
+      reject(
+        new ChildProcessError({
+          error,
+          stdout: stdout.join(''),
+          stderr: stderr.join(''),
+        }),
+      )
+    })
+
+    child.on('close', () => {
+      resolve(stdout.join('').trim() || stderr.join(''))
     })
   })
 }
