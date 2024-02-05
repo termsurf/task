@@ -3,7 +3,7 @@
 // target datalayout = "e-m:o-i64:64-i128:128-n32:64-S128"
 // target triple = "arm64-apple-macosx14.0.0"
 
-import { getCommand } from '~/code/tool/command.js'
+import { getCommand } from '~/code/tool/shared/command.js'
 import {
   CompileC,
   CompileCpp,

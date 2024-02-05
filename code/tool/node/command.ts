@@ -7,12 +7,12 @@ import {
   handlePandocCommand,
   handlePdfLatexCommand,
   handleUnoconvCommand,
-} from '~/code/action/convert/document/local/command'
+} from '~/code/action/convert/document/command
 import {
   handleConvertCommand,
   handleInkscapeCommand,
   handleMogrifyCommand,
-} from '~/code/action/convert/image/local/command'
+} from '~/code/action/convert/image/command
 import {
   Command,
   CommandKey,

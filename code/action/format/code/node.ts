@@ -7,8 +7,8 @@ import {
   FormatAssembly,
   FormatC,
 } from '~/code/type/index.js'
-import { exec } from '~/code/tool/process.js'
-import { buildCommandToFormatRust } from './local/shared.js'
+import { exec } from '~/code/tool/node/process.js'
+import { buildCommandToFormatRust } from './command.js'
 // https://github.com/jgm/pandoc/tree/main/test
 // https://github.com/SheetJS/test_files
 

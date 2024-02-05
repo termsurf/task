@@ -144,7 +144,7 @@ async function test() {
   const output = await task.resolve(work)
 
   const explainer = await task.convert({
-    show: true,
+    explain: true,
     input: { format: 'png', file: { path: 'image.png' } },
     output: { format: 'jpg', file: { path: 'image.jpg' } }
   })

@@ -1,4 +1,4 @@
-import { exec } from '~/code/tool/process.js'
+import { exec } from '~/code/tool/node/process.js'
 import { Command } from '~/code/type/index.js'
 
 export async function handleZipCommand(cmd: Command) {

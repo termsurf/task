@@ -1,22 +1,10 @@
-import { ConvertFontWithFontForge } from '~/code/type/index.js'
-import { buildCommandToConvertFontWithFontForge } from './shared.js'
-import { Command } from '~/code/tool/command.js'
-import { ChildProcessError, exec } from '~/code/tool/process.js'
-import kink from '~/code/tool/kink.js'
-
-export async function convertFontWithFontForge(
-  input: ConvertFontWithFontForge,
-) {
-  const list = await buildCommandToConvertFontWithFontForge(input)
-  for (const cmd of list) {
-    await handleFontforgeCommand(cmd.link)
-  }
-  return input.output.file.path
-}
+import { ChildProcessError, exec } from '~/code/tool/node/process.js'
+import kink from '~/code/tool/shared/kink.js'
+import { Command } from '~/code/type/index.js'
 
 export async function handleFontforgeCommand(cmd: Command) {
   try {
-    return await exec(cmd.join(' '))
+    return await exec(cmd.link.join(' '))
   } catch (e) {
     if (e instanceof ChildProcessError) {
       if (e.data.stderr) {

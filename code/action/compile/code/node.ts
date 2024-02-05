@@ -1,14 +1,4 @@
 import {
-  Compile,
-  CompileInputFormat,
-} from '~/code/type/call/compile.js'
-import {
-  BuildFormatInputOutput,
-  CompileCModel,
-  CompileCppModel,
-  CompileJavaModel,
-  CompileRustModel,
-  CompileSwiftModel,
   CompileLlvmIrToAssembly,
   FormatKotlin,
   CompileSwift,
@@ -21,18 +11,29 @@ import {
   buildCommandToCompileLlvmIrToAssembly,
   buildCommandToCompileSwift,
   buildCommandToCompileRust,
-} from '~/code/action/compile/code/local/shared.js'
-import { flattenObjectSafe } from '~/code/tool/shared/object.js'
+} from '~/code/action/compile/code/command.js'
+import {
+  flattenObjectSafe,
+  unsetAll,
+} from '~/code/tool/shared/object.js'
 import kink from '~/code/tool/shared/kink.js'
 import { ChildProcessError } from '~/code/tool/node/process.js'
 import ansiToHtml from 'ansi-to-html'
-import { compileCRemote } from '~/code/action/compile/code/remote/node.js'
 import _ from 'lodash'
 import {
   handleLlcCommand,
   handleSwiftcCommand,
 } from '../../convert/video/local/node'
-import { handleRustcCommand } from '../../format/code/local/node'
+import { handleRustcCommand } from '../../format/code/handler'
+import {
+  loadAllFilesForRemoteUpload,
+  saveAllRemoteFilesLocally,
+} from '~/code/tool/node/file.js'
+import {
+  FileLink,
+  addLocalFilesToList,
+  addRemoteFilesToList,
+} from '~/code/tool/shared/file.js'
 // import Parser from 'tree-sitter'
 // import JavaScript from 'tree-sitter-javascript'
 // import Swift from 'tree-sitter-swift'
@@ -152,62 +153,6 @@ import { handleRustcCommand } from '../../format/code/local/node'
 
 // file magic numbers: https://gist.github.com/Qti3e/6341245314bf3513abb080677cd1c93b
 
-export async function compile<I extends CompileInputFormat>(
-  source: Compile<I>,
-) {
-  return compileInternal(source)
-}
-
-export async function compileInternal(source: BuildFormatInputOutput) {
-  switch (source.input.format) {
-    case 'swift': {
-      const input = CompileSwiftModel.parse(source)
-      return await compileSwift(input)
-    }
-    case 'rust': {
-      const input = CompileRustModel.parse(source)
-      return await compileRust(input)
-    }
-    case 'c': {
-      const input = CompileCModel.parse(source)
-      return await compileC(input)
-    }
-    case 'cpp': {
-      const input = CompileCppModel.parse(source)
-      return await compileCpp(input)
-    }
-    case 'cs': {
-      // const input = CompileJavaModel.parse(source)
-      // return await compileJava(input)
-    }
-    case 'java': {
-      const input = CompileJavaModel.parse(source)
-      return await compileJava(input)
-    }
-    case 'haskell': {
-      // const input = CompileJavaModel.parse(source)
-      // return await compileJava(input)
-    }
-    case 'go': {
-      // const input = CompileJavaModel.parse(source)
-      // return await compileJava(input)
-    }
-    case 'kotlin': {
-      // const input = CompileJavaModel.parse(source)
-      // return await compileJava(input)
-    }
-    case 'clojure': {
-      // const input = CompileJavaModel.parse(source)
-      // return await compileJava(input)
-    }
-  }
-
-  throw kink('task_not_implemented', {
-    task: 'compile',
-    link: Object.keys(flattenObjectSafe(source) as object),
-  })
-}
-
 export async function compileLlvmIrToAssembly(
   input: CompileLlvmIrToAssembly,
 ) {
@@ -265,4 +210,47 @@ export async function compileRust(input: CompileRust) {
       throw kink('compilation_error', { note: e.message })
     }
   }
+}
+
+// https://www.npmjs.com/package/ftp
+export async function bindCompileLocal(input) {
+  const through = _.cloneDeep(input)
+  const files: Array<FileLink> = []
+
+  if (input.input.file.path) {
+    addRemoteFilesToList(files, input.input.file.path, [
+      'input',
+      'file',
+      'path',
+    ])
+  }
+
+  if (files.length) {
+    const fileThrough = await saveAllRemoteFilesLocally(files)
+    unsetAll(through, [['input', 'file', 'path']])
+    _.merge(through, fileThrough)
+  }
+
+  return through
+}
+
+export async function bindCompileRemote(input) {
+  const through = _.cloneDeep(input)
+  const files: Array<FileLink> = []
+
+  if (input.input.file.path) {
+    addLocalFilesToList(files, input.input.file.path, [
+      'input',
+      'file',
+      'content',
+    ])
+  }
+
+  if (files.length) {
+    const fileThrough = await loadAllFilesForRemoteUpload(files)
+    _.merge(through, fileThrough)
+    unsetAll(through, [['input', 'file', 'path']])
+  }
+
+  return through
 }

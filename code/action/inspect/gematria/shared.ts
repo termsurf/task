@@ -18,7 +18,7 @@ import {
   SharedGematriaLanguage,
 } from '~/code/type'
 import { detect as detectScript } from '@termsurf/talk/host/code/script/detect.js'
-import kink from '~/code/tool/kink'
+import kink from '~/code/tool/shared/kink'
 import _ from 'lodash'
 
 export function calculateGematria(source: CalculateGematria) {

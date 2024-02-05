@@ -117,145 +117,6 @@ export type BuildBaseInputFileOutputDirectory = {
   }
 }
 
-export type BuildCommandToConvertAiToSvgWithInkscape = {
-  async: boolean
-  explain: boolean
-  input: {
-    format: string
-    file: {
-      path: string
-    }
-  }
-  output: {
-    format: string
-    file: FileOutputPath
-  }
-  pathScope?: string
-}
-
-export type BuildCommandToConvertDocumentWithCalibre = {
-  async: boolean
-  explain: boolean
-  input: {
-    format: CalibreInputFormat
-    file: {
-      path: string
-    }
-  }
-  output: {
-    format: CalibreOutputFormat
-    file: FileOutputPath
-  }
-  pathScope?: string
-}
-
-export type BuildCommandToConvertDocumentWithJupyter = {
-  async: boolean
-  explain: boolean
-  input: {
-    format: string
-    file: {
-      path: string
-    }
-  }
-  output: {
-    format: string
-    file: FileOutputPath
-  }
-  pathScope?: string
-}
-
-export type BuildCommandToConvertDocumentWithLibreOffice = {
-  async: boolean
-  explain: boolean
-  input: {
-    format: LibreOfficeInputFormat
-    file: {
-      path: string
-    }
-  }
-  output: {
-    format: LibreOfficeOutputFormat
-    directory: FileOutputPath
-  }
-  pathScope?: string
-}
-
-export type BuildCommandToConvertDocumentWithPandoc = {
-  async: boolean
-  explain: boolean
-  input: {
-    format: PandocInputFormat
-    file: {
-      path: string
-    }
-  }
-  output: {
-    format: PandocOutputFormat
-    file: FileOutputPath
-  }
-  pathScope?: string
-}
-
-export type BuildCommandToConvertDocumentWithPuppeteer = {
-  async: boolean
-  explain: boolean
-  input: {
-    format: PuppeteerInputFormat
-    file: {
-      path: string
-    }
-  }
-  output: {
-    format: PuppeteerOutputFormat
-    file: FileOutputPath
-  }
-  pathScope?: string
-  viewport: {
-    width?: number
-    height?: number
-  }
-  proxy?: string
-  waitUntil?: PuppeteerLifeCycleEvent
-}
-
-export type BuildCommandToConvertImageWithImageMagick = {
-  async: boolean
-  explain: boolean
-  input: {
-    format: ImageMagickInputFormat
-    file: {
-      path: string
-    }
-  }
-  output: {
-    format: ImageMagickOutputFormat
-    file: FileOutputPath
-  }
-  pathScope?: string
-  colorCount?: number
-  colorMatrix?: ImageMagicColorMatrix
-  colorSpace?: ImageMagickColorSpace
-  compare?: boolean
-  compression?: ImageMagickCompression
-}
-
-export type BuildCommandToConvertLatexToPdfWithPdfLatex = {
-  async: boolean
-  explain: boolean
-  input: {
-    format: string
-    file: {
-      path: string
-    }
-  }
-  output: {
-    format: string
-    directory: FileOutputPath
-  }
-  pathScope?: string
-}
-
 export type BuildCommandToOptimizeGifWithGifsicle = {
   lossy?: number
   background?: string
@@ -3859,46 +3720,10 @@ export type CompressMp4WithFfmpeg = {
   videoCodec?: FfmpegCodecVideo
 }
 
-export type ConvertAiToSvgWithInkscape = {
-  remote: boolean
-  async: boolean
-  explain: boolean
-  input: {
-    format: string
-    file: FileInputPath | FileContent
-  }
-  output: {
-    format: string
-    file: FileOutputPath | FileHasOutputContent
-  }
-  pathScope?: string
-}
-
-export type ConvertAiToSvgWithInkscapeLocal = {
-  async: boolean
-  explain: boolean
-  input: {
-    format: string
-    file: {
-      path: string
-    }
-  }
-  output: {
-    format: string
-    file: FileOutputPath | FileHasOutputContent
-  }
-  pathScope?: string
-}
-
-export type ConvertAiToSvgWithInkscapeOutput = {
-  output: {
-    file: FilePath | FileContent
-  }
-}
-
-export type ConvertAiToSvgWithInkscapeRemote = {
-  async: boolean
-  explain: boolean
+export type ConvertAiToSvgWithInkscapeBrowserCall = {
+  remote?: boolean
+  async?: boolean
+  explain: ExplainFormat
   input: {
     format: string
     file: FileContent
@@ -3909,11 +3734,82 @@ export type ConvertAiToSvgWithInkscapeRemote = {
   pathScope?: string
 }
 
-export type ConvertAiToSvgWithInkscapeResponse = {
+export type ConvertAiToSvgWithInkscapeBrowserOutput = {
+  output: {
+    file: FileContent
+  }
+}
+
+export type ConvertAiToSvgWithInkscapeNodeCall = {
+  remote: boolean
+  async: boolean
+  explain: ExplainFormat
+  input: {
+    format: string
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: string
+    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertAiToSvgWithInkscapeNodeCommand = {
+  async?: boolean
+  explain?: ExplainFormat
+  input: {
+    format: string
+    file: {
+      path: string
+    }
+  }
+  output: {
+    format: string
+    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertAiToSvgWithInkscapeNodeLocalCall = {
+  async?: boolean
+  explain?: ExplainFormat
+  input: {
+    format: string
+    file: {
+      path: string
+    }
+  }
+  output: {
+    format: string
+    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertAiToSvgWithInkscapeNodeOutput = {
+  output: {
+    file: FilePath
+  }
+}
+
+export type ConvertAiToSvgWithInkscapeNodeOutputResponse = {
   form?: string
   code?: number
   note?: string
-  tree: ConvertAiToSvgWithInkscapeOutput
+  tree: ConvertAiToSvgWithInkscapeNodeOutput
+}
+
+export type ConvertAiToSvgWithInkscapeNodeRemoteCall = {
+  async?: boolean
+  input: {
+    format: string
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: string
+  }
+  pathScope?: string
 }
 
 export type ConvertArchiveWithUnarchiver = {
@@ -3936,46 +3832,10 @@ export type ConvertArchiveWithUnarchiver = {
   }
 }
 
-export type ConvertDocumentWithCalibre = {
-  remote: boolean
-  async: boolean
-  explain: boolean
-  input: {
-    format: CalibreInputFormat
-    file: FileInputPath | FileContent
-  }
-  output: {
-    format: CalibreOutputFormat
-    file: FileOutputPath | FileHasOutputContent
-  }
-  pathScope?: string
-}
-
-export type ConvertDocumentWithCalibreLocal = {
-  async: boolean
-  explain: boolean
-  input: {
-    format: CalibreInputFormat
-    file: {
-      path: string
-    }
-  }
-  output: {
-    format: CalibreOutputFormat
-    file: FileOutputPath | FileHasOutputContent
-  }
-  pathScope?: string
-}
-
-export type ConvertDocumentWithCalibreOutput = {
-  output: {
-    file: FilePath | FileContent
-  }
-}
-
-export type ConvertDocumentWithCalibreRemote = {
-  async: boolean
-  explain: boolean
+export type ConvertDocumentWithCalibreBrowserCall = {
+  remote?: boolean
+  async?: boolean
+  explain: ExplainFormat
   input: {
     format: CalibreInputFormat
     file: FileContent
@@ -3986,53 +3846,88 @@ export type ConvertDocumentWithCalibreRemote = {
   pathScope?: string
 }
 
-export type ConvertDocumentWithCalibreResponse = {
-  form?: string
-  code?: number
-  note?: string
-  tree: ConvertDocumentWithCalibreOutput
+export type ConvertDocumentWithCalibreBrowserOutput = {
+  output: {
+    file: FileContent
+  }
 }
 
-export type ConvertDocumentWithJupyter = {
+export type ConvertDocumentWithCalibreNodeCall = {
   remote: boolean
   async: boolean
-  explain: boolean
+  explain: ExplainFormat
   input: {
-    format: string
+    format: CalibreInputFormat
     file: FileInputPath | FileContent
   }
   output: {
-    format: string
-    file: FileOutputPath | FileHasOutputContent
+    format: CalibreOutputFormat
+    file: FileOutputPath
   }
   pathScope?: string
 }
 
-export type ConvertDocumentWithJupyterLocal = {
-  async: boolean
-  explain: boolean
+export type ConvertDocumentWithCalibreNodeCommand = {
+  async?: boolean
+  explain?: ExplainFormat
   input: {
-    format: string
+    format: CalibreInputFormat
     file: {
       path: string
     }
   }
   output: {
-    format: string
-    file: FileOutputPath | FileHasOutputContent
+    format: CalibreOutputFormat
+    file: FileOutputPath
   }
   pathScope?: string
 }
 
-export type ConvertDocumentWithJupyterOutput = {
+export type ConvertDocumentWithCalibreNodeLocalCall = {
+  async?: boolean
+  explain?: ExplainFormat
+  input: {
+    format: CalibreInputFormat
+    file: {
+      path: string
+    }
+  }
   output: {
-    file: FilePath | FileContent
+    format: CalibreOutputFormat
+    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithCalibreNodeOutput = {
+  output: {
+    file: FilePath
   }
 }
 
-export type ConvertDocumentWithJupyterRemote = {
-  async: boolean
-  explain: boolean
+export type ConvertDocumentWithCalibreNodeOutputResponse = {
+  form?: string
+  code?: number
+  note?: string
+  tree: ConvertDocumentWithCalibreNodeOutput
+}
+
+export type ConvertDocumentWithCalibreNodeRemoteCall = {
+  async?: boolean
+  input: {
+    format: CalibreInputFormat
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: CalibreOutputFormat
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithJupyterBrowserCall = {
+  remote?: boolean
+  async?: boolean
+  explain: ExplainFormat
   input: {
     format: string
     file: FileContent
@@ -4043,17 +3938,108 @@ export type ConvertDocumentWithJupyterRemote = {
   pathScope?: string
 }
 
-export type ConvertDocumentWithJupyterResponse = {
+export type ConvertDocumentWithJupyterBrowserOutput = {
+  output: {
+    file: FileContent
+  }
+}
+
+export type ConvertDocumentWithJupyterNodeCall = {
+  remote: boolean
+  async: boolean
+  explain: ExplainFormat
+  input: {
+    format: string
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: string
+    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithJupyterNodeCommand = {
+  async?: boolean
+  explain?: ExplainFormat
+  input: {
+    format: string
+    file: {
+      path: string
+    }
+  }
+  output: {
+    format: string
+    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithJupyterNodeLocalCall = {
+  async?: boolean
+  explain?: ExplainFormat
+  input: {
+    format: string
+    file: {
+      path: string
+    }
+  }
+  output: {
+    format: string
+    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithJupyterNodeOutput = {
+  output: {
+    file: FilePath
+  }
+}
+
+export type ConvertDocumentWithJupyterNodeOutputResponse = {
   form?: string
   code?: number
   note?: string
-  tree: ConvertDocumentWithJupyterOutput
+  tree: ConvertDocumentWithJupyterNodeOutput
 }
 
-export type ConvertDocumentWithLibreOffice = {
+export type ConvertDocumentWithJupyterNodeRemoteCall = {
+  async?: boolean
+  input: {
+    format: string
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: string
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithLibreOfficeBrowserCall = {
   remote: boolean
   async: boolean
-  explain: boolean
+  explain: ExplainFormat
+  input: {
+    format: LibreOfficeInputFormat
+    file: FileContent
+  }
+  output: {
+    format: LibreOfficeOutputFormat
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithLibreOfficeBrowserOutput = {
+  output: {
+    file: FileContent
+  }
+}
+
+export type ConvertDocumentWithLibreOfficeNodeCall = {
+  remote: boolean
+  async: boolean
+  explain: ExplainFormat
   input: {
     format: LibreOfficeInputFormat
     file: FileInputPath | FileContent
@@ -4065,9 +4051,7 @@ export type ConvertDocumentWithLibreOffice = {
   pathScope?: string
 }
 
-export type ConvertDocumentWithLibreOfficeLocal = {
-  async: boolean
-  explain: boolean
+export type ConvertDocumentWithLibreOfficeNodeCommand = {
   input: {
     format: LibreOfficeInputFormat
     file: {
@@ -4081,15 +4065,38 @@ export type ConvertDocumentWithLibreOfficeLocal = {
   pathScope?: string
 }
 
-export type ConvertDocumentWithLibreOfficeOutput = {
+export type ConvertDocumentWithLibreOfficeNodeLocalCall = {
+  async?: boolean
+  explain?: ExplainFormat
+  input: {
+    format: LibreOfficeInputFormat
+    file: {
+      path: string
+    }
+  }
   output: {
-    file: FilePath | FileContent
+    format: LibreOfficeOutputFormat
+    directory: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithLibreOfficeNodeOutput = {
+  output: {
+    file: FilePath
   }
 }
 
-export type ConvertDocumentWithLibreOfficeRemote = {
-  async: boolean
-  explain: boolean
+export type ConvertDocumentWithLibreOfficeNodeOutputResponse = {
+  form?: string
+  code?: number
+  note?: string
+  tree: ConvertDocumentWithLibreOfficeNodeOutput
+}
+
+export type ConvertDocumentWithLibreOfficeNodeRemoteCall = {
+  async?: boolean
+  explain?: ExplainFormat
   input: {
     format: LibreOfficeInputFormat
     file: FileContent
@@ -4100,53 +4107,10 @@ export type ConvertDocumentWithLibreOfficeRemote = {
   pathScope?: string
 }
 
-export type ConvertDocumentWithLibreOfficeResponse = {
-  form?: string
-  code?: number
-  note?: string
-  tree: ConvertDocumentWithLibreOfficeOutput
-}
-
-export type ConvertDocumentWithPandoc = {
-  remote: boolean
-  async: boolean
-  explain: boolean
-  input: {
-    format: PandocInputFormat
-    file: FileInputPath | FileContent
-  }
-  output: {
-    format: PandocOutputFormat
-    file: FileOutputPath | FileHasOutputContent
-  }
-  pathScope?: string
-}
-
-export type ConvertDocumentWithPandocLocal = {
-  async: boolean
-  explain: boolean
-  input: {
-    format: PandocInputFormat
-    file: {
-      path: string
-    }
-  }
-  output: {
-    format: PandocOutputFormat
-    file: FileOutputPath | FileHasOutputContent
-  }
-  pathScope?: string
-}
-
-export type ConvertDocumentWithPandocOutput = {
-  output: {
-    file: FilePath | FileContent
-  }
-}
-
-export type ConvertDocumentWithPandocRemote = {
-  async: boolean
-  explain: boolean
+export type ConvertDocumentWithPandocBrowserCall = {
+  remote?: boolean
+  async?: boolean
+  explain: ExplainFormat
   input: {
     format: PandocInputFormat
     file: FileContent
@@ -4157,65 +4121,88 @@ export type ConvertDocumentWithPandocRemote = {
   pathScope?: string
 }
 
-export type ConvertDocumentWithPandocResponse = {
-  form?: string
-  code?: number
-  note?: string
-  tree: ConvertDocumentWithPandocOutput
+export type ConvertDocumentWithPandocBrowserOutput = {
+  output: {
+    file: FileContent
+  }
 }
 
-export type ConvertDocumentWithPuppeteer = {
+export type ConvertDocumentWithPandocNodeCall = {
   remote: boolean
   async: boolean
-  explain: boolean
+  explain: ExplainFormat
   input: {
-    format: PuppeteerInputFormat
+    format: PandocInputFormat
     file: FileInputPath | FileContent
   }
   output: {
-    format: PuppeteerOutputFormat
-    file: FileOutputPath | FileHasOutputContent
+    format: PandocOutputFormat
+    file: FileOutputPath
   }
   pathScope?: string
-  viewport: {
-    width?: number
-    height?: number
-  }
-  proxy?: string
-  waitUntil?: PuppeteerLifeCycleEvent
 }
 
-export type ConvertDocumentWithPuppeteerLocal = {
-  async: boolean
-  explain: boolean
+export type ConvertDocumentWithPandocNodeCommand = {
+  async?: boolean
+  explain?: ExplainFormat
   input: {
-    format: PuppeteerInputFormat
+    format: PandocInputFormat
     file: {
       path: string
     }
   }
   output: {
-    format: PuppeteerOutputFormat
-    file: FileOutputPath | FileHasOutputContent
+    format: PandocOutputFormat
+    file: FileOutputPath
   }
   pathScope?: string
-  viewport: {
-    width?: number
-    height?: number
-  }
-  proxy?: string
-  waitUntil?: PuppeteerLifeCycleEvent
 }
 
-export type ConvertDocumentWithPuppeteerOutput = {
+export type ConvertDocumentWithPandocNodeLocalCall = {
+  async?: boolean
+  explain?: ExplainFormat
+  input: {
+    format: PandocInputFormat
+    file: {
+      path: string
+    }
+  }
   output: {
-    file: FilePath | FileContent
+    format: PandocOutputFormat
+    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithPandocNodeOutput = {
+  output: {
+    file: FilePath
   }
 }
 
-export type ConvertDocumentWithPuppeteerRemote = {
-  async: boolean
-  explain: boolean
+export type ConvertDocumentWithPandocNodeOutputResponse = {
+  form?: string
+  code?: number
+  note?: string
+  tree: ConvertDocumentWithPandocNodeOutput
+}
+
+export type ConvertDocumentWithPandocNodeRemoteCall = {
+  async?: boolean
+  input: {
+    format: PandocInputFormat
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: PandocOutputFormat
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithPuppeteerBrowserCall = {
+  remote?: boolean
+  async?: boolean
+  explain: ExplainFormat
   input: {
     format: PuppeteerInputFormat
     file: FileContent
@@ -4232,14 +4219,146 @@ export type ConvertDocumentWithPuppeteerRemote = {
   waitUntil?: PuppeteerLifeCycleEvent
 }
 
-export type ConvertDocumentWithPuppeteerResponse = {
+export type ConvertDocumentWithPuppeteerBrowserOutput = {
+  output: {
+    file: FileContent
+  }
+}
+
+export type ConvertDocumentWithPuppeteerNodeCall = {
+  remote: boolean
+  async: boolean
+  explain: ExplainFormat
+  input: {
+    format: PuppeteerInputFormat
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file: FileOutputPath
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+}
+
+export type ConvertDocumentWithPuppeteerNodeCommand = {
+  async?: boolean
+  explain?: ExplainFormat
+  input: {
+    format: PuppeteerInputFormat
+    file: {
+      path: string
+    }
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file: FileOutputPath
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+}
+
+export type ConvertDocumentWithPuppeteerNodeLocalCall = {
+  async?: boolean
+  explain?: ExplainFormat
+  input: {
+    format: PuppeteerInputFormat
+    file: {
+      path: string
+    }
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file: FileOutputPath
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+}
+
+export type ConvertDocumentWithPuppeteerNodeOutput = {
+  output: {
+    file: FilePath
+  }
+}
+
+export type ConvertDocumentWithPuppeteerNodeOutputResponse = {
   form?: string
   code?: number
   note?: string
-  tree: ConvertDocumentWithPuppeteerOutput
+  tree: ConvertDocumentWithPuppeteerNodeOutput
 }
 
-export type ConvertFontWithFontForge = {
+export type ConvertDocumentWithPuppeteerNodeRemoteCall = {
+  async?: boolean
+  input: {
+    format: PuppeteerInputFormat
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: PuppeteerOutputFormat
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+}
+
+export type ConvertFontWithFontForgeBrowserCall = {
+  remote?: boolean
+  async?: boolean
+  explain: ExplainFormat
+  input: {
+    format: FontFormat
+    file: FileContent
+  }
+  output: {
+    format: FontFormat
+  }
+  pathScope?: string
+}
+
+export type ConvertFontWithFontForgeBrowserOutput = {
+  output: {
+    file: FileContent
+  }
+}
+
+export type ConvertFontWithFontForgeNodeCall = {
+  remote: boolean
+  async: boolean
+  explain: ExplainFormat
+  input: {
+    format: FontFormat
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: FontFormat
+    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertFontWithFontForgeNodeCommand = {
+  async?: boolean
+  explain?: ExplainFormat
   input: {
     format: FontFormat
     file: {
@@ -4248,62 +4367,56 @@ export type ConvertFontWithFontForge = {
   }
   output: {
     format: FontFormat
+    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertFontWithFontForgeNodeLocalCall = {
+  async?: boolean
+  explain?: ExplainFormat
+  input: {
+    format: FontFormat
     file: {
       path: string
     }
   }
+  output: {
+    format: FontFormat
+    file: FileOutputPath
+  }
+  pathScope?: string
 }
 
-export type ConvertImageWithImageMagick = {
-  remote: boolean
-  async: boolean
-  explain: boolean
+export type ConvertFontWithFontForgeNodeOutput = {
+  output: {
+    file: FilePath
+  }
+}
+
+export type ConvertFontWithFontForgeNodeOutputResponse = {
+  form?: string
+  code?: number
+  note?: string
+  tree: ConvertFontWithFontForgeNodeOutput
+}
+
+export type ConvertFontWithFontForgeNodeRemoteCall = {
+  async?: boolean
   input: {
-    format: ImageMagickInputFormat
+    format: FontFormat
     file: FileInputPath | FileContent
   }
   output: {
-    format: ImageMagickOutputFormat
-    file: FileOutputPath | FileHasOutputContent
+    format: FontFormat
   }
   pathScope?: string
-  colorCount?: number
-  colorMatrix?: ImageMagicColorMatrix
-  colorSpace?: ImageMagickColorSpace
-  compare?: boolean
-  compression?: ImageMagickCompression
 }
 
-export type ConvertImageWithImageMagickLocal = {
-  async: boolean
-  explain: boolean
-  input: {
-    format: ImageMagickInputFormat
-    file: {
-      path: string
-    }
-  }
-  output: {
-    format: ImageMagickOutputFormat
-    file: FileOutputPath | FileHasOutputContent
-  }
-  pathScope?: string
-  colorCount?: number
-  colorMatrix?: ImageMagicColorMatrix
-  colorSpace?: ImageMagickColorSpace
-  compare?: boolean
-  compression?: ImageMagickCompression
-}
-
-export type ConvertImageWithImageMagickOutput = {
-  output: {
-    file: FilePath | FileContent
-  }
-}
-
-export type ConvertImageWithImageMagickRemote = {
-  async: boolean
-  explain: boolean
+export type ConvertImageWithImageMagickBrowserCall = {
+  remote?: boolean
+  async?: boolean
+  explain: ExplainFormat
   input: {
     format: ImageMagickInputFormat
     file: FileContent
@@ -4319,17 +4432,128 @@ export type ConvertImageWithImageMagickRemote = {
   compression?: ImageMagickCompression
 }
 
-export type ConvertImageWithImageMagickResponse = {
+export type ConvertImageWithImageMagickBrowserOutput = {
+  output: {
+    file: FileContent
+  }
+}
+
+export type ConvertImageWithImageMagickNodeCall = {
+  remote: boolean
+  async: boolean
+  explain: ExplainFormat
+  input: {
+    format: ImageMagickInputFormat
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: ImageMagickOutputFormat
+    file: FileOutputPath
+  }
+  pathScope?: string
+  colorCount?: number
+  colorMatrix?: ImageMagicColorMatrix
+  colorSpace?: ImageMagickColorSpace
+  compare?: boolean
+  compression?: ImageMagickCompression
+}
+
+export type ConvertImageWithImageMagickNodeCommand = {
+  async?: boolean
+  explain?: ExplainFormat
+  input: {
+    format: ImageMagickInputFormat
+    file: {
+      path: string
+    }
+  }
+  output: {
+    format: ImageMagickOutputFormat
+    file: FileOutputPath
+  }
+  pathScope?: string
+  colorCount?: number
+  colorMatrix?: ImageMagicColorMatrix
+  colorSpace?: ImageMagickColorSpace
+  compare?: boolean
+  compression?: ImageMagickCompression
+}
+
+export type ConvertImageWithImageMagickNodeLocalCall = {
+  async?: boolean
+  explain?: ExplainFormat
+  input: {
+    format: ImageMagickInputFormat
+    file: {
+      path: string
+    }
+  }
+  output: {
+    format: ImageMagickOutputFormat
+    file: FileOutputPath
+  }
+  pathScope?: string
+  colorCount?: number
+  colorMatrix?: ImageMagicColorMatrix
+  colorSpace?: ImageMagickColorSpace
+  compare?: boolean
+  compression?: ImageMagickCompression
+}
+
+export type ConvertImageWithImageMagickNodeOutput = {
+  output: {
+    file: FilePath
+  }
+}
+
+export type ConvertImageWithImageMagickNodeOutputResponse = {
   form?: string
   code?: number
   note?: string
-  tree: ConvertImageWithImageMagickOutput
+  tree: ConvertImageWithImageMagickNodeOutput
 }
 
-export type ConvertLatexToPdfWithPdfLatex = {
+export type ConvertImageWithImageMagickNodeRemoteCall = {
+  async?: boolean
+  input: {
+    format: ImageMagickInputFormat
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: ImageMagickOutputFormat
+  }
+  pathScope?: string
+  colorCount?: number
+  colorMatrix?: ImageMagicColorMatrix
+  colorSpace?: ImageMagickColorSpace
+  compare?: boolean
+  compression?: ImageMagickCompression
+}
+
+export type ConvertLatexToPdfWithPdfLatexBrowserCall = {
   remote: boolean
   async: boolean
-  explain: boolean
+  explain: ExplainFormat
+  input: {
+    format: string
+    file: FileContent
+  }
+  output: {
+    format: string
+  }
+  pathScope?: string
+}
+
+export type ConvertLatexToPdfWithPdfLatexBrowserOutput = {
+  output: {
+    file: FileContent
+  }
+}
+
+export type ConvertLatexToPdfWithPdfLatexNodeCall = {
+  remote: boolean
+  async: boolean
+  explain: ExplainFormat
   input: {
     format: string
     file: FileInputPath | FileContent
@@ -4341,9 +4565,7 @@ export type ConvertLatexToPdfWithPdfLatex = {
   pathScope?: string
 }
 
-export type ConvertLatexToPdfWithPdfLatexLocal = {
-  async: boolean
-  explain: boolean
+export type ConvertLatexToPdfWithPdfLatexNodeCommand = {
   input: {
     format: string
     file: {
@@ -4357,15 +4579,38 @@ export type ConvertLatexToPdfWithPdfLatexLocal = {
   pathScope?: string
 }
 
-export type ConvertLatexToPdfWithPdfLatexOutput = {
+export type ConvertLatexToPdfWithPdfLatexNodeLocalCall = {
+  async?: boolean
+  explain?: ExplainFormat
+  input: {
+    format: string
+    file: {
+      path: string
+    }
+  }
   output: {
-    file: FilePath | FileContent
+    format: string
+    directory: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertLatexToPdfWithPdfLatexNodeOutput = {
+  output: {
+    file: FilePath
   }
 }
 
-export type ConvertLatexToPdfWithPdfLatexRemote = {
-  async: boolean
-  explain: boolean
+export type ConvertLatexToPdfWithPdfLatexNodeOutputResponse = {
+  form?: string
+  code?: number
+  note?: string
+  tree: ConvertLatexToPdfWithPdfLatexNodeOutput
+}
+
+export type ConvertLatexToPdfWithPdfLatexNodeRemoteCall = {
+  async?: boolean
+  explain?: ExplainFormat
   input: {
     format: string
     file: FileContent
@@ -4374,13 +4619,6 @@ export type ConvertLatexToPdfWithPdfLatexRemote = {
     format: string
   }
   pathScope?: string
-}
-
-export type ConvertLatexToPdfWithPdfLatexResponse = {
-  form?: string
-  code?: number
-  note?: string
-  tree: ConvertLatexToPdfWithPdfLatexOutput
 }
 
 export type ConvertMp4ToGifWithFfmpeg = {
@@ -76052,6 +76290,10 @@ export const EXIFTOOL_TAG_CONTENT: ExiftoolTagContent = {
   },
 }
 
+export const EXPLAIN_FORMAT = ['code', 'command', 'curl'] as const
+
+export type ExplainFormat = (typeof EXPLAIN_FORMAT)[number]
+
 export const FFMPEG_CODEC_AUDIO = [
   '4gv',
   '8svx_exp',
@@ -92794,7 +93036,7 @@ export const FFMPEG_STRICT_OPTION_CONTENT: FfmpegStrictOptionContent = {
 }
 
 export type FileContent = {
-  content: ArrayBuffer
+  content: ArrayBuffer | string
 }
 
 export type FileHasOutputContent = {

@@ -35,6 +35,9 @@ dependencies:
   '@termsurf/kink-text':
     specifier: ^0.0.1
     version: 0.0.1
+  '@termsurf/love-code':
+    specifier: ^0.1.10
+    version: 0.1.10
   '@termsurf/talk':
     specifier: ^0.1.14
     version: 0.1.14

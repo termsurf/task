@@ -1,4 +1,4 @@
-import { Form } from '@termsurf/form'
+import { Form, List } from '@termsurf/form'
 import { defineResponse } from '~/code/tool/shared/type.js'
 
 export const command_name = {
@@ -86,4 +86,9 @@ export const response: Form = {
     note: { like: 'string', need: false, fall: 'success' },
     tree: { like: 'json' },
   },
+}
+
+export const explain_format: List = {
+  form: 'list',
+  list: ['code', 'command', 'curl'],
 }

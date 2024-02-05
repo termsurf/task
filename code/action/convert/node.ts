@@ -1,201 +1,117 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import {
-  CALIBRE_INPUT_FORMAT,
-  CALIBRE_OUTPUT_FORMAT,
-  CalibreInputFormat,
-  CalibreOutputFormat,
-  ConvertDocumentWithCalibreModel,
-  ConvertDocumentWithLibreOfficeModel,
-  ConvertDocumentWithPandocModel,
-  ConvertFontWithFontForgeModel,
-  ConvertImageWithImageMagickModel,
-  ConvertVideoWithFfmpegModel,
-  FFMPEG_FORMAT,
-  FONT_FORMAT,
-  FfmpegFormat,
-  FontFormat,
-  IMAGE_MAGICK_INPUT_FORMAT,
-  IMAGE_MAGICK_OUTPUT_FORMAT,
+  ConvertImageWithImageMagickNodeCall,
+  ExtractBySubKey,
   ImageMagickInputFormat,
   ImageMagickOutputFormat,
-  LIBRE_OFFICE_INPUT_FORMAT,
-  LIBRE_OFFICE_OUTPUT_FORMAT,
-  LibreOfficeInputFormat,
-  LibreOfficeOutputFormat,
-  PANDOC_INPUT_FORMAT,
-  PANDOC_OUTPUT_FORMAT,
-  PandocInputFormat,
-  PandocOutputFormat,
+  Values,
 } from '~/code/type/index.js'
-import {
-  Convert,
-  ConvertInputFormat,
-} from '~/code/type/call/convert.js'
 import {
   convertDocumentWithCalibre,
   convertDocumentWithLibreOffice,
   convertDocumentWithPandoc,
-} from '~/code/action/convert/document/local/node.js'
-import { convertFontWithFontForge } from '~/code/action/convert/font/local/node.js'
-import { convertImageWithImageMagick } from '~/code/action/convert/image/local/node.js'
+} from '~/code/action/convert/document/node.js'
 import { convertVideoWithFfmpeg } from '~/code/action/convert/video/local/node.js'
+import {
+  useConvertDocumentWithCalibre,
+  useConvertDocumentWithLibreOffice,
+  useConvertDocumentWithPandoc,
+  useConvertFontWithFontForge,
+  useConvertImageWithImageMagick,
+  useConvertVideoWithFfmpeg,
+} from './shared.js'
+import { convertImageWithImageMagickNode } from './image/node.js'
 
-// convert({
-//   input: { format: 'epub', file: { path: 'foo.epub' } },
-//   output: { format: 'mobi', file: { path: 'foo.mobi' } },
-// })
+// // https://www.reddit.com/r/typescript/comments/199eutl/typescript_error_type_string_cannot_be_used_to/
+export type ConvertInput = {
+  // video: {
+  //   input: FfmpegFormat
+  //   output: FfmpegFormat
+  //   // extend: CompressMp4WithFfmpeg
+  // }
+  image: {
+    input: ImageMagickInputFormat
+    output: ImageMagickOutputFormat
+    extend: ConvertImageWithImageMagickNodeCall
+  }
+  // calibre: {
+  //   input: CalibreInputFormat
+  //   output: CalibreOutputFormat
+  //   extend: ConvertDocumentWithCalibre
+  // }
+}
+
+export type ConvertInputList = Values<ConvertInput>
+
+export type ConvertInputFormat = ConvertInputList['input']
+
+export type ConvertOutputFormat<I extends ConvertInputFormat> =
+  ExtractBySubKey<ConvertInputList, I>
+
+export type Convert<I extends ConvertInputFormat> = {
+  input: {
+    format: I
+  }
+  output: {
+    format: ConvertOutputFormat<I>['output']
+  }
+} & ConvertOutputFormat<I>['extend']
 
 export async function convert<I extends ConvertInputFormat>(
-  props: Convert<I>,
+  source: Convert<I>,
 ) {
+  return await convertInternal(source)
+}
+
+export async function convertInternal(source) {
   if (
     useConvertImageWithImageMagick(
-      props.input.format,
-      props.output.format,
+      source.input.format,
+      source.output.format,
     )
   ) {
-    const input = ConvertImageWithImageMagickModel.parse(props)
-    return await convertImageWithImageMagick(input)
+    return await convertImageWithImageMagickNode(source)
   }
 
   if (
-    useConvertVideoWithFfmpeg(props.input.format, props.output.format)
+    useConvertVideoWithFfmpeg(source.input.format, source.output.format)
   ) {
-    const input = ConvertVideoWithFfmpegModel.parse(props)
-    return await convertVideoWithFfmpeg(input)
+    return await convertVideoWithFfmpeg(source)
   }
 
   if (
-    useConvertFontWithFontForge(props.input.format, props.output.format)
+    useConvertFontWithFontForge(
+      source.input.format,
+      source.output.format,
+    )
   ) {
-    const input = ConvertFontWithFontForgeModel.parse(props)
-    return await convertFontWithFontForge(input)
+    return await convertFontWithFontForge(source)
   }
 
   if (
     useConvertDocumentWithCalibre(
-      props.input.format,
-      props.output.format,
+      source.input.format,
+      source.output.format,
     )
   ) {
-    const input = ConvertDocumentWithCalibreModel.parse(props)
-    return await convertDocumentWithCalibre(input)
+    return await convertDocumentWithCalibre(source)
   }
 
   if (
     useConvertDocumentWithPandoc(
-      props.input.format,
-      props.output.format,
+      source.input.format,
+      source.output.format,
     )
   ) {
-    const input = ConvertDocumentWithPandocModel.parse(props)
-    return await convertDocumentWithPandoc(input)
+    return await convertDocumentWithPandoc(source)
   }
 
   if (
     useConvertDocumentWithLibreOffice(
-      props.input.format,
-      props.output.format,
+      source.input.format,
+      source.output.format,
     )
   ) {
-    const input = ConvertDocumentWithLibreOfficeModel.parse(props)
-    return await convertDocumentWithLibreOffice(input)
+    return await convertDocumentWithLibreOffice(source)
   }
-}
-
-export function useConvertImageWithImageMagick(a: string, b: string) {
-  if (a === b) {
-    return false
-  }
-  if (
-    !IMAGE_MAGICK_INPUT_FORMAT.includes(a as ImageMagickInputFormat)
-  ) {
-    return false
-  }
-  if (
-    !IMAGE_MAGICK_OUTPUT_FORMAT.includes(b as ImageMagickOutputFormat)
-  ) {
-    return false
-  }
-  return true
-}
-
-export function useConvertVideoWithFfmpeg(a: string, b: string) {
-  if (a === b) {
-    return false
-  }
-  if (!FFMPEG_FORMAT.includes(a as FfmpegFormat)) {
-    return false
-  }
-  if (!FFMPEG_FORMAT.includes(b as FfmpegFormat)) {
-    return false
-  }
-  return true
-}
-
-export function useConvertFontWithFontForge(a: string, b: string) {
-  if (a === b) {
-    return false
-  }
-  if (!FONT_FORMAT.includes(a as FontFormat)) {
-    return false
-  }
-  if (!FONT_FORMAT.includes(b as FontFormat)) {
-    return false
-  }
-  return true
-}
-
-export function useConvertDocumentWithCalibre(a: string, b: string) {
-  if (a === b) {
-    return false
-  }
-  if (!CALIBRE_INPUT_FORMAT.includes(a as CalibreInputFormat)) {
-    return false
-  }
-  if (!CALIBRE_OUTPUT_FORMAT.includes(b as CalibreOutputFormat)) {
-    return false
-  }
-  return true
-}
-
-export function useConvertDocumentWithPandoc(a: string, b: string) {
-  if (a === b) {
-    return false
-  }
-  if (!PANDOC_INPUT_FORMAT.includes(a as PandocInputFormat)) {
-    return false
-  }
-  if (!PANDOC_OUTPUT_FORMAT.includes(b as PandocOutputFormat)) {
-    return false
-  }
-  return true
-}
-
-export function useConvertDocumentWithLibreOffice(
-  a: string,
-  b: string,
-) {
-  if (a === b) {
-    return false
-  }
-  if (
-    !LIBRE_OFFICE_INPUT_FORMAT.includes(a as LibreOfficeInputFormat)
-  ) {
-    return false
-  }
-  if (
-    !LIBRE_OFFICE_OUTPUT_FORMAT.includes(b as LibreOfficeOutputFormat)
-  ) {
-    return false
-  }
-  return true
-}
-
-export async function convertArchive(source) {
-  // const input = IOConvertArchive.parse(source)
-  // const list = ConvertArchive(input)
-  // for (const cmd of list) {
-  //   await handleCommand(cmd)
-  // }
 }

@@ -1,21 +1,19 @@
 import {
-  ConvertAiToSvgWithInkscape,
   VerifyImageWithImageMagick,
   IMAGE_MAGICK_COLOR_SPACE_CONTENT,
   IMAGE_MAGICK_COMPRESSION_CONTENT,
   InspectMetadataFromImage,
-  BuildCommandToConvertImageWithImageMagick,
-  BuildCommandToConvertImageWithImageMagickModel,
+  ConvertImageWithImageMagickNodeCommand,
+  ConvertImageWithImageMagickNodeCommandModel,
+  ConvertAiToSvgWithInkscapeNodeCommand,
+  ConvertAiToSvgWithInkscapeNodeCommandModel,
 } from '~/code/type/index.js'
 import {
   getCommand,
   buildCommandSequence,
 } from '~/code/tool/shared/command.js'
 import _ from 'lodash'
-import {
-  resolvePath,
-  resolvePathRelativeToScope,
-} from '~/code/tool/file'
+import { resolvePathRelativeToScope } from '~/code/tool/shared/file.js'
 
 // export function BatchProcessImages() {
 //   const cmd = [
@@ -30,18 +28,18 @@ import {
 // }
 
 export function buildCommandToConvertImageWithImageMagick(
-  source: BuildCommandToConvertImageWithImageMagick,
+  source: ConvertImageWithImageMagickNodeCommand,
 ) {
   const input =
-    BuildCommandToConvertImageWithImageMagickModel.parse(source)
+    ConvertImageWithImageMagickNodeCommandModel.parse(source)
 
   const ip = resolvePathRelativeToScope(
     input.input.file.path,
-    input.filePathScope,
+    input.pathScope,
   )
   const op = resolvePathRelativeToScope(
     input.output.file.path,
-    input.filePathScope,
+    input.pathScope,
   )
 
   const cmd = getCommand(`convert`)
@@ -180,8 +178,9 @@ export function buildCommandToGenerateGifWithGifsicle(input) {
 }
 
 export async function buildCommandToConvertAIToSVGWithInkscape(
-  input: ConvertAiToSvgWithInkscape,
+  source: ConvertAiToSvgWithInkscapeNodeCommand,
 ) {
+  const input = ConvertAiToSvgWithInkscapeNodeCommandModel.parse(source)
   const cmd = getCommand(`inkscape`)
 
   cmd.link.push(
@@ -190,7 +189,7 @@ export async function buildCommandToConvertAIToSVGWithInkscape(
     `"${input.output.file.path}"`,
   )
 
-  return [cmd]
+  return buildCommandSequence(cmd)
 }
 
 export async function buildCommandToVerifyImageWithImageMagick(

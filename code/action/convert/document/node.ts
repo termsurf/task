@@ -3,7 +3,7 @@ import {
   buildCommandToConvertDocumentWithCalibre,
   buildCommandToConvertLatexToPdfWithPdfLatex,
   buildCommandToConvertDocumentWithPandoc,
-} from './shared.js'
+} from './command.js'
 import _ from 'lodash'
 import path from 'node:path'
 import __dirname from '~/code/tool/shared/directory.js'

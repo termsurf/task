@@ -5,8 +5,8 @@ import {
   convertDocumentWithCalibre,
   convertDocumentWithLibreOffice,
   convertDocumentWithPandoc,
-} from '~/code/action/convert/document/local/node.js'
-import { convertFontWithFontForge } from '~/code/action/convert/font/local/node.js'
+} from '~/code/action/convert/document/node.js'
+import { convertFontWithFontForge } from '~/code/action/convert/font/node.js'
 import { convertVideoWithFfmpeg } from '~/code/action/convert/video/local/node.js'
 import {
   convertImageWithImageMagick,
@@ -35,7 +35,7 @@ import {
   ConvertVideoWithFfmpegModel,
   VerifyImageWithImageMagickModel,
 } from '~/code/type/index.js'
-import kink from '~/code/tool/kink.js'
+import kink from '~/code/tool/shared/kink.js'
 import {
   useConvertDocumentWithCalibre,
   useConvertDocumentWithLibreOffice,

@@ -1,4 +1,4 @@
-import { getCommand } from '~/code/tool/command.js'
+import { getCommand } from '~/code/tool/shared/command.js'
 import { RemoveImageMetadata } from '~/code/type/index.js'
 
 export function buildCommandToRemoveImageMetadata(

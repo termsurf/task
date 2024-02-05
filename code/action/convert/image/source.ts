@@ -20,23 +20,29 @@ const convert_image_with_image_magick_forms = buildConvertForms(
   },
 )
 
-export const convert_image_with_image_magick_output =
-  convert_image_with_image_magick_forms.output
+export const convert_image_with_image_magick_node_output =
+  convert_image_with_image_magick_forms.node_output
 
-export const convert_image_with_image_magick_response =
-  convert_image_with_image_magick_forms.response
+export const convert_image_with_image_magick_node_output_response =
+  convert_image_with_image_magick_forms.node_output_response
 
-export const convert_image_with_image_magick =
-  convert_image_with_image_magick_forms.call
+export const convert_image_with_image_magick_node_call =
+  convert_image_with_image_magick_forms.node_call
 
-export const convert_image_with_image_magick_local =
-  convert_image_with_image_magick_forms.local
+export const convert_image_with_image_magick_node_local_call =
+  convert_image_with_image_magick_forms.node_local_call
 
-export const build_command_to_convert_image_with_image_magick =
-  convert_image_with_image_magick_forms.command
+export const convert_image_with_image_magick_node_command =
+  convert_image_with_image_magick_forms.node_command
 
-export const convert_image_with_image_magick_remote =
-  convert_image_with_image_magick_forms.remote
+export const convert_image_with_image_magick_node_remote_call =
+  convert_image_with_image_magick_forms.node_remote_call
+
+export const convert_image_with_image_magick_browser_call =
+  convert_image_with_image_magick_forms.browser_call
+
+export const convert_image_with_image_magick_browser_output =
+  convert_image_with_image_magick_forms.browser_output
 
 // convert_ai_to_svg_with_inkscape_forms
 
@@ -46,20 +52,26 @@ export const convert_ai_to_svg_with_inkscape_forms = buildConvertForms(
   'string',
 )
 
-export const convert_ai_to_svg_with_inkscape_output =
-  convert_ai_to_svg_with_inkscape_forms.output
+export const convert_ai_to_svg_with_inkscape_node_output =
+  convert_ai_to_svg_with_inkscape_forms.node_output
 
-export const convert_ai_to_svg_with_inkscape_response =
-  convert_ai_to_svg_with_inkscape_forms.response
+export const convert_ai_to_svg_with_inkscape_node_output_response =
+  convert_ai_to_svg_with_inkscape_forms.node_output_response
 
-export const convert_ai_to_svg_with_inkscape =
-  convert_ai_to_svg_with_inkscape_forms.call
+export const convert_ai_to_svg_with_inkscape_node_call =
+  convert_ai_to_svg_with_inkscape_forms.node_call
 
-export const convert_ai_to_svg_with_inkscape_local =
-  convert_ai_to_svg_with_inkscape_forms.local
+export const convert_ai_to_svg_with_inkscape_node_local_call =
+  convert_ai_to_svg_with_inkscape_forms.node_local_call
 
-export const build_command_to_convert_ai_to_svg_with_inkscape =
-  convert_ai_to_svg_with_inkscape_forms.command
+export const convert_ai_to_svg_with_inkscape_node_command =
+  convert_ai_to_svg_with_inkscape_forms.node_command
 
-export const convert_ai_to_svg_with_inkscape_remote =
-  convert_ai_to_svg_with_inkscape_forms.remote
+export const convert_ai_to_svg_with_inkscape_node_remote_call =
+  convert_ai_to_svg_with_inkscape_forms.node_remote_call
+
+export const convert_ai_to_svg_with_inkscape_browser_call =
+  convert_ai_to_svg_with_inkscape_forms.browser_call
+
+export const convert_ai_to_svg_with_inkscape_browser_output =
+  convert_ai_to_svg_with_inkscape_forms.browser_output

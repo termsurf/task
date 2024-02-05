@@ -4,8 +4,8 @@ export { replaceFileExtension }
 
 export function fitCommandToScreen(
   array: Array<string>,
-  size = 92,
-): Array<string> {
+  size = 72,
+): string {
   const lines: Array<string> = []
   let line: Array<string> = []
 
@@ -58,5 +58,5 @@ export function fitCommandToScreen(
     }
   })
 
-  return lines
+  return lines.join('\n')
 }

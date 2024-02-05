@@ -43,6 +43,7 @@
     "@termsurf/form": "^0.4.84",
     "@termsurf/kink": "^0.1.2",
     "@termsurf/kink-text": "^0.0.1",
+    "@termsurf/love-code": "^0.1.10",
     "@termsurf/talk": "^0.1.14",
     "@termsurf/tint-text": "^0.0.3",
     "@types/archiver": "^6.0.2",

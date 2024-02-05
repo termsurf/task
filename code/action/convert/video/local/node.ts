@@ -1,12 +1,12 @@
 import bytes from 'bytes'
 import child_process from 'child_process'
-import { Command } from '~/code/tool/command.js'
-import kink from '~/code/tool/kink.js'
+import { Command } from '~/code/tool/shared/command.js'
+import kink from '~/code/tool/shared/kink.js'
 import {
   ChildProcessError,
   Message,
   exec,
-} from '~/code/tool/process.js'
+} from '~/code/tool/node/process.js'
 import Kink from '@termsurf/kink'
 import _ from 'lodash'
 import { stripAnsiFromText } from '~/code/cli/logging.js'

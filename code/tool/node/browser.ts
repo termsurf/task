@@ -1,7 +1,7 @@
 import { Browser } from 'puppeteer'
 import puppeteer from 'puppeteer-extra'
 import fs from 'fs'
-import __dirname from '~/code/tool/directory.js'
+import __dirname from '~/code/tool/shared/directory.js'
 // add stealth plugin and use defaults (all evasion techniques)
 import StealthPlugin from 'puppeteer-extra-plugin-stealth'
 

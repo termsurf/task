@@ -8,7 +8,7 @@ export async function postRemote(input) {
   const remote = getConfig('remote')
   assert(typeof remote === 'string')
 
-  fetchWithTimeout(`${remote}${input.path}`, {
+  return fetchWithTimeout(`${remote}${input.path}`, {
     method: 'POST',
     ...input.body,
   })

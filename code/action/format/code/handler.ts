@@ -1,5 +1,5 @@
-import { Command } from '~/code/tool/command'
-import { exec } from '~/code/tool/process'
+import { Command } from '~/code/tool/shared/command'
+import { exec } from '~/code/tool/node/process'
 
 export async function handleRustcCommand(cmd: Command) {
   return await exec(cmd.link.join(' '))

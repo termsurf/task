@@ -24,7 +24,9 @@ export const file_output_path: Form = {
 export const file_content: Form = {
   form: 'form',
   link: {
-    content: { like: 'ArrayBuffer' },
+    content: {
+      case: [{ like: 'ArrayBuffer' }, { like: 'string' }],
+    },
   },
 }
 

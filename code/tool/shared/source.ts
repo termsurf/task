@@ -15,27 +15,36 @@ export function buildConvertForms(
     },
   }
 
-  const output: Form = {
+  const node_output: Form = {
     form: 'form',
     link: {
       output: {
         link: {
-          file: {
-            case: [{ like: 'file_path' }, { like: 'file_content' }],
-          },
+          file: { like: 'file_path' },
         },
       },
     },
   }
 
-  const response = defineResponse(`${name}_output`)
+  const browser_output: Form = {
+    form: 'form',
+    link: {
+      output: {
+        link: {
+          file: { like: 'file_content' },
+        },
+      },
+    },
+  }
 
-  const call: Form = {
+  const node_output_response = defineResponse(`${name}_node_output`)
+
+  const node_call: Form = {
     form: 'form',
     link: {
       remote: { like: 'boolean', name: { mark: 'R' } },
       async: { like: 'boolean', name: { mark: 'A' } },
-      explain: { like: 'boolean', name: { mark: 'E' } },
+      explain: { like: 'explain_format', name: { mark: 'E' } },
       input: {
         link: {
           format: { like: i, name: { mark: 'I' } },
@@ -50,12 +59,7 @@ export function buildConvertForms(
       output: {
         link: {
           format: { like: o, name: { mark: 'O' } },
-          file: {
-            case: [
-              { like: 'file_output_path' },
-              { like: 'file_has_output_content' },
-            ],
-          },
+          file: { like: 'file_output_path' },
         },
       },
       ...baseCommon,
@@ -63,42 +67,11 @@ export function buildConvertForms(
     },
   }
 
-  const local: Form = {
+  const node_local_call: Form = {
     form: 'form',
     link: {
-      async: { like: 'boolean' },
-      explain: { like: 'boolean' },
-      input: {
-        link: {
-          format: { like: i },
-          file: {
-            link: {
-              path: { like: 'string' },
-            },
-          },
-        },
-      },
-      output: {
-        link: {
-          format: { like: o },
-          file: {
-            case: [
-              { like: 'file_output_path' },
-              { like: 'file_has_output_content' },
-            ],
-          },
-        },
-      },
-      ...baseCommon,
-      ...common,
-    },
-  }
-
-  const command: Form = {
-    form: 'form',
-    link: {
-      async: { like: 'boolean' },
-      explain: { like: 'boolean' },
+      async: { like: 'boolean', need: false },
+      explain: { like: 'explain_format', need: false },
       input: {
         link: {
           format: { like: i },
@@ -120,11 +93,63 @@ export function buildConvertForms(
     },
   }
 
-  const remote: Form = {
+  const node_command: Form = {
     form: 'form',
     link: {
-      async: { like: 'boolean' },
-      explain: { like: 'boolean' },
+      async: { like: 'boolean', need: false },
+      explain: { like: 'explain_format', need: false },
+      input: {
+        link: {
+          format: { like: i },
+          file: {
+            link: {
+              path: { like: 'string' },
+            },
+          },
+        },
+      },
+      output: {
+        link: {
+          format: { like: o },
+          file: { like: 'file_output_path' },
+        },
+      },
+      ...baseCommon,
+      ...common,
+    },
+  }
+
+  const node_remote_call: Form = {
+    form: 'form',
+    link: {
+      async: { like: 'boolean', need: false },
+      input: {
+        link: {
+          format: { like: i },
+          file: {
+            case: [
+              { like: 'file_input_path' },
+              { like: 'file_content' },
+            ],
+          },
+        },
+      },
+      output: {
+        link: {
+          format: { like: o },
+        },
+      },
+      ...baseCommon,
+      ...common,
+    },
+  }
+
+  const browser_call: Form = {
+    form: 'form',
+    link: {
+      remote: { like: 'boolean', need: false },
+      async: { like: 'boolean', need: false },
+      explain: { like: 'explain_format', name: { mark: 'E' } },
       input: {
         link: {
           format: { like: i },
@@ -142,13 +167,14 @@ export function buildConvertForms(
   }
 
   return {
-    output,
-    response,
-    common,
-    call,
-    local,
-    command,
-    remote,
+    node_output,
+    node_output_response,
+    node_call,
+    node_local_call,
+    node_command,
+    node_remote_call,
+    browser_call,
+    browser_output,
   }
 }
 
@@ -166,27 +192,37 @@ export function buildConvertFormsWithOutputDirectory(
     },
   }
 
-  const output: Form = {
+  const node_output: Form = {
     form: 'form',
     link: {
       output: {
         link: {
-          file: {
-            case: [{ like: 'file_path' }, { like: 'file_content' }],
-          },
+          file: { like: 'file_path' },
         },
       },
     },
   }
 
-  const response = defineResponse(`${name}_output`)
+  const browser_output: Form = {
+    form: 'form',
+    link: {
+      output: {
+        link: {
+          file: { like: 'file_content' },
+        },
+      },
+    },
+  }
 
-  const call: Form = {
+  const node_output_response = defineResponse(`${name}_node_output`)
+
+  // nodejs call
+  const node_call: Form = {
     form: 'form',
     link: {
       remote: { like: 'boolean', name: { mark: 'R' } },
       async: { like: 'boolean', name: { mark: 'A' } },
-      explain: { like: 'boolean', name: { mark: 'E' } },
+      explain: { like: 'explain_format', name: { mark: 'E' } },
       input: {
         link: {
           format: { like: i, name: { mark: 'I' } },
@@ -209,11 +245,11 @@ export function buildConvertFormsWithOutputDirectory(
     },
   }
 
-  const local: Form = {
+  const node_local_call: Form = {
     form: 'form',
     link: {
-      async: { like: 'boolean' },
-      explain: { like: 'boolean' },
+      async: { like: 'boolean', need: false },
+      explain: { like: 'explain_format', need: false },
       input: {
         link: {
           format: { like: i },
@@ -235,11 +271,9 @@ export function buildConvertFormsWithOutputDirectory(
     },
   }
 
-  const command: Form = {
+  const node_command: Form = {
     form: 'form',
     link: {
-      async: { like: 'boolean' },
-      explain: { like: 'boolean' },
       input: {
         link: {
           format: { like: i },
@@ -261,11 +295,33 @@ export function buildConvertFormsWithOutputDirectory(
     },
   }
 
-  const remote: Form = {
+  const node_remote_call: Form = {
     form: 'form',
     link: {
-      async: { like: 'boolean' },
-      explain: { like: 'boolean' },
+      async: { like: 'boolean', need: false },
+      explain: { like: 'explain_format', need: false },
+      input: {
+        link: {
+          format: { like: i },
+          file: { like: 'file_content' },
+        },
+      },
+      output: {
+        link: {
+          format: { like: o },
+        },
+      },
+      ...baseCommon,
+      ...common,
+    },
+  }
+
+  const browser_call: Form = {
+    form: 'form',
+    link: {
+      remote: { like: 'boolean', name: { mark: 'R' } },
+      async: { like: 'boolean', name: { mark: 'A' } },
+      explain: { like: 'explain_format', name: { mark: 'E' } },
       input: {
         link: {
           format: { like: i },
@@ -283,12 +339,13 @@ export function buildConvertFormsWithOutputDirectory(
   }
 
   return {
-    output,
-    response,
-    common,
-    call,
-    local,
-    command,
-    remote,
+    node_output,
+    node_output_response,
+    node_call,
+    node_local_call,
+    node_command,
+    node_remote_call,
+    browser_call,
+    browser_output,
   }
 }

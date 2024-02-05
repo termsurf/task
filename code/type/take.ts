@@ -131,159 +131,6 @@ export const BuildBaseInputFileOutputDirectoryModel: z.ZodType<Cast.BuildBaseInp
     })
     .passthrough()
 
-export const BuildCommandToConvertAiToSvgWithInkscapeModel: z.ZodType<Cast.BuildCommandToConvertAiToSvgWithInkscape> =
-  z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
-    input: z.object({
-      format: z.string(),
-      file: z.object({
-        path: z.string(),
-      }),
-    }),
-    output: z.object({
-      format: z.string(),
-      file: z.lazy(() => FileOutputPathModel),
-    }),
-    pathScope: z.optional(z.string()),
-  })
-
-export const BuildCommandToConvertDocumentWithCalibreModel: z.ZodType<Cast.BuildCommandToConvertDocumentWithCalibre> =
-  z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
-    input: z.object({
-      format: z.lazy(() => CalibreInputFormatModel),
-      file: z.object({
-        path: z.string(),
-      }),
-    }),
-    output: z.object({
-      format: z.lazy(() => CalibreOutputFormatModel),
-      file: z.lazy(() => FileOutputPathModel),
-    }),
-    pathScope: z.optional(z.string()),
-  })
-
-export const BuildCommandToConvertDocumentWithJupyterModel: z.ZodType<Cast.BuildCommandToConvertDocumentWithJupyter> =
-  z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
-    input: z.object({
-      format: z.string(),
-      file: z.object({
-        path: z.string(),
-      }),
-    }),
-    output: z.object({
-      format: z.string(),
-      file: z.lazy(() => FileOutputPathModel),
-    }),
-    pathScope: z.optional(z.string()),
-  })
-
-export const BuildCommandToConvertDocumentWithLibreOfficeModel: z.ZodType<Cast.BuildCommandToConvertDocumentWithLibreOffice> =
-  z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
-    input: z.object({
-      format: z.lazy(() => LibreOfficeInputFormatModel),
-      file: z.object({
-        path: z.string(),
-      }),
-    }),
-    output: z.object({
-      format: z.lazy(() => LibreOfficeOutputFormatModel),
-      directory: z.lazy(() => FileOutputPathModel),
-    }),
-    pathScope: z.optional(z.string()),
-  })
-
-export const BuildCommandToConvertDocumentWithPandocModel: z.ZodType<Cast.BuildCommandToConvertDocumentWithPandoc> =
-  z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
-    input: z.object({
-      format: z.lazy(() => PandocInputFormatModel),
-      file: z.object({
-        path: z.string(),
-      }),
-    }),
-    output: z.object({
-      format: z.lazy(() => PandocOutputFormatModel),
-      file: z.lazy(() => FileOutputPathModel),
-    }),
-    pathScope: z.optional(z.string()),
-  })
-
-export const BuildCommandToConvertDocumentWithPuppeteerModel: z.ZodType<Cast.BuildCommandToConvertDocumentWithPuppeteer> =
-  z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
-    input: z.object({
-      format: z.lazy(() => PuppeteerInputFormatModel),
-      file: z.object({
-        path: z.string(),
-      }),
-    }),
-    output: z.object({
-      format: z.lazy(() => PuppeteerOutputFormatModel),
-      file: z.lazy(() => FileOutputPathModel),
-    }),
-    pathScope: z.optional(z.string()),
-    viewport: z.object({
-      width: z.optional(z.number().int().gte(0)),
-      height: z.optional(z.number().int().gte(0)),
-    }),
-    proxy: z.optional(z.string()),
-    waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
-  })
-
-export const BuildCommandToConvertImageWithImageMagickModel: z.ZodType<Cast.BuildCommandToConvertImageWithImageMagick> =
-  z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
-    input: z.object({
-      format: z.lazy(() => ImageMagickInputFormatModel),
-      file: z.object({
-        path: z.string(),
-      }),
-    }),
-    output: z.object({
-      format: z.lazy(() => ImageMagickOutputFormatModel),
-      file: z.lazy(() => FileOutputPathModel),
-    }),
-    pathScope: z.optional(z.string()),
-    colorCount: z.optional(z.number().int().gte(0)),
-    colorMatrix: z.optional(
-      z
-        .lazy(() => ImageMagicColorMatrixModel)
-        .refine(
-          TEST('colorMatrix', code.test_image_magic_color_matrix.test),
-        ),
-    ),
-    colorSpace: z.optional(z.lazy(() => ImageMagickColorSpaceModel)),
-    compare: z.optional(z.boolean()),
-    compression: z.optional(z.lazy(() => ImageMagickCompressionModel)),
-  })
-
-export const BuildCommandToConvertLatexToPdfWithPdfLatexModel: z.ZodType<Cast.BuildCommandToConvertLatexToPdfWithPdfLatex> =
-  z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
-    input: z.object({
-      format: z.string(),
-      file: z.object({
-        path: z.string(),
-      }),
-    }),
-    output: z.object({
-      format: z.string(),
-      directory: z.lazy(() => FileOutputPathModel),
-    }),
-    pathScope: z.optional(z.string()),
-  })
-
 export const BuildCommandToOptimizeGifWithGifsicleModel: z.ZodType<Cast.BuildCommandToOptimizeGifWithGifsicle> =
   z.object({
     lossy: z.optional(z.number().int().gte(0)),
@@ -974,62 +821,11 @@ export const CompressMp4WithFfmpegModel: z.ZodType<Cast.CompressMp4WithFfmpeg> =
     ),
   })
 
-export const ConvertAiToSvgWithInkscapeModel: z.ZodType<Cast.ConvertAiToSvgWithInkscape> =
+export const ConvertAiToSvgWithInkscapeBrowserCallModel: z.ZodType<Cast.ConvertAiToSvgWithInkscapeBrowserCall> =
   z.object({
-    remote: z.boolean(),
-    async: z.boolean(),
-    explain: z.boolean(),
-    input: z.object({
-      format: z.string(),
-      file: z.union([
-        z.lazy(() => FileInputPathModel),
-        z.lazy(() => FileContentModel),
-      ]),
-    }),
-    output: z.object({
-      format: z.string(),
-      file: z.union([
-        z.lazy(() => FileOutputPathModel),
-        z.lazy(() => FileHasOutputContentModel),
-      ]),
-    }),
-    pathScope: z.optional(z.string()),
-  })
-
-export const ConvertAiToSvgWithInkscapeLocalModel: z.ZodType<Cast.ConvertAiToSvgWithInkscapeLocal> =
-  z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
-    input: z.object({
-      format: z.string(),
-      file: z.object({
-        path: z.string(),
-      }),
-    }),
-    output: z.object({
-      format: z.string(),
-      file: z.union([
-        z.lazy(() => FileOutputPathModel),
-        z.lazy(() => FileHasOutputContentModel),
-      ]),
-    }),
-    pathScope: z.optional(z.string()),
-  })
-
-export const ConvertAiToSvgWithInkscapeOutputModel: z.ZodType<Cast.ConvertAiToSvgWithInkscapeOutput> =
-  z.object({
-    output: z.object({
-      file: z.union([
-        z.lazy(() => FilePathModel),
-        z.lazy(() => FileContentModel),
-      ]),
-    }),
-  })
-
-export const ConvertAiToSvgWithInkscapeRemoteModel: z.ZodType<Cast.ConvertAiToSvgWithInkscapeRemote> =
-  z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
+    remote: z.optional(z.boolean()),
+    async: z.optional(z.boolean()),
+    explain: z.lazy(() => ExplainFormatModel),
     input: z.object({
       format: z.string(),
       file: z.lazy(() => FileContentModel),
@@ -1040,12 +836,95 @@ export const ConvertAiToSvgWithInkscapeRemoteModel: z.ZodType<Cast.ConvertAiToSv
     pathScope: z.optional(z.string()),
   })
 
-export const ConvertAiToSvgWithInkscapeResponseModel: z.ZodType<Cast.ConvertAiToSvgWithInkscapeResponse> =
+export const ConvertAiToSvgWithInkscapeBrowserOutputModel: z.ZodType<Cast.ConvertAiToSvgWithInkscapeBrowserOutput> =
+  z.object({
+    output: z.object({
+      file: z.lazy(() => FileContentModel),
+    }),
+  })
+
+export const ConvertAiToSvgWithInkscapeNodeCallModel: z.ZodType<Cast.ConvertAiToSvgWithInkscapeNodeCall> =
+  z.object({
+    remote: z.boolean(),
+    async: z.boolean(),
+    explain: z.lazy(() => ExplainFormatModel),
+    input: z.object({
+      format: z.string(),
+      file: z.union([
+        z.lazy(() => FileInputPathModel),
+        z.lazy(() => FileContentModel),
+      ]),
+    }),
+    output: z.object({
+      format: z.string(),
+      file: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertAiToSvgWithInkscapeNodeCommandModel: z.ZodType<Cast.ConvertAiToSvgWithInkscapeNodeCommand> =
+  z.object({
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
+    input: z.object({
+      format: z.string(),
+      file: z.object({
+        path: z.string(),
+      }),
+    }),
+    output: z.object({
+      format: z.string(),
+      file: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertAiToSvgWithInkscapeNodeLocalCallModel: z.ZodType<Cast.ConvertAiToSvgWithInkscapeNodeLocalCall> =
+  z.object({
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
+    input: z.object({
+      format: z.string(),
+      file: z.object({
+        path: z.string(),
+      }),
+    }),
+    output: z.object({
+      format: z.string(),
+      file: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertAiToSvgWithInkscapeNodeOutputModel: z.ZodType<Cast.ConvertAiToSvgWithInkscapeNodeOutput> =
+  z.object({
+    output: z.object({
+      file: z.lazy(() => FilePathModel),
+    }),
+  })
+
+export const ConvertAiToSvgWithInkscapeNodeOutputResponseModel: z.ZodType<Cast.ConvertAiToSvgWithInkscapeNodeOutputResponse> =
   z.object({
     form: z.optional(z.string()).default('response'),
     code: z.optional(z.number().int().gte(0)).default(200),
     note: z.optional(z.string()).default('success'),
-    tree: z.lazy(() => ConvertAiToSvgWithInkscapeOutputModel),
+    tree: z.lazy(() => ConvertAiToSvgWithInkscapeNodeOutputModel),
+  })
+
+export const ConvertAiToSvgWithInkscapeNodeRemoteCallModel: z.ZodType<Cast.ConvertAiToSvgWithInkscapeNodeRemoteCall> =
+  z.object({
+    async: z.optional(z.boolean()),
+    input: z.object({
+      format: z.string(),
+      file: z.union([
+        z.lazy(() => FileInputPathModel),
+        z.lazy(() => FileContentModel),
+      ]),
+    }),
+    output: z.object({
+      format: z.string(),
+    }),
+    pathScope: z.optional(z.string()),
   })
 
 export const ConvertArchiveWithUnarchiverModel: z.ZodType<Cast.ConvertArchiveWithUnarchiver> =
@@ -1069,62 +948,11 @@ export const ConvertArchiveWithUnarchiverModel: z.ZodType<Cast.ConvertArchiveWit
     }),
   })
 
-export const ConvertDocumentWithCalibreModel: z.ZodType<Cast.ConvertDocumentWithCalibre> =
+export const ConvertDocumentWithCalibreBrowserCallModel: z.ZodType<Cast.ConvertDocumentWithCalibreBrowserCall> =
   z.object({
-    remote: z.boolean(),
-    async: z.boolean(),
-    explain: z.boolean(),
-    input: z.object({
-      format: z.lazy(() => CalibreInputFormatModel),
-      file: z.union([
-        z.lazy(() => FileInputPathModel),
-        z.lazy(() => FileContentModel),
-      ]),
-    }),
-    output: z.object({
-      format: z.lazy(() => CalibreOutputFormatModel),
-      file: z.union([
-        z.lazy(() => FileOutputPathModel),
-        z.lazy(() => FileHasOutputContentModel),
-      ]),
-    }),
-    pathScope: z.optional(z.string()),
-  })
-
-export const ConvertDocumentWithCalibreLocalModel: z.ZodType<Cast.ConvertDocumentWithCalibreLocal> =
-  z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
-    input: z.object({
-      format: z.lazy(() => CalibreInputFormatModel),
-      file: z.object({
-        path: z.string(),
-      }),
-    }),
-    output: z.object({
-      format: z.lazy(() => CalibreOutputFormatModel),
-      file: z.union([
-        z.lazy(() => FileOutputPathModel),
-        z.lazy(() => FileHasOutputContentModel),
-      ]),
-    }),
-    pathScope: z.optional(z.string()),
-  })
-
-export const ConvertDocumentWithCalibreOutputModel: z.ZodType<Cast.ConvertDocumentWithCalibreOutput> =
-  z.object({
-    output: z.object({
-      file: z.union([
-        z.lazy(() => FilePathModel),
-        z.lazy(() => FileContentModel),
-      ]),
-    }),
-  })
-
-export const ConvertDocumentWithCalibreRemoteModel: z.ZodType<Cast.ConvertDocumentWithCalibreRemote> =
-  z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
+    remote: z.optional(z.boolean()),
+    async: z.optional(z.boolean()),
+    explain: z.lazy(() => ExplainFormatModel),
     input: z.object({
       format: z.lazy(() => CalibreInputFormatModel),
       file: z.lazy(() => FileContentModel),
@@ -1135,70 +963,102 @@ export const ConvertDocumentWithCalibreRemoteModel: z.ZodType<Cast.ConvertDocume
     pathScope: z.optional(z.string()),
   })
 
-export const ConvertDocumentWithCalibreResponseModel: z.ZodType<Cast.ConvertDocumentWithCalibreResponse> =
+export const ConvertDocumentWithCalibreBrowserOutputModel: z.ZodType<Cast.ConvertDocumentWithCalibreBrowserOutput> =
   z.object({
-    form: z.optional(z.string()).default('response'),
-    code: z.optional(z.number().int().gte(0)).default(200),
-    note: z.optional(z.string()).default('success'),
-    tree: z.lazy(() => ConvertDocumentWithCalibreOutputModel),
+    output: z.object({
+      file: z.lazy(() => FileContentModel),
+    }),
   })
 
-export const ConvertDocumentWithJupyterModel: z.ZodType<Cast.ConvertDocumentWithJupyter> =
+export const ConvertDocumentWithCalibreNodeCallModel: z.ZodType<Cast.ConvertDocumentWithCalibreNodeCall> =
   z.object({
     remote: z.boolean(),
     async: z.boolean(),
-    explain: z.boolean(),
+    explain: z.lazy(() => ExplainFormatModel),
     input: z.object({
-      format: z.string(),
+      format: z.lazy(() => CalibreInputFormatModel),
       file: z.union([
         z.lazy(() => FileInputPathModel),
         z.lazy(() => FileContentModel),
       ]),
     }),
     output: z.object({
-      format: z.string(),
-      file: z.union([
-        z.lazy(() => FileOutputPathModel),
-        z.lazy(() => FileHasOutputContentModel),
-      ]),
+      format: z.lazy(() => CalibreOutputFormatModel),
+      file: z.lazy(() => FileOutputPathModel),
     }),
     pathScope: z.optional(z.string()),
   })
 
-export const ConvertDocumentWithJupyterLocalModel: z.ZodType<Cast.ConvertDocumentWithJupyterLocal> =
+export const ConvertDocumentWithCalibreNodeCommandModel: z.ZodType<Cast.ConvertDocumentWithCalibreNodeCommand> =
   z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
     input: z.object({
-      format: z.string(),
+      format: z.lazy(() => CalibreInputFormatModel),
       file: z.object({
         path: z.string(),
       }),
     }),
     output: z.object({
-      format: z.string(),
-      file: z.union([
-        z.lazy(() => FileOutputPathModel),
-        z.lazy(() => FileHasOutputContentModel),
-      ]),
+      format: z.lazy(() => CalibreOutputFormatModel),
+      file: z.lazy(() => FileOutputPathModel),
     }),
     pathScope: z.optional(z.string()),
   })
 
-export const ConvertDocumentWithJupyterOutputModel: z.ZodType<Cast.ConvertDocumentWithJupyterOutput> =
+export const ConvertDocumentWithCalibreNodeLocalCallModel: z.ZodType<Cast.ConvertDocumentWithCalibreNodeLocalCall> =
+  z.object({
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
+    input: z.object({
+      format: z.lazy(() => CalibreInputFormatModel),
+      file: z.object({
+        path: z.string(),
+      }),
+    }),
+    output: z.object({
+      format: z.lazy(() => CalibreOutputFormatModel),
+      file: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertDocumentWithCalibreNodeOutputModel: z.ZodType<Cast.ConvertDocumentWithCalibreNodeOutput> =
   z.object({
     output: z.object({
-      file: z.union([
-        z.lazy(() => FilePathModel),
-        z.lazy(() => FileContentModel),
-      ]),
+      file: z.lazy(() => FilePathModel),
     }),
   })
 
-export const ConvertDocumentWithJupyterRemoteModel: z.ZodType<Cast.ConvertDocumentWithJupyterRemote> =
+export const ConvertDocumentWithCalibreNodeOutputResponseModel: z.ZodType<Cast.ConvertDocumentWithCalibreNodeOutputResponse> =
   z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
+    form: z.optional(z.string()).default('response'),
+    code: z.optional(z.number().int().gte(0)).default(200),
+    note: z.optional(z.string()).default('success'),
+    tree: z.lazy(() => ConvertDocumentWithCalibreNodeOutputModel),
+  })
+
+export const ConvertDocumentWithCalibreNodeRemoteCallModel: z.ZodType<Cast.ConvertDocumentWithCalibreNodeRemoteCall> =
+  z.object({
+    async: z.optional(z.boolean()),
+    input: z.object({
+      format: z.lazy(() => CalibreInputFormatModel),
+      file: z.union([
+        z.lazy(() => FileInputPathModel),
+        z.lazy(() => FileContentModel),
+      ]),
+    }),
+    output: z.object({
+      format: z.lazy(() => CalibreOutputFormatModel),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertDocumentWithJupyterBrowserCallModel: z.ZodType<Cast.ConvertDocumentWithJupyterBrowserCall> =
+  z.object({
+    remote: z.optional(z.boolean()),
+    async: z.optional(z.boolean()),
+    explain: z.lazy(() => ExplainFormatModel),
     input: z.object({
       format: z.string(),
       file: z.lazy(() => FileContentModel),
@@ -1209,19 +1069,124 @@ export const ConvertDocumentWithJupyterRemoteModel: z.ZodType<Cast.ConvertDocume
     pathScope: z.optional(z.string()),
   })
 
-export const ConvertDocumentWithJupyterResponseModel: z.ZodType<Cast.ConvertDocumentWithJupyterResponse> =
+export const ConvertDocumentWithJupyterBrowserOutputModel: z.ZodType<Cast.ConvertDocumentWithJupyterBrowserOutput> =
+  z.object({
+    output: z.object({
+      file: z.lazy(() => FileContentModel),
+    }),
+  })
+
+export const ConvertDocumentWithJupyterNodeCallModel: z.ZodType<Cast.ConvertDocumentWithJupyterNodeCall> =
+  z.object({
+    remote: z.boolean(),
+    async: z.boolean(),
+    explain: z.lazy(() => ExplainFormatModel),
+    input: z.object({
+      format: z.string(),
+      file: z.union([
+        z.lazy(() => FileInputPathModel),
+        z.lazy(() => FileContentModel),
+      ]),
+    }),
+    output: z.object({
+      format: z.string(),
+      file: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertDocumentWithJupyterNodeCommandModel: z.ZodType<Cast.ConvertDocumentWithJupyterNodeCommand> =
+  z.object({
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
+    input: z.object({
+      format: z.string(),
+      file: z.object({
+        path: z.string(),
+      }),
+    }),
+    output: z.object({
+      format: z.string(),
+      file: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertDocumentWithJupyterNodeLocalCallModel: z.ZodType<Cast.ConvertDocumentWithJupyterNodeLocalCall> =
+  z.object({
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
+    input: z.object({
+      format: z.string(),
+      file: z.object({
+        path: z.string(),
+      }),
+    }),
+    output: z.object({
+      format: z.string(),
+      file: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertDocumentWithJupyterNodeOutputModel: z.ZodType<Cast.ConvertDocumentWithJupyterNodeOutput> =
+  z.object({
+    output: z.object({
+      file: z.lazy(() => FilePathModel),
+    }),
+  })
+
+export const ConvertDocumentWithJupyterNodeOutputResponseModel: z.ZodType<Cast.ConvertDocumentWithJupyterNodeOutputResponse> =
   z.object({
     form: z.optional(z.string()).default('response'),
     code: z.optional(z.number().int().gte(0)).default(200),
     note: z.optional(z.string()).default('success'),
-    tree: z.lazy(() => ConvertDocumentWithJupyterOutputModel),
+    tree: z.lazy(() => ConvertDocumentWithJupyterNodeOutputModel),
   })
 
-export const ConvertDocumentWithLibreOfficeModel: z.ZodType<Cast.ConvertDocumentWithLibreOffice> =
+export const ConvertDocumentWithJupyterNodeRemoteCallModel: z.ZodType<Cast.ConvertDocumentWithJupyterNodeRemoteCall> =
+  z.object({
+    async: z.optional(z.boolean()),
+    input: z.object({
+      format: z.string(),
+      file: z.union([
+        z.lazy(() => FileInputPathModel),
+        z.lazy(() => FileContentModel),
+      ]),
+    }),
+    output: z.object({
+      format: z.string(),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertDocumentWithLibreOfficeBrowserCallModel: z.ZodType<Cast.ConvertDocumentWithLibreOfficeBrowserCall> =
   z.object({
     remote: z.boolean(),
     async: z.boolean(),
-    explain: z.boolean(),
+    explain: z.lazy(() => ExplainFormatModel),
+    input: z.object({
+      format: z.lazy(() => LibreOfficeInputFormatModel),
+      file: z.lazy(() => FileContentModel),
+    }),
+    output: z.object({
+      format: z.lazy(() => LibreOfficeOutputFormatModel),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertDocumentWithLibreOfficeBrowserOutputModel: z.ZodType<Cast.ConvertDocumentWithLibreOfficeBrowserOutput> =
+  z.object({
+    output: z.object({
+      file: z.lazy(() => FileContentModel),
+    }),
+  })
+
+export const ConvertDocumentWithLibreOfficeNodeCallModel: z.ZodType<Cast.ConvertDocumentWithLibreOfficeNodeCall> =
+  z.object({
+    remote: z.boolean(),
+    async: z.boolean(),
+    explain: z.lazy(() => ExplainFormatModel),
     input: z.object({
       format: z.lazy(() => LibreOfficeInputFormatModel),
       file: z.union([
@@ -1236,10 +1201,8 @@ export const ConvertDocumentWithLibreOfficeModel: z.ZodType<Cast.ConvertDocument
     pathScope: z.optional(z.string()),
   })
 
-export const ConvertDocumentWithLibreOfficeLocalModel: z.ZodType<Cast.ConvertDocumentWithLibreOfficeLocal> =
+export const ConvertDocumentWithLibreOfficeNodeCommandModel: z.ZodType<Cast.ConvertDocumentWithLibreOfficeNodeCommand> =
   z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
     input: z.object({
       format: z.lazy(() => LibreOfficeInputFormatModel),
       file: z.object({
@@ -1253,20 +1216,42 @@ export const ConvertDocumentWithLibreOfficeLocalModel: z.ZodType<Cast.ConvertDoc
     pathScope: z.optional(z.string()),
   })
 
-export const ConvertDocumentWithLibreOfficeOutputModel: z.ZodType<Cast.ConvertDocumentWithLibreOfficeOutput> =
+export const ConvertDocumentWithLibreOfficeNodeLocalCallModel: z.ZodType<Cast.ConvertDocumentWithLibreOfficeNodeLocalCall> =
+  z.object({
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
+    input: z.object({
+      format: z.lazy(() => LibreOfficeInputFormatModel),
+      file: z.object({
+        path: z.string(),
+      }),
+    }),
+    output: z.object({
+      format: z.lazy(() => LibreOfficeOutputFormatModel),
+      directory: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertDocumentWithLibreOfficeNodeOutputModel: z.ZodType<Cast.ConvertDocumentWithLibreOfficeNodeOutput> =
   z.object({
     output: z.object({
-      file: z.union([
-        z.lazy(() => FilePathModel),
-        z.lazy(() => FileContentModel),
-      ]),
+      file: z.lazy(() => FilePathModel),
     }),
   })
 
-export const ConvertDocumentWithLibreOfficeRemoteModel: z.ZodType<Cast.ConvertDocumentWithLibreOfficeRemote> =
+export const ConvertDocumentWithLibreOfficeNodeOutputResponseModel: z.ZodType<Cast.ConvertDocumentWithLibreOfficeNodeOutputResponse> =
   z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
+    form: z.optional(z.string()).default('response'),
+    code: z.optional(z.number().int().gte(0)).default(200),
+    note: z.optional(z.string()).default('success'),
+    tree: z.lazy(() => ConvertDocumentWithLibreOfficeNodeOutputModel),
+  })
+
+export const ConvertDocumentWithLibreOfficeNodeRemoteCallModel: z.ZodType<Cast.ConvertDocumentWithLibreOfficeNodeRemoteCall> =
+  z.object({
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
     input: z.object({
       format: z.lazy(() => LibreOfficeInputFormatModel),
       file: z.lazy(() => FileContentModel),
@@ -1277,70 +1262,11 @@ export const ConvertDocumentWithLibreOfficeRemoteModel: z.ZodType<Cast.ConvertDo
     pathScope: z.optional(z.string()),
   })
 
-export const ConvertDocumentWithLibreOfficeResponseModel: z.ZodType<Cast.ConvertDocumentWithLibreOfficeResponse> =
+export const ConvertDocumentWithPandocBrowserCallModel: z.ZodType<Cast.ConvertDocumentWithPandocBrowserCall> =
   z.object({
-    form: z.optional(z.string()).default('response'),
-    code: z.optional(z.number().int().gte(0)).default(200),
-    note: z.optional(z.string()).default('success'),
-    tree: z.lazy(() => ConvertDocumentWithLibreOfficeOutputModel),
-  })
-
-export const ConvertDocumentWithPandocModel: z.ZodType<Cast.ConvertDocumentWithPandoc> =
-  z.object({
-    remote: z.boolean(),
-    async: z.boolean(),
-    explain: z.boolean(),
-    input: z.object({
-      format: z.lazy(() => PandocInputFormatModel),
-      file: z.union([
-        z.lazy(() => FileInputPathModel),
-        z.lazy(() => FileContentModel),
-      ]),
-    }),
-    output: z.object({
-      format: z.lazy(() => PandocOutputFormatModel),
-      file: z.union([
-        z.lazy(() => FileOutputPathModel),
-        z.lazy(() => FileHasOutputContentModel),
-      ]),
-    }),
-    pathScope: z.optional(z.string()),
-  })
-
-export const ConvertDocumentWithPandocLocalModel: z.ZodType<Cast.ConvertDocumentWithPandocLocal> =
-  z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
-    input: z.object({
-      format: z.lazy(() => PandocInputFormatModel),
-      file: z.object({
-        path: z.string(),
-      }),
-    }),
-    output: z.object({
-      format: z.lazy(() => PandocOutputFormatModel),
-      file: z.union([
-        z.lazy(() => FileOutputPathModel),
-        z.lazy(() => FileHasOutputContentModel),
-      ]),
-    }),
-    pathScope: z.optional(z.string()),
-  })
-
-export const ConvertDocumentWithPandocOutputModel: z.ZodType<Cast.ConvertDocumentWithPandocOutput> =
-  z.object({
-    output: z.object({
-      file: z.union([
-        z.lazy(() => FilePathModel),
-        z.lazy(() => FileContentModel),
-      ]),
-    }),
-  })
-
-export const ConvertDocumentWithPandocRemoteModel: z.ZodType<Cast.ConvertDocumentWithPandocRemote> =
-  z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
+    remote: z.optional(z.boolean()),
+    async: z.optional(z.boolean()),
+    explain: z.lazy(() => ExplainFormatModel),
     input: z.object({
       format: z.lazy(() => PandocInputFormatModel),
       file: z.lazy(() => FileContentModel),
@@ -1351,82 +1277,102 @@ export const ConvertDocumentWithPandocRemoteModel: z.ZodType<Cast.ConvertDocumen
     pathScope: z.optional(z.string()),
   })
 
-export const ConvertDocumentWithPandocResponseModel: z.ZodType<Cast.ConvertDocumentWithPandocResponse> =
+export const ConvertDocumentWithPandocBrowserOutputModel: z.ZodType<Cast.ConvertDocumentWithPandocBrowserOutput> =
   z.object({
-    form: z.optional(z.string()).default('response'),
-    code: z.optional(z.number().int().gte(0)).default(200),
-    note: z.optional(z.string()).default('success'),
-    tree: z.lazy(() => ConvertDocumentWithPandocOutputModel),
+    output: z.object({
+      file: z.lazy(() => FileContentModel),
+    }),
   })
 
-export const ConvertDocumentWithPuppeteerModel: z.ZodType<Cast.ConvertDocumentWithPuppeteer> =
+export const ConvertDocumentWithPandocNodeCallModel: z.ZodType<Cast.ConvertDocumentWithPandocNodeCall> =
   z.object({
     remote: z.boolean(),
     async: z.boolean(),
-    explain: z.boolean(),
+    explain: z.lazy(() => ExplainFormatModel),
     input: z.object({
-      format: z.lazy(() => PuppeteerInputFormatModel),
+      format: z.lazy(() => PandocInputFormatModel),
       file: z.union([
         z.lazy(() => FileInputPathModel),
         z.lazy(() => FileContentModel),
       ]),
     }),
     output: z.object({
-      format: z.lazy(() => PuppeteerOutputFormatModel),
-      file: z.union([
-        z.lazy(() => FileOutputPathModel),
-        z.lazy(() => FileHasOutputContentModel),
-      ]),
+      format: z.lazy(() => PandocOutputFormatModel),
+      file: z.lazy(() => FileOutputPathModel),
     }),
     pathScope: z.optional(z.string()),
-    viewport: z.object({
-      width: z.optional(z.number().int().gte(0)),
-      height: z.optional(z.number().int().gte(0)),
-    }),
-    proxy: z.optional(z.string()),
-    waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
   })
 
-export const ConvertDocumentWithPuppeteerLocalModel: z.ZodType<Cast.ConvertDocumentWithPuppeteerLocal> =
+export const ConvertDocumentWithPandocNodeCommandModel: z.ZodType<Cast.ConvertDocumentWithPandocNodeCommand> =
   z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
     input: z.object({
-      format: z.lazy(() => PuppeteerInputFormatModel),
+      format: z.lazy(() => PandocInputFormatModel),
       file: z.object({
         path: z.string(),
       }),
     }),
     output: z.object({
-      format: z.lazy(() => PuppeteerOutputFormatModel),
-      file: z.union([
-        z.lazy(() => FileOutputPathModel),
-        z.lazy(() => FileHasOutputContentModel),
-      ]),
+      format: z.lazy(() => PandocOutputFormatModel),
+      file: z.lazy(() => FileOutputPathModel),
     }),
     pathScope: z.optional(z.string()),
-    viewport: z.object({
-      width: z.optional(z.number().int().gte(0)),
-      height: z.optional(z.number().int().gte(0)),
-    }),
-    proxy: z.optional(z.string()),
-    waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
   })
 
-export const ConvertDocumentWithPuppeteerOutputModel: z.ZodType<Cast.ConvertDocumentWithPuppeteerOutput> =
+export const ConvertDocumentWithPandocNodeLocalCallModel: z.ZodType<Cast.ConvertDocumentWithPandocNodeLocalCall> =
+  z.object({
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
+    input: z.object({
+      format: z.lazy(() => PandocInputFormatModel),
+      file: z.object({
+        path: z.string(),
+      }),
+    }),
+    output: z.object({
+      format: z.lazy(() => PandocOutputFormatModel),
+      file: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertDocumentWithPandocNodeOutputModel: z.ZodType<Cast.ConvertDocumentWithPandocNodeOutput> =
   z.object({
     output: z.object({
+      file: z.lazy(() => FilePathModel),
+    }),
+  })
+
+export const ConvertDocumentWithPandocNodeOutputResponseModel: z.ZodType<Cast.ConvertDocumentWithPandocNodeOutputResponse> =
+  z.object({
+    form: z.optional(z.string()).default('response'),
+    code: z.optional(z.number().int().gte(0)).default(200),
+    note: z.optional(z.string()).default('success'),
+    tree: z.lazy(() => ConvertDocumentWithPandocNodeOutputModel),
+  })
+
+export const ConvertDocumentWithPandocNodeRemoteCallModel: z.ZodType<Cast.ConvertDocumentWithPandocNodeRemoteCall> =
+  z.object({
+    async: z.optional(z.boolean()),
+    input: z.object({
+      format: z.lazy(() => PandocInputFormatModel),
       file: z.union([
-        z.lazy(() => FilePathModel),
+        z.lazy(() => FileInputPathModel),
         z.lazy(() => FileContentModel),
       ]),
     }),
+    output: z.object({
+      format: z.lazy(() => PandocOutputFormatModel),
+    }),
+    pathScope: z.optional(z.string()),
   })
 
-export const ConvertDocumentWithPuppeteerRemoteModel: z.ZodType<Cast.ConvertDocumentWithPuppeteerRemote> =
+export const ConvertDocumentWithPuppeteerBrowserCallModel: z.ZodType<Cast.ConvertDocumentWithPuppeteerBrowserCall> =
   z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
+    remote: z.optional(z.boolean()),
+    async: z.optional(z.boolean()),
+    explain: z.lazy(() => ExplainFormatModel),
     input: z.object({
       format: z.lazy(() => PuppeteerInputFormatModel),
       file: z.lazy(() => FileContentModel),
@@ -1443,16 +1389,166 @@ export const ConvertDocumentWithPuppeteerRemoteModel: z.ZodType<Cast.ConvertDocu
     waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
   })
 
-export const ConvertDocumentWithPuppeteerResponseModel: z.ZodType<Cast.ConvertDocumentWithPuppeteerResponse> =
+export const ConvertDocumentWithPuppeteerBrowserOutputModel: z.ZodType<Cast.ConvertDocumentWithPuppeteerBrowserOutput> =
+  z.object({
+    output: z.object({
+      file: z.lazy(() => FileContentModel),
+    }),
+  })
+
+export const ConvertDocumentWithPuppeteerNodeCallModel: z.ZodType<Cast.ConvertDocumentWithPuppeteerNodeCall> =
+  z.object({
+    remote: z.boolean(),
+    async: z.boolean(),
+    explain: z.lazy(() => ExplainFormatModel),
+    input: z.object({
+      format: z.lazy(() => PuppeteerInputFormatModel),
+      file: z.union([
+        z.lazy(() => FileInputPathModel),
+        z.lazy(() => FileContentModel),
+      ]),
+    }),
+    output: z.object({
+      format: z.lazy(() => PuppeteerOutputFormatModel),
+      file: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+    viewport: z.object({
+      width: z.optional(z.number().int().gte(0)),
+      height: z.optional(z.number().int().gte(0)),
+    }),
+    proxy: z.optional(z.string()),
+    waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
+  })
+
+export const ConvertDocumentWithPuppeteerNodeCommandModel: z.ZodType<Cast.ConvertDocumentWithPuppeteerNodeCommand> =
+  z.object({
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
+    input: z.object({
+      format: z.lazy(() => PuppeteerInputFormatModel),
+      file: z.object({
+        path: z.string(),
+      }),
+    }),
+    output: z.object({
+      format: z.lazy(() => PuppeteerOutputFormatModel),
+      file: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+    viewport: z.object({
+      width: z.optional(z.number().int().gte(0)),
+      height: z.optional(z.number().int().gte(0)),
+    }),
+    proxy: z.optional(z.string()),
+    waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
+  })
+
+export const ConvertDocumentWithPuppeteerNodeLocalCallModel: z.ZodType<Cast.ConvertDocumentWithPuppeteerNodeLocalCall> =
+  z.object({
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
+    input: z.object({
+      format: z.lazy(() => PuppeteerInputFormatModel),
+      file: z.object({
+        path: z.string(),
+      }),
+    }),
+    output: z.object({
+      format: z.lazy(() => PuppeteerOutputFormatModel),
+      file: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+    viewport: z.object({
+      width: z.optional(z.number().int().gte(0)),
+      height: z.optional(z.number().int().gte(0)),
+    }),
+    proxy: z.optional(z.string()),
+    waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
+  })
+
+export const ConvertDocumentWithPuppeteerNodeOutputModel: z.ZodType<Cast.ConvertDocumentWithPuppeteerNodeOutput> =
+  z.object({
+    output: z.object({
+      file: z.lazy(() => FilePathModel),
+    }),
+  })
+
+export const ConvertDocumentWithPuppeteerNodeOutputResponseModel: z.ZodType<Cast.ConvertDocumentWithPuppeteerNodeOutputResponse> =
   z.object({
     form: z.optional(z.string()).default('response'),
     code: z.optional(z.number().int().gte(0)).default(200),
     note: z.optional(z.string()).default('success'),
-    tree: z.lazy(() => ConvertDocumentWithPuppeteerOutputModel),
+    tree: z.lazy(() => ConvertDocumentWithPuppeteerNodeOutputModel),
   })
 
-export const ConvertFontWithFontForgeModel: z.ZodType<Cast.ConvertFontWithFontForge> =
+export const ConvertDocumentWithPuppeteerNodeRemoteCallModel: z.ZodType<Cast.ConvertDocumentWithPuppeteerNodeRemoteCall> =
   z.object({
+    async: z.optional(z.boolean()),
+    input: z.object({
+      format: z.lazy(() => PuppeteerInputFormatModel),
+      file: z.union([
+        z.lazy(() => FileInputPathModel),
+        z.lazy(() => FileContentModel),
+      ]),
+    }),
+    output: z.object({
+      format: z.lazy(() => PuppeteerOutputFormatModel),
+    }),
+    pathScope: z.optional(z.string()),
+    viewport: z.object({
+      width: z.optional(z.number().int().gte(0)),
+      height: z.optional(z.number().int().gte(0)),
+    }),
+    proxy: z.optional(z.string()),
+    waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
+  })
+
+export const ConvertFontWithFontForgeBrowserCallModel: z.ZodType<Cast.ConvertFontWithFontForgeBrowserCall> =
+  z.object({
+    remote: z.optional(z.boolean()),
+    async: z.optional(z.boolean()),
+    explain: z.lazy(() => ExplainFormatModel),
+    input: z.object({
+      format: z.lazy(() => FontFormatModel),
+      file: z.lazy(() => FileContentModel),
+    }),
+    output: z.object({
+      format: z.lazy(() => FontFormatModel),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertFontWithFontForgeBrowserOutputModel: z.ZodType<Cast.ConvertFontWithFontForgeBrowserOutput> =
+  z.object({
+    output: z.object({
+      file: z.lazy(() => FileContentModel),
+    }),
+  })
+
+export const ConvertFontWithFontForgeNodeCallModel: z.ZodType<Cast.ConvertFontWithFontForgeNodeCall> =
+  z.object({
+    remote: z.boolean(),
+    async: z.boolean(),
+    explain: z.lazy(() => ExplainFormatModel),
+    input: z.object({
+      format: z.lazy(() => FontFormatModel),
+      file: z.union([
+        z.lazy(() => FileInputPathModel),
+        z.lazy(() => FileContentModel),
+      ]),
+    }),
+    output: z.object({
+      format: z.lazy(() => FontFormatModel),
+      file: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertFontWithFontForgeNodeCommandModel: z.ZodType<Cast.ConvertFontWithFontForgeNodeCommand> =
+  z.object({
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
     input: z.object({
       format: z.lazy(() => FontFormatModel),
       file: z.object({
@@ -1461,90 +1557,64 @@ export const ConvertFontWithFontForgeModel: z.ZodType<Cast.ConvertFontWithFontFo
     }),
     output: z.object({
       format: z.lazy(() => FontFormatModel),
+      file: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertFontWithFontForgeNodeLocalCallModel: z.ZodType<Cast.ConvertFontWithFontForgeNodeLocalCall> =
+  z.object({
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
+    input: z.object({
+      format: z.lazy(() => FontFormatModel),
       file: z.object({
         path: z.string(),
       }),
     }),
+    output: z.object({
+      format: z.lazy(() => FontFormatModel),
+      file: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
   })
 
-export const ConvertImageWithImageMagickModel: z.ZodType<Cast.ConvertImageWithImageMagick> =
+export const ConvertFontWithFontForgeNodeOutputModel: z.ZodType<Cast.ConvertFontWithFontForgeNodeOutput> =
   z.object({
-    remote: z.boolean(),
-    async: z.boolean(),
-    explain: z.boolean(),
+    output: z.object({
+      file: z.lazy(() => FilePathModel),
+    }),
+  })
+
+export const ConvertFontWithFontForgeNodeOutputResponseModel: z.ZodType<Cast.ConvertFontWithFontForgeNodeOutputResponse> =
+  z.object({
+    form: z.optional(z.string()).default('response'),
+    code: z.optional(z.number().int().gte(0)).default(200),
+    note: z.optional(z.string()).default('success'),
+    tree: z.lazy(() => ConvertFontWithFontForgeNodeOutputModel),
+  })
+
+export const ConvertFontWithFontForgeNodeRemoteCallModel: z.ZodType<Cast.ConvertFontWithFontForgeNodeRemoteCall> =
+  z.object({
+    async: z.optional(z.boolean()),
     input: z.object({
-      format: z.lazy(() => ImageMagickInputFormatModel),
+      format: z.lazy(() => FontFormatModel),
       file: z.union([
         z.lazy(() => FileInputPathModel),
         z.lazy(() => FileContentModel),
       ]),
     }),
     output: z.object({
-      format: z.lazy(() => ImageMagickOutputFormatModel),
-      file: z.union([
-        z.lazy(() => FileOutputPathModel),
-        z.lazy(() => FileHasOutputContentModel),
-      ]),
+      format: z.lazy(() => FontFormatModel),
     }),
     pathScope: z.optional(z.string()),
-    colorCount: z.optional(z.number().int().gte(0)),
-    colorMatrix: z.optional(
-      z
-        .lazy(() => ImageMagicColorMatrixModel)
-        .refine(
-          TEST('colorMatrix', code.test_image_magic_color_matrix.test),
-        ),
-    ),
-    colorSpace: z.optional(z.lazy(() => ImageMagickColorSpaceModel)),
-    compare: z.optional(z.boolean()),
-    compression: z.optional(z.lazy(() => ImageMagickCompressionModel)),
   })
 
-export const ConvertImageWithImageMagickLocalModel: z.ZodType<Cast.ConvertImageWithImageMagickLocal> =
+export const ConvertImageWithImageMagickBrowserCallModel: z.ZodType<Cast.ConvertImageWithImageMagickBrowserCall> =
   z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
-    input: z.object({
-      format: z.lazy(() => ImageMagickInputFormatModel),
-      file: z.object({
-        path: z.string(),
-      }),
-    }),
-    output: z.object({
-      format: z.lazy(() => ImageMagickOutputFormatModel),
-      file: z.union([
-        z.lazy(() => FileOutputPathModel),
-        z.lazy(() => FileHasOutputContentModel),
-      ]),
-    }),
-    pathScope: z.optional(z.string()),
-    colorCount: z.optional(z.number().int().gte(0)),
-    colorMatrix: z.optional(
-      z
-        .lazy(() => ImageMagicColorMatrixModel)
-        .refine(
-          TEST('colorMatrix', code.test_image_magic_color_matrix.test),
-        ),
-    ),
-    colorSpace: z.optional(z.lazy(() => ImageMagickColorSpaceModel)),
-    compare: z.optional(z.boolean()),
-    compression: z.optional(z.lazy(() => ImageMagickCompressionModel)),
-  })
-
-export const ConvertImageWithImageMagickOutputModel: z.ZodType<Cast.ConvertImageWithImageMagickOutput> =
-  z.object({
-    output: z.object({
-      file: z.union([
-        z.lazy(() => FilePathModel),
-        z.lazy(() => FileContentModel),
-      ]),
-    }),
-  })
-
-export const ConvertImageWithImageMagickRemoteModel: z.ZodType<Cast.ConvertImageWithImageMagickRemote> =
-  z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
+    remote: z.optional(z.boolean()),
+    async: z.optional(z.boolean()),
+    explain: z.lazy(() => ExplainFormatModel),
     input: z.object({
       format: z.lazy(() => ImageMagickInputFormatModel),
       file: z.lazy(() => FileContentModel),
@@ -1566,19 +1636,168 @@ export const ConvertImageWithImageMagickRemoteModel: z.ZodType<Cast.ConvertImage
     compression: z.optional(z.lazy(() => ImageMagickCompressionModel)),
   })
 
-export const ConvertImageWithImageMagickResponseModel: z.ZodType<Cast.ConvertImageWithImageMagickResponse> =
+export const ConvertImageWithImageMagickBrowserOutputModel: z.ZodType<Cast.ConvertImageWithImageMagickBrowserOutput> =
+  z.object({
+    output: z.object({
+      file: z.lazy(() => FileContentModel),
+    }),
+  })
+
+export const ConvertImageWithImageMagickNodeCallModel: z.ZodType<Cast.ConvertImageWithImageMagickNodeCall> =
+  z.object({
+    remote: z.boolean(),
+    async: z.boolean(),
+    explain: z.lazy(() => ExplainFormatModel),
+    input: z.object({
+      format: z.lazy(() => ImageMagickInputFormatModel),
+      file: z.union([
+        z.lazy(() => FileInputPathModel),
+        z.lazy(() => FileContentModel),
+      ]),
+    }),
+    output: z.object({
+      format: z.lazy(() => ImageMagickOutputFormatModel),
+      file: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+    colorCount: z.optional(z.number().int().gte(0)),
+    colorMatrix: z.optional(
+      z
+        .lazy(() => ImageMagicColorMatrixModel)
+        .refine(
+          TEST('colorMatrix', code.test_image_magic_color_matrix.test),
+        ),
+    ),
+    colorSpace: z.optional(z.lazy(() => ImageMagickColorSpaceModel)),
+    compare: z.optional(z.boolean()),
+    compression: z.optional(z.lazy(() => ImageMagickCompressionModel)),
+  })
+
+export const ConvertImageWithImageMagickNodeCommandModel: z.ZodType<Cast.ConvertImageWithImageMagickNodeCommand> =
+  z.object({
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
+    input: z.object({
+      format: z.lazy(() => ImageMagickInputFormatModel),
+      file: z.object({
+        path: z.string(),
+      }),
+    }),
+    output: z.object({
+      format: z.lazy(() => ImageMagickOutputFormatModel),
+      file: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+    colorCount: z.optional(z.number().int().gte(0)),
+    colorMatrix: z.optional(
+      z
+        .lazy(() => ImageMagicColorMatrixModel)
+        .refine(
+          TEST('colorMatrix', code.test_image_magic_color_matrix.test),
+        ),
+    ),
+    colorSpace: z.optional(z.lazy(() => ImageMagickColorSpaceModel)),
+    compare: z.optional(z.boolean()),
+    compression: z.optional(z.lazy(() => ImageMagickCompressionModel)),
+  })
+
+export const ConvertImageWithImageMagickNodeLocalCallModel: z.ZodType<Cast.ConvertImageWithImageMagickNodeLocalCall> =
+  z.object({
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
+    input: z.object({
+      format: z.lazy(() => ImageMagickInputFormatModel),
+      file: z.object({
+        path: z.string(),
+      }),
+    }),
+    output: z.object({
+      format: z.lazy(() => ImageMagickOutputFormatModel),
+      file: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+    colorCount: z.optional(z.number().int().gte(0)),
+    colorMatrix: z.optional(
+      z
+        .lazy(() => ImageMagicColorMatrixModel)
+        .refine(
+          TEST('colorMatrix', code.test_image_magic_color_matrix.test),
+        ),
+    ),
+    colorSpace: z.optional(z.lazy(() => ImageMagickColorSpaceModel)),
+    compare: z.optional(z.boolean()),
+    compression: z.optional(z.lazy(() => ImageMagickCompressionModel)),
+  })
+
+export const ConvertImageWithImageMagickNodeOutputModel: z.ZodType<Cast.ConvertImageWithImageMagickNodeOutput> =
+  z.object({
+    output: z.object({
+      file: z.lazy(() => FilePathModel),
+    }),
+  })
+
+export const ConvertImageWithImageMagickNodeOutputResponseModel: z.ZodType<Cast.ConvertImageWithImageMagickNodeOutputResponse> =
   z.object({
     form: z.optional(z.string()).default('response'),
     code: z.optional(z.number().int().gte(0)).default(200),
     note: z.optional(z.string()).default('success'),
-    tree: z.lazy(() => ConvertImageWithImageMagickOutputModel),
+    tree: z.lazy(() => ConvertImageWithImageMagickNodeOutputModel),
   })
 
-export const ConvertLatexToPdfWithPdfLatexModel: z.ZodType<Cast.ConvertLatexToPdfWithPdfLatex> =
+export const ConvertImageWithImageMagickNodeRemoteCallModel: z.ZodType<Cast.ConvertImageWithImageMagickNodeRemoteCall> =
+  z.object({
+    async: z.optional(z.boolean()),
+    input: z.object({
+      format: z.lazy(() => ImageMagickInputFormatModel),
+      file: z.union([
+        z.lazy(() => FileInputPathModel),
+        z.lazy(() => FileContentModel),
+      ]),
+    }),
+    output: z.object({
+      format: z.lazy(() => ImageMagickOutputFormatModel),
+    }),
+    pathScope: z.optional(z.string()),
+    colorCount: z.optional(z.number().int().gte(0)),
+    colorMatrix: z.optional(
+      z
+        .lazy(() => ImageMagicColorMatrixModel)
+        .refine(
+          TEST('colorMatrix', code.test_image_magic_color_matrix.test),
+        ),
+    ),
+    colorSpace: z.optional(z.lazy(() => ImageMagickColorSpaceModel)),
+    compare: z.optional(z.boolean()),
+    compression: z.optional(z.lazy(() => ImageMagickCompressionModel)),
+  })
+
+export const ConvertLatexToPdfWithPdfLatexBrowserCallModel: z.ZodType<Cast.ConvertLatexToPdfWithPdfLatexBrowserCall> =
   z.object({
     remote: z.boolean(),
     async: z.boolean(),
-    explain: z.boolean(),
+    explain: z.lazy(() => ExplainFormatModel),
+    input: z.object({
+      format: z.string(),
+      file: z.lazy(() => FileContentModel),
+    }),
+    output: z.object({
+      format: z.string(),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertLatexToPdfWithPdfLatexBrowserOutputModel: z.ZodType<Cast.ConvertLatexToPdfWithPdfLatexBrowserOutput> =
+  z.object({
+    output: z.object({
+      file: z.lazy(() => FileContentModel),
+    }),
+  })
+
+export const ConvertLatexToPdfWithPdfLatexNodeCallModel: z.ZodType<Cast.ConvertLatexToPdfWithPdfLatexNodeCall> =
+  z.object({
+    remote: z.boolean(),
+    async: z.boolean(),
+    explain: z.lazy(() => ExplainFormatModel),
     input: z.object({
       format: z.string(),
       file: z.union([
@@ -1593,10 +1812,8 @@ export const ConvertLatexToPdfWithPdfLatexModel: z.ZodType<Cast.ConvertLatexToPd
     pathScope: z.optional(z.string()),
   })
 
-export const ConvertLatexToPdfWithPdfLatexLocalModel: z.ZodType<Cast.ConvertLatexToPdfWithPdfLatexLocal> =
+export const ConvertLatexToPdfWithPdfLatexNodeCommandModel: z.ZodType<Cast.ConvertLatexToPdfWithPdfLatexNodeCommand> =
   z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
     input: z.object({
       format: z.string(),
       file: z.object({
@@ -1610,20 +1827,42 @@ export const ConvertLatexToPdfWithPdfLatexLocalModel: z.ZodType<Cast.ConvertLate
     pathScope: z.optional(z.string()),
   })
 
-export const ConvertLatexToPdfWithPdfLatexOutputModel: z.ZodType<Cast.ConvertLatexToPdfWithPdfLatexOutput> =
+export const ConvertLatexToPdfWithPdfLatexNodeLocalCallModel: z.ZodType<Cast.ConvertLatexToPdfWithPdfLatexNodeLocalCall> =
+  z.object({
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
+    input: z.object({
+      format: z.string(),
+      file: z.object({
+        path: z.string(),
+      }),
+    }),
+    output: z.object({
+      format: z.string(),
+      directory: z.lazy(() => FileOutputPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertLatexToPdfWithPdfLatexNodeOutputModel: z.ZodType<Cast.ConvertLatexToPdfWithPdfLatexNodeOutput> =
   z.object({
     output: z.object({
-      file: z.union([
-        z.lazy(() => FilePathModel),
-        z.lazy(() => FileContentModel),
-      ]),
+      file: z.lazy(() => FilePathModel),
     }),
   })
 
-export const ConvertLatexToPdfWithPdfLatexRemoteModel: z.ZodType<Cast.ConvertLatexToPdfWithPdfLatexRemote> =
+export const ConvertLatexToPdfWithPdfLatexNodeOutputResponseModel: z.ZodType<Cast.ConvertLatexToPdfWithPdfLatexNodeOutputResponse> =
   z.object({
-    async: z.boolean(),
-    explain: z.boolean(),
+    form: z.optional(z.string()).default('response'),
+    code: z.optional(z.number().int().gte(0)).default(200),
+    note: z.optional(z.string()).default('success'),
+    tree: z.lazy(() => ConvertLatexToPdfWithPdfLatexNodeOutputModel),
+  })
+
+export const ConvertLatexToPdfWithPdfLatexNodeRemoteCallModel: z.ZodType<Cast.ConvertLatexToPdfWithPdfLatexNodeRemoteCall> =
+  z.object({
+    async: z.optional(z.boolean()),
+    explain: z.optional(z.lazy(() => ExplainFormatModel)),
     input: z.object({
       format: z.string(),
       file: z.lazy(() => FileContentModel),
@@ -1632,14 +1871,6 @@ export const ConvertLatexToPdfWithPdfLatexRemoteModel: z.ZodType<Cast.ConvertLat
       format: z.string(),
     }),
     pathScope: z.optional(z.string()),
-  })
-
-export const ConvertLatexToPdfWithPdfLatexResponseModel: z.ZodType<Cast.ConvertLatexToPdfWithPdfLatexResponse> =
-  z.object({
-    form: z.optional(z.string()).default('response'),
-    code: z.optional(z.number().int().gte(0)).default(200),
-    note: z.optional(z.string()).default('success'),
-    tree: z.lazy(() => ConvertLatexToPdfWithPdfLatexOutputModel),
   })
 
 export const ConvertMp4ToGifWithFfmpegModel: z.ZodType<Cast.ConvertMp4ToGifWithFfmpeg> =
@@ -1857,6 +2088,10 @@ export const ExiftoolImageFormatContentKeyModel: z.ZodType<Cast.ExiftoolImageFor
 export const ExiftoolTagContentKeyModel: z.ZodType<Cast.ExiftoolTagContentKey> =
   z.enum(Cast.EXIFTOOL_TAG_CONTENT_KEY)
 
+export const ExplainFormatModel: z.ZodType<Cast.ExplainFormat> = z.enum(
+  Cast.EXPLAIN_FORMAT,
+)
+
 export const FfmpegCodecAudioModel: z.ZodType<Cast.FfmpegCodecAudio> =
   z.enum(Cast.FFMPEG_CODEC_AUDIO)
 
@@ -1904,7 +2139,7 @@ export const FfmpegStrictOptionModel: z.ZodType<Cast.FfmpegStrictOption> =
   z.enum(Cast.FFMPEG_STRICT_OPTION)
 
 export const FileContentModel: z.ZodType<Cast.FileContent> = z.object({
-  content: z.instanceof(ArrayBuffer),
+  content: z.union([z.instanceof(ArrayBuffer), z.string()]),
 })
 
 export const FileHasOutputContentModel: z.ZodType<Cast.FileHasOutputContent> =
