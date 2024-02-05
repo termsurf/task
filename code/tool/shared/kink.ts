@@ -12,12 +12,6 @@ type Base = {
     take: {
       link: string
     }
-    // base: {
-    //   url: string
-    // }
-    // fill: {
-    //   url: string
-    // }
   }
   call_fail: {
     take: {}
@@ -74,6 +68,42 @@ type Base = {
       path: string
     }
   }
+  invalid_gematria_script_rank: {
+    take: {
+      form: string | null
+      rank: number
+    }
+  }
+  invalid_gematria_script: {
+    take: {
+      form: string | null
+    }
+  }
+  invalid_file_access: {
+    take: {
+      path: string
+    }
+  }
+}
+
+let CODE_INDEX = 1
+
+const CODE = {
+  abort_error: CODE_INDEX++,
+  call_fail: CODE_INDEX++,
+  command_missing: CODE_INDEX++,
+  form_fail: CODE_INDEX++,
+  unrecognized_keys: CODE_INDEX++,
+  font_forge_error: CODE_INDEX++,
+  file_missing_error: CODE_INDEX++,
+  io_match: CODE_INDEX++,
+  task_not_implemented: CODE_INDEX++,
+  file_already_exists: CODE_INDEX++,
+  compilation_error: CODE_INDEX++,
+  invalid_path: CODE_INDEX++,
+  invalid_gematria_script_rank: CODE_INDEX++,
+  invalid_gematria_script: CODE_INDEX++,
+  invalid_file_access: CODE_INDEX++,
 }
 
 type Name = keyof Base
@@ -90,7 +120,7 @@ Kink.base(
   host,
   'command_missing',
   (take: Base['command_missing']['take']) => ({
-    code: 2,
+    code: CODE.command_missing,
     note: `Command does not exist on OS.`,
     link: {
       name: take.name,
@@ -102,7 +132,7 @@ Kink.base(
   host,
   'invalid_path',
   (take: Base['invalid_path']['take']) => ({
-    code: 2,
+    code: CODE.invalid_path,
     note: `Path must be for a file or URL.`,
     link: {
       path: take.path,
@@ -111,12 +141,12 @@ Kink.base(
 )
 
 Kink.base(host, 'call_fail', () => ({
-  code: 3,
+  code: CODE.call_fail,
   note: 'System unable to make request currently',
 }))
 
 Kink.base(host, 'form_fail', (take: Base['form_fail']['take']) => ({
-  code: 4,
+  code: CODE.form_fail,
   note: 'Invalid link type',
   need: take.need,
   have: take.have,
@@ -129,7 +159,7 @@ Kink.base(
   host,
   'unrecognized_keys',
   (take: Base['unrecognized_keys']['take']) => ({
-    code: 4,
+    code: CODE.unrecognized_keys,
     note: 'Unrecognized keys in object',
     list: take.list,
     link: take.link,
@@ -141,7 +171,7 @@ Kink.base(
   host,
   'file_missing_error',
   (take: Base['file_missing_error']['take']) => ({
-    code: 4,
+    code: CODE.file_missing_error,
     note: `Task tool couldn't find file.`,
     link: { path: take.path },
   }),
@@ -151,13 +181,13 @@ Kink.base(
   host,
   'font_forge_error',
   (take: Base['font_forge_error']['take']) => ({
-    code: 5,
+    code: CODE.font_forge_error,
     note: `Font forge error. ${take.note}`,
   }),
 )
 
 Kink.base(host, 'io_match', (take: Base['io_match']['take']) => ({
-  code: 6,
+  code: CODE.io_match,
   note: `Input and output formats are the same, must be different instead.`,
   link: { format: take.format },
 }))
@@ -166,7 +196,7 @@ Kink.base(
   host,
   'task_not_implemented',
   (take: Base['task_not_implemented']['take']) => ({
-    code: 6,
+    code: CODE.task_not_implemented,
     note: `Task is not implemented yet.`,
     link: { task: take.task, link: take.link },
   }),
@@ -176,7 +206,7 @@ Kink.base(
   host,
   'file_already_exists',
   (take: Base['file_already_exists']['take']) => ({
-    code: 6,
+    code: CODE.file_already_exists,
     note: `File already exists.`,
     link: { path: take.path },
   }),
@@ -184,9 +214,39 @@ Kink.base(
 
 Kink.base(
   host,
+  'invalid_gematria_script_rank',
+  (take: Base['invalid_gematria_script_rank']['take']) => ({
+    code: CODE.invalid_gematria_script_rank,
+    note: `Gematria script is not 100% of the input.`,
+    link: take,
+  }),
+)
+
+Kink.base(
+  host,
+  'invalid_file_access',
+  (take: Base['invalid_file_access']['take']) => ({
+    code: CODE.invalid_file_access,
+    note: `Not allowed to access this file path.`,
+    link: take,
+  }),
+)
+
+Kink.base(
+  host,
+  'invalid_gematria_script',
+  (take: Base['invalid_gematria_script']['take']) => ({
+    code: CODE.invalid_gematria_script,
+    note: `Gematria script is not supported.`,
+    link: take,
+  }),
+)
+
+Kink.base(
+  host,
   'compilation_error',
   (take: Base['compilation_error']['take']) => ({
-    code: 6,
+    code: CODE.compilation_error,
     note: `Compilation error.`,
     link: { note: take.note },
   }),

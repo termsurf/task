@@ -1,10 +1,3 @@
-import * as ftp from 'ftp'
-import { Readable } from 'stream'
-import fs from 'fs'
-import { ReadableStream as ReadableStreamWeb } from 'stream/web'
-
-import fsp, { open } from 'fs/promises'
-import tmp from 'tmp-promise'
 import {
   Compile,
   CompileInputFormat,
@@ -29,19 +22,12 @@ import {
   buildCommandToCompileSwift,
   buildCommandToCompileRust,
 } from '~/code/action/compile/code/local/shared.js'
-import { flattenObjectSafe } from '~/code/tool/object.js'
-import kink from '~/code/tool/kink.js'
-import { ChildProcessError } from '~/code/tool/process.js'
+import { flattenObjectSafe } from '~/code/tool/shared/object.js'
+import kink from '~/code/tool/shared/kink.js'
+import { ChildProcessError } from '~/code/tool/node/process.js'
 import ansiToHtml from 'ansi-to-html'
 import { compileCRemote } from '~/code/action/compile/code/remote/node.js'
-import { getConfig } from '~/code/tool/config'
-import {
-  ParsePath,
-  fetchWithTimeout,
-  parsePath,
-} from '~/code/tool/index.js'
 import _ from 'lodash'
-import { basename } from 'path'
 import {
   handleLlcCommand,
   handleSwiftcCommand,
@@ -238,210 +224,8 @@ export async function compileKotlin(input: FormatKotlin) {
   // return await runFormatKotlinCommand(cmd)
 }
 
-export function isRemoteRequest(input) {
-  return Boolean(input.surf || getConfig('surf'))
-}
-
-export type FileLink = {
-  path: ParsePath
-  link: Array<string>
-}
-
-export function addLocalFilesToList(
-  files: Array<FileLink>,
-  input: string | Array<string>,
-  link: Array<string>,
-) {
-  if (Array.isArray(input)) {
-    input.forEach(path => {
-      const parsed = parsePath(path)
-      if (parsed.type === 'file-uri') {
-        files.push({
-          path: parsed,
-          link,
-        })
-      }
-    })
-  } else {
-    const parsed = parsePath(input)
-    if (parsed.type === 'file-uri') {
-      files.push({
-        path: parsed,
-        link,
-      })
-    }
-  }
-}
-
-export function addRemoteFilesToList(
-  files: Array<FileLink>,
-  input: string | Array<string>,
-  link: Array<string>,
-) {
-  if (Array.isArray(input)) {
-    input.forEach(path => {
-      const parsed = parsePath(path)
-      if (parsed.type.match(/http|ftp/)) {
-        files.push({
-          path: parsed,
-          link,
-        })
-      }
-    })
-  } else {
-    const parsed = parsePath(input)
-    if (parsed.type.match(/http|ftp/)) {
-      files.push({
-        path: parsed,
-        link,
-      })
-    }
-  }
-}
-
-export async function createStreamableFile(
-  path: string,
-): Promise<File> {
-  const name = basename(path)
-  const handle = await open(path)
-  const { size } = await handle.stat()
-
-  const file = new File([], name)
-  file.stream = () => handle.readableWebStream() as ReadableStream
-
-  // Set correct size otherwise, fetch will encounter UND_ERR_REQ_CONTENT_LENGTH_MISMATCH
-  Object.defineProperty(file, 'size', { get: () => size })
-
-  return file
-}
-
-export async function loadAllFilesForRemoteUpload(
-  files: Array<FileLink>,
-) {
-  const controller = new AbortController()
-  const out: any = {}
-  files.forEach(async fileLink => {
-    const file = await createStreamableFile(fileLink.path.href)
-    if (_.has(out, fileLink.link)) {
-      const val = _.get(out, fileLink.link)
-      const arr = Array.isArray(val) ? val : [val]
-      arr.push(file)
-      _.set(out, fileLink.link, arr)
-    } else {
-      _.set(out, fileLink.link, file)
-    }
-  })
-  return out
-}
-
-async function bindCompileRemote(input) {
-  const through = _.cloneDeep(input)
-  const files: Array<FileLink> = []
-
-  if (input.input.file.path) {
-    addLocalFilesToList(files, input.input.file.path, [
-      'input',
-      'file',
-      'content',
-    ])
-  }
-
-  if (files.length) {
-    const fileThrough = await loadAllFilesForRemoteUpload(files)
-    _.merge(through, fileThrough)
-    unsetAll(through, [['input', 'file', 'path']])
-  }
-
-  return through
-}
-
-async function saveRemoteFile(input, controller?: AbortController) {
-  return new Promise((res, rej) => {
-    fetchWithTimeout(input.input.path, { controller }).then(r => {
-      if (r.body) {
-        return Readable.fromWeb(r.body as ReadableStreamWeb<any>)
-          .pipe(
-            fs.createWriteStream(input.output.file.path, {
-              signal: controller?.signal,
-            }),
-          )
-          .on('error', rej)
-          .on('close', () => res(input.output.file.path))
-      }
-    })
-  })
-}
-
-async function saveRemoteFileAndCleanupOnError(
-  input,
-  controller?: AbortController,
-) {
-  try {
-    await saveRemoteFile(input, controller)
-  } catch (e) {
-    if (await fsp.stat(input.output.file.path)) {
-      await fsp.unlink(input.output.file.path)
-    }
-  }
-}
-
-// https://www.npmjs.com/package/ftp
-async function bindCompileLocal(input) {
-  const through = _.cloneDeep(input)
-  const files: Array<FileLink> = []
-
-  if (input.input.file.path) {
-    addRemoteFilesToList(files, input.input.file.path, [
-      'input',
-      'file',
-      'path',
-    ])
-  }
-
-  if (files.length) {
-    const fileThrough = await saveAllRemoteFilesLocally(files)
-    unsetAll(through, [['input', 'file', 'path']])
-    _.merge(through, fileThrough)
-  }
-
-  return through
-}
-
-async function saveAllRemoteFilesLocally(files: Array<FileLink>) {
-  const controller = new AbortController()
-  return Promise.all(
-    files.map(async fileLink => {
-      switch (fileLink.path.type) {
-        case 'https-uri':
-        case 'http-uri': {
-          const tmpPath = await tmp.tmpName()
-          return saveRemoteFileAndCleanupOnError(
-            {
-              input: { path: fileLink.path.href },
-              output: {
-                file: { path: tmpPath },
-              },
-            },
-            controller,
-          )
-        }
-        case 'ftps-uri':
-        case 'ftp-uri': {
-        }
-      }
-    }),
-  )
-}
-
-export function unsetAll(obj, props: Array<Array<string>>) {
-  props.forEach(path => {
-    _.unset(obj, path)
-  })
-  return obj
-}
-
 export async function compileC(input: CompileC) {
-  if (isRemoteRequest(input)) {
+  if (input.remote) {
     const bind = await bindCompileRemote(input)
     return await compileCRemote(bind)
   }

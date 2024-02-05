@@ -3,7 +3,7 @@ import { FFMPEG_TIME_PATTERN } from './bond.js'
 import { ImageMagicColorMatrix } from './cast.js'
 import _ from 'lodash'
 import { RefinementCtx, z } from 'zod'
-import { replaceFileExtension } from '~/code/tool/screen.js'
+import { replaceFileExtension } from '~/code/tool/shared/screen.js'
 
 export const transform_input_output_file: Make = {
   form: 'make',

@@ -1,9 +1,9 @@
-const CONFIG = ['surf', 'code'] as const
+const CONFIG = ['remote', 'code'] as const
 
 export type Config = (typeof CONFIG)[number]
 
 const config: Record<Config, any> = {
-  surf: false,
+  remote: '/task',
   code: undefined,
 }
 

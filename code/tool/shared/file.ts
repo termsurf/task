@@ -1,36 +1,85 @@
-import kink from '~/code/tool/kink.js'
+import _ from 'lodash'
+import pathResolver from 'path'
+import kink from './kink.js'
 
-const BASE_PATH = `https://base.task.surf/v2`
-
-export async function post(input) {
-  fetchWithTimeout(`${BASE_PATH}/${input.url}`, {
-    ...input,
-    method: 'POST',
-  })
+export type FileLink = {
+  path: ParsePath
+  link: Array<string>
 }
 
-export type FetchOptions = RequestInit & {
-  timeout?: number
-  controller?: AbortController
-}
-
-export async function fetchWithTimeout(
-  resource: string,
-  options: FetchOptions = {},
+export function addRemoteFilesToList(
+  files: Array<FileLink>,
+  input: string | Array<string>,
+  link: Array<string>,
 ) {
-  const { timeout = 20000 } = options
+  if (Array.isArray(input)) {
+    input.forEach(path => {
+      const parsed = parsePath(path)
+      if (parsed.type.match(/http|ftp/)) {
+        files.push({
+          path: parsed,
+          link,
+        })
+      }
+    })
+  } else {
+    const parsed = parsePath(input)
+    if (parsed.type.match(/http|ftp/)) {
+      files.push({
+        path: parsed,
+        link,
+      })
+    }
+  }
+}
 
-  const controller = options.controller || new AbortController()
-  const id = setTimeout(() => controller.abort('timeout'), timeout)
+export function addLocalFilesToList(
+  files: Array<FileLink>,
+  input: string | Array<string>,
+  link: Array<string>,
+) {
+  if (Array.isArray(input)) {
+    input.forEach(path => {
+      const parsed = parsePath(path)
+      if (parsed.type === 'file-uri') {
+        files.push({
+          path: parsed,
+          link,
+        })
+      }
+    })
+  } else {
+    const parsed = parsePath(input)
+    if (parsed.type === 'file-uri') {
+      files.push({
+        path: parsed,
+        link,
+      })
+    }
+  }
+}
 
-  const response = await fetch(resource, {
-    ...options,
-    signal: controller.signal,
-  })
+export function resolvePath(path: string) {
+  return pathResolver.resolve(path)
+}
 
-  clearTimeout(id)
+export function resolvePathRelativeToScope(
+  child: string,
+  parent?: string | undefined,
+) {
+  const resolvedChild = pathResolver.resolve(child)
 
-  return response
+  if (!parent) {
+    return resolvedChild
+  }
+
+  const resolvedParent = pathResolver.resolve(parent)
+
+  if (resolvedChild.indexOf(resolvedParent) === 0) {
+    return resolvedChild
+  }
+
+  throw kink('invalid_file_access', { path: resolvedChild })
 }
 
 export const PATH_TYPE = [
@@ -109,18 +158,4 @@ export function getPathType(path: string): PathType {
     throw kink('invalid_path', { path })
   }
   return 'file-path'
-}
-
-export async function requestMany(
-  controller: AbortController,
-  list: Array<Promise<Response>>,
-) {
-  return Promise.all(
-    list.map((req, i) => {
-      req.catch(e => {
-        controller.abort(e)
-      })
-      return req
-    }),
-  )
 }

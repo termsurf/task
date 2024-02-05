@@ -140,7 +140,8 @@ export function buildCommandToCompileLlvmIrToAssembly(
   input: CompileLlvmIrToAssembly,
 ) {
   const architectureKey =
-    LLVM_ARCHITECTURE_CONTENT[input.output.architecture].host
+    LLVM_ARCHITECTURE_CONTENT[input.output.architecture ?? 'x86_64']
+      .host
 
   const cmd = getCommand('llc')
 

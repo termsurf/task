@@ -1,19 +1,96 @@
 import _ from 'lodash'
+import fsp from 'fs/promises'
 import {
   IMAGE_MAGICK_FORMAT,
   ImageMagickFormat,
-  ConvertImageWithImageMagick,
   ConvertAiToSvgWithInkscape,
   VerifyImageWithImageMagick,
+  ConvertImageWithImageMagickLocal,
+  ConvertImageWithImageMagickLocalModel,
+  CommandSequenceOutput,
+  ConvertImageWithImageMagickResponse,
+  ConvertImageWithImageMagickResponseModel,
 } from '~/code/type/index.js'
 import {
   buildCommandToConvertAIToSVGWithInkscape,
   buildCommandToConvertImageWithImageMagick,
   buildCommandToVerifyImageWithImageMagick,
 } from './shared.js'
-import { Command } from '~/code/tool/command.js'
-import { ChildProcessError, exec } from '~/code/tool/process.js'
-import { handleIdentifyCommand } from '../../video/local/node.js'
+import { runCommandSequence } from '~/code/tool/node/command.js'
+import { tmpName } from 'tmp-promise'
+import assert from 'assert'
+
+const IMAGEMAGICK_FORMAT_VARIANT_NAME: Record<string, Array<string>> = {
+  jpeg: ['jpg'],
+  jpg: ['jpeg'],
+}
+
+export async function convertImageWithImageMagickLocalWithInputContent(
+  input: ConvertImageWithImageMagickLocal,
+) {
+  const tmpOutputFile = await tmpName()
+  const buildInput = _.merge({}, input, {
+    output: { file: { path: tmpOutputFile } },
+  })
+  const sequence = buildCommandToConvertImageWithImageMagick(buildInput)
+
+  if (input.explain) {
+    return sequence
+  }
+
+  await runCommandSequence(sequence.tree)
+
+  const content = await fsp.readFile(tmpOutputFile)
+
+  return ConvertImageWithImageMagickResponseModel.parse({
+    output: {
+      file: {
+        content,
+      },
+    },
+  })
+}
+
+export async function convertImageWithImageMagickLocalWithInputPath(
+  input: ConvertImageWithImageMagickLocal,
+) {
+  assert('path' in input.output.file && input.output.file.path)
+
+  const buildInput = _.merge({}, input, {
+    output: { file: { path: input.output.file.path } },
+  })
+  const sequence = buildCommandToConvertImageWithImageMagick(buildInput)
+
+  if (input.explain) {
+    return sequence
+  }
+
+  await runCommandSequence(sequence.tree)
+
+  return ConvertImageWithImageMagickResponseModel.parse({
+    output: {
+      file: {
+        path: buildInput.output.file.path,
+      },
+    },
+  })
+}
+
+export type ConvertImageWithImageMagickLocalOutput =
+  | CommandSequenceOutput
+  | ConvertImageWithImageMagickResponse
+
+export async function convertImageWithImageMagickLocal(
+  source: ConvertImageWithImageMagickLocal,
+): Promise<ConvertImageWithImageMagickLocalOutput> {
+  const input = ConvertImageWithImageMagickLocalModel.parse(source)
+
+  if ('content' in input.output.file && input.output.file.content) {
+    return await convertImageWithImageMagickLocalWithInputContent(input)
+  }
+
+  return await convertImageWithImageMagickLocalWithInputPath(input)
+}
 
 // https://unix.stackexchange.com/questions/189364/script-to-determine-if-apparent-image-files-are-real-image-files/189367#189367
 
@@ -51,17 +128,6 @@ import { handleIdentifyCommand } from '../../video/local/node.js'
 
 // https://exiv2.org/tags.html
 
-export async function convertImageWithImageMagick(
-  input: ConvertImageWithImageMagick,
-) {
-  const list = buildCommandToConvertImageWithImageMagick(input)
-  for (const cmd of list) {
-    console.log(cmd.link.join(' '))
-    await handleConvertCommand(cmd)
-  }
-  return input.output.file.path
-}
-
 export async function convertImageWithInkscape(
   input: ConvertAiToSvgWithInkscape,
 ) {
@@ -88,11 +154,6 @@ export async function verifyImageWithImageMagick(
   return false
 }
 
-const IMAGEMAGICK_FORMAT_VARIANT_NAME: Record<string, Array<string>> = {
-  jpeg: ['jpg'],
-  jpg: ['jpeg'],
-}
-
 function isFormatMatch(a: string, b: string) {
   if (a === b) {
     return true
@@ -106,29 +167,4 @@ function isFormatMatch(a: string, b: string) {
     }
   }
   return false
-}
-
-export async function handleConvertCommand(cmd: Command) {
-  try {
-    return await exec(cmd.link.join(' '))
-  } catch (e) {
-    if (e instanceof ChildProcessError) {
-      if (e.data.stderr) {
-        if (e.data.stderr.match(/^convert: unable to open image/i)) {
-          // throw new Kink
-          throw new Error(`Cannot process image.`)
-        }
-      }
-    } else {
-      throw new Error(`System error`)
-    }
-  }
-}
-
-export async function handleMogrifyCommand(cmd: Command) {
-  return await exec(cmd.link.join(' '))
-}
-
-export async function handleInkscapeCommand(cmd: Command) {
-  return await exec(cmd.link.join(' '))
 }

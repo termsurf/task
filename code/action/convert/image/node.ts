@@ -1,30 +1,20 @@
-import { bindConvertLocal } from '~/code/action/convert/tool/shared.js'
 import {
   ConvertImageWithImageMagick,
   ConvertImageWithImageMagickModel,
-} from '~/code/type'
+} from '~/code/type/index.js'
+import { convertImageWithImageMagickRemote } from './remote/shared.js'
+import { convertImageWithImageMagickLocal } from './local/node.js'
+import { bindConvertLocal } from '../tool/node.js'
 
 export async function convertImageWithImageMagick(
   source: ConvertImageWithImageMagick,
 ) {
   const input = ConvertImageWithImageMagickModel.parse(source)
-  return input.surf
-    ? convertImageWithImageMagickRemote(input)
-    : convertImageWithImageMagickLocal(input)
-}
-
-export async function convertImageWithImageMagickRemote(
-  source: ConvertImageWithImageMagick,
-) {
-  const input = await bindConvertLocal(source)
-  const request = buildRequestToConvertImageWithImageMagickRemote(input)
-  return input.note ? request : makeRequest(request)
-}
-
-export async function convertImageWithImageMagickLocal(
-  source: ConvertImageWithImageMagick,
-) {
-  const input = await bindConvertLocal(source)
-  const command = buildCommandToConvertImageWithImageMagickLocal(input)
-  return input.note ? command : runCommand(command)
+  if (input.remote) {
+    const i = input
+    convertImageWithImageMagickRemote(i)
+  } else {
+    const i = await bindConvertLocal(input)
+    return await convertImageWithImageMagickLocal(i)
+  }
 }

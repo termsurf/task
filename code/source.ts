@@ -22,6 +22,8 @@ export * from '~/code/action/inspect/color/source.js'
 export * from '~/code/action/inspect/gematria/source.js'
 export * from '~/code/action/convert/time/source.js'
 
+export * from '~/code/object/file/source.js'
+export * from '~/code/object/request/source.js'
 export * from '~/code/object/ffmpeg/source.js'
 export * from '~/code/object/patool/source.js'
 export * from '~/code/object/crypto/source.js'

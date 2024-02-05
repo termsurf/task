@@ -5,6 +5,16 @@ export const puppeteer_life_cycle_event: List = {
   list: ['load', 'domcontentloaded', 'networkidle0', 'networkidle2'],
 }
 
+export const puppeteer_input_format: List = {
+  form: 'list',
+  list: ['html'],
+}
+
+export const puppeteer_output_format: List = {
+  form: 'list',
+  list: ['pdf', 'png'],
+}
+
 export const puppeteer_life_cycle_event_content: Hash = {
   form: 'hash',
   link: 'puppeteer_life_cycle_event',

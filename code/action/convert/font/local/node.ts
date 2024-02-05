@@ -1,6 +1,6 @@
 import { ConvertFontWithFontForge } from '~/code/type/index.js'
 import { buildCommandToConvertFontWithFontForge } from './shared.js'
-import { CommandCall } from '~/code/tool/command.js'
+import { Command } from '~/code/tool/command.js'
 import { ChildProcessError, exec } from '~/code/tool/process.js'
 import kink from '~/code/tool/kink.js'
 
@@ -14,7 +14,7 @@ export async function convertFontWithFontForge(
   return input.output.file.path
 }
 
-export async function handleFontforgeCommand(cmd: CommandCall) {
+export async function handleFontforgeCommand(cmd: Command) {
   try {
     return await exec(cmd.join(' '))
   } catch (e) {

@@ -1,16 +1,21 @@
-import { YYYY_MM_DD_HH_MM_SS, toDayJs } from '~/code/tool/date.js'
 import {
   ConvertAiToSvgWithInkscape,
   VerifyImageWithImageMagick,
   IMAGE_MAGICK_COLOR_SPACE_CONTENT,
   IMAGE_MAGICK_COMPRESSION_CONTENT,
-  ConvertImageWithImageMagick,
   InspectMetadataFromImage,
-  WriteMetadataToImage,
-  RemoveImageMetadata,
+  BuildCommandToConvertImageWithImageMagick,
+  BuildCommandToConvertImageWithImageMagickModel,
 } from '~/code/type/index.js'
-import { getCommand } from '~/code/tool/command.js'
+import {
+  getCommand,
+  buildCommandSequence,
+} from '~/code/tool/shared/command.js'
 import _ from 'lodash'
+import {
+  resolvePath,
+  resolvePathRelativeToScope,
+} from '~/code/tool/file'
 
 // export function BatchProcessImages() {
 //   const cmd = [
@@ -25,13 +30,23 @@ import _ from 'lodash'
 // }
 
 export function buildCommandToConvertImageWithImageMagick(
-  input: ConvertImageWithImageMagick,
+  source: BuildCommandToConvertImageWithImageMagick,
 ) {
+  const input =
+    BuildCommandToConvertImageWithImageMagickModel.parse(source)
+
+  const ip = resolvePathRelativeToScope(
+    input.input.file.path,
+    input.filePathScope,
+  )
+  const op = resolvePathRelativeToScope(
+    input.output.file.path,
+    input.filePathScope,
+  )
+
   const cmd = getCommand(`convert`)
 
-  let inputPath = input.input.file.path.match(/\.cr2$/i)
-    ? `cr2:${input.input.file.path}`
-    : input.input.file.path
+  let inputPath = ip.match(/\.cr2$/i) ? `cr2:${ip}` : ip
 
   cmd.link.push(`"${inputPath}"`)
 
@@ -66,7 +81,7 @@ export function buildCommandToConvertImageWithImageMagick(
     cmd.link.push(`-colors`, String(input.colorCount))
   }
 
-  cmd.link.push(`"${input.output.file.path}"`)
+  cmd.link.push(`"${op}"`)
 
   // const cmd = [
   //   `magick`,
@@ -95,7 +110,7 @@ export function buildCommandToConvertImageWithImageMagick(
   //   `\'Magick\'"`,
   //   `fuzzy-magick.png`,
   // ]
-  return [cmd]
+  return buildCommandSequence(cmd)
 }
 
 export function buildCommandToInspectMetadataFromImage(
@@ -103,101 +118,7 @@ export function buildCommandToInspectMetadataFromImage(
 ) {
   const cmd = getCommand('exiftool')
   cmd.link.push(`"${input.input.file.path}"`)
-  return [cmd]
-}
-
-export function buildCommandToWriteMetadataToImage(
-  source: WriteMetadataToImage,
-) {
-  const {
-    input,
-    copyright,
-    creator,
-    license,
-    keywords,
-    artist,
-    originalDate,
-    allDates,
-    creationDate,
-    title,
-    description,
-  } = source
-  const cmd = getCommand('exiftool')
-
-  if (copyright) {
-    cmd.link.push(
-      `-rights`,
-      `"${copyright}"`,
-      `-CopyrightNotice`,
-      `"${copyright}"`,
-    )
-  }
-
-  if (artist) {
-    cmd.link.push(`artist`, `"${artist}"`)
-  }
-
-  if (originalDate) {
-    const od = YYYY_MM_DD_HH_MM_SS(toDayJs(originalDate))
-    // 1986:11:05 12:00:00
-    cmd.link.push(`-datetimeoriginal`, `"${od}"`)
-  }
-
-  if (creationDate) {
-    // 1986:11:05 12:00:00
-    const od = YYYY_MM_DD_HH_MM_SS(toDayJs(creationDate))
-    cmd.link.push(`-createdate`, `"${od}"`)
-  }
-
-  if (allDates) {
-    const d = YYYY_MM_DD_HH_MM_SS(toDayJs(allDates))
-    cmd.link.push(`-AllDates`, d)
-  }
-
-  if (creator) {
-    cmd.link.push(`-XMP-dc:Creator`, `"${creator}"`)
-  }
-
-  if (keywords) {
-    cmd.link.push(
-      `-sep`,
-      `", "`,
-      `-keywords`,
-      `"${keywords.join(', ')}"`,
-    )
-    cmd.link.push(`XMP-xmp:Keywords`, `"${keywords.join(', ')}"`)
-  }
-
-  if (license) {
-    cmd.link.push(
-      `-XMP-dc:Rights`,
-      `"${license}"`,
-      `-xmp:usageterms`,
-      `"${license}"`,
-    )
-  }
-
-  if (title) {
-    cmd.link.push(`-XMP-dc:Title`, `"${title}"`)
-    cmd.link.push(`-XMP-xmp:Title`, `"${title}"`)
-  }
-
-  if (description) {
-    cmd.link.push(`-XMP-dc:Description`, `"${description}"`)
-    cmd.link.push(`-XMP-xmp:Description`, `"${description}"`)
-  }
-
-  cmd.link.push(`"${input.file.path}"`)
-
-  return [cmd]
-}
-
-export function buildCommandToRemoveImageMetadata(
-  input: RemoveImageMetadata,
-) {
-  const cmd = getCommand(`exiftool`)
-  cmd.link.push(`-all=`, `"${input.input.file.path}"`)
-  return [cmd]
+  return buildCommandSequence(cmd)
 }
 
 // export async function replaceImageColorWithImageMagick(

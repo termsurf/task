@@ -2,9 +2,9 @@ import { Hash, List } from '@termsurf/form'
 import { getTimeZones } from '@vvo/tzdb'
 import _ from 'lodash'
 
-export const TIME_ZONE_CONTENT = getTimeZones()
+const TIME_ZONE_CONTENT = getTimeZones()
 
-export const TIME_ZONE_HASH = TIME_ZONE_CONTENT.reduce((m, x) => {
+const TIME_ZONE_HASH = TIME_ZONE_CONTENT.reduce((m, x) => {
   m[x.name] = _.omit(x, [
     'rawFormat',
     'currentTimeOffsetInMinutes',
@@ -17,6 +17,17 @@ const TIME_ZONE_ABBREVIATION = _.uniq(
   TIME_ZONE_CONTENT.filter(x => x.abbreviation).map(
     x => x.abbreviation,
   ),
+)
+
+const TIME_ZONE_ABBREVIATION_HASH = TIME_ZONE_ABBREVIATION.reduce(
+  (m, x) => {
+    const name = TIME_ZONE_CONTENT.filter(
+      tz => tz.abbreviation === x,
+    ).map(tz => tz.name)
+    m[x] = { name }
+    return m
+  },
+  {},
 )
 
 const TIME_ZONE_LOCATION = _.uniq(
@@ -54,4 +65,13 @@ export const time_zone_content: Hash = {
     abbreviation: { like: 'string' },
   },
   hash: TIME_ZONE_HASH,
+}
+
+export const time_zone_abbreviation_content: Hash = {
+  form: 'hash',
+  link: 'time_zone_abbreviation',
+  bond: {
+    name: { like: 'string', list: true },
+  },
+  hash: TIME_ZONE_ABBREVIATION_HASH,
 }

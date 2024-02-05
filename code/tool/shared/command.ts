@@ -1,46 +1,6 @@
+import { CommandSequenceOutputModel } from '~/code/type/take.js'
+import { Command, CommandName } from '../../type/cast.js'
 import kink from './kink.js'
-
-export const COMMAND_NAME = [
-  'ffmpeg',
-  'black',
-  'asmfmt',
-  'ktfmt',
-  'convert',
-  'pandoc',
-  'java',
-  'clang++',
-  'clang',
-  'llc',
-  'clang-format',
-  'swift-format',
-  'swiftc',
-  'fontforge',
-  'mogrify',
-  '7z',
-  'inkscape',
-  'unar',
-  'rar',
-  'pdflatex',
-  'objdump',
-  'rustc',
-  'rustfmt',
-  'rubocop',
-  'shfmt',
-  'zip',
-  'tar',
-  'exiftool',
-  'ebook-convert',
-  'soffice',
-  'jupyter',
-  'docx2pdf',
-  'unoconv',
-  'gifsicle',
-  'patool',
-  'identify',
-  'perltidy',
-] as const
-
-export type CommandName = (typeof COMMAND_NAME)[number]
 
 export const COMMAND: Record<CommandName, Array<string> | undefined> = {
   ffmpeg: ['ffmpeg'],
@@ -89,7 +49,7 @@ export function getCommand(name: CommandName): Command {
   if (!cmd) {
     throw kink('command_missing', { name })
   }
-  return { form: 'command', name: name, link: [...cmd] }
+  return { key: name, name: name, link: [...cmd] }
 }
 
 export function setCommand(
@@ -99,12 +59,11 @@ export function setCommand(
   COMMAND[name] = bond
 }
 
-export type Command = {
-  form: 'command'
-  name: CommandName
-  link: CommandCall
-}
-export type CommandCall = Array<string>
-export type CommandList = Array<Command>
-
 // php-cs-fixer fix test/file/code/quicksort/quicksort.php
+
+export function buildCommandSequence(call: Command | Array<Command>) {
+  if (Array.isArray(call)) {
+    return CommandSequenceOutputModel.parse({ tree: { call } })
+  }
+  return CommandSequenceOutputModel.parse({ tree: { call: [call] } })
+}

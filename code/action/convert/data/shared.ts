@@ -2,7 +2,10 @@
 import { parse, Options } from 'csv-parse/browser/esm/sync'
 import typeOf from 'type-detect'
 import escapeSqlString from 'sql-escape-string'
-import { unflattenObject, flattenObjectSafe } from '~/code/tool/object'
+import {
+  unflattenObject,
+  flattenObjectSafe,
+} from '~/code/tool/shared/object'
 import _ from 'lodash'
 import sortKeys from 'json-keys-sort'
 

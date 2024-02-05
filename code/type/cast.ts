@@ -117,6 +117,145 @@ export type BuildBaseInputFileOutputDirectory = {
   }
 }
 
+export type BuildCommandToConvertAiToSvgWithInkscape = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: string
+    file: {
+      path: string
+    }
+  }
+  output: {
+    format: string
+    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type BuildCommandToConvertDocumentWithCalibre = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: CalibreInputFormat
+    file: {
+      path: string
+    }
+  }
+  output: {
+    format: CalibreOutputFormat
+    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type BuildCommandToConvertDocumentWithJupyter = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: string
+    file: {
+      path: string
+    }
+  }
+  output: {
+    format: string
+    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type BuildCommandToConvertDocumentWithLibreOffice = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: LibreOfficeInputFormat
+    file: {
+      path: string
+    }
+  }
+  output: {
+    format: LibreOfficeOutputFormat
+    directory: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type BuildCommandToConvertDocumentWithPandoc = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: PandocInputFormat
+    file: {
+      path: string
+    }
+  }
+  output: {
+    format: PandocOutputFormat
+    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type BuildCommandToConvertDocumentWithPuppeteer = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: PuppeteerInputFormat
+    file: {
+      path: string
+    }
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file: FileOutputPath
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+}
+
+export type BuildCommandToConvertImageWithImageMagick = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: ImageMagickInputFormat
+    file: {
+      path: string
+    }
+  }
+  output: {
+    format: ImageMagickOutputFormat
+    file: FileOutputPath
+  }
+  pathScope?: string
+  colorCount?: number
+  colorMatrix?: ImageMagicColorMatrix
+  colorSpace?: ImageMagickColorSpace
+  compare?: boolean
+  compression?: ImageMagickCompression
+}
+
+export type BuildCommandToConvertLatexToPdfWithPdfLatex = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: string
+    file: {
+      path: string
+    }
+  }
+  output: {
+    format: string
+    directory: FileOutputPath
+  }
+  pathScope?: string
+}
+
 export type BuildCommandToOptimizeGifWithGifsicle = {
   lossy?: number
   background?: string
@@ -142,6 +281,15 @@ export type BuildFormatInputOutput = {
   }
   output: {
     format: string
+  }
+}
+
+export type CalculateGematria = {
+  input: {
+    string: {
+      decoded: string
+      encoded?: string
+    }
   }
 }
 
@@ -3461,6 +3609,107 @@ export const CLANG_STYLE_OBJC = _.merge({}, CLANG_STYLE_ALL, {
   },
 })
 
+export type Command = {
+  name: CommandName
+  key: CommandKey
+  link: Array<string>
+}
+
+export const COMMAND_KEY = [
+  'ffmpeg',
+  'black',
+  'asmfmt',
+  'ktfmt',
+  'convert',
+  'pandoc',
+  'java',
+  'clang++',
+  'clang',
+  'llc',
+  'clang-format',
+  'swift-format',
+  'swiftc',
+  'fontforge',
+  'mogrify',
+  '7z',
+  'inkscape',
+  'unar',
+  'rar',
+  'pdflatex',
+  'objdump',
+  'rustc',
+  'rustfmt',
+  'rubocop',
+  'shfmt',
+  'zip',
+  'tar',
+  'exiftool',
+  'ebook-convert',
+  'soffice',
+  'jupyter',
+  'docx2pdf',
+  'unoconv',
+  'gifsicle',
+  'patool',
+  'identify',
+  'perltidy',
+] as const
+
+export type CommandKey = (typeof COMMAND_KEY)[number]
+
+export const COMMAND_NAME = [
+  'ffmpeg',
+  'black',
+  'asmfmt',
+  'ktfmt',
+  'convert',
+  'pandoc',
+  'java',
+  'clang++',
+  'clang',
+  'llc',
+  'clang-format',
+  'swift-format',
+  'swiftc',
+  'fontforge',
+  'mogrify',
+  '7z',
+  'inkscape',
+  'unar',
+  'rar',
+  'pdflatex',
+  'objdump',
+  'rustc',
+  'rustfmt',
+  'rubocop',
+  'shfmt',
+  'zip',
+  'tar',
+  'exiftool',
+  'ebook-convert',
+  'soffice',
+  'jupyter',
+  'docx2pdf',
+  'unoconv',
+  'gifsicle',
+  'patool',
+  'identify',
+  'perltidy',
+] as const
+
+export type CommandName = (typeof COMMAND_NAME)[number]
+
+export type CommandSequence = {
+  call: Array<Command>
+}
+
+export type CommandSequenceOutput = {
+  form?: string
+  code?: number
+  note?: string
+  tree: CommandSequence
+}
+
 export type CompileAsm = {
   input: {
     format: string
@@ -3611,17 +3860,60 @@ export type CompressMp4WithFfmpeg = {
 }
 
 export type ConvertAiToSvgWithInkscape = {
+  remote: boolean
+  async: boolean
+  explain: boolean
   input: {
+    format: string
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: string
+    file: FileOutputPath | FileHasOutputContent
+  }
+  pathScope?: string
+}
+
+export type ConvertAiToSvgWithInkscapeLocal = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: string
     file: {
-      path?: string
+      path: string
     }
   }
   output: {
-    file: {
-      path: string
-      format: string
-    }
+    format: string
+    file: FileOutputPath | FileHasOutputContent
   }
+  pathScope?: string
+}
+
+export type ConvertAiToSvgWithInkscapeOutput = {
+  output: {
+    file: FilePath | FileContent
+  }
+}
+
+export type ConvertAiToSvgWithInkscapeRemote = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: string
+    file: FileContent
+  }
+  output: {
+    format: string
+  }
+  pathScope?: string
+}
+
+export type ConvertAiToSvgWithInkscapeResponse = {
+  form?: string
+  code?: number
+  note?: string
+  tree: ConvertAiToSvgWithInkscapeOutput
 }
 
 export type ConvertArchiveWithUnarchiver = {
@@ -3645,6 +3937,23 @@ export type ConvertArchiveWithUnarchiver = {
 }
 
 export type ConvertDocumentWithCalibre = {
+  remote: boolean
+  async: boolean
+  explain: boolean
+  input: {
+    format: CalibreInputFormat
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: CalibreOutputFormat
+    file: FileOutputPath | FileHasOutputContent
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithCalibreLocal = {
+  async: boolean
+  explain: boolean
   input: {
     format: CalibreInputFormat
     file: {
@@ -3653,13 +3962,55 @@ export type ConvertDocumentWithCalibre = {
   }
   output: {
     format: CalibreOutputFormat
-    file: {
-      path: string
-    }
+    file: FileOutputPath | FileHasOutputContent
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithCalibreOutput = {
+  output: {
+    file: FilePath | FileContent
   }
 }
 
+export type ConvertDocumentWithCalibreRemote = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: CalibreInputFormat
+    file: FileContent
+  }
+  output: {
+    format: CalibreOutputFormat
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithCalibreResponse = {
+  form?: string
+  code?: number
+  note?: string
+  tree: ConvertDocumentWithCalibreOutput
+}
+
 export type ConvertDocumentWithJupyter = {
+  remote: boolean
+  async: boolean
+  explain: boolean
+  input: {
+    format: string
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: string
+    file: FileOutputPath | FileHasOutputContent
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithJupyterLocal = {
+  async: boolean
+  explain: boolean
   input: {
     format: string
     file: {
@@ -3668,13 +4019,55 @@ export type ConvertDocumentWithJupyter = {
   }
   output: {
     format: string
-    file: {
-      format: string
-    }
+    file: FileOutputPath | FileHasOutputContent
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithJupyterOutput = {
+  output: {
+    file: FilePath | FileContent
   }
 }
 
+export type ConvertDocumentWithJupyterRemote = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: string
+    file: FileContent
+  }
+  output: {
+    format: string
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithJupyterResponse = {
+  form?: string
+  code?: number
+  note?: string
+  tree: ConvertDocumentWithJupyterOutput
+}
+
 export type ConvertDocumentWithLibreOffice = {
+  remote: boolean
+  async: boolean
+  explain: boolean
+  input: {
+    format: LibreOfficeInputFormat
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: LibreOfficeOutputFormat
+    directory: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithLibreOfficeLocal = {
+  async: boolean
+  explain: boolean
   input: {
     format: LibreOfficeInputFormat
     file: {
@@ -3683,13 +4076,55 @@ export type ConvertDocumentWithLibreOffice = {
   }
   output: {
     format: LibreOfficeOutputFormat
-    directory: {
-      path: string
-    }
+    directory: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithLibreOfficeOutput = {
+  output: {
+    file: FilePath | FileContent
   }
 }
 
+export type ConvertDocumentWithLibreOfficeRemote = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: LibreOfficeInputFormat
+    file: FileContent
+  }
+  output: {
+    format: LibreOfficeOutputFormat
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithLibreOfficeResponse = {
+  form?: string
+  code?: number
+  note?: string
+  tree: ConvertDocumentWithLibreOfficeOutput
+}
+
 export type ConvertDocumentWithPandoc = {
+  remote: boolean
+  async: boolean
+  explain: boolean
+  input: {
+    format: PandocInputFormat
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: PandocOutputFormat
+    file: FileOutputPath | FileHasOutputContent
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithPandocLocal = {
+  async: boolean
+  explain: boolean
   input: {
     format: PandocInputFormat
     file: {
@@ -3697,11 +4132,111 @@ export type ConvertDocumentWithPandoc = {
     }
   }
   output: {
+    format: PandocOutputFormat
+    file: FileOutputPath | FileHasOutputContent
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithPandocOutput = {
+  output: {
+    file: FilePath | FileContent
+  }
+}
+
+export type ConvertDocumentWithPandocRemote = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: PandocInputFormat
+    file: FileContent
+  }
+  output: {
+    format: PandocOutputFormat
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithPandocResponse = {
+  form?: string
+  code?: number
+  note?: string
+  tree: ConvertDocumentWithPandocOutput
+}
+
+export type ConvertDocumentWithPuppeteer = {
+  remote: boolean
+  async: boolean
+  explain: boolean
+  input: {
+    format: PuppeteerInputFormat
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file: FileOutputPath | FileHasOutputContent
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+}
+
+export type ConvertDocumentWithPuppeteerLocal = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: PuppeteerInputFormat
     file: {
       path: string
     }
-    format: PandocOutputFormat
   }
+  output: {
+    format: PuppeteerOutputFormat
+    file: FileOutputPath | FileHasOutputContent
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+}
+
+export type ConvertDocumentWithPuppeteerOutput = {
+  output: {
+    file: FilePath | FileContent
+  }
+}
+
+export type ConvertDocumentWithPuppeteerRemote = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: PuppeteerInputFormat
+    file: FileContent
+  }
+  output: {
+    format: PuppeteerOutputFormat
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+}
+
+export type ConvertDocumentWithPuppeteerResponse = {
+  form?: string
+  code?: number
+  note?: string
+  tree: ConvertDocumentWithPuppeteerOutput
 }
 
 export type ConvertFontWithFontForge = {
@@ -3719,64 +4254,19 @@ export type ConvertFontWithFontForge = {
   }
 }
 
-export type ConvertHtmlToPdfWithPuppeteer = {
-  input: {
-    format: string
-    file: {
-      path: string
-    }
-  }
-  output: {
-    format: string
-    file: {
-      path: string
-    }
-  }
-  viewport: {
-    width?: number
-    height?: number
-  }
-  proxy?: string
-  waitUntil?: PuppeteerLifeCycleEvent
-}
-
-export type ConvertHtmlToPngWithPuppeteer = {
-  input: {
-    format: string
-    file: {
-      path: string
-    }
-  }
-  output: {
-    format: string
-    file: {
-      path: string
-    }
-  }
-  viewport: {
-    width?: number
-    height?: number
-  }
-  proxy?: string
-  waitUntil?: PuppeteerLifeCycleEvent
-}
-
 export type ConvertImageWithImageMagick = {
-  surf: boolean
-  work: boolean
-  note: boolean
+  remote: boolean
+  async: boolean
+  explain: boolean
   input: {
-    format: string
-    file: {
-      path: string
-    }
+    format: ImageMagickInputFormat
+    file: FileInputPath | FileContent
   }
   output: {
-    format: string
-    file: {
-      path: string
-    }
+    format: ImageMagickOutputFormat
+    file: FileOutputPath | FileHasOutputContent
   }
+  pathScope?: string
   colorCount?: number
   colorMatrix?: ImageMagicColorMatrix
   colorSpace?: ImageMagickColorSpace
@@ -3784,7 +4274,76 @@ export type ConvertImageWithImageMagick = {
   compression?: ImageMagickCompression
 }
 
+export type ConvertImageWithImageMagickLocal = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: ImageMagickInputFormat
+    file: {
+      path: string
+    }
+  }
+  output: {
+    format: ImageMagickOutputFormat
+    file: FileOutputPath | FileHasOutputContent
+  }
+  pathScope?: string
+  colorCount?: number
+  colorMatrix?: ImageMagicColorMatrix
+  colorSpace?: ImageMagickColorSpace
+  compare?: boolean
+  compression?: ImageMagickCompression
+}
+
+export type ConvertImageWithImageMagickOutput = {
+  output: {
+    file: FilePath | FileContent
+  }
+}
+
+export type ConvertImageWithImageMagickRemote = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: ImageMagickInputFormat
+    file: FileContent
+  }
+  output: {
+    format: ImageMagickOutputFormat
+  }
+  pathScope?: string
+  colorCount?: number
+  colorMatrix?: ImageMagicColorMatrix
+  colorSpace?: ImageMagickColorSpace
+  compare?: boolean
+  compression?: ImageMagickCompression
+}
+
+export type ConvertImageWithImageMagickResponse = {
+  form?: string
+  code?: number
+  note?: string
+  tree: ConvertImageWithImageMagickOutput
+}
+
 export type ConvertLatexToPdfWithPdfLatex = {
+  remote: boolean
+  async: boolean
+  explain: boolean
+  input: {
+    format: string
+    file: FileInputPath | FileContent
+  }
+  output: {
+    format: string
+    directory: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertLatexToPdfWithPdfLatexLocal = {
+  async: boolean
+  explain: boolean
   input: {
     format: string
     file: {
@@ -3792,13 +4351,36 @@ export type ConvertLatexToPdfWithPdfLatex = {
     }
   }
   output: {
-    directory: {
-      path: string
-    }
-    file: {
-      name: string
-    }
+    format: string
+    directory: FileOutputPath
   }
+  pathScope?: string
+}
+
+export type ConvertLatexToPdfWithPdfLatexOutput = {
+  output: {
+    file: FilePath | FileContent
+  }
+}
+
+export type ConvertLatexToPdfWithPdfLatexRemote = {
+  async: boolean
+  explain: boolean
+  input: {
+    format: string
+    file: FileContent
+  }
+  output: {
+    format: string
+  }
+  pathScope?: string
+}
+
+export type ConvertLatexToPdfWithPdfLatexResponse = {
+  form?: string
+  code?: number
+  note?: string
+  tree: ConvertLatexToPdfWithPdfLatexOutput
 }
 
 export type ConvertMp4ToGifWithFfmpeg = {
@@ -92211,6 +92793,26 @@ export const FFMPEG_STRICT_OPTION_CONTENT: FfmpegStrictOptionContent = {
   },
 }
 
+export type FileContent = {
+  content: ArrayBuffer
+}
+
+export type FileHasOutputContent = {
+  content: boolean
+}
+
+export type FileInputPath = {
+  path: string
+}
+
+export type FileOutputPath = {
+  path: string
+}
+
+export type FilePath = {
+  path: string
+}
+
 export const FLIP = ['horizontal', 'vertical'] as const
 
 export type Flip = (typeof FLIP)[number]
@@ -92298,6 +92900,13 @@ export type FormatJava = {
   }
 }
 
+export type FormatJavaWithPrettier = {
+  max_line_length?: number
+  indentation_size?: number
+  use_tabs?: boolean
+  trailing_comma?: boolean
+}
+
 export type FormatKotlin = {
   input: {
     format: string
@@ -92354,6 +92963,26 @@ export type FormatRust = {
   }
 }
 
+export type FormatRustWithPrettier = {
+  use_tabs?: boolean
+  tab_width?: number
+  max_line_length?: number
+  end_of_line?: string
+}
+
+export type FormatShWithPrettier = {
+  keep_comments?: boolean
+  stop_at?: string
+  variant?: string
+  indent?: number
+  binary_next_line?: boolean
+  switch_case_indent?: boolean
+  space_redirects?: boolean
+  keep_padding?: boolean
+  minify?: boolean
+  function_next_line?: boolean
+}
+
 export type FormatSqlWithContent = {
   input: {
     format: string
@@ -92375,6 +93004,41 @@ export type FormatSwift = {
       path: string
     }
   }
+}
+
+export type FormatTypescriptWithPrettier = {
+  jsx_single_quote: boolean
+  single_quote: boolean
+  semi_colon: boolean
+  indentation_size: number
+  max_line_length: number
+  trailing_comma: boolean
+  bracket_spacing: boolean
+  bracket_same_line: boolean
+  arrow_parentheses: boolean
+  end_of_line: string
+  single_attribute_per_line: boolean
+}
+
+export type GematriaSystemCalculation = {
+  system: {
+    slug: string
+    title: string
+  }
+  reduction: number
+  summation: number
+}
+
+export type GematriaSystemCalculationResult = {
+  string: {
+    decoded: string
+    encoded: string
+  }
+  script: {
+    slug: string
+    title: string
+  }
+  calculation: Array<GematriaSystemCalculation>
 }
 
 export type GenerateMurmurHash = {
@@ -108182,6 +108846,11 @@ export const PATOOL_FORMAT = [
 
 export type PatoolFormat = (typeof PATOOL_FORMAT)[number]
 
+export const PUPPETEER_INPUT_FORMAT = ['html'] as const
+
+export type PuppeteerInputFormat =
+  (typeof PUPPETEER_INPUT_FORMAT)[number]
+
 export const PUPPETEER_LIFE_CYCLE_EVENT = [
   'load',
   'domcontentloaded',
@@ -108217,6 +108886,11 @@ export const PUPPETEER_LIFE_CYCLE_EVENT_CONTENT: PuppeteerLifeCycleEventContent 
     },
   }
 
+export const PUPPETEER_OUTPUT_FORMAT = ['pdf', 'png'] as const
+
+export type PuppeteerOutputFormat =
+  (typeof PUPPETEER_OUTPUT_FORMAT)[number]
+
 export type RemoveAudioFromVideoWithFfmpeg = {
   inputPath: string
   outputPath: string
@@ -108239,6 +108913,18 @@ export type ReplaceImageColorWithImageMagick = {
   fuzz: number
 }
 
+export type Request = {
+  path: string
+  body: object
+}
+
+export type RequestOutput = {
+  form?: string
+  code?: number
+  note?: string
+  tree: Request
+}
+
 export type ResizeImageWithImageMagick = {
   inputPath: string
   outputPath: string
@@ -108246,6 +108932,13 @@ export type ResizeImageWithImageMagick = {
   height: number
   stretch: boolean
   gravity: ImageMagickGravity
+}
+
+export type Response = {
+  form?: string
+  code?: number
+  note?: string
+  tree: object
 }
 
 export const RUST_COMPILER_TARGET = [
@@ -109157,6 +109850,615 @@ export const TIME_ZONE_ABBREVIATION = [
 
 export type TimeZoneAbbreviation =
   (typeof TIME_ZONE_ABBREVIATION)[number]
+
+export type TimeZoneAbbreviationContentValue = {
+  name: Array<string>
+}
+
+export type TimeZoneAbbreviationContent = Record<
+  TimeZoneAbbreviation,
+  TimeZoneAbbreviationContentValue
+>
+
+export const TIME_ZONE_ABBREVIATION_CONTENT: TimeZoneAbbreviationContent =
+  {
+    NUT: {
+      name: ['Pacific/Niue'],
+    },
+    SST: {
+      name: ['Pacific/Midway', 'Pacific/Pago_Pago'],
+    },
+    CKT: {
+      name: ['Pacific/Rarotonga'],
+    },
+    HAST: {
+      name: ['America/Adak', 'Pacific/Honolulu'],
+    },
+    TAHT: {
+      name: ['Pacific/Tahiti'],
+    },
+    MART: {
+      name: ['Pacific/Marquesas'],
+    },
+    AKST: {
+      name: ['America/Anchorage'],
+    },
+    GAMT: {
+      name: ['Pacific/Gambier'],
+    },
+    PST: {
+      name: [
+        'America/Los_Angeles',
+        'America/Tijuana',
+        'America/Vancouver',
+        'Pacific/Pitcairn',
+      ],
+    },
+    'GMT-7': {
+      name: ['America/Hermosillo'],
+    },
+    MST: {
+      name: [
+        'America/Edmonton',
+        'America/Ciudad_Juarez',
+        'America/Denver',
+        'America/Phoenix',
+      ],
+    },
+    YT: {
+      name: ['America/Whitehorse'],
+    },
+    CST: {
+      name: [
+        'America/Belize',
+        'America/Chicago',
+        'America/Guatemala',
+        'America/Managua',
+        'America/Mexico_City',
+        'America/Matamoros',
+        'America/Costa_Rica',
+        'America/El_Salvador',
+        'America/Regina',
+        'America/Tegucigalpa',
+        'America/Winnipeg',
+        'America/Havana',
+        'Asia/Urumqi',
+        'Asia/Macau',
+        'Asia/Shanghai',
+      ],
+    },
+    GALT: {
+      name: ['Pacific/Galapagos'],
+    },
+    ACT: {
+      name: ['America/Rio_Branco'],
+    },
+    COT: {
+      name: ['America/Bogota'],
+    },
+    EAST: {
+      name: ['Pacific/Easter'],
+    },
+    EST: {
+      name: [
+        'America/Atikokan',
+        'America/Cancun',
+        'America/Grand_Turk',
+        'America/Cayman',
+        'America/Jamaica',
+        'America/Nassau',
+        'America/New_York',
+        'America/Panama',
+        'America/Port-au-Prince',
+        'America/Toronto',
+      ],
+    },
+    ECT: {
+      name: ['America/Guayaquil'],
+    },
+    PET: {
+      name: ['America/Lima'],
+    },
+    AMT: {
+      name: ['America/Manaus', 'Asia/Yerevan'],
+    },
+    AST: {
+      name: [
+        'America/St_Kitts',
+        'America/Blanc-Sablon',
+        'America/Montserrat',
+        'America/Barbados',
+        'America/St_Lucia',
+        'America/Port_of_Spain',
+        'America/Martinique',
+        'America/St_Barthelemy',
+        'America/Halifax',
+        'Atlantic/Bermuda',
+        'America/St_Vincent',
+        'America/Kralendijk',
+        'America/Guadeloupe',
+        'America/Marigot',
+        'America/Aruba',
+        'America/Lower_Princes',
+        'America/Tortola',
+        'America/Dominica',
+        'America/St_Thomas',
+        'America/Grenada',
+        'America/Antigua',
+        'America/Puerto_Rico',
+        'America/Santo_Domingo',
+        'America/Anguilla',
+        'America/Thule',
+        'America/Curacao',
+        'Asia/Kuwait',
+        'Asia/Bahrain',
+        'Asia/Baghdad',
+        'Asia/Qatar',
+        'Asia/Riyadh',
+        'Asia/Aden',
+      ],
+    },
+    BOT: {
+      name: ['America/La_Paz'],
+    },
+    GYT: {
+      name: ['America/Guyana'],
+    },
+    VET: {
+      name: ['America/Caracas'],
+    },
+    NST: {
+      name: ['America/St_Johns'],
+    },
+    ART: {
+      name: ['America/Argentina/Buenos_Aires'],
+    },
+    BRT: {
+      name: ['America/Sao_Paulo'],
+    },
+    CLT: {
+      name: [
+        'Antarctica/Palmer',
+        'America/Punta_Arenas',
+        'America/Santiago',
+      ],
+    },
+    FKST: {
+      name: ['Atlantic/Stanley'],
+    },
+    GFT: {
+      name: ['America/Cayenne'],
+    },
+    PYT: {
+      name: ['America/Asuncion'],
+    },
+    PM: {
+      name: ['America/Miquelon'],
+    },
+    SRT: {
+      name: ['America/Paramaribo'],
+    },
+    UYT: {
+      name: ['America/Montevideo'],
+    },
+    FNT: {
+      name: ['America/Noronha'],
+    },
+    GST: {
+      name: ['Atlantic/South_Georgia', 'Asia/Dubai', 'Asia/Muscat'],
+    },
+    WGT: {
+      name: ['America/Nuuk'],
+    },
+    AZOT: {
+      name: ['Atlantic/Azores'],
+    },
+    CVT: {
+      name: ['Atlantic/Cape_Verde'],
+    },
+    EGT: {
+      name: ['America/Scoresbysund'],
+    },
+    GMT: {
+      name: [
+        'Africa/Abidjan',
+        'Africa/Bamako',
+        'Africa/Bissau',
+        'Africa/Conakry',
+        'Africa/Dakar',
+        'America/Danmarkshavn',
+        'Europe/Isle_of_Man',
+        'Europe/Dublin',
+        'Africa/Freetown',
+        'Atlantic/St_Helena',
+        'Africa/Accra',
+        'Africa/Lome',
+        'Europe/London',
+        'Africa/Monrovia',
+        'Africa/Nouakchott',
+        'Africa/Ouagadougou',
+        'Atlantic/Reykjavik',
+        'Europe/Jersey',
+        'Europe/Guernsey',
+        'Africa/Sao_Tome',
+        'Africa/Banjul',
+        'Antarctica/Troll',
+      ],
+    },
+    WET: {
+      name: [
+        'Atlantic/Canary',
+        'Europe/Lisbon',
+        'Atlantic/Faroe',
+        'Africa/Casablanca',
+        'Africa/El_Aaiun',
+      ],
+    },
+    CET: {
+      name: [
+        'Africa/Algiers',
+        'Europe/Amsterdam',
+        'Europe/Andorra',
+        'Europe/Belgrade',
+        'Europe/Berlin',
+        'Europe/Bratislava',
+        'Europe/Brussels',
+        'Europe/Budapest',
+        'Europe/Copenhagen',
+        'Europe/Gibraltar',
+        'Europe/Ljubljana',
+        'Arctic/Longyearbyen',
+        'Europe/Luxembourg',
+        'Europe/Madrid',
+        'Europe/Monaco',
+        'Europe/Oslo',
+        'Europe/Paris',
+        'Europe/Podgorica',
+        'Europe/Prague',
+        'Europe/Rome',
+        'Europe/San_Marino',
+        'Europe/Malta',
+        'Europe/Sarajevo',
+        'Europe/Skopje',
+        'Europe/Stockholm',
+        'Europe/Tirane',
+        'Africa/Tunis',
+        'Europe/Vaduz',
+        'Europe/Vatican',
+        'Europe/Vienna',
+        'Europe/Warsaw',
+        'Europe/Zagreb',
+        'Europe/Zurich',
+      ],
+    },
+    WAT: {
+      name: [
+        'Africa/Bangui',
+        'Africa/Malabo',
+        'Africa/Brazzaville',
+        'Africa/Porto-Novo',
+        'Africa/Douala',
+        'Africa/Kinshasa',
+        'Africa/Lagos',
+        'Africa/Libreville',
+        'Africa/Luanda',
+        'Africa/Ndjamena',
+        'Africa/Niamey',
+      ],
+    },
+    CAT: {
+      name: [
+        'Africa/Bujumbura',
+        'Africa/Gaborone',
+        'Africa/Harare',
+        'Africa/Juba',
+        'Africa/Khartoum',
+        'Africa/Kigali',
+        'Africa/Blantyre',
+        'Africa/Lubumbashi',
+        'Africa/Lusaka',
+        'Africa/Maputo',
+        'Africa/Windhoek',
+      ],
+    },
+    EET: {
+      name: [
+        'Europe/Athens',
+        'Asia/Beirut',
+        'Europe/Bucharest',
+        'Africa/Cairo',
+        'Europe/Chisinau',
+        'Asia/Hebron',
+        'Europe/Helsinki',
+        'Europe/Kaliningrad',
+        'Europe/Kyiv',
+        'Europe/Mariehamn',
+        'Asia/Nicosia',
+        'Europe/Riga',
+        'Europe/Sofia',
+        'Europe/Tallinn',
+        'Africa/Tripoli',
+        'Europe/Vilnius',
+      ],
+    },
+    IST: {
+      name: ['Asia/Jerusalem', 'Asia/Colombo', 'Asia/Kolkata'],
+    },
+    SAST: {
+      name: ['Africa/Johannesburg', 'Africa/Mbabane', 'Africa/Maseru'],
+    },
+    'GMT+3': {
+      name: ['Asia/Amman', 'Asia/Damascus'],
+    },
+    EAT: {
+      name: [
+        'Africa/Addis_Ababa',
+        'Indian/Antananarivo',
+        'Africa/Asmara',
+        'Africa/Dar_es_Salaam',
+        'Africa/Djibouti',
+        'Africa/Kampala',
+        'Indian/Mayotte',
+        'Africa/Mogadishu',
+        'Indian/Comoro',
+        'Africa/Nairobi',
+      ],
+    },
+    MSK: {
+      name: ['Europe/Minsk', 'Europe/Moscow', 'Europe/Simferopol'],
+    },
+    SYOT: {
+      name: ['Antarctica/Syowa'],
+    },
+    TRT: {
+      name: ['Europe/Istanbul'],
+    },
+    IRST: {
+      name: ['Asia/Tehran'],
+    },
+    AZT: {
+      name: ['Asia/Baku'],
+    },
+    GET: {
+      name: ['Asia/Tbilisi'],
+    },
+    MUT: {
+      name: ['Indian/Mauritius'],
+    },
+    RET: {
+      name: ['Indian/Reunion'],
+    },
+    SAMT: {
+      name: ['Europe/Samara'],
+    },
+    SCT: {
+      name: ['Indian/Mahe'],
+    },
+    AFT: {
+      name: ['Asia/Kabul'],
+    },
+    FSAT: {
+      name: ['Indian/Kerguelen'],
+    },
+    MVT: {
+      name: ['Indian/Maldives'],
+    },
+    MAWT: {
+      name: ['Antarctica/Mawson'],
+    },
+    PKT: {
+      name: ['Asia/Karachi'],
+    },
+    TJT: {
+      name: ['Asia/Dushanbe'],
+    },
+    TMT: {
+      name: ['Asia/Ashgabat'],
+    },
+    UZT: {
+      name: ['Asia/Tashkent'],
+    },
+    AQTT: {
+      name: ['Asia/Aqtobe'],
+    },
+    YEKT: {
+      name: ['Asia/Yekaterinburg'],
+    },
+    NPT: {
+      name: ['Asia/Kathmandu'],
+    },
+    BST: {
+      name: ['Asia/Dhaka', 'Pacific/Bougainville'],
+    },
+    BTT: {
+      name: ['Asia/Thimphu'],
+    },
+    ALMT: {
+      name: ['Asia/Almaty'],
+    },
+    IOT: {
+      name: ['Indian/Chagos'],
+    },
+    KGT: {
+      name: ['Asia/Bishkek'],
+    },
+    OMST: {
+      name: ['Asia/Omsk'],
+    },
+    VOST: {
+      name: ['Antarctica/Vostok'],
+    },
+    CCT: {
+      name: ['Indian/Cocos'],
+    },
+    MMT: {
+      name: ['Asia/Yangon'],
+    },
+    CXT: {
+      name: ['Indian/Christmas'],
+    },
+    DAVT: {
+      name: ['Antarctica/Davis'],
+    },
+    HOVT: {
+      name: ['Asia/Hovd'],
+    },
+    ICT: {
+      name: [
+        'Asia/Bangkok',
+        'Asia/Ho_Chi_Minh',
+        'Asia/Phnom_Penh',
+        'Asia/Vientiane',
+      ],
+    },
+    NOVT: {
+      name: ['Asia/Novosibirsk'],
+    },
+    WIB: {
+      name: ['Asia/Jakarta'],
+    },
+    AWST: {
+      name: ['Australia/Perth'],
+    },
+    BNT: {
+      name: ['Asia/Brunei'],
+    },
+    WITA: {
+      name: ['Asia/Makassar'],
+    },
+    HKT: {
+      name: ['Asia/Hong_Kong'],
+    },
+    IRKT: {
+      name: ['Asia/Irkutsk'],
+    },
+    MYT: {
+      name: ['Asia/Kuala_Lumpur'],
+    },
+    PHT: {
+      name: ['Asia/Manila'],
+    },
+    SGT: {
+      name: ['Asia/Singapore'],
+    },
+    TWT: {
+      name: ['Asia/Taipei'],
+    },
+    ULAT: {
+      name: ['Asia/Ulaanbaatar'],
+    },
+    ACWST: {
+      name: ['Australia/Eucla'],
+    },
+    TLT: {
+      name: ['Asia/Dili'],
+    },
+    WIT: {
+      name: ['Asia/Jayapura'],
+    },
+    JST: {
+      name: ['Asia/Tokyo'],
+    },
+    KST: {
+      name: ['Asia/Pyongyang', 'Asia/Seoul'],
+    },
+    PWT: {
+      name: ['Pacific/Palau'],
+    },
+    YAKT: {
+      name: ['Asia/Chita'],
+    },
+    ACST: {
+      name: ['Australia/Darwin', 'Australia/Adelaide'],
+    },
+    AEST: {
+      name: ['Australia/Brisbane', 'Australia/Sydney'],
+    },
+    ChST: {
+      name: ['Pacific/Guam', 'Pacific/Saipan'],
+    },
+    CHUT: {
+      name: ['Pacific/Chuuk'],
+    },
+    DDUT: {
+      name: ['Antarctica/DumontDUrville'],
+    },
+    PGT: {
+      name: ['Pacific/Port_Moresby'],
+    },
+    VLAT: {
+      name: ['Asia/Vladivostok'],
+    },
+    CAST: {
+      name: ['Antarctica/Casey'],
+    },
+    KOST: {
+      name: ['Pacific/Kosrae'],
+    },
+    LHST: {
+      name: ['Australia/Lord_Howe'],
+    },
+    NCT: {
+      name: ['Pacific/Noumea'],
+    },
+    SAKT: {
+      name: ['Asia/Sakhalin'],
+    },
+    SBT: {
+      name: ['Pacific/Guadalcanal'],
+    },
+    VUT: {
+      name: ['Pacific/Efate'],
+    },
+    FJT: {
+      name: ['Pacific/Fiji'],
+    },
+    GILT: {
+      name: ['Pacific/Tarawa'],
+    },
+    MHT: {
+      name: ['Pacific/Majuro'],
+    },
+    NRT: {
+      name: ['Pacific/Nauru'],
+    },
+    NFT: {
+      name: ['Pacific/Norfolk'],
+    },
+    PETT: {
+      name: ['Asia/Kamchatka'],
+    },
+    TVT: {
+      name: ['Pacific/Funafuti'],
+    },
+    WAKT: {
+      name: ['Pacific/Wake'],
+    },
+    WFT: {
+      name: ['Pacific/Wallis'],
+    },
+    WST: {
+      name: ['Pacific/Apia'],
+    },
+    NZST: {
+      name: ['Pacific/Auckland', 'Antarctica/McMurdo'],
+    },
+    PHOT: {
+      name: ['Pacific/Kanton'],
+    },
+    TKT: {
+      name: ['Pacific/Fakaofo'],
+    },
+    TOT: {
+      name: ['Pacific/Tongatapu'],
+    },
+    CHAST: {
+      name: ['Pacific/Chatham'],
+    },
+    LINT: {
+      name: ['Pacific/Kiritimati'],
+    },
+  }
 
 export type TimeZoneContentValue = {
   name: string
