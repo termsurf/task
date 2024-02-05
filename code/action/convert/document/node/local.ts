@@ -18,11 +18,15 @@ import {
   ConvertDocumentWithCalibreNodeInput,
   ConvertDocumentWithLibreOfficeNodeInput,
   ConvertDocumentWithPandocNodeInput,
+  ConvertDocumentWithPuppeteerNodeInput,
+  ConvertLatexToPdfWithPdfLatexNodeInput,
 } from '~/code/type/cast.js'
 import {
   ConvertDocumentWithCalibreNodeCommandInputModel,
   ConvertDocumentWithLibreOfficeNodeCommandInputModel,
   ConvertDocumentWithPandocNodeCommandInputModel,
+  ConvertDocumentWithPuppeteerNodeInputModel,
+  ConvertLatexToPdfWithPdfLatexNodeCommandInputModel,
 } from '~/code/type/take.js'
 
 // export async function readPDFMetadata({ inputPath }) {
@@ -143,19 +147,25 @@ export async function convertDocumentWithCalibreLocal(
   }
 }
 
-export async function convertLatexToPdfWithPdfLatex(
-  source: ConvertLatexToPdfWithPdfLatex,
+export async function convertLatexToPdfWithPdfLatexLocal(
+  input: ConvertLatexToPdfWithPdfLatexNodeInput,
 ) {
-  const input = ConvertLatexToPdfWithPdfLatexModel.parse(source)
-  const list = buildCommandToConvertLatexToPdfWithPdfLatex(input)
-  for (const cmd of list) {
-    await handlePdfLatexCommand(cmd)
-  }
+  const commandInput =
+    ConvertLatexToPdfWithPdfLatexNodeCommandInputModel.parse(input)
+  const sequence =
+    buildCommandToConvertLatexToPdfWithPdfLatex(commandInput)
+  await runCommandSequence(sequence)
   const outputPath = path.join(
     input.output.directory.path,
-    `${input.output.file.name}.pdf`,
+    `document.pdf`,
   )
-  return outputPath
+  return {
+    output: {
+      file: {
+        path: outputPath,
+      },
+    },
+  }
 }
 
 export async function convertLatexToHtml() {
@@ -163,9 +173,9 @@ export async function convertLatexToHtml() {
 }
 
 export async function convertDocumentWithPuppeteer(
-  source: ConvertDocumentWithPuppeteer,
+  source: ConvertDocumentWithPuppeteerNodeInput,
 ) {
-  const input = ConvertDocumentWithPuppeteerModel.parse(source)
+  const input = ConvertDocumentWithPuppeteerNodeInputModel.parse(source)
   switch (input.output.format) {
     case 'png':
       return await convertHtmlToPngWithPuppeteer(input)
@@ -175,7 +185,7 @@ export async function convertDocumentWithPuppeteer(
 }
 
 export async function convertHtmlToPngWithPuppeteer(
-  input: ConvertDocumentWithPuppeteer,
+  input: ConvertDocumentWithPuppeteerNodeInput,
 ) {
   const b = await getBrowser(input.proxy ? `${input.proxy}` : undefined)
   const p = await b.newPage()
@@ -204,7 +214,7 @@ export async function convertHtmlToPngWithPuppeteer(
 // https://stackoverflow.com/questions/37498713/how-to-export-an-html-table-as-a-xlsx-file
 
 export async function convertHtmlToPdfWithPuppeteer(
-  input: ConvertDocumentWithPuppeteer,
+  input: ConvertDocumentWithPuppeteerNodeInput,
 ) {
   const b = await getBrowser(input.proxy ? `${input.proxy}` : undefined)
   const p = await b.newPage()

@@ -1,4 +1,8 @@
-import { convertDocumentWithCalibreNode } from './document/node.js'
+import {
+  convertDocumentWithCalibreNode,
+  convertDocumentWithLibreOfficeNode,
+  convertDocumentWithPandocNode,
+} from './document/node.js'
 import { convertFontWithFontForgeNode } from './font/node.js'
 import {
   convertImageWithImageMagickNode,
@@ -6,6 +10,8 @@ import {
 } from './image/node.js'
 import {
   useConvertDocumentWithCalibre,
+  useConvertDocumentWithLibreOffice,
+  useConvertDocumentWithPandoc,
   useConvertFontWithFontForge,
   useConvertImageWithImageMagick,
   useConvertImageWithInkscape,
@@ -54,21 +60,21 @@ export async function convertInternal(source) {
     return await convertDocumentWithCalibreNode(source)
   }
 
-  // if (
-  //   useConvertDocumentWithPandoc(
-  //     source.input.format,
-  //     source.output.format,
-  //   )
-  // ) {
-  //   return await convertDocumentWithPandoc(source)
-  // }
+  if (
+    useConvertDocumentWithPandoc(
+      source.input.format,
+      source.output.format,
+    )
+  ) {
+    return await convertDocumentWithPandocNode(source)
+  }
 
-  // if (
-  //   useConvertDocumentWithLibreOffice(
-  //     source.input.format,
-  //     source.output.format,
-  //   )
-  // ) {
-  //   return await convertDocumentWithLibreOffice(source)
-  // }
+  if (
+    useConvertDocumentWithLibreOffice(
+      source.input.format,
+      source.output.format,
+    )
+  ) {
+    return await convertDocumentWithLibreOfficeNode(source)
+  }
 }

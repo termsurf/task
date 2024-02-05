@@ -8,6 +8,8 @@ import kink from '~/code/tool/shared/kink.js'
 import { logOutput, logStart, setLoggingStyle } from './logging.js'
 import { buildInputMapping, transferInput } from './parse.js'
 import {
+  useConvertDocumentWithCalibre,
+  useConvertDocumentWithPandoc,
   useConvertFontWithFontForge,
   useConvertImageWithImageMagick,
 } from '../action/convert/shared.js'
@@ -83,60 +85,62 @@ export async function call(task: Task, source) {
       //   }
       // }
 
-      // if (
-      //   useConvertDocumentWithPandoc(
-      //     base.input.format,
-      //     base.output.format,
-      //   )
-      // ) {
-      //   const form = convert_document_with_pandoc
-      //   if (source.help) {
-      //     return showHelpForConvert(form)
-      //   }
-      //   let spinner
+      if (
+        useConvertDocumentWithPandoc(
+          base.input.format,
+          base.output.format,
+        )
+      ) {
+        const form = mesh.convert_document_with_pandoc_node_input
+        if (source.help) {
+          // return showHelpForConvert(form)
+        }
+        let spinner
 
-      //   try {
-      //     spinner = logStart(`Converting document...`, isColor)
-      //     const input = ConvertDocumentWithPandocModel.parse(
-      //       transferInput(source, buildInputMapping(form)),
-      //     )
-      //     const out = await convertDocumentWithPandoc(input)
-      //     spinner?.stop()
-      //     logOutput(out, isColor)
-      //     return
-      //   } catch (e) {
-      //     spinner?.stop()
-      //     throw e
-      //   }
-      // }
+        try {
+          spinner = logStart(`Converting document...`)
+          const out = await convert(
+            transferInput(source, buildInputMapping(mesh, form)),
+          )
+          spinner?.stop()
+          if (typeof out === 'object' && 'output' in out) {
+            logOutput(out.output.file.path)
+          }
+          return
+        } catch (e) {
+          spinner?.stop()
+          throw e
+        }
+      }
 
-      // if (
-      //   useConvertDocumentWithCalibre(
-      //     base.input.format,
-      //     base.output.format,
-      //   )
-      // ) {
-      //   const form = convert_document_with_calibre
-      //   if (source.help) {
-      //     return showHelpForConvert(form)
-      //   }
+      if (
+        useConvertDocumentWithCalibre(
+          base.input.format,
+          base.output.format,
+        )
+      ) {
+        const form = mesh.convert_document_with_calibre_node_input
+        if (source.help) {
+          // return showHelpForConvert(form)
+        }
 
-      //   let spinner
+        let spinner
 
-      //   try {
-      //     spinner = logStart(`Converting document...`, isColor)
-      //     const input = ConvertDocumentWithCalibreModel.parse(
-      //       transferInput(source, buildInputMapping(form)),
-      //     )
-      //     const out = await convertDocumentWithCalibre(input)
-      //     spinner?.stop()
-      //     logOutput(out, isColor)
-      //     return
-      //   } catch (e) {
-      //     spinner?.stop()
-      //     throw e
-      //   }
-      // }
+        try {
+          spinner = logStart(`Converting document...`)
+          const out = await convert(
+            transferInput(source, buildInputMapping(mesh, form)),
+          )
+          spinner?.stop()
+          if (typeof out === 'object' && 'output' in out) {
+            logOutput(out.output.file.path)
+          }
+          return
+        } catch (e) {
+          spinner?.stop()
+          throw e
+        }
+      }
 
       if (
         useConvertFontWithFontForge(
@@ -153,7 +157,7 @@ export async function call(task: Task, source) {
           transferInput(source, buildInputMapping(mesh, form)),
         )
         spinner?.stop()
-        if (out && 'output' in out) {
+        if (typeof out === 'object' && 'output' in out) {
           logOutput(out.output.file.path)
         }
         return
@@ -177,7 +181,7 @@ export async function call(task: Task, source) {
             transferInput(source, buildInputMapping(mesh, form)),
           )
           spinner?.stop()
-          if (out && 'output' in out) {
+          if (typeof out === 'object' && 'output' in out) {
             logOutput(out.output.file.path)
           }
           return

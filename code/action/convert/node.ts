@@ -2,10 +2,18 @@ import {
   CalibreInputFormat,
   CalibreOutputFormat,
   ConvertDocumentWithCalibreNodeInput,
+  ConvertDocumentWithLibreOfficeNodeInput,
+  ConvertDocumentWithPandocNodeInput,
+  ConvertFontWithFontForgeNodeInput,
   ConvertImageWithImageMagickNodeInput,
   ExtractBySubKey,
+  FontFormat,
   ImageMagickInputFormat,
   ImageMagickOutputFormat,
+  LibreOfficeInputFormat,
+  LibreOfficeOutputFormat,
+  PandocInputFormat,
+  PandocOutputFormat,
   Values,
 } from '~/code/type/index.js'
 import { convertInternal } from './node.internal.js'
@@ -32,6 +40,21 @@ export type ConvertInput = {
     input: CalibreInputFormat
     output: CalibreOutputFormat
     extend: ConvertDocumentWithCalibreNodeInput
+  }
+  pandoc: {
+    input: PandocInputFormat
+    output: PandocOutputFormat
+    extend: ConvertDocumentWithPandocNodeInput
+  }
+  libreoffice: {
+    input: LibreOfficeInputFormat
+    output: LibreOfficeOutputFormat
+    extend: ConvertDocumentWithLibreOfficeNodeInput
+  }
+  font: {
+    input: FontFormat
+    output: FontFormat
+    extend: ConvertFontWithFontForgeNodeInput
   }
 }
 

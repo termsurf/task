@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import {
   CALIBRE_INPUT_FORMAT,
   CALIBRE_OUTPUT_FORMAT,
@@ -20,7 +19,6 @@ import {
   PANDOC_OUTPUT_FORMAT,
   PandocInputFormat,
   PandocOutputFormat,
-  ConvertFileBase,
   ConvertFileBaseRemote,
 } from '~/code/type/index.js'
 import { buildRemoteRequest } from '~/code/tool/shared/request.js'
