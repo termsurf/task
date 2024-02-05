@@ -1,10 +1,12 @@
 import { convertDocumentWithCalibreNode } from './document/node.js'
+import { convertFontWithFontForgeNode } from './font/node.js'
 import {
   convertImageWithImageMagickNode,
   convertImageWithInkscapeNode,
 } from './image/node.js'
 import {
   useConvertDocumentWithCalibre,
+  useConvertFontWithFontForge,
   useConvertImageWithImageMagick,
   useConvertImageWithInkscape,
 } from './shared.js'
@@ -34,14 +36,14 @@ export async function convertInternal(source) {
   //   return await convertVideoWithFfmpeg(source)
   // }
 
-  // if (
-  //   useConvertFontWithFontForge(
-  //     source.input.format,
-  //     source.output.format,
-  //   )
-  // ) {
-  //   return await convertFontWithFontForgeNode(source)
-  // }
+  if (
+    useConvertFontWithFontForge(
+      source.input.format,
+      source.output.format,
+    )
+  ) {
+    return await convertFontWithFontForgeNode(source)
+  }
 
   if (
     useConvertDocumentWithCalibre(

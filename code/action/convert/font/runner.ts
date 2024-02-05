@@ -2,9 +2,9 @@ import { ChildProcessError, exec } from '~/code/tool/node/process.js'
 import kink from '~/code/tool/shared/kink.js'
 import { Command } from '~/code/type/index.js'
 
-export async function handleFontforgeCommand(cmd: Command) {
+export async function runFontforgeCommand(cmd: Command) {
   try {
-    return await exec(cmd.link.join(' '))
+    return await exec(cmd.link)
   } catch (e) {
     if (e instanceof ChildProcessError) {
       if (e.data.stderr) {

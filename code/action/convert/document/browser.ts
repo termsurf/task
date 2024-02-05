@@ -7,5 +7,4 @@ export async function convertDocumentWithPandocBrowser(
   source: ConvertDocumentWithPandocBrowserInput,
 ) {
   const input = ConvertDocumentWithPandocBrowserInputModel.parse(source)
-  return await convertBrowserRemote(input)
 }

@@ -1,27 +1,17 @@
 import {
-  ConvertFontWithFontForgeNodeCall,
-  ConvertFontWithFontForgeNodeCallModel,
-  ConvertFontWithFontForgeNodeLocalCall,
-  ConvertFontWithFontForgeNodeOutputResponseModel,
-  ConvertFontWithFontForgeNodeRemoteCall,
-  ConvertFontWithFontForgeNodeRemoteCallModel,
+  ConvertFontWithFontForgeNodeCommandInputModel,
+  ConvertFontWithFontForgeNodeInput,
+  ConvertFontWithFontForgeNodeInputModel,
+  ConvertFontWithFontForgeNodeOutputModel,
 } from '~/code/type/index.js'
 import { bindConvertLocal, bindConvertRemote } from '../tool/node.js'
-import { buildRequestToConvert } from '../shared.js'
-import { postRemote } from '~/code/tool/shared/request.js'
-import {
-  buildCommandToConvertFontWithFontForge,
-  explainConvertFontWithFontForge,
-} from './shared.js'
+import { buildCommandToConvertFontWithFontForge } from './shared.js'
 import { runCommandSequence } from '~/code/tool/node/command.js'
 
 export async function convertFontWithFontForgeNode(
-  source: ConvertFontWithFontForgeNodeCall,
+  source: ConvertFontWithFontForgeNodeInput,
 ) {
-  const input = ConvertFontWithFontForgeNodeCallModel.parse(source)
-  if (input.explain) {
-    return await explainConvertFontWithFontForge(input)
-  }
+  const input = ConvertFontWithFontForgeNodeInputModel.parse(source)
 
   if (input.remote) {
     const remoteInput = await bindConvertRemote(input)
@@ -33,13 +23,17 @@ export async function convertFontWithFontForgeNode(
 }
 
 export async function convertFontWithFontForgeNodeLocal(
-  input: ConvertFontWithFontForgeNodeLocalCall,
+  input: ConvertFontWithFontForgeNodeInput,
 ) {
-  const sequence = await buildCommandToConvertFontWithFontForge(input)
+  const commandInput =
+    ConvertFontWithFontForgeNodeCommandInputModel.parse(input)
+  const sequence = await buildCommandToConvertFontWithFontForge(
+    commandInput,
+  )
 
-  await runCommandSequence(sequence.tree)
+  await runCommandSequence(sequence)
 
-  return ConvertFontWithFontForgeNodeOutputResponseModel.parse({
+  return ConvertFontWithFontForgeNodeOutputModel.parse({
     output: {
       file: {
         path: input.output.file.path,
@@ -49,10 +43,10 @@ export async function convertFontWithFontForgeNodeLocal(
 }
 
 export async function convertFontWithFontForgeNodeRemote(
-  source: ConvertFontWithFontForgeNodeRemoteCall,
+  source: ConvertFontWithFontForgeNodeInput,
 ) {
-  const input =
-    ConvertFontWithFontForgeNodeRemoteCallModel.parse(source)
-  const request = buildRequestToConvert(input)
-  return await postRemote(request.tree)
+  // const input =
+  //   ConvertFontWithFontForgeNodeRemoteCallModel.parse(source)
+  // const request = buildRequestToConvert(input)
+  // return await postRemote(request)
 }

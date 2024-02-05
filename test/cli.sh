@@ -51,7 +51,7 @@ call "task convert -I png -O jpg -i ../file/base/image/fire.png -o test/hold/fir
 
 # # task convert -I rar -i test/file/archive/archive.rar -O zip -o test/hold/archive.rar.zip
 
-# call "task convert -I ttf -O woff -i test/file/font/etch.ttf -o test/hold/etch.woff"
+call "task convert -I ttf -O woff -i ../file/base/font/etch.ttf -o test/hold/etch.woff"
 # call "task convert -I epub -O mobi -i test/file/document/test.epub -o test/hold/test.mobi"
 # task convert -I docx -O markdown -i test/file/document/sample.docx -o test/hold/sample.docx.markdown
 # task convert -I docx -O pdf -i test/file/document/sample.docx -b test/hold/pdf -n document

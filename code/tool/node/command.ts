@@ -9,6 +9,7 @@ import {
   runPdfLatexCommand,
   runUnoconvCommand,
 } from '~/code/action/convert/document/handler'
+import { runFontforgeCommand } from '~/code/action/convert/font/runner'
 import {
   runConvertCommand,
   runInkscapeCommand,
@@ -34,6 +35,7 @@ export const COMMAND_HANDLER: Record<string, (cmd: Command) => any> = {
   docx2pdf: runDocx2pdfCommand,
   unoconv: runUnoconvCommand,
   pandoc: runPandocCommand,
+  fontforge: runFontforgeCommand,
 }
 
 export async function runCommandSequence(sequence: CommandSequence) {

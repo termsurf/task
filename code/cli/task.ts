@@ -7,7 +7,10 @@ import { BuildFormatInputOutputModel, Task } from '~/code/type/index.js'
 import kink from '~/code/tool/shared/kink.js'
 import { logOutput, logStart, setLoggingStyle } from './logging.js'
 import { buildInputMapping, transferInput } from './parse.js'
-import { useConvertImageWithImageMagick } from '../action/convert/shared.js'
+import {
+  useConvertFontWithFontForge,
+  useConvertImageWithImageMagick,
+} from '../action/convert/shared.js'
 import { convert } from './internal.js'
 
 export const CONVERT_KEY: Record<string, Link> = {
@@ -135,25 +138,26 @@ export async function call(task: Task, source) {
       //   }
       // }
 
-      // if (
-      //   useConvertFontWithFontForge(
-      //     base.input.format,
-      //     base.output.format,
-      //   )
-      // ) {
-      //   const form = convert_font_with_font_forge
-      //   if (source.help) {
-      //     return showHelpForConvert(form)
-      //   }
-      //   const spinner = logStart(`Converting font...`, isColor)
-      //   const input = ConvertFontWithFontForgeModel.parse(
-      //     transferInput(source, buildInputMapping(form)),
-      //   )
-      //   const out = await convertFontWithFontForge(input)
-      //   spinner?.stop()
-      //   logOutput(out, isColor)
-      //   return
-      // }
+      if (
+        useConvertFontWithFontForge(
+          base.input.format,
+          base.output.format,
+        )
+      ) {
+        const form = mesh.convert_font_with_font_forge_node_input
+        if (source.help) {
+          // return showHelpForConvert(form)
+        }
+        const spinner = logStart(`Converting font...`)
+        const out = await convert(
+          transferInput(source, buildInputMapping(mesh, form)),
+        )
+        spinner?.stop()
+        if (out && 'output' in out) {
+          logOutput(out.output.file.path)
+        }
+        return
+      }
 
       if (
         useConvertImageWithImageMagick(
@@ -173,7 +177,7 @@ export async function call(task: Task, source) {
             transferInput(source, buildInputMapping(mesh, form)),
           )
           spinner?.stop()
-          if (out) {
+          if (out && 'output' in out) {
             logOutput(out.output.file.path)
           }
           return
