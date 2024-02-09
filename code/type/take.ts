@@ -905,7 +905,7 @@ export const ConvertDocumentWithCalibreNodeExternalInputModel: z.ZodType<Cast.Co
     input: z.object({
       format: z.lazy(() => CalibreInputFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
@@ -927,13 +927,13 @@ export const ConvertDocumentWithCalibreNodeLocalExternalInputModel: z.ZodType<Ca
     input: z.object({
       format: z.lazy(() => CalibreInputFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.lazy(() => CalibreOutputFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -957,13 +957,13 @@ export const ConvertDocumentWithCalibreNodeLocalInternalInputModel: z.ZodType<Ca
     input: z.object({
       format: z.lazy(() => CalibreInputFormatModel),
       file: z.union([
-        z.lazy(() => FilePathModel),
+        z.lazy(() => FileInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.lazy(() => CalibreOutputFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -985,7 +985,7 @@ export const ConvertDocumentWithCalibreNodeRemoteInputModel: z.ZodType<Cast.Conv
     }),
     output: z.object({
       format: z.lazy(() => CalibreOutputFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -1048,7 +1048,7 @@ export const ConvertDocumentWithJupyterNodeExternalInputModel: z.ZodType<Cast.Co
     input: z.object({
       format: z.string(),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
@@ -1070,13 +1070,13 @@ export const ConvertDocumentWithJupyterNodeLocalExternalInputModel: z.ZodType<Ca
     input: z.object({
       format: z.string(),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.string(),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -1100,13 +1100,13 @@ export const ConvertDocumentWithJupyterNodeLocalInternalInputModel: z.ZodType<Ca
     input: z.object({
       format: z.string(),
       file: z.union([
-        z.lazy(() => FilePathModel),
+        z.lazy(() => FileInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.string(),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -1128,7 +1128,7 @@ export const ConvertDocumentWithJupyterNodeRemoteInputModel: z.ZodType<Cast.Conv
     }),
     output: z.object({
       format: z.string(),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -1191,7 +1191,7 @@ export const ConvertDocumentWithLibreOfficeNodeExternalInputModel: z.ZodType<Cas
     input: z.object({
       format: z.lazy(() => LibreOfficeInputFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
@@ -1217,7 +1217,7 @@ export const ConvertDocumentWithLibreOfficeNodeLocalExternalInputModel: z.ZodTyp
     input: z.object({
       format: z.lazy(() => LibreOfficeInputFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
@@ -1246,13 +1246,13 @@ export const ConvertDocumentWithLibreOfficeNodeLocalInternalInputModel: z.ZodTyp
     input: z.object({
       format: z.lazy(() => LibreOfficeInputFormatModel),
       file: z.union([
-        z.lazy(() => FilePathModel),
+        z.lazy(() => FileInputPathModel),
         z.lazy(() => FileContentModel),
       ]),
     }),
     output: z.object({
       format: z.lazy(() => LibreOfficeOutputFormatModel),
-      directory: z.optional(z.lazy(() => LocalPathModel)),
+      directory: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -1274,7 +1274,7 @@ export const ConvertDocumentWithLibreOfficeNodeRemoteInputModel: z.ZodType<Cast.
     }),
     output: z.object({
       format: z.lazy(() => LibreOfficeOutputFormatModel),
-      directory: z.optional(z.lazy(() => LocalPathModel)),
+      directory: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -1337,7 +1337,7 @@ export const ConvertDocumentWithPandocNodeExternalInputModel: z.ZodType<Cast.Con
     input: z.object({
       format: z.lazy(() => PandocInputFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
@@ -1359,13 +1359,13 @@ export const ConvertDocumentWithPandocNodeLocalExternalInputModel: z.ZodType<Cas
     input: z.object({
       format: z.lazy(() => PandocInputFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.lazy(() => PandocOutputFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -1389,13 +1389,13 @@ export const ConvertDocumentWithPandocNodeLocalInternalInputModel: z.ZodType<Cas
     input: z.object({
       format: z.lazy(() => PandocInputFormatModel),
       file: z.union([
-        z.lazy(() => FilePathModel),
+        z.lazy(() => FileInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.lazy(() => PandocOutputFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -1417,7 +1417,7 @@ export const ConvertDocumentWithPandocNodeRemoteInputModel: z.ZodType<Cast.Conve
     }),
     output: z.object({
       format: z.lazy(() => PandocOutputFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -1486,7 +1486,7 @@ export const ConvertDocumentWithPuppeteerNodeExternalInputModel: z.ZodType<Cast.
     input: z.object({
       format: z.lazy(() => PuppeteerInputFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
@@ -1518,13 +1518,13 @@ export const ConvertDocumentWithPuppeteerNodeLocalExternalInputModel: z.ZodType<
     input: z.object({
       format: z.lazy(() => PuppeteerInputFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.lazy(() => PuppeteerOutputFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
     viewport: z.object({
@@ -1560,13 +1560,13 @@ export const ConvertDocumentWithPuppeteerNodeLocalInternalInputModel: z.ZodType<
     input: z.object({
       format: z.lazy(() => PuppeteerInputFormatModel),
       file: z.union([
-        z.lazy(() => FilePathModel),
+        z.lazy(() => FileInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.lazy(() => PuppeteerOutputFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
     viewport: z.object({
@@ -1594,7 +1594,7 @@ export const ConvertDocumentWithPuppeteerNodeRemoteInputModel: z.ZodType<Cast.Co
     }),
     output: z.object({
       format: z.lazy(() => PuppeteerOutputFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
     viewport: z.object({
@@ -1713,7 +1713,7 @@ export const ConvertFontWithFontForgeNodeExternalInputModel: z.ZodType<Cast.Conv
     input: z.object({
       format: z.lazy(() => FontFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
@@ -1735,13 +1735,13 @@ export const ConvertFontWithFontForgeNodeLocalExternalInputModel: z.ZodType<Cast
     input: z.object({
       format: z.lazy(() => FontFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.lazy(() => FontFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -1765,13 +1765,13 @@ export const ConvertFontWithFontForgeNodeLocalInternalInputModel: z.ZodType<Cast
     input: z.object({
       format: z.lazy(() => FontFormatModel),
       file: z.union([
-        z.lazy(() => FilePathModel),
+        z.lazy(() => FileInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.lazy(() => FontFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -1793,7 +1793,7 @@ export const ConvertFontWithFontForgeNodeRemoteInputModel: z.ZodType<Cast.Conver
     }),
     output: z.object({
       format: z.lazy(() => FontFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -1869,7 +1869,7 @@ export const ConvertImageWithImageMagickNodeExternalInputModel: z.ZodType<Cast.C
     input: z.object({
       format: z.lazy(() => ImageMagickInputFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
@@ -1908,13 +1908,13 @@ export const ConvertImageWithImageMagickNodeLocalExternalInputModel: z.ZodType<C
     input: z.object({
       format: z.lazy(() => ImageMagickInputFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.lazy(() => ImageMagickOutputFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
     colorCount: z.optional(z.number().int().gte(0)),
@@ -1964,13 +1964,13 @@ export const ConvertImageWithImageMagickNodeLocalInternalInputModel: z.ZodType<C
     input: z.object({
       format: z.lazy(() => ImageMagickInputFormatModel),
       file: z.union([
-        z.lazy(() => FilePathModel),
+        z.lazy(() => FileInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.lazy(() => ImageMagickOutputFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
     colorCount: z.optional(z.number().int().gte(0)),
@@ -2005,7 +2005,7 @@ export const ConvertImageWithImageMagickNodeRemoteInputModel: z.ZodType<Cast.Con
     }),
     output: z.object({
       format: z.lazy(() => ImageMagickOutputFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
     colorCount: z.optional(z.number().int().gte(0)),
@@ -2081,7 +2081,7 @@ export const ConvertImageWithInkscapeNodeExternalInputModel: z.ZodType<Cast.Conv
     input: z.object({
       format: z.string(),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
@@ -2103,13 +2103,13 @@ export const ConvertImageWithInkscapeNodeLocalExternalInputModel: z.ZodType<Cast
     input: z.object({
       format: z.string(),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.string(),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -2133,13 +2133,13 @@ export const ConvertImageWithInkscapeNodeLocalInternalInputModel: z.ZodType<Cast
     input: z.object({
       format: z.string(),
       file: z.union([
-        z.lazy(() => FilePathModel),
+        z.lazy(() => FileInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.string(),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -2161,7 +2161,7 @@ export const ConvertImageWithInkscapeNodeRemoteInputModel: z.ZodType<Cast.Conver
     }),
     output: z.object({
       format: z.string(),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -2227,7 +2227,7 @@ export const ConvertLatexToPngNodeExternalInputModel: z.ZodType<Cast.ConvertLate
     input: z.object({
       format: z.lazy(() => ConvertLatexToPngInputFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
@@ -2249,13 +2249,13 @@ export const ConvertLatexToPngNodeLocalExternalInputModel: z.ZodType<Cast.Conver
     input: z.object({
       format: z.lazy(() => ConvertLatexToPngInputFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.lazy(() => ConvertLatexToPngOutputFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -2279,13 +2279,13 @@ export const ConvertLatexToPngNodeLocalInternalInputModel: z.ZodType<Cast.Conver
     input: z.object({
       format: z.lazy(() => ConvertLatexToPngInputFormatModel),
       file: z.union([
-        z.lazy(() => FilePathModel),
+        z.lazy(() => FileInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.lazy(() => ConvertLatexToPngOutputFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -2307,7 +2307,7 @@ export const ConvertLatexToPngNodeRemoteInputModel: z.ZodType<Cast.ConvertLatexT
     }),
     output: z.object({
       format: z.lazy(() => ConvertLatexToPngOutputFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -2373,7 +2373,7 @@ export const ConvertLatexWithPdfLatexNodeExternalInputModel: z.ZodType<Cast.Conv
     input: z.object({
       format: z.lazy(() => PdfLatexInputFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
@@ -2395,7 +2395,7 @@ export const ConvertLatexWithPdfLatexNodeLocalExternalInputModel: z.ZodType<Cast
     input: z.object({
       format: z.lazy(() => PdfLatexInputFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
@@ -2424,13 +2424,13 @@ export const ConvertLatexWithPdfLatexNodeLocalInternalInputModel: z.ZodType<Cast
     input: z.object({
       format: z.lazy(() => PdfLatexInputFormatModel),
       file: z.union([
-        z.lazy(() => FilePathModel),
+        z.lazy(() => FileInputPathModel),
         z.lazy(() => FileContentModel),
       ]),
     }),
     output: z.object({
       format: z.lazy(() => PdfLatexOutputFormatModel),
-      directory: z.optional(z.lazy(() => LocalPathModel)),
+      directory: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -2452,7 +2452,7 @@ export const ConvertLatexWithPdfLatexNodeRemoteInputModel: z.ZodType<Cast.Conver
     }),
     output: z.object({
       format: z.lazy(() => PdfLatexOutputFormatModel),
-      directory: z.optional(z.lazy(() => LocalPathModel)),
+      directory: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
   })
@@ -2665,7 +2665,7 @@ export const ConvertVideoWithFfmpegNodeExternalInputModel: z.ZodType<Cast.Conver
     input: z.object({
       format: z.lazy(() => FfmpegFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
@@ -2732,13 +2732,13 @@ export const ConvertVideoWithFfmpegNodeLocalExternalInputModel: z.ZodType<Cast.C
     input: z.object({
       format: z.lazy(() => FfmpegFormatModel),
       file: z.union([
-        z.lazy(() => RemotePathModel),
+        z.lazy(() => RemoteInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.lazy(() => FfmpegFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
     audioCodec: z.optional(z.lazy(() => FfmpegCodecAudioModel)),
@@ -2852,13 +2852,13 @@ export const ConvertVideoWithFfmpegNodeLocalInternalInputModel: z.ZodType<Cast.C
     input: z.object({
       format: z.lazy(() => FfmpegFormatModel),
       file: z.union([
-        z.lazy(() => FilePathModel),
+        z.lazy(() => FileInputPathModel),
         z.lazy(() => FileContentWithSha256Model),
       ]),
     }),
     output: z.object({
       format: z.lazy(() => FfmpegFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
     audioCodec: z.optional(z.lazy(() => FfmpegCodecAudioModel)),
@@ -2925,7 +2925,7 @@ export const ConvertVideoWithFfmpegNodeRemoteInputModel: z.ZodType<Cast.ConvertV
     }),
     output: z.object({
       format: z.lazy(() => FfmpegFormatModel),
-      file: z.optional(z.lazy(() => LocalPathModel)),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
     audioCodec: z.optional(z.lazy(() => FfmpegCodecAudioModel)),
@@ -3536,6 +3536,16 @@ export const LlvmFeatureModel: z.ZodType<Cast.LlvmFeature> = z.enum(
 export const LlvmOptimizationLevelModel: z.ZodType<Cast.LlvmOptimizationLevel> =
   z.enum(Cast.LLVM_OPTIMIZATION_LEVEL)
 
+export const LocalInputPathModel: z.ZodType<Cast.LocalInputPath> =
+  z.object({
+    path: z.string().refine(TEST('path', code.is_local_path.test)),
+  })
+
+export const LocalOutputPathModel: z.ZodType<Cast.LocalOutputPath> =
+  z.object({
+    path: z.string().refine(TEST('path', code.is_local_path.test)),
+  })
+
 export const LocalPathModel: z.ZodType<Cast.LocalPath> = z.object({
   path: z.string().refine(TEST('path', code.is_local_path.test)),
 })
@@ -3604,6 +3614,16 @@ export const QrCodeErrorCorrectionLevelModel: z.ZodType<Cast.QrCodeErrorCorrecti
 export const QrCodeFormatModel: z.ZodType<Cast.QrCodeFormat> = z.enum(
   Cast.QR_CODE_FORMAT,
 )
+
+export const RemoteInputPathModel: z.ZodType<Cast.RemoteInputPath> =
+  z.object({
+    path: z.string().refine(TEST('path', code.is_remote_path.test)),
+  })
+
+export const RemoteOutputPathModel: z.ZodType<Cast.RemoteOutputPath> =
+  z.object({
+    path: z.string().refine(TEST('path', code.is_remote_path.test)),
+  })
 
 export const RemotePathModel: z.ZodType<Cast.RemotePath> = z.object({
   path: z.string().refine(TEST('path', code.is_remote_path.test)),

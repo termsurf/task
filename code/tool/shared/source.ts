@@ -32,7 +32,7 @@ export function buildConvertForms(
         handle: { take: ['remote'] },
         input: {
           link: {
-            format: { like: i },
+            format: { like: i, name: { mark: 'I' } },
             file: {
               case: [
                 { like: 'file_input_path' },
@@ -43,9 +43,9 @@ export function buildConvertForms(
         },
         output: {
           link: {
-            format: { like: o },
+            format: { like: o, name: { mark: 'O' } },
             file: {
-              like: 'local_path',
+              like: 'local_output_path',
               need: false,
             },
           },
@@ -90,10 +90,10 @@ export function buildConvertForms(
         handle: { take: ['external'] },
         input: {
           link: {
-            format: { like: i },
+            format: { like: i, name: { mark: 'I' } },
             file: {
               case: [
-                { like: 'remote_path' },
+                { like: 'remote_input_path' },
                 { like: 'file_content_with_sha256' },
               ],
             },
@@ -101,7 +101,7 @@ export function buildConvertForms(
         },
         output: {
           link: {
-            format: { like: o },
+            format: { like: o, name: { mark: 'O' } },
           },
         },
       },
@@ -116,10 +116,10 @@ export function buildConvertForms(
         handle: { take: ['external'] },
         input: {
           link: {
-            format: { like: i },
+            format: { like: i, name: { mark: 'I' } },
             file: {
               case: [
-                { like: 'remote_path' },
+                { like: 'remote_input_path' },
                 { like: 'file_content_with_sha256' },
               ],
             },
@@ -127,9 +127,9 @@ export function buildConvertForms(
         },
         output: {
           link: {
-            format: { like: o },
+            format: { like: o, name: { mark: 'O' } },
             file: {
-              like: 'local_path',
+              like: 'local_output_path',
               need: false,
             },
           },
@@ -148,10 +148,10 @@ export function buildConvertForms(
         handle: { take: ['internal'], need: false },
         input: {
           link: {
-            format: { like: i },
+            format: { like: i, name: { mark: 'I' } },
             file: {
               case: [
-                { like: 'file_path' },
+                { like: 'file_input_path' },
                 { like: 'file_content_with_sha256' },
               ],
             },
@@ -159,9 +159,9 @@ export function buildConvertForms(
         },
         output: {
           link: {
-            format: { like: o },
+            format: { like: o, name: { mark: 'I' } },
             file: {
-              like: 'local_path',
+              like: 'local_output_path',
               need: false,
             },
           },
@@ -298,7 +298,7 @@ export function buildConvertFormsWithOutputDirectory(
         handle: { take: ['remote'] },
         input: {
           link: {
-            format: { like: i },
+            format: { like: i, name: { mark: 'I' } },
             file: {
               case: [
                 { like: 'file_input_path' },
@@ -309,8 +309,8 @@ export function buildConvertFormsWithOutputDirectory(
         },
         output: {
           link: {
-            format: { like: o },
-            directory: { like: 'local_path', need: false },
+            format: { like: o, name: { mark: 'O' } },
+            directory: { like: 'local_output_path', need: false },
           },
         },
       },
@@ -353,10 +353,10 @@ export function buildConvertFormsWithOutputDirectory(
         handle: { take: ['external'] },
         input: {
           link: {
-            format: { like: i },
+            format: { like: i, name: { mark: 'I' } },
             file: {
               case: [
-                { like: 'remote_path' },
+                { like: 'remote_input_path' },
                 { like: 'file_content_with_sha256' },
               ],
             },
@@ -364,7 +364,7 @@ export function buildConvertFormsWithOutputDirectory(
         },
         output: {
           link: {
-            format: { like: o },
+            format: { like: o, name: { mark: 'O' } },
           },
         },
       },
@@ -379,10 +379,10 @@ export function buildConvertFormsWithOutputDirectory(
         handle: { take: ['external'] },
         input: {
           link: {
-            format: { like: i },
+            format: { like: i, name: { mark: 'I' } },
             file: {
               case: [
-                { like: 'remote_path' },
+                { like: 'remote_input_path' },
                 { like: 'file_content_with_sha256' },
               ],
             },
@@ -390,7 +390,7 @@ export function buildConvertFormsWithOutputDirectory(
         },
         output: {
           link: {
-            format: { like: o },
+            format: { like: o, name: { mark: 'O' } },
           },
         },
       },
@@ -407,17 +407,20 @@ export function buildConvertFormsWithOutputDirectory(
         handle: { take: ['internal'], need: false },
         input: {
           link: {
-            format: { like: i },
+            format: { like: i, name: { mark: 'I' } },
             file: {
-              case: [{ like: 'file_path' }, { like: 'file_content' }],
+              case: [
+                { like: 'file_input_path' },
+                { like: 'file_content' },
+              ],
             },
           },
         },
         output: {
           link: {
-            format: { like: o },
+            format: { like: o, name: { mark: 'O' } },
             directory: {
-              like: 'local_path',
+              like: 'local_output_path',
               need: false,
             },
           },

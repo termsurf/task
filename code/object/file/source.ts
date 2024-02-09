@@ -21,10 +21,54 @@ export const remote_path: Form = {
   },
 }
 
+export const remote_input_path: Form = {
+  form: 'form',
+  link: {
+    path: {
+      like: 'string',
+      test: 'is_remote_path',
+      name: { mark: 'i' },
+    },
+  },
+}
+
+export const remote_output_path: Form = {
+  form: 'form',
+  link: {
+    path: {
+      like: 'string',
+      test: 'is_remote_path',
+      name: { mark: 'o' },
+    },
+  },
+}
+
 export const local_path: Form = {
   form: 'form',
   link: {
     path: { like: 'string', test: 'is_local_path' },
+  },
+}
+
+export const local_input_path: Form = {
+  form: 'form',
+  link: {
+    path: {
+      like: 'string',
+      test: 'is_local_path',
+      name: { mark: 'i' },
+    },
+  },
+}
+
+export const local_output_path: Form = {
+  form: 'form',
+  link: {
+    path: {
+      like: 'string',
+      test: 'is_local_path',
+      name: { mark: 'o' },
+    },
   },
 }
 
