@@ -23,8 +23,31 @@ export function unsetAll(obj, props: Array<Array<string>>) {
   return obj
 }
 
-export function omitNested(obj, props: Array<Array<string>>) {
-  const out = _.cloneDeep(obj)
+export function omitNested<T extends object>(
+  obj: T,
+  props: Array<Array<string>>,
+) {
+  const out = cloneOptions(obj)
   unsetAll(out, props)
   return out
+}
+
+export function cloneOptions<T extends object>(x: T) {
+  const y = {} as T
+
+  Object.keys(x).forEach(name => {
+    const value = x[name]
+
+    if (_.isPlainObject(value)) {
+      y[name] = cloneOptions(value)
+    } else {
+      y[name] = value
+    }
+  })
+
+  return y
+}
+
+export function extend(x: object, y: object) {
+  return _.merge({}, x, y)
 }

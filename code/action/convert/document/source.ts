@@ -19,14 +19,17 @@ export const convert_document_with_jupyter_node_remote_input =
 export const convert_document_with_jupyter_node_external_input =
   convert_document_with_jupyter_forms.node_external_input
 
+export const convert_document_with_jupyter_node_client_input =
+  convert_document_with_jupyter_forms.node_client_input
+
 export const convert_document_with_jupyter_node_local_external_input =
   convert_document_with_jupyter_forms.node_local_external_input
 
 export const convert_document_with_jupyter_node_local_internal_input =
   convert_document_with_jupyter_forms.node_local_internal_input
 
-export const convert_document_with_jupyter_node_local_command_input =
-  convert_document_with_jupyter_forms.node_local_command_input
+export const convert_document_with_jupyter_node_local_input =
+  convert_document_with_jupyter_forms.node_local_input
 
 export const convert_document_with_jupyter_node_output =
   convert_document_with_jupyter_forms.node_output
@@ -59,14 +62,17 @@ export const convert_document_with_libre_office_node_remote_input =
 export const convert_document_with_libre_office_node_external_input =
   convert_document_with_libre_office_forms.node_external_input
 
+export const convert_document_with_libre_office_node_client_input =
+  convert_document_with_libre_office_forms.node_client_input
+
 export const convert_document_with_libre_office_node_local_external_input =
   convert_document_with_libre_office_forms.node_local_external_input
 
 export const convert_document_with_libre_office_node_local_internal_input =
   convert_document_with_libre_office_forms.node_local_internal_input
 
-export const convert_document_with_libre_office_node_local_command_input =
-  convert_document_with_libre_office_forms.node_local_command_input
+export const convert_document_with_libre_office_node_local_input =
+  convert_document_with_libre_office_forms.node_local_input
 
 export const convert_document_with_libre_office_node_output =
   convert_document_with_libre_office_forms.node_output
@@ -109,14 +115,17 @@ export const convert_latex_with_pdf_latex_node_remote_input =
 export const convert_latex_with_pdf_latex_node_external_input =
   convert_latex_with_pdf_latex_forms.node_external_input
 
+export const convert_latex_with_pdf_latex_node_client_input =
+  convert_latex_with_pdf_latex_forms.node_client_input
+
 export const convert_latex_with_pdf_latex_node_local_external_input =
   convert_latex_with_pdf_latex_forms.node_local_external_input
 
 export const convert_latex_with_pdf_latex_node_local_internal_input =
   convert_latex_with_pdf_latex_forms.node_local_internal_input
 
-export const convert_latex_with_pdf_latex_node_local_command_input =
-  convert_latex_with_pdf_latex_forms.node_local_command_input
+export const convert_latex_with_pdf_latex_node_local_input =
+  convert_latex_with_pdf_latex_forms.node_local_input
 
 export const convert_latex_with_pdf_latex_node_output =
   convert_latex_with_pdf_latex_forms.node_output
@@ -158,14 +167,17 @@ export const convert_latex_to_png_node_remote_input =
 export const convert_latex_to_png_node_external_input =
   convert_latex_to_png_forms.node_external_input
 
+export const convert_latex_to_png_node_client_input =
+  convert_latex_to_png_forms.node_client_input
+
 export const convert_latex_to_png_node_local_external_input =
   convert_latex_to_png_forms.node_local_external_input
 
 export const convert_latex_to_png_node_local_internal_input =
   convert_latex_to_png_forms.node_local_internal_input
 
-export const convert_latex_to_png_node_local_command_input =
-  convert_latex_to_png_forms.node_local_command_input
+export const convert_latex_to_png_node_local_input =
+  convert_latex_to_png_forms.node_local_input
 
 export const convert_latex_to_png_node_output =
   convert_latex_to_png_forms.node_output
@@ -197,14 +209,17 @@ export const convert_document_with_calibre_node_remote_input =
 export const convert_document_with_calibre_node_external_input =
   convert_document_with_calibre_forms.node_external_input
 
+export const convert_document_with_calibre_node_client_input =
+  convert_document_with_calibre_forms.node_client_input
+
 export const convert_document_with_calibre_node_local_external_input =
   convert_document_with_calibre_forms.node_local_external_input
 
 export const convert_document_with_calibre_node_local_internal_input =
   convert_document_with_calibre_forms.node_local_internal_input
 
-export const convert_document_with_calibre_node_local_command_input =
-  convert_document_with_calibre_forms.node_local_command_input
+export const convert_document_with_calibre_node_local_input =
+  convert_document_with_calibre_forms.node_local_input
 
 export const convert_document_with_calibre_node_output =
   convert_document_with_calibre_forms.node_output
@@ -246,14 +261,17 @@ export const convert_document_with_puppeteer_node_remote_input =
 export const convert_document_with_puppeteer_node_external_input =
   convert_document_with_puppeteer_forms.node_external_input
 
+export const convert_document_with_puppeteer_node_client_input =
+  convert_document_with_puppeteer_forms.node_client_input
+
 export const convert_document_with_puppeteer_node_local_external_input =
   convert_document_with_puppeteer_forms.node_local_external_input
 
 export const convert_document_with_puppeteer_node_local_internal_input =
   convert_document_with_puppeteer_forms.node_local_internal_input
 
-export const convert_document_with_puppeteer_node_local_command_input =
-  convert_document_with_puppeteer_forms.node_local_command_input
+export const convert_document_with_puppeteer_node_local_input =
+  convert_document_with_puppeteer_forms.node_local_input
 
 export const convert_document_with_puppeteer_node_output =
   convert_document_with_puppeteer_forms.node_output
@@ -285,14 +303,17 @@ export const convert_document_with_pandoc_node_remote_input =
 export const convert_document_with_pandoc_node_external_input =
   convert_document_with_pandoc_forms.node_external_input
 
+export const convert_document_with_pandoc_node_client_input =
+  convert_document_with_pandoc_forms.node_client_input
+
 export const convert_document_with_pandoc_node_local_external_input =
   convert_document_with_pandoc_forms.node_local_external_input
 
 export const convert_document_with_pandoc_node_local_internal_input =
   convert_document_with_pandoc_forms.node_local_internal_input
 
-export const convert_document_with_pandoc_node_local_command_input =
-  convert_document_with_pandoc_forms.node_local_command_input
+export const convert_document_with_pandoc_node_local_input =
+  convert_document_with_pandoc_forms.node_local_input
 
 export const convert_document_with_pandoc_node_output =
   convert_document_with_pandoc_forms.node_output

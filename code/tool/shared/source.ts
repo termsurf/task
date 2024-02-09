@@ -2,7 +2,7 @@ import { Form, FormLinkMesh } from '@termsurf/form'
 import _ from 'lodash'
 
 // only allow uploads from browser to contain `content` or remote paths.
-const baseCommon: FormLinkMesh = {
+export const baseCommonConvert: FormLinkMesh = {
   pathScope: {
     like: 'string',
     need: false,
@@ -51,7 +51,7 @@ export function buildConvertForms(
           },
         },
       },
-      baseCommon,
+      baseCommonConvert,
       common,
     ),
   }
@@ -128,10 +128,14 @@ export function buildConvertForms(
         output: {
           link: {
             format: { like: o },
+            file: {
+              like: 'local_path',
+              need: false,
+            },
           },
         },
       },
-      baseCommon,
+      baseCommonConvert,
       common,
     ),
   }
@@ -146,7 +150,10 @@ export function buildConvertForms(
           link: {
             format: { like: i },
             file: {
-              case: [{ like: 'file_path' }, { like: 'file_content' }],
+              case: [
+                { like: 'file_path' },
+                { like: 'file_content_with_sha256' },
+              ],
             },
           },
         },
@@ -160,12 +167,12 @@ export function buildConvertForms(
           },
         },
       },
-      baseCommon,
+      baseCommonConvert,
       common,
     ),
   }
 
-  const node_local_command_input: Form = {
+  const node_local_input: Form = {
     form: 'form',
     link: _.merge(
       {
@@ -182,7 +189,7 @@ export function buildConvertForms(
           },
         },
       },
-      baseCommon,
+      baseCommonConvert,
       common,
     ),
   }
@@ -260,7 +267,7 @@ export function buildConvertForms(
     node_client_input,
     node_local_external_input,
     node_local_internal_input,
-    node_local_command_input,
+    node_local_input,
     node_output,
     browser_input,
     browser_remote_input,
@@ -307,7 +314,7 @@ export function buildConvertFormsWithOutputDirectory(
           },
         },
       },
-      baseCommon,
+      baseCommonConvert,
       common,
     ),
   }
@@ -387,7 +394,7 @@ export function buildConvertFormsWithOutputDirectory(
           },
         },
       },
-      baseCommon,
+      baseCommonConvert,
       common,
     ),
   }
@@ -416,12 +423,12 @@ export function buildConvertFormsWithOutputDirectory(
           },
         },
       },
-      baseCommon,
+      baseCommonConvert,
       common,
     ),
   }
 
-  const node_local_command_input: Form = {
+  const node_local_input: Form = {
     form: 'form',
     link: _.merge(
       {
@@ -438,7 +445,7 @@ export function buildConvertFormsWithOutputDirectory(
           },
         },
       },
-      baseCommon,
+      baseCommonConvert,
       common,
     ),
   }
@@ -516,7 +523,7 @@ export function buildConvertFormsWithOutputDirectory(
     node_external_input,
     node_local_external_input,
     node_local_internal_input,
-    node_local_command_input,
+    node_local_input,
     node_output,
     browser_input,
     browser_remote_input,

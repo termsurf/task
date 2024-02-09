@@ -4,29 +4,18 @@ import { getConfig } from '../shared/config.js'
 import { wait } from './timer.js'
 import kink from './kink.js'
 
-export async function resolveAsArrayBuffer(request) {
-  const response = await postRemote(request)
-  return await response.arrayBuffer()
+export type RequestBody = FormData | object
+
+export type Request = {
+  path: string
+  method: string
+  body: RequestBody
 }
 
-export async function resolveWorkFileAsArrayBuffer(request) {
-  const workResponse = await postRemote(request)
-  const work = await workResponse.json()
-  while (true) {
-    await wait(1000)
-    const stepResponse = await getRemote(`/work/${work.id}`)
-    const step = await stepResponse.json()
-    if (step.status === 'ready') {
-      const fileResponse = await getRemote(`/file/${step.fileId}`)
-      const arrayBuffer = await fileResponse.arrayBuffer()
-      return arrayBuffer
-    } else if (step.status === 'error') {
-      throw kink(step.key, step.link)
-    }
-  }
-}
-
-export async function postRemote(input) {
+export async function postRemote(
+  input: Request,
+  controller?: AbortController,
+) {
   const remote = getConfig('remote')
   assert(typeof remote === 'string')
 
@@ -48,20 +37,30 @@ export async function postRemote(input) {
     method: 'POST',
     headers,
     body,
+    controller,
   })
 }
 
-export async function getRemote(path: string) {
+export async function getRemote(
+  path: string,
+  controller?: AbortController,
+) {
   const remote = getConfig('remote')
   assert(typeof remote === 'string')
 
   return fetchWithTimeout(`${remote}${path}`, {
     method: 'GET',
+    controller,
   })
 }
 
-export function buildRemoteRequest(path: string, body: any) {
+export function buildRemoteRequest(
+  method: string,
+  path: string,
+  body: RequestBody,
+): Request {
   return {
+    method,
     path,
     body,
   }

@@ -2,27 +2,27 @@ import {
   convertDocumentWithCalibreNode,
   convertDocumentWithLibreOfficeNode,
   convertDocumentWithPandocNode,
-  convertLatexToPng,
 } from './document/node.js'
+import {
+  supportConvertDocumentWithCalibre,
+  supportConvertDocumentWithLibreOffice,
+  supportConvertDocumentWithPandoc,
+} from './document/shared.js'
 import { convertFontWithFontForgeNode } from './font/node.js'
 import {
   convertImageWithImageMagickNode,
   convertImageWithInkscapeNode,
 } from './image/node.js'
 import {
-  useConvertDocumentWithCalibre,
-  useConvertDocumentWithLibreOffice,
-  useConvertDocumentWithPandoc,
   useConvertFontWithFontForge,
   useConvertImageWithImageMagick,
   useConvertImageWithInkscape,
-  useConvertLatexToPng,
 } from './shared.js'
 
 export async function convertInternal(source) {
-  if (useConvertLatexToPng(source.input.format, source.output.format)) {
-    return await convertLatexToPng(source)
-  }
+  // if (useConvertLatexToPng(source.input.format, source.output.format)) {
+  //   return await convertLatexToPng(source)
+  // }
 
   if (
     useConvertImageWithInkscape(
@@ -58,7 +58,7 @@ export async function convertInternal(source) {
   }
 
   if (
-    useConvertDocumentWithCalibre(
+    supportConvertDocumentWithCalibre(
       source.input.format,
       source.output.format,
     )
@@ -67,7 +67,7 @@ export async function convertInternal(source) {
   }
 
   if (
-    useConvertDocumentWithPandoc(
+    supportConvertDocumentWithPandoc(
       source.input.format,
       source.output.format,
     )
@@ -76,7 +76,7 @@ export async function convertInternal(source) {
   }
 
   if (
-    useConvertDocumentWithLibreOffice(
+    supportConvertDocumentWithLibreOffice(
       source.input.format,
       source.output.format,
     )

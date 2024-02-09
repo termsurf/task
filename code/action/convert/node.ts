@@ -22,13 +22,9 @@ import {
 import { convertInternal } from './node.internal.js'
 
 export {
-  useConvertDocumentWithCalibre,
-  useConvertDocumentWithLibreOffice,
-  useConvertDocumentWithPandoc,
   useConvertFontWithFontForge,
   useConvertImageWithImageMagick,
   useConvertImageWithInkscape,
-  useConvertLatexToPng,
 } from './shared.js'
 
 export async function convert<I extends ConvertInputFormat>(

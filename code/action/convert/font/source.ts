@@ -15,14 +15,17 @@ export const convert_font_with_font_forge_node_remote_input =
 export const convert_font_with_font_forge_node_external_input =
   convert_font_with_font_forge_forms.node_external_input
 
+export const convert_font_with_font_forge_node_client_input =
+  convert_font_with_font_forge_forms.node_client_input
+
 export const convert_font_with_font_forge_node_local_external_input =
   convert_font_with_font_forge_forms.node_local_external_input
 
 export const convert_font_with_font_forge_node_local_internal_input =
   convert_font_with_font_forge_forms.node_local_internal_input
 
-export const convert_font_with_font_forge_node_local_command_input =
-  convert_font_with_font_forge_forms.node_local_command_input
+export const convert_font_with_font_forge_node_local_input =
+  convert_font_with_font_forge_forms.node_local_input
 
 export const convert_font_with_font_forge_node_output =
   convert_font_with_font_forge_forms.node_output

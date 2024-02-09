@@ -12,10 +12,7 @@ import {
   buildCommandToCompileSwift,
   buildCommandToCompileRust,
 } from '~/code/action/compile/code/command.js'
-import {
-  flattenObjectSafe,
-  unsetAll,
-} from '~/code/tool/shared/object.js'
+import { unsetAll } from '~/code/tool/shared/object.js'
 import kink from '~/code/tool/shared/kink.js'
 import { ChildProcessError } from '~/code/tool/node/process.js'
 import ansiToHtml from 'ansi-to-html'
@@ -25,10 +22,7 @@ import {
   handleSwiftcCommand,
 } from '../../convert/video/local/node.js'
 import { handleRustcCommand } from '../../format/code/handler.js'
-import {
-  loadAllFilesForRemoteUpload,
-  saveAllRemoteFilesLocally,
-} from '~/code/tool/node/file.js'
+import { saveAllRemoteFilesLocally } from '~/code/tool/node/file.js'
 import {
   FileLink,
   addLocalFilesToList,
@@ -175,7 +169,7 @@ export async function compileC(input: CompileC) {
   //   return await compileCRemote(bind)
   // }
 
-  const bind = await bindCompileLocal(input)
+  // const bind = await bindCompileLocal(input)
   return await compileCLocal(input)
 }
 
@@ -210,47 +204,4 @@ export async function compileRust(input: CompileRust) {
       throw kink('compilation_error', { note: e.message })
     }
   }
-}
-
-// https://www.npmjs.com/package/ftp
-export async function bindCompileLocal(input) {
-  const through = _.cloneDeep(input)
-  const files: Array<FileLink> = []
-
-  if (input.input.file.path) {
-    addRemoteFilesToList(files, input.input.file.path, [
-      'input',
-      'file',
-      'path',
-    ])
-  }
-
-  if (files.length) {
-    const fileThrough = await saveAllRemoteFilesLocally(files)
-    unsetAll(through, [['input', 'file', 'path']])
-    _.merge(through, fileThrough)
-  }
-
-  return through
-}
-
-export async function bindCompileRemote(input) {
-  const through = _.cloneDeep(input)
-  const files: Array<FileLink> = []
-
-  if (input.input.file.path) {
-    addLocalFilesToList(files, input.input.file.path, [
-      'input',
-      'file',
-      'content',
-    ])
-  }
-
-  if (files.length) {
-    const fileThrough = await loadAllFilesForRemoteUpload(files)
-    _.merge(through, fileThrough)
-    unsetAll(through, [['input', 'file', 'path']])
-  }
-
-  return through
 }

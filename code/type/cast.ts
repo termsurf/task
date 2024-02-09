@@ -3719,117 +3719,13 @@ export type CompressMp4WithFfmpeg = {
   videoCodec?: FfmpegCodecVideo
 }
 
-export type ConvertAiToSvgWithInkscapeBrowserInput =
-  | ConvertAiToSvgWithInkscapeBrowserRemoteInput
-  | ConvertAiToSvgWithInkscapeBrowserLocalInput
-
-export type ConvertAiToSvgWithInkscapeBrowserLocalInput = {
-  handle?: 'local'
+export type ConvertApi = {
   input: {
     format: string
-    file: {
-      content: FileContent
-    }
   }
   output: {
     format: string
   }
-}
-
-export type ConvertAiToSvgWithInkscapeBrowserOutput = {
-  file: FileContent
-}
-
-export type ConvertAiToSvgWithInkscapeBrowserRemoteInput = {
-  handle: 'remote'
-  input: {
-    format: string
-    file: FileContentWithSha256
-  }
-  output: {
-    format: string
-  }
-}
-
-export type ConvertAiToSvgWithInkscapeNodeClientInput = {
-  handle: 'client'
-  input: {
-    format: string
-    file: FileInputPath | FileContentWithSha256
-  }
-  output: {
-    format: string
-  }
-}
-
-export type ConvertAiToSvgWithInkscapeNodeExternalInput = {
-  handle: 'external'
-  input: {
-    format: string
-    file: RemotePath | FileContentWithSha256
-  }
-  output: {
-    format: string
-  }
-}
-
-export type ConvertAiToSvgWithInkscapeNodeInput =
-  | ConvertAiToSvgWithInkscapeNodeRemoteInput
-  | ConvertAiToSvgWithInkscapeNodeLocalExternalInput
-  | ConvertAiToSvgWithInkscapeNodeLocalInternalInput
-
-export type ConvertAiToSvgWithInkscapeNodeLocalCommandInput = {
-  input: {
-    format: string
-    file: LocalPath
-  }
-  output: {
-    format: string
-    file: LocalPath
-  }
-  pathScope?: string
-}
-
-export type ConvertAiToSvgWithInkscapeNodeLocalExternalInput = {
-  handle: 'external'
-  input: {
-    format: string
-    file: RemotePath | FileContentWithSha256
-  }
-  output: {
-    format: string
-  }
-  pathScope?: string
-}
-
-export type ConvertAiToSvgWithInkscapeNodeLocalInternalInput = {
-  handle?: 'internal'
-  input: {
-    format: string
-    file: FilePath | FileContent
-  }
-  output: {
-    format: string
-    file?: LocalPath
-  }
-  pathScope?: string
-}
-
-export type ConvertAiToSvgWithInkscapeNodeOutput = {
-  file: FilePath
-}
-
-export type ConvertAiToSvgWithInkscapeNodeRemoteInput = {
-  handle: 'remote'
-  input: {
-    format: string
-    file: FileInputPath | FileContentWithSha256
-  }
-  output: {
-    format: string
-    file?: LocalPath
-  }
-  pathScope?: string
 }
 
 export type ConvertArchiveWithUnarchiver = {
@@ -3884,6 +3780,17 @@ export type ConvertDocumentWithCalibreBrowserRemoteInput = {
   }
 }
 
+export type ConvertDocumentWithCalibreNodeClientInput = {
+  handle: 'client'
+  input: {
+    format: CalibreInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: CalibreOutputFormat
+  }
+}
+
 export type ConvertDocumentWithCalibreNodeExternalInput = {
   handle: 'external'
   input: {
@@ -3900,18 +3807,6 @@ export type ConvertDocumentWithCalibreNodeInput =
   | ConvertDocumentWithCalibreNodeLocalExternalInput
   | ConvertDocumentWithCalibreNodeLocalInternalInput
 
-export type ConvertDocumentWithCalibreNodeLocalCommandInput = {
-  input: {
-    format: CalibreInputFormat
-    file: LocalPath
-  }
-  output: {
-    format: CalibreOutputFormat
-    file: LocalPath
-  }
-  pathScope?: string
-}
-
 export type ConvertDocumentWithCalibreNodeLocalExternalInput = {
   handle: 'external'
   input: {
@@ -3920,6 +3815,19 @@ export type ConvertDocumentWithCalibreNodeLocalExternalInput = {
   }
   output: {
     format: CalibreOutputFormat
+    file?: LocalPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithCalibreNodeLocalInput = {
+  input: {
+    format: CalibreInputFormat
+    file: LocalPath
+  }
+  output: {
+    format: CalibreOutputFormat
+    file: LocalPath
   }
   pathScope?: string
 }
@@ -3928,7 +3836,7 @@ export type ConvertDocumentWithCalibreNodeLocalInternalInput = {
   handle?: 'internal'
   input: {
     format: CalibreInputFormat
-    file: FilePath | FileContent
+    file: FilePath | FileContentWithSha256
   }
   output: {
     format: CalibreOutputFormat
@@ -3986,6 +3894,17 @@ export type ConvertDocumentWithJupyterBrowserRemoteInput = {
   }
 }
 
+export type ConvertDocumentWithJupyterNodeClientInput = {
+  handle: 'client'
+  input: {
+    format: string
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: string
+  }
+}
+
 export type ConvertDocumentWithJupyterNodeExternalInput = {
   handle: 'external'
   input: {
@@ -4002,18 +3921,6 @@ export type ConvertDocumentWithJupyterNodeInput =
   | ConvertDocumentWithJupyterNodeLocalExternalInput
   | ConvertDocumentWithJupyterNodeLocalInternalInput
 
-export type ConvertDocumentWithJupyterNodeLocalCommandInput = {
-  input: {
-    format: string
-    file: LocalPath
-  }
-  output: {
-    format: string
-    file: LocalPath
-  }
-  pathScope?: string
-}
-
 export type ConvertDocumentWithJupyterNodeLocalExternalInput = {
   handle: 'external'
   input: {
@@ -4022,6 +3929,19 @@ export type ConvertDocumentWithJupyterNodeLocalExternalInput = {
   }
   output: {
     format: string
+    file?: LocalPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithJupyterNodeLocalInput = {
+  input: {
+    format: string
+    file: LocalPath
+  }
+  output: {
+    format: string
+    file: LocalPath
   }
   pathScope?: string
 }
@@ -4030,7 +3950,7 @@ export type ConvertDocumentWithJupyterNodeLocalInternalInput = {
   handle?: 'internal'
   input: {
     format: string
-    file: FilePath | FileContent
+    file: FilePath | FileContentWithSha256
   }
   output: {
     format: string
@@ -4088,6 +4008,17 @@ export type ConvertDocumentWithLibreOfficeBrowserRemoteInput = {
   }
 }
 
+export type ConvertDocumentWithLibreOfficeNodeClientInput = {
+  handle: 'client'
+  input: {
+    format: LibreOfficeInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: LibreOfficeOutputFormat
+  }
+}
+
 export type ConvertDocumentWithLibreOfficeNodeExternalInput = {
   handle: 'external'
   input: {
@@ -4104,18 +4035,6 @@ export type ConvertDocumentWithLibreOfficeNodeInput =
   | ConvertDocumentWithLibreOfficeNodeLocalExternalInput
   | ConvertDocumentWithLibreOfficeNodeLocalInternalInput
 
-export type ConvertDocumentWithLibreOfficeNodeLocalCommandInput = {
-  input: {
-    format: LibreOfficeInputFormat
-    file: LocalPath
-  }
-  output: {
-    format: LibreOfficeOutputFormat
-    directory: LocalPath
-  }
-  pathScope?: string
-}
-
 export type ConvertDocumentWithLibreOfficeNodeLocalExternalInput = {
   handle: 'external'
   input: {
@@ -4124,6 +4043,18 @@ export type ConvertDocumentWithLibreOfficeNodeLocalExternalInput = {
   }
   output: {
     format: LibreOfficeOutputFormat
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithLibreOfficeNodeLocalInput = {
+  input: {
+    format: LibreOfficeInputFormat
+    file: LocalPath
+  }
+  output: {
+    format: LibreOfficeOutputFormat
+    directory: LocalPath
   }
   pathScope?: string
 }
@@ -4190,6 +4121,17 @@ export type ConvertDocumentWithPandocBrowserRemoteInput = {
   }
 }
 
+export type ConvertDocumentWithPandocNodeClientInput = {
+  handle: 'client'
+  input: {
+    format: PandocInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PandocOutputFormat
+  }
+}
+
 export type ConvertDocumentWithPandocNodeExternalInput = {
   handle: 'external'
   input: {
@@ -4206,18 +4148,6 @@ export type ConvertDocumentWithPandocNodeInput =
   | ConvertDocumentWithPandocNodeLocalExternalInput
   | ConvertDocumentWithPandocNodeLocalInternalInput
 
-export type ConvertDocumentWithPandocNodeLocalCommandInput = {
-  input: {
-    format: PandocInputFormat
-    file: LocalPath
-  }
-  output: {
-    format: PandocOutputFormat
-    file: LocalPath
-  }
-  pathScope?: string
-}
-
 export type ConvertDocumentWithPandocNodeLocalExternalInput = {
   handle: 'external'
   input: {
@@ -4226,6 +4156,19 @@ export type ConvertDocumentWithPandocNodeLocalExternalInput = {
   }
   output: {
     format: PandocOutputFormat
+    file?: LocalPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithPandocNodeLocalInput = {
+  input: {
+    format: PandocInputFormat
+    file: LocalPath
+  }
+  output: {
+    format: PandocOutputFormat
+    file: LocalPath
   }
   pathScope?: string
 }
@@ -4234,7 +4177,7 @@ export type ConvertDocumentWithPandocNodeLocalInternalInput = {
   handle?: 'internal'
   input: {
     format: PandocInputFormat
-    file: FilePath | FileContent
+    file: FilePath | FileContentWithSha256
   }
   output: {
     format: PandocOutputFormat
@@ -4292,6 +4235,23 @@ export type ConvertDocumentWithPuppeteerBrowserRemoteInput = {
   }
 }
 
+export type ConvertDocumentWithPuppeteerNodeClientInput = {
+  handle: 'client'
+  input: {
+    format: PuppeteerInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+  }
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+}
+
 export type ConvertDocumentWithPuppeteerNodeExternalInput = {
   handle: 'external'
   input: {
@@ -4314,14 +4274,15 @@ export type ConvertDocumentWithPuppeteerNodeInput =
   | ConvertDocumentWithPuppeteerNodeLocalExternalInput
   | ConvertDocumentWithPuppeteerNodeLocalInternalInput
 
-export type ConvertDocumentWithPuppeteerNodeLocalCommandInput = {
+export type ConvertDocumentWithPuppeteerNodeLocalExternalInput = {
+  handle: 'external'
   input: {
     format: PuppeteerInputFormat
-    file: LocalPath
+    file: RemotePath | FileContentWithSha256
   }
   output: {
     format: PuppeteerOutputFormat
-    file: LocalPath
+    file?: LocalPath
   }
   pathScope?: string
   viewport: {
@@ -4332,14 +4293,14 @@ export type ConvertDocumentWithPuppeteerNodeLocalCommandInput = {
   waitUntil?: PuppeteerLifeCycleEvent
 }
 
-export type ConvertDocumentWithPuppeteerNodeLocalExternalInput = {
-  handle: 'external'
+export type ConvertDocumentWithPuppeteerNodeLocalInput = {
   input: {
     format: PuppeteerInputFormat
-    file: RemotePath | FileContentWithSha256
+    file: LocalPath
   }
   output: {
     format: PuppeteerOutputFormat
+    file: LocalPath
   }
   pathScope?: string
   viewport: {
@@ -4354,7 +4315,7 @@ export type ConvertDocumentWithPuppeteerNodeLocalInternalInput = {
   handle?: 'internal'
   input: {
     format: PuppeteerInputFormat
-    file: FilePath | FileContent
+    file: FilePath | FileContentWithSha256
   }
   output: {
     format: PuppeteerOutputFormat
@@ -4453,6 +4414,17 @@ export type ConvertFontWithFontForgeBrowserRemoteInput = {
   }
 }
 
+export type ConvertFontWithFontForgeNodeClientInput = {
+  handle: 'client'
+  input: {
+    format: FontFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: FontFormat
+  }
+}
+
 export type ConvertFontWithFontForgeNodeExternalInput = {
   handle: 'external'
   input: {
@@ -4469,18 +4441,6 @@ export type ConvertFontWithFontForgeNodeInput =
   | ConvertFontWithFontForgeNodeLocalExternalInput
   | ConvertFontWithFontForgeNodeLocalInternalInput
 
-export type ConvertFontWithFontForgeNodeLocalCommandInput = {
-  input: {
-    format: FontFormat
-    file: LocalPath
-  }
-  output: {
-    format: FontFormat
-    file: LocalPath
-  }
-  pathScope?: string
-}
-
 export type ConvertFontWithFontForgeNodeLocalExternalInput = {
   handle: 'external'
   input: {
@@ -4489,6 +4449,19 @@ export type ConvertFontWithFontForgeNodeLocalExternalInput = {
   }
   output: {
     format: FontFormat
+    file?: LocalPath
+  }
+  pathScope?: string
+}
+
+export type ConvertFontWithFontForgeNodeLocalInput = {
+  input: {
+    format: FontFormat
+    file: LocalPath
+  }
+  output: {
+    format: FontFormat
+    file: LocalPath
   }
   pathScope?: string
 }
@@ -4497,7 +4470,7 @@ export type ConvertFontWithFontForgeNodeLocalInternalInput = {
   handle?: 'internal'
   input: {
     format: FontFormat
-    file: FilePath | FileContent
+    file: FilePath | FileContentWithSha256
   }
   output: {
     format: FontFormat
@@ -4596,14 +4569,15 @@ export type ConvertImageWithImageMagickNodeInput =
   | ConvertImageWithImageMagickNodeLocalExternalInput
   | ConvertImageWithImageMagickNodeLocalInternalInput
 
-export type ConvertImageWithImageMagickNodeLocalCommandInput = {
+export type ConvertImageWithImageMagickNodeLocalExternalInput = {
+  handle: 'external'
   input: {
     format: ImageMagickInputFormat
-    file: LocalPath
+    file: RemotePath | FileContentWithSha256
   }
   output: {
     format: ImageMagickOutputFormat
-    file: LocalPath
+    file?: LocalPath
   }
   pathScope?: string
   colorCount?: number
@@ -4615,14 +4589,14 @@ export type ConvertImageWithImageMagickNodeLocalCommandInput = {
   quality?: number
 }
 
-export type ConvertImageWithImageMagickNodeLocalExternalInput = {
-  handle: 'external'
+export type ConvertImageWithImageMagickNodeLocalInput = {
   input: {
     format: ImageMagickInputFormat
-    file: RemotePath | FileContentWithSha256
+    file: LocalPath
   }
   output: {
     format: ImageMagickOutputFormat
+    file: LocalPath
   }
   pathScope?: string
   colorCount?: number
@@ -4638,7 +4612,7 @@ export type ConvertImageWithImageMagickNodeLocalInternalInput = {
   handle?: 'internal'
   input: {
     format: ImageMagickInputFormat
-    file: FilePath | FileContent
+    file: FilePath | FileContentWithSha256
   }
   output: {
     format: ImageMagickOutputFormat
@@ -4678,6 +4652,120 @@ export type ConvertImageWithImageMagickNodeRemoteInput = {
   quality?: number
 }
 
+export type ConvertImageWithInkscapeBrowserInput =
+  | ConvertImageWithInkscapeBrowserRemoteInput
+  | ConvertImageWithInkscapeBrowserLocalInput
+
+export type ConvertImageWithInkscapeBrowserLocalInput = {
+  handle?: 'local'
+  input: {
+    format: string
+    file: {
+      content: FileContent
+    }
+  }
+  output: {
+    format: string
+  }
+}
+
+export type ConvertImageWithInkscapeBrowserOutput = {
+  file: FileContent
+}
+
+export type ConvertImageWithInkscapeBrowserRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: string
+    file: FileContentWithSha256
+  }
+  output: {
+    format: string
+  }
+}
+
+export type ConvertImageWithInkscapeNodeClientInput = {
+  handle: 'client'
+  input: {
+    format: string
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: string
+  }
+}
+
+export type ConvertImageWithInkscapeNodeExternalInput = {
+  handle: 'external'
+  input: {
+    format: string
+    file: RemotePath | FileContentWithSha256
+  }
+  output: {
+    format: string
+  }
+}
+
+export type ConvertImageWithInkscapeNodeInput =
+  | ConvertImageWithInkscapeNodeRemoteInput
+  | ConvertImageWithInkscapeNodeLocalExternalInput
+  | ConvertImageWithInkscapeNodeLocalInternalInput
+
+export type ConvertImageWithInkscapeNodeLocalExternalInput = {
+  handle: 'external'
+  input: {
+    format: string
+    file: RemotePath | FileContentWithSha256
+  }
+  output: {
+    format: string
+    file?: LocalPath
+  }
+  pathScope?: string
+}
+
+export type ConvertImageWithInkscapeNodeLocalInput = {
+  input: {
+    format: string
+    file: LocalPath
+  }
+  output: {
+    format: string
+    file: LocalPath
+  }
+  pathScope?: string
+}
+
+export type ConvertImageWithInkscapeNodeLocalInternalInput = {
+  handle?: 'internal'
+  input: {
+    format: string
+    file: FilePath | FileContentWithSha256
+  }
+  output: {
+    format: string
+    file?: LocalPath
+  }
+  pathScope?: string
+}
+
+export type ConvertImageWithInkscapeNodeOutput = {
+  file: FilePath
+}
+
+export type ConvertImageWithInkscapeNodeRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: string
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: string
+    file?: LocalPath
+  }
+  pathScope?: string
+}
+
 export type ConvertLatexToPngBrowserInput =
   | ConvertLatexToPngBrowserRemoteInput
   | ConvertLatexToPngBrowserLocalInput
@@ -4715,6 +4803,17 @@ export const CONVERT_LATEX_TO_PNG_INPUT_FORMAT = ['tex'] as const
 export type ConvertLatexToPngInputFormat =
   (typeof CONVERT_LATEX_TO_PNG_INPUT_FORMAT)[number]
 
+export type ConvertLatexToPngNodeClientInput = {
+  handle: 'client'
+  input: {
+    format: ConvertLatexToPngInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: ConvertLatexToPngOutputFormat
+  }
+}
+
 export type ConvertLatexToPngNodeExternalInput = {
   handle: 'external'
   input: {
@@ -4731,18 +4830,6 @@ export type ConvertLatexToPngNodeInput =
   | ConvertLatexToPngNodeLocalExternalInput
   | ConvertLatexToPngNodeLocalInternalInput
 
-export type ConvertLatexToPngNodeLocalCommandInput = {
-  input: {
-    format: ConvertLatexToPngInputFormat
-    file: LocalPath
-  }
-  output: {
-    format: ConvertLatexToPngOutputFormat
-    file: LocalPath
-  }
-  pathScope?: string
-}
-
 export type ConvertLatexToPngNodeLocalExternalInput = {
   handle: 'external'
   input: {
@@ -4751,6 +4838,19 @@ export type ConvertLatexToPngNodeLocalExternalInput = {
   }
   output: {
     format: ConvertLatexToPngOutputFormat
+    file?: LocalPath
+  }
+  pathScope?: string
+}
+
+export type ConvertLatexToPngNodeLocalInput = {
+  input: {
+    format: ConvertLatexToPngInputFormat
+    file: LocalPath
+  }
+  output: {
+    format: ConvertLatexToPngOutputFormat
+    file: LocalPath
   }
   pathScope?: string
 }
@@ -4759,7 +4859,7 @@ export type ConvertLatexToPngNodeLocalInternalInput = {
   handle?: 'internal'
   input: {
     format: ConvertLatexToPngInputFormat
-    file: FilePath | FileContent
+    file: FilePath | FileContentWithSha256
   }
   output: {
     format: ConvertLatexToPngOutputFormat
@@ -4822,6 +4922,17 @@ export type ConvertLatexWithPdfLatexBrowserRemoteInput = {
   }
 }
 
+export type ConvertLatexWithPdfLatexNodeClientInput = {
+  handle: 'client'
+  input: {
+    format: PdfLatexInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PdfLatexOutputFormat
+  }
+}
+
 export type ConvertLatexWithPdfLatexNodeExternalInput = {
   handle: 'external'
   input: {
@@ -4838,18 +4949,6 @@ export type ConvertLatexWithPdfLatexNodeInput =
   | ConvertLatexWithPdfLatexNodeLocalExternalInput
   | ConvertLatexWithPdfLatexNodeLocalInternalInput
 
-export type ConvertLatexWithPdfLatexNodeLocalCommandInput = {
-  input: {
-    format: PdfLatexInputFormat
-    file: LocalPath
-  }
-  output: {
-    format: PdfLatexOutputFormat
-    directory: LocalPath
-  }
-  pathScope?: string
-}
-
 export type ConvertLatexWithPdfLatexNodeLocalExternalInput = {
   handle: 'external'
   input: {
@@ -4858,6 +4957,18 @@ export type ConvertLatexWithPdfLatexNodeLocalExternalInput = {
   }
   output: {
     format: PdfLatexOutputFormat
+  }
+  pathScope?: string
+}
+
+export type ConvertLatexWithPdfLatexNodeLocalInput = {
+  input: {
+    format: PdfLatexInputFormat
+    file: LocalPath
+  }
+  output: {
+    format: PdfLatexOutputFormat
+    directory: LocalPath
   }
   pathScope?: string
 }
@@ -4927,18 +5038,66 @@ export type ConvertVideoToAudioWithFfmpeg = {
   outputPath: string
 }
 
-export type ConvertVideoWithFfmpeg = {
+export type ConvertVideoWithFfmpegBase = {
+  audioCodec?: FfmpegCodecAudio
+  videoCodec?: FfmpegCodecVideo
+  audioBitRate?: number
+  videoBitRate?: number
+  frameRate?: number
+  startTime?: number | string
+  endTime?: number | string
+  strict?: FfmpegStrictOption
+  overwrite?: boolean
+  progress?: boolean
+  scaleWidth?: number
+  scaleHeight?: number
+  audioChannels?: number
+  audioSamplingFrequency?: number
+  subtitleCodec?: FfmpegCodecSubtitle
+  duration?: number | string
+  rotation?: number
+}
+
+export type ConvertVideoWithFfmpegBrowserInput =
+  | ConvertVideoWithFfmpegBrowserRemoteInput
+  | ConvertVideoWithFfmpegBrowserLocalInput
+
+export type ConvertVideoWithFfmpegBrowserLocalInput = {
+  handle?: 'local'
   input: {
-    format: string
+    format: FfmpegFormat
     file: {
-      path: string
+      content: FileContent
     }
   }
   output: {
-    format: string
-    file: {
-      path: string
-    }
+    format: FfmpegFormat
+  }
+}
+
+export type ConvertVideoWithFfmpegBrowserOutput = {
+  file: FileContent
+}
+
+export type ConvertVideoWithFfmpegBrowserRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: FfmpegFormat
+    file: FileContentWithSha256
+  }
+  output: {
+    format: FfmpegFormat
+  }
+}
+
+export type ConvertVideoWithFfmpegNodeClientInput = {
+  handle: 'client'
+  input: {
+    format: FfmpegFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: FfmpegFormat
   }
   audioCodec?: FfmpegCodecAudio
   videoCodec?: FfmpegCodecVideo
@@ -4959,7 +5118,143 @@ export type ConvertVideoWithFfmpeg = {
   rotation?: number
 }
 
-export type ConvertVideoWithFfmpegBase = {
+export type ConvertVideoWithFfmpegNodeExternalInput = {
+  handle: 'external'
+  input: {
+    format: FfmpegFormat
+    file: RemotePath | FileContentWithSha256
+  }
+  output: {
+    format: FfmpegFormat
+  }
+  audioCodec?: FfmpegCodecAudio
+  videoCodec?: FfmpegCodecVideo
+  audioBitRate?: number
+  videoBitRate?: number
+  frameRate?: number
+  startTime?: number | string
+  endTime?: number | string
+  strict?: FfmpegStrictOption
+  overwrite?: boolean
+  progress?: boolean
+  scaleWidth?: number
+  scaleHeight?: number
+  audioChannels?: number
+  audioSamplingFrequency?: number
+  subtitleCodec?: FfmpegCodecSubtitle
+  duration?: number | string
+  rotation?: number
+}
+
+export type ConvertVideoWithFfmpegNodeInput =
+  | ConvertVideoWithFfmpegNodeRemoteInput
+  | ConvertVideoWithFfmpegNodeLocalExternalInput
+  | ConvertVideoWithFfmpegNodeLocalInternalInput
+
+export type ConvertVideoWithFfmpegNodeLocalExternalInput = {
+  handle: 'external'
+  input: {
+    format: FfmpegFormat
+    file: RemotePath | FileContentWithSha256
+  }
+  output: {
+    format: FfmpegFormat
+    file?: LocalPath
+  }
+  pathScope?: string
+  audioCodec?: FfmpegCodecAudio
+  videoCodec?: FfmpegCodecVideo
+  audioBitRate?: number
+  videoBitRate?: number
+  frameRate?: number
+  startTime?: number | string
+  endTime?: number | string
+  strict?: FfmpegStrictOption
+  overwrite?: boolean
+  progress?: boolean
+  scaleWidth?: number
+  scaleHeight?: number
+  audioChannels?: number
+  audioSamplingFrequency?: number
+  subtitleCodec?: FfmpegCodecSubtitle
+  duration?: number | string
+  rotation?: number
+}
+
+export type ConvertVideoWithFfmpegNodeLocalInput = {
+  input: {
+    format: FfmpegFormat
+    file: LocalPath
+  }
+  output: {
+    format: FfmpegFormat
+    file: LocalPath
+  }
+  pathScope?: string
+  audioCodec?: FfmpegCodecAudio
+  videoCodec?: FfmpegCodecVideo
+  audioBitRate?: number
+  videoBitRate?: number
+  frameRate?: number
+  startTime?: number | string
+  endTime?: number | string
+  strict?: FfmpegStrictOption
+  overwrite?: boolean
+  progress?: boolean
+  scaleWidth?: number
+  scaleHeight?: number
+  audioChannels?: number
+  audioSamplingFrequency?: number
+  subtitleCodec?: FfmpegCodecSubtitle
+  duration?: number | string
+  rotation?: number
+}
+
+export type ConvertVideoWithFfmpegNodeLocalInternalInput = {
+  handle?: 'internal'
+  input: {
+    format: FfmpegFormat
+    file: FilePath | FileContentWithSha256
+  }
+  output: {
+    format: FfmpegFormat
+    file?: LocalPath
+  }
+  pathScope?: string
+  audioCodec?: FfmpegCodecAudio
+  videoCodec?: FfmpegCodecVideo
+  audioBitRate?: number
+  videoBitRate?: number
+  frameRate?: number
+  startTime?: number | string
+  endTime?: number | string
+  strict?: FfmpegStrictOption
+  overwrite?: boolean
+  progress?: boolean
+  scaleWidth?: number
+  scaleHeight?: number
+  audioChannels?: number
+  audioSamplingFrequency?: number
+  subtitleCodec?: FfmpegCodecSubtitle
+  duration?: number | string
+  rotation?: number
+}
+
+export type ConvertVideoWithFfmpegNodeOutput = {
+  file: FilePath
+}
+
+export type ConvertVideoWithFfmpegNodeRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: FfmpegFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: FfmpegFormat
+    file?: LocalPath
+  }
+  pathScope?: string
   audioCodec?: FfmpegCodecAudio
   videoCodec?: FfmpegCodecVideo
   audioBitRate?: number
@@ -109632,6 +109927,42 @@ export type ResizeImageWithImageMagick = {
   height: number
   stretch: boolean
   gravity: ImageMagickGravity
+}
+
+export type ResolveInputForConvertLocalExternal = {
+  pathScope?: string
+  input: {
+    format: string
+    file: FilePath | FileContent
+  }
+  output: {
+    format: string
+    file?: LocalPath
+  }
+}
+
+export type ResolveInputForConvertLocalInternal = {
+  pathScope?: string
+  input: {
+    format: string
+    file: FilePath | FileContent
+  }
+  output: {
+    format: string
+    file?: LocalPath
+  }
+}
+
+export type ResolveInputForConvertRemote = {
+  pathScope?: string
+  input: {
+    format: string
+    file: FilePath | FileContent
+  }
+  output: {
+    format: string
+    file?: LocalPath
+  }
 }
 
 export const RUST_COMPILER_TARGET = [

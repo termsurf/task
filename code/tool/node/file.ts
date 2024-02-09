@@ -10,6 +10,21 @@ import { FileLink } from '../shared/file.js'
 import { tmpdir } from 'os'
 import { getRandomId } from './id.js'
 
+export async function resolveRemoteFile({
+  path,
+  scope,
+  extension,
+}: {
+  path: string
+  scope: string
+  extension: string
+}) {
+  const controller = new AbortController()
+  const localPath = await generateFilePath(scope, extension)
+  await saveRemoteFileNodeAndCleanupOnError(path, localPath, controller)
+  return localPath
+}
+
 export async function createStreamableFile(
   path: string,
 ): Promise<File> {
@@ -26,7 +41,7 @@ export async function createStreamableFile(
   return file
 }
 
-export async function saveRemoteFile(
+export async function saveRemoteFileNode(
   remotePath: string,
   outputPath: string,
   controller?: AbortController,
@@ -47,17 +62,18 @@ export async function saveRemoteFile(
   })
 }
 
-export async function saveRemoteFileAndCleanupOnError(
+export async function saveRemoteFileNodeAndCleanupOnError(
   remotePath: string,
   outputPath: string,
   controller?: AbortController,
 ) {
   try {
-    await saveRemoteFile(remotePath, outputPath, controller)
+    await saveRemoteFileNode(remotePath, outputPath, controller)
   } catch (e) {
     if (await fsp.stat(outputPath)) {
       await fsp.unlink(outputPath)
     }
+    throw e
   }
 }
 
@@ -71,7 +87,7 @@ export async function saveAllRemoteFilesLocally(
         case 'https-uri':
         case 'http-uri': {
           const tmpPath = await tmpName()
-          return saveRemoteFileAndCleanupOnError(
+          return saveRemoteFileNodeAndCleanupOnError(
             fileLink.path.href,
             tmpPath,
             controller,
@@ -83,25 +99,6 @@ export async function saveAllRemoteFilesLocally(
       }
     }),
   )
-}
-
-export async function loadAllFilesForRemoteUpload(
-  files: Array<FileLink>,
-) {
-  const controller = new AbortController()
-  const out: any = {}
-  files.forEach(async fileLink => {
-    const file = await createStreamableFile(fileLink.path.href)
-    if (_.has(out, fileLink.link)) {
-      const val = _.get(out, fileLink.link)
-      const arr = Array.isArray(val) ? val : [val]
-      arr.push(file)
-      _.set(out, fileLink.link, arr)
-    } else {
-      _.set(out, fileLink.link, file)
-    }
-  })
-  return out
 }
 
 export function getScopeDirectory(possibility?: string) {
@@ -117,6 +114,13 @@ export async function getFallbackFilePath(
     return possibility
   }
 
+  return generateFilePath(directory, extension)
+}
+
+export async function generateFilePath(
+  directory: string,
+  extension?: string,
+) {
   const name = getRandomId(64)
   const fullName = extension ? `${name}.${extension}` : name
   const path = await tmpName({ tmpdir: directory, name: fullName })

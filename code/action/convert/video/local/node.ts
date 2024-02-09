@@ -14,8 +14,11 @@ import { stripAnsiFromText } from '~/code/cli/logging.js'
 
 // https://www.npmjs.com/package/file-type
 // https://github.com/apache/tika
-import { Command, ConvertVideoWithFfmpeg } from '~/code/type/index.js'
-import { buildCommandToConvertVideoWithFfmpeg } from './shared.js'
+import {
+  Command,
+  ConvertVideoWithFfmpegNodeLocalInput,
+} from '~/code/type/index.js'
+import { buildCommandToConvertVideoWithFfmpeg } from '../command.js'
 
 export async function handleFfmpegCommand(
   cmd: Command,
@@ -197,10 +200,10 @@ function parseFfmpegError(text: string) {
 // }
 
 export async function convertVideoWithFfmpeg(
-  input: ConvertVideoWithFfmpeg,
+  input: ConvertVideoWithFfmpegNodeLocalInput,
   onUpdate?: (msg: Message) => void,
 ) {
-  const [cmd] = await buildCommandToConvertVideoWithFfmpeg(input)
-  await handleFfmpegCommand(cmd!, onUpdate)
+  const sequence = await buildCommandToConvertVideoWithFfmpeg(input)
+  await handleFfmpegCommand(sequence.call[0]!, onUpdate)
   return input.output.file.path
 }

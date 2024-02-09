@@ -1,8 +1,10 @@
-import { getCommand } from '~/code/tool/shared/command.js'
+import {
+  buildCommandSequence,
+  getCommand,
+} from '~/code/tool/shared/command.js'
 import {
   ConvertMp4ToGifWithFfmpegModel,
-  ConvertVideoWithFfmpeg,
-  CompressMp4WithFfmpegModel,
+  ConvertVideoWithFfmpegNodeLocalInput,
   FfmpegCodecAudio,
   IOPath,
 } from '~/code/type/index.js'
@@ -56,7 +58,7 @@ import {
 // ffmpeg -i source_video.avi -vn -ar 44100 -ac 2 -ab 192k -f mp3 sound.mp3
 // https://catswhocode.com/ffmpeg-commands/
 export async function buildCommandToConvertVideoWithFfmpeg(
-  input: ConvertVideoWithFfmpeg,
+  input: ConvertVideoWithFfmpegNodeLocalInput,
 ) {
   let {
     input: i,
@@ -158,7 +160,7 @@ export async function buildCommandToConvertVideoWithFfmpeg(
 
   cmd.link.push(`${output.file.path}`)
 
-  return [cmd]
+  return buildCommandSequence(cmd)
 }
 
 export async function buildCommandToCompressVideoWithFfmpeg() {}
@@ -241,6 +243,6 @@ export async function removeAudioFromVideoWithFfmpeg({
   return [`ffmpeg -i "${inputPath}" -c copy -an ${outputPath}`]
 }
 
-export async function compressMP4WithFfmpeg(source) {
-  return CompressMp4WithFfmpegModel.parse(source)
-}
+// export async function compressMP4WithFfmpeg(source) {
+//   return CompressMp4WithFfmpegModel.parse(source)
+// }

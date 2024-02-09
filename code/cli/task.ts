@@ -8,12 +8,14 @@ import kink from '~/code/tool/shared/kink.js'
 import { logOutput, logStart, setLoggingStyle } from './logging.js'
 import { buildInputMapping, transferInput } from './parse.js'
 import {
-  useConvertDocumentWithCalibre,
-  useConvertDocumentWithPandoc,
   useConvertFontWithFontForge,
   useConvertImageWithImageMagick,
 } from '../action/convert/shared.js'
 import { convert } from './internal.js'
+import {
+  supportConvertDocumentWithCalibre,
+  supportConvertDocumentWithPandoc,
+} from '../action/convert/document/shared.js'
 
 export const CONVERT_KEY: Record<string, Link> = {
   i: { line: ['input', 'file', 'path'] },
@@ -86,7 +88,7 @@ export async function call(task: Task, source) {
       // }
 
       if (
-        useConvertDocumentWithPandoc(
+        supportConvertDocumentWithPandoc(
           base.input.format,
           base.output.format,
         )
@@ -104,7 +106,7 @@ export async function call(task: Task, source) {
           )
           spinner?.stop()
           if (typeof out === 'object' && 'output' in out) {
-            logOutput(out.output.file.path)
+            logOutput(out.file.path)
           }
           return
         } catch (e) {
@@ -114,7 +116,7 @@ export async function call(task: Task, source) {
       }
 
       if (
-        useConvertDocumentWithCalibre(
+        supportConvertDocumentWithCalibre(
           base.input.format,
           base.output.format,
         )
@@ -133,7 +135,7 @@ export async function call(task: Task, source) {
           )
           spinner?.stop()
           if (typeof out === 'object' && 'output' in out) {
-            logOutput(out.output.file.path)
+            logOutput(out.file.path)
           }
           return
         } catch (e) {
@@ -158,7 +160,7 @@ export async function call(task: Task, source) {
         )
         spinner?.stop()
         if (typeof out === 'object' && 'output' in out) {
-          logOutput(out.output.file.path)
+          logOutput(out.file.path)
         }
         return
       }
@@ -182,7 +184,7 @@ export async function call(task: Task, source) {
           )
           spinner?.stop()
           if (typeof out === 'object' && 'output' in out) {
-            logOutput(out.output.file.path)
+            logOutput(out.file.path)
           }
           return
         } catch (e) {
@@ -292,7 +294,6 @@ export async function call(task: Task, source) {
 
   throw kink('task_not_implemented', {
     task: task,
-    link: Object.keys(source.detail),
   })
 }
 

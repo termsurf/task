@@ -50,7 +50,6 @@ type Base = {
   task_not_implemented: {
     take: {
       task: string
-      link: Array<string>
     }
   }
   file_already_exists: {
@@ -216,7 +215,7 @@ Kink.base(
   (take: Base['task_not_implemented']['take']) => ({
     code: CODE.task_not_implemented,
     note: `Task is not implemented yet.`,
-    link: { task: take.task, link: take.link },
+    link: { task: take.task },
   }),
 )
 

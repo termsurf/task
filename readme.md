@@ -239,6 +239,167 @@ code/action/**/node.ts
 code/action/**/browser.ts
 ```
 
+Call in browser.
+
+- if remote
+  - file.path must be remote
+  - file.content can exist
+  - file.sha256 must exist if content exists
+- if not remote
+  - file.path must be remote
+    - fetch file through server
+  - file.content can exist
+  - file.sha256 not necessary
+
+```ts
+import {
+  ConvertFontWithFontForgeBrowserInput,
+  ConvertFontWithFontForgeBrowserInputModel,
+  ConvertFontWithFontForgeBrowserLocalInput,
+  ConvertFontWithFontForgeBrowserOutputModel,
+  ConvertFontWithFontForgeBrowserRemoteInput,
+} from '~/code/type/index.js'
+import { buildRequestToConvert } from '../shared.js'
+import { resolveWorkFileAsBlob } from '~/code/tool/shared/work.js'
+import kink from '~/code/tool/shared/kink.js'
+
+export async function convertFontWithFontForgeBrowser(
+  source: ConvertFontWithFontForgeBrowserInput,
+) {
+  const input = ConvertFontWithFontForgeBrowserInputModel.parse(source)
+
+  switch (input.handle) {
+    case 'remote':
+      return await convertFontWithFontForgeBrowserRemote(input)
+    default:
+      return await convertFontWithFontForgeBrowserLocal(input)
+  }
+}
+
+export async function convertFontWithFontForgeBrowserRemote(
+  input: ConvertFontWithFontForgeBrowserRemoteInput,
+) {
+  const request = buildRequestToConvert(input)
+  const content = await resolveWorkFileAsBlob(request)
+
+  return ConvertFontWithFontForgeBrowserOutputModel.parse({
+    file: {
+      content,
+    },
+  })
+}
+
+export async function convertFontWithFontForgeBrowserLocal(
+  input: ConvertFontWithFontForgeBrowserLocalInput,
+) {
+  throw kink('task_not_implemented', {
+    task: 'convertFontWithFontForgeBrowserLocal',
+  })
+}
+```
+
+Call in nodejs.
+
+- if remote
+  - file.path can be local or remote
+  - file.content can exist
+  - file.sha256 must exist if content exists
+- if not remote
+  - if external
+    - file.path must be remote
+    - file.content can exist
+    - file.sha256 if content exists
+  - if not external
+    - file.path can be local or remote
+    - file.content can exist
+    - file.sha256 if content exists
+
+```ts
+import {
+  ConvertFontWithFontForgeNodeInput,
+  ConvertFontWithFontForgeNodeInputModel,
+  ConvertFontWithFontForgeNodeOutputModel,
+  ConvertFontWithFontForgeNodeLocalInternalInput,
+  ConvertFontWithFontForgeNodeLocalExternalInput,
+  ConvertFontWithFontForgeNodeLocalInputModel,
+  ConvertFontWithFontForgeNodeRemoteInput,
+  ConvertFontWithFontForgeNodeClientInputModel,
+} from '~/code/type/index.js'
+import { buildCommandToConvertFontWithFontForge } from './shared.js'
+import { runCommandSequence } from '~/code/tool/node/command.js'
+import {
+  resolveInputForConvertLocalNode,
+  resolveInputForConvertRemoteNode,
+} from '../tool/node.js'
+import { extend } from '~/code/tool/shared/object.js'
+import { buildRequestToConvert } from '../shared.js'
+import { resolveWorkFileNode } from '~/code/tool/node/request.js'
+
+export async function convertFontWithFontForgeNode(
+  source: ConvertFontWithFontForgeNodeInput,
+) {
+  const input = ConvertFontWithFontForgeNodeInputModel.parse(source)
+
+  switch (input.handle) {
+    case 'remote':
+      return await convertFontWithFontForgeNodeRemote(input)
+    case 'external':
+      return await convertFontWithFontForgeNodeLocalExternal(input)
+    default:
+      return await convertFontWithFontForgeNodeLocalInternal(input)
+  }
+}
+
+async function convertFontWithFontForgeNodeLocalExternal(
+  source: ConvertFontWithFontForgeNodeLocalExternalInput,
+) {
+  const input = await resolveInputForConvertLocalNode(source)
+  return await convertFontWithFontForgeNodeLocal(input)
+}
+
+async function convertFontWithFontForgeNodeLocalInternal(
+  source: ConvertFontWithFontForgeNodeLocalInternalInput,
+) {
+  const input = await resolveInputForConvertLocalNode(source)
+  return await convertFontWithFontForgeNodeLocal(input)
+}
+
+export async function convertFontWithFontForgeNodeRemote(
+  source: ConvertFontWithFontForgeNodeRemoteInput,
+) {
+  const input = await resolveInputForConvertRemoteNode(source)
+  const clientInput =
+    ConvertFontWithFontForgeNodeClientInputModel.parse(
+      extend(input, { handle: 'client' }),
+    )
+
+  const request = buildRequestToConvert(clientInput)
+  await resolveWorkFileNode(request, input.output.file.path)
+
+  return ConvertFontWithFontForgeNodeOutputModel.parse({
+    file: {
+      path: input.output.file.path,
+    },
+  })
+}
+
+export async function convertFontWithFontForgeNodeLocal(input) {
+  const localInput =
+    ConvertFontWithFontForgeNodeLocalInputModel.parse(input)
+
+  const sequence =
+    await buildCommandToConvertFontWithFontForge(localInput)
+
+  await runCommandSequence(sequence)
+
+  return ConvertFontWithFontForgeNodeOutputModel.parse({
+    file: {
+      path: localInput.output.file.path,
+    },
+  })
+}
+```
+
 ### Task Organization
 
 Each task in Node.js basically starts from one of the top simple action methods:

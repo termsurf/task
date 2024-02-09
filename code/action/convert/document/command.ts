@@ -3,23 +3,16 @@ import {
   getCommand,
 } from '~/code/tool/shared/command.js'
 import {
-  ConvertDocumentWithCalibreNodeCommandInput,
-  ConvertDocumentWithCalibreNodeCommandInputModel,
-  ConvertDocumentWithJupyterNodeCommandInput,
-  ConvertDocumentWithJupyterNodeCommandInputModel,
-  ConvertDocumentWithLibreOfficeNodeCommandInput,
-  ConvertDocumentWithLibreOfficeNodeCommandInputModel,
-  ConvertDocumentWithPandocNodeCommandInput,
-  ConvertDocumentWithPandocNodeCommandInputModel,
-  ConvertLatexWithPdfLatexNodeCommandInput,
-  ConvertLatexWithPdfLatexNodeCommandInputModel,
+  ConvertDocumentWithCalibreNodeLocalInput,
+  ConvertDocumentWithJupyterNodeLocalInput,
+  ConvertDocumentWithLibreOfficeNodeLocalInput,
+  ConvertDocumentWithPandocNodeLocalInput,
+  ConvertLatexWithPdfLatexNodeLocalInput,
 } from '~/code/type/index.js'
 
 export function buildCommandToConvertDocumentWithLibreOffice(
-  source: ConvertDocumentWithLibreOfficeNodeCommandInput,
+  input: ConvertDocumentWithLibreOfficeNodeLocalInput,
 ) {
-  const input =
-    ConvertDocumentWithLibreOfficeNodeCommandInputModel.parse(source)
   const cmd = getCommand('soffice')
   cmd.link.push('--headless')
   cmd.link.push('--convert-to')
@@ -31,11 +24,8 @@ export function buildCommandToConvertDocumentWithLibreOffice(
 }
 
 export function buildCommandToConvertDocumentWithPandoc(
-  source: ConvertDocumentWithPandocNodeCommandInput,
+  input: ConvertDocumentWithPandocNodeLocalInput,
 ) {
-  const input =
-    ConvertDocumentWithPandocNodeCommandInputModel.parse(source)
-
   const cmd = getCommand(`pandoc`)
   cmd.link.push(
     `--sandbox`,
@@ -54,11 +44,8 @@ export function buildCommandToConvertDocumentWithPandoc(
 // https://www.reddit.com/r/hacking/comments/108sp8f/how_to_know_if_a_pdf_contains_malware/
 
 export function buildCommandToConvertLatexWithPdfLatex(
-  source: ConvertLatexWithPdfLatexNodeCommandInput,
+  input: ConvertLatexWithPdfLatexNodeLocalInput,
 ) {
-  const input =
-    ConvertLatexWithPdfLatexNodeCommandInputModel.parse(source)
-
   const cmd = getCommand(`pdflatex`)
   cmd.link.push(
     `-interaction=nonstopmode`,
@@ -73,22 +60,18 @@ export function buildCommandToConvertLatexWithPdfLatex(
 }
 
 export function buildCommandToConvertDocumentWithCalibre(
-  source: ConvertDocumentWithCalibreNodeCommandInput,
+  input: ConvertDocumentWithCalibreNodeLocalInput,
 ) {
-  const input =
-    ConvertDocumentWithCalibreNodeCommandInputModel.parse(source)
   const cmd = getCommand(`ebook-convert`)
   cmd.link.push(input.input.file.path, input.output.file.path)
   return buildCommandSequence(cmd)
 }
 
 export function buildCommandToConvertDocumentWithJupyter(
-  source: ConvertDocumentWithJupyterNodeCommandInput,
+  input: ConvertDocumentWithJupyterNodeLocalInput,
 ) {
-  const input =
-    ConvertDocumentWithJupyterNodeCommandInputModel.parse(source)
-
   const cmd = getCommand(`jupyter`)
+
   cmd.link.push(
     `nbconvert`,
     `--to`,

@@ -1,10 +1,8 @@
 import {
+  ConvertImageWithImageMagickNodeLocalInput,
+  ConvertImageWithInkscapeNodeLocalInput,
   IMAGE_MAGICK_COLOR_SPACE_CONTENT,
   IMAGE_MAGICK_COMPRESSION_CONTENT,
-  ConvertImageWithImageMagickNodeCommandInput,
-  ConvertImageWithImageMagickNodeCommandInputModel,
-  ConvertAiToSvgWithInkscapeNodeCommandInput,
-  ConvertAiToSvgWithInkscapeNodeCommandInputModel,
 } from '~/code/type/index.js'
 import {
   getCommand,
@@ -26,11 +24,8 @@ import { resolvePathRelativeToScope } from '~/code/tool/shared/file.js'
 // }
 
 export function buildCommandToConvertImageWithImageMagick(
-  source: ConvertImageWithImageMagickNodeCommandInput,
+  input: ConvertImageWithImageMagickNodeLocalInput,
 ) {
-  const input =
-    ConvertImageWithImageMagickNodeCommandInputModel.parse(source)
-
   const ip = resolvePathRelativeToScope(
     input.input.file.path,
     input.pathScope,
@@ -155,12 +150,9 @@ export function buildCommandToConvertImageWithImageMagick(
 //   return [cmd]
 // }
 
-export async function buildCommandToConvertAIToSVGWithInkscape(
-  source: ConvertAiToSvgWithInkscapeNodeCommandInput,
+export async function buildCommandToConvertImageWithInkscape(
+  input: ConvertImageWithInkscapeNodeLocalInput,
 ) {
-  const input =
-    ConvertAiToSvgWithInkscapeNodeCommandInputModel.parse(source)
-
   const inputPath = resolvePathRelativeToScope(
     input.input.file.path,
     input.pathScope,

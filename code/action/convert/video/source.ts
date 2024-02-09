@@ -1,4 +1,5 @@
 import { Form } from '@termsurf/form'
+import { buildConvertForms } from '~/code/tool/shared/source.js'
 
 export const convert_video_to_audio_with_ffmpeg: Form = {
   form: 'form',
@@ -63,32 +64,48 @@ export const convert_video_with_ffmpeg_base: Form = {
   },
 }
 
-export const convert_video_with_ffmpeg: Form = {
-  form: 'form',
-  link: {
-    input: {
-      link: {
-        format: { like: 'string', name: { mark: 'I' } },
-        file: {
-          link: {
-            path: { like: 'string', name: { mark: 'i' } },
-          },
-        },
-      },
-    },
-    output: {
-      link: {
-        format: { like: 'string', name: { mark: 'O' } },
-        file: {
-          link: {
-            path: { like: 'string', name: { mark: 'o' } },
-          },
-        },
-      },
-    },
-    ...convert_video_with_ffmpeg_base.link,
-  },
-}
+const convert_video_with_ffmpeg_forms = buildConvertForms(
+  'convert_video_with_ffmpeg',
+  'ffmpeg_format',
+  'ffmpeg_format',
+  convert_video_with_ffmpeg_base.link,
+)
+
+export const convert_video_with_ffmpeg_node_input =
+  convert_video_with_ffmpeg_forms.node_input
+
+export const convert_video_with_ffmpeg_node_remote_input =
+  convert_video_with_ffmpeg_forms.node_remote_input
+
+export const convert_video_with_ffmpeg_node_external_input =
+  convert_video_with_ffmpeg_forms.node_external_input
+
+export const convert_video_with_ffmpeg_node_client_input =
+  convert_video_with_ffmpeg_forms.node_client_input
+
+export const convert_video_with_ffmpeg_node_local_external_input =
+  convert_video_with_ffmpeg_forms.node_local_external_input
+
+export const convert_video_with_ffmpeg_node_local_internal_input =
+  convert_video_with_ffmpeg_forms.node_local_internal_input
+
+export const convert_video_with_ffmpeg_node_local_input =
+  convert_video_with_ffmpeg_forms.node_local_input
+
+export const convert_video_with_ffmpeg_node_output =
+  convert_video_with_ffmpeg_forms.node_output
+
+export const convert_video_with_ffmpeg_browser_input =
+  convert_video_with_ffmpeg_forms.browser_input
+
+export const convert_video_with_ffmpeg_browser_remote_input =
+  convert_video_with_ffmpeg_forms.browser_remote_input
+
+export const convert_video_with_ffmpeg_browser_local_input =
+  convert_video_with_ffmpeg_forms.browser_local_input
+
+export const convert_video_with_ffmpeg_browser_output =
+  convert_video_with_ffmpeg_forms.browser_output
 
 export const convert_mp4_to_gif_with_ffmpeg: Form = {
   form: 'form',
