@@ -9,6 +9,21 @@ import {
 } from '~/code/type/index.js'
 import { exec } from '~/code/tool/node/process.js'
 import { buildCommandToFormatRust } from './command.js'
+import {
+  FormatPrettier,
+  FormatPrettierInput,
+  formatCodeWithPrettierPlugin,
+} from './shared.js'
+
+// https://github.com/realm/SwiftLint
+// https://github.com/realm/SwiftLint/blob/main/Dockerfile
+
+export async function format<T extends FormatPrettier>(
+  source: FormatPrettierInput<T>,
+) {
+  return await formatCodeWithPrettierPlugin(source)
+}
+
 // https://github.com/jgm/pandoc/tree/main/test
 // https://github.com/SheetJS/test_files
 
@@ -22,7 +37,7 @@ export async function formatSwift(input: FormatSwift) {
 
 export async function formatRust(input: FormatRust) {
   const [cmd] = buildCommandToFormatRust(input)
-  return await exec(cmd!.link.join(' '))
+  return await exec(cmd!.link)
 }
 
 export async function formatPython(input: FormatPython) {

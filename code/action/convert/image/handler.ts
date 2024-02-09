@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import os from 'os'
 import { tmpName } from 'tmp-promise'
-import { convertImageWithImageMagickNodeLocal } from './node/local'
+import { convertImageWithImageMagickNodeLocal } from './node/local.js'
 
 async function buildConvertInput(
   inputFormat: string,

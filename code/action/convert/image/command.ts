@@ -77,6 +77,14 @@ export function buildCommandToConvertImageWithImageMagick(
     cmd.link.push(`-colors`, String(input.colorCount))
   }
 
+  if (input.density) {
+    cmd.link.push(`-density`, String(input.density))
+  }
+
+  if (input.quality) {
+    cmd.link.push(`-quality`, String(input.quality))
+  }
+
   cmd.link.push(`"${op}"`)
 
   // const cmd = [

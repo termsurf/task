@@ -1,5 +1,4 @@
-import { Form } from '@termsurf/form'
-import { buildConvertForms } from '../../../tool/shared/source'
+import { buildConvertForms } from '../../../tool/shared/source.js'
 
 // convert_image_with_image_magick_forms
 
@@ -17,26 +16,43 @@ const convert_image_with_image_magick_forms = buildConvertForms(
     colorSpace: { like: 'image_magick_color_space', need: false },
     compare: { like: 'boolean', need: false },
     compression: { like: 'image_magick_compression', need: false },
+    density: { like: 'natural_number', need: false },
+    quality: { like: 'natural_number', need: false },
   },
 )
-
-export const convert_image_with_image_magick_node_output =
-  convert_image_with_image_magick_forms.node_output
-
-export const convert_image_with_image_magick_node_output_response =
-  convert_image_with_image_magick_forms.node_output_response
 
 export const convert_image_with_image_magick_node_input =
   convert_image_with_image_magick_forms.node_input
 
-export const convert_image_with_image_magick_node_command_input =
-  convert_image_with_image_magick_forms.node_command_input
-
 export const convert_image_with_image_magick_node_remote_input =
   convert_image_with_image_magick_forms.node_remote_input
 
+export const convert_image_with_image_magick_node_external_input =
+  convert_image_with_image_magick_forms.node_external_input
+
+export const convert_image_with_image_magick_node_client_input =
+  convert_image_with_image_magick_forms.node_client_input
+
+export const convert_image_with_image_magick_node_local_external_input =
+  convert_image_with_image_magick_forms.node_local_external_input
+
+export const convert_image_with_image_magick_node_local_internal_input =
+  convert_image_with_image_magick_forms.node_local_internal_input
+
+export const convert_image_with_image_magick_node_local_command_input =
+  convert_image_with_image_magick_forms.node_local_command_input
+
+export const convert_image_with_image_magick_node_output =
+  convert_image_with_image_magick_forms.node_output
+
 export const convert_image_with_image_magick_browser_input =
   convert_image_with_image_magick_forms.browser_input
+
+export const convert_image_with_image_magick_browser_remote_input =
+  convert_image_with_image_magick_forms.browser_remote_input
+
+export const convert_image_with_image_magick_browser_local_input =
+  convert_image_with_image_magick_forms.browser_local_input
 
 export const convert_image_with_image_magick_browser_output =
   convert_image_with_image_magick_forms.browser_output
@@ -49,23 +65,38 @@ const convert_ai_to_svg_with_inkscape_forms = buildConvertForms(
   'string',
 )
 
-export const convert_ai_to_svg_with_inkscape_node_output =
-  convert_ai_to_svg_with_inkscape_forms.node_output
-
-export const convert_ai_to_svg_with_inkscape_node_output_response =
-  convert_ai_to_svg_with_inkscape_forms.node_output_response
-
 export const convert_ai_to_svg_with_inkscape_node_input =
   convert_ai_to_svg_with_inkscape_forms.node_input
-
-export const convert_ai_to_svg_with_inkscape_node_command_input =
-  convert_ai_to_svg_with_inkscape_forms.node_command_input
 
 export const convert_ai_to_svg_with_inkscape_node_remote_input =
   convert_ai_to_svg_with_inkscape_forms.node_remote_input
 
+export const convert_ai_to_svg_with_inkscape_node_external_input =
+  convert_ai_to_svg_with_inkscape_forms.node_external_input
+
+export const convert_ai_to_svg_with_inkscape_node_client_input =
+  convert_ai_to_svg_with_inkscape_forms.node_client_input
+
+export const convert_ai_to_svg_with_inkscape_node_local_external_input =
+  convert_ai_to_svg_with_inkscape_forms.node_local_external_input
+
+export const convert_ai_to_svg_with_inkscape_node_local_internal_input =
+  convert_ai_to_svg_with_inkscape_forms.node_local_internal_input
+
+export const convert_ai_to_svg_with_inkscape_node_local_command_input =
+  convert_ai_to_svg_with_inkscape_forms.node_local_command_input
+
+export const convert_ai_to_svg_with_inkscape_node_output =
+  convert_ai_to_svg_with_inkscape_forms.node_output
+
 export const convert_ai_to_svg_with_inkscape_browser_input =
   convert_ai_to_svg_with_inkscape_forms.browser_input
+
+export const convert_ai_to_svg_with_inkscape_browser_remote_input =
+  convert_ai_to_svg_with_inkscape_forms.browser_remote_input
+
+export const convert_ai_to_svg_with_inkscape_browser_local_input =
+  convert_ai_to_svg_with_inkscape_forms.browser_local_input
 
 export const convert_ai_to_svg_with_inkscape_browser_output =
   convert_ai_to_svg_with_inkscape_forms.browser_output

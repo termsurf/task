@@ -1,3 +1,4 @@
+import { serialize as serializeToFormData } from 'object-to-formdata'
 import {
   CALIBRE_INPUT_FORMAT,
   CALIBRE_OUTPUT_FORMAT,
@@ -20,11 +21,34 @@ import {
   PandocInputFormat,
   PandocOutputFormat,
   ConvertFileBaseRemote,
+  CONVERT_LATEX_TO_PNG_INPUT_FORMAT,
+  CONVERT_LATEX_TO_PNG_OUTPUT_FORMAT,
+  ConvertLatexToPngInputFormat,
+  ConvertLatexToPngOutputFormat,
 } from '~/code/type/index.js'
 import { buildRemoteRequest } from '~/code/tool/shared/request.js'
 import { omitNested } from '~/code/tool/shared/object.js'
 
-export function explainConvert() {}
+export function useConvertLatexToPng(a: string, b: string) {
+  if (a === b) {
+    return false
+  }
+  if (
+    !CONVERT_LATEX_TO_PNG_INPUT_FORMAT.includes(
+      a as ConvertLatexToPngInputFormat,
+    )
+  ) {
+    return false
+  }
+  if (
+    !CONVERT_LATEX_TO_PNG_OUTPUT_FORMAT.includes(
+      b as ConvertLatexToPngOutputFormat,
+    )
+  ) {
+    return false
+  }
+  return true
+}
 
 export function useConvertImageWithImageMagick(a: string, b: string) {
   if (a === b) {
@@ -136,13 +160,28 @@ export async function convertArchive(source) {
   // }
 }
 
-export function buildRequestToConvert(input: ConvertFileBaseRemote) {
+export function buildRequestToConvert(input) {
   return buildRemoteRequest(
     `/convert/${input.input.format}/${input.output.format}`,
     omitNested(input, [
-      ['remote'],
+      ['handle'],
       ['input', 'format'],
       ['output', 'format'],
     ]),
+  )
+}
+
+export function buildFormDataRequestToConvert(input) {
+  const output = omitNested(input, [
+    ['handle'],
+    ['input', 'format'],
+    ['output', 'format'],
+  ])
+
+  const formData = serializeToFormData(output)
+
+  return buildRemoteRequest(
+    `/convert/${input.input.format}/${input.output.format}`,
+    formData,
   )
 }

@@ -4,6 +4,7 @@ import { ImageMagicColorMatrix } from './cast.js'
 import _ from 'lodash'
 import { RefinementCtx, z } from 'zod'
 import { replaceFileExtension } from '~/code/tool/shared/screen.js'
+import { getPathType } from '../tool/shared/file.js'
 
 export const transform_input_output_file: Make = {
   form: 'make',
@@ -42,6 +43,44 @@ export const validate_input_file_path_or_content: Make = {
 
     return v
   },
+}
+
+export const is_sha256: Test = {
+  form: 'test',
+  test: (bond: string, name: string) =>
+    Boolean(bond.match(/^[abcdef0123456789]{64}$/i)) ||
+    `${name} is not a valid SHA256 hash.`,
+}
+
+export const is_remote_path: Test = {
+  form: 'test',
+  test: (bond: string, name: string) =>
+    getPathType(bond) !== 'file-uri' ||
+    `${name} not a valid remote URI.`,
+}
+
+export const is_local_path: Test = {
+  form: 'test',
+  test: (bond: string, name: string) =>
+    getPathType(bond) === 'file-uri' ||
+    `${name} not a valid local URI.`,
+}
+
+export const is_hex_color_8: Test = {
+  form: 'test',
+  test: (bond: string, name: string) =>
+    Boolean(
+      bond.match(/^[abcdef0123456789]{8}$/i) ||
+        bond.match(/^[abcdef0123456789]{6}$/i) ||
+        `${name} is not a valid hex code.`,
+    ),
+}
+
+export const is_hex_color_6: Test = {
+  form: 'test',
+  test: (bond: string, name: string) =>
+    Boolean(bond.match(/^[abcdef0123456789]{6}$/i)) ||
+    `${name} is not a valid hex code.`,
 }
 
 export const test_time_string: Test = {

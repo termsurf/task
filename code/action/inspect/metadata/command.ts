@@ -1,3 +1,10 @@
+import _ from 'lodash'
+import {
+  buildCommandSequence,
+  getCommand,
+} from '~/code/tool/shared/command.js'
+import { InspectMetadataFromImage } from '~/code/type/index.js'
+
 export function buildCommandToInspectMetadataFromImage(
   input: InspectMetadataFromImage,
 ) {

@@ -52,6 +52,18 @@ RUN apt-get -y install unar
 RUN apt-get -y install default-jdk-headless
 RUN apt-get -y install maven
 
+# Reinstall curl?
+RUN apt-get update -y -q
+RUN apt-get upgrade -y -q
+RUN apt-get -y install curl
+
+# Install Node.js
+# https://stackoverflow.com/questions/25899912/how-to-install-nvm-in-docker
+# RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+RUN curl -sL https://deb.nodesource.com/setup_20.x | bash
+RUN apt-get -y install nodejs
+RUN npm install -g pnpm
+
 # Install swift dependencies
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && apt-get -q -y install binutils
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && apt-get -q -y install git
@@ -114,22 +126,16 @@ RUN set -e; \
     && rm -rf "$GNUPGHOME" swift.tar.gz.sig swift.tar.gz \
     && apt-get purge --auto-remove -y curl
 
-# Reinstall curl?
-RUN apt-get update -y -q
-RUN apt-get upgrade -y -q
-RUN apt-get -y install curl
-
-# Install Node.js
-# https://stackoverflow.com/questions/25899912/how-to-install-nvm-in-docker
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-RUN source ~/.nvm/nvm.sh; \
-  nvm install $NODE_VERSION; \
-  nvm use --delete-prefix $NODE_VERSION; \
-  npm install -g pnpm
+# RUN source ~/.nvm/nvm.sh; \
+#   nvm install $NODE_VERSION; \
+#   nvm use --delete-prefix $NODE_VERSION; \
+#   npm install -g pnpm
 
 # Setup python virtual environment
-RUN apt-get -y install python3.11-venv
+RUN apt-get update -y -q
+RUN apt-get upgrade -y -q
 RUN apt-get -y install software-properties-common
+RUN apt-get -y install python3.11-venv
 # RUN wget https://www.python.org/ftp/python/3.9.16/Python-3.9.16.tar.xz
 # RUN tar -xf Python-3.9.16.tar.xz
 # RUN cd Python-3.9.16 && ./configure --enable-optimizations --enable-shared \
@@ -165,10 +171,10 @@ RUN ln -s /home/python/venv/bin/black /usr/bin/black
 # RUN ln -s /home/python/venv2/bin/guesslang /usr/bin/guesslang
 
 # Install swift formatter swift-format
-RUN wget -O swift-format.509.0.0.tar.gz https://github.com/apple/swift-format/archive/refs/tags/509.0.0.tar.gz
-RUN tar -xvzf swift-format.509.0.0.tar.gz
-RUN cd swift-format-509.0.0 && swift build -c release \
-  && cp /swift-format-509.0.0/.build/x86_64-unknown-linux-gnu/release/swift-format /usr/local/bin
+# RUN wget -O swift-format.509.0.0.tar.gz https://github.com/apple/swift-format/archive/refs/tags/509.0.0.tar.gz
+# RUN tar -xvzf swift-format.509.0.0.tar.gz
+# RUN cd swift-format-509.0.0 && swift build -c release \
+#   && cp /swift-format-509.0.0/.build/x86_64-unknown-linux-gnu/release/swift-format /usr/local/bin
 
 # Install shell formatter shfmt
 RUN go install mvdan.cc/sh/v3/cmd/shfmt@v3.7.0
@@ -200,6 +206,10 @@ RUN echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storag
 RUN apt-get update -y -q
 RUN apt-get -y install dart
 
+RUN apt-get update -y -q
+RUN apt-get upgrade -y -q
+RUN apt-get -y install curl
+
 RUN apt-get -y install php-cli
 RUN curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
 RUN HASH=`curl -sS https://composer.github.io/installer.sig` \
@@ -209,3 +219,10 @@ RUN php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
 RUN wget https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/releases/download/v3.13.0/php-cs-fixer.phar -O php-cs-fixer
 RUN chmod a+x php-cs-fixer
 RUN mv php-cs-fixer /usr/local/bin/php-cs-fixer
+
+RUN apt-get update
+RUN apt-get -y install g++
+RUN apt-get -y install make
+RUN apt-get -y install cmake
+RUN apt-get -y install unzip
+RUN apt-get -y install libcurl4-openssl-dev

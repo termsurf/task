@@ -7,6 +7,8 @@ import { tmpName } from 'tmp-promise'
 import _ from 'lodash'
 import { fetchWithTimeout } from '../shared/request.js'
 import { FileLink } from '../shared/file.js'
+import { tmpdir } from 'os'
+import { getRandomId } from './id.js'
 
 export async function createStreamableFile(
   path: string,
@@ -46,14 +48,15 @@ export async function saveRemoteFile(
 }
 
 export async function saveRemoteFileAndCleanupOnError(
-  input,
+  remotePath: string,
+  outputPath: string,
   controller?: AbortController,
 ) {
   try {
-    await saveRemoteFile(input, controller)
+    await saveRemoteFile(remotePath, outputPath, controller)
   } catch (e) {
-    if (await fsp.stat(input.output.file.path)) {
-      await fsp.unlink(input.output.file.path)
+    if (await fsp.stat(outputPath)) {
+      await fsp.unlink(outputPath)
     }
   }
 }
@@ -69,12 +72,8 @@ export async function saveAllRemoteFilesLocally(
         case 'http-uri': {
           const tmpPath = await tmpName()
           return saveRemoteFileAndCleanupOnError(
-            {
-              input: { path: fileLink.path.href },
-              output: {
-                file: { path: tmpPath },
-              },
-            },
+            fileLink.path.href,
+            tmpPath,
             controller,
           )
         }
@@ -103,4 +102,23 @@ export async function loadAllFilesForRemoteUpload(
     }
   })
   return out
+}
+
+export function getScopeDirectory(possibility?: string) {
+  return possibility ?? tmpdir()
+}
+
+export async function getFallbackFilePath(
+  possibility: string | undefined,
+  directory: string,
+  extension?: string,
+) {
+  if (possibility) {
+    return possibility
+  }
+
+  const name = getRandomId(64)
+  const fullName = extension ? `${name}.${extension}` : name
+  const path = await tmpName({ tmpdir: directory, name: fullName })
+  return path
 }

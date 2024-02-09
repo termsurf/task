@@ -23,8 +23,8 @@ import _ from 'lodash'
 import {
   handleLlcCommand,
   handleSwiftcCommand,
-} from '../../convert/video/local/node'
-import { handleRustcCommand } from '../../format/code/handler'
+} from '../../convert/video/local/node.js'
+import { handleRustcCommand } from '../../format/code/handler.js'
 import {
   loadAllFilesForRemoteUpload,
   saveAllRemoteFilesLocally,
@@ -170,10 +170,10 @@ export async function compileKotlin(input: FormatKotlin) {
 }
 
 export async function compileC(input: CompileC) {
-  if (input.remote) {
-    const bind = await bindCompileRemote(input)
-    return await compileCRemote(bind)
-  }
+  // if (input.remote) {
+  //   const bind = await bindCompileRemote(input)
+  //   return await compileCRemote(bind)
+  // }
 
   const bind = await bindCompileLocal(input)
   return await compileCLocal(input)

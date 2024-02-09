@@ -1,17 +1,17 @@
 import {
-  ConvertFontWithFontForgeNodeCommandInput,
-  ConvertFontWithFontForgeNodeCommandInputModel,
-} from '~/code/type'
+  ConvertFontWithFontForgeNodeLocalCommandInput,
+  ConvertFontWithFontForgeNodeLocalCommandInputModel,
+} from '~/code/type/index.js'
 import {
   buildCommandSequence,
   getCommand,
 } from '~/code/tool/shared/command.js'
 
 export async function buildCommandToConvertFontWithFontForge(
-  source: ConvertFontWithFontForgeNodeCommandInput,
+  source: ConvertFontWithFontForgeNodeLocalCommandInput,
 ) {
   const input =
-    ConvertFontWithFontForgeNodeCommandInputModel.parse(source)
+    ConvertFontWithFontForgeNodeLocalCommandInputModel.parse(source)
 
   const cmd = getCommand(`fontforge`)
   cmd.link.push(

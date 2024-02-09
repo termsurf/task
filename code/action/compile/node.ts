@@ -6,6 +6,7 @@ import {
   BackendCompilationOutput,
   RustOutputFormat,
   CompileCpp,
+  BuildFormatInputOutput,
 } from '~/code/type/cast.js'
 
 // // https://www.reddit.com/r/typescript/comments/199eutl/typescript_error_type_string_cannot_be_used_to/
@@ -57,51 +58,50 @@ export async function compile<I extends CompileInputFormat>(
 }
 
 export async function compileInternal(source: BuildFormatInputOutput) {
-  switch (source.input.format) {
-    case 'swift': {
-      const input = CompileSwiftModel.parse(source)
-      return await compileSwift(input)
-    }
-    case 'rust': {
-      const input = CompileRustModel.parse(source)
-      return await compileRust(input)
-    }
-    case 'c': {
-      const input = CompileCModel.parse(source)
-      return await compileC(input)
-    }
-    case 'cpp': {
-      const input = CompileCppModel.parse(source)
-      return await compileCpp(input)
-    }
-    case 'cs': {
-      // const input = CompileJavaModel.parse(source)
-      // return await compileJava(input)
-    }
-    case 'java': {
-      const input = CompileJavaModel.parse(source)
-      return await compileJava(input)
-    }
-    case 'haskell': {
-      // const input = CompileJavaModel.parse(source)
-      // return await compileJava(input)
-    }
-    case 'go': {
-      // const input = CompileJavaModel.parse(source)
-      // return await compileJava(input)
-    }
-    case 'kotlin': {
-      // const input = CompileJavaModel.parse(source)
-      // return await compileJava(input)
-    }
-    case 'clojure': {
-      // const input = CompileJavaModel.parse(source)
-      // return await compileJava(input)
-    }
-  }
-
-  throw kink('task_not_implemented', {
-    task: 'compile',
-    link: Object.keys(flattenObjectSafe(source) as object),
-  })
+  // switch (source.input.format) {
+  //   case 'swift': {
+  //     const input = CompileSwiftModel.parse(source)
+  //     return await compileSwift(input)
+  //   }
+  //   case 'rust': {
+  //     const input = CompileRustModel.parse(source)
+  //     return await compileRust(input)
+  //   }
+  //   case 'c': {
+  //     const input = CompileCModel.parse(source)
+  //     return await compileC(input)
+  //   }
+  //   case 'cpp': {
+  //     const input = CompileCppModel.parse(source)
+  //     return await compileCpp(input)
+  //   }
+  //   case 'cs': {
+  //     // const input = CompileJavaModel.parse(source)
+  //     // return await compileJava(input)
+  //   }
+  //   case 'java': {
+  //     const input = CompileJavaModel.parse(source)
+  //     return await compileJava(input)
+  //   }
+  //   case 'haskell': {
+  //     // const input = CompileJavaModel.parse(source)
+  //     // return await compileJava(input)
+  //   }
+  //   case 'go': {
+  //     // const input = CompileJavaModel.parse(source)
+  //     // return await compileJava(input)
+  //   }
+  //   case 'kotlin': {
+  //     // const input = CompileJavaModel.parse(source)
+  //     // return await compileJava(input)
+  //   }
+  //   case 'clojure': {
+  //     // const input = CompileJavaModel.parse(source)
+  //     // return await compileJava(input)
+  //   }
+  // }
+  // throw kink('task_not_implemented', {
+  //   task: 'compile',
+  //   link: Object.keys(flattenObjectSafe(source) as object),
+  // })
 }

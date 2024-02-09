@@ -1,10 +1,8 @@
 import {
   ConvertAiToSvgWithInkscapeBrowserInput,
   ConvertAiToSvgWithInkscapeBrowserInputModel,
-  ConvertAiToSvgWithInkscapeBrowserOutputModel,
   ConvertImageWithImageMagickBrowserInput,
   ConvertImageWithImageMagickBrowserInputModel,
-  ConvertImageWithImageMagickBrowserOutputModel,
 } from '~/code/type/index.js'
 import { buildRequestToConvert } from '../shared.js'
 import { resolveWorkFileAsArrayBuffer } from '~/code/tool/shared/request.js'
@@ -17,13 +15,11 @@ export async function convertImageWithImageMagickBrowser(
   const request = buildRequestToConvert(requestInput)
   const content = await resolveWorkFileAsArrayBuffer(request)
 
-  return ConvertImageWithImageMagickBrowserOutputModel.parse({
-    output: {
-      file: {
-        content,
-      },
+  return {
+    file: {
+      content,
     },
-  })
+  }
 }
 
 export async function convertImageWithInkscapeBrowser(
@@ -34,11 +30,9 @@ export async function convertImageWithInkscapeBrowser(
   const request = buildRequestToConvert(requestInput)
   const content = await resolveWorkFileAsArrayBuffer(request)
 
-  return ConvertAiToSvgWithInkscapeBrowserOutputModel.parse({
-    output: {
-      file: {
-        content,
-      },
+  return {
+    file: {
+      content,
     },
-  })
+  }
 }

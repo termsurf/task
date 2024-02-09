@@ -1,8 +1,8 @@
 import {
   buildCommandToConvertDocumentWithLibreOffice,
   buildCommandToConvertDocumentWithCalibre,
-  buildCommandToConvertLatexToPdfWithPdfLatex,
   buildCommandToConvertDocumentWithPandoc,
+  buildCommandToConvertLatexWithPdfLatex,
 } from '../command.js'
 import _ from 'lodash'
 import path from 'node:path'
@@ -19,14 +19,14 @@ import {
   ConvertDocumentWithLibreOfficeNodeInput,
   ConvertDocumentWithPandocNodeInput,
   ConvertDocumentWithPuppeteerNodeInput,
-  ConvertLatexToPdfWithPdfLatexNodeInput,
+  ConvertLatexWithPdfLatexNodeInput,
 } from '~/code/type/cast.js'
 import {
   ConvertDocumentWithCalibreNodeCommandInputModel,
   ConvertDocumentWithLibreOfficeNodeCommandInputModel,
   ConvertDocumentWithPandocNodeCommandInputModel,
   ConvertDocumentWithPuppeteerNodeInputModel,
-  ConvertLatexToPdfWithPdfLatexNodeCommandInputModel,
+  ConvertLatexWithPdfLatexNodeCommandInputModel,
 } from '~/code/type/take.js'
 
 // export async function readPDFMetadata({ inputPath }) {
@@ -147,13 +147,12 @@ export async function convertDocumentWithCalibreLocal(
   }
 }
 
-export async function convertLatexToPdfWithPdfLatexLocal(
-  input: ConvertLatexToPdfWithPdfLatexNodeInput,
+export async function convertLatexWithPdfLatexLocal(
+  input: ConvertLatexWithPdfLatexNodeInput,
 ) {
   const commandInput =
-    ConvertLatexToPdfWithPdfLatexNodeCommandInputModel.parse(input)
-  const sequence =
-    buildCommandToConvertLatexToPdfWithPdfLatex(commandInput)
+    ConvertLatexWithPdfLatexNodeCommandInputModel.parse(input)
+  const sequence = buildCommandToConvertLatexWithPdfLatex(commandInput)
   await runCommandSequence(sequence)
   const outputPath = path.join(
     input.output.directory.path,
@@ -187,25 +186,24 @@ export async function convertDocumentWithPuppeteer(
 export async function convertHtmlToPngWithPuppeteer(
   input: ConvertDocumentWithPuppeteerNodeInput,
 ) {
-  const b = await getBrowser(input.proxy ? `${input.proxy}` : undefined)
-  const p = await b.newPage()
-  await p.goto(`${input.input.file.path}`)
-  await p.waitForNavigation({ waitUntil: input.waitUntil })
-  const opts: Record<string, any> = {
-    scale: 1,
-    path: input.output.file.path,
-    printBackground: true,
-    preferCSSPageSize: true,
-  }
-  if (input.viewport?.width) {
-    opts.width = input.viewport.width
-  }
-  if (input.viewport?.height) {
-    opts.height = input.viewport.height
-  }
-  await p.screencast(opts)
-
-  inactivateBrowser(b)
+  // const b = await getBrowser(input.proxy ? `${input.proxy}` : undefined)
+  // const p = await b.newPage()
+  // await p.goto(`${input.input.file.path}`)
+  // await p.waitForNavigation({ waitUntil: input.waitUntil })
+  // const opts: Record<string, any> = {
+  //   scale: 1,
+  //   path: input.output.file.path,
+  //   printBackground: true,
+  //   preferCSSPageSize: true,
+  // }
+  // if (input.viewport?.width) {
+  //   opts.width = input.viewport.width
+  // }
+  // if (input.viewport?.height) {
+  //   opts.height = input.viewport.height
+  // }
+  // await p.screencast(opts)
+  // inactivateBrowser(b)
 }
 
 // inspectWebpage().then(data => console.log(data.fonts))
@@ -216,25 +214,24 @@ export async function convertHtmlToPngWithPuppeteer(
 export async function convertHtmlToPdfWithPuppeteer(
   input: ConvertDocumentWithPuppeteerNodeInput,
 ) {
-  const b = await getBrowser(input.proxy ? `${input.proxy}` : undefined)
-  const p = await b.newPage()
-  await p.goto(`${input.input.file.path}`)
-  await p.waitForNavigation({ waitUntil: input.waitUntil })
-  const opts: Record<string, any> = {
-    scale: 1,
-    path: input.output.file.path,
-    printBackground: true,
-    preferCSSPageSize: true,
-  }
-  if (input.viewport?.width) {
-    opts.width = input.viewport.width
-  }
-  if (input.viewport?.height) {
-    opts.height = input.viewport.height
-  }
-  await p.pdf(opts)
-
-  inactivateBrowser(b)
+  // const b = await getBrowser(input.proxy ? `${input.proxy}` : undefined)
+  // const p = await b.newPage()
+  // await p.goto(`${input.input.file.path}`)
+  // await p.waitForNavigation({ waitUntil: input.waitUntil })
+  // const opts: Record<string, any> = {
+  //   scale: 1,
+  //   path: input.output.file.path,
+  //   printBackground: true,
+  //   preferCSSPageSize: true,
+  // }
+  // if (input.viewport?.width) {
+  //   opts.width = input.viewport.width
+  // }
+  // if (input.viewport?.height) {
+  //   opts.height = input.viewport.height
+  // }
+  // await p.pdf(opts)
+  // inactivateBrowser(b)
 }
 
 // // function doit(type, fn) {

@@ -1,9 +1,9 @@
 import {
-  ConvertAiToSvgWithInkscapeNodeCommandInputModel,
   ConvertAiToSvgWithInkscapeNodeInput,
+  ConvertAiToSvgWithInkscapeNodeLocalCommandInputModel,
   ConvertAiToSvgWithInkscapeNodeOutputModel,
-  ConvertImageWithImageMagickNodeCommandInputModel,
   ConvertImageWithImageMagickNodeInput,
+  ConvertImageWithImageMagickNodeLocalCommandInputModel,
   ConvertImageWithImageMagickNodeOutputModel,
 } from '~/code/type/index.js'
 import {
@@ -12,39 +12,34 @@ import {
 } from '../command.js'
 import { runCommandSequence } from '~/code/tool/node/command.js'
 
-export async function convertImageWithImageMagickNodeLocal(
+export async function convertImageWithImageMagickNodeLocalCommand(
   input: ConvertImageWithImageMagickNodeInput,
 ) {
   const commandInput =
-    ConvertImageWithImageMagickNodeCommandInputModel.parse(input)
+    ConvertImageWithImageMagickNodeLocalCommandInputModel.parse(input)
   const sequence =
     buildCommandToConvertImageWithImageMagick(commandInput)
 
   await runCommandSequence(sequence)
 
   return ConvertImageWithImageMagickNodeOutputModel.parse({
-    output: {
-      file: {
-        path: input.output.file.path,
-      },
+    file: {
+      path: commandInput.output.file.path,
     },
   })
 }
 
-export async function convertImageWithInkscapeLocal(
+export async function convertImageWithInkscapeLocalCommand(
   input: ConvertAiToSvgWithInkscapeNodeInput,
 ) {
   const commandInput =
-    ConvertAiToSvgWithInkscapeNodeCommandInputModel.parse(input)
-  const sequence = await buildCommandToConvertAIToSVGWithInkscape(
-    commandInput,
-  )
+    ConvertAiToSvgWithInkscapeNodeLocalCommandInputModel.parse(input)
+  const sequence =
+    await buildCommandToConvertAIToSVGWithInkscape(commandInput)
   await runCommandSequence(sequence)
   return ConvertAiToSvgWithInkscapeNodeOutputModel.parse({
-    output: {
-      file: {
-        path: input.output.file.path,
-      },
+    file: {
+      path: commandInput.output.file.path,
     },
   })
 }

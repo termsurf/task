@@ -1,5 +1,5 @@
-import { fitCommandToScreen } from './screen'
-import prettier from 'prettier'
+import { fitCommandToScreen } from '../shared/screen.js'
+import prettier from 'prettier/standalone'
 
 const PRETTIER = {
   arrowParens: 'avoid' as const,

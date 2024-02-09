@@ -1,5 +1,5 @@
 import fs from 'fs/promises'
-import { slicePdfWithData } from '../../validate/document/shared'
+import { slicePdfWithData } from '../../validate/document/shared.js'
 
 // export async function slicePdf(input: SlicePdf) {
 //   const inputBuffer = await fs.readFile(input.input.file.path as string)

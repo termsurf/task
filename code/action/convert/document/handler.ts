@@ -1,4 +1,5 @@
 import { ChildProcessError, exec } from '~/code/tool/node/process.js'
+import kink from '~/code/tool/shared/kink.js'
 import { Command } from '~/code/type/index.js'
 
 export async function runCalibreCommand(cmd: Command) {

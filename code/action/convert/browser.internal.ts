@@ -1,7 +1,15 @@
+import { convertLatexToPngBrowser } from './document/browser.js'
 import { convertImageWithImageMagickBrowser } from './image/browser.js'
-import { useConvertImageWithImageMagick } from './shared.js'
+import {
+  useConvertImageWithImageMagick,
+  useConvertLatexToPng,
+} from './shared.js'
 
 export async function convertInternal(source) {
+  if (useConvertLatexToPng(source.input.format, source.output.format)) {
+    return await convertLatexToPngBrowser(source)
+  }
+
   if (
     useConvertImageWithImageMagick(
       source.input.format,

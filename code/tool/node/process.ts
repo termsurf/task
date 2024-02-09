@@ -1,6 +1,6 @@
 import child_process from 'child_process'
 import { CustomError } from 'ts-custom-error'
-import { escapeCommandInput } from '../shared/command'
+import { escapeCommandInput } from '../shared/command.js'
 
 export type ChildProcessErrorData = {
   error: Error

@@ -8,7 +8,7 @@ export const validate_pdf_with_data: Form = {
         format: { like: 'string', name: { mark: 'I' } },
         file: {
           link: {
-            data: { like: 'ArrayBuffer' },
+            data: { like: 'array_buffer' },
           },
         },
       },

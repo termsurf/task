@@ -1,40 +1,46 @@
 import _ from 'lodash'
-import fsp from 'fs/promises'
-import { omitNested } from '~/code/tool/shared/object'
+import { omitNested } from '~/code/tool/shared/object.js'
 import {
-  ConvertImageWithImageMagickNodeInput,
+  ConvertImageWithImageMagickNodeClientInputModel,
   ConvertImageWithImageMagickNodeOutputModel,
+  ConvertImageWithImageMagickNodeRemoteInput,
   ConvertImageWithImageMagickNodeRemoteInputModel,
 } from '~/code/type/index.js'
 import { buildRequestToConvert } from '../../shared.js'
-import { resolveWorkFile } from '~/code/tool/shared/request.js'
+import { resolveWorkFile } from '~/code/tool/node/request.js'
 import { resolvePathRelativeToScope } from '~/code/tool/shared/file.js'
+import {
+  getFallbackFilePath,
+  getScopeDirectory,
+} from '~/code/tool/node/file.js'
 
 export async function convertImageWithImageMagickNodeRemote(
-  input: ConvertImageWithImageMagickNodeInput,
+  source: ConvertImageWithImageMagickNodeRemoteInput,
 ) {
+  const input =
+    ConvertImageWithImageMagickNodeRemoteInputModel.parse(source)
+
+  const scope = getScopeDirectory(input.pathScope)
   const outputPath = resolvePathRelativeToScope(
-    input.output.file.path,
-    input.pathScope,
+    await getFallbackFilePath(
+      input.output.file?.path,
+      scope,
+      source.output.format,
+    ),
+    scope,
   )
 
-  const remoteInput =
-    ConvertImageWithImageMagickNodeRemoteInputModel.parse(
-      omitNested(input, [
-        ['remote'],
-        ['output', 'file'],
-        ['pathScope'],
-      ]),
+  const clientInput =
+    ConvertImageWithImageMagickNodeClientInputModel.parse(
+      _.merge({}, input, { handle: 'client' }),
     )
 
-  const request = buildRequestToConvert(remoteInput)
+  const request = buildRequestToConvert(clientInput)
   await resolveWorkFile(request, outputPath)
 
   return ConvertImageWithImageMagickNodeOutputModel.parse({
-    output: {
-      file: {
-        path: outputPath,
-      },
+    file: {
+      path: outputPath,
     },
   })
 }

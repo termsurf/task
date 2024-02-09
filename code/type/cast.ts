@@ -415,6 +415,10 @@ export const CALIBRE_OUTPUT_PROFILE = [
 export type CalibreOutputProfile =
   (typeof CALIBRE_OUTPUT_PROFILE)[number]
 
+export const CALL_HANDLE = ['external', 'remote', 'client'] as const
+
+export type CallHandle = (typeof CALL_HANDLE)[number]
+
 export type CheckFileTypeUsingMagicBytes = {
   input: {
     file: {
@@ -3514,6 +3518,7 @@ export const COMMAND_KEY = [
   'patool',
   'identify',
   'perltidy',
+  'pdfcrop',
 ] as const
 
 export type CommandKey = (typeof COMMAND_KEY)[number]
@@ -3556,19 +3561,13 @@ export const COMMAND_NAME = [
   'patool',
   'identify',
   'perltidy',
+  'pdfcrop',
 ] as const
 
 export type CommandName = (typeof COMMAND_NAME)[number]
 
 export type CommandSequence = {
   call: Array<Command>
-}
-
-export type CommandSequenceOutput = {
-  form?: string
-  code?: number
-  note?: string
-  tree: CommandSequence
 }
 
 export type CompileAsm = {
@@ -3720,70 +3719,117 @@ export type CompressMp4WithFfmpeg = {
   videoCodec?: FfmpegCodecVideo
 }
 
-export type ConvertAiToSvgWithInkscapeBrowserInput = {
-  remote?: boolean
+export type ConvertAiToSvgWithInkscapeBrowserInput =
+  | ConvertAiToSvgWithInkscapeBrowserRemoteInput
+  | ConvertAiToSvgWithInkscapeBrowserLocalInput
+
+export type ConvertAiToSvgWithInkscapeBrowserLocalInput = {
+  handle?: 'local'
   input: {
     format: string
-    file: FileContent
+    file: {
+      content: FileContent
+    }
   }
   output: {
     format: string
   }
-  pathScope?: string
 }
 
 export type ConvertAiToSvgWithInkscapeBrowserOutput = {
+  file: FileContent
+}
+
+export type ConvertAiToSvgWithInkscapeBrowserRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: string
+    file: FileContentWithSha256
+  }
   output: {
-    file: FileContent
+    format: string
   }
 }
 
-export type ConvertAiToSvgWithInkscapeNodeCommandInput = {
+export type ConvertAiToSvgWithInkscapeNodeClientInput = {
+  handle: 'client'
   input: {
     format: string
-    file: FileInputPath
+    file: FileInputPath | FileContentWithSha256
   }
   output: {
     format: string
-    file: FileOutputPath
+  }
+}
+
+export type ConvertAiToSvgWithInkscapeNodeExternalInput = {
+  handle: 'external'
+  input: {
+    format: string
+    file: RemotePath | FileContentWithSha256
+  }
+  output: {
+    format: string
+  }
+}
+
+export type ConvertAiToSvgWithInkscapeNodeInput =
+  | ConvertAiToSvgWithInkscapeNodeRemoteInput
+  | ConvertAiToSvgWithInkscapeNodeLocalExternalInput
+  | ConvertAiToSvgWithInkscapeNodeLocalInternalInput
+
+export type ConvertAiToSvgWithInkscapeNodeLocalCommandInput = {
+  input: {
+    format: string
+    file: LocalPath
+  }
+  output: {
+    format: string
+    file: LocalPath
   }
   pathScope?: string
 }
 
-export type ConvertAiToSvgWithInkscapeNodeInput = {
-  remote?: boolean
+export type ConvertAiToSvgWithInkscapeNodeLocalExternalInput = {
+  handle: 'external'
   input: {
     format: string
-    file: FileInputPath | FileContent
+    file: RemotePath | FileContentWithSha256
   }
   output: {
     format: string
-    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertAiToSvgWithInkscapeNodeLocalInternalInput = {
+  handle?: 'internal'
+  input: {
+    format: string
+    file: FilePath | FileContent
+  }
+  output: {
+    format: string
+    file?: LocalPath
   }
   pathScope?: string
 }
 
 export type ConvertAiToSvgWithInkscapeNodeOutput = {
-  output: {
-    file: FilePath
-  }
-}
-
-export type ConvertAiToSvgWithInkscapeNodeOutputResponse = {
-  form?: string
-  code?: number
-  note?: string
-  tree: ConvertAiToSvgWithInkscapeNodeOutput
+  file: FilePath
 }
 
 export type ConvertAiToSvgWithInkscapeNodeRemoteInput = {
+  handle: 'remote'
   input: {
     format: string
-    file: FileInputPath | FileContent
+    file: FileInputPath | FileContentWithSha256
   }
   output: {
     format: string
+    file?: LocalPath
   }
+  pathScope?: string
 }
 
 export type ConvertArchiveWithUnarchiver = {
@@ -3806,304 +3852,476 @@ export type ConvertArchiveWithUnarchiver = {
   }
 }
 
-export type ConvertDocumentWithCalibreBrowserInput = {
-  remote?: boolean
+export type ConvertDocumentWithCalibreBrowserInput =
+  | ConvertDocumentWithCalibreBrowserRemoteInput
+  | ConvertDocumentWithCalibreBrowserLocalInput
+
+export type ConvertDocumentWithCalibreBrowserLocalInput = {
+  handle?: 'local'
   input: {
     format: CalibreInputFormat
-    file: FileContent
+    file: {
+      content: FileContent
+    }
   }
   output: {
     format: CalibreOutputFormat
   }
-  pathScope?: string
 }
 
 export type ConvertDocumentWithCalibreBrowserOutput = {
-  output: {
-    file: FileContent
-  }
+  file: FileContent
 }
 
-export type ConvertDocumentWithCalibreNodeCommandInput = {
+export type ConvertDocumentWithCalibreBrowserRemoteInput = {
+  handle: 'remote'
   input: {
     format: CalibreInputFormat
-    file: FileInputPath
+    file: FileContentWithSha256
   }
   output: {
     format: CalibreOutputFormat
-    file: FileOutputPath
+  }
+}
+
+export type ConvertDocumentWithCalibreNodeExternalInput = {
+  handle: 'external'
+  input: {
+    format: CalibreInputFormat
+    file: RemotePath | FileContentWithSha256
+  }
+  output: {
+    format: CalibreOutputFormat
+  }
+}
+
+export type ConvertDocumentWithCalibreNodeInput =
+  | ConvertDocumentWithCalibreNodeRemoteInput
+  | ConvertDocumentWithCalibreNodeLocalExternalInput
+  | ConvertDocumentWithCalibreNodeLocalInternalInput
+
+export type ConvertDocumentWithCalibreNodeLocalCommandInput = {
+  input: {
+    format: CalibreInputFormat
+    file: LocalPath
+  }
+  output: {
+    format: CalibreOutputFormat
+    file: LocalPath
   }
   pathScope?: string
 }
 
-export type ConvertDocumentWithCalibreNodeInput = {
-  remote?: boolean
+export type ConvertDocumentWithCalibreNodeLocalExternalInput = {
+  handle: 'external'
   input: {
     format: CalibreInputFormat
-    file: FileInputPath | FileContent
+    file: RemotePath | FileContentWithSha256
   }
   output: {
     format: CalibreOutputFormat
-    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithCalibreNodeLocalInternalInput = {
+  handle?: 'internal'
+  input: {
+    format: CalibreInputFormat
+    file: FilePath | FileContent
+  }
+  output: {
+    format: CalibreOutputFormat
+    file?: LocalPath
   }
   pathScope?: string
 }
 
 export type ConvertDocumentWithCalibreNodeOutput = {
-  output: {
-    file: FilePath
-  }
-}
-
-export type ConvertDocumentWithCalibreNodeOutputResponse = {
-  form?: string
-  code?: number
-  note?: string
-  tree: ConvertDocumentWithCalibreNodeOutput
+  file: FilePath
 }
 
 export type ConvertDocumentWithCalibreNodeRemoteInput = {
+  handle: 'remote'
   input: {
     format: CalibreInputFormat
-    file: FileInputPath | FileContent
+    file: FileInputPath | FileContentWithSha256
   }
   output: {
     format: CalibreOutputFormat
+    file?: LocalPath
   }
+  pathScope?: string
 }
 
-export type ConvertDocumentWithJupyterBrowserInput = {
-  remote?: boolean
+export type ConvertDocumentWithJupyterBrowserInput =
+  | ConvertDocumentWithJupyterBrowserRemoteInput
+  | ConvertDocumentWithJupyterBrowserLocalInput
+
+export type ConvertDocumentWithJupyterBrowserLocalInput = {
+  handle?: 'local'
   input: {
     format: string
-    file: FileContent
+    file: {
+      content: FileContent
+    }
   }
   output: {
     format: string
   }
-  pathScope?: string
 }
 
 export type ConvertDocumentWithJupyterBrowserOutput = {
+  file: FileContent
+}
+
+export type ConvertDocumentWithJupyterBrowserRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: string
+    file: FileContentWithSha256
+  }
   output: {
-    file: FileContent
+    format: string
   }
 }
 
-export type ConvertDocumentWithJupyterNodeCommandInput = {
+export type ConvertDocumentWithJupyterNodeExternalInput = {
+  handle: 'external'
   input: {
     format: string
-    file: FileInputPath
+    file: RemotePath | FileContentWithSha256
   }
   output: {
     format: string
-    file: FileOutputPath
+  }
+}
+
+export type ConvertDocumentWithJupyterNodeInput =
+  | ConvertDocumentWithJupyterNodeRemoteInput
+  | ConvertDocumentWithJupyterNodeLocalExternalInput
+  | ConvertDocumentWithJupyterNodeLocalInternalInput
+
+export type ConvertDocumentWithJupyterNodeLocalCommandInput = {
+  input: {
+    format: string
+    file: LocalPath
+  }
+  output: {
+    format: string
+    file: LocalPath
   }
   pathScope?: string
 }
 
-export type ConvertDocumentWithJupyterNodeInput = {
-  remote?: boolean
+export type ConvertDocumentWithJupyterNodeLocalExternalInput = {
+  handle: 'external'
   input: {
     format: string
-    file: FileInputPath | FileContent
+    file: RemotePath | FileContentWithSha256
   }
   output: {
     format: string
-    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithJupyterNodeLocalInternalInput = {
+  handle?: 'internal'
+  input: {
+    format: string
+    file: FilePath | FileContent
+  }
+  output: {
+    format: string
+    file?: LocalPath
   }
   pathScope?: string
 }
 
 export type ConvertDocumentWithJupyterNodeOutput = {
-  output: {
-    file: FilePath
-  }
-}
-
-export type ConvertDocumentWithJupyterNodeOutputResponse = {
-  form?: string
-  code?: number
-  note?: string
-  tree: ConvertDocumentWithJupyterNodeOutput
+  file: FilePath
 }
 
 export type ConvertDocumentWithJupyterNodeRemoteInput = {
+  handle: 'remote'
   input: {
     format: string
-    file: FileInputPath | FileContent
+    file: FileInputPath | FileContentWithSha256
   }
   output: {
     format: string
-  }
-}
-
-export type ConvertDocumentWithLibreOfficeBrowserInput = {
-  remote?: boolean
-  input: {
-    format: LibreOfficeInputFormat
-    file: FileContent
-  }
-  output: {
-    format: LibreOfficeOutputFormat
+    file?: LocalPath
   }
   pathScope?: string
 }
 
-export type ConvertDocumentWithLibreOfficeBrowserOutput = {
-  output: {
-    file: FileContent
-  }
-}
+export type ConvertDocumentWithLibreOfficeBrowserInput =
+  | ConvertDocumentWithLibreOfficeBrowserRemoteInput
+  | ConvertDocumentWithLibreOfficeBrowserLocalInput
 
-export type ConvertDocumentWithLibreOfficeNodeCommandInput = {
+export type ConvertDocumentWithLibreOfficeBrowserLocalInput = {
+  handle?: 'local'
   input: {
     format: LibreOfficeInputFormat
     file: {
-      path: string
+      content: FileContent
     }
   }
   output: {
     format: LibreOfficeOutputFormat
-    directory: FileOutputPath
+  }
+}
+
+export type ConvertDocumentWithLibreOfficeBrowserOutput = {
+  file: FileContent
+}
+
+export type ConvertDocumentWithLibreOfficeBrowserRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: LibreOfficeInputFormat
+    file: FileContentWithSha256
+  }
+  output: {
+    format: LibreOfficeOutputFormat
+  }
+}
+
+export type ConvertDocumentWithLibreOfficeNodeExternalInput = {
+  handle: 'external'
+  input: {
+    format: LibreOfficeInputFormat
+    file: RemotePath | FileContentWithSha256
+  }
+  output: {
+    format: LibreOfficeOutputFormat
+  }
+}
+
+export type ConvertDocumentWithLibreOfficeNodeInput =
+  | ConvertDocumentWithLibreOfficeNodeRemoteInput
+  | ConvertDocumentWithLibreOfficeNodeLocalExternalInput
+  | ConvertDocumentWithLibreOfficeNodeLocalInternalInput
+
+export type ConvertDocumentWithLibreOfficeNodeLocalCommandInput = {
+  input: {
+    format: LibreOfficeInputFormat
+    file: LocalPath
+  }
+  output: {
+    format: LibreOfficeOutputFormat
+    directory: LocalPath
   }
   pathScope?: string
 }
 
-export type ConvertDocumentWithLibreOfficeNodeInput = {
-  remote?: boolean
+export type ConvertDocumentWithLibreOfficeNodeLocalExternalInput = {
+  handle: 'external'
   input: {
     format: LibreOfficeInputFormat
-    file: FileInputPath | FileContent
+    file: RemotePath | FileContentWithSha256
   }
   output: {
     format: LibreOfficeOutputFormat
-    directory: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithLibreOfficeNodeLocalInternalInput = {
+  handle?: 'internal'
+  input: {
+    format: LibreOfficeInputFormat
+    file: FilePath | FileContent
+  }
+  output: {
+    format: LibreOfficeOutputFormat
+    directory?: LocalPath
   }
   pathScope?: string
 }
 
 export type ConvertDocumentWithLibreOfficeNodeOutput = {
-  output: {
-    file: FilePath
-  }
-}
-
-export type ConvertDocumentWithLibreOfficeNodeOutputResponse = {
-  form?: string
-  code?: number
-  note?: string
-  tree: ConvertDocumentWithLibreOfficeNodeOutput
+  file: FilePath
 }
 
 export type ConvertDocumentWithLibreOfficeNodeRemoteInput = {
+  handle: 'remote'
   input: {
     format: LibreOfficeInputFormat
-    file: FileInputPath | FileContent
+    file: FileInputPath | FileContentWithSha256
   }
   output: {
     format: LibreOfficeOutputFormat
+    directory?: LocalPath
   }
+  pathScope?: string
 }
 
-export type ConvertDocumentWithPandocBrowserInput = {
-  remote?: boolean
+export type ConvertDocumentWithPandocBrowserInput =
+  | ConvertDocumentWithPandocBrowserRemoteInput
+  | ConvertDocumentWithPandocBrowserLocalInput
+
+export type ConvertDocumentWithPandocBrowserLocalInput = {
+  handle?: 'local'
   input: {
     format: PandocInputFormat
-    file: FileContent
+    file: {
+      content: FileContent
+    }
   }
   output: {
     format: PandocOutputFormat
   }
-  pathScope?: string
 }
 
 export type ConvertDocumentWithPandocBrowserOutput = {
-  output: {
-    file: FileContent
-  }
+  file: FileContent
 }
 
-export type ConvertDocumentWithPandocNodeCommandInput = {
+export type ConvertDocumentWithPandocBrowserRemoteInput = {
+  handle: 'remote'
   input: {
     format: PandocInputFormat
-    file: FileInputPath
+    file: FileContentWithSha256
   }
   output: {
     format: PandocOutputFormat
-    file: FileOutputPath
+  }
+}
+
+export type ConvertDocumentWithPandocNodeExternalInput = {
+  handle: 'external'
+  input: {
+    format: PandocInputFormat
+    file: RemotePath | FileContentWithSha256
+  }
+  output: {
+    format: PandocOutputFormat
+  }
+}
+
+export type ConvertDocumentWithPandocNodeInput =
+  | ConvertDocumentWithPandocNodeRemoteInput
+  | ConvertDocumentWithPandocNodeLocalExternalInput
+  | ConvertDocumentWithPandocNodeLocalInternalInput
+
+export type ConvertDocumentWithPandocNodeLocalCommandInput = {
+  input: {
+    format: PandocInputFormat
+    file: LocalPath
+  }
+  output: {
+    format: PandocOutputFormat
+    file: LocalPath
   }
   pathScope?: string
 }
 
-export type ConvertDocumentWithPandocNodeInput = {
-  remote?: boolean
+export type ConvertDocumentWithPandocNodeLocalExternalInput = {
+  handle: 'external'
   input: {
     format: PandocInputFormat
-    file: FileInputPath | FileContent
+    file: RemotePath | FileContentWithSha256
   }
   output: {
     format: PandocOutputFormat
-    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithPandocNodeLocalInternalInput = {
+  handle?: 'internal'
+  input: {
+    format: PandocInputFormat
+    file: FilePath | FileContent
+  }
+  output: {
+    format: PandocOutputFormat
+    file?: LocalPath
   }
   pathScope?: string
 }
 
 export type ConvertDocumentWithPandocNodeOutput = {
-  output: {
-    file: FilePath
-  }
-}
-
-export type ConvertDocumentWithPandocNodeOutputResponse = {
-  form?: string
-  code?: number
-  note?: string
-  tree: ConvertDocumentWithPandocNodeOutput
+  file: FilePath
 }
 
 export type ConvertDocumentWithPandocNodeRemoteInput = {
+  handle: 'remote'
   input: {
     format: PandocInputFormat
-    file: FileInputPath | FileContent
+    file: FileInputPath | FileContentWithSha256
   }
   output: {
     format: PandocOutputFormat
+    file?: LocalPath
   }
+  pathScope?: string
 }
 
-export type ConvertDocumentWithPuppeteerBrowserInput = {
-  remote?: boolean
+export type ConvertDocumentWithPuppeteerBrowserInput =
+  | ConvertDocumentWithPuppeteerBrowserRemoteInput
+  | ConvertDocumentWithPuppeteerBrowserLocalInput
+
+export type ConvertDocumentWithPuppeteerBrowserLocalInput = {
+  handle?: 'local'
   input: {
     format: PuppeteerInputFormat
-    file: FileContent
+    file: {
+      content: FileContent
+    }
   }
   output: {
     format: PuppeteerOutputFormat
   }
-  pathScope?: string
-  viewport: {
-    width?: number
-    height?: number
-  }
-  proxy?: string
-  waitUntil?: PuppeteerLifeCycleEvent
 }
 
 export type ConvertDocumentWithPuppeteerBrowserOutput = {
-  output: {
-    file: FileContent
-  }
+  file: FileContent
 }
 
-export type ConvertDocumentWithPuppeteerNodeCommandInput = {
+export type ConvertDocumentWithPuppeteerBrowserRemoteInput = {
+  handle: 'remote'
   input: {
     format: PuppeteerInputFormat
-    file: FileInputPath
+    file: FileContentWithSha256
   }
   output: {
     format: PuppeteerOutputFormat
-    file: FileOutputPath
+  }
+}
+
+export type ConvertDocumentWithPuppeteerNodeExternalInput = {
+  handle: 'external'
+  input: {
+    format: PuppeteerInputFormat
+    file: RemotePath | FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+  }
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+}
+
+export type ConvertDocumentWithPuppeteerNodeInput =
+  | ConvertDocumentWithPuppeteerNodeRemoteInput
+  | ConvertDocumentWithPuppeteerNodeLocalExternalInput
+  | ConvertDocumentWithPuppeteerNodeLocalInternalInput
+
+export type ConvertDocumentWithPuppeteerNodeLocalCommandInput = {
+  input: {
+    format: PuppeteerInputFormat
+    file: LocalPath
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file: LocalPath
   }
   pathScope?: string
   viewport: {
@@ -4114,15 +4332,33 @@ export type ConvertDocumentWithPuppeteerNodeCommandInput = {
   waitUntil?: PuppeteerLifeCycleEvent
 }
 
-export type ConvertDocumentWithPuppeteerNodeInput = {
-  remote?: boolean
+export type ConvertDocumentWithPuppeteerNodeLocalExternalInput = {
+  handle: 'external'
   input: {
     format: PuppeteerInputFormat
-    file: FileInputPath | FileContent
+    file: RemotePath | FileContentWithSha256
   }
   output: {
     format: PuppeteerOutputFormat
-    file: FileOutputPath
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+}
+
+export type ConvertDocumentWithPuppeteerNodeLocalInternalInput = {
+  handle?: 'internal'
+  input: {
+    format: PuppeteerInputFormat
+    file: FilePath | FileContent
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file?: LocalPath
   }
   pathScope?: string
   viewport: {
@@ -4134,26 +4370,20 @@ export type ConvertDocumentWithPuppeteerNodeInput = {
 }
 
 export type ConvertDocumentWithPuppeteerNodeOutput = {
-  output: {
-    file: FilePath
-  }
-}
-
-export type ConvertDocumentWithPuppeteerNodeOutputResponse = {
-  form?: string
-  code?: number
-  note?: string
-  tree: ConvertDocumentWithPuppeteerNodeOutput
+  file: FilePath
 }
 
 export type ConvertDocumentWithPuppeteerNodeRemoteInput = {
+  handle: 'remote'
   input: {
     format: PuppeteerInputFormat
-    file: FileInputPath | FileContent
+    file: FileInputPath | FileContentWithSha256
   }
   output: {
     format: PuppeteerOutputFormat
+    file?: LocalPath
   }
+  pathScope?: string
   viewport: {
     width?: number
     height?: number
@@ -4191,224 +4421,475 @@ export type ConvertFileBaseRemote = {
   }
 }
 
-export type ConvertFontWithFontForgeBrowserInput = {
-  remote?: boolean
+export type ConvertFontWithFontForgeBrowserInput =
+  | ConvertFontWithFontForgeBrowserRemoteInput
+  | ConvertFontWithFontForgeBrowserLocalInput
+
+export type ConvertFontWithFontForgeBrowserLocalInput = {
+  handle?: 'local'
   input: {
     format: FontFormat
-    file: FileContent
+    file: {
+      content: FileContent
+    }
   }
   output: {
     format: FontFormat
   }
-  pathScope?: string
 }
 
 export type ConvertFontWithFontForgeBrowserOutput = {
+  file: FileContent
+}
+
+export type ConvertFontWithFontForgeBrowserRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: FontFormat
+    file: FileContentWithSha256
+  }
   output: {
-    file: FileContent
+    format: FontFormat
   }
 }
 
-export type ConvertFontWithFontForgeNodeCommandInput = {
+export type ConvertFontWithFontForgeNodeExternalInput = {
+  handle: 'external'
   input: {
     format: FontFormat
-    file: FileInputPath
+    file: RemotePath | FileContentWithSha256
   }
   output: {
     format: FontFormat
-    file: FileOutputPath
+  }
+}
+
+export type ConvertFontWithFontForgeNodeInput =
+  | ConvertFontWithFontForgeNodeRemoteInput
+  | ConvertFontWithFontForgeNodeLocalExternalInput
+  | ConvertFontWithFontForgeNodeLocalInternalInput
+
+export type ConvertFontWithFontForgeNodeLocalCommandInput = {
+  input: {
+    format: FontFormat
+    file: LocalPath
+  }
+  output: {
+    format: FontFormat
+    file: LocalPath
   }
   pathScope?: string
 }
 
-export type ConvertFontWithFontForgeNodeInput = {
-  remote?: boolean
+export type ConvertFontWithFontForgeNodeLocalExternalInput = {
+  handle: 'external'
   input: {
     format: FontFormat
-    file: FileInputPath | FileContent
+    file: RemotePath | FileContentWithSha256
   }
   output: {
     format: FontFormat
-    file: FileOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertFontWithFontForgeNodeLocalInternalInput = {
+  handle?: 'internal'
+  input: {
+    format: FontFormat
+    file: FilePath | FileContent
+  }
+  output: {
+    format: FontFormat
+    file?: LocalPath
   }
   pathScope?: string
 }
 
 export type ConvertFontWithFontForgeNodeOutput = {
-  output: {
-    file: FilePath
-  }
-}
-
-export type ConvertFontWithFontForgeNodeOutputResponse = {
-  form?: string
-  code?: number
-  note?: string
-  tree: ConvertFontWithFontForgeNodeOutput
+  file: FilePath
 }
 
 export type ConvertFontWithFontForgeNodeRemoteInput = {
+  handle: 'remote'
   input: {
     format: FontFormat
-    file: FileInputPath | FileContent
+    file: FileInputPath | FileContentWithSha256
   }
   output: {
     format: FontFormat
-  }
-}
-
-export type ConvertImageWithImageMagickBrowserInput = {
-  remote?: boolean
-  input: {
-    format: ImageMagickInputFormat
-    file: FileContent
-  }
-  output: {
-    format: ImageMagickOutputFormat
-  }
-  pathScope?: string
-  colorCount?: number
-  colorMatrix?: ImageMagicColorMatrix
-  colorSpace?: ImageMagickColorSpace
-  compare?: boolean
-  compression?: ImageMagickCompression
-}
-
-export type ConvertImageWithImageMagickBrowserOutput = {
-  output: {
-    file: FileContent
-  }
-}
-
-export type ConvertImageWithImageMagickNodeCommandInput = {
-  input: {
-    format: ImageMagickInputFormat
-    file: FileInputPath
-  }
-  output: {
-    format: ImageMagickOutputFormat
-    file: FileOutputPath
-  }
-  pathScope?: string
-  colorCount?: number
-  colorMatrix?: ImageMagicColorMatrix
-  colorSpace?: ImageMagickColorSpace
-  compare?: boolean
-  compression?: ImageMagickCompression
-}
-
-export type ConvertImageWithImageMagickNodeInput = {
-  remote?: boolean
-  input: {
-    format: ImageMagickInputFormat
-    file: FileInputPath | FileContent
-  }
-  output: {
-    format: ImageMagickOutputFormat
-    file: FileOutputPath
-  }
-  pathScope?: string
-  colorCount?: number
-  colorMatrix?: ImageMagicColorMatrix
-  colorSpace?: ImageMagickColorSpace
-  compare?: boolean
-  compression?: ImageMagickCompression
-}
-
-export type ConvertImageWithImageMagickNodeOutput = {
-  output: {
-    file: FilePath
-  }
-}
-
-export type ConvertImageWithImageMagickNodeOutputResponse = {
-  form?: string
-  code?: number
-  note?: string
-  tree: ConvertImageWithImageMagickNodeOutput
-}
-
-export type ConvertImageWithImageMagickNodeRemoteInput = {
-  input: {
-    format: ImageMagickInputFormat
-    file: FileInputPath | FileContent
-  }
-  output: {
-    format: ImageMagickOutputFormat
-  }
-  colorCount?: number
-  colorMatrix?: ImageMagicColorMatrix
-  colorSpace?: ImageMagickColorSpace
-  compare?: boolean
-  compression?: ImageMagickCompression
-}
-
-export type ConvertLatexToPdfWithPdfLatexBrowserInput = {
-  remote?: boolean
-  input: {
-    format: string
-    file: FileContent
-  }
-  output: {
-    format: string
+    file?: LocalPath
   }
   pathScope?: string
 }
 
-export type ConvertLatexToPdfWithPdfLatexBrowserOutput = {
-  output: {
-    file: FileContent
-  }
-}
+export type ConvertImageWithImageMagickBrowserInput =
+  | ConvertImageWithImageMagickBrowserRemoteInput
+  | ConvertImageWithImageMagickBrowserLocalInput
 
-export type ConvertLatexToPdfWithPdfLatexNodeCommandInput = {
+export type ConvertImageWithImageMagickBrowserLocalInput = {
+  handle?: 'local'
   input: {
-    format: string
+    format: ImageMagickInputFormat
     file: {
-      path: string
+      content: FileContent
     }
   }
   output: {
-    format: string
-    directory: FileOutputPath
+    format: ImageMagickOutputFormat
+  }
+}
+
+export type ConvertImageWithImageMagickBrowserOutput = {
+  file: FileContent
+}
+
+export type ConvertImageWithImageMagickBrowserRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: ImageMagickInputFormat
+    file: FileContentWithSha256
+  }
+  output: {
+    format: ImageMagickOutputFormat
+  }
+}
+
+export type ConvertImageWithImageMagickNodeClientInput = {
+  handle: 'client'
+  input: {
+    format: ImageMagickInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: ImageMagickOutputFormat
+  }
+  colorCount?: number
+  colorMatrix?: ImageMagicColorMatrix
+  colorSpace?: ImageMagickColorSpace
+  compare?: boolean
+  compression?: ImageMagickCompression
+  density?: number
+  quality?: number
+}
+
+export type ConvertImageWithImageMagickNodeExternalInput = {
+  handle: 'external'
+  input: {
+    format: ImageMagickInputFormat
+    file: RemotePath | FileContentWithSha256
+  }
+  output: {
+    format: ImageMagickOutputFormat
+  }
+  colorCount?: number
+  colorMatrix?: ImageMagicColorMatrix
+  colorSpace?: ImageMagickColorSpace
+  compare?: boolean
+  compression?: ImageMagickCompression
+  density?: number
+  quality?: number
+}
+
+export type ConvertImageWithImageMagickNodeInput =
+  | ConvertImageWithImageMagickNodeRemoteInput
+  | ConvertImageWithImageMagickNodeLocalExternalInput
+  | ConvertImageWithImageMagickNodeLocalInternalInput
+
+export type ConvertImageWithImageMagickNodeLocalCommandInput = {
+  input: {
+    format: ImageMagickInputFormat
+    file: LocalPath
+  }
+  output: {
+    format: ImageMagickOutputFormat
+    file: LocalPath
+  }
+  pathScope?: string
+  colorCount?: number
+  colorMatrix?: ImageMagicColorMatrix
+  colorSpace?: ImageMagickColorSpace
+  compare?: boolean
+  compression?: ImageMagickCompression
+  density?: number
+  quality?: number
+}
+
+export type ConvertImageWithImageMagickNodeLocalExternalInput = {
+  handle: 'external'
+  input: {
+    format: ImageMagickInputFormat
+    file: RemotePath | FileContentWithSha256
+  }
+  output: {
+    format: ImageMagickOutputFormat
+  }
+  pathScope?: string
+  colorCount?: number
+  colorMatrix?: ImageMagicColorMatrix
+  colorSpace?: ImageMagickColorSpace
+  compare?: boolean
+  compression?: ImageMagickCompression
+  density?: number
+  quality?: number
+}
+
+export type ConvertImageWithImageMagickNodeLocalInternalInput = {
+  handle?: 'internal'
+  input: {
+    format: ImageMagickInputFormat
+    file: FilePath | FileContent
+  }
+  output: {
+    format: ImageMagickOutputFormat
+    file?: LocalPath
+  }
+  pathScope?: string
+  colorCount?: number
+  colorMatrix?: ImageMagicColorMatrix
+  colorSpace?: ImageMagickColorSpace
+  compare?: boolean
+  compression?: ImageMagickCompression
+  density?: number
+  quality?: number
+}
+
+export type ConvertImageWithImageMagickNodeOutput = {
+  file: FilePath
+}
+
+export type ConvertImageWithImageMagickNodeRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: ImageMagickInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: ImageMagickOutputFormat
+    file?: LocalPath
+  }
+  pathScope?: string
+  colorCount?: number
+  colorMatrix?: ImageMagicColorMatrix
+  colorSpace?: ImageMagickColorSpace
+  compare?: boolean
+  compression?: ImageMagickCompression
+  density?: number
+  quality?: number
+}
+
+export type ConvertLatexToPngBrowserInput =
+  | ConvertLatexToPngBrowserRemoteInput
+  | ConvertLatexToPngBrowserLocalInput
+
+export type ConvertLatexToPngBrowserLocalInput = {
+  handle?: 'local'
+  input: {
+    format: ConvertLatexToPngInputFormat
+    file: {
+      content: FileContent
+    }
+  }
+  output: {
+    format: ConvertLatexToPngOutputFormat
+  }
+}
+
+export type ConvertLatexToPngBrowserOutput = {
+  file: FileContent
+}
+
+export type ConvertLatexToPngBrowserRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: ConvertLatexToPngInputFormat
+    file: FileContentWithSha256
+  }
+  output: {
+    format: ConvertLatexToPngOutputFormat
+  }
+}
+
+export const CONVERT_LATEX_TO_PNG_INPUT_FORMAT = ['tex'] as const
+
+export type ConvertLatexToPngInputFormat =
+  (typeof CONVERT_LATEX_TO_PNG_INPUT_FORMAT)[number]
+
+export type ConvertLatexToPngNodeExternalInput = {
+  handle: 'external'
+  input: {
+    format: ConvertLatexToPngInputFormat
+    file: RemotePath | FileContentWithSha256
+  }
+  output: {
+    format: ConvertLatexToPngOutputFormat
+  }
+}
+
+export type ConvertLatexToPngNodeInput =
+  | ConvertLatexToPngNodeRemoteInput
+  | ConvertLatexToPngNodeLocalExternalInput
+  | ConvertLatexToPngNodeLocalInternalInput
+
+export type ConvertLatexToPngNodeLocalCommandInput = {
+  input: {
+    format: ConvertLatexToPngInputFormat
+    file: LocalPath
+  }
+  output: {
+    format: ConvertLatexToPngOutputFormat
+    file: LocalPath
   }
   pathScope?: string
 }
 
-export type ConvertLatexToPdfWithPdfLatexNodeInput = {
-  remote?: boolean
+export type ConvertLatexToPngNodeLocalExternalInput = {
+  handle: 'external'
   input: {
-    format: string
-    file: FileInputPath | FileContent
+    format: ConvertLatexToPngInputFormat
+    file: RemotePath | FileContentWithSha256
   }
   output: {
-    format: string
-    directory: FileOutputPath
+    format: ConvertLatexToPngOutputFormat
   }
   pathScope?: string
 }
 
-export type ConvertLatexToPdfWithPdfLatexNodeOutput = {
-  output: {
-    file: FilePath
-  }
-}
-
-export type ConvertLatexToPdfWithPdfLatexNodeOutputResponse = {
-  form?: string
-  code?: number
-  note?: string
-  tree: ConvertLatexToPdfWithPdfLatexNodeOutput
-}
-
-export type ConvertLatexToPdfWithPdfLatexNodeRemoteInput = {
+export type ConvertLatexToPngNodeLocalInternalInput = {
+  handle?: 'internal'
   input: {
-    format: string
-    file: FileInputPath | FileContent
+    format: ConvertLatexToPngInputFormat
+    file: FilePath | FileContent
   }
   output: {
-    format: string
+    format: ConvertLatexToPngOutputFormat
+    file?: LocalPath
   }
+  pathScope?: string
+}
+
+export type ConvertLatexToPngNodeOutput = {
+  file: FilePath
+}
+
+export type ConvertLatexToPngNodeRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: ConvertLatexToPngInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: ConvertLatexToPngOutputFormat
+    file?: LocalPath
+  }
+  pathScope?: string
+}
+
+export const CONVERT_LATEX_TO_PNG_OUTPUT_FORMAT = ['png'] as const
+
+export type ConvertLatexToPngOutputFormat =
+  (typeof CONVERT_LATEX_TO_PNG_OUTPUT_FORMAT)[number]
+
+export type ConvertLatexWithPdfLatexBrowserInput =
+  | ConvertLatexWithPdfLatexBrowserRemoteInput
+  | ConvertLatexWithPdfLatexBrowserLocalInput
+
+export type ConvertLatexWithPdfLatexBrowserLocalInput = {
+  handle?: 'local'
+  input: {
+    format: PdfLatexInputFormat
+    file: {
+      content: FileContent
+    }
+  }
+  output: {
+    format: PdfLatexOutputFormat
+  }
+}
+
+export type ConvertLatexWithPdfLatexBrowserOutput = {
+  file: FileContent
+}
+
+export type ConvertLatexWithPdfLatexBrowserRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: PdfLatexInputFormat
+    file: FileContentWithSha256
+  }
+  output: {
+    format: PdfLatexOutputFormat
+  }
+}
+
+export type ConvertLatexWithPdfLatexNodeExternalInput = {
+  handle: 'external'
+  input: {
+    format: PdfLatexInputFormat
+    file: RemotePath | FileContentWithSha256
+  }
+  output: {
+    format: PdfLatexOutputFormat
+  }
+}
+
+export type ConvertLatexWithPdfLatexNodeInput =
+  | ConvertLatexWithPdfLatexNodeRemoteInput
+  | ConvertLatexWithPdfLatexNodeLocalExternalInput
+  | ConvertLatexWithPdfLatexNodeLocalInternalInput
+
+export type ConvertLatexWithPdfLatexNodeLocalCommandInput = {
+  input: {
+    format: PdfLatexInputFormat
+    file: LocalPath
+  }
+  output: {
+    format: PdfLatexOutputFormat
+    directory: LocalPath
+  }
+  pathScope?: string
+}
+
+export type ConvertLatexWithPdfLatexNodeLocalExternalInput = {
+  handle: 'external'
+  input: {
+    format: PdfLatexInputFormat
+    file: RemotePath | FileContentWithSha256
+  }
+  output: {
+    format: PdfLatexOutputFormat
+  }
+  pathScope?: string
+}
+
+export type ConvertLatexWithPdfLatexNodeLocalInternalInput = {
+  handle?: 'internal'
+  input: {
+    format: PdfLatexInputFormat
+    file: FilePath | FileContent
+  }
+  output: {
+    format: PdfLatexOutputFormat
+    directory?: LocalPath
+  }
+  pathScope?: string
+}
+
+export type ConvertLatexWithPdfLatexNodeOutput = {
+  file: FilePath
+}
+
+export type ConvertLatexWithPdfLatexNodeRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: PdfLatexInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PdfLatexOutputFormat
+    directory?: LocalPath
+  }
+  pathScope?: string
 }
 
 export type ConvertMp4ToGifWithFfmpeg = {
@@ -4496,6 +4977,20 @@ export type ConvertVideoWithFfmpegBase = {
   subtitleCodec?: FfmpegCodecSubtitle
   duration?: number | string
   rotation?: number
+}
+
+export type CropPdfWithPdfCrop = {
+  margin?: number
+  input: {
+    file: {
+      path: string
+    }
+  }
+  output: {
+    file: {
+      path: string
+    }
+  }
 }
 
 export type DecompressWith7Z = {
@@ -76080,10 +76575,6 @@ export const EXIFTOOL_TAG_CONTENT: ExiftoolTagContent = {
   },
 }
 
-export const EXPLAIN_FORMAT = ['code', 'command', 'curl'] as const
-
-export type ExplainFormat = (typeof EXPLAIN_FORMAT)[number]
-
 export const FFMPEG_CODEC_AUDIO = [
   '4gv',
   '8svx_exp',
@@ -92826,7 +93317,12 @@ export const FFMPEG_STRICT_OPTION_CONTENT: FfmpegStrictOptionContent = {
 }
 
 export type FileContent = {
-  content: ArrayBuffer | string
+  content: ArrayBuffer | Blob | string
+}
+
+export type FileContentWithSha256 = {
+  sha256: string
+  content: ArrayBuffer | Blob | string
 }
 
 export type FileHasOutputContent = {
@@ -92889,6 +93385,27 @@ export type FormatC = {
   }
 }
 
+export const FORMAT_CODE_FORMAT = [
+  'angular',
+  'flow',
+  'glimmer',
+  'graphql',
+  'html',
+  'markdown',
+  'meriyah',
+  'postcss',
+  'typescript',
+  'yaml',
+  'python',
+  'swift',
+  'c',
+  'assembly',
+  'cpp',
+  'sql',
+] as const
+
+export type FormatCodeFormat = (typeof FORMAT_CODE_FORMAT)[number]
+
 export type FormatCodeWithClangFormat = {
   input: {
     format: string
@@ -92904,6 +93421,11 @@ export type FormatCodeWithClangFormat = {
   style?: ClangStyleAll
 }
 
+export type FormatCodeWithPrettier = {
+  code: string
+  format: PrettierPlugin
+}
+
 export type FormatCpp = {
   input: {
     format: string
@@ -92916,6 +93438,24 @@ export type FormatCpp = {
       path: string
     }
   }
+}
+
+export type FormatCssWithPrettier = {
+  code: string
+  singleQuote?: boolean
+}
+
+export type FormatGraphqlWithPrettier = {
+  code: string
+  bracketSpacing?: boolean
+}
+
+export type FormatHtmlWithPrettier = {
+  code: string
+  bracketSameLine?: boolean
+  htmlWhitespaceSensitivity?: PrettierHtmlWhitespaceSensitivityOption
+  singleAttributePerLine?: boolean
+  vueIndentScriptAndStyle?: boolean
 }
 
 export type FormatJava = {
@@ -92933,10 +93473,11 @@ export type FormatJava = {
 }
 
 export type FormatJavaWithPrettier = {
-  max_line_length?: number
-  indentation_size?: number
-  use_tabs?: boolean
-  trailing_comma?: boolean
+  code: string
+  maxLineLength?: number
+  indentationSize?: number
+  useTabs?: boolean
+  trailingComma?: boolean
 }
 
 export type FormatKotlin = {
@@ -92951,6 +93492,12 @@ export type FormatKotlin = {
       path: string
     }
   }
+}
+
+export type FormatMarkdownWithPrettier = {
+  code: string
+  proseWrap?: PrettierProseWrapOption
+  singleQuote?: boolean
 }
 
 export type FormatPython = {
@@ -92996,23 +93543,25 @@ export type FormatRust = {
 }
 
 export type FormatRustWithPrettier = {
-  use_tabs?: boolean
-  tab_width?: number
-  max_line_length?: number
-  end_of_line?: string
+  code: string
+  useTabs?: boolean
+  indentationSize?: number
+  maxLineLength?: number
+  endOfLine?: PrettierEndOfLineOption
 }
 
 export type FormatShWithPrettier = {
-  keep_comments?: boolean
-  stop_at?: string
+  code: string
+  keepComments?: boolean
+  stopAt?: string
   variant?: string
   indent?: number
-  binary_next_line?: boolean
-  switch_case_indent?: boolean
-  space_redirects?: boolean
-  keep_padding?: boolean
+  binaryNextLine?: boolean
+  switchCaseIndent?: boolean
+  spaceRedirects?: boolean
+  keepPadding?: boolean
   minify?: boolean
-  function_next_line?: boolean
+  functionNextLine?: boolean
 }
 
 export type FormatSqlWithContent = {
@@ -93039,17 +93588,35 @@ export type FormatSwift = {
 }
 
 export type FormatTypescriptWithPrettier = {
-  jsx_single_quote: boolean
-  single_quote: boolean
-  semi_colon: boolean
-  indentation_size: number
-  max_line_length: number
-  trailing_comma: boolean
-  bracket_spacing: boolean
-  bracket_same_line: boolean
-  arrow_parentheses: boolean
-  end_of_line: string
-  single_attribute_per_line: boolean
+  code: string
+  jsxSingleQuote?: boolean
+  singleQuote?: boolean
+  semiColon?: boolean
+  indentationSize?: number
+  maxLineLength?: number
+  trailingComma?: boolean
+  bracketSpacing?: boolean
+  bracketSameLine?: boolean
+  arrowParentheses?: PrettierArrowParensOption
+  endOfLine?: PrettierEndOfLineOption
+  singleAttributePerLine?: boolean
+}
+
+export type FormatXmlWithPrettier = {
+  code: string
+  xmlSelfClosingSpace?: boolean
+  indentationSize?: number
+  xmlWhitespaceSensitivity?: PrettierXmlWhitespaceSensitivityOption
+  maxLineLength?: number
+  xmlSortAttributesByKey?: boolean
+  xmlQuoteAttributes?: PrettierXmlQuoteAttributesOption
+}
+
+export type FormatYamlWithPrettier = {
+  code: string
+  bracketSpacing?: boolean
+  singleQuote?: boolean
+  proseWrap?: PrettierProseWrapOption
 }
 
 export type GematriaSystemCalculation = {
@@ -93077,6 +93644,16 @@ export type GenerateMurmurHash = {
   input: string
   seed: number
   version?: string
+}
+
+export type GenerateQrCode = {
+  errorCorrectionLevel: QrCodeErrorCorrectionLevel
+  format: QrCodeFormat
+  margin: number
+  color?: {
+    dark: string
+    light: string
+  }
 }
 
 export const GIFSICLE_OPTIMIZE_OPTION = ['1', '2', '3'] as const
@@ -108382,6 +108959,10 @@ export const LLVM_OPTIMIZATION_LEVEL = ['0', '1', '2', '3'] as const
 export type LlvmOptimizationLevel =
   (typeof LLVM_OPTIMIZATION_LEVEL)[number]
 
+export type LocalPath = {
+  path: string
+}
+
 export const OBJDUMP_DEMANGLE_STYLE = [
   'none',
   'auto',
@@ -108878,6 +109459,82 @@ export const PATOOL_FORMAT = [
 
 export type PatoolFormat = (typeof PATOOL_FORMAT)[number]
 
+export const PDF_LATEX_INPUT_FORMAT = ['tex'] as const
+
+export type PdfLatexInputFormat =
+  (typeof PDF_LATEX_INPUT_FORMAT)[number]
+
+export const PDF_LATEX_OUTPUT_FORMAT = ['pdf'] as const
+
+export type PdfLatexOutputFormat =
+  (typeof PDF_LATEX_OUTPUT_FORMAT)[number]
+
+export const PRETTIER_ARROW_PARENS_OPTION = ['always', 'avoid'] as const
+
+export type PrettierArrowParensOption =
+  (typeof PRETTIER_ARROW_PARENS_OPTION)[number]
+
+export const PRETTIER_END_OF_LINE_OPTION = [
+  'lf',
+  'crlf',
+  'cr',
+  'auto',
+] as const
+
+export type PrettierEndOfLineOption =
+  (typeof PRETTIER_END_OF_LINE_OPTION)[number]
+
+export const PRETTIER_HTML_WHITESPACE_SENSITIVITY_OPTION = [
+  'css',
+  'strict',
+  'ignore',
+] as const
+
+export type PrettierHtmlWhitespaceSensitivityOption =
+  (typeof PRETTIER_HTML_WHITESPACE_SENSITIVITY_OPTION)[number]
+
+export const PRETTIER_PLUGIN = [
+  'angular',
+  'flow',
+  'glimmer',
+  'graphql',
+  'html',
+  'markdown',
+  'meriyah',
+  'postcss',
+  'typescript',
+  'yaml',
+] as const
+
+export type PrettierPlugin = (typeof PRETTIER_PLUGIN)[number]
+
+export const PRETTIER_PROSE_WRAP_OPTION = [
+  'always',
+  'never',
+  'preserve',
+] as const
+
+export type PrettierProseWrapOption =
+  (typeof PRETTIER_PROSE_WRAP_OPTION)[number]
+
+export const PRETTIER_XML_QUOTE_ATTRIBUTES_OPTION = [
+  'preserve',
+  'single',
+  'double',
+] as const
+
+export type PrettierXmlQuoteAttributesOption =
+  (typeof PRETTIER_XML_QUOTE_ATTRIBUTES_OPTION)[number]
+
+export const PRETTIER_XML_WHITESPACE_SENSITIVITY_OPTION = [
+  'strict',
+  'preserve',
+  'ignore',
+] as const
+
+export type PrettierXmlWhitespaceSensitivityOption =
+  (typeof PRETTIER_XML_WHITESPACE_SENSITIVITY_OPTION)[number]
+
 export const PUPPETEER_INPUT_FORMAT = ['html'] as const
 
 export type PuppeteerInputFormat =
@@ -108923,6 +109580,24 @@ export const PUPPETEER_OUTPUT_FORMAT = ['pdf', 'png'] as const
 export type PuppeteerOutputFormat =
   (typeof PUPPETEER_OUTPUT_FORMAT)[number]
 
+export const QR_CODE_ERROR_CORRECTION_LEVEL = [
+  'L',
+  'M',
+  'Q',
+  'H',
+] as const
+
+export type QrCodeErrorCorrectionLevel =
+  (typeof QR_CODE_ERROR_CORRECTION_LEVEL)[number]
+
+export const QR_CODE_FORMAT = ['png', 'jpg', 'webp'] as const
+
+export type QrCodeFormat = (typeof QR_CODE_FORMAT)[number]
+
+export type RemotePath = {
+  path: string
+}
+
 export type RemoveAudioFromVideoWithFfmpeg = {
   inputPath: string
   outputPath: string
@@ -108950,13 +109625,6 @@ export type Request = {
   body: object
 }
 
-export type RequestOutput = {
-  form?: string
-  code?: number
-  note?: string
-  tree: Request
-}
-
 export type ResizeImageWithImageMagick = {
   inputPath: string
   outputPath: string
@@ -108964,13 +109632,6 @@ export type ResizeImageWithImageMagick = {
   height: number
   stretch: boolean
   gravity: ImageMagickGravity
-}
-
-export type Response = {
-  form?: string
-  code?: number
-  note?: string
-  tree: object
 }
 
 export const RUST_COMPILER_TARGET = [

@@ -1,5 +1,4 @@
 import { Form, List } from '@termsurf/form'
-import { defineResponse } from '~/code/tool/shared/type.js'
 
 export const command_name: List = {
   form: 'list',
@@ -41,6 +40,7 @@ export const command_name: List = {
     'patool',
     'identify',
     'perltidy',
+    'pdfcrop',
   ],
 }
 
@@ -65,30 +65,10 @@ export const command_sequence: Form = {
   },
 }
 
-export const command_sequence_output =
-  defineResponse('command_sequence')
-
 export const request: Form = {
   form: 'form',
   link: {
     path: { like: 'string' },
     body: { like: 'json' },
   },
-}
-
-export const request_output = defineResponse('request')
-
-export const response: Form = {
-  form: 'form',
-  link: {
-    form: { like: 'string', need: false, fall: 'response' },
-    code: { like: 'natural_number', need: false, fall: 200 },
-    note: { like: 'string', need: false, fall: 'success' },
-    tree: { like: 'json' },
-  },
-}
-
-export const explain_format: List = {
-  form: 'list',
-  list: ['code', 'command', 'curl'],
 }

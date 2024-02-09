@@ -1,5 +1,8 @@
 import {
   ConvertImageWithImageMagickBrowserInput,
+  ConvertLatexToPngBrowserInput,
+  ConvertLatexToPngInputFormat,
+  ConvertLatexToPngOutputFormat,
   ExtractBySubKey,
   ImageMagickInputFormat,
   ImageMagickOutputFormat,
@@ -14,6 +17,11 @@ export type ConvertInput = {
   //   output: FfmpegFormat
   //   // extend: CompressMp4WithFfmpeg
   // }
+  convert_latex_to_png: {
+    input: ConvertLatexToPngInputFormat
+    output: ConvertLatexToPngOutputFormat
+    extend: ConvertLatexToPngBrowserInput
+  }
   image: {
     input: ImageMagickInputFormat
     output: ImageMagickOutputFormat

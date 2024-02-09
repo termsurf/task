@@ -11,8 +11,8 @@ import {
   ConvertDocumentWithLibreOfficeNodeCommandInputModel,
   ConvertDocumentWithPandocNodeCommandInput,
   ConvertDocumentWithPandocNodeCommandInputModel,
-  ConvertLatexToPdfWithPdfLatexNodeCommandInput,
-  ConvertLatexToPdfWithPdfLatexNodeCommandInputModel,
+  ConvertLatexWithPdfLatexNodeCommandInput,
+  ConvertLatexWithPdfLatexNodeCommandInputModel,
 } from '~/code/type/index.js'
 
 export function buildCommandToConvertDocumentWithLibreOffice(
@@ -53,11 +53,11 @@ export function buildCommandToConvertDocumentWithPandoc(
 
 // https://www.reddit.com/r/hacking/comments/108sp8f/how_to_know_if_a_pdf_contains_malware/
 
-export function buildCommandToConvertLatexToPdfWithPdfLatex(
-  source: ConvertLatexToPdfWithPdfLatexNodeCommandInput,
+export function buildCommandToConvertLatexWithPdfLatex(
+  source: ConvertLatexWithPdfLatexNodeCommandInput,
 ) {
   const input =
-    ConvertLatexToPdfWithPdfLatexNodeCommandInputModel.parse(source)
+    ConvertLatexWithPdfLatexNodeCommandInputModel.parse(source)
 
   const cmd = getCommand(`pdflatex`)
   cmd.link.push(

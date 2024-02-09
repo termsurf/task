@@ -1,5 +1,5 @@
 import {
-  ConvertFontWithFontForgeNodeCommandInputModel,
+  ConvertFontWithFontForgeNodeLocalCommandInputModel,
   ConvertFontWithFontForgeNodeInput,
   ConvertFontWithFontForgeNodeInputModel,
   ConvertFontWithFontForgeNodeOutputModel,
@@ -26,10 +26,9 @@ export async function convertFontWithFontForgeNodeLocal(
   input: ConvertFontWithFontForgeNodeInput,
 ) {
   const commandInput =
-    ConvertFontWithFontForgeNodeCommandInputModel.parse(input)
-  const sequence = await buildCommandToConvertFontWithFontForge(
-    commandInput,
-  )
+    ConvertFontWithFontForgeNodeLocalCommandInputModel.parse(input)
+  const sequence =
+    await buildCommandToConvertFontWithFontForge(commandInput)
 
   await runCommandSequence(sequence)
 

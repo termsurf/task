@@ -2,6 +2,7 @@ import {
   convertDocumentWithCalibreNode,
   convertDocumentWithLibreOfficeNode,
   convertDocumentWithPandocNode,
+  convertLatexToPng,
 } from './document/node.js'
 import { convertFontWithFontForgeNode } from './font/node.js'
 import {
@@ -15,9 +16,14 @@ import {
   useConvertFontWithFontForge,
   useConvertImageWithImageMagick,
   useConvertImageWithInkscape,
+  useConvertLatexToPng,
 } from './shared.js'
 
 export async function convertInternal(source) {
+  if (useConvertLatexToPng(source.input.format, source.output.format)) {
+    return await convertLatexToPng(source)
+  }
+
   if (
     useConvertImageWithInkscape(
       source.input.format,

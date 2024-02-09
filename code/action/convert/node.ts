@@ -6,6 +6,9 @@ import {
   ConvertDocumentWithPandocNodeInput,
   ConvertFontWithFontForgeNodeInput,
   ConvertImageWithImageMagickNodeInput,
+  ConvertLatexToPngInputFormat,
+  ConvertLatexToPngNodeInput,
+  ConvertLatexToPngOutputFormat,
   ExtractBySubKey,
   FontFormat,
   ImageMagickInputFormat,
@@ -17,6 +20,16 @@ import {
   Values,
 } from '~/code/type/index.js'
 import { convertInternal } from './node.internal.js'
+
+export {
+  useConvertDocumentWithCalibre,
+  useConvertDocumentWithLibreOffice,
+  useConvertDocumentWithPandoc,
+  useConvertFontWithFontForge,
+  useConvertImageWithImageMagick,
+  useConvertImageWithInkscape,
+  useConvertLatexToPng,
+} from './shared.js'
 
 export async function convert<I extends ConvertInputFormat>(
   source: Convert<I>,
@@ -31,6 +44,11 @@ export type ConvertInput = {
   //   output: FfmpegFormat
   //   // extend: CompressMp4WithFfmpeg
   // }
+  convert_latex_to_png: {
+    input: ConvertLatexToPngInputFormat
+    output: ConvertLatexToPngOutputFormat
+    extend: ConvertLatexToPngNodeInput
+  }
   image: {
     input: ImageMagickInputFormat
     output: ImageMagickOutputFormat

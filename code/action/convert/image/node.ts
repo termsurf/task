@@ -1,7 +1,11 @@
-import { bindConvertLocal, bindConvertRemote } from '../tool/node.js'
 import {
-  convertImageWithImageMagickNodeLocal,
-  convertImageWithInkscapeLocal,
+  bindConvertLocal,
+  bindConvertLocalExternal,
+  bindConvertRemote,
+} from '../tool/node.js'
+import {
+  convertImageWithImageMagickNodeLocalCommand,
+  convertImageWithInkscapeLocalCommand,
 } from './node/local.js'
 import { convertImageWithImageMagickNodeRemote } from './node/remote.js'
 import _ from 'lodash'
@@ -18,12 +22,17 @@ export async function convertImageWithImageMagickNode(
 ) {
   const input = ConvertImageWithImageMagickNodeInputModel.parse(source)
 
-  if (input.remote) {
-    const remoteInput = await bindConvertRemote(input)
-    return await convertImageWithImageMagickNodeRemote(remoteInput)
-  } else {
-    const localInput = await bindConvertLocal(input)
-    return await convertImageWithImageMagickNodeLocal(localInput)
+  switch (input.handle) {
+    case 'remote': {
+      const remoteInput = await bindConvertRemote(input)
+      return await convertImageWithImageMagickNodeRemote(remoteInput)
+    }
+    case 'external': {
+      const localInput = await bindConvertLocalExternal(input)
+      return await convertImageWithImageMagickNodeLocalCommand(
+        localInput,
+      )
+    }
   }
 }
 
@@ -32,12 +41,12 @@ export async function convertImageWithInkscapeNode(
 ) {
   const input = ConvertAiToSvgWithInkscapeNodeInputModel.parse(source)
 
-  if (input.remote) {
+  if (input.handle === 'remote') {
     throw kink('function_todo', {
       name: 'convertImageWithInkscapeNodeRemote',
     })
   } else {
     const localInput = await bindConvertLocal(input)
-    return await convertImageWithInkscapeLocal(localInput)
+    return await convertImageWithInkscapeLocalCommand(localInput)
   }
 }

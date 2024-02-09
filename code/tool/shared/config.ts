@@ -1,18 +1,18 @@
-const CONFIG = ['remote', 'code'] as const
+const CONFIG_VARIABLE = ['remote', 'code'] as const
 
 export const DEFAULT_REMOTE_TASK_PATH = `https://base.task.surf/v2`
 
-export type Config = (typeof CONFIG)[number]
+export type Config = (typeof CONFIG_VARIABLE)[number]
 
-const config: Record<Config, any> = {
+const CONFIG: Record<Config, any> = {
   remote: DEFAULT_REMOTE_TASK_PATH,
   code: undefined,
 }
 
-export function setConfig(name: Config, value: any) {
-  config[name] = value
+export function configure(name: Config, value: any) {
+  CONFIG[name] = value
 }
 
 export function getConfig(name: Config) {
-  return config[name]
+  return CONFIG[name]
 }

@@ -1,6 +1,5 @@
 import bytes from 'bytes'
 import child_process from 'child_process'
-import { Command } from '~/code/tool/shared/command.js'
 import kink from '~/code/tool/shared/kink.js'
 import {
   ChildProcessError,
@@ -15,7 +14,7 @@ import { stripAnsiFromText } from '~/code/cli/logging.js'
 
 // https://www.npmjs.com/package/file-type
 // https://github.com/apache/tika
-import { ConvertVideoWithFfmpeg } from '~/code/type/index.js'
+import { Command, ConvertVideoWithFfmpeg } from '~/code/type/index.js'
 import { buildCommandToConvertVideoWithFfmpeg } from './shared.js'
 
 export async function handleFfmpegCommand(
@@ -58,31 +57,31 @@ export async function handleFfmpegCommand(
 }
 
 export async function handleGifsicleCommand(cmd: Command) {
-  return await exec(cmd.link.join(' '))
+  return await exec(cmd.link)
 }
 
 export async function handlePerlTidyCommand(cmd: Command) {
-  return await exec(cmd.link.join(' '))
+  return await exec(cmd.link)
 }
 
 export async function handlePatoolCommand(cmd: Command) {
-  return await exec(cmd.link.join(' '))
+  return await exec(cmd.link)
 }
 
 export async function handleBlackCommand(cmd: Command) {
-  return await exec(cmd.link.join(' '))
+  return await exec(cmd.link)
 }
 
 export async function handleAsmfmtCommand(cmd: Command) {
-  return await exec(cmd.link.join(' '))
+  return await exec(cmd.link)
 }
 
 export async function handleKtfmtCommand(cmd: Command) {
-  return await exec(cmd.link.join(' '))
+  return await exec(cmd.link)
 }
 
 export async function handleIdentifyCommand(cmd: Command) {
-  const text = await exec(cmd.link.join(' '))
+  const text = await exec(cmd.link)
   const pattern = new RegExp(`^([^\\s]+)\\s+(\\w+)`, 'i')
   text.match(pattern)
   return {
@@ -92,28 +91,28 @@ export async function handleIdentifyCommand(cmd: Command) {
 }
 
 export async function handleJavaCommand(cmd: Command) {
-  return await exec(cmd.link.join(' '))
+  return await exec(cmd.link)
 }
 
 export async function handleClangppCommand(cmd: Command) {
-  return await exec(cmd.link.join(' '))
+  return await exec(cmd.link)
 }
 
 export async function handleClangCommand(cmd: Command) {
-  return await exec(cmd.link.join(' '))
+  return await exec(cmd.link)
 }
 
 export async function handleLlcCommand(cmd: Command) {
-  return await exec(cmd.link.join(' '))
+  return await exec(cmd.link)
 }
 
 export async function handleClangFormatCommand(cmd: Command) {
-  return await exec(cmd.link.join(' '))
+  return await exec(cmd.link)
 }
 
 export async function handleSwiftFormatCommand(cmd: Command) {
   try {
-    await exec(cmd.link.join(' '))
+    await exec(cmd.link)
   } catch (e) {
     console.log(e)
   }
@@ -121,7 +120,7 @@ export async function handleSwiftFormatCommand(cmd: Command) {
 
 export async function handleSwiftcCommand(cmd: Command) {
   try {
-    await exec(cmd.link.join(' '))
+    await exec(cmd.link)
   } catch (e) {
     if (e instanceof ChildProcessError) {
       if (e.data.stdout?.trim() === 'error: fatalError') {
@@ -137,7 +136,7 @@ export async function handleSwiftcCommand(cmd: Command) {
 }
 
 export async function handleObjdumpCommand(cmd: Command) {
-  return await exec(cmd.link.join(' '))
+  return await exec(cmd.link)
 }
 
 function parseFfmpegError(text: string) {

@@ -42,6 +42,7 @@ export const COMMAND: Record<CommandName, Array<string> | undefined> = {
     : undefined,
   unoconv: ['unoconv'],
   patool: ['patool'],
+  pdfcrop: ['pdfcrop'],
 }
 
 export function getCommand(name: CommandName): Command {
@@ -52,7 +53,7 @@ export function getCommand(name: CommandName): Command {
   return { key: name, name: name, link: [...cmd] }
 }
 
-export function setCommand(
+export function command(
   name: CommandName,
   bond: Array<string> | undefined,
 ) {

@@ -8,13 +8,13 @@ import {
   runPandocCommand,
   runPdfLatexCommand,
   runUnoconvCommand,
-} from '~/code/action/convert/document/handler'
-import { runFontforgeCommand } from '~/code/action/convert/font/runner'
+} from '~/code/action/convert/document/handler.js'
+import { runFontforgeCommand } from '~/code/action/convert/font/runner.js'
 import {
   runConvertCommand,
   runInkscapeCommand,
   runMogrifyCommand,
-} from '~/code/action/convert/image/runner'
+} from '~/code/action/convert/image/runner.js'
 import {
   Command,
   CommandKey,
