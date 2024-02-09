@@ -1,5 +1,19 @@
+import {
+  convertDocumentWithCalibreBrowser,
+  convertDocumentWithLibreOfficeBrowser,
+  convertDocumentWithPandocBrowser,
+} from './document/browser.js'
+import {
+  supportConvertDocumentWithCalibre,
+  supportConvertDocumentWithLibreOffice,
+  supportConvertDocumentWithPandoc,
+} from './document/shared.js'
+import { convertFontWithFontForgeBrowser } from './font/browser.js'
 import { convertImageWithImageMagickBrowser } from './image/browser.js'
-import { useConvertImageWithImageMagick } from './shared.js'
+import {
+  useConvertFontWithFontForge,
+  useConvertImageWithImageMagick,
+} from './shared.js'
 
 export async function convertInternal(source) {
   // if (useConvertLatexToPng(source.input.format, source.output.format)) {
@@ -21,39 +35,39 @@ export async function convertInternal(source) {
   //   return await convertVideoWithFfmpeg(source)
   // }
 
-  // if (
-  //   useConvertFontWithFontForge(
-  //     source.input.format,
-  //     source.output.format,
-  //   )
-  // ) {
-  //   return await convertFontWithFontForgeNode(source)
-  // }
+  if (
+    useConvertFontWithFontForge(
+      source.input.format,
+      source.output.format,
+    )
+  ) {
+    return await convertFontWithFontForgeBrowser(source)
+  }
 
-  // if (
-  //   useConvertDocumentWithCalibre(
-  //     source.input.format,
-  //     source.output.format,
-  //   )
-  // ) {
-  //   return await convertDocumentWithCalibre(source)
-  // }
+  if (
+    supportConvertDocumentWithCalibre(
+      source.input.format,
+      source.output.format,
+    )
+  ) {
+    return await convertDocumentWithCalibreBrowser(source)
+  }
 
-  // if (
-  //   useConvertDocumentWithPandoc(
-  //     source.input.format,
-  //     source.output.format,
-  //   )
-  // ) {
-  //   return await convertDocumentWithPandoc(source)
-  // }
+  if (
+    supportConvertDocumentWithPandoc(
+      source.input.format,
+      source.output.format,
+    )
+  ) {
+    return await convertDocumentWithPandocBrowser(source)
+  }
 
-  // if (
-  //   useConvertDocumentWithLibreOffice(
-  //     source.input.format,
-  //     source.output.format,
-  //   )
-  // ) {
-  //   return await convertDocumentWithLibreOffice(source)
-  // }
+  if (
+    supportConvertDocumentWithLibreOffice(
+      source.input.format,
+      source.output.format,
+    )
+  ) {
+    return await convertDocumentWithLibreOfficeBrowser(source)
+  }
 }

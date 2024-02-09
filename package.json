@@ -1,6 +1,6 @@
 {
   "name": "@termsurf/task",
-  "version": "0.0.94",
+  "version": "0.0.96",
   "main": "./host/code/node.js",
   "browser": "./host/code/browser.js",
   "type": "module",
