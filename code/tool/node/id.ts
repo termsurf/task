@@ -1,4 +1,4 @@
-import { getRandomBytes } from './bytes'
+import { getRandomBytes } from './bytes.js'
 import { CODE } from '@termsurf/tone-code'
 
 export function getRandomId(n: number) {
@@ -7,7 +7,7 @@ export function getRandomId(n: number) {
   const bytes = getRandomBytes(Math.ceil(n / 2))
 
   for (var i = 0; i < bn; i++) {
-    const byte = bytes[bn] as number
+    const byte = bytes[i] as number
     const a = (byte >> 0) & 0xf
     const b = (byte >> 4) & 0xf
     const x = CODE[a] as string

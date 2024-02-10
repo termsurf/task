@@ -13,17 +13,27 @@ export type WorkFile = {
   }
 }
 
+export type Work<T> = {
+  id: string
+  output?: T
+  status: 'complete' | 'queued' | 'error'
+}
+
 export async function requestAndWaitForWorkToComplete<T extends object>(
   request: Request,
   controller?: AbortController,
 ) {
   const workResponse = await postRemote(request, controller)
-  const work = await workResponse.json()
+  if (workResponse.status >= 400) {
+    const error = await workResponse.json()
+    throw new Kink(error)
+  }
+  const work = (await workResponse.json()) as Work<T>
   while (true) {
     await wait(1000)
     const stepResponse = await getRemote(`/work/${work.id}`, controller)
     const step = await stepResponse.json()
-    if (step.status === 'ready') {
+    if (step.status === 'complete') {
       return step.output as T
     } else if (step.status === 'error') {
       throw new Kink(step.output)

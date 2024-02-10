@@ -26,6 +26,11 @@ export {
   useConvertImageWithImageMagick,
   useConvertImageWithInkscape,
 } from './shared.js'
+export {
+  supportConvertDocumentWithCalibre,
+  supportConvertDocumentWithLibreOffice,
+  supportConvertDocumentWithPandoc,
+} from './document/shared.js'
 
 export async function convert<I extends ConvertInputFormat>(
   source: Convert<I>,

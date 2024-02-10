@@ -15,6 +15,7 @@ import {
   ResolveInputForConvertLocalInternal,
   ResolveInputForConvertRemote,
 } from '../../node.js'
+import debug from '~/code/tool/shared/debug.js'
 
 // https://www.npmjs.com/package/ftp
 
@@ -67,6 +68,7 @@ export async function resolveInputForConvertLocalExternalNode<
   T extends ResolveInputForConvertLocalExternal,
 >(input: T) {
   const through = cloneOptions(input)
+  debug('resolveInputForConvertLocalExternalNode', through.input.file)
 
   if ('path' in through.input.file) {
     const inputPath = parsePath(through.input.file.path)
@@ -76,9 +78,14 @@ export async function resolveInputForConvertLocalExternalNode<
         const newInputPath = await resolveRemoteFile({
           path: inputPath.href,
           scope: getScopeDirectory(through.pathScope),
-          extension: through.output.format,
+          extension: through.input.format,
         })
         _.set(through.input.file, ['path'], newInputPath)
+
+        debug(
+          'resolveInputForConvertLocalExternalNode input',
+          newInputPath,
+        )
         break
       }
     }
@@ -100,6 +107,11 @@ export async function resolveInputForConvertLocalExternalNode<
     )
 
     through.output.file = { path: outputPath }
+
+    debug(
+      'resolveInputForConvertLocalExternalNode output file',
+      through.output.file,
+    )
   }
 
   return through as Omit<T, 'output'> & {
@@ -112,6 +124,7 @@ export async function resolveInputForConvertLocalInternalNode<
 >(input: T) {
   const through = cloneOptions(input)
 
+  debug('resolveInputForConvertLocalInternalNode')
   if ('path' in through.input.file) {
     const inputPath = parsePath(through.input.file.path)
     switch (inputPath.type) {
@@ -123,6 +136,10 @@ export async function resolveInputForConvertLocalInternalNode<
           extension: through.output.format,
         })
         _.set(through.input.file, ['path'], newInputPath)
+        debug(
+          'resolveInputForConvertLocalInternalNode input',
+          through.input.file,
+        )
         break
       }
     }
@@ -144,6 +161,10 @@ export async function resolveInputForConvertLocalInternalNode<
     )
 
     through.output.file = { path: outputPath }
+    debug(
+      'resolveInputForConvertLocalInternalNode output',
+      through.input.file,
+    )
   }
 
   return through as Omit<T, 'output'> & {

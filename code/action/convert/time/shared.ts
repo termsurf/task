@@ -3,8 +3,8 @@ import {
   ConvertTimeZoneModel,
 } from '~/code/type/index.js'
 import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
-import timezone from 'dayjs/plugin/timezone'
+import utc from 'dayjs/plugin/utc.js'
+import timezone from 'dayjs/plugin/timezone.js'
 
 // https://gist.github.com/iambibhas/e88d69f97818a2a35492#file-timezones-csv-L6
 

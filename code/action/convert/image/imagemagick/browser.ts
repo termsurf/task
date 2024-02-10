@@ -5,7 +5,7 @@ import {
   ConvertImageWithImageMagickBrowserOutputModel,
   ConvertImageWithImageMagickBrowserRemoteInput,
 } from '~/code/type/index.js'
-import { buildRequestToConvert } from '../../shared.js'
+import { buildFormDataRequestToConvert } from '../../shared.js'
 import { resolveWorkFileAsBlob } from '~/code/tool/shared/work.js'
 import kink from '~/code/tool/shared/kink.js'
 
@@ -26,7 +26,7 @@ export async function convertImageWithImageMagickBrowser(
 export async function convertImageWithImageMagickBrowserRemote(
   input: ConvertImageWithImageMagickBrowserRemoteInput,
 ) {
-  const request = buildRequestToConvert(input)
+  const request = buildFormDataRequestToConvert(input)
   const content = await resolveWorkFileAsBlob(request)
 
   return ConvertImageWithImageMagickBrowserOutputModel.parse({

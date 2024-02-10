@@ -5,7 +5,7 @@ import {
   ConvertDocumentWithJupyterBrowserOutputModel,
   ConvertDocumentWithJupyterBrowserRemoteInput,
 } from '~/code/type/index.js'
-import { buildRequestToConvert } from '../../shared.js'
+import { buildFormDataRequestToConvert } from '../../shared.js'
 import { resolveWorkFileAsBlob } from '~/code/tool/shared/work.js'
 import kink from '~/code/tool/shared/kink.js'
 
@@ -26,7 +26,7 @@ export async function convertDocumentWithJupyterBrowser(
 export async function convertDocumentWithJupyterBrowserRemote(
   input: ConvertDocumentWithJupyterBrowserRemoteInput,
 ) {
-  const request = buildRequestToConvert(input)
+  const request = buildFormDataRequestToConvert(input)
   const content = await resolveWorkFileAsBlob(request)
 
   return ConvertDocumentWithJupyterBrowserOutputModel.parse({

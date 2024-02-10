@@ -5,7 +5,7 @@ import {
   ConvertDocumentWithCalibreBrowserOutputModel,
   ConvertDocumentWithCalibreBrowserRemoteInput,
 } from '~/code/type/index.js'
-import { buildRequestToConvert } from '../../shared.js'
+import { buildFormDataRequestToConvert } from '../../shared.js'
 import { resolveWorkFileAsBlob } from '~/code/tool/shared/work.js'
 import kink from '~/code/tool/shared/kink.js'
 
@@ -26,7 +26,7 @@ export async function convertDocumentWithCalibreBrowser(
 export async function convertDocumentWithCalibreBrowserRemote(
   input: ConvertDocumentWithCalibreBrowserRemoteInput,
 ) {
-  const request = buildRequestToConvert(input)
+  const request = buildFormDataRequestToConvert(input)
   const content = await resolveWorkFileAsBlob(request)
 
   return ConvertDocumentWithCalibreBrowserOutputModel.parse({

@@ -34,7 +34,7 @@ export const compile_c: Form = {
         format: { like: 'string', name: { mark: 'I' } },
         file: {
           link: {
-            path: { like: 'string' },
+            path: { like: 'string', name: { mark: 'o' } },
           },
         },
       },

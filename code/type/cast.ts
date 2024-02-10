@@ -93652,6 +93652,17 @@ export const FONT_FORMAT = [
 
 export type FontFormat = (typeof FONT_FORMAT)[number]
 
+export const FORGE_MESSAGE_DIGEST = [
+  'sha1',
+  'sha256',
+  'sha384',
+  'sha512',
+  'sha512/224',
+  'sha512/256',
+] as const
+
+export type ForgeMessageDigest = (typeof FORGE_MESSAGE_DIGEST)[number]
+
 export type FormatAssembly = {
   input: {
     format: string
@@ -93933,6 +93944,11 @@ export type GematriaSystemCalculationResult = {
     title: string
   }
   calculation: Array<GematriaSystemCalculation>
+}
+
+export type GenerateHash = {
+  class: ForgeMessageDigest
+  content: string | ArrayBuffer
 }
 
 export type GenerateMurmurHash = {

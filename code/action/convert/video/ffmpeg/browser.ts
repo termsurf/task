@@ -5,7 +5,7 @@ import {
   ConvertVideoWithFfmpegBrowserOutputModel,
   ConvertVideoWithFfmpegBrowserRemoteInput,
 } from '~/code/type/index.js'
-import { buildRequestToConvert } from '../../shared.js'
+import { buildFormDataRequestToConvert } from '../../shared.js'
 import { resolveWorkFileAsBlob } from '~/code/tool/shared/work.js'
 import kink from '~/code/tool/shared/kink.js'
 
@@ -25,7 +25,7 @@ export async function convertVideoWithFfmpegBrowser(
 export async function convertVideoWithFfmpegBrowserRemote(
   input: ConvertVideoWithFfmpegBrowserRemoteInput,
 ) {
-  const request = buildRequestToConvert(input)
+  const request = buildFormDataRequestToConvert(input)
   const content = await resolveWorkFileAsBlob(request)
 
   return ConvertVideoWithFfmpegBrowserOutputModel.parse({

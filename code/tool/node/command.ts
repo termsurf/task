@@ -1,7 +1,6 @@
 import {
   runCalibreCommand,
   runDocx2pdfCommand,
-  runEbookConvertCommand,
   runExiftoolCommand,
   runJupyterCommand,
   runLibreOfficeCommand,

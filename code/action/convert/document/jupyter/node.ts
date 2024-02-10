@@ -16,7 +16,10 @@ import {
   resolveInputForConvertRemoteNode,
 } from '../../tool/node.js'
 import { extend } from '~/code/tool/shared/object.js'
-import { buildRequestToConvert } from '../../shared.js'
+import {
+  buildFormDataRequestToConvert,
+  buildRequestToConvert,
+} from '../../shared.js'
 import { resolveWorkFileNode } from '~/code/tool/node/request.js'
 
 export async function convertDocumentWithJupyterNode(

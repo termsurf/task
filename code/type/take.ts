@@ -3128,6 +3128,9 @@ export const FontFormatModel: z.ZodType<Cast.FontFormat> = z.enum(
   Cast.FONT_FORMAT,
 )
 
+export const ForgeMessageDigestModel: z.ZodType<Cast.ForgeMessageDigest> =
+  z.enum(Cast.FORGE_MESSAGE_DIGEST)
+
 export const FormatAssemblyModel: z.ZodType<Cast.FormatAssembly> =
   z.object({
     input: z.object({
@@ -3430,6 +3433,13 @@ export const GematriaSystemCalculationResultModel: z.ZodType<Cast.GematriaSystem
     }),
     calculation: z.array(z.lazy(() => GematriaSystemCalculationModel)),
   })
+
+export const GenerateHashModel: z.ZodType<Cast.GenerateHash> = z.object(
+  {
+    class: z.lazy(() => ForgeMessageDigestModel),
+    content: z.union([z.string(), z.instanceof(ArrayBuffer)]),
+  },
+)
 
 export const GenerateMurmurHashModel: z.ZodType<Cast.GenerateMurmurHash> =
   z.object({

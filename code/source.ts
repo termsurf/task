@@ -24,6 +24,7 @@ export * from '~/code/action/convert/time/source.js'
 export * from '~/code/action/crop/document/source.js'
 export * from '~/code/action/generate/qrcode/source.js'
 export * from '~/code/action/convert/source.js'
+export * from '~/code/action/generate/hash/source.js'
 
 export * from '~/code/object/call/source.js'
 export * from '~/code/object/file/source.js'

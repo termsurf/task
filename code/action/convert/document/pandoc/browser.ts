@@ -5,7 +5,7 @@ import {
   ConvertDocumentWithPandocBrowserOutputModel,
   ConvertDocumentWithPandocBrowserRemoteInput,
 } from '~/code/type/index.js'
-import { buildRequestToConvert } from '../../shared.js'
+import { buildFormDataRequestToConvert } from '../../shared.js'
 import { resolveWorkFileAsBlob } from '~/code/tool/shared/work.js'
 import kink from '~/code/tool/shared/kink.js'
 
@@ -25,7 +25,7 @@ export async function convertDocumentWithPandocBrowser(
 export async function convertDocumentWithPandocBrowserRemote(
   input: ConvertDocumentWithPandocBrowserRemoteInput,
 ) {
-  const request = buildRequestToConvert(input)
+  const request = buildFormDataRequestToConvert(input)
   const content = await resolveWorkFileAsBlob(request)
 
   return ConvertDocumentWithPandocBrowserOutputModel.parse({

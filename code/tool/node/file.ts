@@ -114,7 +114,7 @@ export async function getFallbackFilePath(
     return possibility
   }
 
-  return generateFilePath(directory, extension)
+  return await generateFilePath(directory, extension)
 }
 
 export async function generateFilePath(
