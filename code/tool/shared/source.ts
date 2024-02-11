@@ -159,7 +159,7 @@ export function buildConvertForms(
         },
         output: {
           link: {
-            format: { like: o, name: { mark: 'I' } },
+            format: { like: o, name: { mark: 'O' } },
             file: {
               like: 'local_output_path',
               need: false,
@@ -425,7 +425,7 @@ export function buildConvertFormsToStringContent(
         },
         output: {
           link: {
-            format: { like: o, name: { mark: 'I' } },
+            format: { like: o, name: { mark: 'O' } },
             file: {
               like: 'local_output_path',
               need: false,

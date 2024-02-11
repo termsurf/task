@@ -15,6 +15,8 @@ import {
   CONVERT_LATEX_TO_PNG_OUTPUT_FORMAT,
   ConvertLatexToPngInputFormat,
   ConvertLatexToPngOutputFormat,
+  PUPPETEER_OUTPUT_FORMAT,
+  PuppeteerOutputFormat,
 } from '~/code/type/index.js'
 
 export function supportConvertDocument(a: string, b: string) {
@@ -42,6 +44,35 @@ export function supportConvertLatexToPng(a: string, b: string) {
       b as ConvertLatexToPngOutputFormat,
     )
   ) {
+    return false
+  }
+  return true
+}
+
+export function supportConvertMarkdownWithPuppeteer(
+  a: string,
+  b: string,
+) {
+  if (a === b) {
+    return false
+  }
+  if (a !== 'md') {
+    return false
+  }
+  if (!PUPPETEER_OUTPUT_FORMAT.includes(b as PuppeteerOutputFormat)) {
+    return false
+  }
+  return true
+}
+
+export function supportConvertTxtWithPuppeteer(a: string, b: string) {
+  if (a === b) {
+    return false
+  }
+  if (a !== 'txt') {
+    return false
+  }
+  if (!PUPPETEER_OUTPUT_FORMAT.includes(b as PuppeteerOutputFormat)) {
     return false
   }
   return true

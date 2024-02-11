@@ -5162,14 +5162,14 @@ export type ConvertMarkdownWithPuppeteerNodeClientInput = {
   output: {
     format: PuppeteerOutputFormat
   }
-  viewport: {
+  viewport?: {
     width?: number
     height?: number
   }
   proxy?: string
   waitUntil?: PuppeteerLifeCycleEvent
   style?: {
-    margin: {
+    margin?: {
       x?: number
       y?: number
     }
@@ -5193,14 +5193,14 @@ export type ConvertMarkdownWithPuppeteerNodeExternalInput = {
   output: {
     format: PuppeteerOutputFormat
   }
-  viewport: {
+  viewport?: {
     width?: number
     height?: number
   }
   proxy?: string
   waitUntil?: PuppeteerLifeCycleEvent
   style?: {
-    margin: {
+    margin?: {
       x?: number
       y?: number
     }
@@ -5231,14 +5231,14 @@ export type ConvertMarkdownWithPuppeteerNodeLocalExternalInput = {
     file?: LocalOutputPath
   }
   pathScope?: string
-  viewport: {
+  viewport?: {
     width?: number
     height?: number
   }
   proxy?: string
   waitUntil?: PuppeteerLifeCycleEvent
   style?: {
-    margin: {
+    margin?: {
       x?: number
       y?: number
     }
@@ -5265,14 +5265,14 @@ export type ConvertMarkdownWithPuppeteerNodeLocalInput = {
     file: LocalPath
   }
   pathScope?: string
-  viewport: {
+  viewport?: {
     width?: number
     height?: number
   }
   proxy?: string
   waitUntil?: PuppeteerLifeCycleEvent
   style?: {
-    margin: {
+    margin?: {
       x?: number
       y?: number
     }
@@ -5298,14 +5298,14 @@ export type ConvertMarkdownWithPuppeteerNodeLocalInternalInput = {
     file?: LocalOutputPath
   }
   pathScope?: string
-  viewport: {
+  viewport?: {
     width?: number
     height?: number
   }
   proxy?: string
   waitUntil?: PuppeteerLifeCycleEvent
   style?: {
-    margin: {
+    margin?: {
       x?: number
       y?: number
     }
@@ -5335,14 +5335,14 @@ export type ConvertMarkdownWithPuppeteerNodeRemoteInput = {
     file?: LocalOutputPath
   }
   pathScope?: string
-  viewport: {
+  viewport?: {
     width?: number
     height?: number
   }
   proxy?: string
   waitUntil?: PuppeteerLifeCycleEvent
   style?: {
-    margin: {
+    margin?: {
       x?: number
       y?: number
     }
@@ -5428,14 +5428,14 @@ export type ConvertTxtWithPuppeteerNodeClientInput = {
   output: {
     format: PuppeteerOutputFormat
   }
-  viewport: {
+  viewport?: {
     width?: number
     height?: number
   }
   proxy?: string
   waitUntil?: PuppeteerLifeCycleEvent
   style?: {
-    margin: {
+    margin?: {
       x?: number
       y?: number
     }
@@ -5452,14 +5452,14 @@ export type ConvertTxtWithPuppeteerNodeExternalInput = {
   output: {
     format: PuppeteerOutputFormat
   }
-  viewport: {
+  viewport?: {
     width?: number
     height?: number
   }
   proxy?: string
   waitUntil?: PuppeteerLifeCycleEvent
   style?: {
-    margin: {
+    margin?: {
       x?: number
       y?: number
     }
@@ -5483,14 +5483,14 @@ export type ConvertTxtWithPuppeteerNodeLocalExternalInput = {
     file?: LocalOutputPath
   }
   pathScope?: string
-  viewport: {
+  viewport?: {
     width?: number
     height?: number
   }
   proxy?: string
   waitUntil?: PuppeteerLifeCycleEvent
   style?: {
-    margin: {
+    margin?: {
       x?: number
       y?: number
     }
@@ -5510,14 +5510,14 @@ export type ConvertTxtWithPuppeteerNodeLocalInput = {
     file: LocalPath
   }
   pathScope?: string
-  viewport: {
+  viewport?: {
     width?: number
     height?: number
   }
   proxy?: string
   waitUntil?: PuppeteerLifeCycleEvent
   style?: {
-    margin: {
+    margin?: {
       x?: number
       y?: number
     }
@@ -5536,14 +5536,14 @@ export type ConvertTxtWithPuppeteerNodeLocalInternalInput = {
     file?: LocalOutputPath
   }
   pathScope?: string
-  viewport: {
+  viewport?: {
     width?: number
     height?: number
   }
   proxy?: string
   waitUntil?: PuppeteerLifeCycleEvent
   style?: {
-    margin: {
+    margin?: {
       x?: number
       y?: number
     }
@@ -5566,14 +5566,14 @@ export type ConvertTxtWithPuppeteerNodeRemoteInput = {
     file?: LocalOutputPath
   }
   pathScope?: string
-  viewport: {
+  viewport?: {
     width?: number
     height?: number
   }
   proxy?: string
   waitUntil?: PuppeteerLifeCycleEvent
   style?: {
-    margin: {
+    margin?: {
       x?: number
       y?: number
     }

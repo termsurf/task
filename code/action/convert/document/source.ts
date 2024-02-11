@@ -313,6 +313,7 @@ export const text_style: Form = {
 }
 
 const margin = {
+  need: false,
   link: {
     x: { like: 'natural_number', need: false },
     y: { like: 'natural_number', need: false },
@@ -326,6 +327,7 @@ const convert_txt_with_puppeteer_forms =
     'puppeteer_output_format',
     {
       viewport: {
+        need: false,
         link: {
           width: { like: 'natural_number', need: false },
           height: { like: 'natural_number', need: false },
@@ -386,6 +388,7 @@ const convert_markdown_with_puppeteer_forms =
     'puppeteer_output_format',
     {
       viewport: {
+        need: false,
         link: {
           width: { like: 'natural_number', need: false },
           height: { like: 'natural_number', need: false },

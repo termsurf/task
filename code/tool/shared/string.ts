@@ -1,5 +1,5 @@
 export function arrayBufferToString(buffer: ArrayBuffer) {
-  const bufView = new Uint16Array(buffer)
+  const bufView = new Uint8Array(buffer)
   const length = bufView.length
   const result: Array<string> = []
   let addition = Math.pow(2, 16) - 1

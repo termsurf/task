@@ -6,7 +6,7 @@ import {
   ConvertHtmlWithPuppeteerNodeInput,
   TextStyle,
 } from '~/code/type/index.js'
-import marked from 'marked'
+import { marked } from 'marked'
 import {
   ConvertTxtWithPuppeteerNodeInput,
   ConvertTxtWithPuppeteerNodeInputModel,
@@ -88,6 +88,7 @@ export async function convertTxtWithPuppeteerNodeRemote(
 const COLOR = '0f172a'
 const FONT = ['Helvetica']
 const LINK_COLOR = '2563eb'
+const LINE_HEIGHT = 1.4
 
 const DEFAULT_TEXT_STYLE: Record<string, TextStyle> = {
   h1: {
@@ -96,6 +97,7 @@ const DEFAULT_TEXT_STYLE: Record<string, TextStyle> = {
       family: FONT,
       size: 36,
     },
+    lineHeight: LINE_HEIGHT,
     bold: true,
   },
   h2: {
@@ -104,6 +106,7 @@ const DEFAULT_TEXT_STYLE: Record<string, TextStyle> = {
       family: FONT,
       size: 32,
     },
+    lineHeight: LINE_HEIGHT,
   },
   h3: {
     color: COLOR,
@@ -111,7 +114,7 @@ const DEFAULT_TEXT_STYLE: Record<string, TextStyle> = {
       family: FONT,
       size: 28,
     },
-    bold: true,
+    lineHeight: LINE_HEIGHT,
   },
   h4: {
     color: COLOR,
@@ -119,7 +122,7 @@ const DEFAULT_TEXT_STYLE: Record<string, TextStyle> = {
       family: FONT,
       size: 24,
     },
-    bold: true,
+    lineHeight: LINE_HEIGHT,
   },
   h5: {
     color: COLOR,
@@ -127,7 +130,7 @@ const DEFAULT_TEXT_STYLE: Record<string, TextStyle> = {
       family: FONT,
       size: 22,
     },
-    bold: true,
+    lineHeight: LINE_HEIGHT,
   },
   h6: {
     color: COLOR,
@@ -135,6 +138,7 @@ const DEFAULT_TEXT_STYLE: Record<string, TextStyle> = {
       family: FONT,
       size: 20,
     },
+    lineHeight: LINE_HEIGHT,
   },
   text: {
     color: COLOR,
@@ -142,9 +146,11 @@ const DEFAULT_TEXT_STYLE: Record<string, TextStyle> = {
       family: FONT,
       size: 16,
     },
+    lineHeight: LINE_HEIGHT,
   },
   link: {
     color: LINK_COLOR,
+    lineHeight: LINE_HEIGHT,
   },
 }
 
@@ -181,12 +187,12 @@ function textStyleToCSS(style: TextStyle) {
 function marginStyleToCSS(margin) {
   const css: Array<string> = []
   if (margin.x) {
-    css.push(`margin-left: ${margin.x}px`)
-    css.push(`margin-right: ${margin.x}px`)
+    css.push(`margin-left: ${margin.x}px;`)
+    css.push(`margin-right: ${margin.x}px;`)
   }
   if (margin.y) {
-    css.push(`margin-top: ${margin.y}px`)
-    css.push(`margin-bottom: ${margin.y}px`)
+    css.push(`margin-top: ${margin.y}px;`)
+    css.push(`margin-bottom: ${margin.y}px;`)
   }
   return css
 }
@@ -211,6 +217,7 @@ export async function convertTxtWithPuppeteerNodeLocal(source) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       body {
+        white-space: pre-wrap;
 ${marginCss.map(line => `        ${line}`).join('\n')}
 ${textCss.map(line => `        ${line}`).join('\n')}
       }
@@ -241,7 +248,7 @@ ${textCss.map(line => `        ${line}`).join('\n')}
     await p.pdf(opts)
   }
 
-  inactivateBrowser(b)
+  inactivateBrowser(await b)
 
   return ConvertTxtWithPuppeteerNodeOutputModel.parse({
     file: {
@@ -310,22 +317,46 @@ export async function convertMarkdownWithPuppeteerNodeLocal(source) {
     arrayBufferToString(input.input.file.content),
   )
   const h1Css = textStyleToCSS(
-    _.merge(DEFAULT_TEXT_STYLE.h1, input.style?.h1 ?? {}),
+    _.merge(
+      DEFAULT_TEXT_STYLE.h1,
+      input.style?.text ?? {},
+      input.style?.h1 ?? {},
+    ),
   )
   const h2Css = textStyleToCSS(
-    _.merge(DEFAULT_TEXT_STYLE.h2, input.style?.h2 ?? {}),
+    _.merge(
+      DEFAULT_TEXT_STYLE.h2,
+      input.style?.text ?? {},
+      input.style?.h2 ?? {},
+    ),
   )
   const h3Css = textStyleToCSS(
-    _.merge(DEFAULT_TEXT_STYLE.h3, input.style?.h3 ?? {}),
+    _.merge(
+      DEFAULT_TEXT_STYLE.h3,
+      input.style?.text ?? {},
+      input.style?.h3 ?? {},
+    ),
   )
   const h4Css = textStyleToCSS(
-    _.merge(DEFAULT_TEXT_STYLE.h4, input.style?.h4 ?? {}),
+    _.merge(
+      DEFAULT_TEXT_STYLE.h4,
+      input.style?.text ?? {},
+      input.style?.h4 ?? {},
+    ),
   )
   const h5Css = textStyleToCSS(
-    _.merge(DEFAULT_TEXT_STYLE.h5, input.style?.h5 ?? {}),
+    _.merge(
+      DEFAULT_TEXT_STYLE.h5,
+      input.style?.text ?? {},
+      input.style?.h5 ?? {},
+    ),
   )
   const h6Css = textStyleToCSS(
-    _.merge(DEFAULT_TEXT_STYLE.h6, input.style?.h6 ?? {}),
+    _.merge(
+      DEFAULT_TEXT_STYLE.h6,
+      input.style?.text ?? {},
+      input.style?.h6 ?? {},
+    ),
   )
   const textCss = textStyleToCSS(
     _.merge(DEFAULT_TEXT_STYLE.text, input.style?.text ?? {}),
@@ -344,6 +375,7 @@ export async function convertMarkdownWithPuppeteerNodeLocal(source) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       body {
+        word-break: break-word;
 ${marginCss.map(line => `        ${line}`).join('\n')}
 ${textCss.map(line => `        ${line}`).join('\n')}
       }
@@ -373,8 +405,40 @@ ${h6Css.map(line => `        ${line}`).join('\n')}
       }
 
       a {
+        display: inline-block;
 ${linkCss.map(line => `        ${line}`).join('\n')}
       }
+
+      ol {
+        list-style-position: inside;
+        list-style-type: decimal;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      ul {
+        list-style-position: inside;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      li {
+        margin: 0px;
+        padding: 0px;
+        display: list-item;
+      }
+
+      ul > li:before {
+        content: "";
+        margin-left: -8px;
+      }
+
+      ol, ul {
+        margin-left: 16px;
+      }
+
     </style>
   </head>
   <body>${string}</body>
@@ -402,7 +466,7 @@ ${linkCss.map(line => `        ${line}`).join('\n')}
     await p.pdf(opts)
   }
 
-  inactivateBrowser(b)
+  inactivateBrowser(await b)
 
   return ConvertTxtWithPuppeteerNodeOutputModel.parse({
     file: {

@@ -1,4 +1,5 @@
 import _ from 'lodash'
+import fsp from 'fs/promises'
 import {
   createStreamableFile,
   getFallbackFilePath,
@@ -218,6 +219,25 @@ export async function resolveInputContentForConvertLocalInternalNode<
   T extends ResolveInputForConvertLocalInternal,
 >(input: T) {
   const through = cloneOptions(input)
+
+  if ('path' in through.input.file) {
+    const inputPath = parsePath(through.input.file.path)
+    switch (inputPath.type) {
+      case 'https-uri':
+      case 'http-uri': {
+        const content = await readRemoteFileNode(inputPath.href)
+        _.unset(through.input.file, ['path'])
+        _.set(through.input.file, ['content'], content)
+        break
+      }
+      case 'file-uri':
+        const content = (await fsp.readFile(inputPath.href, null))
+          .buffer
+        _.unset(through.input.file, ['path'])
+        _.set(through.input.file, ['content'], content)
+        break
+    }
+  }
 
   if (!through.output.file?.path) {
     const scope = getScopeDirectory(input.pathScope)

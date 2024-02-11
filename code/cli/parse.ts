@@ -117,7 +117,7 @@ export function read(argv: Array<string>) {
     if (item.match(/^-+/)) {
       const name = item
       const cased = name.match(/^--/)
-        ? _.camelCase(name)
+        ? name.slice(2)
         : name.replace(/^\-+/, '')
       let value: Value = argv[i++] as string
       if (!value) {

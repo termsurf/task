@@ -15,7 +15,10 @@ import { convert } from './internal.js'
 import {
   supportConvertDocumentWithCalibre,
   supportConvertDocumentWithPandoc,
+  supportConvertMarkdownWithPuppeteer,
+  supportConvertTxtWithPuppeteer,
 } from '../action/convert/document/shared.js'
+import { closeAllBrowsers } from '../tool/node/browser.js'
 
 export const CONVERT_KEY: Record<string, Link> = {
   i: { line: ['input', 'file', 'path'] },
@@ -86,6 +89,66 @@ export async function call(task: Task, source) {
       //     throw e
       //   }
       // }
+
+      if (
+        supportConvertTxtWithPuppeteer(
+          base.input.format,
+          base.output.format,
+        )
+      ) {
+        const form = mesh.convert_txt_with_puppeteer_node_input
+        if (source.help) {
+          // return showHelpForConvert(form)
+        }
+        let spinner
+
+        try {
+          spinner = logStart(`Converting document...`)
+          const out = await convert(
+            transferInput(source, buildInputMapping(mesh, form)),
+          )
+          spinner?.stop()
+          if (typeof out === 'object' && 'output' in out) {
+            logOutput(out.file.path)
+          }
+          return
+        } catch (e) {
+          spinner?.stop()
+          throw e
+        } finally {
+          await closeAllBrowsers()
+        }
+      }
+
+      if (
+        supportConvertMarkdownWithPuppeteer(
+          base.input.format,
+          base.output.format,
+        )
+      ) {
+        const form = mesh.convert_txt_with_puppeteer_node_input
+        if (source.help) {
+          // return showHelpForConvert(form)
+        }
+        let spinner
+
+        try {
+          spinner = logStart(`Converting document...`)
+          const out = await convert(
+            transferInput(source, buildInputMapping(mesh, form)),
+          )
+          spinner?.stop()
+          if (typeof out === 'object' && 'output' in out) {
+            logOutput(out.file.path)
+          }
+          return
+        } catch (e) {
+          spinner?.stop()
+          throw e
+        } finally {
+          await closeAllBrowsers()
+        }
+      }
 
       if (
         supportConvertDocumentWithPandoc(

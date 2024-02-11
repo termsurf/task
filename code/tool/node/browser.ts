@@ -4,6 +4,7 @@ import fs from 'fs'
 import __dirname from '~/code/tool/shared/directory.js'
 // add stealth plugin and use defaults (all evasion techniques)
 import StealthPlugin from 'puppeteer-extra-plugin-stealth'
+import { getConfig } from '../shared/config'
 
 puppeteer.use(StealthPlugin())
 
@@ -22,6 +23,12 @@ export function inactivateBrowser(b: Browser) {
 
   if (item) {
     item.active = false
+  }
+}
+
+export async function closeAllBrowsers() {
+  for (const item of CACHE) {
+    await item.browser.close()
   }
 }
 

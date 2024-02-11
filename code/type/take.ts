@@ -2650,18 +2650,22 @@ export const ConvertMarkdownWithPuppeteerNodeClientInputModel: z.ZodType<Cast.Co
     output: z.object({
       format: z.lazy(() => PuppeteerOutputFormatModel),
     }),
-    viewport: z.object({
-      width: z.optional(z.number().int().gte(0)),
-      height: z.optional(z.number().int().gte(0)),
-    }),
+    viewport: z.optional(
+      z.object({
+        width: z.optional(z.number().int().gte(0)),
+        height: z.optional(z.number().int().gte(0)),
+      }),
+    ),
     proxy: z.optional(z.string()),
     waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
     style: z.optional(
       z.object({
-        margin: z.object({
-          x: z.optional(z.number().int().gte(0)),
-          y: z.optional(z.number().int().gte(0)),
-        }),
+        margin: z.optional(
+          z.object({
+            x: z.optional(z.number().int().gte(0)),
+            y: z.optional(z.number().int().gte(0)),
+          }),
+        ),
         h1: z.optional(z.lazy(() => TextStyleModel)),
         h2: z.optional(z.lazy(() => TextStyleModel)),
         h3: z.optional(z.lazy(() => TextStyleModel)),
@@ -2687,18 +2691,22 @@ export const ConvertMarkdownWithPuppeteerNodeExternalInputModel: z.ZodType<Cast.
     output: z.object({
       format: z.lazy(() => PuppeteerOutputFormatModel),
     }),
-    viewport: z.object({
-      width: z.optional(z.number().int().gte(0)),
-      height: z.optional(z.number().int().gte(0)),
-    }),
+    viewport: z.optional(
+      z.object({
+        width: z.optional(z.number().int().gte(0)),
+        height: z.optional(z.number().int().gte(0)),
+      }),
+    ),
     proxy: z.optional(z.string()),
     waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
     style: z.optional(
       z.object({
-        margin: z.object({
-          x: z.optional(z.number().int().gte(0)),
-          y: z.optional(z.number().int().gte(0)),
-        }),
+        margin: z.optional(
+          z.object({
+            x: z.optional(z.number().int().gte(0)),
+            y: z.optional(z.number().int().gte(0)),
+          }),
+        ),
         h1: z.optional(z.lazy(() => TextStyleModel)),
         h2: z.optional(z.lazy(() => TextStyleModel)),
         h3: z.optional(z.lazy(() => TextStyleModel)),
@@ -2737,18 +2745,22 @@ export const ConvertMarkdownWithPuppeteerNodeLocalExternalInputModel: z.ZodType<
       file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
-    viewport: z.object({
-      width: z.optional(z.number().int().gte(0)),
-      height: z.optional(z.number().int().gte(0)),
-    }),
+    viewport: z.optional(
+      z.object({
+        width: z.optional(z.number().int().gte(0)),
+        height: z.optional(z.number().int().gte(0)),
+      }),
+    ),
     proxy: z.optional(z.string()),
     waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
     style: z.optional(
       z.object({
-        margin: z.object({
-          x: z.optional(z.number().int().gte(0)),
-          y: z.optional(z.number().int().gte(0)),
-        }),
+        margin: z.optional(
+          z.object({
+            x: z.optional(z.number().int().gte(0)),
+            y: z.optional(z.number().int().gte(0)),
+          }),
+        ),
         h1: z.optional(z.lazy(() => TextStyleModel)),
         h2: z.optional(z.lazy(() => TextStyleModel)),
         h3: z.optional(z.lazy(() => TextStyleModel)),
@@ -2774,18 +2786,22 @@ export const ConvertMarkdownWithPuppeteerNodeLocalInputModel: z.ZodType<Cast.Con
       file: z.lazy(() => LocalPathModel),
     }),
     pathScope: z.optional(z.string()),
-    viewport: z.object({
-      width: z.optional(z.number().int().gte(0)),
-      height: z.optional(z.number().int().gte(0)),
-    }),
+    viewport: z.optional(
+      z.object({
+        width: z.optional(z.number().int().gte(0)),
+        height: z.optional(z.number().int().gte(0)),
+      }),
+    ),
     proxy: z.optional(z.string()),
     waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
     style: z.optional(
       z.object({
-        margin: z.object({
-          x: z.optional(z.number().int().gte(0)),
-          y: z.optional(z.number().int().gte(0)),
-        }),
+        margin: z.optional(
+          z.object({
+            x: z.optional(z.number().int().gte(0)),
+            y: z.optional(z.number().int().gte(0)),
+          }),
+        ),
         h1: z.optional(z.lazy(() => TextStyleModel)),
         h2: z.optional(z.lazy(() => TextStyleModel)),
         h3: z.optional(z.lazy(() => TextStyleModel)),
@@ -2813,18 +2829,22 @@ export const ConvertMarkdownWithPuppeteerNodeLocalInternalInputModel: z.ZodType<
       file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
-    viewport: z.object({
-      width: z.optional(z.number().int().gte(0)),
-      height: z.optional(z.number().int().gte(0)),
-    }),
+    viewport: z.optional(
+      z.object({
+        width: z.optional(z.number().int().gte(0)),
+        height: z.optional(z.number().int().gte(0)),
+      }),
+    ),
     proxy: z.optional(z.string()),
     waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
     style: z.optional(
       z.object({
-        margin: z.object({
-          x: z.optional(z.number().int().gte(0)),
-          y: z.optional(z.number().int().gte(0)),
-        }),
+        margin: z.optional(
+          z.object({
+            x: z.optional(z.number().int().gte(0)),
+            y: z.optional(z.number().int().gte(0)),
+          }),
+        ),
         h1: z.optional(z.lazy(() => TextStyleModel)),
         h2: z.optional(z.lazy(() => TextStyleModel)),
         h3: z.optional(z.lazy(() => TextStyleModel)),
@@ -2857,18 +2877,22 @@ export const ConvertMarkdownWithPuppeteerNodeRemoteInputModel: z.ZodType<Cast.Co
       file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
-    viewport: z.object({
-      width: z.optional(z.number().int().gte(0)),
-      height: z.optional(z.number().int().gte(0)),
-    }),
+    viewport: z.optional(
+      z.object({
+        width: z.optional(z.number().int().gte(0)),
+        height: z.optional(z.number().int().gte(0)),
+      }),
+    ),
     proxy: z.optional(z.string()),
     waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
     style: z.optional(
       z.object({
-        margin: z.object({
-          x: z.optional(z.number().int().gte(0)),
-          y: z.optional(z.number().int().gte(0)),
-        }),
+        margin: z.optional(
+          z.object({
+            x: z.optional(z.number().int().gte(0)),
+            y: z.optional(z.number().int().gte(0)),
+          }),
+        ),
         h1: z.optional(z.lazy(() => TextStyleModel)),
         h2: z.optional(z.lazy(() => TextStyleModel)),
         h3: z.optional(z.lazy(() => TextStyleModel)),
@@ -2981,18 +3005,22 @@ export const ConvertTxtWithPuppeteerNodeClientInputModel: z.ZodType<Cast.Convert
     output: z.object({
       format: z.lazy(() => PuppeteerOutputFormatModel),
     }),
-    viewport: z.object({
-      width: z.optional(z.number().int().gte(0)),
-      height: z.optional(z.number().int().gte(0)),
-    }),
+    viewport: z.optional(
+      z.object({
+        width: z.optional(z.number().int().gte(0)),
+        height: z.optional(z.number().int().gte(0)),
+      }),
+    ),
     proxy: z.optional(z.string()),
     waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
     style: z.optional(
       z.object({
-        margin: z.object({
-          x: z.optional(z.number().int().gte(0)),
-          y: z.optional(z.number().int().gte(0)),
-        }),
+        margin: z.optional(
+          z.object({
+            x: z.optional(z.number().int().gte(0)),
+            y: z.optional(z.number().int().gte(0)),
+          }),
+        ),
         text: z.lazy(() => TextStyleModel),
       }),
     ),
@@ -3011,18 +3039,22 @@ export const ConvertTxtWithPuppeteerNodeExternalInputModel: z.ZodType<Cast.Conve
     output: z.object({
       format: z.lazy(() => PuppeteerOutputFormatModel),
     }),
-    viewport: z.object({
-      width: z.optional(z.number().int().gte(0)),
-      height: z.optional(z.number().int().gte(0)),
-    }),
+    viewport: z.optional(
+      z.object({
+        width: z.optional(z.number().int().gte(0)),
+        height: z.optional(z.number().int().gte(0)),
+      }),
+    ),
     proxy: z.optional(z.string()),
     waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
     style: z.optional(
       z.object({
-        margin: z.object({
-          x: z.optional(z.number().int().gte(0)),
-          y: z.optional(z.number().int().gte(0)),
-        }),
+        margin: z.optional(
+          z.object({
+            x: z.optional(z.number().int().gte(0)),
+            y: z.optional(z.number().int().gte(0)),
+          }),
+        ),
         text: z.lazy(() => TextStyleModel),
       }),
     ),
@@ -3050,18 +3082,22 @@ export const ConvertTxtWithPuppeteerNodeLocalExternalInputModel: z.ZodType<Cast.
       file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
-    viewport: z.object({
-      width: z.optional(z.number().int().gte(0)),
-      height: z.optional(z.number().int().gte(0)),
-    }),
+    viewport: z.optional(
+      z.object({
+        width: z.optional(z.number().int().gte(0)),
+        height: z.optional(z.number().int().gte(0)),
+      }),
+    ),
     proxy: z.optional(z.string()),
     waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
     style: z.optional(
       z.object({
-        margin: z.object({
-          x: z.optional(z.number().int().gte(0)),
-          y: z.optional(z.number().int().gte(0)),
-        }),
+        margin: z.optional(
+          z.object({
+            x: z.optional(z.number().int().gte(0)),
+            y: z.optional(z.number().int().gte(0)),
+          }),
+        ),
         text: z.lazy(() => TextStyleModel),
       }),
     ),
@@ -3080,18 +3116,22 @@ export const ConvertTxtWithPuppeteerNodeLocalInputModel: z.ZodType<Cast.ConvertT
       file: z.lazy(() => LocalPathModel),
     }),
     pathScope: z.optional(z.string()),
-    viewport: z.object({
-      width: z.optional(z.number().int().gte(0)),
-      height: z.optional(z.number().int().gte(0)),
-    }),
+    viewport: z.optional(
+      z.object({
+        width: z.optional(z.number().int().gte(0)),
+        height: z.optional(z.number().int().gte(0)),
+      }),
+    ),
     proxy: z.optional(z.string()),
     waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
     style: z.optional(
       z.object({
-        margin: z.object({
-          x: z.optional(z.number().int().gte(0)),
-          y: z.optional(z.number().int().gte(0)),
-        }),
+        margin: z.optional(
+          z.object({
+            x: z.optional(z.number().int().gte(0)),
+            y: z.optional(z.number().int().gte(0)),
+          }),
+        ),
         text: z.lazy(() => TextStyleModel),
       }),
     ),
@@ -3112,18 +3152,22 @@ export const ConvertTxtWithPuppeteerNodeLocalInternalInputModel: z.ZodType<Cast.
       file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
-    viewport: z.object({
-      width: z.optional(z.number().int().gte(0)),
-      height: z.optional(z.number().int().gte(0)),
-    }),
+    viewport: z.optional(
+      z.object({
+        width: z.optional(z.number().int().gte(0)),
+        height: z.optional(z.number().int().gte(0)),
+      }),
+    ),
     proxy: z.optional(z.string()),
     waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
     style: z.optional(
       z.object({
-        margin: z.object({
-          x: z.optional(z.number().int().gte(0)),
-          y: z.optional(z.number().int().gte(0)),
-        }),
+        margin: z.optional(
+          z.object({
+            x: z.optional(z.number().int().gte(0)),
+            y: z.optional(z.number().int().gte(0)),
+          }),
+        ),
         text: z.lazy(() => TextStyleModel),
       }),
     ),
@@ -3149,18 +3193,22 @@ export const ConvertTxtWithPuppeteerNodeRemoteInputModel: z.ZodType<Cast.Convert
       file: z.optional(z.lazy(() => LocalOutputPathModel)),
     }),
     pathScope: z.optional(z.string()),
-    viewport: z.object({
-      width: z.optional(z.number().int().gte(0)),
-      height: z.optional(z.number().int().gte(0)),
-    }),
+    viewport: z.optional(
+      z.object({
+        width: z.optional(z.number().int().gte(0)),
+        height: z.optional(z.number().int().gte(0)),
+      }),
+    ),
     proxy: z.optional(z.string()),
     waitUntil: z.optional(z.lazy(() => PuppeteerLifeCycleEventModel)),
     style: z.optional(
       z.object({
-        margin: z.object({
-          x: z.optional(z.number().int().gte(0)),
-          y: z.optional(z.number().int().gte(0)),
-        }),
+        margin: z.optional(
+          z.object({
+            x: z.optional(z.number().int().gte(0)),
+            y: z.optional(z.number().int().gte(0)),
+          }),
+        ),
         text: z.lazy(() => TextStyleModel),
       }),
     ),

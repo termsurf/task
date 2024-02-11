@@ -2,11 +2,15 @@ import {
   convertDocumentWithCalibreNode,
   convertDocumentWithLibreOfficeNode,
   convertDocumentWithPandocNode,
+  convertMarkdownWithPuppeteerNode,
+  convertTxtWithPuppeteerNode,
 } from './document/node.js'
 import {
   supportConvertDocumentWithCalibre,
   supportConvertDocumentWithLibreOffice,
   supportConvertDocumentWithPandoc,
+  supportConvertMarkdownWithPuppeteer,
+  supportConvertTxtWithPuppeteer,
 } from './document/shared.js'
 import { convertFontWithFontForgeNode } from './font/node.js'
 import {
@@ -23,6 +27,24 @@ export async function convertInternal(source) {
   // if (useConvertLatexToPng(source.input.format, source.output.format)) {
   //   return await convertLatexToPng(source)
   // }
+
+  if (
+    supportConvertTxtWithPuppeteer(
+      source.input.format,
+      source.output.format,
+    )
+  ) {
+    return await convertTxtWithPuppeteerNode(source)
+  }
+
+  if (
+    supportConvertMarkdownWithPuppeteer(
+      source.input.format,
+      source.output.format,
+    )
+  ) {
+    return await convertMarkdownWithPuppeteerNode(source)
+  }
 
   if (
     useConvertImageWithInkscape(

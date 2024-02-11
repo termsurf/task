@@ -42,8 +42,10 @@ function call() {
 
 alias task="pnpm tsx code/cli"
 
+call "task convert -I txt -O pdf -i ../file/base/document/example.txt -o test/hold/example.txt.pdf"
+call "task convert -I md -O pdf -i ../file/base/document/example.md -o test/hold/example.md.pdf --style-text-color ff0000"
 # # convert and verify
-call "task convert -I png -O jpg -i ../file/base/image/fire.png -o test/hold/fire.jpg"
+# call "task convert -I png -O jpg -i ../file/base/image/fire.png -o test/hold/fire.jpg"
 # call "task verify jpg -i test/hold/fire.jpg"
 
 # call "task convert -I cr2 -O jpg -i test/file/image/trees.cr2 -o test/hold/trees.jpg"
@@ -51,7 +53,7 @@ call "task convert -I png -O jpg -i ../file/base/image/fire.png -o test/hold/fir
 
 # # task convert -I rar -i test/file/archive/archive.rar -O zip -o test/hold/archive.rar.zip
 
-call "task convert -I ttf -O woff -i ../file/base/font/etch.ttf -o test/hold/etch.woff"
+# call "task convert -I ttf -O woff -i ../file/base/font/etch.ttf -o test/hold/etch.woff"
 # call "task convert -I epub -O mobi -i test/file/document/test.epub -o test/hold/test.mobi"
 # task convert -I docx -O markdown -i test/file/document/sample.docx -o test/hold/sample.docx.markdown
 # task convert -I docx -O pdf -i test/file/document/sample.docx -b test/hold/pdf -n document
