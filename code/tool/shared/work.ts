@@ -30,9 +30,16 @@ export async function requestAndWaitForWorkToComplete<T extends object>(
   }
   const work = (await workResponse.json()) as Work<T>
   while (true) {
-    await wait(1000)
+    await wait(1200)
     const stepResponse = await getRemote(`/work/${work.id}`, controller)
+
+    if (stepResponse.status >= 400) {
+      const error = await stepResponse.json()
+      throw new Kink(error)
+    }
+
     const step = await stepResponse.json()
+
     if (step.status === 'complete') {
       return step.output as T
     } else if (step.status === 'error') {

@@ -84,9 +84,9 @@ export async function handleKtfmtCommand(cmd: Command) {
 }
 
 export async function handleIdentifyCommand(cmd: Command) {
-  const text = await exec(cmd.link)
+  const { stdout } = await exec(cmd.link)
   const pattern = new RegExp(`^([^\\s]+)\\s+(\\w+)`, 'i')
-  text.match(pattern)
+  stdout.match(pattern)
   return {
     path: RegExp.$1,
     format: _.snakeCase(RegExp.$2),

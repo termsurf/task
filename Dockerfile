@@ -226,3 +226,4 @@ RUN apt-get -y install make
 RUN apt-get -y install cmake
 RUN apt-get -y install unzip
 RUN apt-get -y install libcurl4-openssl-dev
+RUN apt-get -y install enscript

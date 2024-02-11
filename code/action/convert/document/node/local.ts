@@ -183,57 +183,6 @@
 //   }
 // }
 
-// export async function convertHtmlToPngWithPuppeteer(
-//   input: ConvertDocumentWithPuppeteerNodeInput,
-// ) {
-//   // const b = await getBrowser(input.proxy ? `${input.proxy}` : undefined)
-//   // const p = await b.newPage()
-//   // await p.goto(`${input.input.file.path}`)
-//   // await p.waitForNavigation({ waitUntil: input.waitUntil })
-//   // const opts: Record<string, any> = {
-//   //   scale: 1,
-//   //   path: input.output.file.path,
-//   //   printBackground: true,
-//   //   preferCSSPageSize: true,
-//   // }
-//   // if (input.viewport?.width) {
-//   //   opts.width = input.viewport.width
-//   // }
-//   // if (input.viewport?.height) {
-//   //   opts.height = input.viewport.height
-//   // }
-//   // await p.screencast(opts)
-//   // inactivateBrowser(b)
-// }
-
-// // inspectWebpage().then(data => console.log(data.fonts))
-
-// // https://stackoverflow.com/questions/1403087/how-can-i-convert-an-html-table-to-csv
-// // https://stackoverflow.com/questions/37498713/how-to-export-an-html-table-as-a-xlsx-file
-
-// export async function convertHtmlToPdfWithPuppeteer(
-//   input: ConvertDocumentWithPuppeteerNodeInput,
-// ) {
-//   // const b = await getBrowser(input.proxy ? `${input.proxy}` : undefined)
-//   // const p = await b.newPage()
-//   // await p.goto(`${input.input.file.path}`)
-//   // await p.waitForNavigation({ waitUntil: input.waitUntil })
-//   // const opts: Record<string, any> = {
-//   //   scale: 1,
-//   //   path: input.output.file.path,
-//   //   printBackground: true,
-//   //   preferCSSPageSize: true,
-//   // }
-//   // if (input.viewport?.width) {
-//   //   opts.width = input.viewport.width
-//   // }
-//   // if (input.viewport?.height) {
-//   //   opts.height = input.viewport.height
-//   // }
-//   // await p.pdf(opts)
-//   // inactivateBrowser(b)
-// }
-
 // // // function doit(type, fn) {
 // // //   var elt = document.getElementById('data-table')
 // // //   var wb = XLSX.utils.table_to_book(elt, { sheet: 'Sheet JS' })

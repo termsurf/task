@@ -9,6 +9,7 @@ import { fetchWithTimeout } from '../shared/request.js'
 import { FileLink } from '../shared/file.js'
 import { tmpdir } from 'os'
 import { getRandomId } from './id.js'
+import { arrayBufferToString } from '../shared/string.js'
 
 export async function resolveRemoteFile({
   path,
@@ -60,6 +61,15 @@ export async function saveRemoteFileNode(
       }
     })
   })
+}
+
+export async function readRemoteFileNode(
+  remotePath: string,
+  controller?: AbortController,
+) {
+  const r = await fetchWithTimeout(remotePath, { controller })
+  const buffer = await r.arrayBuffer()
+  return buffer
 }
 
 export async function saveRemoteFileNodeAndCleanupOnError(

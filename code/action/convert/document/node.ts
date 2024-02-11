@@ -3,6 +3,7 @@ export * from './libre-office/node.js'
 export * from './pandoc/node.js'
 export * from './pdflatex/node.js'
 export * from './jupyter/node.js'
+export * from './puppeteer/node.js'
 
 // export async function convertLatexToPng(
 //   source: ConvertLatexToPngNodeInput,

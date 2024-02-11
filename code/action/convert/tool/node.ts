@@ -3,6 +3,7 @@ import {
   createStreamableFile,
   getFallbackFilePath,
   getScopeDirectory,
+  readRemoteFileNode,
   resolveRemoteFile,
 } from '~/code/tool/node/file.js'
 import {
@@ -119,6 +120,53 @@ export async function resolveInputForConvertLocalExternalNode<
   }
 }
 
+export async function resolveInputContentForConvertLocalExternalNode<
+  T extends ResolveInputForConvertLocalExternal,
+>(input: T) {
+  const through = cloneOptions(input)
+  debug(
+    'resolveInputContentForConvertLocalExternalNode',
+    through.input.file,
+  )
+
+  if ('path' in through.input.file) {
+    const inputPath = parsePath(through.input.file.path)
+    switch (inputPath.type) {
+      case 'https-uri':
+      case 'http-uri': {
+        const content = await readRemoteFileNode(inputPath.href)
+        _.unset(through.input.file, ['path'])
+        _.set(through.input.file, ['content'], content)
+        break
+      }
+    }
+  }
+
+  if (!through.output.file?.path) {
+    const scope = getScopeDirectory(input.pathScope)
+    const outputPath = resolvePathRelativeToScope(
+      await getFallbackFilePath(
+        input.output.file?.path,
+        scope,
+        through.output.format,
+      ),
+      scope,
+    )
+
+    through.output.file = { path: outputPath }
+
+    debug(
+      'resolveInputContentForConvertLocalExternalNode output file',
+      through.output.file,
+    )
+  }
+
+  return through as Omit<T, 'output' | 'input'> & {
+    input: Omit<T['input'], 'file'> & { file: { content: ArrayBuffer } }
+    output: Omit<T['output'], 'file'> & { file: { path: string } }
+  }
+}
+
 export async function resolveInputForConvertLocalInternalNode<
   T extends ResolveInputForConvertLocalInternal,
 >(input: T) {
@@ -130,16 +178,9 @@ export async function resolveInputForConvertLocalInternalNode<
     switch (inputPath.type) {
       case 'https-uri':
       case 'http-uri': {
-        const newInputPath = await resolveRemoteFile({
-          path: inputPath.href,
-          scope: getScopeDirectory(through.pathScope),
-          extension: through.output.format,
-        })
-        _.set(through.input.file, ['path'], newInputPath)
-        debug(
-          'resolveInputForConvertLocalInternalNode input',
-          through.input.file,
-        )
+        const content = await readRemoteFileNode(inputPath.href)
+        _.unset(through.input.file, ['path'])
+        _.set(through.input.file, ['content'], content)
         break
       }
     }
@@ -148,6 +189,35 @@ export async function resolveInputForConvertLocalInternalNode<
   if ('content' in through.input.file) {
     // TODO: for the CLI.
   }
+
+  if (!through.output.file?.path) {
+    const scope = getScopeDirectory(input.pathScope)
+    const outputPath = resolvePathRelativeToScope(
+      await getFallbackFilePath(
+        input.output.file?.path,
+        scope,
+        through.output.format,
+      ),
+      scope,
+    )
+
+    through.output.file = { path: outputPath }
+    debug(
+      'resolveInputForConvertLocalInternalNode output',
+      through.input.file,
+    )
+  }
+
+  return through as Omit<T, 'output' | 'input'> & {
+    input: Omit<T['input'], 'file'> & { file: { content: ArrayBuffer } }
+    output: Omit<T['output'], 'file'> & { file: { path: string } }
+  }
+}
+
+export async function resolveInputContentForConvertLocalInternalNode<
+  T extends ResolveInputForConvertLocalInternal,
+>(input: T) {
+  const through = cloneOptions(input)
 
   if (!through.output.file?.path) {
     const scope = getScopeDirectory(input.pathScope)

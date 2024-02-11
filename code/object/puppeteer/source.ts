@@ -15,6 +15,16 @@ export const puppeteer_output_format: List = {
   list: ['pdf', 'png'],
 }
 
+export const puppeteer_txt_input_format: List = {
+  form: 'list',
+  list: ['txt'],
+}
+
+export const puppeteer_markdown_input_format: List = {
+  form: 'list',
+  list: ['md'],
+}
+
 export const puppeteer_life_cycle_event_content: Hash = {
   form: 'hash',
   link: 'puppeteer_life_cycle_event',

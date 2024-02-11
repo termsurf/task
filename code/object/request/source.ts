@@ -41,6 +41,8 @@ export const command_name: List = {
     'identify',
     'perltidy',
     'pdfcrop',
+    'enscript',
+    'ps2pdf',
   ],
 }
 

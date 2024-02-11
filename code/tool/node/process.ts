@@ -17,12 +17,14 @@ export class ChildProcessError extends CustomError {
   }
 }
 
-export function exec(list: Array<string>): Promise<string> {
+export function exec(
+  list: Array<string>,
+): Promise<{ stdout: string; stderr: string }> {
   const command = list[0] as string
   const args = list.slice(1)
 
   return new Promise(function (resolve, reject) {
-    const child = child_process.spawn(command, args)
+    const child = child_process.spawn(command, args, { shell: true })
 
     const stdout: Array<string> = []
     child.stdout.setEncoding('utf-8')
@@ -40,14 +42,17 @@ export function exec(list: Array<string>): Promise<string> {
       reject(
         new ChildProcessError({
           error,
-          stdout: stdout.join(''),
-          stderr: stderr.join(''),
+          stdout: stdout.join('').trim(),
+          stderr: stderr.join('').trim(),
         }),
       )
     })
 
     child.on('close', () => {
-      resolve(stdout.join('').trim() || stderr.join(''))
+      resolve({
+        stdout: stdout.join('').trim(),
+        stderr: stderr.join('').trim(),
+      })
     })
   })
 }

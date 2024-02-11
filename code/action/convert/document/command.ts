@@ -4,6 +4,7 @@ import {
 } from '~/code/tool/shared/command.js'
 import {
   ConvertDocumentWithCalibreNodeLocalInput,
+  ConvertDocumentWithEnscriptNodeLocalInput,
   ConvertDocumentWithJupyterNodeLocalInput,
   ConvertDocumentWithLibreOfficeNodeLocalInput,
   ConvertDocumentWithPandocNodeLocalInput,
@@ -78,6 +79,26 @@ export function buildCommandToConvertDocumentWithJupyter(
     input.output.format,
     input.input.file.path,
   )
+
+  return buildCommandSequence(cmd)
+}
+
+export function buildCommandToConvertDocumentWithEnscript(
+  input: ConvertDocumentWithEnscriptNodeLocalInput,
+) {
+  const cmd = getCommand(`enscript`)
+
+  // --margins=left:right:top:bottom
+  // --ps-level=2
+  // --word-wrap
+  /// --language=PostScript,html,rtf
+
+  // cmd.link.push(
+  //   `nbconvert`,
+  //   `--to`,
+  //   input.output.format,
+  //   input.input.file.path,
+  // )
 
   return buildCommandSequence(cmd)
 }

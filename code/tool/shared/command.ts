@@ -43,6 +43,8 @@ export const COMMAND: Record<CommandName, Array<string> | undefined> = {
   unoconv: ['unoconv'],
   patool: ['patool'],
   pdfcrop: ['pdfcrop'],
+  ps2pdf: ['ps2pdf'],
+  enscript: ['enscript'],
 }
 
 export function getCommand(name: CommandName): Command {

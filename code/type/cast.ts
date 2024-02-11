@@ -3519,6 +3519,8 @@ export const COMMAND_KEY = [
   'identify',
   'perltidy',
   'pdfcrop',
+  'enscript',
+  'ps2pdf',
 ] as const
 
 export type CommandKey = (typeof COMMAND_KEY)[number]
@@ -3562,6 +3564,8 @@ export const COMMAND_NAME = [
   'identify',
   'perltidy',
   'pdfcrop',
+  'enscript',
+  'ps2pdf',
 ] as const
 
 export type CommandName = (typeof COMMAND_NAME)[number]
@@ -3857,6 +3861,120 @@ export type ConvertDocumentWithCalibreNodeRemoteInput = {
   }
   output: {
     format: CalibreOutputFormat
+    file?: LocalOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithEnscriptBrowserInput =
+  | ConvertDocumentWithEnscriptBrowserRemoteInput
+  | ConvertDocumentWithEnscriptBrowserLocalInput
+
+export type ConvertDocumentWithEnscriptBrowserLocalInput = {
+  handle?: 'local'
+  input: {
+    format: EnscriptInputFormat
+    file: {
+      content: FileContent
+    }
+  }
+  output: {
+    format: EnscriptOutputFormat
+  }
+}
+
+export type ConvertDocumentWithEnscriptBrowserOutput = {
+  file: FileContent
+}
+
+export type ConvertDocumentWithEnscriptBrowserRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: EnscriptInputFormat
+    file: FileContentWithSha256
+  }
+  output: {
+    format: EnscriptOutputFormat
+  }
+}
+
+export type ConvertDocumentWithEnscriptNodeClientInput = {
+  handle: 'client'
+  input: {
+    format: EnscriptInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: EnscriptOutputFormat
+  }
+}
+
+export type ConvertDocumentWithEnscriptNodeExternalInput = {
+  handle: 'external'
+  input: {
+    format: EnscriptInputFormat
+    file: RemoteInputPath | FileContentWithSha256
+  }
+  output: {
+    format: EnscriptOutputFormat
+  }
+}
+
+export type ConvertDocumentWithEnscriptNodeInput =
+  | ConvertDocumentWithEnscriptNodeRemoteInput
+  | ConvertDocumentWithEnscriptNodeLocalExternalInput
+  | ConvertDocumentWithEnscriptNodeLocalInternalInput
+
+export type ConvertDocumentWithEnscriptNodeLocalExternalInput = {
+  handle: 'external'
+  input: {
+    format: EnscriptInputFormat
+    file: RemoteInputPath | FileContentWithSha256
+  }
+  output: {
+    format: EnscriptOutputFormat
+    file?: LocalOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithEnscriptNodeLocalInput = {
+  input: {
+    format: EnscriptInputFormat
+    file: LocalPath
+  }
+  output: {
+    format: EnscriptOutputFormat
+    file: LocalPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithEnscriptNodeLocalInternalInput = {
+  handle?: 'internal'
+  input: {
+    format: EnscriptInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: EnscriptOutputFormat
+    file?: LocalOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertDocumentWithEnscriptNodeOutput = {
+  file: FilePath
+}
+
+export type ConvertDocumentWithEnscriptNodeRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: EnscriptInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: EnscriptOutputFormat
     file?: LocalOutputPath
   }
   pathScope?: string
@@ -4203,156 +4321,6 @@ export type ConvertDocumentWithPandocNodeRemoteInput = {
   pathScope?: string
 }
 
-export type ConvertDocumentWithPuppeteerBrowserInput =
-  | ConvertDocumentWithPuppeteerBrowserRemoteInput
-  | ConvertDocumentWithPuppeteerBrowserLocalInput
-
-export type ConvertDocumentWithPuppeteerBrowserLocalInput = {
-  handle?: 'local'
-  input: {
-    format: PuppeteerInputFormat
-    file: {
-      content: FileContent
-    }
-  }
-  output: {
-    format: PuppeteerOutputFormat
-  }
-}
-
-export type ConvertDocumentWithPuppeteerBrowserOutput = {
-  file: FileContent
-}
-
-export type ConvertDocumentWithPuppeteerBrowserRemoteInput = {
-  handle: 'remote'
-  input: {
-    format: PuppeteerInputFormat
-    file: FileContentWithSha256
-  }
-  output: {
-    format: PuppeteerOutputFormat
-  }
-}
-
-export type ConvertDocumentWithPuppeteerNodeClientInput = {
-  handle: 'client'
-  input: {
-    format: PuppeteerInputFormat
-    file: FileInputPath | FileContentWithSha256
-  }
-  output: {
-    format: PuppeteerOutputFormat
-  }
-  viewport: {
-    width?: number
-    height?: number
-  }
-  proxy?: string
-  waitUntil?: PuppeteerLifeCycleEvent
-}
-
-export type ConvertDocumentWithPuppeteerNodeExternalInput = {
-  handle: 'external'
-  input: {
-    format: PuppeteerInputFormat
-    file: RemoteInputPath | FileContentWithSha256
-  }
-  output: {
-    format: PuppeteerOutputFormat
-  }
-  viewport: {
-    width?: number
-    height?: number
-  }
-  proxy?: string
-  waitUntil?: PuppeteerLifeCycleEvent
-}
-
-export type ConvertDocumentWithPuppeteerNodeInput =
-  | ConvertDocumentWithPuppeteerNodeRemoteInput
-  | ConvertDocumentWithPuppeteerNodeLocalExternalInput
-  | ConvertDocumentWithPuppeteerNodeLocalInternalInput
-
-export type ConvertDocumentWithPuppeteerNodeLocalExternalInput = {
-  handle: 'external'
-  input: {
-    format: PuppeteerInputFormat
-    file: RemoteInputPath | FileContentWithSha256
-  }
-  output: {
-    format: PuppeteerOutputFormat
-    file?: LocalOutputPath
-  }
-  pathScope?: string
-  viewport: {
-    width?: number
-    height?: number
-  }
-  proxy?: string
-  waitUntil?: PuppeteerLifeCycleEvent
-}
-
-export type ConvertDocumentWithPuppeteerNodeLocalInput = {
-  input: {
-    format: PuppeteerInputFormat
-    file: LocalPath
-  }
-  output: {
-    format: PuppeteerOutputFormat
-    file: LocalPath
-  }
-  pathScope?: string
-  viewport: {
-    width?: number
-    height?: number
-  }
-  proxy?: string
-  waitUntil?: PuppeteerLifeCycleEvent
-}
-
-export type ConvertDocumentWithPuppeteerNodeLocalInternalInput = {
-  handle?: 'internal'
-  input: {
-    format: PuppeteerInputFormat
-    file: FileInputPath | FileContentWithSha256
-  }
-  output: {
-    format: PuppeteerOutputFormat
-    file?: LocalOutputPath
-  }
-  pathScope?: string
-  viewport: {
-    width?: number
-    height?: number
-  }
-  proxy?: string
-  waitUntil?: PuppeteerLifeCycleEvent
-}
-
-export type ConvertDocumentWithPuppeteerNodeOutput = {
-  file: FilePath
-}
-
-export type ConvertDocumentWithPuppeteerNodeRemoteInput = {
-  handle: 'remote'
-  input: {
-    format: PuppeteerInputFormat
-    file: FileInputPath | FileContentWithSha256
-  }
-  output: {
-    format: PuppeteerOutputFormat
-    file?: LocalOutputPath
-  }
-  pathScope?: string
-  viewport: {
-    width?: number
-    height?: number
-  }
-  proxy?: string
-  waitUntil?: PuppeteerLifeCycleEvent
-}
-
 export type ConvertFileBase = {
   tool?: string
   remote?: boolean
@@ -4494,6 +4462,156 @@ export type ConvertFontWithFontForgeNodeRemoteInput = {
     file?: LocalOutputPath
   }
   pathScope?: string
+}
+
+export type ConvertHtmlWithPuppeteerBrowserInput =
+  | ConvertHtmlWithPuppeteerBrowserRemoteInput
+  | ConvertHtmlWithPuppeteerBrowserLocalInput
+
+export type ConvertHtmlWithPuppeteerBrowserLocalInput = {
+  handle?: 'local'
+  input: {
+    format: PuppeteerInputFormat
+    file: {
+      content: FileContent
+    }
+  }
+  output: {
+    format: PuppeteerOutputFormat
+  }
+}
+
+export type ConvertHtmlWithPuppeteerBrowserOutput = {
+  file: FileContent
+}
+
+export type ConvertHtmlWithPuppeteerBrowserRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: PuppeteerInputFormat
+    file: FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+  }
+}
+
+export type ConvertHtmlWithPuppeteerNodeClientInput = {
+  handle: 'client'
+  input: {
+    format: PuppeteerInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+  }
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+}
+
+export type ConvertHtmlWithPuppeteerNodeExternalInput = {
+  handle: 'external'
+  input: {
+    format: PuppeteerInputFormat
+    file: RemoteInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+  }
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+}
+
+export type ConvertHtmlWithPuppeteerNodeInput =
+  | ConvertHtmlWithPuppeteerNodeRemoteInput
+  | ConvertHtmlWithPuppeteerNodeLocalExternalInput
+  | ConvertHtmlWithPuppeteerNodeLocalInternalInput
+
+export type ConvertHtmlWithPuppeteerNodeLocalExternalInput = {
+  handle: 'external'
+  input: {
+    format: PuppeteerInputFormat
+    file: RemoteInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file?: LocalOutputPath
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+}
+
+export type ConvertHtmlWithPuppeteerNodeLocalInput = {
+  input: {
+    format: PuppeteerInputFormat
+    file: LocalPath
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file: LocalPath
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+}
+
+export type ConvertHtmlWithPuppeteerNodeLocalInternalInput = {
+  handle?: 'internal'
+  input: {
+    format: PuppeteerInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file?: LocalOutputPath
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+}
+
+export type ConvertHtmlWithPuppeteerNodeOutput = {
+  file: FilePath
+}
+
+export type ConvertHtmlWithPuppeteerNodeRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: PuppeteerInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file?: LocalOutputPath
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
 }
 
 export type ConvertImageWithImageMagickBrowserInput =
@@ -5003,6 +5121,242 @@ export type ConvertLatexWithPdfLatexNodeRemoteInput = {
   pathScope?: string
 }
 
+export type ConvertMarkdownWithPuppeteerBrowserInput =
+  | ConvertMarkdownWithPuppeteerBrowserRemoteInput
+  | ConvertMarkdownWithPuppeteerBrowserLocalInput
+
+export type ConvertMarkdownWithPuppeteerBrowserLocalInput = {
+  handle?: 'local'
+  input: {
+    format: PuppeteerMarkdownInputFormat
+    file: {
+      content: FileContent
+    }
+  }
+  output: {
+    format: PuppeteerOutputFormat
+  }
+}
+
+export type ConvertMarkdownWithPuppeteerBrowserOutput = {
+  file: FileContent
+}
+
+export type ConvertMarkdownWithPuppeteerBrowserRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: PuppeteerMarkdownInputFormat
+    file: FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+  }
+}
+
+export type ConvertMarkdownWithPuppeteerNodeClientInput = {
+  handle: 'client'
+  input: {
+    format: PuppeteerMarkdownInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+  }
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+  style?: {
+    margin: {
+      x?: number
+      y?: number
+    }
+    h1?: TextStyle
+    h2?: TextStyle
+    h3?: TextStyle
+    h4?: TextStyle
+    h5?: TextStyle
+    h6?: TextStyle
+    text?: TextStyle
+    link?: TextStyle
+  }
+}
+
+export type ConvertMarkdownWithPuppeteerNodeExternalInput = {
+  handle: 'external'
+  input: {
+    format: PuppeteerMarkdownInputFormat
+    file: RemoteInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+  }
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+  style?: {
+    margin: {
+      x?: number
+      y?: number
+    }
+    h1?: TextStyle
+    h2?: TextStyle
+    h3?: TextStyle
+    h4?: TextStyle
+    h5?: TextStyle
+    h6?: TextStyle
+    text?: TextStyle
+    link?: TextStyle
+  }
+}
+
+export type ConvertMarkdownWithPuppeteerNodeInput =
+  | ConvertMarkdownWithPuppeteerNodeRemoteInput
+  | ConvertMarkdownWithPuppeteerNodeLocalExternalInput
+  | ConvertMarkdownWithPuppeteerNodeLocalInternalInput
+
+export type ConvertMarkdownWithPuppeteerNodeLocalExternalInput = {
+  handle: 'external'
+  input: {
+    format: PuppeteerMarkdownInputFormat
+    file: RemoteInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file?: LocalOutputPath
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+  style?: {
+    margin: {
+      x?: number
+      y?: number
+    }
+    h1?: TextStyle
+    h2?: TextStyle
+    h3?: TextStyle
+    h4?: TextStyle
+    h5?: TextStyle
+    h6?: TextStyle
+    text?: TextStyle
+    link?: TextStyle
+  }
+}
+
+export type ConvertMarkdownWithPuppeteerNodeLocalInput = {
+  input: {
+    format: PuppeteerMarkdownInputFormat
+    file: {
+      content: ArrayBuffer
+    }
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file: LocalPath
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+  style?: {
+    margin: {
+      x?: number
+      y?: number
+    }
+    h1?: TextStyle
+    h2?: TextStyle
+    h3?: TextStyle
+    h4?: TextStyle
+    h5?: TextStyle
+    h6?: TextStyle
+    text?: TextStyle
+    link?: TextStyle
+  }
+}
+
+export type ConvertMarkdownWithPuppeteerNodeLocalInternalInput = {
+  handle?: 'internal'
+  input: {
+    format: PuppeteerMarkdownInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file?: LocalOutputPath
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+  style?: {
+    margin: {
+      x?: number
+      y?: number
+    }
+    h1?: TextStyle
+    h2?: TextStyle
+    h3?: TextStyle
+    h4?: TextStyle
+    h5?: TextStyle
+    h6?: TextStyle
+    text?: TextStyle
+    link?: TextStyle
+  }
+}
+
+export type ConvertMarkdownWithPuppeteerNodeOutput = {
+  file: FilePath
+}
+
+export type ConvertMarkdownWithPuppeteerNodeRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: PuppeteerMarkdownInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file?: LocalOutputPath
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+  style?: {
+    margin: {
+      x?: number
+      y?: number
+    }
+    h1?: TextStyle
+    h2?: TextStyle
+    h3?: TextStyle
+    h4?: TextStyle
+    h5?: TextStyle
+    h6?: TextStyle
+    text?: TextStyle
+    link?: TextStyle
+  }
+}
+
 export type ConvertMp4ToGifWithFfmpeg = {
   input: {
     format: string
@@ -5030,6 +5384,200 @@ export type ConvertTimeZone = {
   output: {
     timezone: TimeZone
     format: string
+  }
+}
+
+export type ConvertTxtWithPuppeteerBrowserInput =
+  | ConvertTxtWithPuppeteerBrowserRemoteInput
+  | ConvertTxtWithPuppeteerBrowserLocalInput
+
+export type ConvertTxtWithPuppeteerBrowserLocalInput = {
+  handle?: 'local'
+  input: {
+    format: PuppeteerTxtInputFormat
+    file: {
+      content: FileContent
+    }
+  }
+  output: {
+    format: PuppeteerOutputFormat
+  }
+}
+
+export type ConvertTxtWithPuppeteerBrowserOutput = {
+  file: FileContent
+}
+
+export type ConvertTxtWithPuppeteerBrowserRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: PuppeteerTxtInputFormat
+    file: FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+  }
+}
+
+export type ConvertTxtWithPuppeteerNodeClientInput = {
+  handle: 'client'
+  input: {
+    format: PuppeteerTxtInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+  }
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+  style?: {
+    margin: {
+      x?: number
+      y?: number
+    }
+    text: TextStyle
+  }
+}
+
+export type ConvertTxtWithPuppeteerNodeExternalInput = {
+  handle: 'external'
+  input: {
+    format: PuppeteerTxtInputFormat
+    file: RemoteInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+  }
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+  style?: {
+    margin: {
+      x?: number
+      y?: number
+    }
+    text: TextStyle
+  }
+}
+
+export type ConvertTxtWithPuppeteerNodeInput =
+  | ConvertTxtWithPuppeteerNodeRemoteInput
+  | ConvertTxtWithPuppeteerNodeLocalExternalInput
+  | ConvertTxtWithPuppeteerNodeLocalInternalInput
+
+export type ConvertTxtWithPuppeteerNodeLocalExternalInput = {
+  handle: 'external'
+  input: {
+    format: PuppeteerTxtInputFormat
+    file: RemoteInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file?: LocalOutputPath
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+  style?: {
+    margin: {
+      x?: number
+      y?: number
+    }
+    text: TextStyle
+  }
+}
+
+export type ConvertTxtWithPuppeteerNodeLocalInput = {
+  input: {
+    format: PuppeteerTxtInputFormat
+    file: {
+      content: ArrayBuffer
+    }
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file: LocalPath
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+  style?: {
+    margin: {
+      x?: number
+      y?: number
+    }
+    text: TextStyle
+  }
+}
+
+export type ConvertTxtWithPuppeteerNodeLocalInternalInput = {
+  handle?: 'internal'
+  input: {
+    format: PuppeteerTxtInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file?: LocalOutputPath
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+  style?: {
+    margin: {
+      x?: number
+      y?: number
+    }
+    text: TextStyle
+  }
+}
+
+export type ConvertTxtWithPuppeteerNodeOutput = {
+  file: FilePath
+}
+
+export type ConvertTxtWithPuppeteerNodeRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: PuppeteerTxtInputFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: PuppeteerOutputFormat
+    file?: LocalOutputPath
+  }
+  pathScope?: string
+  viewport: {
+    width?: number
+    height?: number
+  }
+  proxy?: string
+  waitUntil?: PuppeteerLifeCycleEvent
+  style?: {
+    margin: {
+      x?: number
+      y?: number
+    }
+    text: TextStyle
   }
 }
 
@@ -5324,6 +5872,15 @@ export type DisassembleBinaryWithObjdump = {
   hide: ObjdumpHideOption
   color: boolean
 }
+
+export const ENSCRIPT_INPUT_FORMAT = ['txt'] as const
+
+export type EnscriptInputFormat = (typeof ENSCRIPT_INPUT_FORMAT)[number]
+
+export const ENSCRIPT_OUTPUT_FORMAT = ['html', 'ps', 'rtf'] as const
+
+export type EnscriptOutputFormat =
+  (typeof ENSCRIPT_OUTPUT_FORMAT)[number]
 
 export type ExiftoolFamilyContentValue = {
   head: string
@@ -109894,10 +110451,20 @@ export const PUPPETEER_LIFE_CYCLE_EVENT_CONTENT: PuppeteerLifeCycleEventContent 
     },
   }
 
+export const PUPPETEER_MARKDOWN_INPUT_FORMAT = ['md'] as const
+
+export type PuppeteerMarkdownInputFormat =
+  (typeof PUPPETEER_MARKDOWN_INPUT_FORMAT)[number]
+
 export const PUPPETEER_OUTPUT_FORMAT = ['pdf', 'png'] as const
 
 export type PuppeteerOutputFormat =
   (typeof PUPPETEER_OUTPUT_FORMAT)[number]
+
+export const PUPPETEER_TXT_INPUT_FORMAT = ['txt'] as const
+
+export type PuppeteerTxtInputFormat =
+  (typeof PUPPETEER_TXT_INPUT_FORMAT)[number]
 
 export const QR_CODE_ERROR_CORRECTION_LEVEL = [
   'L',
@@ -110309,6 +110876,19 @@ export const TASK = [
 ] as const
 
 export type Task = (typeof TASK)[number]
+
+export type TextStyle = {
+  color?: string
+  bold?: boolean
+  italic?: boolean
+  font?: {
+    size?: number
+    family?: Array<string>
+  }
+  lineHeight?: number
+  letterSpacing?: number
+  allCaps?: boolean
+}
 
 export const TIME_ZONE = [
   'NUT',
