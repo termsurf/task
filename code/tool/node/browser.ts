@@ -54,7 +54,7 @@ export async function getBrowser(proxy?: string, headless = true) {
 
   const config: Record<string, any> = {
     headless,
-    args: [],
+    args: ['--no-sandbox'],
     // executablePath,
   }
   const item: Record<string, any> = { active: true, proxy }
