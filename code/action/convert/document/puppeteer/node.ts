@@ -6,7 +6,7 @@ import {
   ConvertHtmlWithPuppeteerNodeInput,
   TextStyle,
 } from '~/code/type/index.js'
-import debug from '~/code/tool/shared/debug.js'
+// import console.log from '~/code/tool/shared/console.log.js'
 import { marked } from 'marked'
 import {
   ConvertTxtWithPuppeteerNodeInput,
@@ -199,12 +199,12 @@ function marginStyleToCSS(margin) {
 }
 
 export async function convertTxtWithPuppeteerNodeLocal(source) {
-  debug('convertTxtWithPuppeteerNodeLocal', source)
+  console.log('convertTxtWithPuppeteerNodeLocal', source)
 
   const input = ConvertTxtWithPuppeteerNodeLocalInputModel.parse(source)
 
   const b = await getBrowser(input.proxy ? `${input.proxy}` : undefined)
-  debug('convertTxtWithPuppeteerNodeLocal browser loaded')
+  console.log('convertTxtWithPuppeteerNodeLocal browser loaded')
 
   const p = await b.newPage()
   const string = arrayBufferToString(input.input.file.content)
@@ -236,7 +236,7 @@ ${textCss.map(line => `        ${line}`).join('\n')}
 
   await p.setContent(html, { waitUntil: input.waitUntil })
 
-  debug('convertTxtWithPuppeteerNodeLocal page content set')
+  console.log('convertTxtWithPuppeteerNodeLocal page content set')
 
   const opts: Record<string, any> = {
     scale: 1,
@@ -258,7 +258,7 @@ ${textCss.map(line => `        ${line}`).join('\n')}
     await p.pdf(opts)
   }
 
-  debug('convertTxtWithPuppeteerNodeLocal output created')
+  console.log('convertTxtWithPuppeteerNodeLocal output created')
 
   inactivateBrowser(b)
 
@@ -320,13 +320,13 @@ export async function convertMarkdownWithPuppeteerNodeRemote(
 }
 
 export async function convertMarkdownWithPuppeteerNodeLocal(source) {
-  debug('convertMarkdownWithPuppeteerNodeLocal', source)
+  console.log('convertMarkdownWithPuppeteerNodeLocal', source)
 
   const input =
     ConvertMarkdownWithPuppeteerNodeLocalInputModel.parse(source)
 
   const b = await getBrowser(input.proxy ? `${input.proxy}` : undefined)
-  debug('convertMarkdownWithPuppeteerNodeLocal browser loaded')
+  console.log('convertMarkdownWithPuppeteerNodeLocal browser loaded')
 
   const p = await b.newPage()
   const string = marked.parse(
@@ -465,7 +465,7 @@ ${linkCss.map(line => `        ${line}`).join('\n')}
 
   await p.setContent(html, { waitUntil: input.waitUntil })
 
-  debug('convertMarkdownWithPuppeteerNodeLocal page content set')
+  console.log('convertMarkdownWithPuppeteerNodeLocal page content set')
 
   const opts: Record<string, any> = {
     scale: 1,
@@ -487,7 +487,7 @@ ${linkCss.map(line => `        ${line}`).join('\n')}
     await p.pdf(opts)
   }
 
-  debug('convertMarkdownWithPuppeteerNodeLocal output created')
+  console.log('convertMarkdownWithPuppeteerNodeLocal output created')
 
   inactivateBrowser(b)
 

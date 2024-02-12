@@ -183,6 +183,11 @@ export const format_java_with_prettier: Form = {
   },
 }
 
+export const prettier_typescript_trailing_comma_option: List = {
+  form: 'list',
+  list: ['all', 'es5', 'none'],
+}
+
 export const format_typescript_with_prettier: Form = {
   form: 'form',
   link: {
@@ -192,7 +197,10 @@ export const format_typescript_with_prettier: Form = {
     semiColon: { like: 'boolean', need: false },
     indentationSize: { like: 'natural_number', need: false },
     maxLineLength: { like: 'natural_number', need: false },
-    trailingComma: { like: 'boolean', need: false },
+    trailingComma: {
+      like: 'prettier_typescript_trailing_comma_option',
+      need: false,
+    },
     bracketSpacing: { like: 'boolean', need: false },
     bracketSameLine: { like: 'boolean', need: false },
     arrowParentheses: {

@@ -94457,7 +94457,7 @@ export type FormatTypescriptWithPrettier = {
   semiColon?: boolean
   indentationSize?: number
   maxLineLength?: number
-  trailingComma?: boolean
+  trailingComma?: PrettierTypescriptTrailingCommaOption
   bracketSpacing?: boolean
   bracketSameLine?: boolean
   arrowParentheses?: PrettierArrowParensOption
@@ -110392,6 +110392,15 @@ export const PRETTIER_PROSE_WRAP_OPTION = [
 
 export type PrettierProseWrapOption =
   (typeof PRETTIER_PROSE_WRAP_OPTION)[number]
+
+export const PRETTIER_TYPESCRIPT_TRAILING_COMMA_OPTION = [
+  'all',
+  'es5',
+  'none',
+] as const
+
+export type PrettierTypescriptTrailingCommaOption =
+  (typeof PRETTIER_TYPESCRIPT_TRAILING_COMMA_OPTION)[number]
 
 export const PRETTIER_XML_QUOTE_ATTRIBUTES_OPTION = [
   'preserve',

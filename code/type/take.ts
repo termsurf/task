@@ -4085,7 +4085,9 @@ export const FormatTypescriptWithPrettierModel: z.ZodType<Cast.FormatTypescriptW
     semiColon: z.optional(z.boolean()),
     indentationSize: z.optional(z.number().int().gte(0)),
     maxLineLength: z.optional(z.number().int().gte(0)),
-    trailingComma: z.optional(z.boolean()),
+    trailingComma: z.optional(
+      z.lazy(() => PrettierTypescriptTrailingCommaOptionModel),
+    ),
     bracketSpacing: z.optional(z.boolean()),
     bracketSameLine: z.optional(z.boolean()),
     arrowParentheses: z.optional(
@@ -4315,6 +4317,9 @@ export const PrettierPluginModel: z.ZodType<Cast.PrettierPlugin> =
 
 export const PrettierProseWrapOptionModel: z.ZodType<Cast.PrettierProseWrapOption> =
   z.enum(Cast.PRETTIER_PROSE_WRAP_OPTION)
+
+export const PrettierTypescriptTrailingCommaOptionModel: z.ZodType<Cast.PrettierTypescriptTrailingCommaOption> =
+  z.enum(Cast.PRETTIER_TYPESCRIPT_TRAILING_COMMA_OPTION)
 
 export const PrettierXmlQuoteAttributesOptionModel: z.ZodType<Cast.PrettierXmlQuoteAttributesOption> =
   z.enum(Cast.PRETTIER_XML_QUOTE_ATTRIBUTES_OPTION)
