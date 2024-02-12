@@ -50,14 +50,14 @@ export async function getBrowser(proxy?: string, headless = true) {
     return b.browser
   }
 
-  const executablePath = await locateChrome()
+  // const executablePath = await locateChrome()
 
   const config: Record<string, any> = {
     headless,
     args: [],
-    executablePath,
+    // executablePath,
   }
-  const item: Record<string, any> = { active: true, proxy, args: [] }
+  const item: Record<string, any> = { active: true, proxy }
 
   if (proxy) {
     config.push(`--proxy-server=${proxy}`)
