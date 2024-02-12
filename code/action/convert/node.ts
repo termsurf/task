@@ -30,6 +30,8 @@ export {
   supportConvertDocumentWithCalibre,
   supportConvertDocumentWithLibreOffice,
   supportConvertDocumentWithPandoc,
+  supportConvertTxtWithPuppeteer,
+  supportConvertMarkdownWithPuppeteer,
 } from './document/shared.js'
 
 export async function convert<I extends ConvertInputFormat>(

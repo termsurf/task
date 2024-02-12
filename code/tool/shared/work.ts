@@ -30,7 +30,7 @@ export async function requestAndWaitForWorkToComplete<T extends object>(
   }
   const work = (await workResponse.json()) as Work<T>
   while (true) {
-    await wait(1200)
+    await wait(2000)
     const stepResponse = await getRemote(`/work/${work.id}`, controller)
 
     if (stepResponse.status >= 400) {

@@ -182,6 +182,9 @@ dependencies:
   libreoffice-convert:
     specifier: ^1.5.1
     version: 1.5.1
+  locate-chrome:
+    specifier: ^0.1.1
+    version: 0.1.1
   marked:
     specifier: ^12.0.0
     version: 12.0.0
@@ -3145,6 +3148,10 @@ packages:
       is-date-object: 1.0.5
       is-symbol: 1.0.4
 
+  /es6-promise@2.3.0:
+    resolution: {integrity: sha512-oyOjMhyKMLEjOOtvkwg0G4pAzLQ9WdbbeX7WdqKzvYXu+UFgD0Zo/Brq5Q49zNmnGPPzV5rmYvrr0jz1zWx8Iw==}
+    dev: false
+
   /esbuild@0.19.11:
     resolution: {integrity: sha512-HJ96Hev2hX/6i5cDVwcqiJBBtuo9+FeIJOtZ9W1kA5M6AMJRHUZlpYZ1/SbEwtO0ioNAW8rUooVpC/WehY2SfA==}
     engines: {node: '>=12'}
@@ -4610,6 +4617,15 @@ packages:
     engines: {node: '>=6.11.5'}
     dev: true
 
+  /locate-chrome@0.1.1:
+    resolution: {integrity: sha512-87n87RotxqHb/TJoSgW1ayezxZtuki3+QGtfKbTDfjOS0OSKX9xHJv7IW+OK1XPAVl+RVo4M1J4xe7rBmLNsVA==}
+    hasBin: true
+    dependencies:
+      es6-promise: 2.3.0
+      queue-async: 1.2.1
+      userhome: 1.0.0
+    dev: false
+
   /locate-path@5.0.0:
     resolution: {integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==}
     engines: {node: '>=8'}
@@ -5954,6 +5970,10 @@ packages:
       yargs: 15.4.1
     dev: false
 
+  /queue-async@1.2.1:
+    resolution: {integrity: sha512-aPVvlovU79BlPPgEiroL5XO57lZy1WrnyypfpGy25O+VQBbjOgr4XZYL/JVPuYN1zQO0oEH3bd1ZPRPO/nqZ5A==}
+    dev: false
+
   /queue-lit@1.5.2:
     resolution: {integrity: sha512-tLc36IOPeMAubu8BkW8YDBV+WyIgKlYU7zUNs0J5Vk9skSZ4JfGlPOqplP0aHdfv7HL0B2Pg6nwiq60Qc6M2Hw==}
     engines: {node: '>=12'}
@@ -6891,6 +6911,11 @@ packages:
 
   /urlpattern-polyfill@10.0.0:
     resolution: {integrity: sha512-H/A06tKD7sS1O1X2SshBVeA5FLycRpjqiBeqGKmBwBDBy28EnRjORxTNe269KSSr5un5qyWi1iL61wLxpd+ZOg==}
+    dev: false
+
+  /userhome@1.0.0:
+    resolution: {integrity: sha512-ayFKY3H+Pwfy4W98yPdtH1VqH4psDeyW8lYYFzfecR9d6hqLpqhecktvYR3SEEXt7vG0S1JEpciI3g94pMErig==}
+    engines: {node: '>= 0.8.0'}
     dev: false
 
   /util-deprecate@1.0.2:

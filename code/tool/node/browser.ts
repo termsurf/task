@@ -1,10 +1,9 @@
 import { Browser } from 'puppeteer'
 import puppeteer from 'puppeteer-extra'
-import fs from 'fs'
 import __dirname from '~/code/tool/shared/directory.js'
 // add stealth plugin and use defaults (all evasion techniques)
 import StealthPlugin from 'puppeteer-extra-plugin-stealth'
-import { getConfig } from '../shared/config'
+import locateChrome from 'locate-chrome'
 
 puppeteer.use(StealthPlugin())
 
@@ -51,12 +50,21 @@ export async function getBrowser(proxy?: string, headless = true) {
     return b.browser
   }
 
-  const config: Record<string, any> = { headless }
-  const item: Record<string, any> = { active: true, proxy }
+  const executablePath = await locateChrome()
+
+  const config: Record<string, any> = {
+    headless,
+    args: [],
+    executablePath,
+  }
+  const item: Record<string, any> = { active: true, proxy, args: [] }
 
   if (proxy) {
-    config.args = [`--proxy-server=${proxy}`]
+    config.push(`--proxy-server=${proxy}`)
   }
+
+  // disable user-data-dir
+  // config.push('--user-data-dir')
 
   item.browser = await puppeteer.launch(config)
 
