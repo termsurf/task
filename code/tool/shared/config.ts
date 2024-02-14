@@ -1,4 +1,11 @@
-const CONFIG_VARIABLE = ['remote', 'code', 'environment'] as const
+const CONFIG_VARIABLE = [
+  'remote',
+  'code',
+  'environment',
+  'puppeteer-args',
+  'puppeteer-debugging-port',
+  'debug-puppeteer',
+] as const
 
 export const ENVIRONMENT = ['cli', 'server', 'browser'] as const
 
@@ -10,6 +17,9 @@ const CONFIG: Record<Config, any> = {
   remote: DEFAULT_REMOTE_TASK_PATH,
   code: undefined,
   environment: 'cli',
+  'puppeteer-args': ['--no-sandbox', '--disable-setuid-sandbox'],
+  'puppeteer-debugging-port': '9222',
+  'debug-puppeteer': false,
 }
 
 export function configure(name: Config, value: any) {

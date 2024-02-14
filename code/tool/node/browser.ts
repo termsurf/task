@@ -1,9 +1,11 @@
 import { Browser } from 'puppeteer'
-import puppeteer from 'puppeteer'
+// import puppeteer from 'puppeteer-extra'
+import puppeteer from 'puppeteer-core'
 import __dirname from '~/code/tool/shared/directory.js'
 // add stealth plugin and use defaults (all evasion techniques)
 // import StealthPlugin from 'puppeteer-extra-plugin-stealth'
 import locateChrome from 'locate-chrome'
+import { getConfig } from '../shared/config.js'
 
 // puppeteer.use(StealthPlugin())
 
@@ -52,25 +54,24 @@ export async function getBrowser(proxy?: string, headless = true) {
 
   const executablePath = await locateChrome()
 
+  // https://github.com/puppeteer/puppeteer/issues/745
   const config: Record<string, any> = {
     headless: true,
-    args: [
-      // '--no-sandbox',
-      // '--disable-setuid-sandbox',
-      // '--user-data-dir=/tmp',
-    ],
+    args: getConfig('puppeteer-args').slice(0),
     timeout: 0,
     executablePath,
   }
   const item: Record<string, any> = { active: true, proxy }
 
   if (proxy) {
-    config.push(`--proxy-server=${proxy}`)
+    config.args.push(`--proxy-server=${proxy}`)
   }
 
   item.browser = await puppeteer.launch({
-    dumpio: true,
+    dumpio: getConfig('debug-puppeteer'),
     ...config,
+    debuggingPort: getConfig('puppeteer-debugging-port'),
+    devtools: false,
   })
 
   CACHE.push(item as PuppeteerCacheItem)

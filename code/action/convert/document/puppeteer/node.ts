@@ -6,8 +6,9 @@ import {
   ConvertHtmlWithPuppeteerNodeInput,
   TextStyle,
 } from '~/code/type/index.js'
-// import console.log from '~/code/tool/shared/console.log.js'
+// import debug from '~/code/tool/shared/debug.js'
 import { marked } from 'marked'
+import debug from '~/code/tool/shared/debug.js'
 import {
   ConvertTxtWithPuppeteerNodeInput,
   ConvertTxtWithPuppeteerNodeInputModel,
@@ -199,12 +200,12 @@ function marginStyleToCSS(margin) {
 }
 
 export async function convertTxtWithPuppeteerNodeLocal(source) {
-  console.log('convertTxtWithPuppeteerNodeLocal', source)
+  debug('convertTxtWithPuppeteerNodeLocal', source)
 
   const input = ConvertTxtWithPuppeteerNodeLocalInputModel.parse(source)
 
   const b = await getBrowser(input.proxy ? `${input.proxy}` : undefined)
-  console.log('convertTxtWithPuppeteerNodeLocal browser loaded')
+  debug('convertTxtWithPuppeteerNodeLocal browser loaded')
 
   const p = await b.newPage()
   const string = arrayBufferToString(input.input.file.content)
@@ -236,7 +237,7 @@ ${textCss.map(line => `        ${line}`).join('\n')}
 
   await p.setContent(html, { waitUntil: input.waitUntil })
 
-  console.log('convertTxtWithPuppeteerNodeLocal page content set')
+  debug('convertTxtWithPuppeteerNodeLocal page content set')
 
   const opts: Record<string, any> = {
     scale: 1,
@@ -258,7 +259,7 @@ ${textCss.map(line => `        ${line}`).join('\n')}
     await p.pdf(opts)
   }
 
-  console.log('convertTxtWithPuppeteerNodeLocal output created')
+  debug('convertTxtWithPuppeteerNodeLocal output created')
 
   inactivateBrowser(b)
 
@@ -320,13 +321,13 @@ export async function convertMarkdownWithPuppeteerNodeRemote(
 }
 
 export async function convertMarkdownWithPuppeteerNodeLocal(source) {
-  console.log('convertMarkdownWithPuppeteerNodeLocal', source)
+  debug('convertMarkdownWithPuppeteerNodeLocal', source)
 
   const input =
     ConvertMarkdownWithPuppeteerNodeLocalInputModel.parse(source)
 
   const b = await getBrowser(input.proxy ? `${input.proxy}` : undefined)
-  console.log('convertMarkdownWithPuppeteerNodeLocal browser loaded')
+  debug('convertMarkdownWithPuppeteerNodeLocal browser loaded')
 
   const p = await b.newPage()
   const string = marked.parse(
@@ -465,7 +466,7 @@ ${linkCss.map(line => `        ${line}`).join('\n')}
 
   await p.setContent(html, { waitUntil: input.waitUntil })
 
-  console.log('convertMarkdownWithPuppeteerNodeLocal page content set')
+  debug('convertMarkdownWithPuppeteerNodeLocal page content set')
 
   const opts: Record<string, any> = {
     scale: 1,
@@ -487,7 +488,7 @@ ${linkCss.map(line => `        ${line}`).join('\n')}
     await p.pdf(opts)
   }
 
-  console.log('convertMarkdownWithPuppeteerNodeLocal output created')
+  debug('convertMarkdownWithPuppeteerNodeLocal output created')
 
   inactivateBrowser(b)
 
@@ -521,7 +522,7 @@ export async function convertHtmlToPngWithPuppeteerNode(
   // inactivateBrowser(b)
 }
 
-// inspectWebpage().then(data => console.log(data.fonts))
+// inspectWebpage().then(data => debug(data.fonts))
 
 // https://stackoverflow.com/questions/1403087/how-can-i-convert-an-html-table-to-csv
 // https://stackoverflow.com/questions/37498713/how-to-export-an-html-table-as-a-xlsx-file

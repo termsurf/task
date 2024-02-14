@@ -1,6 +1,6 @@
 {
   "name": "@termsurf/task",
-  "version": "0.1.52",
+  "version": "0.1.70",
   "main": "./host/code/node.js",
   "browser": "./host/code/browser.js",
   "type": "module",
@@ -33,7 +33,6 @@
     "@termsurf/task-host": "^0.0.3"
   },
   "dependencies": {
-    "puppeteer": "^22.0.0",
     "@epic-web/invariant": "^1.0.0",
     "@lancejpollard/color-splat.js": "^0.0.4",
     "@lancejpollard/gematria.js": "^0.3.2",
@@ -110,6 +109,8 @@
     "prettier-plugin-nginx": "^1.0.3",
     "prettier-plugin-rust": "^0.1.9",
     "prettier-plugin-toml": "^2.0.1",
+    "puppeteer": "^22.0.0",
+    "puppeteer-core": "^22.0.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
     "qrcode": "^1.5.3",

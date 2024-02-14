@@ -239,9 +239,12 @@ dependencies:
   puppeteer:
     specifier: ^22.0.0
     version: 22.0.0(typescript@5.3.3)
+  puppeteer-core:
+    specifier: ^22.0.0
+    version: 22.0.0
   puppeteer-extra:
     specifier: ^3.3.6
-    version: 3.3.6(puppeteer@22.0.0)
+    version: 3.3.6(puppeteer-core@22.0.0)(puppeteer@22.0.0)
   puppeteer-extra-plugin-stealth:
     specifier: ^2.11.2
     version: 2.11.2(puppeteer-extra@3.3.6)
@@ -5858,7 +5861,7 @@ packages:
         optional: true
     dependencies:
       debug: 4.3.4
-      puppeteer-extra: 3.3.6(puppeteer@22.0.0)
+      puppeteer-extra: 3.3.6(puppeteer-core@22.0.0)(puppeteer@22.0.0)
       puppeteer-extra-plugin: 3.2.3(puppeteer-extra@3.3.6)
       puppeteer-extra-plugin-user-preferences: 2.4.1(puppeteer-extra@3.3.6)
     transitivePeerDependencies:
@@ -5879,7 +5882,7 @@ packages:
     dependencies:
       debug: 4.3.4
       fs-extra: 10.1.0
-      puppeteer-extra: 3.3.6(puppeteer@22.0.0)
+      puppeteer-extra: 3.3.6(puppeteer-core@22.0.0)(puppeteer@22.0.0)
       puppeteer-extra-plugin: 3.2.3(puppeteer-extra@3.3.6)
       rimraf: 3.0.2
     transitivePeerDependencies:
@@ -5900,7 +5903,7 @@ packages:
     dependencies:
       debug: 4.3.4
       deepmerge: 4.3.1
-      puppeteer-extra: 3.3.6(puppeteer@22.0.0)
+      puppeteer-extra: 3.3.6(puppeteer-core@22.0.0)(puppeteer@22.0.0)
       puppeteer-extra-plugin: 3.2.3(puppeteer-extra@3.3.6)
       puppeteer-extra-plugin-user-data-dir: 2.4.1(puppeteer-extra@3.3.6)
     transitivePeerDependencies:
@@ -5922,12 +5925,12 @@ packages:
       '@types/debug': 4.1.12
       debug: 4.3.4
       merge-deep: 3.0.3
-      puppeteer-extra: 3.3.6(puppeteer@22.0.0)
+      puppeteer-extra: 3.3.6(puppeteer-core@22.0.0)(puppeteer@22.0.0)
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /puppeteer-extra@3.3.6(puppeteer@22.0.0):
+  /puppeteer-extra@3.3.6(puppeteer-core@22.0.0)(puppeteer@22.0.0):
     resolution: {integrity: sha512-rsLBE/6mMxAjlLd06LuGacrukP2bqbzKCLzV1vrhHFavqQE/taQ2UXv3H5P0Ls7nsrASa+6x3bDbXHpqMwq+7A==}
     engines: {node: '>=8'}
     peerDependencies:
@@ -5946,6 +5949,7 @@ packages:
       debug: 4.3.4
       deepmerge: 4.3.1
       puppeteer: 22.0.0(typescript@5.3.3)
+      puppeteer-core: 22.0.0
     transitivePeerDependencies:
       - supports-color
     dev: false
