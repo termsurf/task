@@ -18,7 +18,7 @@ export type Work<T> = {
   output?: T
   status: 'complete' | 'queued' | 'error'
 }
-
+// The user aborted a request.
 export async function requestAndWaitForWorkToComplete<T extends object>(
   request: Request,
   controller?: AbortController,

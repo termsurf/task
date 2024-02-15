@@ -79,6 +79,7 @@
     "docx": "^8.5.0",
     "encode-utf8": "^2.0.0",
     "eslint-import-resolver-alias": "^1.1.2",
+    "event-iterator": "^2.0.0",
     "fast-content-type-parse": "^1.1.0",
     "fast-glob": "^3.3.2",
     "fflate": "^0.8.1",

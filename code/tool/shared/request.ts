@@ -1,8 +1,6 @@
 import assert from 'assert'
-import { RequestModel } from '../../type/index.js'
 import { getConfig } from '../shared/config.js'
-import { wait } from './timer.js'
-import kink from './kink.js'
+import Kink from '@termsurf/kink'
 
 export type RequestBody = FormData | object
 
@@ -10,6 +8,16 @@ export type Request = {
   path: string
   method: string
   body: RequestBody
+}
+
+export async function checkRemote() {
+  const res = await getRemote(`/check`)
+  if (res.status >= 400) {
+    const error = await res.json()
+    throw new Kink(error)
+  }
+  const json = await res.json()
+  return json
 }
 
 export async function postRemote(
