@@ -1,6 +1,8 @@
 import assert from 'assert'
+import { EventIterator } from 'event-iterator'
 import { getConfig } from '../shared/config.js'
 import Kink from '@termsurf/kink'
+import { wait } from './timer.js'
 
 export type RequestBody = FormData | object
 
@@ -10,14 +12,98 @@ export type Request = {
   body: RequestBody
 }
 
-export async function checkRemote() {
-  const res = await getRemote(`/check`)
-  if (res.status >= 400) {
-    const error = await res.json()
-    throw new Kink(error)
+export type RequestProgress = {
+  type: 'request-progress'
+  request: Request
+  percentComplete: number
+}
+
+export type RequestComplete = {
+  type: 'request-complete'
+  request: Request
+  response: any
+}
+
+export type RequestFailure = {
+  type: 'request-failure'
+  request: Request
+  response?: any
+}
+
+export type CallXhr = RequestProgress | RequestComplete | RequestFailure
+
+export async function* callXhr(
+  request: Request,
+): EventIterator<CallXhr> {
+  return new EventIterator<CallXhr>(({ push }) => {
+    const xhr = new XMLHttpRequest()
+    let body
+    if (typeof request.body === 'string') {
+      body = request.body
+      xhr.setRequestHeader('content-type', 'application/json')
+      xhr.responseType = 'json'
+    } else if (request.body instanceof FormData) {
+      body = request.body
+      // headers['content-type'] = 'multipart/form-data'
+    } else {
+      body = JSON.stringify(body)
+      xhr.setRequestHeader('content-type', 'application/json')
+      xhr.responseType = 'json'
+    }
+
+    const isAsync = true
+
+    xhr.open(request.method, request.path, isAsync)
+
+    xhr.upload.addEventListener('progress', (e: ProgressEvent) => {
+      const percentComplete = (e.loaded / e.total) * 100
+      push({ type: 'request-progress', percentComplete, request })
+    })
+
+    xhr.addEventListener('load', function () {
+      if (this.status == 200) {
+        push({
+          type: 'request-complete',
+          request,
+          response: xhr.response,
+        })
+      } else {
+        push({
+          type: 'request-failure',
+          request,
+          response: xhr.response,
+        })
+      }
+    })
+
+    xhr.addEventListener('error', function () {
+      push({ type: 'request-failure', request, response: xhr.response })
+    })
+
+    xhr.send(body)
+  })
+}
+
+export async function checkRemote(
+  { maxAttempts = 10 }: { maxAttempts: number } = { maxAttempts: 10 },
+) {
+  let i = 1
+  while (true) {
+    const res = await getRemote(`/check`)
+    if (res.status >= 400) {
+      if (i === maxAttempts) {
+        const error = await res.json()
+        throw new Kink(error)
+      } else {
+        i++
+        await wait(10000)
+        continue
+      }
+    } else {
+      const json = await res.json()
+      return json
+    }
   }
-  const json = await res.json()
-  return json
 }
 
 export async function postRemote(
