@@ -31,10 +31,10 @@ export async function* requestAndWaitForWorkToComplete<
   T extends object,
 >(
   request: Request,
-  controller?: AbortController,
+  signal?: AbortSignal,
 ): AsyncGenerator<CallXhr | Output<T>> {
   let work: Work<T> | undefined = undefined
-  for await (const data of callXhr(request)) {
+  for await (const data of callXhr(request, signal)) {
     yield data
 
     switch (data.type) {
@@ -53,8 +53,9 @@ export async function* requestAndWaitForWorkToComplete<
       throw new Kink(work.output as KinkMesh)
     }
 
-    await wait(2000)
-    const workResponse = await getRemote(`/work/${work.id}`, controller)
+    await wait(2000, signal)
+
+    const workResponse = await getRemote(`/work/${work.id}`, signal)
 
     if (workResponse.status >= 400) {
       const error = await workResponse.json()
@@ -72,10 +73,11 @@ export async function resolveAsArrayBuffer(request: Request) {
 
 export async function* resolveWorkFileAsBlob(
   request: Request,
-  controller?: AbortController,
+  signal?: AbortSignal,
 ): AsyncGenerator<CallXhr | Output<Blob>> {
   for await (const data of requestAndWaitForWorkToComplete<WorkFile>(
     request,
+    signal,
   )) {
     switch (data.type) {
       case 'output':
@@ -83,7 +85,7 @@ export async function* resolveWorkFileAsBlob(
           data.output.file.path,
           {
             method: 'GET',
-            controller,
+            signal,
           },
         )
         const arrayBuffer = await fileResponse.arrayBuffer()

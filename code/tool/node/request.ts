@@ -8,11 +8,20 @@ import { saveRemoteFileNode } from './file.js'
 export async function resolveWorkFileNode<T extends WorkFile>(
   request: Request,
   outputPath: string,
+  signal?: AbortSignal,
 ) {
-  const controller = new AbortController()
-  const output = await requestAndWaitForWorkToComplete<T>(
+  for await (const data of requestAndWaitForWorkToComplete<T>(
     request,
-    controller,
-  )
-  await saveRemoteFileNode(output.file.path, outputPath, controller)
+    signal,
+  )) {
+    switch (data.type) {
+      case 'output':
+        await saveRemoteFileNode(
+          data.output.file.path,
+          outputPath,
+          signal,
+        )
+        break
+    }
+  }
 }

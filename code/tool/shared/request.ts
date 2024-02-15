@@ -34,6 +34,7 @@ export type CallXhr = RequestProgress | RequestComplete | RequestFailure
 
 export async function* callXhr(
   request: Request,
+  signal?: AbortSignal,
 ): EventIterator<CallXhr> {
   return new EventIterator<CallXhr>(({ push }) => {
     const xhr = new XMLHttpRequest()
@@ -55,12 +56,22 @@ export async function* callXhr(
 
     xhr.open(request.method, request.path, isAsync)
 
+    const handleAbort = () => {
+      xhr.abort()
+
+      signal?.removeEventListener('abort', handleAbort)
+    }
+
+    signal?.addEventListener('abort', handleAbort)
+
     xhr.upload.addEventListener('progress', (e: ProgressEvent) => {
       const percentComplete = (e.loaded / e.total) * 100
       push({ type: 'request-progress', percentComplete, request })
     })
 
     xhr.addEventListener('load', function () {
+      signal?.removeEventListener('abort', handleAbort)
+
       if (this.status == 200) {
         push({
           type: 'request-complete',
@@ -77,6 +88,8 @@ export async function* callXhr(
     })
 
     xhr.addEventListener('error', function () {
+      signal?.removeEventListener('abort', handleAbort)
+
       push({ type: 'request-failure', request, response: xhr.response })
     })
 
@@ -85,18 +98,23 @@ export async function* callXhr(
 }
 
 export async function checkRemote(
-  { maxAttempts = 10 }: { maxAttempts: number } = { maxAttempts: 10 },
+  {
+    maxAttempts = 10,
+    signal,
+  }: { maxAttempts: number; signal?: AbortSignal } = {
+    maxAttempts: 10,
+  },
 ) {
   let i = 1
   while (true) {
-    const res = await getRemote(`/check`)
+    const res = await getRemote(`/check`, signal)
     if (res.status >= 400) {
       if (i === maxAttempts) {
         const error = await res.json()
         throw new Kink(error)
       } else {
         i++
-        await wait(10000)
+        await wait(10000, signal)
         continue
       }
     } else {
@@ -106,10 +124,7 @@ export async function checkRemote(
   }
 }
 
-export async function postRemote(
-  input: Request,
-  controller?: AbortController,
-) {
+export async function postRemote(input: Request, signal?: AbortSignal) {
   const remote = getConfig('remote')
   assert(typeof remote === 'string')
 
@@ -131,20 +146,17 @@ export async function postRemote(
     method: 'POST',
     headers,
     body,
-    controller,
+    signal,
   })
 }
 
-export async function getRemote(
-  path: string,
-  controller?: AbortController,
-) {
+export async function getRemote(path: string, signal?: AbortSignal) {
   const remote = getConfig('remote')
   assert(typeof remote === 'string')
 
   return fetchWithTimeout(`${remote}${path}`, {
     method: 'GET',
-    controller,
+    signal,
   })
 }
 
@@ -166,7 +178,6 @@ export function isRemoteRequest(input) {
 
 export type FetchOptions = RequestInit & {
   timeout?: number
-  controller?: AbortController
 }
 
 export async function fetchWithTimeout(
@@ -175,15 +186,12 @@ export async function fetchWithTimeout(
 ) {
   const { timeout = 20000 } = options
 
-  const controller = options.controller || new AbortController()
-  const id = setTimeout(() => controller.abort('timeout'), timeout)
-
   const response = await fetch(resource, {
     ...options,
-    signal: controller.signal,
+    signal: (AbortSignal as any).any(
+      [options.signal, AbortSignal.timeout(timeout)].filter(x => x),
+    ),
   })
-
-  clearTimeout(id)
 
   return response
 }

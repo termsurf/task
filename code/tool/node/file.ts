@@ -15,14 +15,15 @@ export async function resolveRemoteFile({
   path,
   scope,
   extension,
+  signal,
 }: {
   path: string
   scope: string
   extension: string
+  signal?: AbortSignal
 }) {
-  const controller = new AbortController()
   const localPath = await generateFilePath(scope, extension)
-  await saveRemoteFileNodeAndCleanupOnError(path, localPath, controller)
+  await saveRemoteFileNodeAndCleanupOnError(path, localPath, signal)
   return localPath
 }
 
@@ -45,15 +46,15 @@ export async function createStreamableFile(
 export async function saveRemoteFileNode(
   remotePath: string,
   outputPath: string,
-  controller?: AbortController,
+  signal?: AbortSignal,
 ) {
   return new Promise((res, rej) => {
-    fetchWithTimeout(remotePath, { controller }).then(r => {
+    fetchWithTimeout(remotePath, { signal }).then(r => {
       if (r.body) {
         return Readable.fromWeb(r.body as ReadableStreamWeb<any>)
           .pipe(
             fs.createWriteStream(outputPath, {
-              signal: controller?.signal,
+              signal,
             }),
           )
           .on('error', rej)
@@ -65,9 +66,9 @@ export async function saveRemoteFileNode(
 
 export async function readRemoteFileNode(
   remotePath: string,
-  controller?: AbortController,
+  signal?: AbortSignal,
 ) {
-  const r = await fetchWithTimeout(remotePath, { controller })
+  const r = await fetchWithTimeout(remotePath, { signal })
   const buffer = await r.arrayBuffer()
   return buffer
 }
@@ -75,10 +76,10 @@ export async function readRemoteFileNode(
 export async function saveRemoteFileNodeAndCleanupOnError(
   remotePath: string,
   outputPath: string,
-  controller?: AbortController,
+  signal?: AbortSignal,
 ) {
   try {
-    await saveRemoteFileNode(remotePath, outputPath, controller)
+    await saveRemoteFileNode(remotePath, outputPath, signal)
   } catch (e) {
     if (await fsp.stat(outputPath)) {
       await fsp.unlink(outputPath)
@@ -89,8 +90,8 @@ export async function saveRemoteFileNodeAndCleanupOnError(
 
 export async function saveAllRemoteFilesLocally(
   files: Array<FileLink>,
+  signal?: AbortSignal,
 ) {
-  const controller = new AbortController()
   return Promise.all(
     files.map(async fileLink => {
       switch (fileLink.path.type) {
@@ -100,7 +101,7 @@ export async function saveAllRemoteFilesLocally(
           return saveRemoteFileNodeAndCleanupOnError(
             fileLink.path.href,
             tmpPath,
-            controller,
+            signal,
           )
         }
         case 'ftps-uri':

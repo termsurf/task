@@ -28,22 +28,6 @@ export function isZodError<I>(
   return !input.success && 'error' in input
 }
 
-async function timeCall(resource: string, mesh: TimeCallLoad = {}) {
-  const { timeout = 20000 } = mesh
-
-  const controller = new AbortController()
-  const id = setTimeout(() => controller.abort('timeout'), timeout)
-
-  const response = await fetch(resource, {
-    ...mesh,
-    signal: controller.signal,
-  })
-
-  clearTimeout(id)
-
-  return response
-}
-
 export function loadKink(error: any) {
   // const back: KinkBack = loadKinkList(error)
   // if (back.load.length === 1) {
