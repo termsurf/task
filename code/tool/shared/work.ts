@@ -26,13 +26,17 @@ export type Output<T> = {
   output: T
 }
 
+export type Processing = {
+  type: 'processing'
+}
+
 // export // The user aborted a request.
 export async function* requestAndWaitForWorkToComplete<
   T extends object,
 >(
   request: Request,
   signal?: AbortSignal,
-): AsyncGenerator<CallXhr | Output<T>> {
+): AsyncGenerator<CallXhr | Output<T> | Processing> {
   let work: Work<T> | undefined = undefined
   for await (const data of callXhr(request, signal)) {
     yield data
@@ -46,13 +50,15 @@ export async function* requestAndWaitForWorkToComplete<
     }
   }
 
-  while (work) {
-    if (work.status === 'complete') {
-      yield { type: 'output', output: work.output as T }
-    } else if (work.status === 'error') {
-      throw new Kink(work.output as KinkMesh)
-    }
+  if (work?.status === 'complete') {
+    yield { type: 'output', output: work.output as T }
+  } else if (work?.status === 'error') {
+    throw new Kink(work.output as KinkMesh)
+  }
 
+  yield { type: 'processing' }
+
+  while (work) {
     await wait(2000, signal)
 
     const workResponse = await getRemote(`/work/${work.id}`, signal)
@@ -63,6 +69,13 @@ export async function* requestAndWaitForWorkToComplete<
     }
 
     work = await workResponse.json()
+
+    if (work?.status === 'complete') {
+      yield { type: 'output', output: work.output as T }
+      return
+    } else if (work?.status === 'error') {
+      throw new Kink(work.output as KinkMesh)
+    }
   }
 }
 
@@ -74,7 +87,7 @@ export async function resolveAsArrayBuffer(request: Request) {
 export async function* resolveWorkFileAsBlob(
   request: Request,
   signal?: AbortSignal,
-): AsyncGenerator<CallXhr | Output<Blob>> {
+): AsyncGenerator<CallXhr | Output<Blob> | Processing> {
   for await (const data of requestAndWaitForWorkToComplete<WorkFile>(
     request,
     signal,

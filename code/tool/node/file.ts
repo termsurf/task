@@ -9,7 +9,6 @@ import { fetchWithTimeout } from '../shared/request.js'
 import { FileLink } from '../shared/file.js'
 import { tmpdir } from 'os'
 import { getRandomId } from './id.js'
-import { arrayBufferToString } from '../shared/string.js'
 
 export async function resolveRemoteFile({
   path,
