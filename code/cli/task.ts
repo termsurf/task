@@ -7,10 +7,10 @@ import { BuildFormatInputOutputModel, Task } from '~/code/type/index'
 import kink from '~/code/tool/shared/kink'
 import { logOutput, logStart, setLoggingStyle } from './logging'
 import { buildInputMapping, transferInput } from './parse'
-import {
-  testConvertFontWithFontForge,
-  testConvertImageWithImageMagick,
-} from '../action/convert/shared'
+import { testConvertImageWithImageMagick } from '../action/convert/image/imagemagick/shared'
+// import {
+//   testConvertFontWithFontForge,
+// }
 import { convert } from './internal'
 import {
   testConvertDocumentWithCalibre,
@@ -90,12 +90,7 @@ export async function call(task: Task, source) {
       //   }
       // }
 
-      if (
-        testConvertTxtWithPuppeteer(
-          base.input.format,
-          base.output.format,
-        )
-      ) {
+      if (testConvertTxtWithPuppeteer(base)) {
         const form = mesh.convert_txt_with_puppeteer_node_input
         if (source.help) {
           // return showHelpForConvert(form)
@@ -104,8 +99,10 @@ export async function call(task: Task, source) {
 
         try {
           spinner = logStart(`Converting document...`)
-          const out = await convert(
-            transferInput(source, buildInputMapping(mesh, form)),
+          const out = await resolve(
+            convert(
+              transferInput(source, buildInputMapping(mesh, form)),
+            ),
           )
           spinner?.stop()
           if (typeof out === 'object' && 'output' in out) {

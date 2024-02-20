@@ -6,14 +6,12 @@ import {
   ConvertFontWithFontForgeBrowserRemoteInput,
 } from '~/code/type/index'
 import { buildFormDataRequestToConvert } from '../shared'
-import {
-  NativeOptions,
-  WorkFileAsBlob,
-  resolveWorkFileAsBlob,
-} from '~/code/tool/shared/work'
+import { WorkFileAsBlob } from '~/code/tool/shared/work'
+import { NativeOptions } from '~/code/tool/shared/request'
 import kink from '~/code/tool/shared/kink'
 import { testConvertFontWithFontForge } from './shared'
 import Observable from 'zen-observable'
+import { resolveWorkFileAsBlob } from '~/code/tool/browser/work'
 
 export function convertFontWithFontForgeBrowser(
   source: ConvertFontWithFontForgeBrowserInput,

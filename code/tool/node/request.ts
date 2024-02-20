@@ -1,8 +1,5 @@
 import { Request } from '../shared/request'
-import {
-  WorkFile,
-  requestAndWaitForWorkToComplete,
-} from '../shared/work'
+import { WorkFile } from '../shared/work'
 import { saveRemoteFileNode } from './file'
 
 export async function resolveWorkFileNode<T extends WorkFile>(

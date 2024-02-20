@@ -1,10 +1,13 @@
 import assert from 'assert'
-import Observable from 'zen-observable'
 import { getConfig } from '../shared/config'
 import Kink from '@termsurf/kink'
 import { wait } from './timer'
 
 export type RequestBody = FormData | object
+
+export type NativeOptions = {
+  signal?: AbortSignal
+}
 
 export type Request = {
   path: string
@@ -30,83 +33,10 @@ export type RequestFailure = {
   response?: any
 }
 
-export type CallXhr = RequestProgress | RequestComplete | RequestFailure
-
-export function callXhr(
-  request: Request,
-  signal?: AbortSignal,
-): Observable<CallXhr> {
-  return new Observable<CallXhr>(observer => {
-    const xhr = new XMLHttpRequest()
-
-    const isAsync = true
-
-    xhr.open(request.method, request.path, isAsync)
-
-    let body
-    if (typeof request.body === 'string') {
-      body = request.body
-      xhr.setRequestHeader('content-type', 'application/json')
-      xhr.responseType = 'json'
-    } else if (request.body instanceof FormData) {
-      body = request.body
-      // headers['content-type'] = 'multipart/form-data'
-    } else {
-      body = JSON.stringify(body)
-      xhr.setRequestHeader('content-type', 'application/json')
-      xhr.responseType = 'json'
-    }
-
-    const handleAbort = () => {
-      xhr.abort()
-
-      signal?.removeEventListener('abort', handleAbort)
-    }
-
-    signal?.addEventListener('abort', handleAbort)
-
-    xhr.upload.addEventListener('progress', (e: ProgressEvent) => {
-      const percentComplete = (e.loaded / e.total) * 100
-      observer.next({
-        type: 'request-progress',
-        percentComplete,
-        request,
-      })
-    })
-
-    xhr.addEventListener('load', function () {
-      signal?.removeEventListener('abort', handleAbort)
-
-      if (this.status == 200) {
-        observer.next({
-          type: 'request-complete',
-          request,
-          response: JSON.parse(xhr.response),
-        })
-      } else {
-        observer.next({
-          type: 'request-failure',
-          request,
-          response: JSON.parse(xhr.response),
-        })
-      }
-
-      observer.complete()
-    })
-
-    xhr.addEventListener('error', function () {
-      signal?.removeEventListener('abort', handleAbort)
-
-      observer.next({
-        type: 'request-failure',
-        request,
-        response: xhr.response,
-      })
-    })
-
-    xhr.send(body)
-  })
-}
+export type RequestCycle =
+  | RequestProgress
+  | RequestComplete
+  | RequestFailure
 
 export async function checkRemote(
   {
