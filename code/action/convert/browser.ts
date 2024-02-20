@@ -196,26 +196,26 @@ export type ConvertImageWithImageMagick<
 // })
 // out.file.path
 
-export function convert<I extends FontFormat>(
+export async function convert<I extends FontFormat>(
   source: ConvertWithFontForge<I>,
   native?: NativeOptions,
-): Observable<WorkFileAsBlob>
-export function convert<I extends 'txt'>(
+): Promise<WorkFileAsBlob>
+export async function convert<I extends 'txt'>(
   source: ConvertTxtWithPuppeteer<I>,
-): Observable<WorkFileAsBlob>
-export function convert<I extends 'markdown'>(
+): Promise<WorkFileAsBlob>
+export async function convert<I extends 'markdown'>(
   source: ConvertMarkdownWithPuppeteer<I>,
-): Observable<WorkFileAsBlob>
+): Promise<WorkFileAsBlob>
 // export async function convert<
 //   I extends ConvertInput['ffmpeg']['input'],
 // >(source: ConvertVideoWithFfmpeg<I>): Promise<ConvertOutput>
 // export async function convert<I extends ConvertInput['image']['input']>(
 //   source: ConvertImageWithImageMagick<I>,
 // ): Promise<ConvertOutput>
-export function convert(
+export async function convert(
   source,
   native?: NativeOptions,
-): Observable<WorkFileAsBlob> {
+): Promise<WorkFileAsBlob> {
   if (testConvertTxtWithPuppeteerBrowser(source)) {
     return convertTxtWithPuppeteerBrowser(source, native)
   }

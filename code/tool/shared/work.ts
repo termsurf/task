@@ -1,8 +1,13 @@
 import Kink, { KinkMesh } from '@termsurf/kink'
 import Observable from 'zen-observable'
-import { RequestCycle, getRemote } from './request'
+import {
+  NativeOptions,
+  RequestResponseCycle,
+  getRemote,
+} from './request'
 import { wait } from './timer'
 import kink from './kink'
+import { Request } from './request'
 
 export type WorkFile = {
   file: {
@@ -34,60 +39,62 @@ export type Ping = {
   type: 'ping'
 }
 
-export function handleWorkRequestComplete<T>(
+export async function handleWorkRequestComplete<T>(
+  request: Request,
   work: Work<T>,
-  signal?: AbortSignal,
-) {
-  return new Observable<Output<T> | Processing | Ping>(observer => {
+  native?: NativeOptions,
+): Promise<T> {
+  return new Promise(async (res, rej) => {
+    const signal = native?.signal
+    const onUpdate = native?.onUpdate
+
     const handleAbort = () => {
       signal?.removeEventListener('abort', handleAbort)
-      observer.error(kink('abort_error', { link: signal?.reason }))
+      rej(kink('abort_error', { link: signal?.reason }))
     }
 
     signal?.addEventListener('abort', handleAbort)
     signal?.throwIfAborted()
 
     if (work.status === 'complete') {
-      observer.next({ type: 'output', output: work.output as T })
+      res(work.output as T)
     } else if (work.status === 'error') {
-      observer.error(new Kink(work.output as KinkMesh))
+      return rej(new Kink(work.output as KinkMesh))
     }
 
-    observer.next({ type: 'processing' })
+    await onUpdate?.({
+      method: 'GET',
+      path: `/work/${work.id}`,
+      type: 'response-waiting',
+    })
 
-    loop()
-      .then(() => {
-        observer.complete()
-      })
-      .catch(e => observer.error(e))
+    while (work) {
+      await wait(2000, signal)
 
-    return () => {
-      signal?.removeEventListener('abort', handleAbort)
-    }
+      const workResponse = await getRemote(`/work/${work.id}`, signal)
 
-    async function loop() {
-      while (work) {
-        await wait(2000, signal)
+      if (workResponse.status >= 400) {
+        const error = await workResponse.json()
+        return rej(new Kink(error))
+      }
 
-        const workResponse = await getRemote(`/work/${work.id}`, signal)
+      work = await workResponse.json()
 
-        if (workResponse.status >= 400) {
-          const error = await workResponse.json()
-          observer.error(new Kink(error))
-        }
+      if (signal?.aborted) {
+        return rej(kink('abort_error', { link: signal?.reason }))
+      }
 
-        work = await workResponse.json()
-
-        if (work) {
-          if (work.status === 'complete') {
-            observer.next({ type: 'output', output: work.output as T })
-            // observer.complete()
-            return
-          } else if (work.status === 'error') {
-            observer.error(new Kink(work.output as KinkMesh))
-          } else {
-            observer.next({ type: 'ping' })
-          }
+      if (work) {
+        if (work.status === 'complete') {
+          return res(work.output as T)
+        } else if (work.status === 'error') {
+          return rej(new Kink(work.output as KinkMesh))
+        } else {
+          onUpdate?.({
+            method: 'GET',
+            path: `/work/${work.id}`,
+            type: 'response-waiting',
+          })
         }
       }
     }
@@ -95,7 +102,7 @@ export function handleWorkRequestComplete<T>(
 }
 
 export type WorkFileAsBlob =
-  | RequestCycle
+  | RequestResponseCycle
   | Output<WorkFileContent>
   | Processing
   | Ping

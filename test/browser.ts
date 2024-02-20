@@ -129,67 +129,8 @@ async function test() {
   const controller1 = new AbortController()
 
   try {
-    await task
-      .convert(
-        {
-          handle: 'remote',
-          input: {
-            format: 'ttf',
-            file: {
-              sha256:
-                'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad',
-              content: new Blob(['foo']),
-            },
-          },
-          output: { format: 'otf' },
-        },
-        {
-          signal: controller1.signal,
-        },
-      )
-      .forEach(data => {
-        console.log('convert', data)
-        if (data.type === 'request-progress') {
-          controller1.abort()
-        }
-      })
-  } catch (e) {
-    // console.log(await makeKinkText(e as Kink))
-  }
-
-  const controller = new AbortController()
-
-  try {
-    await task
-      .convert(
-        {
-          handle: 'remote',
-          input: {
-            format: 'otf',
-            file: {
-              sha256:
-                'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad',
-              content: new Blob(['foo']),
-            },
-          },
-          output: { format: 'ttf' },
-        },
-        {
-          signal: controller.signal,
-        },
-      )
-      .forEach(data => {
-        if (data.type === 'request-progress') {
-          controller.abort()
-        }
-      })
-  } catch (e) {
-    console.log(makeSiteKinkText(e))
-  }
-
-  try {
-    await task
-      .convert({
+    const out = await task.convert(
+      {
         handle: 'remote',
         input: {
           format: 'ttf',
@@ -199,11 +140,68 @@ async function test() {
             content: new Blob(['foo']),
           },
         },
-        output: { format: 'woff2' },
-      })
-      .forEach(data => {
-        console.log('convert', data)
-      })
+        output: { format: 'otf' },
+      },
+      {
+        signal: controller1.signal,
+        onUpdate: data => {
+          console.log('convert', data)
+          if (data.type === 'request-progress') {
+            // controller1.abort()
+          }
+        },
+      },
+    )
+    console.log(out)
+  } catch (e) {
+    console.log(makeSiteKinkText(e))
+  }
+
+  const controller = new AbortController()
+
+  try {
+    const out = await task.convert(
+      {
+        handle: 'remote',
+        input: {
+          format: 'otf',
+          file: {
+            sha256:
+              'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad',
+            content: new Blob(['foo']),
+          },
+        },
+        output: { format: 'ttf' },
+      },
+      {
+        signal: controller.signal,
+        onUpdate: data => {
+          console.log(data)
+          if (data.type === 'request-progress') {
+            controller.abort()
+          }
+        },
+      },
+    )
+    console.log(out)
+  } catch (e) {
+    console.log(makeSiteKinkText(e))
+  }
+
+  try {
+    const out = await task.convert({
+      handle: 'remote',
+      input: {
+        format: 'ttf',
+        file: {
+          sha256:
+            'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad',
+          content: new Blob(['foo']),
+        },
+      },
+      output: { format: 'woff2' },
+    })
+    console.log(out)
   } catch (e) {
     console.log(makeSiteKinkText(e))
   }

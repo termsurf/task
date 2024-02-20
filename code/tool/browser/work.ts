@@ -1,7 +1,7 @@
 import Observable from 'zen-observable'
 import {
   Request,
-  RequestCycle,
+  RequestResponseCycle,
   fetchWithTimeout,
 } from '../shared/request'
 import { NativeOptions } from '~/code/tool/shared/request'
@@ -15,22 +15,23 @@ import {
   handleWorkRequestComplete,
 } from '~/code/tool/shared/work'
 import Kink, { KinkMesh } from '@termsurf/kink'
-import {
-  closeAllSubscriptions,
-  removeSubscription,
-} from '../shared/observable'
 import kink from '../shared/kink'
 
-export function callXhrBrowser(
+export async function callXhrBrowser(
   request: Request,
-  signal?: AbortSignal,
-): Observable<RequestCycle> {
-  return new Observable<RequestCycle>(observer => {
+  native?: NativeOptions,
+): Promise<any> {
+  return new Promise((res, rej) => {
     const xhr = new XMLHttpRequest()
+    const signal = native?.signal
+    const onUpdate = native?.onUpdate
 
     const isAsync = true
 
     xhr.open(request.method, request.path, isAsync)
+
+    signal?.addEventListener('abort', handleAbort)
+    signal?.throwIfAborted()
 
     let body
     if (typeof request.body === 'string') {
@@ -46,211 +47,177 @@ export function callXhrBrowser(
       xhr.responseType = 'json'
     }
 
-    const handleAbort = () => {
-      xhr.abort()
-
+    function handleAbort() {
+      xhr.upload.removeEventListener('progress', handleProgress)
       signal?.removeEventListener('abort', handleAbort)
+      xhr.abort()
+      handleError(kink('abort_error', { link: signal?.reason }))
     }
 
-    signal?.addEventListener('abort', handleAbort)
-
-    xhr.upload.addEventListener('progress', (e: ProgressEvent) => {
+    function handleProgress(e: ProgressEvent) {
       const percentComplete = (e.loaded / e.total) * 100
-      observer.next({
+      onUpdate?.({
+        ...request,
         type: 'request-progress',
         percentComplete,
-        request,
       })
-    })
+    }
+
+    xhr.upload.addEventListener('progress', handleProgress)
 
     xhr.addEventListener('load', function () {
       signal?.removeEventListener('abort', handleAbort)
+      xhr.upload.removeEventListener('progress', handleProgress)
+
+      const data = JSON.parse(xhr.response)
 
       if (this.status == 200) {
-        observer.next({
-          type: 'request-complete',
-          request,
-          response: JSON.parse(xhr.response),
+        onUpdate?.({
+          ...request,
+          type: 'response',
+          data,
+          status: 'success',
+          code: 200,
         })
-      } else {
-        observer.next({
-          type: 'request-failure',
-          request,
-          response: JSON.parse(xhr.response),
-        })
-      }
 
-      observer.complete()
+        res(data)
+      } else {
+        onUpdate?.({
+          ...request,
+          type: 'response',
+          data,
+          status: 'failure',
+          code: this.status,
+        })
+
+        handleError(data)
+      }
     })
 
     xhr.addEventListener('error', function () {
       signal?.removeEventListener('abort', handleAbort)
+      xhr.upload.removeEventListener('progress', handleProgress)
 
-      observer.next({
-        type: 'request-failure',
-        request,
-        response: xhr.response,
+      const data = JSON.parse(xhr.response)
+
+      onUpdate?.({
+        ...request,
+        type: 'response',
+        data,
+        status: 'failure',
+        code: this.status,
       })
+
+      handleError(data)
     })
 
     xhr.send(body)
+
+    function handleError(e) {
+      // console.log('ERROR: callXhrBrowser', e)
+      rej(e)
+    }
   })
 }
 
 // export // The user aborted a request.
 export function requestAndWaitForWorkToCompleteBrowser<
   T extends object,
->(
-  request: Request,
-  signal?: AbortSignal,
-): Observable<RequestCycle | Output<T> | Processing | Ping> {
-  return new Observable<RequestCycle | Output<T> | Processing | Ping>(
-    observer => {
-      signal?.addEventListener('abort', handleAbort)
-      signal?.throwIfAborted()
+>(request: Request, native?: NativeOptions): Promise<any> {
+  return new Promise(async (res, rej) => {
+    const signal = native?.signal
+    const onUpdate = native?.onUpdate
 
-      const subscriptions: Array<ZenObservable.Subscription> = []
-      const callXhrObserver = callXhrBrowser(request, signal)
+    signal?.addEventListener('abort', handleAbort)
+    signal?.throwIfAborted()
 
-      const callXhrSubscription = callXhrObserver.subscribe({
-        next(data: RequestCycle | Output<T> | Processing | Ping) {
-          handle().catch(e => {
-            observer.error(e)
-            callXhrSubscription.unsubscribe()
-          })
+    try {
+      await callXhrBrowser(request, { signal, onUpdate: onXhrUpdate })
+      signal?.removeEventListener('abort', handleAbort)
+    } catch (e) {
+      signal?.removeEventListener('abort', handleAbort)
+      return handleError(e)
+    }
 
-          async function handle() {
-            observer.next(data)
+    async function onXhrUpdate(update: RequestResponseCycle) {
+      onUpdate?.(update)
 
-            switch (data.type) {
-              case 'request-complete': {
-                const handleRequestObserver =
-                  handleWorkRequestComplete<T>(
-                    data.response as Work<T>,
-                    signal,
-                  )
-                const handleRequestSubscription =
-                  handleRequestObserver.subscribe({
-                    next(
-                      data:
-                        | RequestCycle
-                        | Output<T>
-                        | Processing
-                        | Ping,
-                    ) {
-                      try {
-                        observer.next(data)
-                      } catch (e) {
-                        observer.error(e)
-                        handleRequestSubscription.unsubscribe()
-                      }
-                    },
-                    error: e => {
-                      observer.error(e)
-                    },
-                    complete: () => {
-                      removeSubscription(
-                        subscriptions,
-                        handleRequestSubscription,
-                      )
-                      observer.complete()
-                    },
-                  })
-                subscriptions.push(handleRequestSubscription)
-                break
+      switch (update.type) {
+        case 'response': {
+          switch (update.status) {
+            case 'failure':
+              return handleError(new Kink(update.data as KinkMesh))
+            case 'success': {
+              try {
+                const output = await handleWorkRequestComplete<T>(
+                  request,
+                  update.data as Work<T>,
+                  { signal, onUpdate },
+                )
+
+                res(output)
+              } catch (e) {
+                return handleError(e)
               }
-              case 'request-failure':
-                observer.error(new Kink(data.response as KinkMesh))
-                break
             }
           }
-        },
-        error: e => observer.error(e),
-        complete: () => {},
-      })
-
-      subscriptions.push(callXhrSubscription)
-
-      function handleAbort() {
-        observer.error(kink('abort_error', { link: signal?.reason }))
+          break
+        }
       }
+    }
 
-      function removeHandleAbort() {
-        signal?.removeEventListener('abort', handleAbort)
-      }
+    function handleAbort() {
+      signal?.removeEventListener('abort', handleAbort)
 
-      return () => {
-        removeHandleAbort()
-        closeAllSubscriptions(subscriptions)
-      }
-    },
-  )
+      rej(kink('abort_error', { link: signal?.reason }))
+    }
+
+    function handleError(e) {
+      // console.log('ERROR: requestAndWaitForWorkToCompleteBrowser', e)
+      rej(e)
+    }
+  })
 }
 
 export function resolveWorkFileAsBlob(
   request: Request,
   native?: NativeOptions,
-): Observable<WorkFileAsBlob> {
+): Promise<any> {
   const signal = native?.signal
 
-  return new Observable(observer => {
-    signal?.throwIfAborted()
+  return new Promise(async (res, rej) => {
     signal?.addEventListener('abort', handleAbort)
+    signal?.throwIfAborted()
 
-    const requestObserver =
-      requestAndWaitForWorkToCompleteBrowser<WorkFile>(request, signal)
+    try {
+      const output =
+        await requestAndWaitForWorkToCompleteBrowser<WorkFile>(
+          request,
+          native,
+        )
 
-    const subscriptions: Array<ZenObservable.Subscription> = []
-
-    const subscription = requestObserver.subscribe({
-      next(data: RequestCycle | Output<WorkFile> | Processing | Ping) {
-        handle().catch(e => {
-          observer.error(e)
-          closeAllSubscriptions(subscriptions)
-        })
-
-        async function handle() {
-          switch (data.type) {
-            case 'output':
-              const fileResponse = await fetchWithTimeout(
-                data.output.file.path,
-                {
-                  method: 'GET',
-                  signal,
-                },
-              )
-              const arrayBuffer = await fileResponse.arrayBuffer()
-              observer.next({
-                type: 'output',
-                output: {
-                  file: {
-                    content: new Blob([arrayBuffer]),
-                  },
-                },
-              })
-              observer.complete()
-              break
-            default:
-              observer.next(data)
-              break
-          }
-        }
-      },
-      error: e => observer.error(e),
-      complete: () => {},
-    })
-
-    subscriptions.push(subscription)
+      const fileResponse = await fetchWithTimeout(output.file.path, {
+        method: 'GET',
+        signal,
+      })
+      const arrayBuffer = await fileResponse.arrayBuffer()
+      return res({
+        file: {
+          content: new Blob([arrayBuffer]),
+        },
+      })
+    } catch (e) {
+      removeHandleAbort()
+      rej(e)
+    }
 
     function handleAbort() {
       removeHandleAbort()
-      observer.error(kink('abort_error', { link: signal?.reason }))
+      rej(kink('abort_error', { link: signal?.reason }))
     }
 
     function removeHandleAbort() {
       signal?.removeEventListener('abort', handleAbort)
     }
-
-    return removeHandleAbort
   })
 }

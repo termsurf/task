@@ -68,7 +68,7 @@ app.post('/v2/convert/:a/:b', (req: Request, res: Response, next) => {
   } else if (req.params.b === 'ttf') {
     setTimeout(() => {
       next(kink('system_error', {}, 400))
-    }, 20000)
+    }, 1000)
   } else {
     setTimeout(() => {
       res.json({

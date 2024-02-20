@@ -17,64 +17,70 @@ import kink from '~/code/tool/shared/kink'
 import Observable from 'zen-observable'
 import { resolveWorkFileAsBlob } from '~/code/tool/browser/work'
 
-export function convertTxtWithPuppeteerBrowser(
+export async function convertTxtWithPuppeteerBrowser(
   source: ConvertTxtWithPuppeteerBrowserInput,
   native?: NativeOptions,
-): Observable<WorkFileAsBlob> {
+): Promise<WorkFileAsBlob> {
   const input = ConvertTxtWithPuppeteerBrowserInputModel.parse(source)
 
   switch (input.handle) {
     case 'remote':
-      return convertTxtWithPuppeteerBrowserRemote(input, native)
+      return await convertTxtWithPuppeteerBrowserRemote(input, native)
     default:
-      return convertTxtWithPuppeteerBrowserLocal(input, native)
+      return await convertTxtWithPuppeteerBrowserLocal(input, native)
   }
 }
 
-export function convertTxtWithPuppeteerBrowserRemote(
+export async function convertTxtWithPuppeteerBrowserRemote(
   input: ConvertTxtWithPuppeteerBrowserRemoteInput,
   native?: NativeOptions,
-): Observable<WorkFileAsBlob> {
+): Promise<WorkFileAsBlob> {
   const request = buildFormDataRequestToConvert(input)
-  return resolveWorkFileAsBlob(request)
+  return await resolveWorkFileAsBlob(request)
 }
 
 export function convertTxtWithPuppeteerBrowserLocal(
   input: ConvertTxtWithPuppeteerBrowserLocalInput,
   native?: NativeOptions,
-): Observable<WorkFileAsBlob> {
+): Promise<WorkFileAsBlob> {
   throw kink('task_not_implemented', {
     task: 'convertTxtWithPuppeteerBrowserLocal',
   })
 }
 
-export function convertMarkdownWithPuppeteerBrowser(
+export async function convertMarkdownWithPuppeteerBrowser(
   source: ConvertMarkdownWithPuppeteerBrowserInput,
   native?: NativeOptions,
-): Observable<WorkFileAsBlob> {
+): Promise<WorkFileAsBlob> {
   const input =
     ConvertMarkdownWithPuppeteerBrowserInputModel.parse(source)
 
   switch (input.handle) {
     case 'remote':
-      return convertMarkdownWithPuppeteerBrowserRemote(input, native)
+      return await convertMarkdownWithPuppeteerBrowserRemote(
+        input,
+        native,
+      )
     default:
-      return convertMarkdownWithPuppeteerBrowserLocal(input, native)
+      return await convertMarkdownWithPuppeteerBrowserLocal(
+        input,
+        native,
+      )
   }
 }
 
-export function convertMarkdownWithPuppeteerBrowserRemote(
+export async function convertMarkdownWithPuppeteerBrowserRemote(
   input: ConvertMarkdownWithPuppeteerBrowserRemoteInput,
   native?: NativeOptions,
 ) {
   const request = buildFormDataRequestToConvert(input)
-  return resolveWorkFileAsBlob(request, native)
+  return await resolveWorkFileAsBlob(request, native)
 }
 
 export function convertMarkdownWithPuppeteerBrowserLocal(
   input: ConvertMarkdownWithPuppeteerBrowserLocalInput,
   native?: NativeOptions,
-): Observable<WorkFileAsBlob> {
+): Promise<WorkFileAsBlob> {
   throw kink('task_not_implemented', {
     task: 'convertTxtWithPuppeteerBrowserLocal',
   })

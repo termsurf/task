@@ -7,36 +7,47 @@ export type RequestBody = FormData | object
 
 export type NativeOptions = {
   signal?: AbortSignal
+  onUpdate?: (update: RequestResponseCycle) => void | Promise<void>
+}
+
+export type RequestBase = {
+  path: string
+  method: string
+  body?: RequestBody
+  key?: string
 }
 
 export type Request = {
-  path: string
-  method: string
-  body: RequestBody
-}
+  type: 'request'
+} & RequestBase
 
-export type RequestProgress = {
+export type RequestProgress = RequestBase & {
   type: 'request-progress'
-  request: Request
   percentComplete: number
 }
 
-export type RequestComplete = {
-  type: 'request-complete'
-  request: Request
-  response: any
+export type ResponseWaiting = RequestBase & {
+  type: 'response-waiting'
 }
 
-export type RequestFailure = {
-  type: 'request-failure'
-  request: Request
-  response?: any
+export type ResponseProgress = RequestBase & {
+  type: 'response-progress'
+  data?: any
 }
 
-export type RequestCycle =
+export type Response = RequestBase & {
+  type: 'response'
+  data?: any
+  status: 'success' | 'failure'
+  code: number
+}
+
+export type RequestResponseCycle =
+  | Request
   | RequestProgress
-  | RequestComplete
-  | RequestFailure
+  | ResponseWaiting
+  | ResponseProgress
+  | Response
 
 export async function checkRemote(
   {
@@ -107,6 +118,7 @@ export function buildRemoteRequest(
   body: RequestBody,
 ): Request {
   return {
+    type: 'request',
     method,
     path: `${getConfig('remote')}${path}`,
     body,
