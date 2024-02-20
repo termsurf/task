@@ -18,6 +18,7 @@ import {
 import { extend } from '~/code/tool/shared/object.js'
 import { buildRequestToConvert } from '../../shared.js'
 import { resolveWorkFileNode } from '~/code/tool/node/request.js'
+import { testConvertImageWithInkscape } from './shared.js'
 
 export async function convertImageWithInkscapeNode(
   source: ConvertImageWithInkscapeNodeInput,
@@ -81,4 +82,10 @@ export async function convertImageWithInkscapeNodeLocal(input) {
       path: localInput.output.file.path,
     },
   })
+}
+
+export function testConvertImageWithInkscapeNode(
+  input: any,
+): input is ConvertImageWithInkscapeNodeInput {
+  return testConvertImageWithInkscape(input)
 }

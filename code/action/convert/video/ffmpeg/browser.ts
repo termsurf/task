@@ -8,6 +8,7 @@ import {
 import { buildFormDataRequestToConvert } from '../../shared.js'
 import { resolveWorkFileAsBlob } from '~/code/tool/shared/work.js'
 import kink from '~/code/tool/shared/kink.js'
+import { testConvertVideoWithFfmpeg } from './shared.js'
 
 export async function convertVideoWithFfmpegBrowser(
   source: ConvertVideoWithFfmpegBrowserInput,
@@ -41,4 +42,10 @@ export async function convertVideoWithFfmpegBrowserLocal(
   throw kink('task_not_implemented', {
     task: 'convertVideoWithFfmpegBrowserLocal',
   })
+}
+
+export function testConvertVideoWithFfmpegBrowser(
+  input,
+): input is ConvertVideoWithFfmpegBrowserInput {
+  return testConvertVideoWithFfmpeg(input)
 }

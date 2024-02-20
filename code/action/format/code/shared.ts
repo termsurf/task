@@ -25,7 +25,7 @@ import {
 } from '~/code/type/index.js'
 import * as prettierPluginEstree from 'prettier/plugins/estree'
 
-export enum FormatPrettier {
+export enum Format {
   Graphql = 'graphql',
   Rust = 'rust',
   Typescript = 'typescript',
@@ -35,19 +35,19 @@ export enum FormatPrettier {
   Xml = 'xml',
 }
 
-export type FormatPrettierInputMap = {
-  [FormatPrettier.Rust]: FormatRustWithPrettier
-  [FormatPrettier.Graphql]: FormatGraphqlWithPrettier
-  [FormatPrettier.Typescript]: FormatTypescriptWithPrettier
-  [FormatPrettier.Markdown]: FormatMarkdownWithPrettier
-  [FormatPrettier.Html]: FormatHtmlWithPrettier
-  [FormatPrettier.Yaml]: FormatYamlWithPrettier
-  [FormatPrettier.Xml]: FormatXmlWithPrettier
+export type FormatInputMap = {
+  [Format.Rust]: FormatRustWithPrettier
+  [Format.Graphql]: FormatGraphqlWithPrettier
+  [Format.Typescript]: FormatTypescriptWithPrettier
+  [Format.Markdown]: FormatMarkdownWithPrettier
+  [Format.Html]: FormatHtmlWithPrettier
+  [Format.Yaml]: FormatYamlWithPrettier
+  [Format.Xml]: FormatXmlWithPrettier
 }
 
-export type FormatPrettierInput<T extends FormatPrettier> =
-  T extends keyof FormatPrettierInputMap
-    ? FormatPrettierInputMap[T] & { format: T }
+export type FormatInput<T extends Format> =
+  T extends keyof FormatInputMap
+    ? FormatInputMap[T] & { format: T }
     : never
 
 const plugins: Record<PrettierPlugin, any> = {
@@ -75,25 +75,30 @@ const plugins: Record<PrettierPlugin, any> = {
   // toml: () => import('prettier-plugin-toml'),
 }
 
+export type FormatOutput = {
+  code: string
+}
+
 export async function formatCodeWithPrettier(
   source: FormatCodeWithPrettier,
-) {
+): Promise<FormatOutput> {
   const { format, code, ...input } = source
   const plugin = (await plugins[format]()).default
   const p = [plugin]
   if (format.match(/typescript|javascript/)) {
     p.push(prettierPluginEstree)
   }
-  return prettier.format(code, {
+  const output = await prettier.format(code, {
     parser: format,
     plugins: p,
     ...input,
   })
+  return { code: output }
 }
 
-export async function formatCodeWithPrettierPlugin<
-  T extends FormatPrettier,
->(input: FormatPrettierInput<T>) {
+export async function formatCodeWithPrettierPlugin<T extends Format>(
+  input: FormatInput<T>,
+) {
   switch (input.format) {
     // case 'angular':
     //   return await formatAngularWithPrettier(input)

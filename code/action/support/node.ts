@@ -1,7 +1,7 @@
-export function support(input) {}
+export function test(input) {}
 
 // if (
-//   task.support({
+//   task.test({
 //     action: 'convert',
 //     scope: 'document',
 //     input: { format },

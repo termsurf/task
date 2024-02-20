@@ -96,7 +96,7 @@ export async function decompressArchive(compressed: Uint8Array) {
 // Unzip object
 // const unzipper = new fflate.Unzip();
 
-// // This function will almost always have to be called. It is used to support
+// // This function will almost always have to be called. It is used to test
 // // compression algorithms such as BZIP2 or LZMA in ZIP files if just DEFLATE
 // // is not enough (though it almost always is).
 // // If your ZIP files are not compressed, this line is not needed.

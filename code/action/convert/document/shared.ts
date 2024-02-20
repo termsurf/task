@@ -17,18 +17,20 @@ import {
   ConvertLatexToPngOutputFormat,
   PUPPETEER_OUTPUT_FORMAT,
   PuppeteerOutputFormat,
+  ConvertMarkdownWithPuppeteerNodeInput,
 } from '~/code/type/index.js'
+import { testConvertInputOutput } from '../shared.js'
 
-export function supportConvertDocument(a: string, b: string) {
-  return (
-    supportConvertLatexToPng(a, b) ||
-    supportConvertDocumentWithCalibre(a, b) ||
-    supportConvertDocumentWithPandoc(a, b) ||
-    supportConvertDocumentWithLibreOffice(a, b)
-  )
-}
+export function testConvertLatexToPng(input: any) {
+  if (!testConvertInputOutput(input)) {
+    return false
+  }
 
-export function supportConvertLatexToPng(a: string, b: string) {
+  const {
+    input: { format: a },
+    output: { format: b },
+  } = input
+
   if (a === b) {
     return false
   }
@@ -49,10 +51,17 @@ export function supportConvertLatexToPng(a: string, b: string) {
   return true
 }
 
-export function supportConvertMarkdownWithPuppeteer(
-  a: string,
-  b: string,
-) {
+export function testConvertMarkdownWithPuppeteer(
+  input: any,
+): input is ConvertMarkdownWithPuppeteerNodeInput {
+  if (!testConvertInputOutput(input)) {
+    return false
+  }
+  const {
+    input: { format: a },
+    output: { format: b },
+  } = input
+
   if (a === b) {
     return false
   }
@@ -65,7 +74,15 @@ export function supportConvertMarkdownWithPuppeteer(
   return true
 }
 
-export function supportConvertTxtWithPuppeteer(a: string, b: string) {
+export function testConvertTxtWithPuppeteer(input: any) {
+  if (!testConvertInputOutput(input)) {
+    return false
+  }
+  const {
+    input: { format: a },
+    output: { format: b },
+  } = input
+
   if (a === b) {
     return false
   }
@@ -78,10 +95,15 @@ export function supportConvertTxtWithPuppeteer(a: string, b: string) {
   return true
 }
 
-export function supportConvertDocumentWithCalibre(
-  a: string,
-  b: string,
-) {
+export function testConvertDocumentWithCalibre(input: any) {
+  if (!testConvertInputOutput(input)) {
+    return false
+  }
+  const {
+    input: { format: a },
+    output: { format: b },
+  } = input
+
   if (a === b) {
     return false
   }
@@ -94,7 +116,15 @@ export function supportConvertDocumentWithCalibre(
   return true
 }
 
-export function supportConvertDocumentWithPandoc(a: string, b: string) {
+export function testConvertDocumentWithPandoc(input: any) {
+  if (!testConvertInputOutput(input)) {
+    return false
+  }
+  const {
+    input: { format: a },
+    output: { format: b },
+  } = input
+
   if (a === b) {
     return false
   }
@@ -107,10 +137,15 @@ export function supportConvertDocumentWithPandoc(a: string, b: string) {
   return true
 }
 
-export function supportConvertDocumentWithLibreOffice(
-  a: string,
-  b: string,
-) {
+export function testConvertDocumentWithLibreOffice(input: any) {
+  if (!testConvertInputOutput(input)) {
+    return false
+  }
+  const {
+    input: { format: a },
+    output: { format: b },
+  } = input
+
   if (a === b) {
     return false
   }

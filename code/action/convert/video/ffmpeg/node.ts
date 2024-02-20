@@ -18,6 +18,7 @@ import {
 import { extend } from '~/code/tool/shared/object.js'
 import { buildRequestToConvert } from '../../shared.js'
 import { resolveWorkFileNode } from '~/code/tool/node/request.js'
+import { testConvertVideoWithFfmpeg } from './shared.js'
 
 export async function convertVideoWithFfmpegNode(
   source: ConvertVideoWithFfmpegNodeInput,
@@ -80,4 +81,10 @@ export async function convertVideoWithFfmpegNodeLocal(input) {
       path: localInput.output.file.path,
     },
   })
+}
+
+export function testConvertVideoWithFfmpegNode(
+  input,
+): input is ConvertVideoWithFfmpegNodeInput {
+  return testConvertVideoWithFfmpeg(input)
 }

@@ -8,7 +8,10 @@ import {
   ConvertFontWithFontForgeNodeRemoteInput,
   ConvertFontWithFontForgeNodeClientInputModel,
 } from '~/code/type/index.js'
-import { buildCommandToConvertFontWithFontForge } from './shared.js'
+import {
+  buildCommandToConvertFontWithFontForge,
+  testConvertFontWithFontForge,
+} from './shared.js'
 import { runCommandSequence } from '~/code/tool/node/command.js'
 import {
   resolveInputForConvertLocalExternalNode,
@@ -81,4 +84,10 @@ export async function convertFontWithFontForgeNodeLocal(input) {
       path: localInput.output.file.path,
     },
   })
+}
+
+export function testConvertFontWithFontForgeNode(
+  input: any,
+): input is ConvertFontWithFontForgeNodeInput {
+  return testConvertFontWithFontForge(input)
 }

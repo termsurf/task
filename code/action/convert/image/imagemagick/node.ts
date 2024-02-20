@@ -8,6 +8,7 @@ import {
   ConvertImageWithImageMagickNodeRemoteInput,
   ConvertImageWithImageMagickNodeClientInputModel,
 } from '~/code/type/index.js'
+import { testConvertImageWithImageMagick } from './shared.js'
 import { buildCommandToConvertImageWithImageMagick } from '../command.js'
 import { runCommandSequence } from '~/code/tool/node/command.js'
 import {
@@ -81,4 +82,10 @@ export async function convertImageWithImageMagickNodeLocal(input) {
       path: localInput.output.file.path,
     },
   })
+}
+
+export function testConvertImageWithImageMagickNode(
+  input: any,
+): input is ConvertImageWithImageMagickNodeInput {
+  return testConvertImageWithImageMagick(input)
 }

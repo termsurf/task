@@ -1,9 +1,62 @@
+import {
+  ConvertDocumentWithCalibreNodeInput,
+  ConvertDocumentWithLibreOfficeNodeInput,
+  ConvertDocumentWithPandocNodeInput,
+  ConvertLatexToPngNodeInput,
+  ConvertMarkdownWithPuppeteerNodeInput,
+  ConvertTxtWithPuppeteerNodeInput,
+} from '../../browser.js'
+import {
+  testConvertDocumentWithCalibre,
+  testConvertDocumentWithLibreOffice,
+  testConvertDocumentWithPandoc,
+  testConvertLatexToPng,
+  testConvertMarkdownWithPuppeteer,
+  testConvertTxtWithPuppeteer,
+} from './shared.js'
+
 export * from './calibre/node.js'
 export * from './libre-office/node.js'
 export * from './pandoc/node.js'
 export * from './pdflatex/node.js'
 export * from './jupyter/node.js'
 export * from './puppeteer/node.js'
+
+export function testConvertLatexToPngNode(
+  input: any,
+): input is ConvertLatexToPngNodeInput {
+  return testConvertLatexToPng(input)
+}
+
+export function testConvertMarkdownWithPuppeteerNode(
+  input: any,
+): input is ConvertMarkdownWithPuppeteerNodeInput {
+  return testConvertMarkdownWithPuppeteer(input)
+}
+
+export function testConvertTxtWithPuppeteerNode(
+  input: any,
+): input is ConvertTxtWithPuppeteerNodeInput {
+  return testConvertTxtWithPuppeteer(input)
+}
+
+export function testConvertDocumentWithCalibreNode(
+  input: any,
+): input is ConvertDocumentWithCalibreNodeInput {
+  return testConvertDocumentWithCalibre(input)
+}
+
+export function testConvertDocumentWithPandocNode(
+  input: any,
+): input is ConvertDocumentWithPandocNodeInput {
+  return testConvertDocumentWithPandoc(input)
+}
+
+export function testConvertDocumentWithLibreOfficeNode(
+  input: any,
+): input is ConvertDocumentWithLibreOfficeNodeInput {
+  return testConvertDocumentWithLibreOffice(input)
+}
 
 // export async function convertLatexToPng(
 //   source: ConvertLatexToPngNodeInput,
