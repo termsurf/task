@@ -1,6 +1,6 @@
 import { Form } from '@termsurf/form'
 import _ from 'lodash'
-import { baseCommonConvert } from '~/code/tool/shared/source.js'
+import { baseCommonConvert } from '~/code/tool/shared/source'
 
 export const resolve_input_for_convert_remote: Form = {
   form: 'form',

@@ -1,7 +1,7 @@
-export * from './cast.js'
-export * from './take.js'
-export * from './code.js'
-export * from './bond.js'
+export * from './cast'
+export * from './take'
+export * from './code'
+export * from './bond'
 
 export type IOPath = {
   inputPath: string

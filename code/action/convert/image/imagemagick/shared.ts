@@ -3,8 +3,8 @@ import {
   IMAGE_MAGICK_OUTPUT_FORMAT,
   ImageMagickInputFormat,
   ImageMagickOutputFormat,
-} from '~/code/type/cast.js'
-import { testConvertInputOutput } from '../../shared.js'
+} from '~/code/type/cast'
+import { testConvertInputOutput } from '../../shared'
 
 export function testConvertImageWithImageMagick(input: any) {
   if (!testConvertInputOutput(input)) {

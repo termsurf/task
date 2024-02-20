@@ -1,6 +1,6 @@
 import make from '@termsurf/form/host/make'
-import * as mesh from '~/code/source.js'
-// import '~/code/shared/type/source/call/convert.js'
+import * as mesh from '~/code/source'
+// import '~/code/shared/type/source/call/convert'
 import fs from 'fs'
 import _ from 'lodash'
 import {
@@ -15,7 +15,7 @@ import {
   PANDOC_OUTPUT_FORMAT,
   PUPPETEER_INPUT_FORMAT,
   PUPPETEER_OUTPUT_FORMAT,
-} from '~/code/type/index.js'
+} from '~/code/type/index'
 
 const NODE_CACHE: Record<string, boolean> = {}
 const BROWSER_CACHE: Record<string, boolean> = {}

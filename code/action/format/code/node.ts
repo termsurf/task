@@ -6,21 +6,15 @@ import {
   FormatRuby,
   FormatAssembly,
   FormatC,
-} from '~/code/type/index.js'
-import { exec } from '~/code/tool/node/process.js'
-import { buildCommandToFormatRust } from './command.js'
-import {
-  FormatPrettier,
-  FormatPrettierInput,
-  formatCodeWithPrettierPlugin,
-} from './shared.js'
+} from '~/code/type/index'
+import { exec } from '~/code/tool/node/process'
+import { buildCommandToFormatRust } from './command'
+import { formatCodeWithPrettierPlugin } from './shared'
 
 // https://github.com/realm/SwiftLint
 // https://github.com/realm/SwiftLint/blob/main/Dockerfile
 
-export async function format<T extends FormatPrettier>(
-  source: FormatPrettierInput<T>,
-) {
+export async function format(source) {
   return await formatCodeWithPrettierPlugin(source)
 }
 

@@ -4,7 +4,7 @@ import {
   SanitizeHtmlFromContentModel,
   ValidatePdfWithData,
   SlicePdfWithData,
-} from '~/code/type/index.js'
+} from '~/code/type/index'
 
 export async function validatePdfWithData(input: ValidatePdfWithData) {
   try {

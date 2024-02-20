@@ -1,5 +1,5 @@
-import { FFMPEG_FORMAT, FfmpegFormat } from '~/code/type/cast.js'
-import { testConvertInputOutput } from '../../shared.js'
+import { FFMPEG_FORMAT, FfmpegFormat } from '~/code/type/cast'
+import { testConvertInputOutput } from '../../shared'
 
 export function testConvertVideoWithFfmpeg(input: any) {
   if (!testConvertInputOutput(input)) {

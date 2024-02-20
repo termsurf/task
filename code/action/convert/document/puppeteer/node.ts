@@ -1,14 +1,11 @@
-import {
-  getBrowser,
-  inactivateBrowser,
-} from '~/code/tool/node/browser.js'
+import { getBrowser, inactivateBrowser } from '~/code/tool/node/browser'
 import {
   ConvertHtmlWithPuppeteerNodeInput,
   TextStyle,
-} from '~/code/type/index.js'
-// import debug from '~/code/tool/shared/debug.js'
+} from '~/code/type/index'
+// import debug from '~/code/tool/shared/debug'
 import { marked } from 'marked'
-import debug from '~/code/tool/shared/debug.js'
+import debug from '~/code/tool/shared/debug'
 import {
   ConvertTxtWithPuppeteerNodeInput,
   ConvertTxtWithPuppeteerNodeInputModel,
@@ -26,16 +23,16 @@ import {
   ConvertMarkdownWithPuppeteerNodeLocalInputModel,
   ConvertMarkdownWithPuppeteerNodeRemoteInput,
   ConvertMarkdownWithPuppeteerNodeClientInputModel,
-} from '~/code/type/index.js'
+} from '~/code/type/index'
 import {
   resolveInputContentForConvertLocalExternalNode,
   resolveInputContentForConvertLocalInternalNode,
   resolveInputForConvertRemoteNode,
-} from '../../tool/node.js'
-import { extend } from '~/code/tool/shared/object.js'
-import { buildRequestToConvert } from '../../shared.js'
-import { resolveWorkFileNode } from '~/code/tool/node/request.js'
-import { arrayBufferToString } from '~/code/tool/shared/string.js'
+} from '../../tool/node'
+import { extend } from '~/code/tool/shared/object'
+import { buildRequestToConvert } from '../../shared'
+import { resolveWorkFileNode } from '~/code/tool/node/request'
+import { arrayBufferToString } from '~/code/tool/shared/string'
 import _ from 'lodash'
 
 export async function convertTxtWithPuppeteerNode(

@@ -7,18 +7,18 @@ import {
   ConvertImageWithImageMagickNodeLocalInputModel,
   ConvertImageWithImageMagickNodeRemoteInput,
   ConvertImageWithImageMagickNodeClientInputModel,
-} from '~/code/type/index.js'
-import { testConvertImageWithImageMagick } from './shared.js'
-import { buildCommandToConvertImageWithImageMagick } from '../command.js'
-import { runCommandSequence } from '~/code/tool/node/command.js'
+} from '~/code/type/index'
+import { testConvertImageWithImageMagick } from './shared'
+import { buildCommandToConvertImageWithImageMagick } from '../command'
+import { runCommandSequence } from '~/code/tool/node/command'
 import {
   resolveInputForConvertLocalExternalNode,
   resolveInputForConvertLocalInternalNode,
   resolveInputForConvertRemoteNode,
-} from '../../tool/node.js'
-import { extend } from '~/code/tool/shared/object.js'
-import { buildRequestToConvert } from '../../shared.js'
-import { resolveWorkFileNode } from '~/code/tool/node/request.js'
+} from '../../tool/node'
+import { extend } from '~/code/tool/shared/object'
+import { buildRequestToConvert } from '../../shared'
+import { resolveWorkFileNode } from '~/code/tool/node/request'
 
 export async function convertImageWithImageMagickNode(
   source: ConvertImageWithImageMagickNodeInput,

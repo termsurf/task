@@ -2,9 +2,9 @@ import {
   IMAGE_MAGICK_FORMAT,
   ImageMagickFormat,
   VerifyImageWithImageMagick,
-} from '~/code/type/index.js'
-import { buildCommandToVerifyImageWithImageMagick } from './command.js'
-import { handleIdentifyCommand } from '../../convert/video/local/node.js'
+} from '~/code/type/index'
+import { buildCommandToVerifyImageWithImageMagick } from './command'
+import { handleIdentifyCommand } from '../../convert/video/local/node'
 
 const IMAGEMAGICK_FORMAT_VARIANT_NAME: Record<string, Array<string>> = {
   jpeg: ['jpg'],

@@ -1,6 +1,6 @@
-import { CommandSequenceModel } from '~/code/type/take.js'
-import { Command, CommandName } from '../../type/cast.js'
-import kink from './kink.js'
+import { CommandSequenceModel } from '~/code/type/take'
+import { Command, CommandName } from '../../type/cast'
+import kink from './kink'
 
 export const COMMAND: Record<CommandName, Array<string> | undefined> = {
   ffmpeg: ['ffmpeg'],
@@ -37,7 +37,7 @@ export const COMMAND: Record<CommandName, Array<string> | undefined> = {
   'ebook-convert': ['ebook-convert'],
   soffice: ['soffice'],
   jupyter: ['jupyter'],
-  docx2pdf: process.platform.match(/win32|darwin/)
+  docx2pdf: process.platform?.match(/win32|darwin/)
     ? ['docx2pdf']
     : undefined,
   unoconv: ['unoconv'],

@@ -7,17 +7,17 @@ import {
   ConvertDocumentWithCalibreNodeLocalInputModel,
   ConvertDocumentWithCalibreNodeRemoteInput,
   ConvertDocumentWithCalibreNodeClientInputModel,
-} from '~/code/type/index.js'
-import { buildCommandToConvertDocumentWithCalibre } from '../command.js'
-import { runCommandSequence } from '~/code/tool/node/command.js'
+} from '~/code/type/index'
+import { buildCommandToConvertDocumentWithCalibre } from '../command'
+import { runCommandSequence } from '~/code/tool/node/command'
 import {
   resolveInputForConvertLocalExternalNode,
   resolveInputForConvertLocalInternalNode,
   resolveInputForConvertRemoteNode,
-} from '../../tool/node.js'
-import { extend } from '~/code/tool/shared/object.js'
-import { buildRequestToConvert } from '../../shared.js'
-import { resolveWorkFileNode } from '~/code/tool/node/request.js'
+} from '../../tool/node'
+import { extend } from '~/code/tool/shared/object'
+import { buildRequestToConvert } from '../../shared'
+import { resolveWorkFileNode } from '~/code/tool/node/request'
 
 export async function convertDocumentWithCalibreNode(
   source: ConvertDocumentWithCalibreNodeInput,

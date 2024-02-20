@@ -1,7 +1,7 @@
 import {
   buildCommandSequence,
   getCommand,
-} from '~/code/tool/shared/command.js'
+} from '~/code/tool/shared/command'
 import {
   ConvertDocumentWithCalibreNodeLocalInput,
   ConvertDocumentWithEnscriptNodeLocalInput,
@@ -9,7 +9,7 @@ import {
   ConvertDocumentWithLibreOfficeNodeLocalInput,
   ConvertDocumentWithPandocNodeLocalInput,
   ConvertLatexWithPdfLatexNodeLocalInput,
-} from '~/code/type/index.js'
+} from '~/code/type/index'
 
 export function buildCommandToConvertDocumentWithLibreOffice(
   input: ConvertDocumentWithLibreOfficeNodeLocalInput,

@@ -1,7 +1,7 @@
 import stripAnsi from 'strip-ansi'
 import tint, { Tint } from '@termsurf/tint-text'
 import ora from 'ora'
-import { log, logWithSpace } from '~/code/tool/shared/logger.js'
+import { log, logWithSpace } from '~/code/tool/shared/logger'
 import _ from 'lodash'
 
 const M: Tint = { tone: 'magenta' }

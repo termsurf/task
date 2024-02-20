@@ -1,5 +1,5 @@
-import { getCommand } from '~/code/tool/shared/command.js'
-import { BuildCommandToOptimizeGifWithGifsicle } from '~/code/type/index.js'
+import { getCommand } from '~/code/tool/shared/command'
+import { BuildCommandToOptimizeGifWithGifsicle } from '~/code/type/index'
 
 export function buildCommandToOptimizeGifWithGifsicle(
   input: BuildCommandToOptimizeGifWithGifsicle,

@@ -22,7 +22,7 @@ import {
   FormatYamlWithPrettier,
   FormatYamlWithPrettierModel,
   PrettierPlugin,
-} from '~/code/type/index.js'
+} from '~/code/type/index'
 import * as prettierPluginEstree from 'prettier/plugins/estree'
 
 export enum Format {

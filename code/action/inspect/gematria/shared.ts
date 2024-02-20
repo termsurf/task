@@ -1,14 +1,14 @@
-import * as arabic from '@lancejpollard/gematria.js/host/language/arabic.js'
-import * as coptic from '@lancejpollard/gematria.js/host/language/coptic.js'
-import * as devanagari from '@lancejpollard/gematria.js/host/language/devanagari.js'
-import * as elderFuthark from '@lancejpollard/gematria.js/host/language/elder-futhark.js'
-import * as greek from '@lancejpollard/gematria.js/host/language/greek.js'
-import * as gothic from '@lancejpollard/gematria.js/host/language/gothic.js'
-import * as hebrew from '@lancejpollard/gematria.js/host/language/hebrew.js'
-import * as japanese from '@lancejpollard/gematria.js/host/language/japanese.js'
-import * as latin from '@lancejpollard/gematria.js/host/language/latin.js'
-import * as tibetan from '@lancejpollard/gematria.js/host/language/tibetan.js'
-import { sum, peak } from '@lancejpollard/gematria.js/host/index.js'
+import * as arabic from '@lancejpollard/gematria.js/host/language/arabic'
+import * as coptic from '@lancejpollard/gematria.js/host/language/coptic'
+import * as devanagari from '@lancejpollard/gematria.js/host/language/devanagari'
+import * as elderFuthark from '@lancejpollard/gematria.js/host/language/elder-futhark'
+import * as greek from '@lancejpollard/gematria.js/host/language/greek'
+import * as gothic from '@lancejpollard/gematria.js/host/language/gothic'
+import * as hebrew from '@lancejpollard/gematria.js/host/language/hebrew'
+import * as japanese from '@lancejpollard/gematria.js/host/language/japanese'
+import * as latin from '@lancejpollard/gematria.js/host/language/latin'
+import * as tibetan from '@lancejpollard/gematria.js/host/language/tibetan'
+import { sum, peak } from '@lancejpollard/gematria.js/host/index'
 import {
   CalculateGematria,
   CalculateGematriaModel,
@@ -16,9 +16,9 @@ import {
   GematriaSystemCalculationResult,
   SHARED_GEMATRIA_LANGUAGE,
   SharedGematriaLanguage,
-} from '~/code/type/index.js'
-import { detect as detectScript } from '@termsurf/talk/host/code/script/detect.js'
-import kink from '~/code/tool/shared/kink.js'
+} from '~/code/type/index'
+import { detect as detectScript } from '@termsurf/talk/host/code/script/detect'
+import kink from '~/code/tool/shared/kink'
 import _ from 'lodash'
 
 export function calculateGematria(source: CalculateGematria) {

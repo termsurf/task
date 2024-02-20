@@ -1,2 +1,2 @@
-export * from './imagemagick/browser.js'
-export * from './inkscape/browser.js'
+export * from './imagemagick/browser'
+export * from './inkscape/browser'

@@ -6,28 +6,28 @@ import {
   CompileC,
   CompileCpp,
   CompileJava,
-} from '~/code/type/index.js'
+} from '~/code/type/index'
 import {
   buildCommandToCompileLlvmIrToAssembly,
   buildCommandToCompileSwift,
   buildCommandToCompileRust,
-} from '~/code/action/compile/code/command.js'
-import { unsetAll } from '~/code/tool/shared/object.js'
-import kink from '~/code/tool/shared/kink.js'
-import { ChildProcessError } from '~/code/tool/node/process.js'
+} from '~/code/action/compile/code/command'
+import { unsetAll } from '~/code/tool/shared/object'
+import kink from '~/code/tool/shared/kink'
+import { ChildProcessError } from '~/code/tool/node/process'
 import ansiToHtml from 'ansi-to-html'
 import _ from 'lodash'
 import {
   handleLlcCommand,
   handleSwiftcCommand,
-} from '../../convert/video/local/node.js'
-import { handleRustcCommand } from '../../format/code/handler.js'
-import { saveAllRemoteFilesLocally } from '~/code/tool/node/file.js'
+} from '../../convert/video/local/node'
+import { handleRustcCommand } from '../../format/code/handler'
+import { saveAllRemoteFilesLocally } from '~/code/tool/node/file'
 import {
   FileLink,
   addLocalFilesToList,
   addRemoteFilesToList,
-} from '~/code/tool/shared/file.js'
+} from '~/code/tool/shared/file'
 // import Parser from 'tree-sitter'
 // import JavaScript from 'tree-sitter-javascript'
 // import Swift from 'tree-sitter-swift'
@@ -36,7 +36,7 @@ import {
 // // compileToAsm({
 // //   input: {
 // //     format: 'js',
-// //     file: { path: 'test/file/code/quicksort/quicksort.js' },
+// //     file: { path: 'test/file/code/quicksort/quicksort' },
 // //   },
 // // })
 

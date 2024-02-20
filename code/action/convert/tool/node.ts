@@ -6,18 +6,18 @@ import {
   getScopeDirectory,
   readRemoteFileNode,
   resolveRemoteFile,
-} from '~/code/tool/node/file.js'
+} from '~/code/tool/node/file'
 import {
   parsePath,
   resolvePathRelativeToScope,
-} from '~/code/tool/shared/file.js'
-import { cloneOptions } from '~/code/tool/shared/object.js'
+} from '~/code/tool/shared/file'
+import { cloneOptions } from '~/code/tool/shared/object'
 import {
   ResolveInputForConvertLocalExternal,
   ResolveInputForConvertLocalInternal,
   ResolveInputForConvertRemote,
-} from '../../node.js'
-// import console.log from '~/code/tool/shared/console.log.js'
+} from '../../node'
+// import console.log from '~/code/tool/shared/console.log'
 
 // https://www.npmjs.com/package/ftp
 

@@ -4,10 +4,10 @@ import {
   ConvertLatexWithPdfLatexBrowserLocalInput,
   ConvertLatexWithPdfLatexBrowserOutputModel,
   ConvertLatexWithPdfLatexBrowserRemoteInput,
-} from '~/code/type/index.js'
-import { buildFormDataRequestToConvert } from '../../shared.js'
-import { resolveWorkFileAsBlob } from '~/code/tool/shared/work.js'
-import kink from '~/code/tool/shared/kink.js'
+} from '~/code/type/index'
+import { buildFormDataRequestToConvert } from '../../shared'
+import { resolveWorkFileAsBlob } from '~/code/tool/shared/work'
+import kink from '~/code/tool/shared/kink'
 
 export async function convertLatexWithPdfLatexBrowser(
   source: ConvertLatexWithPdfLatexBrowserInput,

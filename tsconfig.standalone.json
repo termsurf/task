@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "lib": ["es2020", "dom"],
+    "outDir": "host",
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": true,
+    "moduleResolution": "Node",
+    "strictNullChecks": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "noUncheckedIndexedAccess": true,
+    "baseUrl": ".",
+    "allowJs": false,
+    "noErrorTruncation": false,
+    "resolveJsonModule": true,
+    "types": ["node"],
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["node_modules/@types"],
+    "noImplicitAny": false,
+    "paths": {
+      "~/*": ["./*"],
+      "~/code/*": ["./code/*"]
+    }
+  },
+  "include": ["code/browser.ts", "*.d.ts"],
+  "exclude": [
+    "node_modules",
+    "host",
+    "tmp",
+    "code/**/node.ts",
+    "code/cli/**/*.ts"
+  ]
+}

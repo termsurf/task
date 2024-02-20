@@ -1,2 +1,2 @@
-export * from './imagemagick/node.js'
-export * from './inkscape/node.js'
+export * from './imagemagick/node'
+export * from './inkscape/node'

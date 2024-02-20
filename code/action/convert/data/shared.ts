@@ -5,7 +5,7 @@ import escapeSqlString from 'sql-escape-string'
 import {
   unflattenObject,
   flattenObjectSafe,
-} from '~/code/tool/shared/object.js'
+} from '~/code/tool/shared/object'
 import _ from 'lodash'
 import sortKeys from 'json-keys-sort'
 

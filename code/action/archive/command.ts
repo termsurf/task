@@ -1,9 +1,9 @@
-import { getCommand } from '~/code/tool/shared/command.js'
+import { getCommand } from '~/code/tool/shared/command'
 import {
   ArchiveWithRar,
   ArchiveWithZip,
   ConvertArchiveWithUnarchiver,
-} from '~/code/type/index.js'
+} from '~/code/type/index'
 
 // https://superuser.com/questions/190053/universal-command-line-unarchiving-tool-on-a-mac
 // atool

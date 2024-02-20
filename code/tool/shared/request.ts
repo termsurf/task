@@ -1,8 +1,8 @@
 import assert from 'assert'
-import { EventIterator } from 'event-iterator'
-import { getConfig } from '../shared/config.js'
+import Observable from 'zen-observable'
+import { getConfig } from '../shared/config'
 import Kink from '@termsurf/kink'
-import { wait } from './timer.js'
+import { wait } from './timer'
 
 export type RequestBody = FormData | object
 
@@ -32,12 +32,17 @@ export type RequestFailure = {
 
 export type CallXhr = RequestProgress | RequestComplete | RequestFailure
 
-export async function* callXhr(
+export function callXhr(
   request: Request,
   signal?: AbortSignal,
-): EventIterator<CallXhr> {
-  return new EventIterator<CallXhr>(({ push }) => {
+): Observable<CallXhr> {
+  return new Observable<CallXhr>(observer => {
     const xhr = new XMLHttpRequest()
+
+    const isAsync = true
+
+    xhr.open(request.method, request.path, isAsync)
+
     let body
     if (typeof request.body === 'string') {
       body = request.body
@@ -52,10 +57,6 @@ export async function* callXhr(
       xhr.responseType = 'json'
     }
 
-    const isAsync = true
-
-    xhr.open(request.method, request.path, isAsync)
-
     const handleAbort = () => {
       xhr.abort()
 
@@ -66,31 +67,41 @@ export async function* callXhr(
 
     xhr.upload.addEventListener('progress', (e: ProgressEvent) => {
       const percentComplete = (e.loaded / e.total) * 100
-      push({ type: 'request-progress', percentComplete, request })
+      observer.next({
+        type: 'request-progress',
+        percentComplete,
+        request,
+      })
     })
 
     xhr.addEventListener('load', function () {
       signal?.removeEventListener('abort', handleAbort)
 
       if (this.status == 200) {
-        push({
+        observer.next({
           type: 'request-complete',
           request,
-          response: xhr.response,
+          response: JSON.parse(xhr.response),
         })
       } else {
-        push({
+        observer.next({
           type: 'request-failure',
           request,
-          response: xhr.response,
+          response: JSON.parse(xhr.response),
         })
       }
+
+      observer.complete()
     })
 
     xhr.addEventListener('error', function () {
       signal?.removeEventListener('abort', handleAbort)
 
-      push({ type: 'request-failure', request, response: xhr.response })
+      observer.next({
+        type: 'request-failure',
+        request,
+        response: xhr.response,
+      })
     })
 
     xhr.send(body)
@@ -167,7 +178,7 @@ export function buildRemoteRequest(
 ): Request {
   return {
     method,
-    path,
+    path: `${getConfig('remote')}${path}`,
     body,
   }
 }

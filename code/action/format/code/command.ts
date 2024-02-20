@@ -2,7 +2,7 @@
 // shfmt -l -w script.sh
 import { format as _formatSql } from 'sql-formatter'
 import decodeUtf8 from 'decode-utf8'
-import { getCommand } from '~/code/tool/shared/command.js'
+import { getCommand } from '~/code/tool/shared/command'
 import {
   FormatAssembly,
   FormatCodeWithClangFormat,
@@ -12,7 +12,7 @@ import {
   FormatRust,
   FormatSqlWithContent,
   FormatSwift,
-} from '~/code/type/index.js'
+} from '~/code/type/index'
 
 export function buildCommandToFormatCodeWithClangFormat(
   input: FormatCodeWithClangFormat,

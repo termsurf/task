@@ -1,3 +1,3 @@
-import * as task from './action/browser.js'
+import * as task from './action/browser'
 
 export default task

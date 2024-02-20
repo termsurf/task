@@ -2,13 +2,13 @@ import {
   ConvertFontWithFontForgeNodeLocalInput,
   FONT_FORMAT,
   FontFormat,
-} from '~/code/type/index.js'
+} from '~/code/type/index'
 import {
   buildCommandSequence,
   getCommand,
-} from '~/code/tool/shared/command.js'
-import debug from '~/code/tool/shared/debug.js'
-import { testConvertInputOutput } from '../shared.js'
+} from '~/code/tool/shared/command'
+import debug from '~/code/tool/shared/debug'
+import { testConvertInputOutput } from '../shared'
 
 export async function buildCommandToConvertFontWithFontForge(
   input: ConvertFontWithFontForgeNodeLocalInput,

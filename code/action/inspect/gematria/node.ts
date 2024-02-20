@@ -1,11 +1,11 @@
-import { peak, sum } from '@lancejpollard/gematria.js/host/index.js'
-import * as chinese from '@lancejpollard/gematria.js/host/language/chinese.js'
+import { peak, sum } from '@lancejpollard/gematria.js/host/index'
+import * as chinese from '@lancejpollard/gematria.js/host/language/chinese'
 import _ from 'lodash'
 import {
   CalculateGematria,
   CalculateGematriaModel,
   GematriaSystemCalculation,
-} from '~/code/type/index.js'
+} from '~/code/type/index'
 
 export function calculateTibetanGematria(source: CalculateGematria) {
   const input = CalculateGematriaModel.parse(source)

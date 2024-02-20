@@ -1,4 +1,5 @@
 import Kink, { KinkMesh } from '@termsurf/kink'
+import Observable from 'zen-observable'
 import {
   CallXhr,
   Request,
@@ -6,8 +7,9 @@ import {
   fetchWithTimeout,
   getRemote,
   postRemote,
-} from './request.js'
-import { wait } from './timer.js'
+} from './request'
+import { wait } from './timer'
+import kink from './kink'
 
 export type WorkFile = {
   file: {
@@ -30,53 +32,152 @@ export type Processing = {
   type: 'processing'
 }
 
+export type Ping = {
+  type: 'ping'
+}
+
 // export // The user aborted a request.
-export async function* requestAndWaitForWorkToComplete<
-  T extends object,
->(
+export function requestAndWaitForWorkToComplete<T extends object>(
   request: Request,
   signal?: AbortSignal,
-): AsyncGenerator<CallXhr | Output<T> | Processing> {
-  let work: Work<T> | undefined = undefined
-  for await (const data of callXhr(request, signal)) {
-    yield data
+): Observable<CallXhr | Output<T> | Processing | Ping> {
+  return new Observable<CallXhr | Output<T> | Processing | Ping>(
+    observer => {
+      signal?.addEventListener('abort', handleAbort)
+      signal?.throwIfAborted()
 
-    switch (data.type) {
-      case 'request-complete':
-        work = data.response as Work<T>
-        break
-      case 'request-failure':
-        throw new Kink(data.response as KinkMesh)
+      const subscriptions: Array<ZenObservable.Subscription> = []
+      const callXhrObserver = callXhr(request, signal)
+
+      const callXhrSubscription = callXhrObserver.subscribe({
+        next(data: CallXhr | Output<T> | Processing | Ping) {
+          handle().catch(e => {
+            observer.error(e)
+            callXhrSubscription.unsubscribe()
+          })
+
+          async function handle() {
+            observer.next(data)
+
+            switch (data.type) {
+              case 'request-complete': {
+                const handleRequestObserver =
+                  handleWorkRequestComplete<T>(
+                    data.response as Work<T>,
+                    signal,
+                  )
+                const handleRequestSubscription =
+                  handleRequestObserver.subscribe({
+                    next(
+                      data: CallXhr | Output<T> | Processing | Ping,
+                    ) {
+                      try {
+                        observer.next(data)
+                      } catch (e) {
+                        observer.error(e)
+                        handleRequestSubscription.unsubscribe()
+                      }
+                    },
+                    error: e => {
+                      observer.error(e)
+                    },
+                    complete: () => {
+                      removeSubscription(
+                        subscriptions,
+                        handleRequestSubscription,
+                      )
+                      observer.complete()
+                    },
+                  })
+                subscriptions.push(handleRequestSubscription)
+                break
+              }
+              case 'request-failure':
+                observer.error(new Kink(data.response as KinkMesh))
+                break
+            }
+          }
+        },
+        error: e => observer.error(e),
+        complete: () => {},
+      })
+
+      subscriptions.push(callXhrSubscription)
+
+      function handleAbort() {
+        observer.error(kink('abort_error', { link: signal?.reason }))
+      }
+
+      function removeHandleAbort() {
+        signal?.removeEventListener('abort', handleAbort)
+      }
+
+      return () => {
+        removeHandleAbort()
+        closeAllSubscriptions(subscriptions)
+      }
+    },
+  )
+}
+
+function handleWorkRequestComplete<T>(
+  work: Work<T>,
+  signal?: AbortSignal,
+) {
+  return new Observable<Output<T> | Processing | Ping>(observer => {
+    const handleAbort = () => {
+      signal?.removeEventListener('abort', handleAbort)
+      observer.error(kink('abort_error', { link: signal?.reason }))
     }
-  }
 
-  if (work?.status === 'complete') {
-    yield { type: 'output', output: work.output as T }
-  } else if (work?.status === 'error') {
-    throw new Kink(work.output as KinkMesh)
-  }
+    signal?.addEventListener('abort', handleAbort)
+    signal?.throwIfAborted()
 
-  yield { type: 'processing' }
-
-  while (work) {
-    await wait(2000, signal)
-
-    const workResponse = await getRemote(`/work/${work.id}`, signal)
-
-    if (workResponse.status >= 400) {
-      const error = await workResponse.json()
-      throw new Kink(error)
+    if (work.status === 'complete') {
+      observer.next({ type: 'output', output: work.output as T })
+    } else if (work.status === 'error') {
+      observer.error(new Kink(work.output as KinkMesh))
     }
 
-    work = await workResponse.json()
+    observer.next({ type: 'processing' })
 
-    if (work?.status === 'complete') {
-      yield { type: 'output', output: work.output as T }
-      return
-    } else if (work?.status === 'error') {
-      throw new Kink(work.output as KinkMesh)
+    loop()
+      .then(() => {
+        observer.complete()
+      })
+      .catch(e => observer.error(e))
+
+    return () => {
+      signal?.removeEventListener('abort', handleAbort)
     }
-  }
+
+    async function loop() {
+      while (work) {
+        await wait(2000, signal)
+
+        const workResponse = await getRemote(`/work/${work.id}`, signal)
+
+        if (workResponse.status >= 400) {
+          const error = await workResponse.json()
+          observer.error(new Kink(error))
+        }
+
+        work = await workResponse.json()
+
+        if (work) {
+          if (work.status === 'complete') {
+            observer.next({ type: 'output', output: work.output as T })
+            // observer.complete()
+            return
+          } else if (work.status === 'error') {
+            observer.error(new Kink(work.output as KinkMesh))
+          } else {
+            observer.next({ type: 'ping' })
+          }
+        }
+      }
+    }
+  })
 }
 
 export async function resolveAsArrayBuffer(request: Request) {
@@ -84,29 +185,88 @@ export async function resolveAsArrayBuffer(request: Request) {
   return await response.arrayBuffer()
 }
 
-export async function* resolveWorkFileAsBlob(
+export type NativeOptions = {
+  signal?: AbortSignal
+}
+
+export type WorkFileAsBlob = CallXhr | Output<Blob> | Processing | Ping
+
+export function resolveWorkFileAsBlob(
   request: Request,
-  signal?: AbortSignal,
-): AsyncGenerator<CallXhr | Output<Blob> | Processing> {
-  for await (const data of requestAndWaitForWorkToComplete<WorkFile>(
-    request,
-    signal,
-  )) {
-    switch (data.type) {
-      case 'output':
-        const fileResponse = await fetchWithTimeout(
-          data.output.file.path,
-          {
-            method: 'GET',
-            signal,
-          },
-        )
-        const arrayBuffer = await fileResponse.arrayBuffer()
-        yield { type: 'output', output: new Blob([arrayBuffer]) }
-        break
-      default:
-        yield data
-        break
+  native?: NativeOptions,
+): Observable<WorkFileAsBlob> {
+  const signal = native?.signal
+
+  return new Observable(observer => {
+    signal?.throwIfAborted()
+    signal?.addEventListener('abort', handleAbort)
+
+    const requestObserver = requestAndWaitForWorkToComplete<WorkFile>(
+      request,
+      signal,
+    )
+
+    const subscriptions: Array<ZenObservable.Subscription> = []
+
+    const subscription = requestObserver.subscribe({
+      next(data: CallXhr | Output<WorkFile> | Processing | Ping) {
+        handle().catch(e => {
+          observer.error(e)
+          closeAllSubscriptions(subscriptions)
+        })
+
+        async function handle() {
+          switch (data.type) {
+            case 'output':
+              const fileResponse = await fetchWithTimeout(
+                data.output.file.path,
+                {
+                  method: 'GET',
+                  signal,
+                },
+              )
+              const arrayBuffer = await fileResponse.arrayBuffer()
+              observer.next({
+                type: 'output',
+                output: new Blob([arrayBuffer]),
+              })
+              observer.complete()
+              break
+            default:
+              observer.next(data)
+              break
+          }
+        }
+      },
+      error: e => observer.error(e),
+      complete: () => {},
+    })
+
+    subscriptions.push(subscription)
+
+    function handleAbort() {
+      removeHandleAbort()
+      observer.error(kink('abort_error', { link: signal?.reason }))
     }
-  }
+
+    function removeHandleAbort() {
+      signal?.removeEventListener('abort', handleAbort)
+    }
+
+    return removeHandleAbort
+  })
+}
+
+function closeAllSubscriptions(
+  subscriptions: Array<ZenObservable.Subscription>,
+) {
+  subscriptions.forEach(subscription => subscription.unsubscribe())
+  subscriptions.length = 0
+}
+
+function removeSubscription(
+  subscriptions: Array<ZenObservable.Subscription>,
+  subscription: ZenObservable.Subscription,
+) {
+  subscriptions.splice(subscriptions.indexOf(subscription), 1)
 }

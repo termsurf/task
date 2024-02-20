@@ -7,19 +7,19 @@ import {
   ConvertDocumentWithLibreOfficeNodeLocalInputModel,
   ConvertDocumentWithLibreOfficeNodeRemoteInput,
   ConvertDocumentWithLibreOfficeNodeClientInputModel,
-} from '~/code/type/index.js'
-import { buildCommandToConvertDocumentWithLibreOffice } from '../command.js'
-import { runCommandSequence } from '~/code/tool/node/command.js'
+} from '~/code/type/index'
+import { buildCommandToConvertDocumentWithLibreOffice } from '../command'
+import { runCommandSequence } from '~/code/tool/node/command'
 import {
   resolveInputForConvertLocalExternalNode,
   resolveInputForConvertLocalInternalNode,
   resolveInputForConvertRemoteNode,
-} from '../../tool/node.js'
-import { extend } from '~/code/tool/shared/object.js'
-import { buildRequestToConvert } from '../../shared.js'
-import { resolveWorkFileNode } from '~/code/tool/node/request.js'
+} from '../../tool/node'
+import { extend } from '~/code/tool/shared/object'
+import { buildRequestToConvert } from '../../shared'
+import { resolveWorkFileNode } from '~/code/tool/node/request'
 import path from 'path'
-import { replaceFileExtension } from '~/code/tool/shared/screen.js'
+import { replaceFileExtension } from '~/code/tool/shared/screen'
 
 export async function convertDocumentWithLibreOfficeNode(
   source: ConvertDocumentWithLibreOfficeNodeInput,

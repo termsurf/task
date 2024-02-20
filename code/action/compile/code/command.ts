@@ -3,7 +3,7 @@
 // target datalayout = "e-m:o-i64:64-i128:128-n32:64-S128"
 // target triple = "arm64-apple-macosx14.0.0"
 
-import { getCommand } from '~/code/tool/shared/command.js'
+import { getCommand } from '~/code/tool/shared/command'
 import {
   CompileC,
   CompileCpp,
@@ -11,7 +11,7 @@ import {
   CompileRust,
   CompileSwift,
   LLVM_ARCHITECTURE_CONTENT,
-} from '~/code/type/index.js'
+} from '~/code/type/index'
 
 // @.str = private unnamed_addr constant [14 x i8] c"Hello, World!\00", align 1
 export async function buildCommandToCompileC(input: CompileC) {

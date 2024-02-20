@@ -4,11 +4,11 @@ import {
   ConvertDocumentWithPandocNodeInput,
   ConvertImageWithImageMagickNodeInput,
   ConvertVideoWithFfmpegNodeInput,
-} from '../browser.js'
-import { testConvertImageWithImageMagickNode } from '../convert/image/node.js'
-import { testConvertVideoWithFfmpegNode } from '../convert/video/ffmpeg/node.js'
-import { Tool, Action, Object } from '../shared.js'
-import { Test } from './shared.js'
+} from '../browser'
+import { testConvertImageWithImageMagickNode } from '../convert/image/node'
+import { testConvertVideoWithFfmpegNode } from '../convert/video/ffmpeg/node'
+import { Tool, Action, Object } from '../shared'
+import { Test } from './shared'
 
 export type TestAssertion = {
   'convert:ffmpeg:video': ConvertVideoWithFfmpegNodeInput

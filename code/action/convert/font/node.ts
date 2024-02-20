@@ -7,20 +7,20 @@ import {
   ConvertFontWithFontForgeNodeLocalInputModel,
   ConvertFontWithFontForgeNodeRemoteInput,
   ConvertFontWithFontForgeNodeClientInputModel,
-} from '~/code/type/index.js'
+} from '~/code/type/index'
 import {
   buildCommandToConvertFontWithFontForge,
   testConvertFontWithFontForge,
-} from './shared.js'
-import { runCommandSequence } from '~/code/tool/node/command.js'
+} from './shared'
+import { runCommandSequence } from '~/code/tool/node/command'
 import {
   resolveInputForConvertLocalExternalNode,
   resolveInputForConvertLocalInternalNode,
   resolveInputForConvertRemoteNode,
-} from '../tool/node.js'
-import { extend } from '~/code/tool/shared/object.js'
-import { buildRequestToConvert } from '../shared.js'
-import { resolveWorkFileNode } from '~/code/tool/node/request.js'
+} from '../tool/node'
+import { extend } from '~/code/tool/shared/object'
+import { buildRequestToConvert } from '../shared'
+import { resolveWorkFileNode } from '~/code/tool/node/request'
 
 export async function convertFontWithFontForgeNode(
   source: ConvertFontWithFontForgeNodeInput,

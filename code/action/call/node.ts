@@ -2,7 +2,7 @@ import {
   Format,
   FormatInput,
   FormatOutput,
-} from '../format/code/shared.js'
+} from '../format/code/shared'
 import {
   convert,
   ConvertImageWithImageMagick,
@@ -15,8 +15,8 @@ import {
   ConvertWithFontForge,
   FontFormat,
   format,
-} from '../node.js'
-import { Action } from '../shared.js'
+} from '../node'
+import { Action } from '../shared'
 
 export async function call<I extends FontFormat>(
   action: 'convert',

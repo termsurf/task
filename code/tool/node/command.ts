@@ -7,18 +7,14 @@ import {
   runPandocCommand,
   runPdfLatexCommand,
   runUnoconvCommand,
-} from '~/code/action/convert/document/handler.js'
-import { runFontforgeCommand } from '~/code/action/convert/font/runner.js'
+} from '~/code/action/convert/document/handler'
+import { runFontforgeCommand } from '~/code/action/convert/font/runner'
 import {
   runConvertCommand,
   runInkscapeCommand,
   runMogrifyCommand,
-} from '~/code/action/convert/image/runner.js'
-import {
-  Command,
-  CommandKey,
-  CommandSequence,
-} from '~/code/type/index.js'
+} from '~/code/action/convert/image/runner'
+import { Command, CommandKey, CommandSequence } from '~/code/type/index'
 
 export type CommandHandlerName = CommandKey
 

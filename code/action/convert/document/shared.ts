@@ -18,8 +18,8 @@ import {
   PUPPETEER_OUTPUT_FORMAT,
   PuppeteerOutputFormat,
   ConvertMarkdownWithPuppeteerNodeInput,
-} from '~/code/type/index.js'
-import { testConvertInputOutput } from '../shared.js'
+} from '~/code/type/index'
+import { testConvertInputOutput } from '../shared'
 
 export function testConvertLatexToPng(input: any) {
   if (!testConvertInputOutput(input)) {

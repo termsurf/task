@@ -1,4 +1,4 @@
-import { Format, FormatInputFormat } from '~/code/type/call/format.js'
+import { Format, FormatInputFormat } from '~/code/type/call/format'
 
 export async function format<I extends FormatInputFormat>(
   props: Format<I>,

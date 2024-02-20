@@ -2,7 +2,7 @@ import {
   FormatCodeWithClangFormat,
   FormatKotlin,
   FormatRust,
-} from '~/code/type/cast.js'
+} from '~/code/type/cast'
 
 export type FormatFormat = {
   clang: {

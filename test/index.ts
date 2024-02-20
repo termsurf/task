@@ -1,4 +1,4 @@
-import node from '~/code/node.js'
+import node from '~/code/node'
 
 // const format = JSON.parse('"jpg"')
 

@@ -4,11 +4,11 @@ import {
   ConvertVideoWithFfmpegBrowserLocalInput,
   ConvertVideoWithFfmpegBrowserOutputModel,
   ConvertVideoWithFfmpegBrowserRemoteInput,
-} from '~/code/type/index.js'
-import { buildFormDataRequestToConvert } from '../../shared.js'
-import { resolveWorkFileAsBlob } from '~/code/tool/shared/work.js'
-import kink from '~/code/tool/shared/kink.js'
-import { testConvertVideoWithFfmpeg } from './shared.js'
+} from '~/code/type/index'
+import { buildFormDataRequestToConvert } from '../../shared'
+import { resolveWorkFileAsBlob } from '~/code/tool/shared/work'
+import kink from '~/code/tool/shared/kink'
+import { testConvertVideoWithFfmpeg } from './shared'
 
 export async function convertVideoWithFfmpegBrowser(
   source: ConvertVideoWithFfmpegBrowserInput,
@@ -29,11 +29,11 @@ export async function convertVideoWithFfmpegBrowserRemote(
   const request = buildFormDataRequestToConvert(input)
   const content = await resolveWorkFileAsBlob(request)
 
-  return ConvertVideoWithFfmpegBrowserOutputModel.parse({
+  return {
     file: {
       content,
     },
-  })
+  }
 }
 
 export async function convertVideoWithFfmpegBrowserLocal(

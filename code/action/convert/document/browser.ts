@@ -1,9 +1,9 @@
-export * from './calibre/browser.js'
-export * from './libre-office/browser.js'
-export * from './pandoc/browser.js'
-export * from './pdflatex/browser.js'
-export * from './jupyter/browser.js'
-export * from './puppeteer/browser.js'
+export * from './calibre/browser'
+export * from './libre-office/browser'
+export * from './pandoc/browser'
+export * from './pdflatex/browser'
+export * from './jupyter/browser'
+export * from './puppeteer/browser'
 import {
   ConvertDocumentWithCalibreBrowserInput,
   ConvertDocumentWithLibreOfficeBrowserInput,
@@ -11,7 +11,7 @@ import {
   ConvertLatexToPngBrowserInput,
   ConvertMarkdownWithPuppeteerBrowserInput,
   ConvertTxtWithPuppeteerBrowserInput,
-} from '../../browser.js'
+} from '../../browser'
 import {
   testConvertDocumentWithCalibre,
   testConvertDocumentWithLibreOffice,
@@ -19,7 +19,7 @@ import {
   testConvertLatexToPng,
   testConvertMarkdownWithPuppeteer,
   testConvertTxtWithPuppeteer,
-} from './shared.js'
+} from './shared'
 
 export function testConvertLatexToPngBrowser(
   input: any,

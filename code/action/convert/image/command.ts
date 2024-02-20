@@ -3,13 +3,13 @@ import {
   ConvertImageWithInkscapeNodeLocalInput,
   IMAGE_MAGICK_COLOR_SPACE_CONTENT,
   IMAGE_MAGICK_COMPRESSION_CONTENT,
-} from '~/code/type/index.js'
+} from '~/code/type/index'
 import {
   getCommand,
   buildCommandSequence,
-} from '~/code/tool/shared/command.js'
+} from '~/code/tool/shared/command'
 import _ from 'lodash'
-import { resolvePathRelativeToScope } from '~/code/tool/shared/file.js'
+import { resolvePathRelativeToScope } from '~/code/tool/shared/file'
 
 // export function BatchProcessImages() {
 //   const cmd = [

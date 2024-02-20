@@ -1,5 +1,5 @@
 import { Form, FormLink, Mesh } from '@termsurf/form'
-import { Input, Link, Value } from './type.js'
+import { Input, Link, Value } from './type'
 import _ from 'lodash'
 
 export function transferInput(source, map: Record<string, Link>) {

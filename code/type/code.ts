@@ -1,10 +1,10 @@
 import { Make, Test } from '@termsurf/form'
-import { FFMPEG_TIME_PATTERN } from './bond.js'
-import { ImageMagicColorMatrix } from './cast.js'
+import { FFMPEG_TIME_PATTERN } from './bond'
+import { ImageMagicColorMatrix } from './cast'
 import _ from 'lodash'
 import { RefinementCtx, z } from 'zod'
-import { replaceFileExtension } from '~/code/tool/shared/screen.js'
-import { getPathType } from '../tool/shared/file.js'
+import { replaceFileExtension } from '~/code/tool/shared/screen'
+import { getPathType } from '../tool/shared/file'
 
 export const transform_input_output_file: Make = {
   form: 'make',

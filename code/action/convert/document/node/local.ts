@@ -3,31 +3,31 @@
 //   buildCommandToConvertDocumentWithCalibre,
 //   buildCommandToConvertDocumentWithPandoc,
 //   buildCommandToConvertLatexWithPdfLatex,
-// } from '../command.js'
+// } from '../command'
 // import _ from 'lodash'
 // import path from 'node:path'
-// import __dirname from '~/code/tool/shared/directory.js'
+// import __dirname from '~/code/tool/shared/directory'
 // // add stealth plugin and use defaults (all evasion techniques)
 
 // import {
 //   getBrowser,
 //   inactivateBrowser,
-// } from '~/code/tool/node/browser.js'
-// import { runCommandSequence } from '~/code/tool/node/command.js'
+// } from '~/code/tool/node/browser'
+// import { runCommandSequence } from '~/code/tool/node/command'
 // import {
 //   ConvertDocumentWithCalibreNodeInput,
 //   ConvertDocumentWithLibreOfficeNodeInput,
 //   ConvertDocumentWithPandocNodeInput,
 //   ConvertDocumentWithPuppeteerNodeInput,
 //   ConvertLatexWithPdfLatexNodeInput,
-// } from '~/code/type/cast.js'
+// } from '~/code/type/cast'
 // import {
 //   ConvertDocumentWithCalibreNodeCommandInputModel,
 //   ConvertDocumentWithLibreOfficeNodeCommandInputModel,
 //   ConvertDocumentWithPandocNodeCommandInputModel,
 //   ConvertDocumentWithPuppeteerNodeInputModel,
 //   ConvertLatexWithPdfLatexNodeCommandInputModel,
-// } from '~/code/type/take.js'
+// } from '~/code/type/take'
 
 // // export async function readPDFMetadata({ inputPath }) {
 // //   const { PDFDocument } = require('pdf-lib')

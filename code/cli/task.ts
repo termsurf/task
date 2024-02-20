@@ -1,24 +1,24 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import _ from 'lodash'
-import * as mesh from '~/code/source.js'
-import { Link } from './type.js'
-import { convert_image_with_image_magick_node_input } from '~/code/source.js'
-import { BuildFormatInputOutputModel, Task } from '~/code/type/index.js'
-import kink from '~/code/tool/shared/kink.js'
-import { logOutput, logStart, setLoggingStyle } from './logging.js'
-import { buildInputMapping, transferInput } from './parse.js'
+import * as mesh from '~/code/source'
+import { Link } from './type'
+import { convert_image_with_image_magick_node_input } from '~/code/source'
+import { BuildFormatInputOutputModel, Task } from '~/code/type/index'
+import kink from '~/code/tool/shared/kink'
+import { logOutput, logStart, setLoggingStyle } from './logging'
+import { buildInputMapping, transferInput } from './parse'
 import {
-  useConvertFontWithFontForge,
-  useConvertImageWithImageMagick,
-} from '../action/convert/shared.js'
-import { convert } from './internal.js'
+  testConvertFontWithFontForge,
+  testConvertImageWithImageMagick,
+} from '../action/convert/shared'
+import { convert } from './internal'
 import {
-  supportConvertDocumentWithCalibre,
-  supportConvertDocumentWithPandoc,
-  supportConvertMarkdownWithPuppeteer,
-  supportConvertTxtWithPuppeteer,
-} from '../action/convert/document/shared.js'
-import { closeAllBrowsers } from '../tool/node/browser.js'
+  testConvertDocumentWithCalibre,
+  testConvertDocumentWithPandoc,
+  testConvertMarkdownWithPuppeteer,
+  testConvertTxtWithPuppeteer,
+} from '../action/convert/document/shared'
+import { closeAllBrowsers } from '../tool/node/browser'
 
 export const CONVERT_KEY: Record<string, Link> = {
   i: { line: ['input', 'file', 'path'] },
@@ -64,7 +64,7 @@ export async function call(task: Task, source) {
       setLoggingStyle(logFormat)
 
       // if (
-      //   useConvertDocumentWithLibreOffice(
+      //   testConvertDocumentWithLibreOffice(
       //     base.input.format,
       //     base.output.format,
       //   )
@@ -91,7 +91,7 @@ export async function call(task: Task, source) {
       // }
 
       if (
-        supportConvertTxtWithPuppeteer(
+        testConvertTxtWithPuppeteer(
           base.input.format,
           base.output.format,
         )
@@ -121,7 +121,7 @@ export async function call(task: Task, source) {
       }
 
       if (
-        supportConvertMarkdownWithPuppeteer(
+        testConvertMarkdownWithPuppeteer(
           base.input.format,
           base.output.format,
         )
@@ -151,7 +151,7 @@ export async function call(task: Task, source) {
       }
 
       if (
-        supportConvertDocumentWithPandoc(
+        testConvertDocumentWithPandoc(
           base.input.format,
           base.output.format,
         )
@@ -179,7 +179,7 @@ export async function call(task: Task, source) {
       }
 
       if (
-        supportConvertDocumentWithCalibre(
+        testConvertDocumentWithCalibre(
           base.input.format,
           base.output.format,
         )
@@ -208,7 +208,7 @@ export async function call(task: Task, source) {
       }
 
       if (
-        useConvertFontWithFontForge(
+        testConvertFontWithFontForge(
           base.input.format,
           base.output.format,
         )
@@ -229,7 +229,7 @@ export async function call(task: Task, source) {
       }
 
       if (
-        useConvertImageWithImageMagick(
+        testConvertImageWithImageMagick(
           base.input.format,
           base.output.format,
         )
@@ -257,7 +257,7 @@ export async function call(task: Task, source) {
       }
 
       // if (
-      //   useConvertVideoWithFfmpeg(base.input.format, base.output.format)
+      //   testConvertVideoWithFfmpeg(base.input.format, base.output.format)
       // ) {
       //   const form = convert_video_with_ffmpeg
       //   if (source.help) {
@@ -284,13 +284,13 @@ export async function call(task: Task, source) {
       //   }
       //   return
       // }
-      // if (useConvertArchive(base.input.format, base.output.format)) {
+      // if (testConvertArchive(base.input.format, base.output.format)) {
       //   return await convertArchive(source)
       // }
       break
     }
     case 'slice': {
-      // if (await useSplitPdf('slice', source)) {
+      // if (await testSplitPdf('slice', source)) {
       //   return await slicePdf(source)
       // }
       break

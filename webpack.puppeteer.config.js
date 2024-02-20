@@ -8,7 +8,7 @@ export default {
     ignored: ['node_modules', '**/node_modules'],
   },
   entry: glob
-    .sync('./code/node/puppeteer/**/*.{ts,js}')
+    .sync('./code/puppeteer/**/*.{ts,js}')
     .reduce((acc, item) => {
       const name = item.split('.')
       name.pop()
@@ -28,7 +28,7 @@ export default {
           {
             loader: 'ts-loader',
             options: {
-              configFile: 'tsconfig.puppeteer.json',
+              configFile: 'tsconfig.standalone.json',
             },
           },
         ],

@@ -1,4 +1,4 @@
-import { ExtractBySubKey, Values } from '~/code/type/index.js'
+import { ExtractBySubKey, Values } from '~/code/type/index'
 import {
   CompileSwift,
   CompileRust,
@@ -7,7 +7,7 @@ import {
   RustOutputFormat,
   CompileCpp,
   BuildFormatInputOutput,
-} from '~/code/type/cast.js'
+} from '~/code/type/cast'
 
 // // https://www.reddit.com/r/typescript/comments/199eutl/typescript_error_type_string_cannot_be_used_to/
 export type CompileFormat = {

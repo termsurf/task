@@ -4,41 +4,50 @@ import {
   ConvertFontWithFontForgeBrowserLocalInput,
   ConvertFontWithFontForgeBrowserOutputModel,
   ConvertFontWithFontForgeBrowserRemoteInput,
-} from '~/code/type/index.js'
-import { buildFormDataRequestToConvert } from '../shared.js'
-import { resolveWorkFileAsBlob } from '~/code/tool/shared/work.js'
-import kink from '~/code/tool/shared/kink.js'
+} from '~/code/type/index'
+import { buildFormDataRequestToConvert } from '../shared'
+import {
+  NativeOptions,
+  WorkFileAsBlob,
+  resolveWorkFileAsBlob,
+} from '~/code/tool/shared/work'
+import kink from '~/code/tool/shared/kink'
+import { testConvertFontWithFontForge } from './shared'
+import Observable from 'zen-observable'
 
-export async function convertFontWithFontForgeBrowser(
+export function convertFontWithFontForgeBrowser(
   source: ConvertFontWithFontForgeBrowserInput,
-) {
+  native?: NativeOptions,
+): Observable<WorkFileAsBlob> {
   const input = ConvertFontWithFontForgeBrowserInputModel.parse(source)
 
   switch (input.handle) {
     case 'remote':
-      return await convertFontWithFontForgeBrowserRemote(input)
+      return convertFontWithFontForgeBrowserRemote(input, native)
     default:
-      return await convertFontWithFontForgeBrowserLocal(input)
+      return convertFontWithFontForgeBrowserLocal(input, native)
   }
 }
 
-export async function convertFontWithFontForgeBrowserRemote(
+export function convertFontWithFontForgeBrowserRemote(
   input: ConvertFontWithFontForgeBrowserRemoteInput,
+  native?: NativeOptions,
 ) {
   const request = buildFormDataRequestToConvert(input)
-  const content = await resolveWorkFileAsBlob(request)
-
-  return ConvertFontWithFontForgeBrowserOutputModel.parse({
-    file: {
-      content,
-    },
-  })
+  return resolveWorkFileAsBlob(request, native)
 }
 
-export async function convertFontWithFontForgeBrowserLocal(
-  input: ConvertFontWithFontForgeBrowserLocalInput,
-) {
+export function convertFontWithFontForgeBrowserLocal(
+  source: ConvertFontWithFontForgeBrowserLocalInput,
+  native?: NativeOptions,
+): Observable<WorkFileAsBlob> {
   throw kink('task_not_implemented', {
     task: 'convertFontWithFontForgeBrowserLocal',
   })
+}
+
+export function testConvertFontWithFontForgeBrowser(
+  input: any,
+): input is ConvertFontWithFontForgeBrowserInput {
+  return testConvertFontWithFontForge(input)
 }

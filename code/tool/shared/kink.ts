@@ -88,6 +88,9 @@ type Base = {
       name: string
     }
   }
+  system_error: {
+    take: {}
+  }
 }
 
 let CODE_INDEX = 1
@@ -109,6 +112,7 @@ const CODE = {
   invalid_gematria_script: CODE_INDEX++,
   invalid_file_access: CODE_INDEX++,
   function_todo: CODE_INDEX++,
+  system_error: CODE_INDEX++,
 }
 
 type Name = keyof Base
@@ -117,7 +121,7 @@ Kink.code(host, (code: number) => code.toString(16).padStart(4, '0'))
 
 Kink.base(host, 'abort_error', (take: Base['abort_error']['take']) => ({
   code: 1,
-  note: 'Request timeout',
+  note: 'Call aborted.',
   link: take.link,
 }))
 
@@ -130,6 +134,15 @@ Kink.base(
     link: {
       name: take.name,
     },
+  }),
+)
+
+Kink.base(
+  host,
+  'system_error',
+  (take: Base['system_error']['take']) => ({
+    code: CODE.system_error,
+    note: `System error.`,
   }),
 )
 
@@ -272,6 +285,11 @@ Kink.base(
 export default function kink<N extends Name>(
   form: N,
   link?: Base[N]['take'],
+  siteCode?: number,
 ) {
-  return Kink.make(host, form, link)
+  const kink = Kink.make(host, form, link)
+  if (siteCode) {
+    kink.siteCode = siteCode
+  }
+  return kink
 }

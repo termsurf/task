@@ -4,10 +4,11 @@ import {
   ConvertImageWithImageMagickBrowserLocalInput,
   ConvertImageWithImageMagickBrowserOutputModel,
   ConvertImageWithImageMagickBrowserRemoteInput,
-} from '~/code/type/index.js'
-import { buildFormDataRequestToConvert } from '../../shared.js'
-import { resolveWorkFileAsBlob } from '~/code/tool/shared/work.js'
-import kink from '~/code/tool/shared/kink.js'
+} from '~/code/type/index'
+import { buildFormDataRequestToConvert } from '../../shared'
+import { resolveWorkFileAsBlob } from '~/code/tool/shared/work'
+import kink from '~/code/tool/shared/kink'
+import { testConvertImageWithImageMagick } from './shared'
 
 export async function convertImageWithImageMagickBrowser(
   source: ConvertImageWithImageMagickBrowserInput,
@@ -29,11 +30,11 @@ export async function convertImageWithImageMagickBrowserRemote(
   const request = buildFormDataRequestToConvert(input)
   const content = await resolveWorkFileAsBlob(request)
 
-  return ConvertImageWithImageMagickBrowserOutputModel.parse({
+  return {
     file: {
       content,
     },
-  })
+  }
 }
 
 export async function convertImageWithImageMagickBrowserLocal(
@@ -42,4 +43,10 @@ export async function convertImageWithImageMagickBrowserLocal(
   throw kink('task_not_implemented', {
     task: 'convertImageWithImageMagickBrowserLocal',
   })
+}
+
+export function testConvertImageWithImageMagickBrowser(
+  input: any,
+): input is ConvertImageWithImageMagickBrowserInput {
+  return testConvertImageWithImageMagick(input)
 }

@@ -1,8 +1,8 @@
-import { getCommand } from '~/code/tool/shared/command.js'
+import { getCommand } from '~/code/tool/shared/command'
 import {
   DecompressWith7Z,
   DecompressWithUnarchiver,
-} from '~/code/type/cast.js'
+} from '~/code/type/cast'
 
 // check if corrupted
 // zip -T filename.zip

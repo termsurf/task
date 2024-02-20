@@ -23,6 +23,6 @@
       "~/*": ["./*"]
     }
   },
-  "include": ["code/node/puppeteer/**/*.ts", "*.d.ts"],
+  "include": ["code/puppeteer/**/*.ts", "*.d.ts"],
   "exclude": ["node_modules", "host"]
 }

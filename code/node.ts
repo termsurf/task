@@ -1,3 +1,3 @@
-import * as task from './action/node.js'
+import * as task from './action/node'
 
 export default task

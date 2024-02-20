@@ -7,18 +7,18 @@ import {
   ConvertImageWithInkscapeNodeLocalInputModel,
   ConvertImageWithInkscapeNodeRemoteInput,
   ConvertImageWithInkscapeNodeClientInputModel,
-} from '~/code/type/index.js'
-import { buildCommandToConvertImageWithInkscape } from '../command.js'
-import { runCommandSequence } from '~/code/tool/node/command.js'
+} from '~/code/type/index'
+import { buildCommandToConvertImageWithInkscape } from '../command'
+import { runCommandSequence } from '~/code/tool/node/command'
 import {
   resolveInputForConvertLocalExternalNode,
   resolveInputForConvertLocalInternalNode,
   resolveInputForConvertRemoteNode,
-} from '../../tool/node.js'
-import { extend } from '~/code/tool/shared/object.js'
-import { buildRequestToConvert } from '../../shared.js'
-import { resolveWorkFileNode } from '~/code/tool/node/request.js'
-import { testConvertImageWithInkscape } from './shared.js'
+} from '../../tool/node'
+import { extend } from '~/code/tool/shared/object'
+import { buildRequestToConvert } from '../../shared'
+import { resolveWorkFileNode } from '~/code/tool/node/request'
+import { testConvertImageWithInkscape } from './shared'
 
 export async function convertImageWithInkscapeNode(
   source: ConvertImageWithInkscapeNodeInput,

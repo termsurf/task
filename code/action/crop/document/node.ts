@@ -1,11 +1,11 @@
 import {
   buildCommandSequence,
   getCommand,
-} from '~/code/tool/shared/command.js'
+} from '~/code/tool/shared/command'
 import {
   CropPdfWithPdfCrop,
   CropPdfWithPdfCropModel,
-} from '~/code/type/index.js'
+} from '~/code/type/index'
 
 export async function cropPdfWithPdfCropNode(
   source: CropPdfWithPdfCrop,

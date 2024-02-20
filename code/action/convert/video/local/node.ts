@@ -1,14 +1,14 @@
 import bytes from 'bytes'
 import child_process from 'child_process'
-import kink from '~/code/tool/shared/kink.js'
+import kink from '~/code/tool/shared/kink'
 import {
   ChildProcessError,
   Message,
   exec,
-} from '~/code/tool/node/process.js'
+} from '~/code/tool/node/process'
 import Kink from '@termsurf/kink'
 import _ from 'lodash'
-import { stripAnsiFromText } from '~/code/cli/logging.js'
+import { stripAnsiFromText } from '~/code/cli/logging'
 
 // https://stackoverflow.com/questions/747982/can-ffmpeg-show-a-progress-bar
 
@@ -19,8 +19,8 @@ import {
   ConvertVideoWithFfmpegNodeInput,
   ConvertVideoWithFfmpegNodeLocalInput,
   ConvertVideoWithFfmpegNodeLocalInputModel,
-} from '~/code/type/index.js'
-import { buildCommandToConvertVideoWithFfmpeg } from '../command.js'
+} from '~/code/type/index'
+import { buildCommandToConvertVideoWithFfmpeg } from '../command'
 
 export async function handleFfmpegCommand(
   cmd: Command,
@@ -200,13 +200,3 @@ function parseFfmpegError(text: string) {
 //     )}"`,
 //   )
 // }
-
-export async function convertVideoWithFfmpeg(
-  source: ConvertVideoWithFfmpegNodeInput,
-  onUpdate?: (msg: Message) => void,
-) {
-  const input = ConvertVideoWithFfmpegNodeLocalInputModel.parse(source)
-  const sequence = await buildCommandToConvertVideoWithFfmpeg(input)
-  await handleFfmpegCommand(sequence.call[0]!, onUpdate)
-  return input.output.file.path
-}

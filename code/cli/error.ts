@@ -1,5 +1,5 @@
 import Kink, { KinkList } from '@termsurf/kink'
-import { logWithSpace } from '~/code/tool/shared/logger.js'
+import { logWithSpace } from '~/code/tool/shared/logger'
 import { makeBaseKinkText, makeKinkText } from '@termsurf/kink-text'
 
 export function logError(kink) {

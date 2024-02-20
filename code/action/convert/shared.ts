@@ -1,11 +1,7 @@
 import { serialize as serializeToFormData } from 'object-to-formdata'
-import {
-  FONT_FORMAT,
-  FontFormat,
-  ConvertApi,
-} from '~/code/type/index.js'
-import { buildRemoteRequest } from '~/code/tool/shared/request.js'
-import { omitNested } from '~/code/tool/shared/object.js'
+import { FONT_FORMAT, FontFormat, ConvertApi } from '~/code/type/index'
+import { buildRemoteRequest } from '~/code/tool/shared/request'
+import { omitNested } from '~/code/tool/shared/object'
 
 export async function convertArchive(source) {
   // const input = IOConvertArchive.parse(source)
@@ -51,6 +47,12 @@ export type ConvertTest = {
     format: string
   }
 }
+
+export type ConvertExtension<E extends { input: any; output: any }> =
+  Omit<E, 'input' | 'output'> & {
+    input: Omit<E['input'], 'format'>
+    output: Omit<E['output'], 'format'>
+  }
 
 export function testConvertInputOutput(
   input: any,

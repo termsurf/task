@@ -5,7 +5,7 @@ import {
   ConvertLatexToPngNodeInput,
   ConvertMarkdownWithPuppeteerNodeInput,
   ConvertTxtWithPuppeteerNodeInput,
-} from '../../browser.js'
+} from '../../browser'
 import {
   testConvertDocumentWithCalibre,
   testConvertDocumentWithLibreOffice,
@@ -13,14 +13,14 @@ import {
   testConvertLatexToPng,
   testConvertMarkdownWithPuppeteer,
   testConvertTxtWithPuppeteer,
-} from './shared.js'
+} from './shared'
 
-export * from './calibre/node.js'
-export * from './libre-office/node.js'
-export * from './pandoc/node.js'
-export * from './pdflatex/node.js'
-export * from './jupyter/node.js'
-export * from './puppeteer/node.js'
+export * from './calibre/node'
+export * from './libre-office/node'
+export * from './pandoc/node'
+export * from './pdflatex/node'
+export * from './jupyter/node'
+export * from './puppeteer/node'
 
 export function testConvertLatexToPngNode(
   input: any,
