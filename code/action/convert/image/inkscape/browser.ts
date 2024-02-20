@@ -6,9 +6,9 @@ import {
   ConvertImageWithInkscapeBrowserRemoteInput,
 } from '~/code/type/index'
 import { buildFormDataRequestToConvert } from '../../shared'
-import { resolveWorkFileAsBlob } from '~/code/tool/shared/work'
 import kink from '~/code/tool/shared/kink'
 import { testConvertImageWithInkscape } from './shared'
+import { resolveWorkFileAsBlob } from '~/code/tool/browser/work'
 
 export async function convertImageWithInkscapeBrowser(
   source: ConvertImageWithInkscapeBrowserInput,

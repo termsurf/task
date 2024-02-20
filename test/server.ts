@@ -21,6 +21,10 @@ app.get('/', (req: Request, res: Response) => {
   res.sendFile(`${__dirname}/test/test.html`)
 })
 
+app.get('/source', (req: Request, res: Response) => {
+  res.sendFile(`${__dirname}/test/source-mappings.wasm`)
+})
+
 app.get('/v2/work/:id', (req: Request, res: Response) => {
   res.json({
     id: 123,

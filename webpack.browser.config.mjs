@@ -5,6 +5,7 @@ import webpack from 'webpack'
 export default {
   devtool: 'inline-source-map',
   mode: 'development',
+  target: 'web',
   watchOptions: {
     poll: true,
     ignored: [

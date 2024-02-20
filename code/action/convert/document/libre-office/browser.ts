@@ -6,8 +6,8 @@ import {
   ConvertDocumentWithLibreOfficeBrowserRemoteInput,
 } from '~/code/type/index'
 import { buildFormDataRequestToConvert } from '../../shared'
-import { resolveWorkFileAsBlob } from '~/code/tool/shared/work'
 import kink from '~/code/tool/shared/kink'
+import { resolveWorkFileAsBlob } from '~/code/tool/browser/work'
 
 export async function convertDocumentWithLibreOfficeBrowser(
   source: ConvertDocumentWithLibreOfficeBrowserInput,

@@ -128,6 +128,7 @@
     "remark-parse": "^11.0.0",
     "replace-ext": "^2.0.0",
     "sanitize-html": "^2.11.0",
+    "source-map": "0.8.0-beta.0",
     "sql-escape-string": "^1.1.0",
     "sql-formatter": "^15.0.2",
     "strip-ansi": "^7.1.0",
