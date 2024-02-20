@@ -89,6 +89,7 @@
     "gifsicle-wasm-browser": "^1.5.16",
     "glob": "^10.3.10",
     "guesslang-js": "^0.0.3",
+    "ip": "^2.0.1",
     "json-keys-sort": "^2.1.0",
     "libarchive.js": "^1.3.0",
     "libreoffice-convert": "^1.5.1",
