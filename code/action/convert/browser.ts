@@ -217,15 +217,15 @@ export async function convert(
   native?: NativeOptions,
 ): Promise<WorkFileAsBlob> {
   if (testConvertTxtWithPuppeteerBrowser(source)) {
-    return convertTxtWithPuppeteerBrowser(source, native)
+    return await convertTxtWithPuppeteerBrowser(source, native)
   }
 
   if (testConvertMarkdownWithPuppeteerBrowser(source)) {
-    return convertMarkdownWithPuppeteerBrowser(source, native)
+    return await convertMarkdownWithPuppeteerBrowser(source, native)
   }
 
   if (testConvertFontWithFontForgeBrowser(source)) {
-    return convertFontWithFontForgeBrowser(source, native)
+    return await convertFontWithFontForgeBrowser(source, native)
   }
 
   // if (testConvertImageWithInkscapeBrowser(source)) {

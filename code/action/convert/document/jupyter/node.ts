@@ -16,43 +16,51 @@ import {
   resolveInputForConvertRemoteNode,
 } from '../../tool/node'
 import { extend } from '~/code/tool/shared/object'
-import {
-  buildFormDataRequestToConvert,
-  buildRequestToConvert,
-} from '../../shared'
+import { buildRequestToConvert } from '../../shared'
 import { resolveWorkFileNode } from '~/code/tool/node/request'
+import { NativeOptions } from '~/code/tool/shared/request'
 
 export async function convertDocumentWithJupyterNode(
   source: ConvertDocumentWithJupyterNodeInput,
+  native?: NativeOptions,
 ) {
   const input = ConvertDocumentWithJupyterNodeInputModel.parse(source)
 
   switch (input.handle) {
     case 'remote':
-      return await convertDocumentWithJupyterNodeRemote(input)
+      return await convertDocumentWithJupyterNodeRemote(input, native)
     case 'external':
-      return await convertDocumentWithJupyterNodeLocalExternal(input)
+      return await convertDocumentWithJupyterNodeLocalExternal(
+        input,
+        native,
+      )
     default:
-      return await convertDocumentWithJupyterNodeLocalInternal(input)
+      return await convertDocumentWithJupyterNodeLocalInternal(
+        input,
+        native,
+      )
   }
 }
 
 async function convertDocumentWithJupyterNodeLocalExternal(
   source: ConvertDocumentWithJupyterNodeLocalExternalInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertLocalExternalNode(source)
-  return await convertDocumentWithJupyterNodeLocal(input)
+  return await convertDocumentWithJupyterNodeLocal(input, native)
 }
 
 async function convertDocumentWithJupyterNodeLocalInternal(
   source: ConvertDocumentWithJupyterNodeLocalInternalInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertLocalInternalNode(source)
-  return await convertDocumentWithJupyterNodeLocal(input)
+  return await convertDocumentWithJupyterNodeLocal(input, native)
 }
 
 export async function convertDocumentWithJupyterNodeRemote(
   source: ConvertDocumentWithJupyterNodeRemoteInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertRemoteNode(source)
   const clientInput =
@@ -70,7 +78,10 @@ export async function convertDocumentWithJupyterNodeRemote(
   })
 }
 
-export async function convertDocumentWithJupyterNodeLocal(input) {
+export async function convertDocumentWithJupyterNodeLocal(
+  input,
+  native?: NativeOptions,
+) {
   const localInput =
     ConvertDocumentWithJupyterNodeLocalInputModel.parse(input)
 

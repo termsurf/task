@@ -1,32 +1,44 @@
 import { Form } from '@termsurf/form'
+import { buildConvertForms } from '~/code/tool/shared/source'
 
-export const convert_archive_with_unarchiver: Form = {
-  form: 'form',
-  link: {
-    temporary: {
-      link: {
-        directory: {
-          link: {
-            path: { like: 'string', name: { mark: 'm' } },
-          },
-        },
-      },
-    },
-    input: {
-      link: {
-        format: { like: 'unarchiver_format', name: { mark: 'I' } },
-        file: {
-          link: { path: { like: 'string' } },
-        },
-      },
-    },
-    output: {
-      link: {
-        format: { like: 'string', name: { mark: 'O' } },
-        file: {
-          link: { path: { like: 'string' } },
-        },
-      },
-    },
-  },
-}
+const convert_archive_forms = buildConvertForms(
+  'convert_archive',
+  'archive_format',
+  'archive_format',
+)
+
+export const convert_archive_node_input =
+  convert_archive_forms.node_input
+
+export const convert_archive_node_remote_input =
+  convert_archive_forms.node_remote_input
+
+export const convert_archive_node_external_input =
+  convert_archive_forms.node_external_input
+
+export const convert_archive_node_client_input =
+  convert_archive_forms.node_client_input
+
+export const convert_archive_node_local_external_input =
+  convert_archive_forms.node_local_external_input
+
+export const convert_archive_node_local_internal_input =
+  convert_archive_forms.node_local_internal_input
+
+export const convert_archive_node_local_input =
+  convert_archive_forms.node_local_input
+
+export const convert_archive_node_output =
+  convert_archive_forms.node_output
+
+export const convert_archive_browser_input =
+  convert_archive_forms.browser_input
+
+export const convert_archive_browser_remote_input =
+  convert_archive_forms.browser_remote_input
+
+export const convert_archive_browser_local_input =
+  convert_archive_forms.browser_local_input
+
+export const convert_archive_browser_output =
+  convert_archive_forms.browser_output

@@ -5,13 +5,19 @@ import { Link } from './type'
 import { convert_image_with_image_magick_node_input } from '~/code/source'
 import { BuildFormatInputOutputModel, Task } from '~/code/type/index'
 import kink from '~/code/tool/shared/kink'
-import { logOutput, logStart, setLoggingStyle } from './logging'
+import {
+  logConverted,
+  logConverting,
+  logOutput,
+  logStart,
+  setLoggingStyle,
+} from './logging'
 import { buildInputMapping, transferInput } from './parse'
 import { testConvertImageWithImageMagick } from '../action/convert/image/imagemagick/shared'
 // import {
 //   testConvertFontWithFontForge,
 // }
-import { convert } from './internal'
+import { convert } from '../action/node'
 import {
   testConvertDocumentWithCalibre,
   testConvertDocumentWithPandoc,
@@ -19,6 +25,25 @@ import {
   testConvertTxtWithPuppeteer,
 } from '../action/convert/document/shared'
 import { closeAllBrowsers } from '../tool/node/browser'
+import { testConvertFontWithFontForge } from '../action/convert/font/shared'
+
+// --verbose logging
+// task <Downloading ${url}>
+//   load <10%> (white)
+//   note <Done.> (green)
+// task <Uploading ${path}>
+//   load <100%>
+// task <Executing {command}>
+// task <Processing>
+// task <Requesting GET /path>
+//   note <Success.> (green)
+//   note <Error message.> (red)
+
+// [spinner]
+// ✓ task <Verifying ${type}>
+// ✓ task <Verified ${type}>
+// ✓ task <Converting ${type}>
+// ✓ task <Converted ${type}>
 
 export const CONVERT_KEY: Record<string, Link> = {
   i: { line: ['input', 'file', 'path'] },
@@ -98,16 +123,16 @@ export async function call(task: Task, source) {
         let spinner
 
         try {
-          spinner = logStart(`Converting document...`)
-          const out = await resolve(
-            convert(
-              transferInput(source, buildInputMapping(mesh, form)),
-            ),
+          spinner = logConverting({ type: 'document', input: base })
+          const out = await convert(
+            transferInput(source, buildInputMapping(mesh, form)) as any,
           )
           spinner?.stop()
-          if (typeof out === 'object' && 'output' in out) {
-            logOutput(out.file.path)
-          }
+          logConverted({
+            type: 'document',
+            input: base,
+            path: out.file.path,
+          })
           return
         } catch (e) {
           spinner?.stop()
@@ -117,12 +142,7 @@ export async function call(task: Task, source) {
         }
       }
 
-      if (
-        testConvertMarkdownWithPuppeteer(
-          base.input.format,
-          base.output.format,
-        )
-      ) {
+      if (testConvertMarkdownWithPuppeteer(base)) {
         const form = mesh.convert_txt_with_puppeteer_node_input
         if (source.help) {
           // return showHelpForConvert(form)
@@ -130,14 +150,16 @@ export async function call(task: Task, source) {
         let spinner
 
         try {
-          spinner = logStart(`Converting document...`)
+          spinner = logConverting({ type: 'document', input: base })
           const out = await convert(
-            transferInput(source, buildInputMapping(mesh, form)),
+            transferInput(source, buildInputMapping(mesh, form)) as any,
           )
           spinner?.stop()
-          if (typeof out === 'object' && 'output' in out) {
-            logOutput(out.file.path)
-          }
+          logConverted({
+            type: 'document',
+            input: base,
+            path: out.file.path,
+          })
           return
         } catch (e) {
           spinner?.stop()
@@ -147,12 +169,7 @@ export async function call(task: Task, source) {
         }
       }
 
-      if (
-        testConvertDocumentWithPandoc(
-          base.input.format,
-          base.output.format,
-        )
-      ) {
+      if (testConvertDocumentWithPandoc(base)) {
         const form = mesh.convert_document_with_pandoc_node_input
         if (source.help) {
           // return showHelpForConvert(form)
@@ -162,7 +179,7 @@ export async function call(task: Task, source) {
         try {
           spinner = logStart(`Converting document...`)
           const out = await convert(
-            transferInput(source, buildInputMapping(mesh, form)),
+            transferInput(source, buildInputMapping(mesh, form)) as any,
           )
           spinner?.stop()
           if (typeof out === 'object' && 'output' in out) {
@@ -175,12 +192,7 @@ export async function call(task: Task, source) {
         }
       }
 
-      if (
-        testConvertDocumentWithCalibre(
-          base.input.format,
-          base.output.format,
-        )
-      ) {
+      if (testConvertDocumentWithCalibre(base)) {
         const form = mesh.convert_document_with_calibre_node_input
         if (source.help) {
           // return showHelpForConvert(form)
@@ -191,7 +203,7 @@ export async function call(task: Task, source) {
         try {
           spinner = logStart(`Converting document...`)
           const out = await convert(
-            transferInput(source, buildInputMapping(mesh, form)),
+            transferInput(source, buildInputMapping(mesh, form)) as any,
           )
           spinner?.stop()
           if (typeof out === 'object' && 'output' in out) {
@@ -204,19 +216,14 @@ export async function call(task: Task, source) {
         }
       }
 
-      if (
-        testConvertFontWithFontForge(
-          base.input.format,
-          base.output.format,
-        )
-      ) {
+      if (testConvertFontWithFontForge(base)) {
         const form = mesh.convert_font_with_font_forge_node_input
         if (source.help) {
           // return showHelpForConvert(form)
         }
         const spinner = logStart(`Converting font...`)
         const out = await convert(
-          transferInput(source, buildInputMapping(mesh, form)),
+          transferInput(source, buildInputMapping(mesh, form)) as any,
         )
         spinner?.stop()
         if (typeof out === 'object' && 'output' in out) {
@@ -225,12 +232,7 @@ export async function call(task: Task, source) {
         return
       }
 
-      if (
-        testConvertImageWithImageMagick(
-          base.input.format,
-          base.output.format,
-        )
-      ) {
+      if (testConvertImageWithImageMagick(base)) {
         const form = convert_image_with_image_magick_node_input
         if (source.help) {
           return // showHelpForConvert(form)
@@ -238,14 +240,16 @@ export async function call(task: Task, source) {
         let spinner
 
         try {
-          spinner = logStart(`Converting image...`)
+          spinner = logConverting({ type: 'image', input: base })
           const out = await convert(
-            transferInput(source, buildInputMapping(mesh, form)),
+            transferInput(source, buildInputMapping(mesh, form)) as any,
           )
           spinner?.stop()
-          if (typeof out === 'object' && 'output' in out) {
-            logOutput(out.file.path)
-          }
+          logConverted({
+            type: 'image',
+            input: base,
+            path: out.file.path,
+          })
           return
         } catch (e) {
           spinner?.stop()

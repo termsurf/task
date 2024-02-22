@@ -34,40 +34,51 @@ import { buildRequestToConvert } from '../../shared'
 import { resolveWorkFileNode } from '~/code/tool/node/request'
 import { arrayBufferToString } from '~/code/tool/shared/string'
 import _ from 'lodash'
+import { NativeOptions } from '~/code/tool/shared/request'
 
 export async function convertTxtWithPuppeteerNode(
   source: ConvertTxtWithPuppeteerNodeInput,
+  native?: NativeOptions,
 ) {
   const input = ConvertTxtWithPuppeteerNodeInputModel.parse(source)
 
   switch (input.handle) {
     case 'remote':
-      return await convertTxtWithPuppeteerNodeRemote(input)
+      return await convertTxtWithPuppeteerNodeRemote(input, native)
     case 'external':
-      return await convertTxtWithPuppeteerNodeLocalExternal(input)
+      return await convertTxtWithPuppeteerNodeLocalExternal(
+        input,
+        native,
+      )
     default:
-      return await convertTxtWithPuppeteerNodeLocalInternal(input)
+      return await convertTxtWithPuppeteerNodeLocalInternal(
+        input,
+        native,
+      )
   }
 }
 
 async function convertTxtWithPuppeteerNodeLocalExternal(
   source: ConvertTxtWithPuppeteerNodeLocalExternalInput,
+  native?: NativeOptions,
 ) {
   const input =
     await resolveInputContentForConvertLocalExternalNode(source)
-  return await convertTxtWithPuppeteerNodeLocal(input)
+  return await convertTxtWithPuppeteerNodeLocal(input, native)
 }
 
 async function convertTxtWithPuppeteerNodeLocalInternal(
   source: ConvertTxtWithPuppeteerNodeLocalInternalInput,
+  native?: NativeOptions,
 ) {
   const input =
     await resolveInputContentForConvertLocalInternalNode(source)
-  return await convertTxtWithPuppeteerNodeLocal(input)
+  return await convertTxtWithPuppeteerNodeLocal(input, native)
 }
 
 export async function convertTxtWithPuppeteerNodeRemote(
   source: ConvertTxtWithPuppeteerNodeRemoteInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertRemoteNode(source)
   const clientInput = ConvertTxtWithPuppeteerNodeClientInputModel.parse(
@@ -196,7 +207,10 @@ function marginStyleToCSS(margin) {
   return css
 }
 
-export async function convertTxtWithPuppeteerNodeLocal(source) {
+export async function convertTxtWithPuppeteerNodeLocal(
+  source,
+  native?: NativeOptions,
+) {
   debug('convertTxtWithPuppeteerNodeLocal', source)
 
   const input = ConvertTxtWithPuppeteerNodeLocalInputModel.parse(source)
@@ -269,37 +283,47 @@ ${textCss.map(line => `        ${line}`).join('\n')}
 
 export async function convertMarkdownWithPuppeteerNode(
   source: ConvertMarkdownWithPuppeteerNodeInput,
+  native?: NativeOptions,
 ) {
   const input = ConvertMarkdownWithPuppeteerNodeInputModel.parse(source)
 
   switch (input.handle) {
     case 'remote':
-      return await convertMarkdownWithPuppeteerNodeRemote(input)
+      return await convertMarkdownWithPuppeteerNodeRemote(input, native)
     case 'external':
-      return await convertMarkdownWithPuppeteerNodeLocalExternal(input)
+      return await convertMarkdownWithPuppeteerNodeLocalExternal(
+        input,
+        native,
+      )
     default:
-      return await convertMarkdownWithPuppeteerNodeLocalInternal(input)
+      return await convertMarkdownWithPuppeteerNodeLocalInternal(
+        input,
+        native,
+      )
   }
 }
 
 async function convertMarkdownWithPuppeteerNodeLocalExternal(
   source: ConvertMarkdownWithPuppeteerNodeLocalExternalInput,
+  native?: NativeOptions,
 ) {
   const input =
     await resolveInputContentForConvertLocalExternalNode(source)
-  return await convertMarkdownWithPuppeteerNodeLocal(input)
+  return await convertMarkdownWithPuppeteerNodeLocal(input, native)
 }
 
 async function convertMarkdownWithPuppeteerNodeLocalInternal(
   source: ConvertMarkdownWithPuppeteerNodeLocalInternalInput,
+  native?: NativeOptions,
 ) {
   const input =
     await resolveInputContentForConvertLocalInternalNode(source)
-  return await convertMarkdownWithPuppeteerNodeLocal(input)
+  return await convertMarkdownWithPuppeteerNodeLocal(input, native)
 }
 
 export async function convertMarkdownWithPuppeteerNodeRemote(
   source: ConvertMarkdownWithPuppeteerNodeRemoteInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertRemoteNode(source)
   const clientInput =
@@ -317,7 +341,10 @@ export async function convertMarkdownWithPuppeteerNodeRemote(
   })
 }
 
-export async function convertMarkdownWithPuppeteerNodeLocal(source) {
+export async function convertMarkdownWithPuppeteerNodeLocal(
+  source,
+  native?: NativeOptions,
+) {
   debug('convertMarkdownWithPuppeteerNodeLocal', source)
 
   const input =
@@ -498,6 +525,7 @@ ${linkCss.map(line => `        ${line}`).join('\n')}
 
 export async function convertHtmlToPngWithPuppeteerNode(
   input: ConvertHtmlWithPuppeteerNodeInput,
+  native?: NativeOptions,
 ) {
   // const b = await getBrowser(input.proxy ? `${input.proxy}` : undefined)
   // const p = await b.newPage()
@@ -526,6 +554,7 @@ export async function convertHtmlToPngWithPuppeteerNode(
 
 export async function convertHtmlToPdfWithPuppeteer(
   input: ConvertHtmlWithPuppeteerNodeInput,
+  native?: NativeOptions,
 ) {
   // const b = await getBrowser(input.proxy ? `${input.proxy}` : undefined)
   // const p = await b.newPage()

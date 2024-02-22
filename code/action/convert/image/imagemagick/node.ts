@@ -19,38 +19,49 @@ import {
 import { extend } from '~/code/tool/shared/object'
 import { buildRequestToConvert } from '../../shared'
 import { resolveWorkFileNode } from '~/code/tool/node/request'
+import { NativeOptions } from '~/code/tool/shared/request'
 
 export async function convertImageWithImageMagickNode(
   source: ConvertImageWithImageMagickNodeInput,
+  native?: NativeOptions,
 ) {
   const input = ConvertImageWithImageMagickNodeInputModel.parse(source)
 
   switch (input.handle) {
     case 'remote':
-      return await convertImageWithImageMagickNodeRemote(input)
+      return await convertImageWithImageMagickNodeRemote(input, native)
     case 'external':
-      return await convertImageWithImageMagickNodeLocalExternal(input)
+      return await convertImageWithImageMagickNodeLocalExternal(
+        input,
+        native,
+      )
     default:
-      return await convertImageWithImageMagickNodeLocalInternal(input)
+      return await convertImageWithImageMagickNodeLocalInternal(
+        input,
+        native,
+      )
   }
 }
 
 async function convertImageWithImageMagickNodeLocalExternal(
   source: ConvertImageWithImageMagickNodeLocalExternalInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertLocalExternalNode(source)
-  return await convertImageWithImageMagickNodeLocal(input)
+  return await convertImageWithImageMagickNodeLocal(input, native)
 }
 
 async function convertImageWithImageMagickNodeLocalInternal(
   source: ConvertImageWithImageMagickNodeLocalInternalInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertLocalInternalNode(source)
-  return await convertImageWithImageMagickNodeLocal(input)
+  return await convertImageWithImageMagickNodeLocal(input, native)
 }
 
 export async function convertImageWithImageMagickNodeRemote(
   source: ConvertImageWithImageMagickNodeRemoteInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertRemoteNode(source)
   const clientInput =
@@ -68,7 +79,10 @@ export async function convertImageWithImageMagickNodeRemote(
   })
 }
 
-export async function convertImageWithImageMagickNodeLocal(input) {
+export async function convertImageWithImageMagickNodeLocal(
+  input,
+  native?: NativeOptions,
+) {
   const localInput =
     ConvertImageWithImageMagickNodeLocalInputModel.parse(input)
 

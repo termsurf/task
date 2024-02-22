@@ -8,34 +8,28 @@ export type AddAudioToVideoWithFfmpeg = {
   fit: boolean
 }
 
-export const ARCHIVE_FORMAT = ['zip'] as const
+export type Archive = {
+  input: {
+    path: string
+  }
+  output: {
+    format: ArchiveFormat
+    file: {
+      path: string
+    }
+  }
+}
+
+export const ARCHIVE_FORMAT = [
+  'zip',
+  'rar',
+  '7z',
+  'tar',
+  'gzip',
+  'bzip2',
+] as const
 
 export type ArchiveFormat = (typeof ARCHIVE_FORMAT)[number]
-
-export type ArchiveWithRar = {
-  input: {
-    format: string
-    path: string
-  }
-  output: {
-    format: string
-    file: {
-      path: string
-    }
-  }
-}
-
-export type ArchiveWithZip = {
-  input: {
-    path: string
-  }
-  output: {
-    format: string
-    file: {
-      path: string
-    }
-  }
-}
 
 export const ASSEMBLY_SYNTAX = ['intel', 'att'] as const
 
@@ -3732,24 +3726,118 @@ export type ConvertApi = {
   }
 }
 
-export type ConvertArchiveWithUnarchiver = {
-  temporary: {
-    directory: {
-      path: string
-    }
-  }
+export type ConvertArchiveBrowserInput =
+  | ConvertArchiveBrowserRemoteInput
+  | ConvertArchiveBrowserLocalInput
+
+export type ConvertArchiveBrowserLocalInput = {
+  handle?: 'local'
   input: {
-    format: UnarchiverFormat
+    format: ArchiveFormat
     file: {
-      path: string
+      content: FileContent
     }
   }
   output: {
-    format: string
-    file: {
-      path: string
-    }
+    format: ArchiveFormat
   }
+}
+
+export type ConvertArchiveBrowserOutput = {
+  file: FileContent
+}
+
+export type ConvertArchiveBrowserRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: ArchiveFormat
+    file: FileContentWithSha256
+  }
+  output: {
+    format: ArchiveFormat
+  }
+}
+
+export type ConvertArchiveNodeClientInput = {
+  handle: 'client'
+  input: {
+    format: ArchiveFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: ArchiveFormat
+  }
+}
+
+export type ConvertArchiveNodeExternalInput = {
+  handle: 'external'
+  input: {
+    format: ArchiveFormat
+    file: RemoteInputPath | FileContentWithSha256
+  }
+  output: {
+    format: ArchiveFormat
+  }
+}
+
+export type ConvertArchiveNodeInput =
+  | ConvertArchiveNodeRemoteInput
+  | ConvertArchiveNodeLocalExternalInput
+  | ConvertArchiveNodeLocalInternalInput
+
+export type ConvertArchiveNodeLocalExternalInput = {
+  handle: 'external'
+  input: {
+    format: ArchiveFormat
+    file: RemoteInputPath | FileContentWithSha256
+  }
+  output: {
+    format: ArchiveFormat
+    file?: LocalOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertArchiveNodeLocalInput = {
+  input: {
+    format: ArchiveFormat
+    file: LocalPath
+  }
+  output: {
+    format: ArchiveFormat
+    file: LocalPath
+  }
+  pathScope?: string
+}
+
+export type ConvertArchiveNodeLocalInternalInput = {
+  handle?: 'internal'
+  input: {
+    format: ArchiveFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: ArchiveFormat
+    file?: LocalOutputPath
+  }
+  pathScope?: string
+}
+
+export type ConvertArchiveNodeOutput = {
+  file: FilePath
+}
+
+export type ConvertArchiveNodeRemoteInput = {
+  handle: 'remote'
+  input: {
+    format: ArchiveFormat
+    file: FileInputPath | FileContentWithSha256
+  }
+  output: {
+    format: ArchiveFormat
+    file?: LocalOutputPath
+  }
+  pathScope?: string
 }
 
 export type ConvertDocumentWithCalibreBrowserInput =
@@ -5830,35 +5918,6 @@ export type CropPdfWithPdfCrop = {
     }
   }
   output: {
-    file: {
-      path: string
-    }
-  }
-}
-
-export type DecompressWith7Z = {
-  input: {
-    format: string
-    path: string
-  }
-  output: {
-    format: string
-    file: {
-      path: string
-    }
-  }
-}
-
-export type DecompressWithUnarchiver = {
-  output: {
-    overwrite?: boolean
-    directory: {
-      path: string
-    }
-  }
-  input: {
-    password?: string
-    format: string
     file: {
       path: string
     }
@@ -77425,6 +77484,35 @@ export const EXIFTOOL_TAG_CONTENT: ExiftoolTagContent = {
   i_tunes: {
     head: 'iTunes',
   },
+}
+
+export type ExtractWith7Z = {
+  input: {
+    format: string
+    path: string
+  }
+  output: {
+    format: string
+    file: {
+      path: string
+    }
+  }
+}
+
+export type ExtractWithUnarchiver = {
+  input: {
+    password?: string
+    format: ArchiveFormat
+    file: {
+      path: string
+    }
+  }
+  output: {
+    overwrite?: boolean
+    directory: {
+      path: string
+    }
+  }
 }
 
 export const FFMPEG_CODEC_AUDIO = [

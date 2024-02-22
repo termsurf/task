@@ -1,7 +1,7 @@
 import { z } from 'zod'
-import * as Cast from './cast'
+import * as Cast from './cast.js'
 import { MAKE, TEST } from '@termsurf/form'
-import * as code from './code'
+import * as code from './code.js'
 
 export const AddAudioToVideoWithFfmpegModel: z.ZodType<Cast.AddAudioToVideoWithFfmpeg> =
   z.object({
@@ -12,36 +12,21 @@ export const AddAudioToVideoWithFfmpegModel: z.ZodType<Cast.AddAudioToVideoWithF
     fit: z.boolean(),
   })
 
+export const ArchiveModel: z.ZodType<Cast.Archive> = z.object({
+  input: z.object({
+    path: z.string(),
+  }),
+  output: z.object({
+    format: z.lazy(() => ArchiveFormatModel),
+    file: z.object({
+      path: z.string(),
+    }),
+  }),
+})
+
 export const ArchiveFormatModel: z.ZodType<Cast.ArchiveFormat> = z.enum(
   Cast.ARCHIVE_FORMAT,
 )
-
-export const ArchiveWithRarModel: z.ZodType<Cast.ArchiveWithRar> =
-  z.object({
-    input: z.object({
-      format: z.string(),
-      path: z.string(),
-    }),
-    output: z.object({
-      format: z.string(),
-      file: z.object({
-        path: z.string(),
-      }),
-    }),
-  })
-
-export const ArchiveWithZipModel: z.ZodType<Cast.ArchiveWithZip> =
-  z.object({
-    input: z.object({
-      path: z.string(),
-    }),
-    output: z.object({
-      format: z.string(),
-      file: z.object({
-        path: z.string(),
-      }),
-    }),
-  })
 
 export const AssemblySyntaxModel: z.ZodType<Cast.AssemblySyntax> =
   z.enum(Cast.ASSEMBLY_SYNTAX)
@@ -826,25 +811,147 @@ export const ConvertApiModel: z.ZodType<Cast.ConvertApi> = z.object({
   }),
 })
 
-export const ConvertArchiveWithUnarchiverModel: z.ZodType<Cast.ConvertArchiveWithUnarchiver> =
+export const ConvertArchiveBrowserInputModel: z.ZodType<Cast.ConvertArchiveBrowserInput> =
+  z.union([
+    z.lazy(() => ConvertArchiveBrowserRemoteInputModel),
+    z.lazy(() => ConvertArchiveBrowserLocalInputModel),
+  ])
+
+export const ConvertArchiveBrowserLocalInputModel: z.ZodType<Cast.ConvertArchiveBrowserLocalInput> =
   z.object({
-    temporary: z.object({
-      directory: z.object({
-        path: z.string(),
-      }),
-    }),
+    handle: z.optional(z.literal('local')),
     input: z.object({
-      format: z.lazy(() => UnarchiverFormatModel),
+      format: z.lazy(() => ArchiveFormatModel),
       file: z.object({
-        path: z.string(),
+        content: z.lazy(() => FileContentModel),
       }),
     }),
     output: z.object({
-      format: z.string(),
-      file: z.object({
-        path: z.string(),
-      }),
+      format: z.lazy(() => ArchiveFormatModel),
     }),
+  })
+
+export const ConvertArchiveBrowserOutputModel: z.ZodType<Cast.ConvertArchiveBrowserOutput> =
+  z.object({
+    file: z.lazy(() => FileContentModel),
+  })
+
+export const ConvertArchiveBrowserRemoteInputModel: z.ZodType<Cast.ConvertArchiveBrowserRemoteInput> =
+  z.object({
+    handle: z.literal('remote'),
+    input: z.object({
+      format: z.lazy(() => ArchiveFormatModel),
+      file: z.lazy(() => FileContentWithSha256Model),
+    }),
+    output: z.object({
+      format: z.lazy(() => ArchiveFormatModel),
+    }),
+  })
+
+export const ConvertArchiveNodeClientInputModel: z.ZodType<Cast.ConvertArchiveNodeClientInput> =
+  z.object({
+    handle: z.literal('client'),
+    input: z.object({
+      format: z.lazy(() => ArchiveFormatModel),
+      file: z.union([
+        z.lazy(() => FileInputPathModel),
+        z.lazy(() => FileContentWithSha256Model),
+      ]),
+    }),
+    output: z.object({
+      format: z.lazy(() => ArchiveFormatModel),
+    }),
+  })
+
+export const ConvertArchiveNodeExternalInputModel: z.ZodType<Cast.ConvertArchiveNodeExternalInput> =
+  z.object({
+    handle: z.literal('external'),
+    input: z.object({
+      format: z.lazy(() => ArchiveFormatModel),
+      file: z.union([
+        z.lazy(() => RemoteInputPathModel),
+        z.lazy(() => FileContentWithSha256Model),
+      ]),
+    }),
+    output: z.object({
+      format: z.lazy(() => ArchiveFormatModel),
+    }),
+  })
+
+export const ConvertArchiveNodeInputModel: z.ZodType<Cast.ConvertArchiveNodeInput> =
+  z.union([
+    z.lazy(() => ConvertArchiveNodeRemoteInputModel),
+    z.lazy(() => ConvertArchiveNodeLocalExternalInputModel),
+    z.lazy(() => ConvertArchiveNodeLocalInternalInputModel),
+  ])
+
+export const ConvertArchiveNodeLocalExternalInputModel: z.ZodType<Cast.ConvertArchiveNodeLocalExternalInput> =
+  z.object({
+    handle: z.literal('external'),
+    input: z.object({
+      format: z.lazy(() => ArchiveFormatModel),
+      file: z.union([
+        z.lazy(() => RemoteInputPathModel),
+        z.lazy(() => FileContentWithSha256Model),
+      ]),
+    }),
+    output: z.object({
+      format: z.lazy(() => ArchiveFormatModel),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertArchiveNodeLocalInputModel: z.ZodType<Cast.ConvertArchiveNodeLocalInput> =
+  z.object({
+    input: z.object({
+      format: z.lazy(() => ArchiveFormatModel),
+      file: z.lazy(() => LocalPathModel),
+    }),
+    output: z.object({
+      format: z.lazy(() => ArchiveFormatModel),
+      file: z.lazy(() => LocalPathModel),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertArchiveNodeLocalInternalInputModel: z.ZodType<Cast.ConvertArchiveNodeLocalInternalInput> =
+  z.object({
+    handle: z.optional(z.literal('internal')),
+    input: z.object({
+      format: z.lazy(() => ArchiveFormatModel),
+      file: z.union([
+        z.lazy(() => FileInputPathModel),
+        z.lazy(() => FileContentWithSha256Model),
+      ]),
+    }),
+    output: z.object({
+      format: z.lazy(() => ArchiveFormatModel),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
+    }),
+    pathScope: z.optional(z.string()),
+  })
+
+export const ConvertArchiveNodeOutputModel: z.ZodType<Cast.ConvertArchiveNodeOutput> =
+  z.object({
+    file: z.lazy(() => FilePathModel),
+  })
+
+export const ConvertArchiveNodeRemoteInputModel: z.ZodType<Cast.ConvertArchiveNodeRemoteInput> =
+  z.object({
+    handle: z.literal('remote'),
+    input: z.object({
+      format: z.lazy(() => ArchiveFormatModel),
+      file: z.union([
+        z.lazy(() => FileInputPathModel),
+        z.lazy(() => FileContentWithSha256Model),
+      ]),
+    }),
+    output: z.object({
+      format: z.lazy(() => ArchiveFormatModel),
+      file: z.optional(z.lazy(() => LocalOutputPathModel)),
+    }),
+    pathScope: z.optional(z.string()),
   })
 
 export const ConvertDocumentWithCalibreBrowserInputModel: z.ZodType<Cast.ConvertDocumentWithCalibreBrowserInput> =
@@ -3697,37 +3804,6 @@ export const CropPdfWithPdfCropModel: z.ZodType<Cast.CropPdfWithPdfCrop> =
     }),
   })
 
-export const DecompressWith7ZModel: z.ZodType<Cast.DecompressWith7Z> =
-  z.object({
-    input: z.object({
-      format: z.string(),
-      path: z.string(),
-    }),
-    output: z.object({
-      format: z.string(),
-      file: z.object({
-        path: z.string(),
-      }),
-    }),
-  })
-
-export const DecompressWithUnarchiverModel: z.ZodType<Cast.DecompressWithUnarchiver> =
-  z.object({
-    output: z.object({
-      overwrite: z.optional(z.boolean()).default(false),
-      directory: z.object({
-        path: z.string(),
-      }),
-    }),
-    input: z.object({
-      password: z.optional(z.string()),
-      format: z.string(),
-      file: z.object({
-        path: z.string(),
-      }),
-    }),
-  })
-
 export const DisassembleBinaryWithObjdumpModel: z.ZodType<Cast.DisassembleBinaryWithObjdump> =
   z.object({
     show: z.array(z.lazy(() => ObjdumpShowOptionModel)),
@@ -3751,6 +3827,37 @@ export const ExiftoolImageFormatContentKeyModel: z.ZodType<Cast.ExiftoolImageFor
 
 export const ExiftoolTagContentKeyModel: z.ZodType<Cast.ExiftoolTagContentKey> =
   z.enum(Cast.EXIFTOOL_TAG_CONTENT_KEY)
+
+export const ExtractWith7ZModel: z.ZodType<Cast.ExtractWith7Z> =
+  z.object({
+    input: z.object({
+      format: z.string(),
+      path: z.string(),
+    }),
+    output: z.object({
+      format: z.string(),
+      file: z.object({
+        path: z.string(),
+      }),
+    }),
+  })
+
+export const ExtractWithUnarchiverModel: z.ZodType<Cast.ExtractWithUnarchiver> =
+  z.object({
+    input: z.object({
+      password: z.optional(z.string()),
+      format: z.lazy(() => ArchiveFormatModel),
+      file: z.object({
+        path: z.string(),
+      }),
+    }),
+    output: z.object({
+      overwrite: z.optional(z.boolean()).default(false),
+      directory: z.object({
+        path: z.string(),
+      }),
+    }),
+  })
 
 export const FfmpegCodecAudioModel: z.ZodType<Cast.FfmpegCodecAudio> =
   z.enum(Cast.FFMPEG_CODEC_AUDIO)

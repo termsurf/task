@@ -3,7 +3,7 @@ import fsp from 'fs/promises'
 import fs from 'fs'
 import { Readable } from 'stream'
 import { ReadableStream as ReadableStreamWeb } from 'stream/web'
-import { tmpName } from 'tmp-promise'
+import tmp, { tmpName } from 'tmp-promise'
 import _ from 'lodash'
 import { fetchWithTimeout } from '../shared/request'
 import { FileLink } from '../shared/file'
@@ -135,4 +135,18 @@ export async function generateFilePath(
   const fullName = extension ? `${name}.${extension}` : name
   const path = await tmpName({ tmpdir: directory, name: fullName })
   return path
+}
+
+export async function generateDirectoryPath(directory: string) {
+  const name = getRandomId(64)
+  const { path } = await tmp.dir({ tmpdir: directory, name })
+  return path
+}
+
+export async function generateTemporaryDirectoryPath() {
+  return await generateDirectoryPath(tmpdir())
+}
+
+export async function removeDirectory(path: string) {
+  await fsp.unlink(path)
 }

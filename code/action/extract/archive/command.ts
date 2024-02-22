@@ -1,16 +1,14 @@
-import { getCommand } from '~/code/tool/shared/command'
 import {
-  DecompressWith7Z,
-  DecompressWithUnarchiver,
-} from '~/code/type/cast'
+  buildCommandSequence,
+  getCommand,
+} from '~/code/tool/shared/command'
+import { ExtractWith7Z, ExtractWithUnarchiver } from '~/code/type/cast'
 
 // check if corrupted
 // zip -T filename.zip
 // 7z t file.zip
 
-export function buildCommandToDecompressWith7z(
-  input: DecompressWith7Z,
-) {
+export function buildCommandToExtractWith7z(input: ExtractWith7Z) {
   const cmd = getCommand(`7z`)
   cmd.link.push(
     `x`,
@@ -18,11 +16,11 @@ export function buildCommandToDecompressWith7z(
     `-o`,
     `"${input.output.file.path}"`,
   )
-  return [cmd]
+  return buildCommandSequence(cmd)
 }
 
-export function buildCommandToDecompressWithUnarchiver(
-  input: DecompressWithUnarchiver,
+export function buildCommandToExtractWithUnarchiver(
+  input: ExtractWithUnarchiver,
 ) {
   const cmd = getCommand(`unar`)
   cmd.link.push(
@@ -41,7 +39,7 @@ export function buildCommandToDecompressWithUnarchiver(
     cmd.link.push(`-p`, input.input.password)
   }
 
-  return [cmd]
+  return buildCommandSequence(cmd)
 }
 
 // https://github.com/ashang/unar/blob/master/README.md

@@ -21,24 +21,33 @@ import {
 import { extend } from '~/code/tool/shared/object'
 import { buildRequestToConvert } from '../shared'
 import { resolveWorkFileNode } from '~/code/tool/node/request'
+import { NativeOptions } from '~/code/tool/shared/request'
 
 export async function convertFontWithFontForgeNode(
   source: ConvertFontWithFontForgeNodeInput,
+  native?: NativeOptions,
 ) {
   const input = ConvertFontWithFontForgeNodeInputModel.parse(source)
 
   switch (input.handle) {
     case 'remote':
-      return await convertFontWithFontForgeNodeRemote(input)
+      return await convertFontWithFontForgeNodeRemote(input, native)
     case 'external':
-      return await convertFontWithFontForgeNodeLocalExternal(input)
+      return await convertFontWithFontForgeNodeLocalExternal(
+        input,
+        native,
+      )
     default:
-      return await convertFontWithFontForgeNodeLocalInternal(input)
+      return await convertFontWithFontForgeNodeLocalInternal(
+        input,
+        native,
+      )
   }
 }
 
 async function convertFontWithFontForgeNodeLocalExternal(
   source: ConvertFontWithFontForgeNodeLocalExternalInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertLocalExternalNode(source)
   return await convertFontWithFontForgeNodeLocal(input)
@@ -46,6 +55,7 @@ async function convertFontWithFontForgeNodeLocalExternal(
 
 async function convertFontWithFontForgeNodeLocalInternal(
   source: ConvertFontWithFontForgeNodeLocalInternalInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertLocalInternalNode(source)
   return await convertFontWithFontForgeNodeLocal(input)
@@ -53,6 +63,7 @@ async function convertFontWithFontForgeNodeLocalInternal(
 
 export async function convertFontWithFontForgeNodeRemote(
   source: ConvertFontWithFontForgeNodeRemoteInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertRemoteNode(source)
   const clientInput =
@@ -70,7 +81,10 @@ export async function convertFontWithFontForgeNodeRemote(
   })
 }
 
-export async function convertFontWithFontForgeNodeLocal(input) {
+export async function convertFontWithFontForgeNodeLocal(
+  input,
+  native?: NativeOptions,
+) {
   const localInput =
     ConvertFontWithFontForgeNodeLocalInputModel.parse(input)
 

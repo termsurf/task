@@ -19,38 +19,49 @@ import { extend } from '~/code/tool/shared/object'
 import { buildRequestToConvert } from '../../shared'
 import { resolveWorkFileNode } from '~/code/tool/node/request'
 import { testConvertVideoWithFfmpeg } from './shared'
+import { NativeOptions } from '~/code/tool/shared/request'
 
 export async function convertVideoWithFfmpegNode(
   source: ConvertVideoWithFfmpegNodeInput,
+  native?: NativeOptions,
 ) {
   const input = ConvertVideoWithFfmpegNodeInputModel.parse(source)
 
   switch (input.handle) {
     case 'remote':
-      return await convertVideoWithFfmpegNodeRemote(input)
+      return await convertVideoWithFfmpegNodeRemote(input, native)
     case 'external':
-      return await convertVideoWithFfmpegNodeLocalExternal(input)
+      return await convertVideoWithFfmpegNodeLocalExternal(
+        input,
+        native,
+      )
     default:
-      return await convertVideoWithFfmpegNodeLocalInternal(input)
+      return await convertVideoWithFfmpegNodeLocalInternal(
+        input,
+        native,
+      )
   }
 }
 
 async function convertVideoWithFfmpegNodeLocalExternal(
   source: ConvertVideoWithFfmpegNodeLocalExternalInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertLocalExternalNode(source)
-  return await convertVideoWithFfmpegNodeLocal(input)
+  return await convertVideoWithFfmpegNodeLocal(input, native)
 }
 
 async function convertVideoWithFfmpegNodeLocalInternal(
   source: ConvertVideoWithFfmpegNodeLocalInternalInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertLocalInternalNode(source)
-  return await convertVideoWithFfmpegNodeLocal(input)
+  return await convertVideoWithFfmpegNodeLocal(input, native)
 }
 
 export async function convertVideoWithFfmpegNodeRemote(
   source: ConvertVideoWithFfmpegNodeRemoteInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertRemoteNode(source)
   const clientInput = ConvertVideoWithFfmpegNodeClientInputModel.parse(
@@ -67,7 +78,10 @@ export async function convertVideoWithFfmpegNodeRemote(
   })
 }
 
-export async function convertVideoWithFfmpegNodeLocal(input) {
+export async function convertVideoWithFfmpegNodeLocal(
+  input,
+  native?: NativeOptions,
+) {
   const localInput =
     ConvertVideoWithFfmpegNodeLocalInputModel.parse(input)
 

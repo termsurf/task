@@ -8,7 +8,7 @@ mkdir test/hold/pdf
 
 function call() {
   line="$1"
-  echo "  \033[0;90mcall <\033[0m\033[0;35m$line\033[0m\033[0;90m>\033[0m"
+  echo "\033[0;90m✦ call <$line>\033[0m"
   eval "$line"
 }
 
@@ -45,7 +45,7 @@ alias task="pnpm tsx code/cli"
 call "task convert -I txt -O pdf -i ../file/base/document/example.txt -o test/hold/example.txt.pdf"
 call "task convert -I md -O pdf -i ../file/base/document/example.md -o test/hold/example.md.pdf --style-text-color ff0000"
 # # convert and verify
-# call "task convert -I png -O jpg -i ../file/base/image/fire.png -o test/hold/fire.jpg"
+call "task convert -I png -O jpg -i ../file/base/image/fire.png -o test/hold/fire.jpg"
 # call "task verify jpg -i test/hold/fire.jpg"
 
 # call "task convert -I cr2 -O jpg -i test/file/image/trees.cr2 -o test/hold/trees.jpg"

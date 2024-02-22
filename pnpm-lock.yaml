@@ -39,11 +39,11 @@ dependencies:
     specifier: ^0.1.6
     version: 0.1.6
   '@termsurf/kink-site':
-    specifier: ^0.0.4
-    version: 0.0.4
+    specifier: ^0.0.8
+    version: 0.0.8
   '@termsurf/kink-text':
-    specifier: ^0.0.4
-    version: 0.0.4
+    specifier: ^0.0.10
+    version: 0.0.10
   '@termsurf/love-code':
     specifier: ^0.1.10
     version: 0.1.10
@@ -54,8 +54,8 @@ dependencies:
     specifier: ^0.0.3
     version: 0.0.3
   '@termsurf/tint-text':
-    specifier: ^0.0.3
-    version: 0.0.3
+    specifier: ^0.0.4
+    version: 0.0.4
   '@termsurf/tone-code':
     specifier: ^0.4.0
     version: 0.4.0
@@ -1492,24 +1492,24 @@ packages:
     resolution: {integrity: sha512-ZopW9vLIKzMhvNkEw0rY0gZpmlKKgqsER82VvCbQqCZxckVlIBDsWid7vfdSVN3ZuOKn9H4mKnpAcx8ndnENkg==}
     dependencies:
       '@termsurf/kink': 0.1.6
-      '@termsurf/kink-text': 0.0.4
+      '@termsurf/kink-text': 0.0.10
       lodash: 4.17.21
     dev: false
 
-  /@termsurf/kink-site@0.0.4:
-    resolution: {integrity: sha512-1MqlxGAWRUQ79HLz7I1EyI4BYJwTmwxars/wlzS2+HGlP2Q9Gk4bRceIGzeBrevZyxk4MtuhEkkTwfYVYIZEHQ==}
+  /@termsurf/kink-site@0.0.8:
+    resolution: {integrity: sha512-Zrn0S8ZHf26gHnWyKPeuX2CdWSwjVA2Bjcuatou2wsx/3I5SN9sJoxDcyD1StrCp1DqQqKQvK8fUBU5thpf6Dg==}
     dependencies:
       '@termsurf/kink': 0.1.6
-      '@termsurf/kink-text': 0.0.4
+      '@termsurf/kink-text': 0.0.10
       zod: 3.22.4
     dev: false
 
-  /@termsurf/kink-text@0.0.4:
-    resolution: {integrity: sha512-sgaP4GrMEKvOAFI3ZkW4NCmPfWWNIuyjSci9Ce9guavkKUNHDP2Oh+ZUGeObdnmTp2bMwjndjKh92NY/nNAHpw==}
+  /@termsurf/kink-text@0.0.10:
+    resolution: {integrity: sha512-668HDeEwPLNJIuXmbmImPuaRLE/nA2yqcLe/irdMpce/PCxq5pgjQvhenuEql/TVn64MQUJ8FI5qbL82Cvft1g==}
     dependencies:
       '@cspotcode/source-map': 0.8.0
       '@termsurf/kink': 0.1.6
-      '@termsurf/tint-text': 0.0.3
+      '@termsurf/tint-text': 0.0.4
     dev: false
 
   /@termsurf/kink@0.1.6:
@@ -1532,8 +1532,8 @@ packages:
     resolution: {integrity: sha512-L1KjWXelYJ3kg9CqLqRlVicBDsE1zdD8Ji2QKklVbebWmB/eLo2+e21mGmZHNNNwADQ9yU+YQw+7lfdV7cKieA==}
     dev: false
 
-  /@termsurf/tint-text@0.0.3:
-    resolution: {integrity: sha512-7UKCfcACkjD3URTTMhy91YRmq2oCNZk7YwUx0KakqXS1L2fI7Fsh+kMSjpPzIEgDPvXo5gX4LOBuHjBpBOLdMg==}
+  /@termsurf/tint-text@0.0.4:
+    resolution: {integrity: sha512-2Yu+pID5rXPcRgQLhjqpndlIc7dYQ8aWDv71DSMrG7Ten0ihD2vzy+Q9KCudCu/Hn6ZuB0vsc7CEht1uT9sS+g==}
     dependencies:
       chalk: 5.3.0
     dev: false

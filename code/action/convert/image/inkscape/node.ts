@@ -19,38 +19,49 @@ import { extend } from '~/code/tool/shared/object'
 import { buildRequestToConvert } from '../../shared'
 import { resolveWorkFileNode } from '~/code/tool/node/request'
 import { testConvertImageWithInkscape } from './shared'
+import { NativeOptions } from '~/code/tool/shared/request'
 
 export async function convertImageWithInkscapeNode(
   source: ConvertImageWithInkscapeNodeInput,
+  native?: NativeOptions,
 ) {
   const input = ConvertImageWithInkscapeNodeInputModel.parse(source)
 
   switch (input.handle) {
     case 'remote':
-      return await convertImageWithInkscapeNodeRemote(input)
+      return await convertImageWithInkscapeNodeRemote(input, native)
     case 'external':
-      return await convertImageWithInkscapeNodeLocalExternal(input)
+      return await convertImageWithInkscapeNodeLocalExternal(
+        input,
+        native,
+      )
     default:
-      return await convertImageWithInkscapeNodeLocalInternal(input)
+      return await convertImageWithInkscapeNodeLocalInternal(
+        input,
+        native,
+      )
   }
 }
 
 async function convertImageWithInkscapeNodeLocalExternal(
   source: ConvertImageWithInkscapeNodeLocalExternalInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertLocalExternalNode(source)
-  return await convertImageWithInkscapeNodeLocal(input)
+  return await convertImageWithInkscapeNodeLocal(input, native)
 }
 
 async function convertImageWithInkscapeNodeLocalInternal(
   source: ConvertImageWithInkscapeNodeLocalInternalInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertLocalInternalNode(source)
-  return await convertImageWithInkscapeNodeLocal(input)
+  return await convertImageWithInkscapeNodeLocal(input, native)
 }
 
 export async function convertImageWithInkscapeNodeRemote(
   source: ConvertImageWithInkscapeNodeRemoteInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertRemoteNode(source)
   const clientInput =
@@ -68,7 +79,10 @@ export async function convertImageWithInkscapeNodeRemote(
   })
 }
 
-export async function convertImageWithInkscapeNodeLocal(input) {
+export async function convertImageWithInkscapeNodeLocal(
+  input,
+  native?: NativeOptions,
+) {
   const localInput =
     ConvertImageWithInkscapeNodeLocalInputModel.parse(input)
 

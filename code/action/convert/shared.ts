@@ -57,6 +57,10 @@ export type ConvertExtension<E extends { input: any; output: any }> =
 export function testConvertInputOutput(
   input: any,
 ): input is ConvertTest {
+  if (!input) {
+    return false
+  }
+
   if (!('input' in input)) {
     return false
   }

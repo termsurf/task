@@ -2,19 +2,16 @@ import {
   ConvertTxtWithPuppeteerBrowserInput,
   ConvertTxtWithPuppeteerBrowserInputModel,
   ConvertTxtWithPuppeteerBrowserLocalInput,
-  ConvertTxtWithPuppeteerBrowserOutputModel,
   ConvertTxtWithPuppeteerBrowserRemoteInput,
   ConvertMarkdownWithPuppeteerBrowserInput,
   ConvertMarkdownWithPuppeteerBrowserInputModel,
   ConvertMarkdownWithPuppeteerBrowserLocalInput,
-  ConvertMarkdownWithPuppeteerBrowserOutputModel,
   ConvertMarkdownWithPuppeteerBrowserRemoteInput,
 } from '~/code/type/index'
 import { buildFormDataRequestToConvert } from '../../shared'
 import { WorkFileAsBlob } from '~/code/tool/shared/work'
 import { NativeOptions } from '~/code/tool/shared/request'
 import kink from '~/code/tool/shared/kink'
-import Observable from 'zen-observable'
 import { resolveWorkFileAsBlob } from '~/code/tool/browser/work'
 
 export async function convertTxtWithPuppeteerBrowser(

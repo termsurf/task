@@ -1,5 +1,6 @@
 import _ from 'lodash'
 import fsp from 'fs/promises'
+import debug from '~/code/tool/shared/debug'
 import {
   createStreamableFile,
   getFallbackFilePath,
@@ -17,7 +18,7 @@ import {
   ResolveInputForConvertLocalInternal,
   ResolveInputForConvertRemote,
 } from '../../node'
-// import console.log from '~/code/tool/shared/console.log'
+// import debug from '~/code/tool/shared/debug'
 
 // https://www.npmjs.com/package/ftp
 
@@ -70,10 +71,7 @@ export async function resolveInputForConvertLocalExternalNode<
   T extends ResolveInputForConvertLocalExternal,
 >(input: T) {
   const through = cloneOptions(input)
-  console.log(
-    'resolveInputForConvertLocalExternalNode',
-    through.input.file,
-  )
+  debug('resolveInputForConvertLocalExternalNode', through.input.file)
 
   if ('path' in through.input.file) {
     const inputPath = parsePath(through.input.file.path)
@@ -87,7 +85,7 @@ export async function resolveInputForConvertLocalExternalNode<
         })
         _.set(through.input.file, ['path'], newInputPath)
 
-        console.log(
+        debug(
           'resolveInputForConvertLocalExternalNode input',
           newInputPath,
         )
@@ -113,7 +111,7 @@ export async function resolveInputForConvertLocalExternalNode<
 
     through.output.file = { path: outputPath }
 
-    console.log(
+    debug(
       'resolveInputForConvertLocalExternalNode output file',
       through.output.file,
     )
@@ -128,7 +126,7 @@ export async function resolveInputContentForConvertLocalExternalNode<
   T extends ResolveInputForConvertLocalExternal,
 >(input: T) {
   const through = cloneOptions(input)
-  console.log(
+  debug(
     'resolveInputContentForConvertLocalExternalNode',
     through.input.file,
   )
@@ -159,7 +157,7 @@ export async function resolveInputContentForConvertLocalExternalNode<
 
     through.output.file = { path: outputPath }
 
-    console.log(
+    debug(
       'resolveInputContentForConvertLocalExternalNode output file',
       through.output.file,
     )
@@ -176,7 +174,7 @@ export async function resolveInputForConvertLocalInternalNode<
 >(input: T) {
   const through = cloneOptions(input)
 
-  console.log('resolveInputForConvertLocalInternalNode')
+  debug('resolveInputForConvertLocalInternalNode')
   if ('path' in through.input.file) {
     const inputPath = parsePath(through.input.file.path)
     switch (inputPath.type) {
@@ -206,7 +204,7 @@ export async function resolveInputForConvertLocalInternalNode<
     )
 
     through.output.file = { path: outputPath }
-    console.log(
+    debug(
       'resolveInputForConvertLocalInternalNode output',
       through.input.file,
     )
@@ -254,7 +252,7 @@ export async function resolveInputContentForConvertLocalInternalNode<
     )
 
     through.output.file = { path: outputPath }
-    console.log(
+    debug(
       'resolveInputForConvertLocalInternalNode output',
       through.input.file,
     )

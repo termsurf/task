@@ -18,38 +18,49 @@ import {
 import { extend } from '~/code/tool/shared/object'
 import { buildRequestToConvert } from '../../shared'
 import { resolveWorkFileNode } from '~/code/tool/node/request'
+import { NativeOptions } from '~/code/tool/shared/request'
 
 export async function convertDocumentWithCalibreNode(
   source: ConvertDocumentWithCalibreNodeInput,
+  native?: NativeOptions,
 ) {
   const input = ConvertDocumentWithCalibreNodeInputModel.parse(source)
 
   switch (input.handle) {
     case 'remote':
-      return await convertDocumentWithCalibreNodeRemote(input)
+      return await convertDocumentWithCalibreNodeRemote(input, native)
     case 'external':
-      return await convertDocumentWithCalibreNodeLocalExternal(input)
+      return await convertDocumentWithCalibreNodeLocalExternal(
+        input,
+        native,
+      )
     default:
-      return await convertDocumentWithCalibreNodeLocalInternal(input)
+      return await convertDocumentWithCalibreNodeLocalInternal(
+        input,
+        native,
+      )
   }
 }
 
 async function convertDocumentWithCalibreNodeLocalExternal(
   source: ConvertDocumentWithCalibreNodeLocalExternalInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertLocalExternalNode(source)
-  return await convertDocumentWithCalibreNodeLocal(input)
+  return await convertDocumentWithCalibreNodeLocal(input, native)
 }
 
 async function convertDocumentWithCalibreNodeLocalInternal(
   source: ConvertDocumentWithCalibreNodeLocalInternalInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertLocalInternalNode(source)
-  return await convertDocumentWithCalibreNodeLocal(input)
+  return await convertDocumentWithCalibreNodeLocal(input, native)
 }
 
 export async function convertDocumentWithCalibreNodeRemote(
   source: ConvertDocumentWithCalibreNodeRemoteInput,
+  native,
 ) {
   const input = await resolveInputForConvertRemoteNode(source)
   const clientInput =
@@ -67,7 +78,10 @@ export async function convertDocumentWithCalibreNodeRemote(
   })
 }
 
-export async function convertDocumentWithCalibreNodeLocal(input) {
+export async function convertDocumentWithCalibreNodeLocal(
+  input,
+  native?: NativeOptions,
+) {
   const localInput =
     ConvertDocumentWithCalibreNodeLocalInputModel.parse(input)
 

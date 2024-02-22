@@ -2,8 +2,8 @@
 
 import * as task from './task'
 import { Task } from '~/code/type/index'
-import { logError } from './error'
 import { read } from './parse'
+import { logError } from './logging'
 
 process.on('uncaughtException', kink => {
   logError(kink)

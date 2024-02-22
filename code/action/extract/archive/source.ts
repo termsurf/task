@@ -1,6 +1,6 @@
 import { Form } from '@termsurf/form'
 
-export const decompress_with_7z: Form = {
+export const extract_with_7z: Form = {
   form: 'form',
   link: {
     input: {
@@ -20,9 +20,18 @@ export const decompress_with_7z: Form = {
   },
 }
 
-export const decompress_with_unarchiver: Form = {
+export const extract_with_unarchiver: Form = {
   form: 'form',
   link: {
+    input: {
+      link: {
+        password: { like: 'string', need: false },
+        format: { like: 'archive_format', name: { mark: 'I' } },
+        file: {
+          link: { path: { like: 'string', name: { mark: 'i' } } },
+        },
+      },
+    },
     output: {
       link: {
         overwrite: {
@@ -35,15 +44,6 @@ export const decompress_with_unarchiver: Form = {
           link: {
             path: { like: 'string', name: { mark: 'o' } },
           },
-        },
-      },
-    },
-    input: {
-      link: {
-        password: { like: 'string', need: false },
-        format: { like: 'string', name: { mark: 'I' } },
-        file: {
-          link: { path: { like: 'string', name: { mark: 'i' } } },
         },
       },
     },

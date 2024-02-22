@@ -20,43 +20,53 @@ import { buildRequestToConvert } from '../../shared'
 import { resolveWorkFileNode } from '~/code/tool/node/request'
 import path from 'path'
 import { replaceFileExtension } from '~/code/tool/shared/screen'
+import { NativeOptions } from '~/code/tool/shared/request'
 
 export async function convertDocumentWithLibreOfficeNode(
   source: ConvertDocumentWithLibreOfficeNodeInput,
+  native?: NativeOptions,
 ) {
   const input =
     ConvertDocumentWithLibreOfficeNodeInputModel.parse(source)
 
   switch (input.handle) {
     case 'remote':
-      return await convertDocumentWithLibreOfficeNodeRemote(input)
+      return await convertDocumentWithLibreOfficeNodeRemote(
+        input,
+        native,
+      )
     case 'external':
       return await convertDocumentWithLibreOfficeNodeLocalExternal(
         input,
+        native,
       )
     default:
       return await convertDocumentWithLibreOfficeNodeLocalInternal(
         input,
+        native,
       )
   }
 }
 
 async function convertDocumentWithLibreOfficeNodeLocalExternal(
   source: ConvertDocumentWithLibreOfficeNodeLocalExternalInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertLocalExternalNode(source)
-  return await convertDocumentWithLibreOfficeNodeLocal(input)
+  return await convertDocumentWithLibreOfficeNodeLocal(input, native)
 }
 
 async function convertDocumentWithLibreOfficeNodeLocalInternal(
   source: ConvertDocumentWithLibreOfficeNodeLocalInternalInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertLocalInternalNode(source)
-  return await convertDocumentWithLibreOfficeNodeLocal(input)
+  return await convertDocumentWithLibreOfficeNodeLocal(input, native)
 }
 
 export async function convertDocumentWithLibreOfficeNodeRemote(
   source: ConvertDocumentWithLibreOfficeNodeRemoteInput,
+  native?: NativeOptions,
 ) {
   const input = await resolveInputForConvertRemoteNode(source)
   const clientInput =
@@ -74,7 +84,10 @@ export async function convertDocumentWithLibreOfficeNodeRemote(
   })
 }
 
-export async function convertDocumentWithLibreOfficeNodeLocal(input) {
+export async function convertDocumentWithLibreOfficeNodeLocal(
+  input,
+  native?: NativeOptions,
+) {
   const localInput =
     ConvertDocumentWithLibreOfficeNodeLocalInputModel.parse(input)
 
