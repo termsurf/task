@@ -1,3 +1,5 @@
+import archiver from 'archiver'
+import fs from 'fs'
 import {
   ConvertArchiveNodeInput,
   ConvertArchiveNodeInputModel,
@@ -30,6 +32,7 @@ import {
   buildCommandToArchiveWithZip,
 } from '../../archive/command'
 import kink from '~/code/tool/shared/kink'
+import { testConvertArchive } from './shared'
 
 export async function convertArchiveNode(
   source: ConvertArchiveNodeInput,
@@ -91,7 +94,7 @@ export async function convertArchiveNodeLocal(
   const directory = await generateTemporaryDirectoryPath()
   const unarchiveInput = ExtractWithUnarchiverModel.parse(
     _.merge(input, {
-      input: {
+      output: {
         directory: {
           path: directory,
         },
@@ -113,9 +116,10 @@ export async function convertArchiveNodeLocal(
 
   switch (archiveInput.output.format) {
     case 'zip': {
-      const archiveSequence =
-        await buildCommandToArchiveWithZip(archiveInput)
-      await runCommandSequence(archiveSequence)
+      await archiveWithArchiver(
+        archiveInput.input.path,
+        archiveInput.output.file.path,
+      )
       break
     }
     case 'rar': {
@@ -135,4 +139,28 @@ export async function convertArchiveNodeLocal(
       path: archiveInput.output.file.path,
     },
   }
+}
+
+export function testConvertArchiveNode(
+  input: any,
+): input is ConvertArchiveNodeInput {
+  return testConvertArchive(input)
+}
+
+export function archiveWithArchiver(
+  sourceDir: string,
+  outPath: string,
+) {
+  const archive = archiver('zip', { zlib: { level: 9 } })
+  const stream = fs.createWriteStream(outPath)
+
+  return new Promise<void>((resolve, reject) => {
+    archive
+      .directory(sourceDir, false)
+      .on('error', err => reject(err))
+      .pipe(stream)
+
+    stream.on('close', () => resolve())
+    archive.finalize()
+  })
 }

@@ -148,5 +148,5 @@ export async function generateTemporaryDirectoryPath() {
 }
 
 export async function removeDirectory(path: string) {
-  await fsp.unlink(path)
+  await fsp.rmdir(path, { recursive: true })
 }

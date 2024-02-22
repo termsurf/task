@@ -9,6 +9,8 @@ import { buildFormDataRequestToConvert } from '../shared'
 import kink from '~/code/tool/shared/kink'
 import { resolveWorkFileAsBlob } from '~/code/tool/browser/work'
 import { NativeOptions } from '~/code/tool/shared/request'
+import { testConvertArchive } from './shared'
+import { WorkFileAsBlob } from '../../browser'
 
 export async function convertArchiveBrowser(
   source: ConvertArchiveBrowserInput,
@@ -29,20 +31,20 @@ export async function convertArchiveBrowserRemote(
   native?: NativeOptions,
 ) {
   const request = buildFormDataRequestToConvert(input)
-  const content = await resolveWorkFileAsBlob(request, native)
-
-  return ConvertArchiveBrowserOutputModel.parse({
-    file: {
-      content,
-    },
-  })
+  return await resolveWorkFileAsBlob(request, native)
 }
 
 export async function convertArchiveBrowserLocal(
   input: ConvertArchiveBrowserLocalInput,
   native?: NativeOptions,
-) {
+): Promise<WorkFileAsBlob> {
   throw kink('task_not_implemented', {
     task: 'convertArchiveBrowserLocal',
   })
+}
+
+export function testConvertArchiveBrowser(
+  input: any,
+): input is ConvertArchiveBrowserInput {
+  return testConvertArchive(input)
 }

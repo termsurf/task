@@ -15,6 +15,7 @@ import {
   runMogrifyCommand,
 } from '~/code/action/convert/image/runner'
 import { Command, CommandKey, CommandSequence } from '~/code/type'
+import { exec } from './process'
 
 export type CommandHandlerName = CommandKey
 
@@ -31,6 +32,12 @@ export const COMMAND_HANDLER: Record<string, (cmd: Command) => any> = {
   unoconv: runUnoconvCommand,
   pandoc: runPandocCommand,
   fontforge: runFontforgeCommand,
+  unar: runGenericCommand,
+  zip: runGenericCommand,
+}
+
+export async function runGenericCommand(cmd: Command) {
+  await exec(cmd.link)
 }
 
 export async function runCommandSequence(sequence: CommandSequence) {
