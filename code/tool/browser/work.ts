@@ -182,7 +182,7 @@ export function requestAndWaitForWorkToCompleteBrowser<
 export function resolveWorkFileAsBlob(
   request: Request,
   native?: NativeOptions,
-): Promise<any> {
+): Promise<WorkFileAsBlob> {
   const signal = native?.signal
 
   return new Promise(async (res, rej) => {

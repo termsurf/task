@@ -1,5 +1,5 @@
 export * from './convert/browser'
 export * from './format/code/browser'
-export * from '~/code/type'
+export * from '~/code/type/cast'
 export { configure } from '~/code/tool/shared/config'
 export * from '~/code/tool/shared/work'

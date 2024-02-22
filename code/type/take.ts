@@ -1,7 +1,7 @@
 import { z } from 'zod'
-import * as Cast from './cast.js'
+import * as Cast from './cast'
 import { MAKE, TEST } from '@termsurf/form'
-import * as code from './code.js'
+import * as code from './code'
 
 export const AddAudioToVideoWithFfmpegModel: z.ZodType<Cast.AddAudioToVideoWithFfmpeg> =
   z.object({

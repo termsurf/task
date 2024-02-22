@@ -101,8 +101,4 @@ export async function handleWorkRequestComplete<T>(
   })
 }
 
-export type WorkFileAsBlob =
-  | RequestResponseCycle
-  | Output<WorkFileContent>
-  | Processing
-  | Ping
+export type WorkFileAsBlob = WorkFileContent

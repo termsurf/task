@@ -9,6 +9,7 @@ import kink from '~/code/tool/shared/kink'
 import { testConvertImageWithImageMagick } from './shared'
 import { resolveWorkFileAsBlob } from '~/code/tool/browser/work'
 import { NativeOptions } from '~/code/tool/shared/request'
+import { WorkFileAsBlob } from '~/code/action/browser'
 
 export async function convertImageWithImageMagickBrowser(
   source: ConvertImageWithImageMagickBrowserInput,
@@ -36,19 +37,13 @@ export async function convertImageWithImageMagickBrowserRemote(
   native?: NativeOptions,
 ) {
   const request = buildFormDataRequestToConvert(input)
-  const content = await resolveWorkFileAsBlob(request)
-
-  return {
-    file: {
-      content,
-    },
-  }
+  return await resolveWorkFileAsBlob(request)
 }
 
 export async function convertImageWithImageMagickBrowserLocal(
   input: ConvertImageWithImageMagickBrowserLocalInput,
   native?: NativeOptions,
-) {
+): Promise<WorkFileAsBlob> {
   throw kink('task_not_implemented', {
     task: 'convertImageWithImageMagickBrowserLocal',
   })

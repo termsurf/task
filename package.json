@@ -9,7 +9,10 @@
     "task": "./host/code/cli/index.js"
   },
   "scripts": {
-    "test": "./test/cli.sh",
+    "test:prepare": "rm -rf test/hold && mkdir test/hold && mkdir test/hold/pdf",
+    "test:cli": "pnpm test:prepare && ./test/cli.sh",
+    "test:node": "pnpm test:prepare && pnpm tsx ./test/node",
+    "test:browser": "open http://localhost:3000",
     "bump:choco": "pnpm tsx bump.choco",
     "bind:dock": "source .env && echo $GITHUB_TOKEN | docker login ghcr.io -u $GITHUB_USERNAME --password-stdin",
     "make:dock": "source .env && docker build --progress plain --platform linux/amd64 . -t termsurf/task && pnpm mark:dock",
@@ -28,8 +31,8 @@
     "host": "rm -rf host && mkdir host && find code -name '*.wasm' | cpio -pdm host ; pnpm make && pnpm make:puppeteer && npm publish --access=public",
     "make:puppeteer": "webpack build --config webpack.puppeteer.config.js",
     "scan:puppeteer": "webpack watch --config webpack.puppeteer.config.js",
-    "make:browser": "webpack build --config webpack.browser.config.mjs",
-    "scan:browser": "webpack watch --config webpack.browser.config.mjs",
+    "make:test": "webpack build --config webpack.test.config.mjs",
+    "scan:test": "webpack watch --config webpack.test.config.mjs",
     "test:bind": "pnpm tsx test/server.ts"
   },
   "peerDependencies": {
@@ -133,6 +136,7 @@
     "sql-formatter": "^15.0.2",
     "strip-ansi": "^7.1.0",
     "systeminformation": "^5.21.22",
+    "tape": "^5.7.5",
     "tmp-promise": "^3.0.3",
     "ts-custom-error": "^3.3.1",
     "tsc-alias": "^1.8.8",
@@ -148,6 +152,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.191",
     "@types/prettier": "^2.7.2",
+    "@types/tape": "^5.6.4",
     "@types/xlsx": "^0.0.35",
     "@typescript-eslint/eslint-plugin": "^5.48.1",
     "@typescript-eslint/parser": "^5.48.1",
@@ -174,6 +179,7 @@
     "postcss": "^8.4.32",
     "postcss-preset-env": "^9.3.0",
     "prettier": "^3.2.5",
+    "stream-browserify": "^3.0.0",
     "ts-loader": "^9.5.1",
     "tsx": "^4.7.0",
     "webpack": "^5.90.3",

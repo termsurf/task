@@ -209,9 +209,9 @@ export async function convert<I extends 'markdown'>(
 // export async function convert<
 //   I extends ConvertInput['ffmpeg']['input'],
 // >(source: ConvertVideoWithFfmpeg<I>): Promise<ConvertOutput>
-// export async function convert<I extends ConvertInput['image']['input']>(
-//   source: ConvertImageWithImageMagick<I>,
-// ): Promise<ConvertOutput>
+export async function convert<I extends ConvertInput['image']['input']>(
+  source: ConvertImageWithImageMagick<I>,
+): Promise<ConvertOutput>
 export async function convert(
   source,
   native?: NativeOptions,
@@ -232,9 +232,9 @@ export async function convert(
   //   return await convertImageWithInkscapeBrowser(source)
   // }
 
-  // if (testConvertImageWithImageMagickBrowser(source)) {
-  //   return await convertImageWithImageMagickBrowser(source)
-  // }
+  if (testConvertImageWithImageMagickBrowser(source)) {
+    return await convertImageWithImageMagickBrowser(source)
+  }
 
   // if (testConvertVideoWithFfmpegBrowser(source)) {
   //   return await convertVideoWithFfmpegBrowser(source)

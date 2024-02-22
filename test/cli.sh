@@ -1,11 +1,6 @@
 trap "exit" INT
 set -e
 
-rm -rf test/hold
-
-mkdir test/hold
-mkdir test/hold/pdf
-
 function call() {
   line="$1"
   echo "\033[0;90m✦ call <$line>\033[0m"

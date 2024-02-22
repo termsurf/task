@@ -17,7 +17,7 @@ export default {
     ],
   },
   entry: {
-    'task.browser': './test/browser.ts',
+    'test.browser': './test/browser.ts',
   },
   plugins: [
     new webpack.ProvidePlugin({
@@ -39,8 +39,9 @@ export default {
     },
     extensions: ['', '.ts', '.js'],
     fallback: {
-      path: path.resolve('path-browserify'),
+      path: 'path-browserify',
       process: path.resolve('process/browser'),
+      stream: 'stream-browserify',
     },
   },
   module: {

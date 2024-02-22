@@ -20,11 +20,14 @@ import {
 const NODE_CACHE: Record<string, boolean> = {}
 const BROWSER_CACHE: Record<string, boolean> = {}
 
-make({ test: `./code.js`, mesh }).then(({ tree }) => {
+make({ test: `./code`, mesh }).then(({ tree }) => {
   const cast = [tree.cast].join('\n')
   // fs.writeFileSync(`./code/shared/type/index.ts`, tree.base as string)
   fs.writeFileSync(`./code/type/cast.ts`, cast)
-  fs.writeFileSync(`./code/type/take.ts`, tree.take)
+  fs.writeFileSync(
+    `./code/type/take.ts`,
+    tree.take.replace('cast.js', 'cast'),
+  )
   // fs.writeFileSync(`./code/cli/type/link.ts`, tree.line)
 })
 
