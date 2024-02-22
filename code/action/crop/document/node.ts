@@ -5,7 +5,7 @@ import {
 import {
   CropPdfWithPdfCrop,
   CropPdfWithPdfCropModel,
-} from '~/code/type/index'
+} from '~/code/type'
 
 export async function cropPdfWithPdfCropNode(
   source: CropPdfWithPdfCrop,

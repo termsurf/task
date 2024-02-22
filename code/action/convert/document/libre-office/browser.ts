@@ -4,7 +4,7 @@ import {
   ConvertDocumentWithLibreOfficeBrowserLocalInput,
   ConvertDocumentWithLibreOfficeBrowserOutputModel,
   ConvertDocumentWithLibreOfficeBrowserRemoteInput,
-} from '~/code/type/index'
+} from '~/code/type'
 import { buildFormDataRequestToConvert } from '../../shared'
 import kink from '~/code/tool/shared/kink'
 import { resolveWorkFileAsBlob } from '~/code/tool/browser/work'

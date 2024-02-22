@@ -1,4 +1,4 @@
-import { ExtractBySubKey, Values } from '~/code/type/index'
+import { ExtractBySubKey, Values } from '~/code/type'
 import {
   CompileSwift,
   CompileRust,

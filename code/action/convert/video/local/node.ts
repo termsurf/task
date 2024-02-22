@@ -19,7 +19,7 @@ import {
   ConvertVideoWithFfmpegNodeInput,
   ConvertVideoWithFfmpegNodeLocalInput,
   ConvertVideoWithFfmpegNodeLocalInputModel,
-} from '~/code/type/index'
+} from '~/code/type'
 import { buildCommandToConvertVideoWithFfmpeg } from '../command'
 
 export async function handleFfmpegCommand(

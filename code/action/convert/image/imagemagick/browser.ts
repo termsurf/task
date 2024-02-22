@@ -2,9 +2,8 @@ import {
   ConvertImageWithImageMagickBrowserInput,
   ConvertImageWithImageMagickBrowserInputModel,
   ConvertImageWithImageMagickBrowserLocalInput,
-  ConvertImageWithImageMagickBrowserOutputModel,
   ConvertImageWithImageMagickBrowserRemoteInput,
-} from '~/code/type/index'
+} from '~/code/type'
 import { buildFormDataRequestToConvert } from '../../shared'
 import kink from '~/code/tool/shared/kink'
 import { testConvertImageWithImageMagick } from './shared'

@@ -3,7 +3,7 @@ import {
   ConvertImageWithInkscapeNodeLocalInput,
   IMAGE_MAGICK_COLOR_SPACE_CONTENT,
   IMAGE_MAGICK_COMPRESSION_CONTENT,
-} from '~/code/type/index'
+} from '~/code/type'
 import {
   getCommand,
   buildCommandSequence,

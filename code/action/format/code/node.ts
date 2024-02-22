@@ -6,7 +6,7 @@ import {
   FormatRuby,
   FormatAssembly,
   FormatC,
-} from '~/code/type/index'
+} from '~/code/type'
 import { exec } from '~/code/tool/node/process'
 import { buildCommandToFormatRust } from './command'
 import { formatCodeWithPrettierPlugin } from './shared'

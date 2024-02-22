@@ -7,7 +7,7 @@ import {
   ConvertDocumentWithCalibreNodeLocalInputModel,
   ConvertDocumentWithCalibreNodeRemoteInput,
   ConvertDocumentWithCalibreNodeClientInputModel,
-} from '~/code/type/index'
+} from '~/code/type'
 import { buildCommandToConvertDocumentWithCalibre } from '../command'
 import { runCommandSequence } from '~/code/tool/node/command'
 import {

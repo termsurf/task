@@ -7,7 +7,7 @@ import {
   ConvertVideoWithFfmpegNodeLocalInputModel,
   ConvertVideoWithFfmpegNodeRemoteInput,
   ConvertVideoWithFfmpegNodeClientInputModel,
-} from '~/code/type/index'
+} from '~/code/type'
 import { buildCommandToConvertVideoWithFfmpeg } from '../command'
 import { runCommandSequence } from '~/code/tool/node/command'
 import {

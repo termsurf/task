@@ -1,5 +1,5 @@
 import { getCommand } from '~/code/tool/shared/command'
-import { VerifyImageWithImageMagick } from '~/code/type/index'
+import { VerifyImageWithImageMagick } from '~/code/type'
 
 export async function buildCommandToVerifyImageWithImageMagick(
   input: VerifyImageWithImageMagick,

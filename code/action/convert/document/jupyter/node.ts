@@ -7,7 +7,7 @@ import {
   ConvertDocumentWithJupyterNodeLocalInputModel,
   ConvertDocumentWithJupyterNodeRemoteInput,
   ConvertDocumentWithJupyterNodeClientInputModel,
-} from '~/code/type/index'
+} from '~/code/type'
 import { buildCommandToConvertDocumentWithJupyter } from '../command'
 import { runCommandSequence } from '~/code/tool/node/command'
 import {

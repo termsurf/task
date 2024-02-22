@@ -7,7 +7,7 @@ import {
   ConvertLatexWithPdfLatexNodeLocalInputModel,
   ConvertLatexWithPdfLatexNodeRemoteInput,
   ConvertLatexWithPdfLatexNodeClientInputModel,
-} from '~/code/type/index'
+} from '~/code/type'
 import { buildCommandToConvertLatexWithPdfLatex } from '../command'
 import { runCommandSequence } from '~/code/tool/node/command'
 import {

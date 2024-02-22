@@ -1,5 +1,5 @@
 import { serialize as serializeToFormData } from 'object-to-formdata'
-import { FONT_FORMAT, FontFormat, ConvertApi } from '~/code/type/index'
+import { FONT_FORMAT, FontFormat, ConvertApi } from '~/code/type'
 import { buildRemoteRequest } from '~/code/tool/shared/request'
 import { omitNested } from '~/code/tool/shared/object'
 

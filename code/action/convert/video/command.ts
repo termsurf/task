@@ -7,7 +7,7 @@ import {
   ConvertVideoWithFfmpegNodeLocalInput,
   FfmpegCodecAudio,
   IOPath,
-} from '~/code/type/index'
+} from '~/code/type'
 
 // ffmpeg -filters
 // https://ffmpeg.org/ffmpeg-filters.html

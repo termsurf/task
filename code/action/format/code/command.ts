@@ -12,7 +12,7 @@ import {
   FormatRust,
   FormatSqlWithContent,
   FormatSwift,
-} from '~/code/type/index'
+} from '~/code/type'
 
 export function buildCommandToFormatCodeWithClangFormat(
   input: FormatCodeWithClangFormat,

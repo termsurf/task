@@ -7,7 +7,7 @@ import {
   ConvertDocumentWithPandocNodeLocalInputModel,
   ConvertDocumentWithPandocNodeRemoteInput,
   ConvertDocumentWithPandocNodeClientInputModel,
-} from '~/code/type/index'
+} from '~/code/type'
 import { buildCommandToConvertDocumentWithPandoc } from '../command'
 import { runCommandSequence } from '~/code/tool/node/command'
 import {

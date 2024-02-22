@@ -9,7 +9,7 @@ import {
   ConvertDocumentWithLibreOfficeNodeLocalInput,
   ConvertDocumentWithPandocNodeLocalInput,
   ConvertLatexWithPdfLatexNodeLocalInput,
-} from '~/code/type/index'
+} from '~/code/type'
 
 export function buildCommandToConvertDocumentWithLibreOffice(
   input: ConvertDocumentWithLibreOfficeNodeLocalInput,

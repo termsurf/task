@@ -1,7 +1,4 @@
-import {
-  ConvertTimeZone,
-  ConvertTimeZoneModel,
-} from '~/code/type/index'
+import { ConvertTimeZone, ConvertTimeZoneModel } from '~/code/type'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'

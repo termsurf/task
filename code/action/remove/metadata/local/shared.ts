@@ -1,5 +1,5 @@
 import { getCommand } from '~/code/tool/shared/command'
-import { RemoveImageMetadata } from '~/code/type/index'
+import { RemoveImageMetadata } from '~/code/type'
 
 export function buildCommandToRemoveImageMetadata(
   input: RemoveImageMetadata,

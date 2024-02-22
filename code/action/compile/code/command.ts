@@ -11,7 +11,7 @@ import {
   CompileRust,
   CompileSwift,
   LLVM_ARCHITECTURE_CONTENT,
-} from '~/code/type/index'
+} from '~/code/type'
 
 // @.str = private unnamed_addr constant [14 x i8] c"Hello, World!\00", align 1
 export async function buildCommandToCompileC(input: CompileC) {

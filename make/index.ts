@@ -15,7 +15,7 @@ import {
   PANDOC_OUTPUT_FORMAT,
   PUPPETEER_INPUT_FORMAT,
   PUPPETEER_OUTPUT_FORMAT,
-} from '~/code/type/index'
+} from '~/code/type'
 
 const NODE_CACHE: Record<string, boolean> = {}
 const BROWSER_CACHE: Record<string, boolean> = {}

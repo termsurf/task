@@ -1,6 +1,6 @@
 import { ChildProcessError, exec } from '~/code/tool/node/process'
 import kink from '~/code/tool/shared/kink'
-import { Command } from '~/code/type/index'
+import { Command } from '~/code/type'
 
 export async function runCalibreCommand(cmd: Command) {
   await exec(cmd.link)

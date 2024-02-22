@@ -23,7 +23,7 @@ import {
   PandocOutputFormat,
   PuppeteerOutputFormat,
   Values,
-} from '~/code/type/index'
+} from '~/code/type'
 import {
   convertDocumentWithCalibreBrowser,
   convertDocumentWithLibreOfficeBrowser,

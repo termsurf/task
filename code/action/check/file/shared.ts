@@ -1,5 +1,5 @@
 import { fileTypeFromBuffer, fileTypeFromFile } from 'file-type'
-import { CheckFileTypeUsingMagicBytes } from '~/code/type/index'
+import { CheckFileTypeUsingMagicBytes } from '~/code/type'
 import { GuessLang } from 'guesslang-js'
 
 export async function checkFileTypeUsingMagicBytes(

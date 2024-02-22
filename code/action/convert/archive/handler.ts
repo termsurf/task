@@ -1,5 +1,5 @@
 import { exec } from '~/code/tool/node/process'
-import { Command } from '~/code/type/index'
+import { Command } from '~/code/type'
 
 export async function handleZipCommand(cmd: Command) {
   return await exec(cmd.link)

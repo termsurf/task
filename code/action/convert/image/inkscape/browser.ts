@@ -4,7 +4,7 @@ import {
   ConvertImageWithInkscapeBrowserLocalInput,
   ConvertImageWithInkscapeBrowserOutputModel,
   ConvertImageWithInkscapeBrowserRemoteInput,
-} from '~/code/type/index'
+} from '~/code/type'
 import { buildFormDataRequestToConvert } from '../../shared'
 import kink from '~/code/tool/shared/kink'
 import { testConvertImageWithInkscape } from './shared'

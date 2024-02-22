@@ -2,7 +2,7 @@ import {
   IMAGE_MAGICK_FORMAT,
   ImageMagickFormat,
   VerifyImageWithImageMagick,
-} from '~/code/type/index'
+} from '~/code/type'
 import { buildCommandToVerifyImageWithImageMagick } from './command'
 import { handleIdentifyCommand } from '../../convert/video/local/node'
 

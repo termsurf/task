@@ -7,7 +7,7 @@ import {
   ConvertFontWithFontForgeNodeLocalInputModel,
   ConvertFontWithFontForgeNodeRemoteInput,
   ConvertFontWithFontForgeNodeClientInputModel,
-} from '~/code/type/index'
+} from '~/code/type'
 import {
   buildCommandToConvertFontWithFontForge,
   testConvertFontWithFontForge,

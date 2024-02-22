@@ -7,7 +7,7 @@ import {
   ConvertImageWithImageMagickNodeLocalInputModel,
   ConvertImageWithImageMagickNodeRemoteInput,
   ConvertImageWithImageMagickNodeClientInputModel,
-} from '~/code/type/index'
+} from '~/code/type'
 import { testConvertImageWithImageMagick } from './shared'
 import { buildCommandToConvertImageWithImageMagick } from '../command'
 import { runCommandSequence } from '~/code/tool/node/command'

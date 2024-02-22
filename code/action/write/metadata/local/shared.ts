@@ -2,7 +2,7 @@ import {
   buildCommandSequence,
   getCommand,
 } from '~/code/tool/shared/command'
-import { WriteMetadataToImage } from '~/code/type/index'
+import { WriteMetadataToImage } from '~/code/type'
 import { YYYY_MM_DD_HH_MM_SS, toDayJs } from '~/code/tool/shared/date'
 
 export function buildCommandToWriteMetadataToImage(

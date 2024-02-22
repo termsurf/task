@@ -5,7 +5,7 @@ import {
   CalculateGematria,
   CalculateGematriaModel,
   GematriaSystemCalculation,
-} from '~/code/type/index'
+} from '~/code/type'
 
 export function calculateTibetanGematria(source: CalculateGematria) {
   const input = CalculateGematriaModel.parse(source)

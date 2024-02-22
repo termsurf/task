@@ -6,7 +6,7 @@ import {
   CompileC,
   CompileCpp,
   CompileJava,
-} from '~/code/type/index'
+} from '~/code/type'
 import {
   buildCommandToCompileLlvmIrToAssembly,
   buildCommandToCompileSwift,

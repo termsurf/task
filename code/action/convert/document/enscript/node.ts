@@ -7,7 +7,7 @@ import {
   ConvertDocumentWithEnscriptNodeLocalInputModel,
   ConvertDocumentWithEnscriptNodeRemoteInput,
   ConvertDocumentWithEnscriptNodeClientInputModel,
-} from '~/code/type/index'
+} from '~/code/type'
 import { buildCommandToConvertDocumentWithEnscript } from '../command'
 import { runCommandSequence } from '~/code/tool/node/command'
 import {

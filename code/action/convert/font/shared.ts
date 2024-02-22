@@ -2,7 +2,7 @@ import {
   ConvertFontWithFontForgeNodeLocalInput,
   FONT_FORMAT,
   FontFormat,
-} from '~/code/type/index'
+} from '~/code/type'
 import {
   buildCommandSequence,
   getCommand,

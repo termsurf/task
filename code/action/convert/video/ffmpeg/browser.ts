@@ -4,7 +4,7 @@ import {
   ConvertVideoWithFfmpegBrowserLocalInput,
   ConvertVideoWithFfmpegBrowserOutputModel,
   ConvertVideoWithFfmpegBrowserRemoteInput,
-} from '~/code/type/index'
+} from '~/code/type'
 import { buildFormDataRequestToConvert } from '../../shared'
 import kink from '~/code/tool/shared/kink'
 import { testConvertVideoWithFfmpeg } from './shared'

@@ -2,7 +2,7 @@ import { getBrowser, inactivateBrowser } from '~/code/tool/node/browser'
 import {
   ConvertHtmlWithPuppeteerNodeInput,
   TextStyle,
-} from '~/code/type/index'
+} from '~/code/type'
 // import debug from '~/code/tool/shared/debug'
 import { marked } from 'marked'
 import debug from '~/code/tool/shared/debug'
@@ -23,7 +23,7 @@ import {
   ConvertMarkdownWithPuppeteerNodeLocalInputModel,
   ConvertMarkdownWithPuppeteerNodeRemoteInput,
   ConvertMarkdownWithPuppeteerNodeClientInputModel,
-} from '~/code/type/index'
+} from '~/code/type'
 import {
   resolveInputContentForConvertLocalExternalNode,
   resolveInputContentForConvertLocalInternalNode,

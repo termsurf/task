@@ -7,7 +7,7 @@ import {
   ConvertImageWithInkscapeNodeLocalInputModel,
   ConvertImageWithInkscapeNodeRemoteInput,
   ConvertImageWithInkscapeNodeClientInputModel,
-} from '~/code/type/index'
+} from '~/code/type'
 import { buildCommandToConvertImageWithInkscape } from '../command'
 import { runCommandSequence } from '~/code/tool/node/command'
 import {

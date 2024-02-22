@@ -14,7 +14,7 @@ import {
   runInkscapeCommand,
   runMogrifyCommand,
 } from '~/code/action/convert/image/runner'
-import { Command, CommandKey, CommandSequence } from '~/code/type/index'
+import { Command, CommandKey, CommandSequence } from '~/code/type'
 
 export type CommandHandlerName = CommandKey
 

@@ -3,7 +3,7 @@ import {
   buildCommandSequence,
   getCommand,
 } from '~/code/tool/shared/command'
-import { InspectMetadataFromImage } from '~/code/type/index'
+import { InspectMetadataFromImage } from '~/code/type'
 
 export function buildCommandToInspectMetadataFromImage(
   input: InspectMetadataFromImage,

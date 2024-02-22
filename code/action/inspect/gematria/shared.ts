@@ -16,7 +16,7 @@ import {
   GematriaSystemCalculationResult,
   SHARED_GEMATRIA_LANGUAGE,
   SharedGematriaLanguage,
-} from '~/code/type/index'
+} from '~/code/type'
 import { detect as detectScript } from '@termsurf/talk/host/code/script/detect'
 import kink from '~/code/tool/shared/kink'
 import _ from 'lodash'

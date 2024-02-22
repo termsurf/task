@@ -8,7 +8,7 @@ import {
   ConvertArchiveNodeClientInputModel,
   ExtractWithUnarchiverModel,
   ArchiveModel,
-} from '~/code/type/index'
+} from '~/code/type'
 import { runCommandSequence } from '~/code/tool/node/command'
 import {
   resolveInputForConvertLocalExternalNode,

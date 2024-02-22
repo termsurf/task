@@ -7,7 +7,7 @@ import {
   ConvertDocumentWithLibreOfficeNodeLocalInputModel,
   ConvertDocumentWithLibreOfficeNodeRemoteInput,
   ConvertDocumentWithLibreOfficeNodeClientInputModel,
-} from '~/code/type/index'
+} from '~/code/type'
 import { buildCommandToConvertDocumentWithLibreOffice } from '../command'
 import { runCommandSequence } from '~/code/tool/node/command'
 import {

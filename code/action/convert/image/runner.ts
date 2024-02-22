@@ -1,5 +1,5 @@
 import { ChildProcessError, exec } from '~/code/tool/node/process'
-import { Command } from '~/code/type/index'
+import { Command } from '~/code/type'
 
 export async function runConvertCommand(cmd: Command) {
   try {

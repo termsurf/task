@@ -3,7 +3,7 @@ import _ from 'lodash'
 import * as mesh from '~/code/source'
 import { Link } from './type'
 import { convert_image_with_image_magick_node_input } from '~/code/source'
-import { BuildFormatInputOutputModel, Task } from '~/code/type/index'
+import { BuildFormatInputOutputModel, Task } from '~/code/type'
 import kink from '~/code/tool/shared/kink'
 import {
   logConverted,

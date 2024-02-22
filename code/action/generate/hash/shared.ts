@@ -3,7 +3,7 @@ import {
   ForgeMessageDigest,
   GenerateHash,
   GenerateHashModel,
-} from '~/code/type/index'
+} from '~/code/type'
 
 export function generateHash(source: GenerateHash) {
   const input = GenerateHashModel.parse(source)
