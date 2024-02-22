@@ -9,9 +9,9 @@
     "task": "./host/code/cli/index.js"
   },
   "scripts": {
-    "test:prepare": "rm -rf test/hold && mkdir test/hold && mkdir test/hold/pdf",
-    "test:cli": "pnpm test:prepare && ./test/cli.sh",
-    "test:node": "pnpm test:prepare && pnpm tsx ./test/node",
+    "test:clean": "rm -rf test/hold && mkdir test/hold && mkdir test/hold/pdf",
+    "test:cli": "pnpm test:clean && ./test/cli.sh",
+    "test:node": "pnpm test:clean && pnpm tsx ./test/node",
     "test:browser": "open http://localhost:3000",
     "bump:choco": "pnpm tsx bump.choco",
     "bind:dock": "source .env && echo $GITHUB_TOKEN | docker login ghcr.io -u $GITHUB_USERNAME --password-stdin",
