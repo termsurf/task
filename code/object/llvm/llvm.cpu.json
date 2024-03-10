@@ -1,0 +1,2574 @@
+{
+  "440": {
+    "host": "440",
+    "note": "The 440 processor."
+  },
+  "450": {
+    "host": "450",
+    "note": "The 450 processor."
+  },
+  "601": {
+    "host": "601",
+    "note": "The 601 processor."
+  },
+  "602": {
+    "host": "602",
+    "note": "The 602 processor."
+  },
+  "603": {
+    "host": "603",
+    "note": "The 603 processor."
+  },
+  "604": {
+    "host": "604",
+    "note": "The 604 processor."
+  },
+  "620": {
+    "host": "620",
+    "note": "The 620 processor."
+  },
+  "750": {
+    "host": "750",
+    "note": "The 750 processor."
+  },
+  "970": {
+    "host": "970",
+    "note": "The 970 processor."
+  },
+  "7400": {
+    "host": "7400",
+    "note": "The 7400 processor."
+  },
+  "7450": {
+    "host": "7450",
+    "note": "The 7450 processor."
+  },
+  "a_64_fx": {
+    "host": "a64fx",
+    "note": "The a64fx processor."
+  },
+  "apple_a_10": {
+    "host": "apple-a10",
+    "note": "The apple-a10 processor."
+  },
+  "apple_a_11": {
+    "host": "apple-a11",
+    "note": "The apple-a11 processor."
+  },
+  "apple_a_12": {
+    "host": "apple-a12",
+    "note": "The apple-a12 processor."
+  },
+  "apple_a_13": {
+    "host": "apple-a13",
+    "note": "The apple-a13 processor."
+  },
+  "apple_a_7": {
+    "host": "apple-a7",
+    "note": "The apple-a7 processor."
+  },
+  "apple_a_8": {
+    "host": "apple-a8",
+    "note": "The apple-a8 processor."
+  },
+  "apple_a_9": {
+    "host": "apple-a9",
+    "note": "The apple-a9 processor."
+  },
+  "apple_latest": {
+    "host": "apple-latest",
+    "note": "The apple-latest processor."
+  },
+  "apple_s_4": {
+    "host": "apple-s4",
+    "note": "The apple-s4 processor."
+  },
+  "apple_s_5": {
+    "host": "apple-s5",
+    "note": "The apple-s5 processor."
+  },
+  "carmel": {
+    "host": "carmel",
+    "note": "The carmel processor."
+  },
+  "cortex_a_34": {
+    "host": "cortex-a34",
+    "note": "The cortex-a34 processor."
+  },
+  "cortex_a_35": {
+    "host": "cortex-a35",
+    "note": "The cortex-a35 processor."
+  },
+  "cortex_a_53": {
+    "host": "cortex-a53",
+    "note": "The cortex-a53 processor."
+  },
+  "cortex_a_55": {
+    "host": "cortex-a55",
+    "note": "The cortex-a55 processor."
+  },
+  "cortex_a_57": {
+    "host": "cortex-a57",
+    "note": "The cortex-a57 processor."
+  },
+  "cortex_a_65": {
+    "host": "cortex-a65",
+    "note": "The cortex-a65 processor."
+  },
+  "cortex_a_65_ae": {
+    "host": "cortex-a65ae",
+    "note": "The cortex-a65ae processor."
+  },
+  "cortex_a_72": {
+    "host": "cortex-a72",
+    "note": "The cortex-a72 processor."
+  },
+  "cortex_a_73": {
+    "host": "cortex-a73",
+    "note": "The cortex-a73 processor."
+  },
+  "cortex_a_75": {
+    "host": "cortex-a75",
+    "note": "The cortex-a75 processor."
+  },
+  "cortex_a_76": {
+    "host": "cortex-a76",
+    "note": "The cortex-a76 processor."
+  },
+  "cortex_a_76_ae": {
+    "host": "cortex-a76ae",
+    "note": "The cortex-a76ae processor."
+  },
+  "cortex_a_77": {
+    "host": "cortex-a77",
+    "note": "The cortex-a77 processor."
+  },
+  "cortex_a_78": {
+    "host": "cortex-a78",
+    "note": "The cortex-a78 processor."
+  },
+  "cortex_x_1": {
+    "host": "cortex-x1",
+    "note": "The cortex-x1 processor."
+  },
+  "cyclone": {
+    "host": "cyclone",
+    "note": "The cyclone processor."
+  },
+  "exynos_m_3": {
+    "host": "exynos-m3",
+    "note": "The exynos-m3 processor."
+  },
+  "exynos_m_4": {
+    "host": "exynos-m4",
+    "note": "The exynos-m4 processor."
+  },
+  "exynos_m_5": {
+    "host": "exynos-m5",
+    "note": "The exynos-m5 processor."
+  },
+  "falkor": {
+    "host": "falkor",
+    "note": "The falkor processor."
+  },
+  "generic": {
+    "host": "generic",
+    "note": "The generic processor."
+  },
+  "kryo": {
+    "host": "kryo",
+    "note": "The kryo processor."
+  },
+  "neoverse_e_1": {
+    "host": "neoverse-e1",
+    "note": "The neoverse-e1 processor."
+  },
+  "neoverse_n_1": {
+    "host": "neoverse-n1",
+    "note": "The neoverse-n1 processor."
+  },
+  "saphira": {
+    "host": "saphira",
+    "note": "The saphira processor."
+  },
+  "thunderx": {
+    "host": "thunderx",
+    "note": "The thunderx processor."
+  },
+  "thunderx_2_t_99": {
+    "host": "thunderx2t99",
+    "note": "The thunderx2t99 processor."
+  },
+  "thunderx_3_t_110": {
+    "host": "thunderx3t110",
+    "note": "The thunderx3t110 processor."
+  },
+  "thunderxt_81": {
+    "host": "thunderxt81",
+    "note": "The thunderxt81 processor."
+  },
+  "thunderxt_83": {
+    "host": "thunderxt83",
+    "note": "The thunderxt83 processor."
+  },
+  "thunderxt_88": {
+    "host": "thunderxt88",
+    "note": "The thunderxt88 processor."
+  },
+  "tsv_110": {
+    "host": "tsv110",
+    "note": "The tsv110 processor."
+  },
+  "bonaire": {
+    "host": "bonaire",
+    "note": "The bonaire processor."
+  },
+  "carrizo": {
+    "host": "carrizo",
+    "note": "The carrizo processor."
+  },
+  "fiji": {
+    "host": "fiji",
+    "note": "The fiji processor."
+  },
+  "generic_hsa": {
+    "host": "generic-hsa",
+    "note": "The generic-hsa processor."
+  },
+  "gfx_1010": {
+    "host": "gfx1010",
+    "note": "The gfx1010 processor."
+  },
+  "gfx_1011": {
+    "host": "gfx1011",
+    "note": "The gfx1011 processor."
+  },
+  "gfx_1012": {
+    "host": "gfx1012",
+    "note": "The gfx1012 processor."
+  },
+  "gfx_1030": {
+    "host": "gfx1030",
+    "note": "The gfx1030 processor."
+  },
+  "gfx_600": {
+    "host": "gfx600",
+    "note": "The gfx600 processor."
+  },
+  "gfx_601": {
+    "host": "gfx601",
+    "note": "The gfx601 processor."
+  },
+  "gfx_700": {
+    "host": "gfx700",
+    "note": "The gfx700 processor."
+  },
+  "gfx_701": {
+    "host": "gfx701",
+    "note": "The gfx701 processor."
+  },
+  "gfx_702": {
+    "host": "gfx702",
+    "note": "The gfx702 processor."
+  },
+  "gfx_703": {
+    "host": "gfx703",
+    "note": "The gfx703 processor."
+  },
+  "gfx_704": {
+    "host": "gfx704",
+    "note": "The gfx704 processor."
+  },
+  "gfx_801": {
+    "host": "gfx801",
+    "note": "The gfx801 processor."
+  },
+  "gfx_802": {
+    "host": "gfx802",
+    "note": "The gfx802 processor."
+  },
+  "gfx_803": {
+    "host": "gfx803",
+    "note": "The gfx803 processor."
+  },
+  "gfx_810": {
+    "host": "gfx810",
+    "note": "The gfx810 processor."
+  },
+  "gfx_900": {
+    "host": "gfx900",
+    "note": "The gfx900 processor."
+  },
+  "gfx_902": {
+    "host": "gfx902",
+    "note": "The gfx902 processor."
+  },
+  "gfx_904": {
+    "host": "gfx904",
+    "note": "The gfx904 processor."
+  },
+  "gfx_906": {
+    "host": "gfx906",
+    "note": "The gfx906 processor."
+  },
+  "gfx_908": {
+    "host": "gfx908",
+    "note": "The gfx908 processor."
+  },
+  "gfx_909": {
+    "host": "gfx909",
+    "note": "The gfx909 processor."
+  },
+  "hainan": {
+    "host": "hainan",
+    "note": "The hainan processor."
+  },
+  "hawaii": {
+    "host": "hawaii",
+    "note": "The hawaii processor."
+  },
+  "iceland": {
+    "host": "iceland",
+    "note": "The iceland processor."
+  },
+  "kabini": {
+    "host": "kabini",
+    "note": "The kabini processor."
+  },
+  "kaveri": {
+    "host": "kaveri",
+    "note": "The kaveri processor."
+  },
+  "mullins": {
+    "host": "mullins",
+    "note": "The mullins processor."
+  },
+  "oland": {
+    "host": "oland",
+    "note": "The oland processor."
+  },
+  "pitcairn": {
+    "host": "pitcairn",
+    "note": "The pitcairn processor."
+  },
+  "polaris_10": {
+    "host": "polaris10",
+    "note": "The polaris10 processor."
+  },
+  "polaris_11": {
+    "host": "polaris11",
+    "note": "The polaris11 processor."
+  },
+  "stoney": {
+    "host": "stoney",
+    "note": "The stoney processor."
+  },
+  "tahiti": {
+    "host": "tahiti",
+    "note": "The tahiti processor."
+  },
+  "tonga": {
+    "host": "tonga",
+    "note": "The tonga processor."
+  },
+  "verde": {
+    "host": "verde",
+    "note": "The verde processor."
+  },
+  "arm_1020_e": {
+    "host": "arm1020e",
+    "note": "The arm1020e processor."
+  },
+  "arm_1020_t": {
+    "host": "arm1020t",
+    "note": "The arm1020t processor."
+  },
+  "arm_1022_e": {
+    "host": "arm1022e",
+    "note": "The arm1022e processor."
+  },
+  "arm_10_e": {
+    "host": "arm10e",
+    "note": "The arm10e processor."
+  },
+  "arm_10_tdmi": {
+    "host": "arm10tdmi",
+    "note": "The arm10tdmi processor."
+  },
+  "arm_1136_j_s": {
+    "host": "arm1136j-s",
+    "note": "The arm1136j-s processor."
+  },
+  "arm_1136_jf_s": {
+    "host": "arm1136jf-s",
+    "note": "The arm1136jf-s processor."
+  },
+  "arm_1156_t_2_s": {
+    "host": "arm1156t2-s",
+    "note": "The arm1156t2-s processor."
+  },
+  "arm_1156_t_2_f_s": {
+    "host": "arm1156t2f-s",
+    "note": "The arm1156t2f-s processor."
+  },
+  "arm_1176_j_s": {
+    "host": "arm1176j-s",
+    "note": "The arm1176j-s processor."
+  },
+  "arm_1176_jz_s": {
+    "host": "arm1176jz-s",
+    "note": "The arm1176jz-s processor."
+  },
+  "arm_1176_jzf_s": {
+    "host": "arm1176jzf-s",
+    "note": "The arm1176jzf-s processor."
+  },
+  "arm_710_t": {
+    "host": "arm710t",
+    "note": "The arm710t processor."
+  },
+  "arm_720_t": {
+    "host": "arm720t",
+    "note": "The arm720t processor."
+  },
+  "arm_7_tdmi": {
+    "host": "arm7tdmi",
+    "note": "The arm7tdmi processor."
+  },
+  "arm_7_tdmi_s": {
+    "host": "arm7tdmi-s",
+    "note": "The arm7tdmi-s processor."
+  },
+  "arm_8": {
+    "host": "arm8",
+    "note": "The arm8 processor."
+  },
+  "arm_810": {
+    "host": "arm810",
+    "note": "The arm810 processor."
+  },
+  "arm_9": {
+    "host": "arm9",
+    "note": "The arm9 processor."
+  },
+  "arm_920": {
+    "host": "arm920",
+    "note": "The arm920 processor."
+  },
+  "arm_920_t": {
+    "host": "arm920t",
+    "note": "The arm920t processor."
+  },
+  "arm_922_t": {
+    "host": "arm922t",
+    "note": "The arm922t processor."
+  },
+  "arm_926_ej_s": {
+    "host": "arm926ej-s",
+    "note": "The arm926ej-s processor."
+  },
+  "arm_940_t": {
+    "host": "arm940t",
+    "note": "The arm940t processor."
+  },
+  "arm_946_e_s": {
+    "host": "arm946e-s",
+    "note": "The arm946e-s processor."
+  },
+  "arm_966_e_s": {
+    "host": "arm966e-s",
+    "note": "The arm966e-s processor."
+  },
+  "arm_968_e_s": {
+    "host": "arm968e-s",
+    "note": "The arm968e-s processor."
+  },
+  "arm_9_e": {
+    "host": "arm9e",
+    "note": "The arm9e processor."
+  },
+  "arm_9_tdmi": {
+    "host": "arm9tdmi",
+    "note": "The arm9tdmi processor."
+  },
+  "cortex_a_12": {
+    "host": "cortex-a12",
+    "note": "The cortex-a12 processor."
+  },
+  "cortex_a_15": {
+    "host": "cortex-a15",
+    "note": "The cortex-a15 processor."
+  },
+  "cortex_a_17": {
+    "host": "cortex-a17",
+    "note": "The cortex-a17 processor."
+  },
+  "cortex_a_32": {
+    "host": "cortex-a32",
+    "note": "The cortex-a32 processor."
+  },
+  "cortex_a_5": {
+    "host": "cortex-a5",
+    "note": "The cortex-a5 processor."
+  },
+  "cortex_a_7": {
+    "host": "cortex-a7",
+    "note": "The cortex-a7 processor."
+  },
+  "cortex_a_8": {
+    "host": "cortex-a8",
+    "note": "The cortex-a8 processor."
+  },
+  "cortex_a_9": {
+    "host": "cortex-a9",
+    "note": "The cortex-a9 processor."
+  },
+  "cortex_m_0": {
+    "host": "cortex-m0",
+    "note": "The cortex-m0 processor."
+  },
+  "cortex_m_0_plus": {
+    "host": "cortex-m0plus",
+    "note": "The cortex-m0plus processor."
+  },
+  "cortex_m_1": {
+    "host": "cortex-m1",
+    "note": "The cortex-m1 processor."
+  },
+  "cortex_m_23": {
+    "host": "cortex-m23",
+    "note": "The cortex-m23 processor."
+  },
+  "cortex_m_3": {
+    "host": "cortex-m3",
+    "note": "The cortex-m3 processor."
+  },
+  "cortex_m_33": {
+    "host": "cortex-m33",
+    "note": "The cortex-m33 processor."
+  },
+  "cortex_m_35_p": {
+    "host": "cortex-m35p",
+    "note": "The cortex-m35p processor."
+  },
+  "cortex_m_4": {
+    "host": "cortex-m4",
+    "note": "The cortex-m4 processor."
+  },
+  "cortex_m_55": {
+    "host": "cortex-m55",
+    "note": "The cortex-m55 processor."
+  },
+  "cortex_m_7": {
+    "host": "cortex-m7",
+    "note": "The cortex-m7 processor."
+  },
+  "cortex_r_4": {
+    "host": "cortex-r4",
+    "note": "The cortex-r4 processor."
+  },
+  "cortex_r_4_f": {
+    "host": "cortex-r4f",
+    "note": "The cortex-r4f processor."
+  },
+  "cortex_r_5": {
+    "host": "cortex-r5",
+    "note": "The cortex-r5 processor."
+  },
+  "cortex_r_52": {
+    "host": "cortex-r52",
+    "note": "The cortex-r52 processor."
+  },
+  "cortex_r_7": {
+    "host": "cortex-r7",
+    "note": "The cortex-r7 processor."
+  },
+  "cortex_r_8": {
+    "host": "cortex-r8",
+    "note": "The cortex-r8 processor."
+  },
+  "ep_9312": {
+    "host": "ep9312",
+    "note": "The ep9312 processor."
+  },
+  "iwmmxt": {
+    "host": "iwmmxt",
+    "note": "The iwmmxt processor."
+  },
+  "krait": {
+    "host": "krait",
+    "note": "The krait processor."
+  },
+  "mpcore": {
+    "host": "mpcore",
+    "note": "The mpcore processor."
+  },
+  "mpcorenovfp": {
+    "host": "mpcorenovfp",
+    "note": "The mpcorenovfp processor."
+  },
+  "sc_000": {
+    "host": "sc000",
+    "note": "The sc000 processor."
+  },
+  "sc_300": {
+    "host": "sc300",
+    "note": "The sc300 processor."
+  },
+  "strongarm": {
+    "host": "strongarm",
+    "note": "The strongarm processor."
+  },
+  "strongarm_110": {
+    "host": "strongarm110",
+    "note": "The strongarm110 processor."
+  },
+  "strongarm_1100": {
+    "host": "strongarm1100",
+    "note": "The strongarm1100 processor."
+  },
+  "strongarm_1110": {
+    "host": "strongarm1110",
+    "note": "The strongarm1110 processor."
+  },
+  "swift": {
+    "host": "swift",
+    "note": "The swift processor."
+  },
+  "xscale": {
+    "host": "xscale",
+    "note": "The xscale processor."
+  },
+  "at_43_usb_320": {
+    "host": "at43usb320",
+    "note": "The at43usb320 processor."
+  },
+  "at_43_usb_355": {
+    "host": "at43usb355",
+    "note": "The at43usb355 processor."
+  },
+  "at_76_c_711": {
+    "host": "at76c711",
+    "note": "The at76c711 processor."
+  },
+  "at_86_rf_401": {
+    "host": "at86rf401",
+    "note": "The at86rf401 processor."
+  },
+  "at_90_c_8534": {
+    "host": "at90c8534",
+    "note": "The at90c8534 processor."
+  },
+  "at_90_can_128": {
+    "host": "at90can128",
+    "note": "The at90can128 processor."
+  },
+  "at_90_can_32": {
+    "host": "at90can32",
+    "note": "The at90can32 processor."
+  },
+  "at_90_can_64": {
+    "host": "at90can64",
+    "note": "The at90can64 processor."
+  },
+  "at_90_pwm_1": {
+    "host": "at90pwm1",
+    "note": "The at90pwm1 processor."
+  },
+  "at_90_pwm_161": {
+    "host": "at90pwm161",
+    "note": "The at90pwm161 processor."
+  },
+  "at_90_pwm_2": {
+    "host": "at90pwm2",
+    "note": "The at90pwm2 processor."
+  },
+  "at_90_pwm_216": {
+    "host": "at90pwm216",
+    "note": "The at90pwm216 processor."
+  },
+  "at_90_pwm_2_b": {
+    "host": "at90pwm2b",
+    "note": "The at90pwm2b processor."
+  },
+  "at_90_pwm_3": {
+    "host": "at90pwm3",
+    "note": "The at90pwm3 processor."
+  },
+  "at_90_pwm_316": {
+    "host": "at90pwm316",
+    "note": "The at90pwm316 processor."
+  },
+  "at_90_pwm_3_b": {
+    "host": "at90pwm3b",
+    "note": "The at90pwm3b processor."
+  },
+  "at_90_pwm_81": {
+    "host": "at90pwm81",
+    "note": "The at90pwm81 processor."
+  },
+  "at_90_s_1200": {
+    "host": "at90s1200",
+    "note": "The at90s1200 processor."
+  },
+  "at_90_s_2313": {
+    "host": "at90s2313",
+    "note": "The at90s2313 processor."
+  },
+  "at_90_s_2323": {
+    "host": "at90s2323",
+    "note": "The at90s2323 processor."
+  },
+  "at_90_s_2333": {
+    "host": "at90s2333",
+    "note": "The at90s2333 processor."
+  },
+  "at_90_s_2343": {
+    "host": "at90s2343",
+    "note": "The at90s2343 processor."
+  },
+  "at_90_s_4414": {
+    "host": "at90s4414",
+    "note": "The at90s4414 processor."
+  },
+  "at_90_s_4433": {
+    "host": "at90s4433",
+    "note": "The at90s4433 processor."
+  },
+  "at_90_s_4434": {
+    "host": "at90s4434",
+    "note": "The at90s4434 processor."
+  },
+  "at_90_s_8515": {
+    "host": "at90s8515",
+    "note": "The at90s8515 processor."
+  },
+  "at_90_s_8535": {
+    "host": "at90s8535",
+    "note": "The at90s8535 processor."
+  },
+  "at_90_scr_100": {
+    "host": "at90scr100",
+    "note": "The at90scr100 processor."
+  },
+  "at_90_usb_1286": {
+    "host": "at90usb1286",
+    "note": "The at90usb1286 processor."
+  },
+  "at_90_usb_1287": {
+    "host": "at90usb1287",
+    "note": "The at90usb1287 processor."
+  },
+  "at_90_usb_162": {
+    "host": "at90usb162",
+    "note": "The at90usb162 processor."
+  },
+  "at_90_usb_646": {
+    "host": "at90usb646",
+    "note": "The at90usb646 processor."
+  },
+  "at_90_usb_647": {
+    "host": "at90usb647",
+    "note": "The at90usb647 processor."
+  },
+  "at_90_usb_82": {
+    "host": "at90usb82",
+    "note": "The at90usb82 processor."
+  },
+  "at_94_k": {
+    "host": "at94k",
+    "note": "The at94k processor."
+  },
+  "ata_5272": {
+    "host": "ata5272",
+    "note": "The ata5272 processor."
+  },
+  "ata_5505": {
+    "host": "ata5505",
+    "note": "The ata5505 processor."
+  },
+  "ata_5790": {
+    "host": "ata5790",
+    "note": "The ata5790 processor."
+  },
+  "ata_5795": {
+    "host": "ata5795",
+    "note": "The ata5795 processor."
+  },
+  "ata_6285": {
+    "host": "ata6285",
+    "note": "The ata6285 processor."
+  },
+  "ata_6286": {
+    "host": "ata6286",
+    "note": "The ata6286 processor."
+  },
+  "ata_6289": {
+    "host": "ata6289",
+    "note": "The ata6289 processor."
+  },
+  "atmega_103": {
+    "host": "atmega103",
+    "note": "The atmega103 processor."
+  },
+  "atmega_128": {
+    "host": "atmega128",
+    "note": "The atmega128 processor."
+  },
+  "atmega_1280": {
+    "host": "atmega1280",
+    "note": "The atmega1280 processor."
+  },
+  "atmega_1281": {
+    "host": "atmega1281",
+    "note": "The atmega1281 processor."
+  },
+  "atmega_1284": {
+    "host": "atmega1284",
+    "note": "The atmega1284 processor."
+  },
+  "atmega_1284_p": {
+    "host": "atmega1284p",
+    "note": "The atmega1284p processor."
+  },
+  "atmega_1284_rfr_2": {
+    "host": "atmega1284rfr2",
+    "note": "The atmega1284rfr2 processor."
+  },
+  "atmega_128_a": {
+    "host": "atmega128a",
+    "note": "The atmega128a processor."
+  },
+  "atmega_128_rfa_1": {
+    "host": "atmega128rfa1",
+    "note": "The atmega128rfa1 processor."
+  },
+  "atmega_128_rfr_2": {
+    "host": "atmega128rfr2",
+    "note": "The atmega128rfr2 processor."
+  },
+  "atmega_16": {
+    "host": "atmega16",
+    "note": "The atmega16 processor."
+  },
+  "atmega_161": {
+    "host": "atmega161",
+    "note": "The atmega161 processor."
+  },
+  "atmega_162": {
+    "host": "atmega162",
+    "note": "The atmega162 processor."
+  },
+  "atmega_163": {
+    "host": "atmega163",
+    "note": "The atmega163 processor."
+  },
+  "atmega_164_a": {
+    "host": "atmega164a",
+    "note": "The atmega164a processor."
+  },
+  "atmega_164_p": {
+    "host": "atmega164p",
+    "note": "The atmega164p processor."
+  },
+  "atmega_164_pa": {
+    "host": "atmega164pa",
+    "note": "The atmega164pa processor."
+  },
+  "atmega_165": {
+    "host": "atmega165",
+    "note": "The atmega165 processor."
+  },
+  "atmega_165_a": {
+    "host": "atmega165a",
+    "note": "The atmega165a processor."
+  },
+  "atmega_165_p": {
+    "host": "atmega165p",
+    "note": "The atmega165p processor."
+  },
+  "atmega_165_pa": {
+    "host": "atmega165pa",
+    "note": "The atmega165pa processor."
+  },
+  "atmega_168": {
+    "host": "atmega168",
+    "note": "The atmega168 processor."
+  },
+  "atmega_168_a": {
+    "host": "atmega168a",
+    "note": "The atmega168a processor."
+  },
+  "atmega_168_p": {
+    "host": "atmega168p",
+    "note": "The atmega168p processor."
+  },
+  "atmega_168_pa": {
+    "host": "atmega168pa",
+    "note": "The atmega168pa processor."
+  },
+  "atmega_169": {
+    "host": "atmega169",
+    "note": "The atmega169 processor."
+  },
+  "atmega_169_a": {
+    "host": "atmega169a",
+    "note": "The atmega169a processor."
+  },
+  "atmega_169_p": {
+    "host": "atmega169p",
+    "note": "The atmega169p processor."
+  },
+  "atmega_169_pa": {
+    "host": "atmega169pa",
+    "note": "The atmega169pa processor."
+  },
+  "atmega_16_a": {
+    "host": "atmega16a",
+    "note": "The atmega16a processor."
+  },
+  "atmega_16_hva": {
+    "host": "atmega16hva",
+    "note": "The atmega16hva processor."
+  },
+  "atmega_16_hva_2": {
+    "host": "atmega16hva2",
+    "note": "The atmega16hva2 processor."
+  },
+  "atmega_16_hvb": {
+    "host": "atmega16hvb",
+    "note": "The atmega16hvb processor."
+  },
+  "atmega_16_hvbrevb": {
+    "host": "atmega16hvbrevb",
+    "note": "The atmega16hvbrevb processor."
+  },
+  "atmega_16_m_1": {
+    "host": "atmega16m1",
+    "note": "The atmega16m1 processor."
+  },
+  "atmega_16_u_2": {
+    "host": "atmega16u2",
+    "note": "The atmega16u2 processor."
+  },
+  "atmega_16_u_4": {
+    "host": "atmega16u4",
+    "note": "The atmega16u4 processor."
+  },
+  "atmega_2560": {
+    "host": "atmega2560",
+    "note": "The atmega2560 processor."
+  },
+  "atmega_2561": {
+    "host": "atmega2561",
+    "note": "The atmega2561 processor."
+  },
+  "atmega_2564_rfr_2": {
+    "host": "atmega2564rfr2",
+    "note": "The atmega2564rfr2 processor."
+  },
+  "atmega_256_rfr_2": {
+    "host": "atmega256rfr2",
+    "note": "The atmega256rfr2 processor."
+  },
+  "atmega_32": {
+    "host": "atmega32",
+    "note": "The atmega32 processor."
+  },
+  "atmega_323": {
+    "host": "atmega323",
+    "note": "The atmega323 processor."
+  },
+  "atmega_324_a": {
+    "host": "atmega324a",
+    "note": "The atmega324a processor."
+  },
+  "atmega_324_p": {
+    "host": "atmega324p",
+    "note": "The atmega324p processor."
+  },
+  "atmega_324_pa": {
+    "host": "atmega324pa",
+    "note": "The atmega324pa processor."
+  },
+  "atmega_325": {
+    "host": "atmega325",
+    "note": "The atmega325 processor."
+  },
+  "atmega_3250": {
+    "host": "atmega3250",
+    "note": "The atmega3250 processor."
+  },
+  "atmega_3250_a": {
+    "host": "atmega3250a",
+    "note": "The atmega3250a processor."
+  },
+  "atmega_3250_p": {
+    "host": "atmega3250p",
+    "note": "The atmega3250p processor."
+  },
+  "atmega_3250_pa": {
+    "host": "atmega3250pa",
+    "note": "The atmega3250pa processor."
+  },
+  "atmega_325_a": {
+    "host": "atmega325a",
+    "note": "The atmega325a processor."
+  },
+  "atmega_325_p": {
+    "host": "atmega325p",
+    "note": "The atmega325p processor."
+  },
+  "atmega_325_pa": {
+    "host": "atmega325pa",
+    "note": "The atmega325pa processor."
+  },
+  "atmega_328": {
+    "host": "atmega328",
+    "note": "The atmega328 processor."
+  },
+  "atmega_328_p": {
+    "host": "atmega328p",
+    "note": "The atmega328p processor."
+  },
+  "atmega_329": {
+    "host": "atmega329",
+    "note": "The atmega329 processor."
+  },
+  "atmega_3290": {
+    "host": "atmega3290",
+    "note": "The atmega3290 processor."
+  },
+  "atmega_3290_a": {
+    "host": "atmega3290a",
+    "note": "The atmega3290a processor."
+  },
+  "atmega_3290_p": {
+    "host": "atmega3290p",
+    "note": "The atmega3290p processor."
+  },
+  "atmega_3290_pa": {
+    "host": "atmega3290pa",
+    "note": "The atmega3290pa processor."
+  },
+  "atmega_329_a": {
+    "host": "atmega329a",
+    "note": "The atmega329a processor."
+  },
+  "atmega_329_p": {
+    "host": "atmega329p",
+    "note": "The atmega329p processor."
+  },
+  "atmega_329_pa": {
+    "host": "atmega329pa",
+    "note": "The atmega329pa processor."
+  },
+  "atmega_32_a": {
+    "host": "atmega32a",
+    "note": "The atmega32a processor."
+  },
+  "atmega_32_c_1": {
+    "host": "atmega32c1",
+    "note": "The atmega32c1 processor."
+  },
+  "atmega_32_hvb": {
+    "host": "atmega32hvb",
+    "note": "The atmega32hvb processor."
+  },
+  "atmega_32_hvbrevb": {
+    "host": "atmega32hvbrevb",
+    "note": "The atmega32hvbrevb processor."
+  },
+  "atmega_32_m_1": {
+    "host": "atmega32m1",
+    "note": "The atmega32m1 processor."
+  },
+  "atmega_32_u_2": {
+    "host": "atmega32u2",
+    "note": "The atmega32u2 processor."
+  },
+  "atmega_32_u_4": {
+    "host": "atmega32u4",
+    "note": "The atmega32u4 processor."
+  },
+  "atmega_32_u_6": {
+    "host": "atmega32u6",
+    "note": "The atmega32u6 processor."
+  },
+  "atmega_406": {
+    "host": "atmega406",
+    "note": "The atmega406 processor."
+  },
+  "atmega_48": {
+    "host": "atmega48",
+    "note": "The atmega48 processor."
+  },
+  "atmega_48_a": {
+    "host": "atmega48a",
+    "note": "The atmega48a processor."
+  },
+  "atmega_48_p": {
+    "host": "atmega48p",
+    "note": "The atmega48p processor."
+  },
+  "atmega_48_pa": {
+    "host": "atmega48pa",
+    "note": "The atmega48pa processor."
+  },
+  "atmega_64": {
+    "host": "atmega64",
+    "note": "The atmega64 processor."
+  },
+  "atmega_640": {
+    "host": "atmega640",
+    "note": "The atmega640 processor."
+  },
+  "atmega_644": {
+    "host": "atmega644",
+    "note": "The atmega644 processor."
+  },
+  "atmega_644_a": {
+    "host": "atmega644a",
+    "note": "The atmega644a processor."
+  },
+  "atmega_644_p": {
+    "host": "atmega644p",
+    "note": "The atmega644p processor."
+  },
+  "atmega_644_pa": {
+    "host": "atmega644pa",
+    "note": "The atmega644pa processor."
+  },
+  "atmega_644_rfr_2": {
+    "host": "atmega644rfr2",
+    "note": "The atmega644rfr2 processor."
+  },
+  "atmega_645": {
+    "host": "atmega645",
+    "note": "The atmega645 processor."
+  },
+  "atmega_6450": {
+    "host": "atmega6450",
+    "note": "The atmega6450 processor."
+  },
+  "atmega_6450_a": {
+    "host": "atmega6450a",
+    "note": "The atmega6450a processor."
+  },
+  "atmega_6450_p": {
+    "host": "atmega6450p",
+    "note": "The atmega6450p processor."
+  },
+  "atmega_645_a": {
+    "host": "atmega645a",
+    "note": "The atmega645a processor."
+  },
+  "atmega_645_p": {
+    "host": "atmega645p",
+    "note": "The atmega645p processor."
+  },
+  "atmega_649": {
+    "host": "atmega649",
+    "note": "The atmega649 processor."
+  },
+  "atmega_6490": {
+    "host": "atmega6490",
+    "note": "The atmega6490 processor."
+  },
+  "atmega_6490_a": {
+    "host": "atmega6490a",
+    "note": "The atmega6490a processor."
+  },
+  "atmega_6490_p": {
+    "host": "atmega6490p",
+    "note": "The atmega6490p processor."
+  },
+  "atmega_649_a": {
+    "host": "atmega649a",
+    "note": "The atmega649a processor."
+  },
+  "atmega_649_p": {
+    "host": "atmega649p",
+    "note": "The atmega649p processor."
+  },
+  "atmega_64_a": {
+    "host": "atmega64a",
+    "note": "The atmega64a processor."
+  },
+  "atmega_64_c_1": {
+    "host": "atmega64c1",
+    "note": "The atmega64c1 processor."
+  },
+  "atmega_64_hve": {
+    "host": "atmega64hve",
+    "note": "The atmega64hve processor."
+  },
+  "atmega_64_m_1": {
+    "host": "atmega64m1",
+    "note": "The atmega64m1 processor."
+  },
+  "atmega_64_rfr_2": {
+    "host": "atmega64rfr2",
+    "note": "The atmega64rfr2 processor."
+  },
+  "atmega_8": {
+    "host": "atmega8",
+    "note": "The atmega8 processor."
+  },
+  "atmega_8515": {
+    "host": "atmega8515",
+    "note": "The atmega8515 processor."
+  },
+  "atmega_8535": {
+    "host": "atmega8535",
+    "note": "The atmega8535 processor."
+  },
+  "atmega_88": {
+    "host": "atmega88",
+    "note": "The atmega88 processor."
+  },
+  "atmega_88_a": {
+    "host": "atmega88a",
+    "note": "The atmega88a processor."
+  },
+  "atmega_88_p": {
+    "host": "atmega88p",
+    "note": "The atmega88p processor."
+  },
+  "atmega_88_pa": {
+    "host": "atmega88pa",
+    "note": "The atmega88pa processor."
+  },
+  "atmega_8_a": {
+    "host": "atmega8a",
+    "note": "The atmega8a processor."
+  },
+  "atmega_8_hva": {
+    "host": "atmega8hva",
+    "note": "The atmega8hva processor."
+  },
+  "atmega_8_u_2": {
+    "host": "atmega8u2",
+    "note": "The atmega8u2 processor."
+  },
+  "attiny_10": {
+    "host": "attiny10",
+    "note": "The attiny10 processor."
+  },
+  "attiny_102": {
+    "host": "attiny102",
+    "note": "The attiny102 processor."
+  },
+  "attiny_104": {
+    "host": "attiny104",
+    "note": "The attiny104 processor."
+  },
+  "attiny_11": {
+    "host": "attiny11",
+    "note": "The attiny11 processor."
+  },
+  "attiny_12": {
+    "host": "attiny12",
+    "note": "The attiny12 processor."
+  },
+  "attiny_13": {
+    "host": "attiny13",
+    "note": "The attiny13 processor."
+  },
+  "attiny_13_a": {
+    "host": "attiny13a",
+    "note": "The attiny13a processor."
+  },
+  "attiny_15": {
+    "host": "attiny15",
+    "note": "The attiny15 processor."
+  },
+  "attiny_1634": {
+    "host": "attiny1634",
+    "note": "The attiny1634 processor."
+  },
+  "attiny_167": {
+    "host": "attiny167",
+    "note": "The attiny167 processor."
+  },
+  "attiny_20": {
+    "host": "attiny20",
+    "note": "The attiny20 processor."
+  },
+  "attiny_22": {
+    "host": "attiny22",
+    "note": "The attiny22 processor."
+  },
+  "attiny_2313": {
+    "host": "attiny2313",
+    "note": "The attiny2313 processor."
+  },
+  "attiny_2313_a": {
+    "host": "attiny2313a",
+    "note": "The attiny2313a processor."
+  },
+  "attiny_24": {
+    "host": "attiny24",
+    "note": "The attiny24 processor."
+  },
+  "attiny_24_a": {
+    "host": "attiny24a",
+    "note": "The attiny24a processor."
+  },
+  "attiny_25": {
+    "host": "attiny25",
+    "note": "The attiny25 processor."
+  },
+  "attiny_26": {
+    "host": "attiny26",
+    "note": "The attiny26 processor."
+  },
+  "attiny_261": {
+    "host": "attiny261",
+    "note": "The attiny261 processor."
+  },
+  "attiny_261_a": {
+    "host": "attiny261a",
+    "note": "The attiny261a processor."
+  },
+  "attiny_28": {
+    "host": "attiny28",
+    "note": "The attiny28 processor."
+  },
+  "attiny_4": {
+    "host": "attiny4",
+    "note": "The attiny4 processor."
+  },
+  "attiny_40": {
+    "host": "attiny40",
+    "note": "The attiny40 processor."
+  },
+  "attiny_4313": {
+    "host": "attiny4313",
+    "note": "The attiny4313 processor."
+  },
+  "attiny_43_u": {
+    "host": "attiny43u",
+    "note": "The attiny43u processor."
+  },
+  "attiny_44": {
+    "host": "attiny44",
+    "note": "The attiny44 processor."
+  },
+  "attiny_44_a": {
+    "host": "attiny44a",
+    "note": "The attiny44a processor."
+  },
+  "attiny_45": {
+    "host": "attiny45",
+    "note": "The attiny45 processor."
+  },
+  "attiny_461": {
+    "host": "attiny461",
+    "note": "The attiny461 processor."
+  },
+  "attiny_461_a": {
+    "host": "attiny461a",
+    "note": "The attiny461a processor."
+  },
+  "attiny_48": {
+    "host": "attiny48",
+    "note": "The attiny48 processor."
+  },
+  "attiny_5": {
+    "host": "attiny5",
+    "note": "The attiny5 processor."
+  },
+  "attiny_828": {
+    "host": "attiny828",
+    "note": "The attiny828 processor."
+  },
+  "attiny_84": {
+    "host": "attiny84",
+    "note": "The attiny84 processor."
+  },
+  "attiny_84_a": {
+    "host": "attiny84a",
+    "note": "The attiny84a processor."
+  },
+  "attiny_85": {
+    "host": "attiny85",
+    "note": "The attiny85 processor."
+  },
+  "attiny_861": {
+    "host": "attiny861",
+    "note": "The attiny861 processor."
+  },
+  "attiny_861_a": {
+    "host": "attiny861a",
+    "note": "The attiny861a processor."
+  },
+  "attiny_87": {
+    "host": "attiny87",
+    "note": "The attiny87 processor."
+  },
+  "attiny_88": {
+    "host": "attiny88",
+    "note": "The attiny88 processor."
+  },
+  "attiny_9": {
+    "host": "attiny9",
+    "note": "The attiny9 processor."
+  },
+  "atxmega_128_a_1": {
+    "host": "atxmega128a1",
+    "note": "The atxmega128a1 processor."
+  },
+  "atxmega_128_a_1_u": {
+    "host": "atxmega128a1u",
+    "note": "The atxmega128a1u processor."
+  },
+  "atxmega_128_a_3": {
+    "host": "atxmega128a3",
+    "note": "The atxmega128a3 processor."
+  },
+  "atxmega_128_a_3_u": {
+    "host": "atxmega128a3u",
+    "note": "The atxmega128a3u processor."
+  },
+  "atxmega_128_a_4_u": {
+    "host": "atxmega128a4u",
+    "note": "The atxmega128a4u processor."
+  },
+  "atxmega_128_b_1": {
+    "host": "atxmega128b1",
+    "note": "The atxmega128b1 processor."
+  },
+  "atxmega_128_b_3": {
+    "host": "atxmega128b3",
+    "note": "The atxmega128b3 processor."
+  },
+  "atxmega_128_c_3": {
+    "host": "atxmega128c3",
+    "note": "The atxmega128c3 processor."
+  },
+  "atxmega_128_d_3": {
+    "host": "atxmega128d3",
+    "note": "The atxmega128d3 processor."
+  },
+  "atxmega_128_d_4": {
+    "host": "atxmega128d4",
+    "note": "The atxmega128d4 processor."
+  },
+  "atxmega_16_a_4": {
+    "host": "atxmega16a4",
+    "note": "The atxmega16a4 processor."
+  },
+  "atxmega_16_a_4_u": {
+    "host": "atxmega16a4u",
+    "note": "The atxmega16a4u processor."
+  },
+  "atxmega_16_c_4": {
+    "host": "atxmega16c4",
+    "note": "The atxmega16c4 processor."
+  },
+  "atxmega_16_d_4": {
+    "host": "atxmega16d4",
+    "note": "The atxmega16d4 processor."
+  },
+  "atxmega_16_e_5": {
+    "host": "atxmega16e5",
+    "note": "The atxmega16e5 processor."
+  },
+  "atxmega_192_a_3": {
+    "host": "atxmega192a3",
+    "note": "The atxmega192a3 processor."
+  },
+  "atxmega_192_a_3_u": {
+    "host": "atxmega192a3u",
+    "note": "The atxmega192a3u processor."
+  },
+  "atxmega_192_c_3": {
+    "host": "atxmega192c3",
+    "note": "The atxmega192c3 processor."
+  },
+  "atxmega_192_d_3": {
+    "host": "atxmega192d3",
+    "note": "The atxmega192d3 processor."
+  },
+  "atxmega_256_a_3": {
+    "host": "atxmega256a3",
+    "note": "The atxmega256a3 processor."
+  },
+  "atxmega_256_a_3_b": {
+    "host": "atxmega256a3b",
+    "note": "The atxmega256a3b processor."
+  },
+  "atxmega_256_a_3_bu": {
+    "host": "atxmega256a3bu",
+    "note": "The atxmega256a3bu processor."
+  },
+  "atxmega_256_a_3_u": {
+    "host": "atxmega256a3u",
+    "note": "The atxmega256a3u processor."
+  },
+  "atxmega_256_c_3": {
+    "host": "atxmega256c3",
+    "note": "The atxmega256c3 processor."
+  },
+  "atxmega_256_d_3": {
+    "host": "atxmega256d3",
+    "note": "The atxmega256d3 processor."
+  },
+  "atxmega_32_a_4": {
+    "host": "atxmega32a4",
+    "note": "The atxmega32a4 processor."
+  },
+  "atxmega_32_a_4_u": {
+    "host": "atxmega32a4u",
+    "note": "The atxmega32a4u processor."
+  },
+  "atxmega_32_c_4": {
+    "host": "atxmega32c4",
+    "note": "The atxmega32c4 processor."
+  },
+  "atxmega_32_d_4": {
+    "host": "atxmega32d4",
+    "note": "The atxmega32d4 processor."
+  },
+  "atxmega_32_e_5": {
+    "host": "atxmega32e5",
+    "note": "The atxmega32e5 processor."
+  },
+  "atxmega_32_x_1": {
+    "host": "atxmega32x1",
+    "note": "The atxmega32x1 processor."
+  },
+  "atxmega_384_c_3": {
+    "host": "atxmega384c3",
+    "note": "The atxmega384c3 processor."
+  },
+  "atxmega_384_d_3": {
+    "host": "atxmega384d3",
+    "note": "The atxmega384d3 processor."
+  },
+  "atxmega_64_a_1": {
+    "host": "atxmega64a1",
+    "note": "The atxmega64a1 processor."
+  },
+  "atxmega_64_a_1_u": {
+    "host": "atxmega64a1u",
+    "note": "The atxmega64a1u processor."
+  },
+  "atxmega_64_a_3": {
+    "host": "atxmega64a3",
+    "note": "The atxmega64a3 processor."
+  },
+  "atxmega_64_a_3_u": {
+    "host": "atxmega64a3u",
+    "note": "The atxmega64a3u processor."
+  },
+  "atxmega_64_a_4_u": {
+    "host": "atxmega64a4u",
+    "note": "The atxmega64a4u processor."
+  },
+  "atxmega_64_b_1": {
+    "host": "atxmega64b1",
+    "note": "The atxmega64b1 processor."
+  },
+  "atxmega_64_b_3": {
+    "host": "atxmega64b3",
+    "note": "The atxmega64b3 processor."
+  },
+  "atxmega_64_c_3": {
+    "host": "atxmega64c3",
+    "note": "The atxmega64c3 processor."
+  },
+  "atxmega_64_d_3": {
+    "host": "atxmega64d3",
+    "note": "The atxmega64d3 processor."
+  },
+  "atxmega_64_d_4": {
+    "host": "atxmega64d4",
+    "note": "The atxmega64d4 processor."
+  },
+  "atxmega_8_e_5": {
+    "host": "atxmega8e5",
+    "note": "The atxmega8e5 processor."
+  },
+  "avr_1": {
+    "host": "avr1",
+    "note": "The avr1 processor."
+  },
+  "avr_2": {
+    "host": "avr2",
+    "note": "The avr2 processor."
+  },
+  "avr_25": {
+    "host": "avr25",
+    "note": "The avr25 processor."
+  },
+  "avr_3": {
+    "host": "avr3",
+    "note": "The avr3 processor."
+  },
+  "avr_31": {
+    "host": "avr31",
+    "note": "The avr31 processor."
+  },
+  "avr_35": {
+    "host": "avr35",
+    "note": "The avr35 processor."
+  },
+  "avr_4": {
+    "host": "avr4",
+    "note": "The avr4 processor."
+  },
+  "avr_5": {
+    "host": "avr5",
+    "note": "The avr5 processor."
+  },
+  "avr_51": {
+    "host": "avr51",
+    "note": "The avr51 processor."
+  },
+  "avr_6": {
+    "host": "avr6",
+    "note": "The avr6 processor."
+  },
+  "avrtiny": {
+    "host": "avrtiny",
+    "note": "The avrtiny processor."
+  },
+  "avrxmega_1": {
+    "host": "avrxmega1",
+    "note": "The avrxmega1 processor."
+  },
+  "avrxmega_2": {
+    "host": "avrxmega2",
+    "note": "The avrxmega2 processor."
+  },
+  "avrxmega_3": {
+    "host": "avrxmega3",
+    "note": "The avrxmega3 processor."
+  },
+  "avrxmega_4": {
+    "host": "avrxmega4",
+    "note": "The avrxmega4 processor."
+  },
+  "avrxmega_5": {
+    "host": "avrxmega5",
+    "note": "The avrxmega5 processor."
+  },
+  "avrxmega_6": {
+    "host": "avrxmega6",
+    "note": "The avrxmega6 processor."
+  },
+  "avrxmega_7": {
+    "host": "avrxmega7",
+    "note": "The avrxmega7 processor."
+  },
+  "m_3000": {
+    "host": "m3000",
+    "note": "The m3000 processor."
+  },
+  "probe": {
+    "host": "probe",
+    "note": "The probe processor."
+  },
+  "v_1": {
+    "host": "v1",
+    "note": "The v1 processor."
+  },
+  "v_2": {
+    "host": "v2",
+    "note": "The v2 processor."
+  },
+  "v_3": {
+    "host": "v3",
+    "note": "The v3 processor."
+  },
+  "hexagonv_5": {
+    "host": "hexagonv5",
+    "note": "The hexagonv5 processor."
+  },
+  "hexagonv_55": {
+    "host": "hexagonv55",
+    "note": "The hexagonv55 processor."
+  },
+  "hexagonv_60": {
+    "host": "hexagonv60",
+    "note": "The hexagonv60 processor."
+  },
+  "hexagonv_62": {
+    "host": "hexagonv62",
+    "note": "The hexagonv62 processor."
+  },
+  "hexagonv_65": {
+    "host": "hexagonv65",
+    "note": "The hexagonv65 processor."
+  },
+  "hexagonv_66": {
+    "host": "hexagonv66",
+    "note": "The hexagonv66 processor."
+  },
+  "hexagonv_67": {
+    "host": "hexagonv67",
+    "note": "The hexagonv67 processor."
+  },
+  "hexagonv_67_t": {
+    "host": "hexagonv67t",
+    "note": "The hexagonv67t processor."
+  },
+  "mips_1": {
+    "host": "mips1",
+    "note": "The mips1 processor."
+  },
+  "mips_2": {
+    "host": "mips2",
+    "note": "The mips2 processor."
+  },
+  "mips_3": {
+    "host": "mips3",
+    "note": "The mips3 processor."
+  },
+  "mips_32": {
+    "host": "mips32",
+    "note": "The mips32 processor."
+  },
+  "mips_32_r_2": {
+    "host": "mips32r2",
+    "note": "The mips32r2 processor."
+  },
+  "mips_32_r_3": {
+    "host": "mips32r3",
+    "note": "The mips32r3 processor."
+  },
+  "mips_32_r_5": {
+    "host": "mips32r5",
+    "note": "The mips32r5 processor."
+  },
+  "mips_32_r_6": {
+    "host": "mips32r6",
+    "note": "The mips32r6 processor."
+  },
+  "mips_4": {
+    "host": "mips4",
+    "note": "The mips4 processor."
+  },
+  "mips_5": {
+    "host": "mips5",
+    "note": "The mips5 processor."
+  },
+  "mips_64": {
+    "host": "mips64",
+    "note": "The mips64 processor."
+  },
+  "mips_64_r_2": {
+    "host": "mips64r2",
+    "note": "The mips64r2 processor."
+  },
+  "mips_64_r_3": {
+    "host": "mips64r3",
+    "note": "The mips64r3 processor."
+  },
+  "mips_64_r_5": {
+    "host": "mips64r5",
+    "note": "The mips64r5 processor."
+  },
+  "mips_64_r_6": {
+    "host": "mips64r6",
+    "note": "The mips64r6 processor."
+  },
+  "octeon": {
+    "host": "octeon+",
+    "note": "The octeon+ processor."
+  },
+  "p_5600": {
+    "host": "p5600",
+    "note": "The p5600 processor."
+  },
+  "msp_430": {
+    "host": "msp430",
+    "note": "The msp430 processor."
+  },
+  "msp_430_x": {
+    "host": "msp430x",
+    "note": "The msp430x processor."
+  },
+  "sm_20": {
+    "host": "sm_20",
+    "note": "The sm_20 processor."
+  },
+  "sm_21": {
+    "host": "sm_21",
+    "note": "The sm_21 processor."
+  },
+  "sm_30": {
+    "host": "sm_30",
+    "note": "The sm_30 processor."
+  },
+  "sm_32": {
+    "host": "sm_32",
+    "note": "The sm_32 processor."
+  },
+  "sm_35": {
+    "host": "sm_35",
+    "note": "The sm_35 processor."
+  },
+  "sm_37": {
+    "host": "sm_37",
+    "note": "The sm_37 processor."
+  },
+  "sm_50": {
+    "host": "sm_50",
+    "note": "The sm_50 processor."
+  },
+  "sm_52": {
+    "host": "sm_52",
+    "note": "The sm_52 processor."
+  },
+  "sm_53": {
+    "host": "sm_53",
+    "note": "The sm_53 processor."
+  },
+  "sm_60": {
+    "host": "sm_60",
+    "note": "The sm_60 processor."
+  },
+  "sm_61": {
+    "host": "sm_61",
+    "note": "The sm_61 processor."
+  },
+  "sm_62": {
+    "host": "sm_62",
+    "note": "The sm_62 processor."
+  },
+  "sm_70": {
+    "host": "sm_70",
+    "note": "The sm_70 processor."
+  },
+  "sm_72": {
+    "host": "sm_72",
+    "note": "The sm_72 processor."
+  },
+  "sm_75": {
+    "host": "sm_75",
+    "note": "The sm_75 processor."
+  },
+  "sm_80": {
+    "host": "sm_80",
+    "note": "The sm_80 processor."
+  },
+  "603_e": {
+    "host": "603e",
+    "note": "The 603e processor."
+  },
+  "603_ev": {
+    "host": "603ev",
+    "note": "The 603ev processor."
+  },
+  "604_e": {
+    "host": "604e",
+    "note": "The 604e processor."
+  },
+  "a_2": {
+    "host": "a2",
+    "note": "The a2 processor."
+  },
+  "a_2_q": {
+    "host": "a2q",
+    "note": "The a2q processor."
+  },
+  "e_500": {
+    "host": "e500",
+    "note": "The e500 processor."
+  },
+  "e_500_mc": {
+    "host": "e500mc",
+    "note": "The e500mc processor."
+  },
+  "e_5500": {
+    "host": "e5500",
+    "note": "The e5500 processor."
+  },
+  "future": {
+    "host": "future",
+    "note": "The future processor."
+  },
+  "g_3": {
+    "host": "g3",
+    "note": "The g3 processor."
+  },
+  "g_4": {
+    "host": "g4+",
+    "note": "The g4+ processor."
+  },
+  "g_5": {
+    "host": "g5",
+    "note": "The g5 processor."
+  },
+  "ppc": {
+    "host": "ppc",
+    "note": "The ppc processor."
+  },
+  "ppc_32": {
+    "host": "ppc32",
+    "note": "The ppc32 processor."
+  },
+  "ppc_64": {
+    "host": "ppc64",
+    "note": "The ppc64 processor."
+  },
+  "ppc_64_le": {
+    "host": "ppc64le",
+    "note": "The ppc64le processor."
+  },
+  "pwr_10": {
+    "host": "pwr10",
+    "note": "The pwr10 processor."
+  },
+  "pwr_3": {
+    "host": "pwr3",
+    "note": "The pwr3 processor."
+  },
+  "pwr_4": {
+    "host": "pwr4",
+    "note": "The pwr4 processor."
+  },
+  "pwr_5": {
+    "host": "pwr5",
+    "note": "The pwr5 processor."
+  },
+  "pwr_5_x": {
+    "host": "pwr5x",
+    "note": "The pwr5x processor."
+  },
+  "pwr_6": {
+    "host": "pwr6",
+    "note": "The pwr6 processor."
+  },
+  "pwr_6_x": {
+    "host": "pwr6x",
+    "note": "The pwr6x processor."
+  },
+  "pwr_7": {
+    "host": "pwr7",
+    "note": "The pwr7 processor."
+  },
+  "pwr_8": {
+    "host": "pwr8",
+    "note": "The pwr8 processor."
+  },
+  "pwr_9": {
+    "host": "pwr9",
+    "note": "The pwr9 processor."
+  },
+  "barts": {
+    "host": "barts",
+    "note": "The barts processor."
+  },
+  "caicos": {
+    "host": "caicos",
+    "note": "The caicos processor."
+  },
+  "cayman": {
+    "host": "cayman",
+    "note": "The cayman processor."
+  },
+  "cedar": {
+    "host": "cedar",
+    "note": "The cedar processor."
+  },
+  "cypress": {
+    "host": "cypress",
+    "note": "The cypress processor."
+  },
+  "juniper": {
+    "host": "juniper",
+    "note": "The juniper processor."
+  },
+  "r_600": {
+    "host": "r600",
+    "note": "The r600 processor."
+  },
+  "r_630": {
+    "host": "r630",
+    "note": "The r630 processor."
+  },
+  "redwood": {
+    "host": "redwood",
+    "note": "The redwood processor."
+  },
+  "rs_880": {
+    "host": "rs880",
+    "note": "The rs880 processor."
+  },
+  "rv_670": {
+    "host": "rv670",
+    "note": "The rv670 processor."
+  },
+  "rv_710": {
+    "host": "rv710",
+    "note": "The rv710 processor."
+  },
+  "rv_730": {
+    "host": "rv730",
+    "note": "The rv730 processor."
+  },
+  "rv_770": {
+    "host": "rv770",
+    "note": "The rv770 processor."
+  },
+  "sumo": {
+    "host": "sumo",
+    "note": "The sumo processor."
+  },
+  "turks": {
+    "host": "turks",
+    "note": "The turks processor."
+  },
+  "generic_rv_32": {
+    "host": "generic-rv32",
+    "note": "The generic-rv32 processor."
+  },
+  "generic_rv_64": {
+    "host": "generic-rv64",
+    "note": "The generic-rv64 processor."
+  },
+  "rocket_rv_32": {
+    "host": "rocket-rv32",
+    "note": "The rocket-rv32 processor."
+  },
+  "rocket_rv_64": {
+    "host": "rocket-rv64",
+    "note": "The rocket-rv64 processor."
+  },
+  "sifive_e_31": {
+    "host": "sifive-e31",
+    "note": "The sifive-e31 processor."
+  },
+  "sifive_u_54": {
+    "host": "sifive-u54",
+    "note": "The sifive-u54 processor."
+  },
+  "at_697_e": {
+    "host": "at697e",
+    "note": "The at697e processor."
+  },
+  "at_697_f": {
+    "host": "at697f",
+    "note": "The at697f processor."
+  },
+  "f_934": {
+    "host": "f934",
+    "note": "The f934 processor."
+  },
+  "gr_712_rc": {
+    "host": "gr712rc",
+    "note": "The gr712rc processor."
+  },
+  "gr_740": {
+    "host": "gr740",
+    "note": "The gr740 processor."
+  },
+  "hypersparc": {
+    "host": "hypersparc",
+    "note": "The hypersparc processor."
+  },
+  "leon_2": {
+    "host": "leon2",
+    "note": "The leon2 processor."
+  },
+  "leon_3": {
+    "host": "leon3",
+    "note": "The leon3 processor."
+  },
+  "leon_4": {
+    "host": "leon4",
+    "note": "The leon4 processor."
+  },
+  "ma_2080": {
+    "host": "ma2080",
+    "note": "The ma2080 processor."
+  },
+  "ma_2085": {
+    "host": "ma2085",
+    "note": "The ma2085 processor."
+  },
+  "ma_2100": {
+    "host": "ma2100",
+    "note": "The ma2100 processor."
+  },
+  "ma_2150": {
+    "host": "ma2150",
+    "note": "The ma2150 processor."
+  },
+  "ma_2155": {
+    "host": "ma2155",
+    "note": "The ma2155 processor."
+  },
+  "ma_2450": {
+    "host": "ma2450",
+    "note": "The ma2450 processor."
+  },
+  "ma_2455": {
+    "host": "ma2455",
+    "note": "The ma2455 processor."
+  },
+  "ma_2480": {
+    "host": "ma2480",
+    "note": "The ma2480 processor."
+  },
+  "ma_2485": {
+    "host": "ma2485",
+    "note": "The ma2485 processor."
+  },
+  "ma_2_x_5_x": {
+    "host": "ma2x5x",
+    "note": "The ma2x5x processor."
+  },
+  "ma_2_x_8_x": {
+    "host": "ma2x8x",
+    "note": "The ma2x8x processor."
+  },
+  "myriad_2": {
+    "host": "myriad2",
+    "note": "The myriad2 processor."
+  },
+  "myriad_2_1": {
+    "host": "myriad2.1",
+    "note": "The myriad2.1 processor."
+  },
+  "myriad_2_2": {
+    "host": "myriad2.2",
+    "note": "The myriad2.2 processor."
+  },
+  "myriad_2_3": {
+    "host": "myriad2.3",
+    "note": "The myriad2.3 processor."
+  },
+  "niagara": {
+    "host": "niagara",
+    "note": "The niagara processor."
+  },
+  "niagara_2": {
+    "host": "niagara2",
+    "note": "The niagara2 processor."
+  },
+  "niagara_3": {
+    "host": "niagara3",
+    "note": "The niagara3 processor."
+  },
+  "niagara_4": {
+    "host": "niagara4",
+    "note": "The niagara4 processor."
+  },
+  "sparclet": {
+    "host": "sparclet",
+    "note": "The sparclet processor."
+  },
+  "sparclite": {
+    "host": "sparclite",
+    "note": "The sparclite processor."
+  },
+  "sparclite_86_x": {
+    "host": "sparclite86x",
+    "note": "The sparclite86x processor."
+  },
+  "supersparc": {
+    "host": "supersparc",
+    "note": "The supersparc processor."
+  },
+  "tsc_701": {
+    "host": "tsc701",
+    "note": "The tsc701 processor."
+  },
+  "ultrasparc": {
+    "host": "ultrasparc",
+    "note": "The ultrasparc processor."
+  },
+  "ultrasparc_3": {
+    "host": "ultrasparc3",
+    "note": "The ultrasparc3 processor."
+  },
+  "ut_699": {
+    "host": "ut699",
+    "note": "The ut699 processor."
+  },
+  "v_7": {
+    "host": "v7",
+    "note": "The v7 processor."
+  },
+  "v_8": {
+    "host": "v8",
+    "note": "The v8 processor."
+  },
+  "v_9": {
+    "host": "v9",
+    "note": "The v9 processor."
+  },
+  "arch_10": {
+    "host": "arch10",
+    "note": "The arch10 processor."
+  },
+  "arch_11": {
+    "host": "arch11",
+    "note": "The arch11 processor."
+  },
+  "arch_12": {
+    "host": "arch12",
+    "note": "The arch12 processor."
+  },
+  "arch_13": {
+    "host": "arch13",
+    "note": "The arch13 processor."
+  },
+  "arch_8": {
+    "host": "arch8",
+    "note": "The arch8 processor."
+  },
+  "arch_9": {
+    "host": "arch9",
+    "note": "The arch9 processor."
+  },
+  "z_10": {
+    "host": "z10",
+    "note": "The z10 processor."
+  },
+  "z_13": {
+    "host": "z13",
+    "note": "The z13 processor."
+  },
+  "z_14": {
+    "host": "z14",
+    "note": "The z14 processor."
+  },
+  "z_15": {
+    "host": "z15",
+    "note": "The z15 processor."
+  },
+  "z_196": {
+    "host": "z196",
+    "note": "The z196 processor."
+  },
+  "z_ec_12": {
+    "host": "zEC12",
+    "note": "The zEC12 processor."
+  },
+  "bleeding_edge": {
+    "host": "bleeding-edge",
+    "note": "The bleeding-edge processor."
+  },
+  "mvp": {
+    "host": "mvp",
+    "note": "The mvp processor."
+  },
+  "amdfam_10": {
+    "host": "amdfam10",
+    "note": "The amdfam10 processor."
+  },
+  "athlon": {
+    "host": "athlon",
+    "note": "The athlon processor."
+  },
+  "athlon_4": {
+    "host": "athlon-4",
+    "note": "The athlon-4 processor."
+  },
+  "athlon_fx": {
+    "host": "athlon-fx",
+    "note": "The athlon-fx processor."
+  },
+  "athlon_mp": {
+    "host": "athlon-mp",
+    "note": "The athlon-mp processor."
+  },
+  "athlon_tbird": {
+    "host": "athlon-tbird",
+    "note": "The athlon-tbird processor."
+  },
+  "athlon_xp": {
+    "host": "athlon-xp",
+    "note": "The athlon-xp processor."
+  },
+  "athlon_64": {
+    "host": "athlon64",
+    "note": "The athlon64 processor."
+  },
+  "athlon_64_sse_3": {
+    "host": "athlon64-sse3",
+    "note": "The athlon64-sse3 processor."
+  },
+  "atom": {
+    "host": "atom",
+    "note": "The atom processor."
+  },
+  "barcelona": {
+    "host": "barcelona",
+    "note": "The barcelona processor."
+  },
+  "bdver_1": {
+    "host": "bdver1",
+    "note": "The bdver1 processor."
+  },
+  "bdver_2": {
+    "host": "bdver2",
+    "note": "The bdver2 processor."
+  },
+  "bdver_3": {
+    "host": "bdver3",
+    "note": "The bdver3 processor."
+  },
+  "bdver_4": {
+    "host": "bdver4",
+    "note": "The bdver4 processor."
+  },
+  "bonnell": {
+    "host": "bonnell",
+    "note": "The bonnell processor."
+  },
+  "broadwell": {
+    "host": "broadwell",
+    "note": "The broadwell processor."
+  },
+  "btver_1": {
+    "host": "btver1",
+    "note": "The btver1 processor."
+  },
+  "btver_2": {
+    "host": "btver2",
+    "note": "The btver2 processor."
+  },
+  "c_3": {
+    "host": "c3",
+    "note": "The c3 processor."
+  },
+  "c_3_2": {
+    "host": "c3-2",
+    "note": "The c3-2 processor."
+  },
+  "cannonlake": {
+    "host": "cannonlake",
+    "note": "The cannonlake processor."
+  },
+  "cascadelake": {
+    "host": "cascadelake",
+    "note": "The cascadelake processor."
+  },
+  "cooperlake": {
+    "host": "cooperlake",
+    "note": "The cooperlake processor."
+  },
+  "core_avx_i": {
+    "host": "core-avx-i",
+    "note": "The core-avx-i processor."
+  },
+  "core_avx_2": {
+    "host": "core-avx2",
+    "note": "The core-avx2 processor."
+  },
+  "core_2": {
+    "host": "core2",
+    "note": "The core2 processor."
+  },
+  "corei_7": {
+    "host": "corei7",
+    "note": "The corei7 processor."
+  },
+  "corei_7_avx": {
+    "host": "corei7-avx",
+    "note": "The corei7-avx processor."
+  },
+  "geode": {
+    "host": "geode",
+    "note": "The geode processor."
+  },
+  "goldmont": {
+    "host": "goldmont",
+    "note": "The goldmont processor."
+  },
+  "goldmont_plus": {
+    "host": "goldmont-plus",
+    "note": "The goldmont-plus processor."
+  },
+  "haswell": {
+    "host": "haswell",
+    "note": "The haswell processor."
+  },
+  "i_386": {
+    "host": "i386",
+    "note": "The i386 processor."
+  },
+  "i_486": {
+    "host": "i486",
+    "note": "The i486 processor."
+  },
+  "i_586": {
+    "host": "i586",
+    "note": "The i586 processor."
+  },
+  "i_686": {
+    "host": "i686",
+    "note": "The i686 processor."
+  },
+  "icelake_client": {
+    "host": "icelake-client",
+    "note": "The icelake-client processor."
+  },
+  "icelake_server": {
+    "host": "icelake-server",
+    "note": "The icelake-server processor."
+  },
+  "ivybridge": {
+    "host": "ivybridge",
+    "note": "The ivybridge processor."
+  },
+  "k_6": {
+    "host": "k6",
+    "note": "The k6 processor."
+  },
+  "k_6_2": {
+    "host": "k6-2",
+    "note": "The k6-2 processor."
+  },
+  "k_6_3": {
+    "host": "k6-3",
+    "note": "The k6-3 processor."
+  },
+  "k_8": {
+    "host": "k8",
+    "note": "The k8 processor."
+  },
+  "k_8_sse_3": {
+    "host": "k8-sse3",
+    "note": "The k8-sse3 processor."
+  },
+  "knl": {
+    "host": "knl",
+    "note": "The knl processor."
+  },
+  "knm": {
+    "host": "knm",
+    "note": "The knm processor."
+  },
+  "lakemont": {
+    "host": "lakemont",
+    "note": "The lakemont processor."
+  },
+  "nehalem": {
+    "host": "nehalem",
+    "note": "The nehalem processor."
+  },
+  "nocona": {
+    "host": "nocona",
+    "note": "The nocona processor."
+  },
+  "opteron": {
+    "host": "opteron",
+    "note": "The opteron processor."
+  },
+  "opteron_sse_3": {
+    "host": "opteron-sse3",
+    "note": "The opteron-sse3 processor."
+  },
+  "penryn": {
+    "host": "penryn",
+    "note": "The penryn processor."
+  },
+  "pentium": {
+    "host": "pentium",
+    "note": "The pentium processor."
+  },
+  "pentium_m": {
+    "host": "pentium-m",
+    "note": "The pentium-m processor."
+  },
+  "pentium_mmx": {
+    "host": "pentium-mmx",
+    "note": "The pentium-mmx processor."
+  },
+  "pentium_2": {
+    "host": "pentium2",
+    "note": "The pentium2 processor."
+  },
+  "pentium_3": {
+    "host": "pentium3",
+    "note": "The pentium3 processor."
+  },
+  "pentium_3_m": {
+    "host": "pentium3m",
+    "note": "The pentium3m processor."
+  },
+  "pentium_4": {
+    "host": "pentium4",
+    "note": "The pentium4 processor."
+  },
+  "pentium_4_m": {
+    "host": "pentium4m",
+    "note": "The pentium4m processor."
+  },
+  "pentiumpro": {
+    "host": "pentiumpro",
+    "note": "The pentiumpro processor."
+  },
+  "prescott": {
+    "host": "prescott",
+    "note": "The prescott processor."
+  },
+  "sandybridge": {
+    "host": "sandybridge",
+    "note": "The sandybridge processor."
+  },
+  "silvermont": {
+    "host": "silvermont",
+    "note": "The silvermont processor."
+  },
+  "skx": {
+    "host": "skx",
+    "note": "The skx processor."
+  },
+  "skylake": {
+    "host": "skylake",
+    "note": "The skylake processor."
+  },
+  "skylake_avx_512": {
+    "host": "skylake-avx512",
+    "note": "The skylake-avx512 processor."
+  },
+  "slm": {
+    "host": "slm",
+    "note": "The slm processor."
+  },
+  "tigerlake": {
+    "host": "tigerlake",
+    "note": "The tigerlake processor."
+  },
+  "tremont": {
+    "host": "tremont",
+    "note": "The tremont processor."
+  },
+  "westmere": {
+    "host": "westmere",
+    "note": "The westmere processor."
+  },
+  "winchip_c_6": {
+    "host": "winchip-c6",
+    "note": "The winchip-c6 processor."
+  },
+  "winchip_2": {
+    "host": "winchip2",
+    "note": "The winchip2 processor."
+  },
+  "x_86_64": {
+    "host": "x86-64",
+    "note": "The x86-64 processor."
+  },
+  "yonah": {
+    "host": "yonah",
+    "note": "The yonah processor."
+  },
+  "znver_1": {
+    "host": "znver1",
+    "note": "The znver1 processor."
+  },
+  "znver_2": {
+    "host": "znver2",
+    "note": "The znver2 processor."
+  }
+}

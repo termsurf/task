@@ -1,0 +1,61 @@
+{
+  "objCBinPackProtocolList": {
+    "host": "ObjCBinPackProtocolList",
+    "head": "Bin pack protocol list",
+    "note": "Controls bin-packing Objective-C protocol conformance list items into as few lines as possible when they go over `ColumnLimit`.",
+    "need": false,
+    "case": {
+      "auto": {
+        "head": "Auto",
+        "host": "Auto",
+        "note": "Automatically determine parameter bin-packing behavior."
+      },
+      "always": {
+        "head": "Always",
+        "host": "Always",
+        "note": "Always bin-pack parameters."
+      },
+      "never": {
+        "head": "Never",
+        "host": "Never",
+        "note": "Never bin-pack parameters."
+      }
+    }
+  },
+  "objCBlockIndentWidth": {
+    "host": "ObjCBlockIndentWidth",
+    "head": "Block indent width",
+    "like": "integer",
+    "note": "The number of characters to use for indentation of ObjC blocks.",
+    "need": false
+  },
+  "objCBreakBeforeNestedBlockParam": {
+    "host": "ObjCBreakBeforeNestedBlockParam",
+    "head": "Break before nested block param",
+    "like": "boolean",
+    "note": "Break parameters list into lines when there is nested block parameters in a function call.",
+    "need": false
+  },
+  "objCPropertyAttributeOrder": {
+    "host": "ObjCPropertyAttributeOrder",
+    "head": "Property attribute order",
+    "like": "string",
+    "list": true,
+    "note": "The order in which ObjC property attributes should appear.",
+    "need": false
+  },
+  "objCSpaceAfterProperty": {
+    "host": "ObjCSpaceAfterProperty",
+    "head": "Space after property",
+    "like": "boolean",
+    "note": "Add a space after `@property` in Objective-C, i.e. use `@property (readonly)` instead of `@property(readonly)`.",
+    "need": false
+  },
+  "objCSpaceBeforeProtocolList": {
+    "host": "ObjCSpaceBeforeProtocolList",
+    "head": "Space before protocol list",
+    "like": "boolean",
+    "note": "Add a space in front of an Objective-C protocol list, i.e. use `Foo <Protocol>` instead of `Foo<Protocol>`.",
+    "need": false
+  }
+}

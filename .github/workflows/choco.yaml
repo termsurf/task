@@ -1,0 +1,46 @@
+on: workflow_dispatch
+
+name: Choco Publish
+
+jobs:
+  publish:
+    # Windows Server 2022 (https://github.com/actions/runner-images)
+    runs-on: windows-2022
+    environment: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.10.x
+      - name: Create cache directory
+        run: mkdir "$($env:LOCALAPPDATA)\choco-cache"
+      - name: Cache Tools
+        uses: actions/cache@v4
+        with:
+          path: "$($env:LOCALAPPDATA)\\choco-cache"
+          key: ${{ runner.os }}-temp-cache
+      - name: Set Choco cache path
+        run: choco config set cacheLocation "$($env:LOCALAPPDATA)\choco-cache"
+      - name: Set ENV vars
+        id: version
+        run: echo "PACKAGE_VERSION=$(cat package.json | jq -r '.chocoVersion')" >> $env:GITHUB_ENV
+      - name: Choco pack
+        run: choco pack load/choco/task.nuspec --out load/choco
+      - name: Choco install
+        run: choco install -y task --source "'./load/choco;chocolatey'"
+      - name: Choco set api key
+        env:
+          CHOCOLATEY_API_KEY: ${{ secrets.CHOCOLATEY_API_KEY }}
+        run:
+          choco apikey --key $env:CHOCOLATEY_API_KEY --source https://push.chocolatey.org/
+      - name: Choco publish
+        env:
+          CHOCOLATEY_API_KEY: ${{ secrets.CHOCOLATEY_API_KEY }}
+        working-directory: load/choco
+        run:
+          choco push --key $env:CHOCOLATEY_API_KEY task.${{ env.PACKAGE_VERSION }}.nupkg --source
+          https://push.chocolatey.org/

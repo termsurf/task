@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "module": "ES2020",
+    "target": "ES2015",
+    "lib": ["ES2015", "dom", "dom.iterable"],
+    "outDir": "host",
+    "rootDir": ".",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "strictNullChecks": false,
+    "strict": false,
+    "esModuleInterop": true,
+    "noUncheckedIndexedAccess": false,
+    "baseUrl": ".",
+    "allowJs": true,
+    "noErrorTruncation": true,
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"],
+    "noImplicitAny": false,
+    "declaration": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "~/*": ["./*"]
+    }
+  },
+  "include": ["code/puppeteer/**/*.ts", "*.d.ts"],
+  "exclude": ["node_modules", "host"]
+}

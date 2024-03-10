@@ -1,0 +1,16 @@
+{
+  "cpp11BracedListStyle": {
+    "host": "Cpp11BracedListStyle",
+    "head": "Braced list style",
+    "like": "boolean",
+    "note": "If `true`, format braced lists as best suited for C++11 braced lists.",
+    "need": false
+  },
+  "spaceBeforeCpp11BracedList": {
+    "host": "SpaceBeforeCpp11BracedList",
+    "head": "Space before braced list",
+    "like": "boolean",
+    "note": "If `true`, a space will be inserted before a C++11 braced list used to initialize an object (after the preceding identifier or type).",
+    "need": false
+  }
+}

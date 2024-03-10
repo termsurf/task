@@ -1,0 +1,2037 @@
+{
+  "3dostr": {
+    "label": "3DO STR",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "3g2": {
+    "label": "3GP2 (3GPP2 file format)",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "3gp": {
+    "label": "3GP (3GPP file format)",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "4xm": {
+    "label": "4X Technologies",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "a64": {
+    "label": "a64 - video for Commodore 64",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "aa": {
+    "label": "Audible AA format files",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "aac": {
+    "label": "raw ADTS AAC (Advanced Audio Coding)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "aax": {
+    "label": "CRI AAX",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "ac3": {
+    "label": "raw AC-3",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "ac4": {
+    "label": "raw AC-4",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "ace": {
+    "label": "tri-Ace Audio Container",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "acm": {
+    "label": "Interplay ACM",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "act": {
+    "label": "ACT Voice file format",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "adf": {
+    "label": "Artworx Data Format",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "adp": {
+    "label": "ADP",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "ads": {
+    "label": "Sony PS2 ADS",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "adts": {
+    "label": "ADTS AAC (Advanced Audio Coding)",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "adx": {
+    "label": "CRI ADX",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "aea": {
+    "label": "MD STUDIO audio",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "afc": {
+    "label": "AFC",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "aiff": {
+    "label": "Audio IFF",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "aix": {
+    "label": "CRI AIX",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "alaw": {
+    "label": "PCM A-law",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "alias_pix": {
+    "label": "Alias/Wavefront PIX image",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "alp": {
+    "label": "LEGO Racers ALP",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "amr": {
+    "label": "3GPP AMR",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "amrnb": {
+    "label": "raw AMR-NB",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "amrwb": {
+    "label": "raw AMR-WB",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "amv": {
+    "label": "AMV",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "anm": {
+    "label": "Deluxe Paint Animation",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "apac": {
+    "label": "raw APAC",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "apc": {
+    "label": "CRYO APC",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "ape": {
+    "label": "Monkey's Audio",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "apm": {
+    "label": "Ubisoft Rayman 2 APM",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "apng": {
+    "label": "Animated Portable Network Graphics",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "aptx": {
+    "label": "raw aptX (Audio Processing Technology for Bluetooth)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "aptx_hd": {
+    "label": "raw aptX HD (Audio Processing Technology for Bluetooth)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "aqtitle": {
+    "label": "AQTitle subtitles",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "argo_asf": {
+    "label": "Argonaut Games ASF",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "argo_brp": {
+    "label": "Argonaut Games BRP",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "argo_cvg": {
+    "label": "Argonaut Games CVG",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "asf": {
+    "label": "ASF (Advanced / Active Streaming Format)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "asf_o": {
+    "label": "ASF (Advanced / Active Streaming Format)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "asf_stream": {
+    "label": "ASF (Advanced / Active Streaming Format)",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "ass": {
+    "label": "SSA (SubStation Alpha) subtitle",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "ast": {
+    "label": "AST (Audio Stream)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "au": {
+    "label": "Sun AU",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "audiotoolbox": {
+    "label": "AudioToolbox output device",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "av1": {
+    "label": "AV1 Annex B",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "avfoundation": {
+    "label": "AVFoundation input device",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "avi": {
+    "label": "AVI (Audio Video Interleaved)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "avif": {
+    "label": "AVIF",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "avm2": {
+    "label": "SWF (ShockWave Flash) (AVM2)",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "avr": {
+    "label": "AVR (Audio Visual Research)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "avs": {
+    "label": "Argonaut Games Creature Shock",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "avs2": {
+    "label": "raw AVS2-P2/IEEE1857.4 video",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "avs3": {
+    "label": "AVS3-P2/IEEE1857.10",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "bethsoftvid": {
+    "label": "Bethesda Softworks VID",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "bfi": {
+    "label": "Brute Force & Ignorance",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "bfstm": {
+    "label": "BFSTM (Binary Cafe Stream)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "bin": {
+    "label": "Binary text",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "bink": {
+    "label": "Bink",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "binka": {
+    "label": "Bink Audio",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "bit": {
+    "label": "G.729 BIT file format",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "bitpacked": {
+    "label": "Bitpacked",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "bmp_pipe": {
+    "label": "piped bmp sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "bmv": {
+    "label": "Discworld II BMV",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "boa": {
+    "label": "Black Ops Audio",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "bonk": {
+    "label": "raw Bonk",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "brender_pix": {
+    "label": "BRender PIX image",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "brstm": {
+    "label": "BRSTM (Binary Revolution Stream)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "c93": {
+    "label": "Interplay C93",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "caf": {
+    "label": "Apple CAF (Core Audio Format)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "cavsvideo": {
+    "label": "raw Chinese AVS (Audio Video Standard) video",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "cdg": {
+    "label": "CD Graphics",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "cdxl": {
+    "label": "Commodore CDXL video",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "cine": {
+    "label": "Phantom Cine",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "codec2": {
+    "label": "codec2 .c2 muxer",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "codec2raw": {
+    "label": "raw codec2 muxer",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "concat": {
+    "label": "Virtual concatenation script",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "crc": {
+    "label": "CRC testing",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "cri_pipe": {
+    "label": "piped cri sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "dash": {
+    "label": "DASH Muxer",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "data": {
+    "label": "raw data",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "daud": {
+    "label": "D-Cinema audio",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "dcstr": {
+    "label": "Sega DC STR",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "dds_pipe": {
+    "label": "piped dds sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "derf": {
+    "label": "Xilam DERF",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "dfa": {
+    "label": "Chronomaster DFA",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "dfpwm": {
+    "label": "raw DFPWM1a",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "dhav": {
+    "label": "Video DAV",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "dirac": {
+    "label": "raw Dirac",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "dnxhd": {
+    "label": "raw DNxHD (SMPTE VC-3)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "dpx_pipe": {
+    "label": "piped dpx sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "dsf": {
+    "label": "DSD Stream File (DSF)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "dsicin": {
+    "label": "Delphine Software International CIN",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "dss": {
+    "label": "Digital Speech Standard (DSS)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "dts": {
+    "label": "raw DTS",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "dtshd": {
+    "label": "raw DTS-HD",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "dv": {
+    "label": "DV (Digital Video)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "dvbsub": {
+    "label": "raw dvbsub",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "dvbtxt": {
+    "label": "dvbtxt",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "dvd": {
+    "label": "MPEG-2 PS (DVD VOB)",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "dxa": {
+    "label": "DXA",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "ea": {
+    "label": "Electronic Arts Multimedia",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "ea_cdata": {
+    "label": "Electronic Arts cdata",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "eac3": {
+    "label": "raw E-AC-3",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "epaf": {
+    "label": "Ensoniq Paris Audio File",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "evc": {
+    "label": "raw EVC video",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "exr_pipe": {
+    "label": "piped exr sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "f32be": {
+    "label": "PCM 32-bit floating-point big-endian",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "f32le": {
+    "label": "PCM 32-bit floating-point little-endian",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "f4v": {
+    "label": "F4V Adobe Flash Video",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "f64be": {
+    "label": "PCM 64-bit floating-point big-endian",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "f64le": {
+    "label": "PCM 64-bit floating-point little-endian",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "ffmetadata": {
+    "label": "FFmpeg metadata in text",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "fifo": {
+    "label": "FIFO queue pseudo-muxer",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "fifo_test": {
+    "label": "Fifo test muxer",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "film_cpk": {
+    "label": "Sega FILM / CPK",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "filmstrip": {
+    "label": "Adobe Filmstrip",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "fits": {
+    "label": "Flexible Image Transport System",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "flac": {
+    "label": "raw FLAC",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "flic": {
+    "label": "FLI/FLC/FLX animation",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "flv": {
+    "label": "FLV (Flash Video)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "framecrc": {
+    "label": "framecrc testing",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "framehash": {
+    "label": "Per-frame hash testing",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "framemd5": {
+    "label": "Per-frame MD5 testing",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "frm": {
+    "label": "Megalux Frame",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "fsb": {
+    "label": "FMOD Sample Bank",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "fwse": {
+    "label": "Capcom's MT Framework sound",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "g722": {
+    "label": "raw G.722",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "g723_1": {
+    "label": "raw G.723.1",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "g726": {
+    "label": "raw big-endian G.726 (\"left-justified\")",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "g726le": {
+    "label": "raw little-endian G.726 (\"right-justified\")",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "g729": {
+    "label": "G.729 raw format demuxer",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "gdv": {
+    "label": "Gremlin Digital Video",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "gem_pipe": {
+    "label": "piped gem sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "genh": {
+    "label": "GENeric Header",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "gif": {
+    "label": "CompuServe Graphics Interchange Format (GIF)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "gif_pipe": {
+    "label": "piped gif sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "gsm": {
+    "label": "raw GSM",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "gxf": {
+    "label": "GXF (General eXchange Format)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "h261": {
+    "label": "raw H.261",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "h263": {
+    "label": "raw H.263",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "h264": {
+    "label": "raw H.264 video",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "hash": {
+    "label": "Hash testing",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "hca": {
+    "label": "CRI HCA",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "hcom": {
+    "label": "Macintosh HCOM",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "hdr_pipe": {
+    "label": "piped hdr sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "hds": {
+    "label": "HDS Muxer",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "hevc": {
+    "label": "raw HEVC video",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "hls": {
+    "label": "Apple HTTP Live Streaming",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "hnm": {
+    "label": "Cryo HNM v4",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "ico": {
+    "label": "Microsoft Windows ICO",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "idcin": {
+    "label": "id Cinematic",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "idf": {
+    "label": "iCE Draw File",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "iff": {
+    "label": "IFF (Interchange File Format)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "ifv": {
+    "label": "IFV CCTV DVR",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "ilbc": {
+    "label": "iLBC storage",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "image2": {
+    "label": "image2 sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "image2pipe": {
+    "label": "piped image2 sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "imf": {
+    "label": "IMF (Interoperable Master Format)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "ingenient": {
+    "label": "raw Ingenient MJPEG",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "ipmovie": {
+    "label": "Interplay MVE",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "ipod": {
+    "label": "iPod H.264 MP4 (MPEG-4 Part 14)",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "ipu": {
+    "label": "raw IPU Video",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "ircam": {
+    "label": "Berkeley/IRCAM/CARL Sound Format",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "ismv": {
+    "label": "ISMV/ISMA (Smooth Streaming)",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "iss": {
+    "label": "Funcom ISS",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "iv8": {
+    "label": "IndigoVision 8000 video",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "ivf": {
+    "label": "On2 IVF",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "ivr": {
+    "label": "IVR (Internet Video Recording)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "j2k_pipe": {
+    "label": "piped j2k sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "jacosub": {
+    "label": "JACOsub subtitle format",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "jpeg_pipe": {
+    "label": "piped jpeg sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "jpegls_pipe": {
+    "label": "piped jpegls sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "jpegxl_anim": {
+    "label": "Animated JPEG XL",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "jpegxl_pipe": {
+    "label": "piped jpegxl sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "jv": {
+    "label": "Bitmap Brothers JV",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "kux": {
+    "label": "KUX (YouKu)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "kvag": {
+    "label": "Simon & Schuster Interactive VAG",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "laf": {
+    "label": "LAF (Limitless Audio Format)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "latm": {
+    "label": "LOAS/LATM",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "lavfi": {
+    "label": "Libavfilter virtual input device",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "live_flv": {
+    "label": "live RTMP FLV (Flash Video)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "lmlm4": {
+    "label": "raw lmlm4",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "loas": {
+    "label": "LOAS AudioSyncStream",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "lrc": {
+    "label": "LRC lyrics",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "luodat": {
+    "label": "Video CCTV DAT",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "lvf": {
+    "label": "LVF",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "lxf": {
+    "label": "VR native stream (LXF)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "m4v": {
+    "label": "raw MPEG-4 video",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "matroska": {
+    "label": "Matroska",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "matroska-webm": {
+    "label": "Matroska / WebM",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "mca": {
+    "label": "MCA Audio Format",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "mcc": {
+    "label": "MacCaption",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "md5": {
+    "label": "MD5 testing",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "mgsts": {
+    "label": "Metal Gear Solid: The Twin Snakes",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "microdvd": {
+    "label": "MicroDVD subtitle format",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "mjpeg": {
+    "label": "raw MJPEG video",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "mjpeg_2000": {
+    "label": "raw MJPEG 2000 video",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "mkvtimestamp_v2": {
+    "label": "extract pts as timecode v2 format, as defined by mkvtoolnix",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "mlp": {
+    "label": "raw MLP",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "mlv": {
+    "label": "Magic Lantern Video (MLV)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "mm": {
+    "label": "American Laser Games MM",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "mmf": {
+    "label": "Yamaha SMAF",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "mods": {
+    "label": "MobiClip MODS",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "moflex": {
+    "label": "MobiClip MOFLEX",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "mov": {
+    "label": "QuickTime / MOV",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "mp2": {
+    "label": "MP2 (MPEG audio layer 2)",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "mp3": {
+    "label": "MP3 (MPEG audio layer 3)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "mp4": {
+    "label": "MP4 (MPEG-4 Part 14)",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "mpc": {
+    "label": "Musepack",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "mpc8": {
+    "label": "Musepack SV8",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "mpeg": {
+    "label": "MPEG-1 Systems / MPEG program stream",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "mpeg1video": {
+    "label": "raw MPEG-1 video",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "mpeg2video": {
+    "label": "raw MPEG-2 video",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "mpegts": {
+    "label": "MPEG-TS (MPEG-2 Transport Stream)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "mpegtsraw": {
+    "label": "raw MPEG-TS (MPEG-2 Transport Stream)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "mpegvideo": {
+    "label": "raw MPEG video",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "mpjpeg": {
+    "label": "MIME multipart JPEG",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "mpl2": {
+    "label": "MPL2 subtitles",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "mpsub": {
+    "label": "MPlayer subtitles",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "msf": {
+    "label": "Sony PS3 MSF",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "msnwctcp": {
+    "label": "MSN TCP Webcam stream",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "msp": {
+    "label": "Microsoft Paint (MSP))",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "mtaf": {
+    "label": "Konami PS2 MTAF",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "mtv": {
+    "label": "MTV",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "mulaw": {
+    "label": "PCM mu-law",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "musx": {
+    "label": "Eurocom MUSX",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "mv": {
+    "label": "Silicon Graphics Movie",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "mvi": {
+    "label": "Motion Pixels MVI",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "mxf": {
+    "label": "MXF (Material eXchange Format)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "mxf_d10": {
+    "label": "MXF (Material eXchange Format) D-10 Mapping",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "mxf_opatom": {
+    "label": "MXF (Material eXchange Format) Operational Pattern Atom",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "mxg": {
+    "label": "MxPEG clip",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "nc": {
+    "label": "NC camera feed",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "nistsphere": {
+    "label": "NIST SPeech HEader REsources",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "nsp": {
+    "label": "Computerized Speech Lab NSP",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "nsv": {
+    "label": "Nullsoft Streaming Video",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "null": {
+    "label": "raw null video",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "nut": {
+    "label": "NUT",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "nuv": {
+    "label": "NuppelVideo",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "obu": {
+    "label": "AV1 low overhead OBU",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "oga": {
+    "label": "Ogg Audio",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "ogg": {
+    "label": "Ogg",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "ogv": {
+    "label": "Ogg Video",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "oma": {
+    "label": "Sony OpenMG audio",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "opus": {
+    "label": "Ogg Opus",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "osq": {
+    "label": "raw OSQ",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "paf": {
+    "label": "Amazing Studio Packed Animation File",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "pam_pipe": {
+    "label": "piped pam sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "pbm_pipe": {
+    "label": "piped pbm sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "pcx_pipe": {
+    "label": "piped pcx sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "pdv": {
+    "label": "PlayDate Video",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "pfm_pipe": {
+    "label": "piped pfm sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "pgm_pipe": {
+    "label": "piped pgm sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "pgmyuv_pipe": {
+    "label": "piped pgmyuv sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "pgx_pipe": {
+    "label": "piped pgx sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "phm_pipe": {
+    "label": "piped phm sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "photocd_pipe": {
+    "label": "piped photocd sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "pictor_pipe": {
+    "label": "piped pictor sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "pjs": {
+    "label": "PJS (Phoenix Japanimation Society) subtitles",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "pmp": {
+    "label": "Playstation Portable PMP",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "png_pipe": {
+    "label": "piped png sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "pp_bnk": {
+    "label": "Pro Pinball Series Soundbank",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "ppm_pipe": {
+    "label": "piped ppm sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "psd_pipe": {
+    "label": "piped psd sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "psp": {
+    "label": "PSP MP4 (MPEG-4 Part 14)",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "psxstr": {
+    "label": "Sony Playstation STR",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "pva": {
+    "label": "TechnoTrend PVA",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "pvf": {
+    "label": "PVF (Portable Voice Format)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "qcp": {
+    "label": "QCP",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "qdraw_pipe": {
+    "label": "piped qdraw sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "qoi_pipe": {
+    "label": "piped qoi sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "r3d": {
+    "label": "REDCODE R3D",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "rawvideo": {
+    "label": "raw video",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "realtext": {
+    "label": "RealText subtitle format",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "redspark": {
+    "label": "RedSpark",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "rka": {
+    "label": "RKA (RK Audio)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "rl2": {
+    "label": "RL2",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "rm": {
+    "label": "RealMedia",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "roq": {
+    "label": "raw id RoQ",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "rpl": {
+    "label": "RPL / ARMovie",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "rsd": {
+    "label": "GameCube RSD",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "rso": {
+    "label": "Lego Mindstorms RSO",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "rtp": {
+    "label": "RTP output",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "rtp_mpegts": {
+    "label": "RTP/mpegts output format",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "rtsp": {
+    "label": "RTSP output",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "s16be": {
+    "label": "PCM signed 16-bit big-endian",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "s16le": {
+    "label": "PCM signed 16-bit little-endian",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "s24be": {
+    "label": "PCM signed 24-bit big-endian",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "s24le": {
+    "label": "PCM signed 24-bit little-endian",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "s32be": {
+    "label": "PCM signed 32-bit big-endian",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "s32le": {
+    "label": "PCM signed 32-bit little-endian",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "s337m": {
+    "label": "SMPTE 337M",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "s8": {
+    "label": "PCM signed 8-bit",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "sami": {
+    "label": "SAMI subtitle format",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "sap": {
+    "label": "SAP output",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "sbc": {
+    "label": "raw SBC",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "sbg": {
+    "label": "SBaGen binaural beats script",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "scc": {
+    "label": "Scenarist Closed Captions",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "scd": {
+    "label": "Square Enix SCD",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "sdl2": {
+    "label": "SDL2 output device",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "sdns": {
+    "label": "Xbox SDNS",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "sdp": {
+    "label": "SDP",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "sdr2": {
+    "label": "SDR2",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "sds": {
+    "label": "MIDI Sample Dump Standard",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "sdx": {
+    "label": "Sample Dump eXchange",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "segment": {
+    "label": "segment",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "ser": {
+    "label": "SER (Simple uncompressed video format for astronomical capturing)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "sga": {
+    "label": "Digital Pictures SGA",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "sgi_pipe": {
+    "label": "piped sgi sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "shn": {
+    "label": "raw Shorten",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "siff": {
+    "label": "Beam Software SIFF",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "simbiosis_imx": {
+    "label": "Simbiosis Interactive IMX",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "sln": {
+    "label": "Asterisk raw pcm",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "smjpeg": {
+    "label": "Loki SDL MJPEG",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "smk": {
+    "label": "Smacker",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "smoothstreaming": {
+    "label": "Smooth Streaming Muxer",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "smush": {
+    "label": "LucasArts Smush",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "sol": {
+    "label": "Sierra SOL",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "sox": {
+    "label": "SoX (Sound eXchange) native",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "spdif": {
+    "label": "IEC 61937 (used on S/PDIF - IEC958)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "spx": {
+    "label": "Ogg Speex",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "srt": {
+    "label": "SubRip subtitle",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "stl": {
+    "label": "Spruce subtitle format",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "stream_segment": {
+    "label": "streaming segment muxer",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "streamhash": {
+    "label": "Per-stream hash testing",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "subviewer": {
+    "label": "SubViewer subtitle format",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "subviewer1": {
+    "label": "SubViewer v1 subtitle format",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "sunrast_pipe": {
+    "label": "piped sunrast sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "sup": {
+    "label": "raw HDMV Presentation Graphic Stream subtitles",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "svag": {
+    "label": "Konami PS2 SVAG",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "svcd": {
+    "label": "MPEG-2 PS (SVCD)",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "svg_pipe": {
+    "label": "piped svg sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "svs": {
+    "label": "Square SVS",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "swf": {
+    "label": "SWF (ShockWave Flash)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "tak": {
+    "label": "raw TAK",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "tedcaptions": {
+    "label": "TED Talks captions",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "tee": {
+    "label": "Multiple muxer tee",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "thp": {
+    "label": "THP",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "tiertexseq": {
+    "label": "Tiertex Limited SEQ",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "tiff_pipe": {
+    "label": "piped tiff sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "tmv": {
+    "label": "8088flex TMV",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "truehd": {
+    "label": "raw TrueHD",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "tta": {
+    "label": "TTA (True Audio)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "ttml": {
+    "label": "TTML subtitle",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "tty": {
+    "label": "Tele-typewriter",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "txd": {
+    "label": "Renderware TeXture Dictionary",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "ty": {
+    "label": "TiVo TY Stream",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "u16be": {
+    "label": "PCM unsigned 16-bit big-endian",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "u16le": {
+    "label": "PCM unsigned 16-bit little-endian",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "u24be": {
+    "label": "PCM unsigned 24-bit big-endian",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "u24le": {
+    "label": "PCM unsigned 24-bit little-endian",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "u32be": {
+    "label": "PCM unsigned 32-bit big-endian",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "u32le": {
+    "label": "PCM unsigned 32-bit little-endian",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "u8": {
+    "label": "PCM unsigned 8-bit",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "uncodedframecrc": {
+    "label": "uncoded framecrc testing",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "usm": {
+    "label": "CRI USM",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "v210": {
+    "label": "Uncompressed 4:2:2 10-bit",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "v210x": {
+    "label": "Uncompressed 4:2:2 10-bit",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "vag": {
+    "label": "Sony PS2 VAG",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "vbn_pipe": {
+    "label": "piped vbn sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "vc1": {
+    "label": "raw VC-1 video",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "vc1test": {
+    "label": "VC-1 test bitstream",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "vcd": {
+    "label": "MPEG-1 Systems / MPEG program stream (VCD)",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "vidc": {
+    "label": "PCM Archimedes VIDC",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "vividas": {
+    "label": "Vividas VIV",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "vivo": {
+    "label": "Vivo",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "vmd": {
+    "label": "Sierra VMD",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "vob": {
+    "label": "MPEG-2 PS (VOB)",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "vobsub": {
+    "label": "VobSub subtitle format",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "voc": {
+    "label": "Creative Voice",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "vpk": {
+    "label": "Sony PS2 VPK",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "vplayer": {
+    "label": "VPlayer subtitles",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "vqf": {
+    "label": "Nippon Telegraph and Telephone Corporation (NTT) TwinVQ",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "vvc": {
+    "label": "raw H.266/VVC video",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "w64": {
+    "label": "Sony Wave64",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "wady": {
+    "label": "Marble WADY",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "wav": {
+    "label": "WAV / WAVE (Waveform Audio)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "wavarc": {
+    "label": "Waveform Archiver",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "wc3movie": {
+    "label": "Wing Commander III movie",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "webm": {
+    "label": "WebM",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "webm_chunk": {
+    "label": "WebM Chunk Muxer",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "webm_dash_manifest": {
+    "label": "WebM DASH Manifest",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "webp": {
+    "label": "WebP",
+    "supportsDemuxing": false,
+    "supportsMuxing": false
+  },
+  "webp_pipe": {
+    "label": "piped webp sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "webvtt": {
+    "label": "WebVTT subtitle",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "wsaud": {
+    "label": "Westwood Studios audio",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "wsd": {
+    "label": "Wideband Single-bit Data (WSD)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "wsvqa": {
+    "label": "Westwood Studios VQA",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "wtv": {
+    "label": "Windows Television (WTV)",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "wv": {
+    "label": "raw WavPack",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  },
+  "wve": {
+    "label": "Psion 3 audio",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "x11grab": {
+    "label": "X11 screen capture, using XCB",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "xa": {
+    "label": "Maxis XA",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "xbin": {
+    "label": "eXtended BINary text (XBIN)",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "xbm_pipe": {
+    "label": "piped xbm sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "xmd": {
+    "label": "Konami XMD",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "xmv": {
+    "label": "Microsoft XMV",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "xpm_pipe": {
+    "label": "piped xpm sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "xvag": {
+    "label": "Sony PS3 XVAG",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "xwd_pipe": {
+    "label": "piped xwd sequence",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "xwma": {
+    "label": "Microsoft xWMA",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "yop": {
+    "label": "Psygnosis YOP",
+    "supportsDemuxing": true,
+    "supportsMuxing": false
+  },
+  "yuv4mpegpipe": {
+    "label": "YUV4MPEG pipe",
+    "supportsDemuxing": true,
+    "supportsMuxing": true
+  }
+}
