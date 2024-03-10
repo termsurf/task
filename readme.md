@@ -7,7 +7,7 @@
 <br/>
 <br/>
 
-<h3 align='center'>@termsurf/task</h3>
+<h3 align='center'>@termsurf/base</h3>
 <p align='center'>
   Common Actions Interface
 </p>
@@ -22,7 +22,7 @@ _**Note**: This is pre-alpha software at this point, so many things might not wo
 
 Task is a collections of common actions to perform in code. Here are some immediately helpful resources:
 
-- [`ghcr.io/termsurf/task` Docker image](https://ghcr.io/termsurf/task)
+- [`ghcr.io/termsurf/base` Docker image](https://ghcr.io/termsurf/base)
 
 The `task` JavaScript/TypeScript library has these features:
 
@@ -33,15 +33,15 @@ The `task` JavaScript/TypeScript library has these features:
 ## Installing the Library
 
 1. Install OS-specific dependencies.
-2. Then install `@termserf/task` node module.
+2. Then install `@termserf/base` node module.
 
 ### MacOS Installation
 
 ```bash
-brew install termsurf/load/task
+brew install termsurf/load/base
 ```
 
-The source code for enabling this Homebrew cask is at [termsurf/homebrew-load](https://github.com/termsurf/homebrew-load/blob/make/Casks/task.rb).
+The source code for enabling this Homebrew cask is at [termsurf/homebrew-load](https://github.com/termsurf/homebrew-load/blob/make/Casks/base.rb).
 
 To use `docx2pdf` you need to have the Microsoft Word app installed on your machine as well.
 
@@ -72,9 +72,9 @@ choco install dart-sdk
 choco install php
 ```
 
-Not all tasks/subcommands are supported yet, see the [Choco TODO](https://github.com/termsurf/task#todo-choco).
+Not all tasks/subcommands are supported yet, see the [Choco TODO](https://github.com/termsurf/base#todo-choco).
 
-The source code for enabling this Choco package is at [./load/choco](https://github.com/termsurf/task/tree/make/load/choco).
+The source code for enabling this Choco package is at [./load/choco](https://github.com/termsurf/base/tree/make/load/choco).
 
 ### Linux Installation
 
@@ -83,20 +83,20 @@ See the `Dockerfile` in this project.
 ### Docker Installation
 
 ```Dockerfile
-FROM --platform=linux/amd64 ghcr.io/termsurf/task:latest
+FROM --platform=linux/amd64 ghcr.io/termsurf/base:latest
 ...
 ```
 
-You can link to the Docker image at [`ghcr.io/termsurf/task`](https://ghcr.io/termsurf/task) like that above.
+You can link to the Docker image at [`ghcr.io/termsurf/base`](https://ghcr.io/termsurf/base) like that above.
 
 ### Node Package Installation
 
 With the native dependencies installed, you can install task globally to enable the CLI:
 
 ```bash
-npm install -g @termsurf/task
-yarn install -g @termsurf/task
-pnpm install -g @termsurf/task
+npm install -g @termsurf/base
+yarn install -g @termsurf/base
+pnpm install -g @termsurf/base
 ```
 
 ```bash
@@ -106,15 +106,15 @@ task convert png -O jpg -i image.png -o image.jpg
 You can also install it locally to get access to the commands in TypeScript:
 
 ```bash
-npm install @termsurf/task
-yarn install @termsurf/task
-pnpm install @termsurf/task
+npm install @termsurf/base
+yarn install @termsurf/base
+pnpm install @termsurf/base
 ```
 
 _Some of this is future code._
 
 ```ts
-import task from '@termsurf/task'
+import task from '@termsurf/base'
 
 test()
 
@@ -198,7 +198,7 @@ pnpm run task convert -I png -O jpg -i image.png -o image.jpg
 ./test/cli.sh
 ```
 
-<img src='https://github.com/termsurf/task/blob/make/view/test-line.gif?raw=true' />
+<img src='https://github.com/termsurf/base/blob/make/view/test-line.gif?raw=true' />
 
 ## Development
 
@@ -509,7 +509,7 @@ To trigger this build and publishing, the build needs to be run manually.
   - the pip installed commands
   - rubocop
 
-Compare `load/choco/task.nuspec` with the `Dockerfile` to see all what's missing. If you know how to install those, please feel free to add.
+Compare `load/choco/base.nuspec` with the `Dockerfile` to see all what's missing. If you know how to install those, please feel free to add.
 
 ### TODO (Ubuntu)
 
